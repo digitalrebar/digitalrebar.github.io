@@ -14,7 +14,7 @@
   </head>
   <body>
     <nav id="toolbar" class="overlay">
-      <img src="logo.png" style="cursor: pointer;" onclick="window.open('http://digital-rebar.readthedocs.org/en/latest/BOOK.html');"/>
+      <img src="logo.png" style="cursor: pointer;" onclick="window.open('http://provision.readthedocs.org/en/latest/BOOK.html');"/>
       <div class="menu-button" onclick="$('.nav-bar').className='nav-bar'+($('.nav-bar').className=='nav-bar hover'?'':' hover');">
         <i class="material-icons">menu</i>
       </div>
@@ -57,41 +57,36 @@
 
     <section class="content card" id="_overview" onclick="">
       <a class="anchor" name="overview"></a>
-      <h2>Digital Rebar Project (<a href="https://github.com/digitalrebar/digitalrebar">Code Repo</a>)</h2>
+      <h2>Digital Rebar v3 - Provision</h2>
       <p>
-        <a href="https://github.com/digitalrebar/digitalrebar">Digital Rebar</a> is a container-based, infrastructure-as-code provisioning and orchestration platform that provides software deployment automation capabilities without locking you into a specific hardware platform or operating model. Our mission is to embrace the heterogenous nature of data center operations.
+        <a href="https://github.com/digitalrebar/provision">Digital Rebar</a> is the open, fast and simple data center provisioning and control scaffolding designed with a cloud native architecture.
+      </p>
+      <center>
+        CI/CD:
+          <a class="reference external image-reference" href="https://travis-ci.org/digitalrebar/provision"><img alt="Build Status" src="https://travis-ci.org/digitalrebar/provision.svg?branch=master" /></a>
+          <a class="reference external image-reference" href="https://codecov.io/gh/digitalrebar/provision"><img alt="codecov" src="https://codecov.io/gh/digitalrebar/provision/branch/master/graph/badge.svg" /></a>
+          <a class="reference external image-reference" href="https://goreportcard.com/report/github.com/digitalrebar/provision"><img alt="Go Report Card" src="https://goreportcard.com/badge/github.com/digitalrebar/provision" /></a>
+          <a class="reference external image-reference" href="https://godoc.org/github.com/digitalrebar/provision"><img alt="GoDoc" src="https://godoc.org/github.com/digitalrebar/provision?status.svg" /></a>
+          <a class="reference external image-reference" href="http://provision.readthedocs.io/en/stable/?badge=stable"><img alt="Documentation Stable Status" src="https://readthedocs.org/projects/provision/badge/?version=stable" /></a>
+          <a class="reference external image-reference" href="http://provision.readthedocs.io/en/latest/?badge=latest"><img alt="Documentation Latest Status" src="https://readthedocs.org/projects/provision/badge/?version=latest" /></a>
+      </center>
+      <p>
+        Our extensible stand-alone DHCP/PXE/IPXE service has minimal overhead so it can be installed and provisioning in <a href="http://provision.readthedocs.io/en/stable/doc/quickstart.html">under 5 minutes</a> on a laptop, RPi or switch.  From there, users can add custom or pre-packaged workflows for full life-cycle automation using our API and CLI or a community UX.
       </p>
       <p>
-        <div class="split">
-          <div>
-            <div class="material-icon-container">
-              <i class="material-icons">computer</i>
-            </div>
-            <p>
-            For physical infrastructure, <a href="https://github.com/digitalrebar/digitalrebar">Digital Rebar</a> functions as a fully integrated <a href="http://cobbler.github.io/">Cobbler</a>/<a href="https://www.theforeman.org/">Foreman</a> + <a href="https://www.ansible.com/tower">Ansible Tower</a> (or <a href="https://www.ubuntu.com/cloud/juju">Juju</a> + <a href="https://maas.io/">MaaS</a>) with the added bonus of being able to configure RAID, IPMI and BIOS.  Furthermore, <a href="https://github.com/digitalrebar/digitalrebar">Digital Rebar</a> is not opinionated about scripting tools so you can mix and match Chef, Puppet, Ansible, SaltStack, or even Bash.
-            </p>
-          </div>
-          <div>
-            <div class="material-icon-container">
-              <i class="material-icons">cloud</i>
-            </div>
-            <p>
-            For cloud infrastructure, <a href="https://github.com/digitalrebar/digitalrebar">Digital Rebar</a> provides a hybrid cluster install like <a href="https://www.terraform.io/">Terraform</a>, but with an ongoing iterative operation and upgrade strategy.  By design, we leverage existing configurations like Ansible playbooks directly from upstreams WITHOUT modification.  Our job is to make them more portable and repeatable by controlling the infrastructure.
-            </p>
-          </div>
-        </div>
-      </p>
-      <h2>Digital Rebar Provisioner</h2>
-      <p>
-        <img src="dr_provision.png" align="left" style="max-width: 300px;">
-        <a href="https://github.com/digitalrebar/provision">Digital Rebar Provision</a> is a stand-alone version of the PXE/DHCP/TFTP system used by the broader project.  It"s a great first step for the larger project and sufficient if you are just replacing Cobbler or another metal provisioner (MaaS, Stacki, Foreman, USB).  It does not have out-of-band or firmware features - those services remain under the project umbrella.
+        <img src="dr_provision.png" align="left" style="max-width: 200px;">        
+        A cloud native bare metal approach provides API-driven infrastructure-as-code automation without locking you into a specific hardware platform, operating system or configuration model.
       </p>
       <p>
-        Why <a href="https://en.wikipedia.org/wiki/Rebar">Rebar</a>? Rebar is the metal in reinforced concrete that allows building cloudscraping towers and robust infrastructure (<a href="http://digital-rebar.readthedocs.io/en/latest/principles/concepts/what_is_rebar.html">more information...</a>).
+        For physical infrastructure provisioning, <a href="https://github.com/digitalrebar/provision">Digital Rebar</a> replaces <a href="http://cobbler.github.io/">Cobbler</a>, <a href="https://www.theforeman.org/">Foreman</a>, <a href="https://maas.io/">MaaS</a> or similar with the added bonus of being able to include simple control workflows for RAID, IPMI and BIOS configuration.  We also provide event driven actions via websockets API and a simple plug-in model.  By design, <a href="https://github.com/digitalrebar/provision">Digital Rebar</a> is not opinionated about scripting tools so you can mix and match Chef, Puppet, Ansible, SaltStack and even Bash.
       </p>
       <p>
-        While <a href="https://github.com/digitalrebar/digitalrebar">Digital Rebar</a> has been completely rebuilt by DevOps artisans, our history includes years of battle-tested ops learning by the <a href="http://github.com/crowbar">Crowbar Project</a> founders.
+        Next version: release of v3.1 is anticipated on 9/4/2017.
       </p>
+      <h2>Version 2: Containerized Hybrid Platform</h2>
+      <p>
+        Active development has shifted to Digital Rebar v3 (aka Provision). If you are looking for the v2 containerized hybrid platform, see <a href="http://github.com/digitalrebar/digitalrebar/">the DR/DR github</a> or contact <a href="http://rackn.com">RackN</a>.
+      </em></p>
     </section>
     <div style="background: #eee; padding: 2px;" onclick="">
       <section class="content card" id="_install">
@@ -101,15 +96,15 @@
           <div class="display noclick" alt="Install Guide" onclick="">
             <i class="material-icons">file_download</i>
             <div class="dropdown">
-              <div class="dropdown-link" onclick="displayClick(event, this)" url="http://digital-rebar.readthedocs.org/en/latest/deployment/install/quick.html">
-                AWS Quick Start
+              <div class="dropdown-link" onclick="displayClick(event, this)" url="http://provision.readthedocs.io/en/stable/doc/quickstart.html">
+                Quick Start (stable)
               </div>
-              <div class="dropdown-link" onclick="displayClick(event, this)" url="http://digital-rebar.readthedocs.io/en/latest/deployment/README.html">
-                Install Guide
+              <div class="dropdown-link" onclick="displayClick(event, this)" url="http://provision.readthedocs.io/en/stable/doc/install.html">
+                Install Guide (latest)
               </div>
             </div>
           </div>
-          <div class="display" alt="Demo Videos" onclick="displayClick(event, this)" url="https://www.youtube.com/playlist?list=PLXPBeIrpXjfh2lXdXkNnzAuc7_SUtYJR-">
+          <div class="display" alt="Demo Videos" onclick="displayClick(event, this)" url="https://www.youtube.com/playlist?list=PLXPBeIrpXjfilUi7Qj1Sl0UhjxNRSC7nx">
             <i class="material-icons">video_library</i>
           </div>
           <div class="display" alt="Mailing List" onclick="displayClick(event, this)" url="http://bit.ly/digitalrebarlist">
@@ -121,19 +116,19 @@
           <div class="display" alt="IRC (Freenode)" onclick="displayClick(event, this)" url="https://webchat.freenode.net/?channels=%23digitalrebar&uio=d4">
             <i class="material-icons">chat</i>
           </div>
-          <div class="display" alt="Issues &amp; Roadmap" onclick="displayClick(event, this)" url="https://github.com/digitalrebar/digitalrebar/issues">
+          <div class="display" alt="Issues &amp; Roadmap" onclick="displayClick(event, this)" url="https://github.com/digitalrebar/provision/issues">
             <i class="material-icons">directions</i>
           </div>
           <div class="display noclick" alt="Documentation" onclick="">
             <i class="material-icons">book</i>
             <div class="dropdown">
-              <div class="dropdown-link" onclick="displayClick(event, this)" url="https://readthedocs.org/projects/digital-rebar/downloads/pdf/latest/">
+              <div class="dropdown-link" onclick="displayClick(event, this)" url="https://readthedocs.org/projects/provision/downloads/pdf/latest/">
                 Single PDF
               </div>
-              <div class="dropdown-link" onclick="displayClick(event, this)" url="https://github.com/digitalrebar/doc">
+              <div class="dropdown-link" onclick="displayClick(event, this)" url="https://github.com/digitalrebar/provision/tree/master/doc">
                 Git Repo
               </div>
-              <div class="dropdown-link" onclick="displayClick(event, this)" url="http://digital-rebar.readthedocs.org/en/latest/BOOK.html">
+              <div class="dropdown-link" onclick="displayClick(event, this)" url="http://provision.readthedocs.org/en/latest/BOOK.html">
                 Documentation
               </div>
             </div>
@@ -144,10 +139,10 @@
         <a class="anchor" name="principle"></a>
         <h2>At a Glance</h2>
         <p>
-          The principle motivation for <a href="https://github.com/digitalrebar/digitalrebar">Digital Rebar</a> is to collaborate on a technology that revolutionizes how traditional data center infrastructure operations can gracefully absorb next-generation workloads without churn and additional technological complexity. <a href="https://github.com/digitalrebar/digitalrebar">Digital Rebar</a> capability enables upgrade and continuous deployment automation which is important for large scale, production-scale deployments of evolving complex technologies such as Docker, Kubernetes, Mesos, Cloud Foundry, OpenStack, and Ceph.
+          The principle motivation for <a href="https://github.com/digitalrebar/provision">Digital Rebar</a> is to collaborate on a technology that revolutionizes how traditional data center infrastructure operations can gracefully absorb next-generation workloads without churn and additional technological complexity. <a href="https://github.com/digitalrebar/provision">Digital Rebar</a> capability enables upgrade and continuous deployment automation which is important for large scale, production-scale deployments of evolving complex technologies such as Docker, Kubernetes, Mesos, Cloud Foundry, OpenStack, and Ceph.
         </p>
         <p>
-          <a href="https://github.com/digitalrebar/digitalrebar">Digital Rebar</a> is an open reference implementation that can be designed to reliably deployed in large-scale, multi-site datacenters. This effectively productizes best practices in a way that allows creation of consistent and discoverable operating environments. Users benefit with fast time-to-value and the community benefits by having consistent installations across the ecosystem.
+          <a href="https://github.com/digitalrebar/provision">Digital Rebar</a> is an open reference implementation that can be designed to reliably deployed in large-scale, multi-site datacenters. This effectively productizes best practices in a way that allows creation of consistent and discoverable operating environments. Users benefit with fast time-to-value and the community benefits by having consistent installations across the ecosystem.
         </p>
       </section>
 
@@ -155,7 +150,7 @@
         <a class="anchor" name="benefits"></a>
         <h2>Benefits of Digital Rebar</h2>
         <p>
-          <a href="https://github.com/digitalrebar/digitalrebar">Digital Rebar</a> reduces the cost of datacenter hardware infrastructure preparation which provide immediate benefits by way of accelerating the deployment of complex compute and storage clusters. <a href="https://github.com/digitalrebar/digitalrebar">Digital Rebar</a> reduces the human resource cost of orchestrating continuous hardware redeployment, hypervisor, operating systems, and application layer software installation and management. All of these add up to significant gains in operational reliability, consistency, and concomitant reduction in defects handling costs.
+          <a href="https://github.com/digitalrebar/provision">Digital Rebar</a> reduces the cost of datacenter hardware infrastructure preparation which provide immediate benefits by way of accelerating the deployment of complex compute and storage clusters. <a href="https://github.com/digitalrebar/provision">Digital Rebar</a> reduces the human resource cost of orchestrating continuous hardware redeployment, hypervisor, operating systems, and application layer software installation and management. All of these add up to significant gains in operational reliability, consistency, and concomitant reduction in defects handling costs.
         </p>
       </section>
 
@@ -164,7 +159,7 @@
         <h2>Project Sponsored by <a href="http://rackn.com">RackN</a></h2>
         <p>
           <b>Digital Rebar is an Apache2 Licensed Project.</b><br/>
-          RackN supports a variety of workloads that leverage Digital Rebar. Including <a href="http://github.com/digitalrebar/digitalrebar-workloads">Kubernetes Kompos8</a>, <a href="http://github.com/rackn/ceph">Ceph</a>, and a variety of <a href="http://github.com/rackn/hardware">Commodity Hardware</a>. RackN offers enterprise support for Digital Rebar.
+          RackN supports a variety of workloads that leverage Digital Rebar. Including <a href="http://github.com/digitalrebar/provision-workloads">Kubernetes Kompos8</a>, <a href="http://github.com/rackn/ceph">Ceph</a>, and a variety of <a href="http://github.com/rackn/hardware">Commodity Hardware</a>. RackN offers enterprise support for Digital Rebar.
         </p>
       </section>
     </div>
@@ -172,7 +167,7 @@
     <section class="footer">
       <footer>
         &copy; 2017 RackN, Inc.<br/>
-        <a href="http://digital-rebar.readthedocs.org/en/latest/BOOK.html">Documentation</a> | <a href="http://github.com/digitalrebar/digitalrebar">Source</a> | <a href="http://rackn.com">Sponsor</a> | <a href="http://github.com/meshiest">Site Designer</a>
+        <a href="http://provision.readthedocs.org/en/latest/BOOK.html">Documentation</a> | <a href="http://github.com/digitalrebar/provision">Source</a> | <a href="http://rackn.com">Sponsor</a> | <a href="http://github.com/meshiest">Site Designer</a>
       </footer>
     </section>
 
