@@ -99,6 +99,9 @@
               <div class="dropdown-link" onclick="displayClick(event, this)" url="http://provision.readthedocs.io/en/stable/doc/quickstart.html">
                 Quick Start (stable)
               </div>
+              <div class="dropdown-link" onclick="displayClick(event, this)" url="https://www.packet.net/developers/guides/ditch-cobbler-for-rackn/">
+                Packet.net Custom IPXE
+              </div>
               <div class="dropdown-link" onclick="displayClick(event, this)" url="http://provision.readthedocs.io/en/stable/doc/install.html">
                 Install Guide (latest)
               </div>
@@ -139,10 +142,16 @@
         <a class="anchor" name="principle"></a>
         <h2>At a Glance</h2>
         <p>
+          Our mission is to embrace the heterogenous nature of data center operations while eliminating complexity and manual steps.
+        </p>
+        <p>
           The principle motivation for <a href="https://github.com/digitalrebar/provision">Digital Rebar</a> is to collaborate on a technology that revolutionizes how traditional data center infrastructure operations can gracefully absorb next-generation workloads without churn and additional technological complexity. <a href="https://github.com/digitalrebar/provision">Digital Rebar</a> capability enables upgrade and continuous deployment automation which is important for large scale, production-scale deployments of evolving complex technologies such as Docker, Kubernetes, Mesos, Cloud Foundry, OpenStack, and Ceph.
         </p>
         <p>
-          <a href="https://github.com/digitalrebar/provision">Digital Rebar</a> is an open reference implementation that can be designed to reliably deployed in large-scale, multi-site datacenters. This effectively productizes best practices in a way that allows creation of consistent and discoverable operating environments. Users benefit with fast time-to-value and the community benefits by having consistent installations across the ecosystem.
+          <a href="https://github.com/digitalrebar/provision">Digital Rebar</a> is a production-ready open implementation that can be designed to reliably deployed in large-scale, multi-site datacenters. This effectively productizes best practices in a way that allows creation of consistent and discoverable operating environments. Users benefit with fast time-to-value and the community benefits by having consistent installations across the ecosystem.
+        </p>
+        <p>
+          Why <a href="https://en.wikipedia.org/wiki/Rebar">Rebar</a>? Rebar is the metal in reinforced concrete that allows building cloudscraping towers and robust infrastructure (<a href="https://github.com/digitalrebar/provision/blob/master/doc/fun-facts.rst"> </a>).
         </p>
       </section>
 
@@ -158,8 +167,7 @@
         <a class="anchor" name="sponsor"></a>
         <h2>Project Sponsored by <a href="http://rackn.com">RackN</a></h2>
         <p>
-          <b>Digital Rebar is an Apache2 Licensed Project.</b><br/>
-          RackN supports a variety of workloads that leverage Digital Rebar. Including <a href="http://github.com/digitalrebar/provision-workloads">Kubernetes Kompos8</a>, <a href="http://github.com/rackn/ceph">Ceph</a>, and a variety of <a href="http://github.com/rackn/hardware">Commodity Hardware</a>. RackN offers enterprise support for Digital Rebar.
+          Digital Rebar is an <a href="https://github.com/digitalrebar/provision/blob/master/LICENSE.rst">Apache2 Licensed</a> Project. RackN offers commercial support for Digital Rebar and related content, extensions and intergrations.
         </p>
       </section>
     </div>
@@ -179,14 +187,13 @@ var typing = document.getElementById('typing');
 var cursor = document.getElementById('cursor');
 
 var phrases = [
-  'digital_Rebar',
-  'open_SRE_automation',
-  'Kubernetes_Hybrid',
-  'OpenStack_on_Kubernetes',
+  'digital_rebar',
+  'sre_automation',
   'composable_ops',
   'bare_metal_api',
-  'cloud_datacenter_portability',
-  'hybrid_devops_control',
+  'devops_control',
+  'pxe_provision',
+  'immutable_infrastucture',
 ];
 
 var extensions = [
