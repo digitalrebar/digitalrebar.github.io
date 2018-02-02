@@ -1,50 +1,50 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="reset.css" rel="stylesheet" type="text/css" />
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="../reset.css" rel="stylesheet" type="text/css" />
+    <link href="../style.css" rel="stylesheet" type="text/css" />
     <link href="https://www.google.com/fonts#UsePlace:use/Collection:Roboto" rel="stylesheet" type="text/css" />
     <link href="https://www.google.com/fonts#UsePlace:use/Collection:Roboto+Mono" rel="stylesheet" type="text/css" />
     <link href="https://www.google.com/fonts#UsePlace:use/Collection:Allerta+Stencil" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css" />
-    <link href="digitalrebar.ico" rel="SHORTCUT ICON" />
+    <link href="../digitalrebar.ico" rel="SHORTCUT ICON" />
     <meta name="google-site-verification" content="zCf79OnCmnSaInCAHjC8bfWcYvMXXzTfjx_fG_k-6AM" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>Digital Rebar</title>
   </head>
   <body>
     <nav id="toolbar" class="overlay">
-      <img src="logo.png" style="cursor: pointer;" onclick="window.open('http://provision.readthedocs.io/en/latest/');"/>
+      <img src="../logo.png" style="cursor: pointer;" onclick="window.open('http://provision.readthedocs.io/en/latest/');"/>
       <div class="menu-button" onclick="$('.nav-bar').className='nav-bar'+($('.nav-bar').className=='nav-bar hover'?'':' hover');">
         <i class="material-icons">menu</i>
       </div>
       <div class="nav-bar" onclick="$('.nav-bar').className='nav-bar';">
-        <div class="link-container" onclick="scrollToElem('intro')">
+        <div class="link-container" onclick="javascript:location.href='../index.html#intro'">
           <div class="link">
             <span>Intro</span>
           </div>
         </div>
-        <div class="link-container" onclick="scrollToElem('starting')">
+        <div class="link-container" onclick="javascript:location.href='../index.html#starting'">
           <div class="link">
             <span>Starting</span>
           </div>
         </div>
-        <div class="link-container" onclick="scrollToElem('glance')">
+        <div class="link-container" onclick="javascript:location.href='../index.html#glance'">
           <div class="link">
             <span>Glance</span>
           </div>
         </div>
-        <div class="link-container" onclick="javascript:location.href='community/welcome.html#welcome'">
+        <div class="link-container" onclick="scrollToElem('welcome')">
           <div class="link">
             <span>Community</span>
           </div>
         </div>
-        <div class="link-container" onclick="scrollToElem('benefits')">
+        <div class="link-container" onclick="javascript:location.href='../index.html#benefits'">
           <div class="link">
             <span>Benefits</span>
           </div>
         </div>
-        <div class="link-container" onclick="scrollToElem('sponsor')">
+        <div class="link-container" onclick="javascript:location.href='../index.html#sponsor'">
           <div class="link">
             <span>Sponsor</span>
           </div>
@@ -52,50 +52,55 @@
       </div>
     </nav>
 
-    <img src="rebar.jpg" id="top-img" />
+    <img src="../rebar.jpg" id="top-img" />
 
-    <div class="typing-container">
-      <div class="typing-font">
-        <span class="terminal-green">./</span><span id="typing"></span><span id="cursor" class="terminal-green">&block;</span>
-      </div>
-    </div>
+    <br><br>
 
-    <section class="content card" id="_intro" onclick="">
-      <a class="anchor" name="intro"></a>
-      <h2>Digital Rebar v3 - Provision</h2>
+    <section class="content card" id="_welcome" onclick="">
+      <a class="anchor" name="welcome"></a>
+
+      <h2>Welcome to the Digital Rebar #community channel.</h2>
+
+        <img src="../dr_provision.png" align="left" style="max-width: 200px;">        
       <p>
-        <a href="https://github.com/digitalrebar/provision">Digital Rebar</a> is the open, fast and simple data center provisioning and control scaffolding designed with a cloud native architecture.
-      </p>
-      <center>
-        CI/CD:
-          <a class="reference external image-reference" href="https://travis-ci.org/digitalrebar/provision"><img alt="Build Status" src="https://travis-ci.org/digitalrebar/provision.svg?branch=master" /></a>
-          <a class="reference external image-reference" href="https://codecov.io/gh/digitalrebar/provision"><img alt="codecov" src="https://codecov.io/gh/digitalrebar/provision/branch/master/graph/badge.svg" /></a>
-          <a class="reference external image-reference" href="https://goreportcard.com/report/github.com/digitalrebar/provision"><img alt="Go Report Card" src="https://goreportcard.com/badge/github.com/digitalrebar/provision" /></a>
-          <a class="reference external image-reference" href="https://godoc.org/github.com/digitalrebar/provision"><img alt="GoDoc" src="https://godoc.org/github.com/digitalrebar/provision?status.svg" /></a>
-          <a class="reference external image-reference" href="http://provision.readthedocs.io/en/stable/?badge=stable"><img alt="Documentation Stable Status" src="https://readthedocs.org/projects/provision/badge/?version=stable" /></a>
-          <a class="reference external image-reference" href="http://provision.readthedocs.io/en/latest/?badge=latest"><img alt="Documentation Latest Status" src="https://readthedocs.org/projects/provision/badge/?version=latest" /></a>
-      </center>
-      <p>
-        Our extensible stand-alone DHCP/PXE/IPXE service has minimal overhead so it can be installed and provisioning in <a href="http://provision.readthedocs.io/en/latest/doc/quickstart.html">under 5 minutes</a> on a laptop, RPi or switch.  From there, users can add custom or pre-packaged workflows for full life-cycle automation using our API and CLI or a community UX.
+
+        Welcome to the Digital Rebar #community slack channel!   
+
       </p>
       <p>
-        <img src="dr_provision.png" align="left" style="max-width: 200px;">        
-        A cloud native bare metal approach provides API-driven infrastructure-as-code automation without locking you into a specific hardware platform, operating system or configuration model.
+
+        We look forward to your participation in our community conversations, and hope that your participation will be both rewarding for you, and also provide value to our community.   Participation at all levels within the community is encouraged!  
+
       </p>
       <p>
-        For physical infrastructure provisioning, <a href="https://github.com/digitalrebar/provision">Digital Rebar</a> replaces <a href="http://cobbler.github.io/">Cobbler</a>, <a href="https://www.theforeman.org/">Foreman</a>, <a href="https://maas.io/">MaaS</a> or similar with the added bonus of being able to include simple control workflows for RAID, IPMI and BIOS configuration.  We also provide event driven actions via websockets API and a simple plug-in model.  By design, <a href="https://github.com/digitalrebar/provision">Digital Rebar</a> is not opinionated about scripting tools so you can mix and match Chef, Puppet, Ansible, SaltStack and even Bash.
+        Some areas where your participation can provide value and enhance our community:
+
+        <ul>
+          <li>  Ask relevant questions in a positive tone </li>
+          <li>  Help answer questions posed by other community members in a supportive manner </li>
+          <li>  Provide constructive feedback on product features, capabilities, and roadmap </li>
+          <li>  Submit detailed <a href="https://github.com/digitalrebar/provision/issues/new"> Issues and Enhancement requests </a> when relevant </li>
+          <li>  Submit Pull Requests for updates to Documentation, Features, or Enhancements  </li>
+          <li>  HAVE FUN !! </li>
+        </ul>
       </p>
       <p>
-        Version v3.1 is the current stable release [<a href="https://www.rackn.com/2017/09/20/can-physical-provisioning-fixed-take-30-minutes-see/">Release Notes, September, 2017</a>].  
+        Below you'll find some links and references to documentation, videos, tuturials, and other resources.   
       </p>
-      <h2>Version 2: Containerized Hybrid Platform</h2>
-      <p>
-        Active development has shifted to Digital Rebar v3 (aka Provision). If you are looking for the v2 containerized hybrid platform, see <a href="http://github.com/digitalrebar/digitalrebar/">the DR/DR github</a> or contact <a href="http://rackn.com">RackN</a>.
-      </em></p>
+
     </section>
+
+      <section class="content card" id="_conduct"  onclick="">
+        <a class="anchor" name="conduct"></a>
+        <h2>Code of Conduct</h2>
+        <p>
+            Please see our <a href="code_of_conduct.html#code_of_conduct">Code of Conduct</a>.
+        </p>
+      </section>
+
 <!--    <div style="background: #eee; padding: 2px;" onclick=""> -->
-      <section class="content card" id="_starting">
-        <a class="anchor" name="starting"></a>
+      <section class="content card" id="_install">
+        <a class="anchor" name="install"></a>
         <h2>Getting Started</h2>
         <div class="display-container">
           <div class="display noclick" alt="Install Guide" onclick="">
@@ -142,38 +147,6 @@
             </div>
           </div>
         </div>
-      </section>
-      <section class="content card" id="_glance"  onclick="">
-        <a class="anchor" name="glance"></a>
-        <h2>At a Glance</h2>
-        <p>
-          Our mission is to embrace the heterogenous nature of data center operations while eliminating complexity and manual steps.
-        </p>
-        <p>
-          The principle motivation for <a href="https://github.com/digitalrebar/provision">Digital Rebar</a> is to collaborate on a technology that revolutionizes how traditional data center infrastructure operations can gracefully absorb next-generation workloads without churn and additional technological complexity. <a href="https://github.com/digitalrebar/provision">Digital Rebar</a> capability enables upgrade and continuous deployment automation which is important for large scale, production-scale deployments of evolving complex technologies such as Docker, Kubernetes, Mesos, Cloud Foundry, OpenStack, and Ceph.
-        </p>
-        <p>
-          <a href="https://github.com/digitalrebar/provision">Digital Rebar</a> is a production-ready open implementation that can be designed to reliably deployed in large-scale, multi-site datacenters. This effectively productizes best practices in a way that allows creation of consistent and discoverable operating environments. Users benefit with fast time-to-value and the community benefits by having consistent installations across the ecosystem.
-        </p>
-        <p>
-          Why <a href="https://en.wikipedia.org/wiki/Rebar">Rebar</a>? Rebar is the metal in reinforced concrete that allows building cloudscraping towers and robust infrastructure (<a href="https://github.com/digitalrebar/provision/blob/master/doc/fun-facts.rst">and more fun facts</a>).
-        </p>
-      </section>
-
-      <section class="content card" id="_benefits">
-        <a class="anchor" name="benefits"></a>
-        <h2>Benefits of Digital Rebar Provision</h2>
-        <p>
-          <a href="https://github.com/digitalrebar/provision">Digital Rebar</a> reduces the cost of datacenter hardware infrastructure preparation which provide immediate benefits by way of accelerating the deployment of complex compute and storage clusters. <a href="https://github.com/digitalrebar/provision">Digital Rebar</a> reduces the human resource cost of orchestrating continuous hardware redeployment, hypervisor, operating systems, and application layer software installation and management. All of these add up to significant gains in operational reliability, consistency, and concomitant reduction in defects handling costs.
-        </p>
-      </section>
-
-      <section class="content card" id="_sponsor">
-        <a class="anchor" name="sponsor"></a>
-        <h2>Project Sponsored by <a href="http://rackn.com">RackN</a></h2>
-        <p>
-          Digital Rebar is an <a href="https://github.com/digitalrebar/provision/blob/master/LICENSE.rst">Apache2 Licensed</a> Project. RackN offers commercial support for Digital Rebar and related content, extensions and intergrations.
-        </p>
       </section>
 <!--    </div> -->
 
