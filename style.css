@@ -196,6 +196,10 @@ section a:active {
   color: #eef;
 }
 
+#layer {
+  z-index: 1;
+}
+
 #toolbar {
   height: 48px;
   margin: 0;
@@ -222,6 +226,7 @@ section a:active {
   position: fixed;
   right: 0;
   top: 0;
+  z-index: 4;
 }
 
 .link-container {
