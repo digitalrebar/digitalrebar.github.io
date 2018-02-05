@@ -217,8 +217,8 @@ section a:active {
 }
 
 .overlay {
-  background: rgba(255, 255, 255, 0.16);
-  color: rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.56);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .nav-bar {
@@ -258,9 +258,9 @@ section a:active {
 }
 
 .link-container:hover .link span::before {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(39, 177, 251, 0.2);
   top: 0;
-  transition: all 0.3s;
+  transition: all 0.5s;
 }
 
 .footer {
