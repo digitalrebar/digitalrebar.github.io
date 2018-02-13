@@ -508,13 +508,3 @@ nav img {
   margin: 4px;
   line-height: 1;
 }
-
-.ci-cd a:hover::after {
-  color: #fff;
-  padding: 4px;
-  background-color: #444;
-  content: attr(tooltip);
-  position: absolute;
-  display: block;
-  text-align: center;
-}
