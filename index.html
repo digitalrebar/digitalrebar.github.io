@@ -34,7 +34,7 @@
             <span>Glance</span>
           </div>
         </div>
-        <div class="link-container" onclick="javascript:location.href='community/welcome.html#welcome'">
+        <div class="link-container" onclick="javascript:location.href='community/welcome.html'">
           <div class="link">
             <span>Community</span>
           </div>
@@ -66,20 +66,20 @@
       <p>
         <a href="https://github.com/digitalrebar/provision">Digital Rebar</a> is the open, fast and simple data center provisioning and control scaffolding designed with a cloud native architecture.
       </p>
-      <center>
-        CI/CD:
-          <a class="reference external image-reference" href="https://travis-ci.org/digitalrebar/provision"><img alt="Build Status" src="https://travis-ci.org/digitalrebar/provision.svg?branch=master" /></a>
-          <a class="reference external image-reference" href="https://codecov.io/gh/digitalrebar/provision"><img alt="codecov" src="https://codecov.io/gh/digitalrebar/provision/branch/master/graph/badge.svg" /></a>
-          <a class="reference external image-reference" href="https://goreportcard.com/report/github.com/digitalrebar/provision"><img alt="Go Report Card" src="https://goreportcard.com/badge/github.com/digitalrebar/provision" /></a>
-          <a class="reference external image-reference" href="https://godoc.org/github.com/digitalrebar/provision"><img alt="GoDoc" src="https://godoc.org/github.com/digitalrebar/provision?status.svg" /></a>
-          <a class="reference external image-reference" href="http://provision.readthedocs.io/en/stable/?badge=stable"><img alt="Documentation Stable Status" src="https://readthedocs.org/projects/provision/badge/?version=stable" /></a>
-          <a class="reference external image-reference" href="http://provision.readthedocs.io/en/latest/?badge=latest"><img alt="Documentation Latest Status" src="https://readthedocs.org/projects/provision/badge/?version=latest" /></a>
-      </center>
+      <h3>Continuous Integration</h3>
+      <div class="ci-cd">
+        <a class="reference external image-reference" href="https://travis-ci.org/digitalrebar/provision" tooltip="Travis"><img alt="Build Status" src="https://travis-ci.org/digitalrebar/provision.svg?branch=master" /></a>
+        <a class="reference external image-reference" href="https://codecov.io/gh/digitalrebar/provision" tooltip="codecov"><img alt="codecov" src="https://codecov.io/gh/digitalrebar/provision/branch/master/graph/badge.svg" /></a>
+        <a class="reference external image-reference" href="https://goreportcard.com/report/github.com/digitalrebar/provision" tooltip="Go Report Card"><img alt="Go Report Card" src="https://goreportcard.com/badge/github.com/digitalrebar/provision" /></a>
+        <a class="reference external image-reference" href="https://godoc.org/github.com/digitalrebar/provision" tooltip="GoDoc"><img alt="GoDoc" src="https://godoc.org/github.com/digitalrebar/provision?status.svg" /></a>
+        <a class="reference external image-reference" href="http://provision.readthedocs.io/en/stable/?badge=stable" tooltip="Documentation Stable Status"><img alt="Documentation Stable Status" src="https://readthedocs.org/projects/provision/badge/?version=stable" /></a>
+        <a class="reference external image-reference" href="http://provision.readthedocs.io/en/latest/?badge=latest" tooltip="Documentation Latest Status"><img alt="Documentation Latest Status" src="https://readthedocs.org/projects/provision/badge/?version=latest" /></a>
+      </div>
       <p>
         Our extensible stand-alone DHCP/PXE/IPXE service has minimal overhead so it can be installed and provisioning in <a href="http://provision.readthedocs.io/en/latest/doc/quickstart.html">under 5 minutes</a> on a laptop, RPi or switch.  From there, users can add custom or pre-packaged workflows for full life-cycle automation using our API and CLI or a community UX.
       </p>
+      <img src="dr_provision.png" align="right" class="bear-image" style="max-width: 200px;">        
       <p>
-        <img src="dr_provision.png" align="left" style="max-width: 200px;">        
         A cloud native bare metal approach provides API-driven infrastructure-as-code automation without locking you into a specific hardware platform, operating system or configuration model.
       </p>
       <p>
@@ -97,8 +97,8 @@
       <section class="content card" id="_starting">
         <a class="anchor" name="starting"></a>
         <h2>Getting Started</h2>
-        <div class="display-container">
-          <div class="display noclick" alt="Install Guide" onclick="">
+        <div class="getting-started-container">
+          <div class="getting-started noclick" alt="Install Guide" onclick="">
             <i class="material-icons">file_download</i>
             <div class="dropdown">
               <div class="dropdown-link" onclick="displayClick(event, this)" url="http://provision.readthedocs.io/en/stable/doc/install.html">
@@ -112,22 +112,22 @@
               </div>
             </div>
           </div>
-          <div class="display" alt="Demo Videos" onclick="displayClick(event, this)" url="https://www.youtube.com/playlist?list=PLXPBeIrpXjfj5_8Joyehwq1nnaYSPCnmw">
+          <div class="getting-started" alt="Demo Videos" onclick="displayClick(event, this)" url="https://www.youtube.com/playlist?list=PLXPBeIrpXjfj5_8Joyehwq1nnaYSPCnmw">
             <i class="material-icons">video_library</i>
           </div>
-          <div class="display" alt="Mailing List" onclick="displayClick(event, this)" url="http://bit.ly/digitalrebarlist">
+          <div class="getting-started" alt="Mailing List" onclick="displayClick(event, this)" url="http://bit.ly/digitalrebarlist">
             <i class="material-icons">mail</i>
           </div>
-          <div class="display" alt="Live Chat (Gitter)" onclick="displayClick(event, this)" url="https://gitter.im/digitalrebar/core?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge">
+          <div class="getting-started" alt="Live Chat (Gitter)" onclick="displayClick(event, this)" url="https://gitter.im/digitalrebar/core?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge">
             <i class="material-icons">forum</i>
           </div>
-          <div class="display" alt="IRC (Freenode)" onclick="displayClick(event, this)" url="https://webchat.freenode.net/?channels=%23digitalrebar&uio=d4">
+          <div class="getting-started" alt="IRC (Freenode)" onclick="displayClick(event, this)" url="https://webchat.freenode.net/?channels=%23digitalrebar&uio=d4">
             <i class="material-icons">chat</i>
           </div>
-          <div class="display" alt="Issues &amp; Roadmap" onclick="displayClick(event, this)" url="https://github.com/digitalrebar/provision/issues">
+          <div class="getting-started" alt="Issues &amp; Roadmap" onclick="displayClick(event, this)" url="https://github.com/digitalrebar/provision/issues">
             <i class="material-icons">directions</i>
           </div>
-          <div class="display noclick" alt="Documentation" onclick="">
+          <div class="getting-started noclick" alt="Documentation" onclick="">
             <i class="material-icons">book</i>
             <div class="dropdown">
               <div class="dropdown-link" onclick="displayClick(event, this)" url="https://readthedocs.org/projects/provision/downloads/pdf/latest/">
@@ -179,7 +179,7 @@
 
     <section class="footer">
       <footer>
-        &copy; 2017 RackN, Inc.<br/>
+        &copy; 2018 RackN, Inc.<br/>
         <a href="http://provision.readthedocs.org/en/latest/">Documentation</a> | <a href="http://github.com/digitalrebar/provision">Source</a> | <a href="http://rackn.com">Sponsor</a> | <a href="http://github.com/meshiest">Site Designer</a>
       </footer>
     </section>
@@ -216,6 +216,7 @@ var letterTime = 50;
 
 window.$ = document.querySelector.bind(document);
 
+// Starts the typing animation at the top of the page
 function typeWord (word) {
   if(Math.random() < 0.1) {
     word += '.' + extensions[Math.floor(Math.random() * extensions.length)];
@@ -245,24 +246,26 @@ function typeWord (word) {
   setTimeout(nextPhrase, duration) // queue next word
 }
 
+// Randomly creates the next phrase at the top of the page
 function nextPhrase () {
   typeWord (phrases[phraseIndex = (phraseIndex + 1) % phrases.length])
 }
 
-window.onload = function () {
-  setTimeout(nextPhrase, 1000)
-}
+document.addEventListener('DOMContentLoaded', function() {
+  setTimeout(nextPhrase, 1000);
+});
 
+// Called when a getting started card is clicked
 function displayClick(e, elem) {
   if(!e)
-    e = window.event
+    e = window.event;
 
   if (e.stopPropagation)
-    e.stopPropagation()
+    e.stopPropagation();
   else
-    e.cancelBubble = true
+    e.cancelBubble = true;
 
-  window.open(elem.attributes.url.value)
+  window.open(elem.attributes.url.value);
 }
 
 var clouds = [
@@ -270,16 +273,14 @@ var clouds = [
   'cloud_done',
   'cloud_download',
   'cloud_upload'
-]
+];
 
-
-window.onscroll = function () {
-  var scroll = document.body.scrollTop
-  toolbar.className = (scroll > backgroundImage.height - 400 ? 'card' : 'overlay')
-}
+window.addEventListener('scroll', function() {
+  toolbar.className = (window.scrollY > backgroundImage.height - 400 ? 'card' : 'overlay');
+});
 
 // easing functions http://goo.gl/5HLl8
-Math.easeInOutQuad = function (t, b, c, d) {
+function lerpEase (t, b, c, d) {
   t /= d/2;
   if (t < 1) {
     return c/2*t*t + b
@@ -288,26 +289,17 @@ Math.easeInOutQuad = function (t, b, c, d) {
   return -c/2 * (t*(t-2) - 1) + b;
 };
 
-Math.easeInCubic = function(t, b, c, d) {
-  var tc = (t/=d)*t*t;
-  return b+c*(tc);
-};
-
-Math.inOutQuintic = function(t, b, c, d) {
-  var ts = (t/=d)*t,
-  tc = ts*t;
-  return b+c*(6*tc*ts + -15*ts*ts + 10*tc);
-};
-
 // requestAnimationFrame for Smart Animating http://goo.gl/sx5sts
 var requestAnimFrame = (function(){
   return  window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function( callback ){ setTimeout(callback, 1000 / 60); };
 })();
 
+var scrollTimeout = 0;
 function scrollToElem(elem) {
+  clearTimeout(scrollTimeout);
   var e = document.getElementById('_'+elem);
-  scrollTo(e.offsetTop-32, 0, 500);
-  setTimeout(function(){
+  scrollTo(e.offsetTop-40, 0, 500);
+  scrollTimeout = setTimeout(function(){
     window.location.href = "#"+elem;
   }, 500);
 }
@@ -333,7 +325,7 @@ function scrollTo(to, callback, duration) {
     // increment the time
     currentTime += increment;
     // find the value with the quadratic in-out easing function
-    var val = Math.easeInOutQuad(currentTime, start, change, duration);
+    var val = lerpEase(currentTime, start, change, duration);
     // move the document.body
     move(val);
     // do the animation unless its over
