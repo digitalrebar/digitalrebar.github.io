@@ -253,6 +253,7 @@ function nextPhrase () {
 
 document.addEventListener('DOMContentLoaded', function() {
   setTimeout(nextPhrase, 1000);
+  toolbar.className = (window.scrollY > backgroundImage.height - 400 ? 'card' : 'overlay');
 });
 
 // Called when a getting started card is clicked
