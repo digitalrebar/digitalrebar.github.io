@@ -1,0 +1,227 @@
+[
+    {
+        "user": "U7PP78W9Z",
+        "text": "<@U7PP78W9Z> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1508949926.000407"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "Welcome <@U7PP78W9Z>!",
+        "ts": "1508956256.000128"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "coming change for UX (as per call yesterday) will be to start respecting feature flags from the endpoint.  First impact will be that the Workflow page requires being on tip (or a very recent build of the endpoint that supports Features flag).",
+        "ts": "1508956464.000356"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So <@U6QFVRJNB> looks like the relevant section of 5min-drp `bin\/control.sh` for my needs (creating stage map for a profile) are lines 520-539",
+        "ts": "1508968707.000491"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "correct?",
+        "ts": "1508968723.000057"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "In mtg now until 5pm",
+        "ts": "1508968753.000306"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, catch ya later",
+        "ts": "1508968846.000255"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the `drp-setup)` case stanza should be the majority of what you need",
+        "ts": "1508969226.000487"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U416T0AAX> - back online - you still need some help ?",
+        "ts": "1508976035.000280"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U7PP78W9Z> - welcome to our little <#C02L9P26Q|community> here ... :slightly_smiling_face:",
+        "ts": "1508976068.000009"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U6QFVRJNB> you still around?",
+        "ts": "1508981910.000065"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "for a couple minutes ... I have a huge hunk of marinated tri-tip on the barbie ...",
+        "ts": "1508981945.000171"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Got the profile reestablished with the stage map, but now when I put it against the machine I want to re-roll, it isn’t setting the bootenv like it was before…",
+        "ts": "1508981966.000218"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I set it manually thru the UX, so now it looks like:\n```[dradmin@dr-admin drp]$ drpcli machines show 5fcbf69d-287e-4c2c-b085-5858665cd442\n{\n  \"Address\": \"192.168.1.143\",\n  \"Available\": true,\n  \"BootEnv\": \"ubuntu-16.04-install\",\n  \"CurrentTask\": 0,\n  \"Description\": \"Dell PE 860\",\n  \"Errors\": [],\n  \"Name\": \"testnode01\",\n  \"Profile\": {\n    \"Available\": false,\n    \"Errors\": null,\n    \"Name\": \"\",\n    \"ReadOnly\": false,\n    \"Validated\": false\n  },\n  \"Profiles\": [\n    \"necla-default-ubuntu\"\n  ],\n  \"ReadOnly\": false,\n  \"Runnable\": true,\n  \"Tasks\": [],\n  \"Uuid\": \"5fcbf69d-287e-4c2c-b085-5858665cd442\",\n  \"Validated\": true\n}```",
+        "ts": "1508982193.000145"
+    },
+    {
+        "text": "Time to feed the :bear:!",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1508982193.000167"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "what does your stage map look like ?",
+        "ts": "1508982234.000132"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "```[dradmin@dr-admin drp]$ drpcli profiles show necla-default-ubuntu\n{\n  \"Available\": true,\n  \"Description\": \"NECLA Default Stage-map\",\n  \"Errors\": [],\n  \"Name\": \"necla-default-ubuntu\",\n  \"Params\": {\n    \"change-stage\/map\": {\n      \"ssh-access\": \"complete-nowait:Success\",\n      \"ubuntu-16.04-install\": \"ssh-access:Success\"\n    }\n  },\n  \"ReadOnly\": false,\n  \"Validated\": true\n}```",
+        "ts": "1508982263.000070"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "looks OK? (or not?)",
+        "ts": "1508982449.000132"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I'm not sure about the \"ssh-access\" piece ... did Greg provide that for you ?  I'm used to manipulating from \"discover\" forward",
+        "ts": "1508982495.000049"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "It’s one of the RackN-provided stages, yes?",
+        "ts": "1508982563.000089"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yes it is - but you have to have a Machine enter the \"right stage\" to kick off the stage workflow",
+        "ts": "1508982602.000151"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "The order is supposed to be: ubuntu-16.04-install --&gt; ssh-access --&gt; done",
+        "ts": "1508982611.000102"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So in the JSON, the order matters?",
+        "ts": "1508982640.000018"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Here’s the JSON file I wrote:\n```[dradmin@dr-admin drp]$ cat necla-default.json\n{\n  \"Available\": true,\n  \"Description\": \"NECLA Default Stage-map\",\n  \"Name\": \"necla-default-ubuntu\",\n  \"Params\": {\n      \"change-stage\/map\": {\n        \"ubuntu-16.04-install\": \"ssh-access:Success\",\n        \"ssh-access\": \"complete-nowait:Success\"\n    }\n  }\n}```",
+        "ts": "1508982712.000075"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "And then (after deleting the old `necla-default-ubuntu` profile first) I did:\n`drpcli profiles create - &lt; necla-default.json`",
+        "ts": "1508982803.000009"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "DRP seemingly reordered it to:\n```  \"Params\": {\n    \"change-stage\/map\": {\n      \"ssh-access\": \"complete-nowait:Success\",\n      \"ubuntu-16.04-install\": \"ssh-access:Success\"\n    }\n  },```",
+        "ts": "1508982855.000088"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the process is right - I think it's just a matter of the stage map being right to match where your Machine is at currently - and where you want it to get to",
+        "ts": "1508982928.000103"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "TBH - I'm not sure about that flow - and we'd need greg to weigh in on that",
+        "ts": "1508982955.000080"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I think the machine’s bootenv needs to be set to a stage in the stage map, which it is",
+        "ts": "1508983071.000025"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "n\/m… The *stage* needs to be set, not the bootenv",
+        "ts": "1508983186.000214"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "What confuses me is that the bootenv and the stage are named the same",
+        "ts": "1508983204.000255"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Set the stage appropriately, and now the bootenv is set to the same automatically… which is right",
+        "ts": "1508983469.000042"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Now I have:\n```[dradmin@dr-admin drp]$ drpcli machines show 5fcbf69d-287e-4c2c-b085-5858665cd442\n{\n  \"Address\": \"192.168.1.143\",\n  \"Available\": true,\n  \"BootEnv\": \"ubuntu-16.04-install\",\n  \"CurrentTask\": -1,\n  \"Description\": \"Dell PE 860\",\n  \"Errors\": [],\n  \"Name\": \"testnode01\",\n  \"Profile\": {\n    \"Available\": false,\n    \"Errors\": null,\n    \"Name\": \"\",\n    \"ReadOnly\": false,\n    \"Validated\": false\n  },\n  \"Profiles\": [\n    \"necla-default-ubuntu\"\n  ],\n  \"ReadOnly\": false,\n  \"Runnable\": true,\n  \"Stage\": \"ubuntu-16.04-install\",\n  \"Tasks\": [\n    \"change-stage\"\n  ],\n  \"Uuid\": \"5fcbf69d-287e-4c2c-b085-5858665cd442\",\n  \"Validated\": true\n}```",
+        "ts": "1508983481.000076"
+    },
+    {
+        "text": "Time to feed the :bear:!",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1508983481.000103"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "PXE-booted the node, let’s see what I get…",
+        "ts": "1508983646.000009"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Might WiFi capped out, and dinner is on table - need input on stage map transitions, the Ubuntu install is successfully completed, right?  ",
+        "ts": "1508983919.000063"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "enjoy dinner, talk to you tomorrow — installs on these old Dells take a while, and no remote console :cry:",
+        "ts": "1508984036.000127"
+    }
+]

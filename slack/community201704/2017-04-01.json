@@ -1,0 +1,508 @@
+[
+    {
+        "text": "Hello, how can I run the vagrant\/compose setup with DHCP? ",
+        "username": "chilicat",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491088357.487690"
+    },
+    {
+        "text": "vagrant as the admin or nodes?  I could never figure out how to make the vagrant respect DHCP boot",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491089229.531589"
+    },
+    {
+        "text": "@chilicat what are you trying to do w\/ Vagrant?  We don't use it that much",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491089303.535237"
+    },
+    {
+        "text": "not sure what you mean with admin or nodes...  DR runs on the base node as docker container",
+        "username": "chilicat",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491089306.535354"
+    },
+    {
+        "text": "are you running the base via Vagrant?",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491089320.536021"
+    },
+    {
+        "text": "yes",
+        "username": "chilicat",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491089327.536400"
+    },
+    {
+        "text": "(btw: your admin password issue may just be complexity requirements - the password must be alpha and numeric)",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491089349.537497"
+    },
+    {
+        "text": "yes the password must be \"non-simple\" just wanted to report that the ui doesn't seem to tell you :)",
+        "username": "chilicat",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491089399.539788"
+    },
+    {
+        "text": "ah, will add some guideance",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491089426.541409"
+    },
+    {
+        "text": "I could never find a way for a Vagrant node to DHCP boot - it seems like there's a very strong assumption that you start with a working image.",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491089427.541463"
+    },
+    {
+        "text": "so, you'd have to mix and match VirtualBox VMs &amp; Vagrant to simulate boot.  In that case, I'd recommend using 100% virtual box.",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491089464.543390"
+    },
+    {
+        "text": "in vagrant there is a docker setup - maybe my question is not vagrant specific. I want to add the dhcp service to my setup (its off by default)",
+        "username": "chilicat",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491089475.543924"
+    },
+    {
+        "text": "do I use .\/init_files.sh ?",
+        "username": "chilicat",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491089494.544994"
+    },
+    {
+        "text": "if you use run-in-server.sh then add --con-dhcp --con-provisioner",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491089507.545599"
+    },
+    {
+        "text": "the recommended approach is to rerun run-in-server with the added commands and it will update the configs.  ",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491089588.549592"
+    },
+    {
+        "text": "I will try that. ",
+        "username": "chilicat",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491089606.550552"
+    },
+    {
+        "text": "does it also use the docker compose files? or is that a different setup?",
+        "username": "chilicat",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491089623.551441"
+    },
+    {
+        "text": "digitalrebar\/deploy\/compose",
+        "username": "chilicat",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491089634.551991"
+    },
+    {
+        "text": "run-in-system runs the Ansible digitalrebar.yml file",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491089724.556698"
+    },
+    {
+        "text": "that file then runs the command: \".\/setup.sh --tag {{ dr_tag }} {{ dr_workloads | default([]) | join(\" \") }}\" to correctly configure docker-compose config\n",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491089754.558247"
+    },
+    {
+        "text": "then rebar runs with docker-compose -up",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491089769.558932"
+    },
+    {
+        "text": "obviously, there's a lot of other setup steps, but that's the key elements of the DR config",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491089788.560029"
+    },
+    {
+        "text": "I see, yea it all runs to the setup.sh. I try my luc",
+        "username": "chilicat",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491089858.563318"
+    },
+    {
+        "text": "thanks",
+        "username": "chilicat",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491089864.563614"
+    },
+    {
+        "text": "So, YES.  Everything ultimately runs to docker-compose.",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491089873.564021"
+    },
+    {
+        "text": "even the core\/tools\/docker-admin.sh scripts are doing the same thing.  They just assume that you've already got the pre-reqs.",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491089928.566716"
+    },
+    {
+        "text": "we",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491089946.567546"
+    },
+    {
+        "text": "if all you need is DHCP\/Provision.",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491090013.570588"
+    },
+    {
+        "text": "preview github.com\/rackn\/rocket-skates",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491090031.571550"
+    },
+    {
+        "text": "I also need the deployment mechanisms put  a slim DHCP\/PXE\/TFTP in go sounds good",
+        "username": "chilicat",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491090119.575891"
+    },
+    {
+        "text": "is there any content management for DR?",
+        "username": "chilicat",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491090140.576998"
+    },
+    {
+        "text": "We use deployments to manage parallel application deployments and then track the state of them using the roles system.   Not exactly what I'd consider content management.  Do you have a specific use case or platform in mind?",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491090409.590127"
+    },
+    {
+        "text": "In a on-premise deployment we must deliver all our software packages (rpm, zip, docker containers, isos). I was just wondering if there was something where you manage the content and associate content with a deployment.",
+        "username": "chilicat",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491090499.594482"
+    },
+    {
+        "text": "I little like Katello ",
+        "username": "chilicat",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491090523.595635"
+    },
+    {
+        "text": "Ok was able to add the dhcp service... vagrant uses quickstart.sh which also accepts the parameter you gave me.",
+        "username": "chilicat",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491090591.598832"
+    },
+    {
+        "text": "glad the vagrant is working!  it's been a while since I was testing it",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491090624.600537"
+    },
+    {
+        "text": "I had some issue with the swapfile... I was switching back to a older ubuntu - but else it works",
+        "username": "chilicat",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491090658.602326"
+    },
+    {
+        "text": "got it, there are a few ways to handle that, yes.   we've done  \"air gap\" deploys where there's no external connectivity.  Your request is a variant.  takes some twiddling.  @galthaus would be a better person to answer.",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491090702.604603"
+    },
+    {
+        "text": "I saw the issue, thanks for opening it - that helps me know what to check'",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491090719.605534"
+    },
+    {
+        "text": "since you can add your own roles, you could just inject a few bash or ansible commands that would pre\/set the environment.  also, the proxy &amp; mirrors are configurable so you can point those to internal resources",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491090815.610669"
+    },
+    {
+        "text": "One more question, is it possible to use DR when you have absolutly no control over DNS and DHCP. I know the functionality is very limited in this case but it would be still possible to deploy software on existing machines,",
+        "username": "chilicat",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491090818.610820"
+    },
+    {
+        "text": "100% yes.  that's pretty normal scenario.  We would just need forward or next boot configured for DHCP (e.g.: we work w\/ infoblox).  For DNS, that's configurable too.  Can an own, delegate, drive or ignore DNS.  Pretty flexible about that.",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491090944.617259"
+    },
+    {
+        "text": "this is old, but mostly right &gt; http:\/\/digital-rebar.readthedocs.io\/en\/latest\/deployment\/old\/external-services.html?highlight=dns",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491091040.622512"
+    },
+    {
+        "text": "I found an out of date page about DHCP that I'll fix.  please disregard &gt; http:\/\/digital-rebar.readthedocs.io\/en\/latest\/faq\/dedicated_dhcp.html?highlight=dhcp",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491091098.625321"
+    },
+    {
+        "text": "thanks. ",
+        "username": "chilicat",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491091112.626082"
+    },
+    {
+        "text": "call my vms pxe request works... just TFTP times out :)",
+        "username": "chilicat",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491091138.627409"
+    },
+    {
+        "text": "ah... that's sadly common.  TFTP and Docker port mapping are not friends.  ",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491091184.629792"
+    },
+    {
+        "text": "that's a primary reason why we're doing Rocket Skates as a stand alone binary",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491091199.630583"
+    },
+    {
+        "text": "the last line is: \"TFTP...\" ",
+        "username": "chilicat",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491091223.632705"
+    },
+    {
+        "text": "maybe it is doing something?",
+        "username": "chilicat",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491091229.633153"
+    },
+    {
+        "text": "it's going to be inconsistent because the TFTP ports are being assigned into ranges that Docker is unhappy about",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491091237.633737"
+    },
+    {
+        "text": "if you scroll back in this chat history, you'll see dicussions about this.",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491091258.635282"
+    },
+    {
+        "text": "which container has the TFTP server?",
+        "username": "chilicat",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491091376.642055"
+    },
+    {
+        "text": "provisioner?",
+        "username": "chilicat",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491091385.642537"
+    },
+    {
+        "text": "yes",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491091429.644992"
+    },
+    {
+        "text": "sorry, gtr...  the TFTP discussion from earlier was on 2\/16 w\/ mech422 and @galthaus ",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491091540.650796"
+    },
+    {
+        "text": "but dns is also in a the low range... that is not a problem for docker?",
+        "username": "chilicat",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491091624.655075"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It is really a protocol problem.",
+        "ts": "1491095327.845187"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Make sure you have tftp nat modules loaded into your kernel.",
+        "ts": "1491095340.845849"
+    },
+    {
+        "text": "I guess that would be \"modprobe nf_nat_tftp\"",
+        "username": "chilicat",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491096007.879825"
+    },
+    {
+        "text": "have to try that tomorrow.",
+        "username": "chilicat",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491096013.880218"
+    },
+    {
+        "text": "thanks for your heklp",
+        "username": "chilicat",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491096015.880352"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yeah",
+        "ts": "1491096026.880918"
+    },
+    {
+        "text": "Figured out what the problem was. The vagrant box has two interfaces where the eth1 is in the shared network. But \"Next Server\" option is set to the ip address of the eth0. ",
+        "username": "chilicat",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491104802.289250"
+    }
+]

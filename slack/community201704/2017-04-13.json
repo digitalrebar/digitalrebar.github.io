@@ -1,0 +1,1433 @@
+[
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So, looking to trial Provision on the same server that I have full DR running on -- I've downed DR by running 'docker-compose stop' in the deploy\/compose dir - that's all that's needed to bring DR down, correct?",
+        "ts": "1492101691.223909"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes",
+        "ts": "1492101995.348646"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Cool. Now I can curlbash the Provision into the  same 'digitalrebar' directory, or should I use another dir above that?",
+        "ts": "1492102201.431972"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "different dir",
+        "ts": "1492102308.476712"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "use the --isolated flag.",
+        "ts": "1492102323.482879"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "it will keep everything in that directory for now.",
+        "ts": "1492102341.490512"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Cool, thx",
+        "ts": "1492102373.503408"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "np",
+        "ts": "1492102383.507501"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Getting a 'No package p7zip-full available' error",
+        "ts": "1492102506.559301"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "what OS?",
+        "ts": "1492102517.563914"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "This on CentOS 7.x",
+        "ts": "1492102523.566722"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "try: yum install -y p7zip",
+        "ts": "1492102538.573113"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yup, that worked",
+        "ts": "1492102596.597830"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "sigh - it is p7zip-full on ubuntu\/debian",
+        "ts": "1492102607.602497"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "just p7zip on centos",
+        "ts": "1492102613.605106"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "fixing now.",
+        "ts": "1492102616.606011"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Love this differing pkg names across distros thing :-\/",
+        "ts": "1492102647.619233"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yeah- I did a replace and was too aggressive.",
+        "ts": "1492102709.645216"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "in about 15 minutes, all the packages and tree will be updated.  It will work.  Since you already have it installed now, it should be fine to continue.",
+        "ts": "1492102740.658618"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "How to continue?",
+        "ts": "1492102758.665814"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Rerun",
+        "ts": "1492102767.669964"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Ok",
+        "ts": "1492102773.672356"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It tests for the package and skips if already there.",
+        "ts": "1492102777.674093"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "the binary that is.",
+        "ts": "1492102781.675722"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Is the '--data-root=' line in readthedocs QuickStart incorrect now?",
+        "ts": "1492103094.810687"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It should be.  The install script should have kicked out an example.",
+        "ts": "1492103116.819937"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "References \"discovery-load.sh\" instead of \"digitalrebar\"",
+        "ts": "1492103140.829996"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Line right above it",
+        "ts": "1492103159.837811"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "It did, and I went with the outputted example",
+        "ts": "1492103167.841012"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay so is it running? :slightly_smiling_face:",
+        "ts": "1492103184.847958"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "export RS_KEY=rocketskates:r0cketsk8ts",
+        "ts": "1492103209.857943"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": ".\/drpcli users list",
+        "ts": "1492103218.861820"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": ".\/drcpli prefs list",
+        "ts": "1492103224.864300"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yes running",
+        "ts": "1492103225.864856"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Should be able to do:",
+        "ts": "1492103246.873479"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "in browser",
+        "ts": "1492103252.875796"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "https:\/\/&lt;ip&gt;:8092\/ui\/?token=rocketskates:r0cketsk8ts",
+        "ts": "1492103280.886844"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yup dricli cmds work",
+        "ts": "1492103290.890848"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "*drpcli",
+        "ts": "1492103323.904298"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "then run: tools\/discovery-load.sh",
+        "ts": "1492103334.908488"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That will put the pieces in place to do discovery.",
+        "ts": "1492103342.911648"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Cool",
+        "ts": "1492103364.920724"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Did the browser thingee work?",
+        "ts": "1492103390.930990"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Hold on, let me try",
+        "ts": "1492103402.935698"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "No, URL not working",
+        "ts": "1492103555.998391"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I do see ports 8091\/8092 listening on server ",
+        "ts": "1492103584.010165"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "https:\/\/&lt;ip&gt;:8092\/swagger-ui",
+        "ts": "1492103613.021671"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Nope",
+        "ts": "1492103683.050307"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Firewall maybe? Will nmap DR server",
+        "ts": "1492103706.059431"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yup, only SSH port open...",
+        "ts": "1492103747.075825"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay -  are these local firewall rules on your box?",
+        "ts": "1492103764.082862"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Err - dr server?",
+        "ts": "1492103775.087166"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yup - firewalld ",
+        "ts": "1492103820.106041"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - Note to self update docs to talk about open port reqs.",
+        "ts": "1492103836.112015"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I indirectly list them in the docs, but ...",
+        "ts": "1492103845.116297"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Stopped that, will try again",
+        "ts": "1492103855.120130"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "you will need to open ports, udp 67, udp 69, tcp 8091, tcp 8092",
+        "ts": "1492103880.129982"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The last two are configurable (well all are configurable, but tftp and dhcp WIGGGGG OUTTTTT if you change then from 69 and 67 respectively).",
+        "ts": "1492103920.145729"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Ok, tried swagger, got UI but error on screen \"Can't read from server. It may not have the appropriate access-control-origin settings.\"",
+        "ts": "1492103959.161018"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "sigh - need to adjust that.  The text box has a URL it defaults to localhost or something like.  Put the IP of the Host in that field instead.",
+        "ts": "1492103995.175033"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Regular (?) UI page working",
+        "ts": "1492104009.180324"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "be sure to add ?token=rocketskates:r0cketsk8ts",
+        "ts": "1492104039.193057"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Ok, in",
+        "ts": "1492104082.210454"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "There should have been a little dialog for you to enter your username\/password or token.",
+        "ts": "1492104101.218327"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It is small.  This is working in progress.",
+        "ts": "1492104111.222477"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Do I have to declare a subnet if not doing DHCP thru Provision?",
+        "ts": "1492104129.229002"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "oh -- yeah.",
+        "ts": "1492104147.236848"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "you should be okay.",
+        "ts": "1492104149.237909"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Make sure preferences are set to sledgehammer for default and discovery for unknown.",
+        "ts": "1492104172.247573"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So, don't have to, right?",
+        "ts": "1492104178.249908"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "correct.",
+        "ts": "1492104184.252446"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You need to have next server point to your IP and bootfile should be lpxelinux.0",
+        "ts": "1492104219.266734"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yup, SH in defaultBootEnv",
+        "ts": "1492104239.275246"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "in the bootenvs section discovery, local, and sledgehammer should be available.",
+        "ts": "1492104264.285296"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Let me mod my routers DHCP settings",
+        "ts": "1492104272.288551"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Does your DHCP server respond with DNS settings like Domain Name and DNS server?",
+        "ts": "1492104290.296102"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Nothing in 'local' showing...",
+        "ts": "1492104321.309099"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah - it should be just available.",
+        "ts": "1492104336.315277"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yes, DHCP server does provide those (it's a pfSense box.)",
+        "ts": "1492104374.330365"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - then you are even betterer",
+        "ts": "1492104387.335850"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Another note to self - document external DHCP server case.",
+        "ts": "1492104397.340374"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We need DNS domain name when we make up a name.",
+        "ts": "1492104419.349468"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "so - I'm walking you through discovery, but you can also add machine directly as well.",
+        "ts": "1492104600.425490"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "If you know that a machine is coming in as an IP.  You can create a machine by IP and tell it the bootenv to run when contacted.  That works as well.",
+        "ts": "1492104636.441694"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Ok, time to boot some bare metal and see what happens :)",
+        "ts": "1492104764.496567"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay then  :slightly_smiling_face:",
+        "ts": "1492104787.506305"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "When sledgehammer runs, where does it store the discovery info?",
+        "ts": "1492104825.522362"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Okay - so dr-provision is much slimmer.  Its purpose is just provisioning and installing OS.  It is not meant to inventory and so forth.  That is the next step in our integration path.  Provision will hook into DigitalRebar for that path.",
+        "ts": "1492104894.550726"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It will create a machine in dr-provision, but it won't have the full inventory data like DR does.",
+        "ts": "1492104924.562894"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Ah, I see",
+        "ts": "1492104951.573816"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So am waiting on PXE boot now... Dell PE R510 boot is sloooooow",
+        "ts": "1492105030.606634"
+    },
+    {
+        "text": "Time to feed the :bear:!",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1492105030.606665"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Loading sledgehammer\/.... :)",
+        "ts": "1492105165.663112"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Hmmm... failed on loading second-stage initramfs",
+        "ts": "1492105210.682211"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "wget: can't connect to remote host (IP): connection refused",
+        "ts": "1492105264.704913"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Does it say what ip?",
+        "ts": "1492105293.717387"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Also need another param",
+        "ts": "1492105305.722592"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F4Z1WQDA8\/image_uploaded_from_ios.jpg|SH boot failure>",
+        "file": {
+            "id": "F4Z1WQDA8",
+            "created": 1492105348,
+            "timestamp": 1492105348,
+            "name": "Image uploaded from iOS.jpg",
+            "title": "SH boot failure",
+            "mimetype": "image\/jpeg",
+            "filetype": "jpg",
+            "pretty_type": "JPEG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 2383797,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F4Z1WQDA8\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F4Z1WQDA8\/download\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4Z1WQDA8-b9e6acc93b\/image_uploaded_from_ios_64.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4Z1WQDA8-b9e6acc93b\/image_uploaded_from_ios_80.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4Z1WQDA8-b9e6acc93b\/image_uploaded_from_ios_360.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 270,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4Z1WQDA8-b9e6acc93b\/image_uploaded_from_ios_480.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 360,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4Z1WQDA8-b9e6acc93b\/image_uploaded_from_ios_160.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4Z1WQDA8-b9e6acc93b\/image_uploaded_from_ios_720.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 540,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4Z1WQDA8-b9e6acc93b\/image_uploaded_from_ios_800.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 600,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4Z1WQDA8-b9e6acc93b\/image_uploaded_from_ios_960.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 720,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4Z1WQDA8-b9e6acc93b\/image_uploaded_from_ios_1024.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 768,
+            "image_exif_rotation": 1,
+            "original_w": 3264,
+            "original_h": 2448,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F4Z1WQDA8\/image_uploaded_from_ios.jpg",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F4Z1WQDA8-2f228ee8d8",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "upload_reply_to": "0C92C4DC-0F08-4004-9F60-912DD2CD1C39",
+        "ts": "1492105348.740176"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Did you start drprovison with static ip param",
+        "ts": "1492105364.747095"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yes",
+        "ts": "1492105381.754066"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Is 1.148 the drop",
+        "ts": "1492105411.766917"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yes, that's the Provision svr ",
+        "ts": "1492105433.775509"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay",
+        "ts": "1492105463.788409"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "why :80?  hmm",
+        "ts": "1492105498.803642"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F4Z3FSHGD\/image_uploaded_from_ios.jpg|Provision messages>",
+        "file": {
+            "id": "F4Z3FSHGD",
+            "created": 1492105515,
+            "timestamp": 1492105515,
+            "name": "Image uploaded from iOS.jpg",
+            "title": "Provision messages",
+            "mimetype": "image\/jpeg",
+            "filetype": "jpg",
+            "pretty_type": "JPEG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 3560855,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F4Z3FSHGD\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F4Z3FSHGD\/download\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4Z3FSHGD-21db789a0c\/image_uploaded_from_ios_64.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4Z3FSHGD-21db789a0c\/image_uploaded_from_ios_80.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4Z3FSHGD-21db789a0c\/image_uploaded_from_ios_360.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 270,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4Z3FSHGD-21db789a0c\/image_uploaded_from_ios_480.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 360,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4Z3FSHGD-21db789a0c\/image_uploaded_from_ios_160.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4Z3FSHGD-21db789a0c\/image_uploaded_from_ios_720.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 540,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4Z3FSHGD-21db789a0c\/image_uploaded_from_ios_800.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 600,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4Z3FSHGD-21db789a0c\/image_uploaded_from_ios_960.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 720,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4Z3FSHGD-21db789a0c\/image_uploaded_from_ios_1024.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 768,
+            "image_exif_rotation": 1,
+            "original_w": 3264,
+            "original_h": 2448,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F4Z3FSHGD\/image_uploaded_from_ios.jpg",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F4Z3FSHGD-923c514caa",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "upload_reply_to": "B00A859F-FCE5-4FEA-A94A-A357469D1A33",
+        "ts": "1492105515.810787"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay in can you cat the tftpboot\/pxelinux.cfg\/default file",
+        "ts": "1492105702.891295"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Does not exist",
+        "ts": "1492105802.934602"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - we should have default.  That is what is being strange, I think.",
+        "ts": "1492105850.955288"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "looking at it now.",
+        "ts": "1492105867.962626"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F4ZLZFH54\/image_uploaded_from_ios.jpg|Image uploaded from iOS>",
+        "file": {
+            "id": "F4ZLZFH54",
+            "created": 1492105888,
+            "timestamp": 1492105888,
+            "name": "Image uploaded from iOS.jpg",
+            "title": "Image uploaded from iOS",
+            "mimetype": "image\/jpeg",
+            "filetype": "jpg",
+            "pretty_type": "JPEG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 2559111,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F4ZLZFH54\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F4ZLZFH54\/download\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4ZLZFH54-3b96614a6d\/image_uploaded_from_ios_64.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4ZLZFH54-3b96614a6d\/image_uploaded_from_ios_80.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4ZLZFH54-3b96614a6d\/image_uploaded_from_ios_360.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 270,
+            "thumb_360_h": 360,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4ZLZFH54-3b96614a6d\/image_uploaded_from_ios_480.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 360,
+            "thumb_480_h": 480,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4ZLZFH54-3b96614a6d\/image_uploaded_from_ios_160.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4ZLZFH54-3b96614a6d\/image_uploaded_from_ios_720.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 540,
+            "thumb_720_h": 720,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4ZLZFH54-3b96614a6d\/image_uploaded_from_ios_800.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 1067,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4ZLZFH54-3b96614a6d\/image_uploaded_from_ios_960.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 720,
+            "thumb_960_h": 960,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4ZLZFH54-3b96614a6d\/image_uploaded_from_ios_1024.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 768,
+            "thumb_1024_h": 1024,
+            "image_exif_rotation": 1,
+            "original_w": 2448,
+            "original_h": 3264,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F4ZLZFH54\/image_uploaded_from_ios.jpg",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F4ZLZFH54-ee821dfb59",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "upload_reply_to": "8B96CD41-4BED-4F91-AF5A-1BBDC20B43CB",
+        "ts": "1492105893.973964"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yeah - I recreated it here.  I guess we just broke something.  Recently - More unit tests to add.",
+        "ts": "1492105924.987405"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Always more tests :)",
+        "ts": "1492105965.005399"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "try this:",
+        "ts": "1492106238.123739"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": ".\/drpcli prefs set unknownBootEnv ignore",
+        "ts": "1492106256.131402"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": ".\/drpcli prefs set unknownBootEnv discovery",
+        "ts": "1492106266.135912"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "See if that creates the file.",
+        "ts": "1492106284.143575"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Nope",
+        "ts": "1492106401.195690"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "ok",
+        "ts": "1492106410.200985"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F4Z28FHCL\/image_uploaded_from_ios.jpg|Image uploaded from iOS>",
+        "file": {
+            "id": "F4Z28FHCL",
+            "created": 1492106425,
+            "timestamp": 1492106425,
+            "name": "Image uploaded from iOS.jpg",
+            "title": "Image uploaded from iOS",
+            "mimetype": "image\/jpeg",
+            "filetype": "jpg",
+            "pretty_type": "JPEG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 2588437,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F4Z28FHCL\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F4Z28FHCL\/download\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4Z28FHCL-7743e82573\/image_uploaded_from_ios_64.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4Z28FHCL-7743e82573\/image_uploaded_from_ios_80.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4Z28FHCL-7743e82573\/image_uploaded_from_ios_360.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 270,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4Z28FHCL-7743e82573\/image_uploaded_from_ios_480.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 360,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4Z28FHCL-7743e82573\/image_uploaded_from_ios_160.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4Z28FHCL-7743e82573\/image_uploaded_from_ios_720.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 540,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4Z28FHCL-7743e82573\/image_uploaded_from_ios_800.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 600,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4Z28FHCL-7743e82573\/image_uploaded_from_ios_960.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 720,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4Z28FHCL-7743e82573\/image_uploaded_from_ios_1024.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 768,
+            "image_exif_rotation": 1,
+            "original_w": 3264,
+            "original_h": 2448,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F4Z28FHCL\/image_uploaded_from_ios.jpg",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F4Z28FHCL-72d06ff574",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "upload_reply_to": "46CB25FB-12F0-4694-9FED-7E642D367ED9",
+        "ts": "1492106429.210063"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I'm silly - it isn't rendered that way anymore .",
+        "ts": "1492107498.667628"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "sigh",
+        "ts": "1492107499.668218"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "curl <http:\/\/127.0.0.1:8091\/pxelinux.cfg\/default>",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1492107776.000000"
+        },
+        "ts": "1492107540.685326"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It think I see the busted-ness.  We switched to inline rendering and it isn't working on a shift.",
+        "ts": "1492107860.819382"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We don't use the filesystem for content anymore.  Should add preview for bootenvs and templates.",
+        "ts": "1492107897.834995"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "NOtes So far:\n1. Document Port requirements for DRP\n2. Document DHCP requirements when not using DRP as DHCP (option 15 (discovery), bootfile, nextserver).\n3. Bug in changing unknown bootenv and rendering content.  Changed ignore to discovery and ignore is still being served.",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1492108007.000000"
+        },
+        "ts": "1492107969.865605"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So, at this moment, busted &amp; cant continue?",
+        "ts": "1492108212.971317"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "hmm - try this.",
+        "ts": "1492108348.030457"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "``` \n   .\/drpcli prefs list\n   .\/drpcli prefs set unknownBootEnv ignore\n   curl <http:\/\/127.0.0.1:8091\/pxelinux.cfg\/default>\n   .\/drpcli prefs list\n   .\/drpcli prefs set unknownBootEnv discovery\n   curl <http:\/\/127.0.0.1:8091\/pxelinux.cfg\/default>```",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1492108741.000000"
+        },
+        "ts": "1492108391.048623"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The discovery file should look like this:\n```\nDEFAULT discovery\nPROMPT 0\nTIMEOUT 10\nLABEL discovery\n  KERNEL sledgehammer\/708de8b878e3818b1c1bb598a56de968939f9d4b\/vmlinuz0\n  INITRD sledgehammer\/708de8b878e3818b1c1bb598a56de968939f9d4b\/stage1.img\n  APPEND rootflags=loop root=live:\/sledgehammer.iso rootfstype=auto ro liveimg rd_NO_LUKS rd_NO_MD rd_NO_DM provisioner.web=<http:\/\/127.0.0.1:8091> rs.api=<https:\/\/127.0.0.1:8092>\n  IPAPPEND 2\n```",
+        "ts": "1492109078.335252"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The 127.0.0.1 is because my request came from 127.0.0.1",
+        "ts": "1492109114.350596"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I'm now wondering if the tftp error was an issue.  You could also make sure that your pref is discovery and reboot.",
+        "ts": "1492110009.730617"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "See if we hit the tftp error again.",
+        "ts": "1492110015.733039"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F4ZP4RLRM\/image_uploaded_from_ios.jpg|Image uploaded from iOS> and commented: Looks good?",
+        "file": {
+            "id": "F4ZP4RLRM",
+            "created": 1492112022,
+            "timestamp": 1492112022,
+            "name": "Image uploaded from iOS.jpg",
+            "title": "Image uploaded from iOS",
+            "mimetype": "image\/jpeg",
+            "filetype": "jpg",
+            "pretty_type": "JPEG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 2957959,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F4ZP4RLRM\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F4ZP4RLRM\/download\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4ZP4RLRM-8175494cc5\/image_uploaded_from_ios_64.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4ZP4RLRM-8175494cc5\/image_uploaded_from_ios_80.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4ZP4RLRM-8175494cc5\/image_uploaded_from_ios_360.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 270,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4ZP4RLRM-8175494cc5\/image_uploaded_from_ios_480.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 360,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4ZP4RLRM-8175494cc5\/image_uploaded_from_ios_160.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4ZP4RLRM-8175494cc5\/image_uploaded_from_ios_720.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 540,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4ZP4RLRM-8175494cc5\/image_uploaded_from_ios_800.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 600,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4ZP4RLRM-8175494cc5\/image_uploaded_from_ios_960.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 720,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4ZP4RLRM-8175494cc5\/image_uploaded_from_ios_1024.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 768,
+            "image_exif_rotation": 1,
+            "original_w": 3264,
+            "original_h": 2448,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F4ZP4RLRM\/image_uploaded_from_ios.jpg",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F4ZP4RLRM-6d6ecb955b",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 1,
+            "initial_comment": {
+                "id": "Fc4Z2S3M18",
+                "created": 1492112022,
+                "timestamp": 1492112022,
+                "user": "U416T0AAX",
+                "is_intro": true,
+                "comment": "Looks good?"
+            }
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "upload_reply_to": "92511C4F-F64C-43BC-BB69-1CCAC0C15465",
+        "ts": "1492112022.513465"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yeah if provisioner.web=<http:\/\/127.0.0.1:8091> on the second to last line",
+        "ts": "1492112116.548901"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Should that not be the public IP?",
+        "ts": "1492112168.568308"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We build the reply based upon the dest IP.",
+        "ts": "1492112193.578082"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "run it with your node's iP.",
+        "ts": "1492112203.582000"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "curl <http:\/\/node>'s IP:8091\/pxelinux.cfg\/default",
+        "ts": "1492112218.587488"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "it should pop out with a different IP.",
+        "ts": "1492112227.590962"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Node being the Provision server, or the client server?",
+        "ts": "1492112436.670187"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "provisioner server",
+        "ts": "1492112448.674387"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Ok, did change the URL",
+        "ts": "1492112504.695910"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Reboot the node and look for the tftp error in the drp log",
+        "ts": "1492112528.704353"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "The PXE client boot did fail again in the same way- that was expected?",
+        "ts": "1492114078.306896"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "hmm - I guess it is good, but was hoping not.",
+        "ts": "1492115384.804351"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "sorry for the delay.  <@U416T0AAX> - can you run a command on the system stuck in ash",
+        "ts": "1492115642.904012"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "cat \/proc\/cmdline",
+        "ts": "1492115646.905682"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "grep -o 'provisioner.web=[^ ]*' \/proc\/cmdline",
+        "ts": "1492115686.920504"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Will do when I can in a bit - taking kidddo to karate :)",
+        "ts": "1492115804.965137"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "np",
+        "ts": "1492115816.969521"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F4ZSJ01JS\/console-1.jpg|pxe-console-1.jpg>",
+        "file": {
+            "id": "F4ZSJ01JS",
+            "created": 1492129911,
+            "timestamp": 1492129911,
+            "name": "console-1.jpg",
+            "title": "pxe-console-1.jpg",
+            "mimetype": "image\/jpeg",
+            "filetype": "jpg",
+            "pretty_type": "JPEG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 32859,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F4ZSJ01JS\/console-1.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F4ZSJ01JS\/download\/console-1.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4ZSJ01JS-ced5a1e0f2\/console-1_64.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4ZSJ01JS-ced5a1e0f2\/console-1_80.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4ZSJ01JS-ced5a1e0f2\/console-1_360.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 200,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4ZSJ01JS-ced5a1e0f2\/console-1_480.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 267,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4ZSJ01JS-ced5a1e0f2\/console-1_160.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "image_exif_rotation": 1,
+            "original_w": 720,
+            "original_h": 400,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F4ZSJ01JS\/console-1.jpg",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F4ZSJ01JS-f8dbfcf1f4",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1492129913.425138"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "here you go, <@U02DGQYK1>",
+        "ts": "1492129929.427217"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Thx. If you added \/24 to the command line of drprovison please stop the server remove it and restart.  ",
+        "ts": "1492130159.458942"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I did… will do.",
+        "ts": "1492130311.479503"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Another thing to add to the checks on start up :slightly_smiling_face:",
+        "ts": "1492130550.512097"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "did the curlbash output say to put “\/24” at the end of the IP, or did I just goof?",
+        "ts": "1492130780.542527"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "readthedocs site does not have that",
+        "ts": "1492130801.545237"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It should not.  The readthedocs should not have it either. I bet it might have.  My bad.  ",
+        "ts": "1492131597.648296"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Unfortunately, I typed in something in ash that caused it to coredump… And I don’t have remote power control on that server I was using :disappointed:",
+        "ts": "1492131839.682672"
+    },
+    {
+        "text": "hangs head in shame",
+        "type": "message",
+        "subtype": "me_message",
+        "user": "U416T0AAX",
+        "ts": "1492131853.684586"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "This look like the problematic bit in `install.sh`:",
+        "ts": "1492132448.766767"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "```[dradmin@dr-admin ~]$ \/sbin\/ip -o -4 addr show scope global |head -1 |awk '{print $4}'\n192.168.1.148\/24```",
+        "ts": "1492132460.768476"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah I lifted to much code. Argh.  ",
+        "ts": "1492132472.770102"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "That’s why the community needs to test :slightly_smiling_face:",
+        "ts": "1492132544.780928"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Well thanks and sorry. ",
+        "ts": "1492132575.785179"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "np",
+        "ts": "1492132583.786483"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Unfortunately unless I run into work (~15 min drive) the game’s over until Mon… We’ll see what the wife thinks…",
+        "ts": "1492132661.797564"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "There’s a bit of other work (wiring work) I could stand to do there…",
+        "ts": "1492132682.800497"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I'm in no hurry.  Marital harmony is important.   ",
+        "ts": "1492132737.808270"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "yes it is :slightly_smiling_face:",
+        "ts": "1492132744.809328"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So may I ask what’s involved with installing a distro image and doing kickstart\/preeseed?",
+        "ts": "1492132810.817942"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Cd assets ",
+        "ts": "1492132852.823744"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Drpcli bootenvs install bootenvs\/ubuntu16.04.yml ",
+        "ts": "1492132890.829012"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Wait awhile ",
+        "ts": "1492132896.829710"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Then change machines bootenv to Ubuntu.    And then reboot node ",
+        "ts": "1492132921.832974"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Wait Awhile. When machine bootenv goes to local done",
+        "ts": "1492132949.836557"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The yemplates and bootenvs work mostly like DR ",
+        "ts": "1492132976.839900"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Please forgive phone typing",
+        "ts": "1492132985.841113"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Examples in assets dir",
+        "ts": "1492133051.849836"
+    }
+]

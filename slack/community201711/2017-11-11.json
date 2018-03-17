@@ -1,0 +1,310 @@
+[
+    {
+        "type": "message",
+        "user": "U7YFG3W94",
+        "text": "I can't assume anyone is hanging out here on a Saturday night. I FINIALLY got systems to boot to DRP",
+        "ts": "1510455232.000018"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "woot!",
+        "ts": "1510455244.000012"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(yeah - I'm hanging out here...)",
+        "ts": "1510455250.000022"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "what was the hurdle ?",
+        "ts": "1510455263.000022"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Nice!!!",
+        "ts": "1510455761.000004"
+    },
+    {
+        "type": "message",
+        "user": "U7YFG3W94",
+        "text": "lots of hurdles. I already have dhcp on my network so enabling it in dr-provision will break other clients. I tried running a dhcp proxy server <https:\/\/github.com\/digitalrebar\/provision\/issues\/532> but had multiple problems with that (port conflicts on a single machine, legacy and efi hosts)",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "How to run dr-provision with existing DHCP server · Issue #532 · digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/issues\/532",
+                "text": "It should be documented how to run dr-provision with an existing DHCP server. Ideally dnsmasq can be used as a proxy dhcp server to enable option 66\/67 for booting. Here's an example from the CoreO...",
+                "fallback": "GitHub: How to run dr-provision with existing DHCP server · Issue #532 · digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/issues\/532",
+                "thumb_url": "https:\/\/avatars0.githubusercontent.com\/u\/371796?s=400&v=4",
+                "thumb_width": 240,
+                "thumb_height": 240,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1510456684.000047"
+    },
+    {
+        "type": "message",
+        "user": "U7YFG3W94",
+        "text": "so now I literally have a CD in the drive that ipxe boots to DRP",
+        "ts": "1510456745.000015"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "proxy DHCP service isn't something we've enabled at the moment (as you are painfully aware) ... we've got it in the issues list, and we'll add it to the back log",
+        "ts": "1510456802.000004"
+    },
+    {
+        "type": "message",
+        "user": "U7YFG3W94",
+        "text": "but I need to read through docs on what to actually do with it. First I'm looking to see how to put unknown machines into a discovery mode (so I don't have to manually add them). Then I need to figure out how to actually provision a k8s cluster with it",
+        "ts": "1510456825.000048"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we do support external DHCP - we just assume a full-featured DHCP server implementation - not the hobbled versions you'll find in (I think it was) wifi routers\/etc.",
+        "ts": "1510456835.000029"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I just added that documentation to the quickstart - for \"latest\" doc revision",
+        "ts": "1510456871.000037"
+    },
+    {
+        "type": "message",
+        "user": "U7YFG3W94",
+        "text": "right, I'm running now with `--disable-dhcp` but I needed a proxy (or in my case a CD) to do anything with it",
+        "ts": "1510456888.000084"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<http:\/\/provision.readthedocs.io\/en\/latest\/doc\/quickstart.html#install-your-first-machine>",
+        "ts": "1510456895.000029"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "make sure you're on \"latest\" version",
+        "ts": "1510456908.000001"
+    },
+    {
+        "type": "message",
+        "user": "U7YFG3W94",
+        "text": "I thought sledgehammer would autodiscover machines but I guess I was wrong. Reading through the docs now",
+        "ts": "1510456917.000044"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the basics are to set the \"prefs\"",
+        "ts": "1510456922.000066"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "by default - we attempt to \"do no harm\" first and foremost",
+        "ts": "1510456932.000067"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "so you have to set the default stage\/unknown bootenv\/default bootenv ... so \"discovery\" will be enabled after those are set",
+        "ts": "1510456964.000084"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "once your Machines are discovered after setting Prefs - you can then add BootEnvs to them and reboot them to be installed.  Advanced workflows and adding the IPMI plugin to do machine reboots from DRP can be done as well those require RackN registered account",
+        "ts": "1510457309.000004"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can also pre-add machines if you know MACs - by setting a reservation - using the \"MAC\" as the \"Strategy\", and the \"Token\" is the MAC address itself",
+        "ts": "1510457397.000031"
+    },
+    {
+        "type": "message",
+        "user": "U7YFG3W94",
+        "text": "`drpcli prefs set unknownBootEnv discovery defaultBootEnv sledgehammer defaultStage discovery` gave Error: POST: prefs: defaultStage: Stage discovery does not exist",
+        "ts": "1510457417.000085"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "what version of DRP are you running?\n```drpcli info get```",
+        "ts": "1510457437.000070"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "did you do a `drpcli bootenvs uploadiso sledgehammer` ??",
+        "ts": "1510457467.000079"
+    },
+    {
+        "type": "message",
+        "user": "U7YFG3W94",
+        "text": "version v3.2.1-0-2ab654478528d1ee59781f7d53bc8f8b9c6853dd",
+        "ts": "1510457499.000014"
+    },
+    {
+        "type": "message",
+        "user": "U7YFG3W94",
+        "text": "I uploaded the iso in 3.2.0. Let me run it again to make sure it has the right image",
+        "ts": "1510457516.000006"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "have to rerun - it - as the sledgehammer image gets updated, and you'll need to make sure the content (v3.2.1) that requests sledgehammer matches the version of sledgehammer that is needed",
+        "ts": "1510457554.000050"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "are you using the UX ?",
+        "ts": "1510457565.000044"
+    },
+    {
+        "type": "message",
+        "user": "U7YFG3W94",
+        "text": "I logged into the web interface but mostly using cli",
+        "ts": "1510457585.000093"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it's easy to check status of Stages - go to \"stages\" (oddly enough) - and make sure you have a check mark and not X next to the stage",
+        "ts": "1510457587.000067"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "crap",
+        "ts": "1510457620.000012"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "my fault",
+        "ts": "1510457624.000009"
+    },
+    {
+        "type": "message",
+        "user": "U7YFG3W94",
+        "text": "same error after uploading the sledgehammer iso",
+        "ts": "1510457627.000008"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "`defaultStage discover` (no 'y' on end)",
+        "ts": "1510457639.000046",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U7YFG3W94"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "text": "hurriedly checks in doc patch ....",
+        "type": "message",
+        "subtype": "me_message",
+        "user": "U6QFVRJNB",
+        "ts": "1510457746.000019"
+    },
+    {
+        "text": "rebooting system to see if it does the right thing now",
+        "type": "message",
+        "subtype": "me_message",
+        "user": "U7YFG3W94",
+        "ts": "1510457868.000028"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ok - fixed doc ...",
+        "ts": "1510457890.000065"
+    },
+    {
+        "type": "message",
+        "user": "U7YFG3W94",
+        "text": "k, it added the machine and now in stage discover. The system looks like it loaded sledgehammer and then rebooted to local disk. Is that expected?",
+        "ts": "1510458085.000003"
+    },
+    {
+        "type": "message",
+        "user": "U7YFG3W94",
+        "text": "I'm used to foreman which keeps the system in the discovery image until you decide to provision it",
+        "ts": "1510458105.000029"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "can you paste `drpcli prefs list` here ?",
+        "ts": "1510459017.000038"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if `defaultBootEnv` is set to `local`, then that's what it'd do",
+        "ts": "1510459047.000040"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "uh - do `drpcli prefs list | grep -v Secret`",
+        "ts": "1510459092.000031"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I don't wanna see your secrets",
+        "ts": "1510459108.000010"
+    },
+    {
+        "type": "message",
+        "user": "U7YFG3W94",
+        "text": "Sorry, got distracted with other things. Looking at this again now ```{\n  \"debugBootEnv\": \"0\",\n  \"debugDhcp\": \"0\",\n  \"debugFrontend\": \"1\",\n  \"debugPlugins\": \"0\",\n  \"debugRenderer\": \"0\",\n  \"defaultBootEnv\": \"sledgehammer\",\n  \"defaultStage\": \"discover\",\n  \"knownTokenTimeout\": \"3600\",\n  \"unknownBootEnv\": \"discovery\",\n  \"unknownTokenTimeout\": \"600\"\n}```",
+        "ts": "1510464807.000018"
+    },
+    {
+        "type": "message",
+        "user": "U7YFG3W94",
+        "text": "I need to burn some more CDs so I can leave them in the drive. That way I don't have to go out in the garage",
+        "ts": "1510464826.000023"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It should have stayed in sledgehammer <@U7YFG3W94> ",
+        "ts": "1510467626.000077"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Unless you have a workflow defined ",
+        "ts": "1510467661.000022"
+    },
+    {
+        "type": "message",
+        "user": "U7YFG3W94",
+        "text": "nope, no workflows defined. I just redid my boot iso. Then going to look at the DPR settings again",
+        "ts": "1510469195.000017"
+    }
+]

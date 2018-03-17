@@ -1,0 +1,106 @@
+[
+    {
+        "text": "Hi, can DigitalRebar use Dell iDrac to powercycle and netboot the server ?",
+        "username": "maymann",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495446768.098903"
+    },
+    {
+        "text": "what do I need to start simple bare-metal on prem with tftp and dhcp on admin host ?",
+        "username": "maymann",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495455552.387359"
+    },
+    {
+        "text": "anywhere I need to put username and password for idrac admin account ?",
+        "username": "maymann",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495455896.486537"
+    },
+    {
+        "text": "@maymann check out Provsion for DHCP\/PXE\/TFTP &gt;  https:\/\/github.com\/digitalrebar\/provision",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495461197.436210"
+    },
+    {
+        "text": "you'll need to run install the full Digital Rebar for out of band management",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495461254.460949"
+    },
+    {
+        "text": "to answer your original question - YES.  that's what Digital Rebar does",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495461390.522312"
+    },
+    {
+        "text": "@punitaojha this is not the right forum for this type of survey",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495461480.563241"
+    },
+    {
+        "text": "<@U02DHRR2L|zehicle> Hey Rob!! Remember me, from the discussion regarding DR failure on AWS",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495487348.595858"
+    },
+    {
+        "text": "I put out the word to my manager about the DR and its use cases",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495487365.601705"
+    },
+    {
+        "text": "Can you reach out to him regarding any potential use cases at Ericsson , His name is \"Kumar\" and he can be reached at \"thalanayar.muthukumar@ericsson.com\"",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495487416.619772"
+    },
+    {
+        "text": "Hi, I am trying to create a barclamp from a ansible playbook. Any pointers to docs or similar. I'm new to both ansible and rebar.",
+        "username": "svallebro",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495487975.808643"
+    },
+    {
+        "text": "@svallebro the best thing to do is look at the kubernetes install roles and the ansible jig.    https:\/\/www.youtube.com\/watch?v=uLTA2LA4KG8",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495489489.287237"
+    },
+    {
+        "text": "Tanks",
+        "username": "svallebro",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495508525.795031"
+    }
+]

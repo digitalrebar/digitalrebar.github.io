@@ -1,0 +1,1350 @@
+[
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F4YLHN82C\/image_uploaded_from_ios.jpg|Working now>",
+        "file": {
+            "id": "F4YLHN82C",
+            "created": 1492177566,
+            "timestamp": 1492177566,
+            "name": "Image uploaded from iOS.jpg",
+            "title": "Working now",
+            "mimetype": "image\/jpeg",
+            "filetype": "jpg",
+            "pretty_type": "JPEG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 2349090,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F4YLHN82C\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F4YLHN82C\/download\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4YLHN82C-89a359e998\/image_uploaded_from_ios_64.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4YLHN82C-89a359e998\/image_uploaded_from_ios_80.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4YLHN82C-89a359e998\/image_uploaded_from_ios_360.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 270,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4YLHN82C-89a359e998\/image_uploaded_from_ios_480.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 360,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4YLHN82C-89a359e998\/image_uploaded_from_ios_160.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4YLHN82C-89a359e998\/image_uploaded_from_ios_720.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 540,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4YLHN82C-89a359e998\/image_uploaded_from_ios_800.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 600,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4YLHN82C-89a359e998\/image_uploaded_from_ios_960.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 720,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4YLHN82C-89a359e998\/image_uploaded_from_ios_1024.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 768,
+            "image_exif_rotation": 1,
+            "original_w": 3264,
+            "original_h": 2448,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F4YLHN82C\/image_uploaded_from_ios.jpg",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F4YLHN82C-f931d4e23c",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "upload_reply_to": "C251712B-7DEF-4457-ABF1-19C5DFBF995A",
+        "ts": "1492177566.068671"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "And I see the machine in the UI",
+        "ts": "1492177630.087347"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "API Help links in the UI are broken...",
+        "ts": "1492177827.145679"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F4ZEJ0FT7\/image_uploaded_from_ios.jpg|Image uploaded from iOS>",
+        "file": {
+            "id": "F4ZEJ0FT7",
+            "created": 1492177952,
+            "timestamp": 1492177952,
+            "name": "Image uploaded from iOS.jpg",
+            "title": "Image uploaded from iOS",
+            "mimetype": "image\/jpeg",
+            "filetype": "jpg",
+            "pretty_type": "JPEG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 5099884,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F4ZEJ0FT7\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F4ZEJ0FT7\/download\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4ZEJ0FT7-3b82f02a71\/image_uploaded_from_ios_64.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4ZEJ0FT7-3b82f02a71\/image_uploaded_from_ios_80.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4ZEJ0FT7-3b82f02a71\/image_uploaded_from_ios_360.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 270,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4ZEJ0FT7-3b82f02a71\/image_uploaded_from_ios_480.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 360,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4ZEJ0FT7-3b82f02a71\/image_uploaded_from_ios_160.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4ZEJ0FT7-3b82f02a71\/image_uploaded_from_ios_720.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 540,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4ZEJ0FT7-3b82f02a71\/image_uploaded_from_ios_800.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 600,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4ZEJ0FT7-3b82f02a71\/image_uploaded_from_ios_960.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 720,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F4ZEJ0FT7-3b82f02a71\/image_uploaded_from_ios_1024.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 768,
+            "image_exif_rotation": 1,
+            "original_w": 3264,
+            "original_h": 2448,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F4ZEJ0FT7\/image_uploaded_from_ios.jpg",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F4ZEJ0FT7-2c2d54358c",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "upload_reply_to": "9702AB7D-875B-414B-811D-4F0968E8E66C",
+        "ts": "1492177961.186164"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah!!!!!",
+        "ts": "1492178099.229075"
+    },
+    {
+        "text": "I'll fix those links!  Thanks.",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1492178106.231647"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Now into the Ubuntu 16.04 install...",
+        "ts": "1492179293.612588"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Looks like we have a successful installation :)",
+        "ts": "1492179542.692257"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Nice!",
+        "ts": "1492179550.694431"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "When the machine boots post-install, does it communicate back to Provision and set BootEnv to be 'local'?",
+        "ts": "1492179632.720958"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes",
+        "ts": "1492179642.724100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "no - local is set as last step of install in ks or preseed",
+        "ts": "1492179661.730245"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "ignore the yes",
+        "ts": "1492179666.731852"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yup, I see local now",
+        "ts": "1492179777.768085"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Cool",
+        "ts": "1492179784.770206"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I think for ubuntu - rocketskates\/r0cketsk8ts",
+        "ts": "1492179810.778572"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "default login.",
+        "ts": "1492179814.779990"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Not the 'rebar' one?",
+        "ts": "1492179830.785005"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I think I changed it.",
+        "ts": "1492179840.788278"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You can change it by add params (either to the machine or globally).",
+        "ts": "1492179857.794003"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Each bootenv defines a set of parameters that can be injected.",
+        "ts": "1492179869.798037"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "some are required and some are optional.  These are optional (with defaults).",
+        "ts": "1492179895.806410"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You can specify the user (for ubuntu) and the password hash.",
+        "ts": "1492179913.812043"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Those are next on my doc list.",
+        "ts": "1492179924.815617"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Where to set param's?",
+        "ts": "1492179926.816465"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "drpcli params list",
+        "ts": "1492179938.820220"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "those are global (it is empty by default).",
+        "ts": "1492179948.823616"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "drpcli machines update &lt;uuid&gt; &lt;json blob of parameters&gt;",
+        "ts": "1492179968.830264"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I should make that better one day soon.",
+        "ts": "1492179981.834731"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Cannot seem to log in with the rocketskates user\/passwd (or the rebar one)",
+        "ts": "1492180018.846913"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "rebar\/rebar1",
+        "ts": "1492180057.859993"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": ":slightly_smiling_face:",
+        "ts": "1492180059.860376"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I don't remember - I'll have to check.",
+        "ts": "1492180065.862529"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Nope :)",
+        "ts": "1492180082.868089"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "What stupid thing did I do.",
+        "ts": "1492180095.872071"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "rocketskates is the user",
+        "ts": "1492180183.902053"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "rocketskates",
+        "ts": "1492180195.905746"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "r0cketsk8ts",
+        "ts": "1492180207.910117"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Does not work...",
+        "ts": "1492180270.931706"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay sigh arg",
+        "ts": "1492180295.940502"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Time to fix it and put it in the docs.",
+        "ts": "1492180321.949247"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Just a second",
+        "ts": "1492180625.050281"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F5035AVB9\/image_uploaded_from_ios.jpg|net-seed.tmpl user settings>",
+        "file": {
+            "id": "F5035AVB9",
+            "created": 1492180630,
+            "timestamp": 1492180630,
+            "name": "Image uploaded from iOS.jpg",
+            "title": "net-seed.tmpl user settings",
+            "mimetype": "image\/jpeg",
+            "filetype": "jpg",
+            "pretty_type": "JPEG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 2592927,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F5035AVB9\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F5035AVB9\/download\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F5035AVB9-db7d243768\/image_uploaded_from_ios_64.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F5035AVB9-db7d243768\/image_uploaded_from_ios_80.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F5035AVB9-db7d243768\/image_uploaded_from_ios_360.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 270,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F5035AVB9-db7d243768\/image_uploaded_from_ios_480.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 360,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F5035AVB9-db7d243768\/image_uploaded_from_ios_160.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F5035AVB9-db7d243768\/image_uploaded_from_ios_720.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 540,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F5035AVB9-db7d243768\/image_uploaded_from_ios_800.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 600,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F5035AVB9-db7d243768\/image_uploaded_from_ios_960.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 720,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F5035AVB9-db7d243768\/image_uploaded_from_ios_1024.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 768,
+            "image_exif_rotation": 1,
+            "original_w": 3264,
+            "original_h": 2448,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F5035AVB9\/image_uploaded_from_ios.jpg",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F5035AVB9-a5b083a622",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "upload_reply_to": "DD49BE22-E9A0-4060-9B14-EBB787386B3E",
+        "ts": "1492180629.051458"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Where do I see the .Param 's used?",
+        "ts": "1492180652.059025"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "in this case, it is unset and uses the default in the file.",
+        "ts": "1492180741.087338"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "```.\/drpcli params create '{ \"Name\": \"provisioner-default-password-hash\", \"Value\": \"$6$5trJ0SAGobo9YE1X$r31iOEokINeaYTCbtyfpCZU6wgKoK7Tr3mc7CIFl7hDPP6LNPkUveg3hB2vasE.H5IBwvW5qBK8aQz5imnp8J0\" }'```",
+        "ts": "1492180821.113938"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That will create a new global parameter which represents r0cketsk8ts",
+        "ts": "1492180842.120542"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You could try: R0cketSk8ts",
+        "ts": "1492180852.124132"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Anyway, the parameter call will set the global.",
+        "ts": "1492180883.134226"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Nada",
+        "ts": "1492180905.141375"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "then do: drpcli machines update &lt;uuid&gt; '{ \"BootEnv\": \"ubuntu-16.04-install\" }'",
+        "ts": "1492180934.151025"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "reboot the node and then log in when it is done.",
+        "ts": "1492180943.154261"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Wait",
+        "ts": "1492180990.170060"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Oh that'll make the node do a reinstall?",
+        "ts": "1492180996.172267"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "RocketSkates is the passsword",
+        "ts": "1492180997.172519"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yes",
+        "ts": "1492181003.174441"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yuuuuup :)",
+        "ts": "1492181019.179870"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Okay - I'm gonna doc that - it was in our git commit log history.",
+        "ts": "1492181036.185708"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Lol",
+        "ts": "1492181076.199437"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, this is good... Now, how to spec differing preseed templates for different nodes?",
+        "ts": "1492181214.246976"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "We have groups that want specific disk partitioning, etc",
+        "ts": "1492181245.257263"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "YOu need custom bootenvs for each one.",
+        "ts": "1492181282.269733"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "So you would create template for each type\/group - then a bootenv the refs that template.  Then set node's bootenv to that bootenv.",
+        "ts": "1492181313.280413"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I try to do as little as possible in kickstart\/preseed, and really config node via Ansible, but disk partitioning isn't something that can. E done that way :)",
+        "ts": "1492181360.296281"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yep - our philosophy as well.",
+        "ts": "1492181378.302328"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Any ideas about pulling in config blocks within templates?",
+        "ts": "1492181402.310122"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Well , two thoughts.  One is parameters with inject.",
+        "ts": "1492181425.318099"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Like you can still use the same basic template, but the disk partitioning can be a sub-template if you will...",
+        "ts": "1492181453.327880"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "In theory, the templates can contain other templates (from a golang template spec perspective, but I don't think we've hooked that together).  So one day that way.",
+        "ts": "1492181473.334919"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Also would handle multi-disk setups",
+        "ts": "1492181495.342711"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Today, you could build a bootenv with a big string explosion and put that as a parameter.  The parameter could then be injected by node type.",
+        "ts": "1492181510.347911"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Define \"big string explosion\" please :)",
+        "ts": "1492181580.372262"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I'd hate to have to make\/maintain 'n' templates that are basically 90%+ same, with just minor changes",
+        "ts": "1492181692.411534"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "give me a second",
+        "ts": "1492181714.419162"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Cobbler has the concept of 'snippets' that are config blobs that can be put into a static template kickstart ",
+        "ts": "1492181755.433955"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah - template in template will be the way of that.",
+        "ts": "1492181787.445322"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We just aren't quite there yet.",
+        "ts": "1492181819.456668"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Instead you would need this:",
+        "ts": "1492181843.465255"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Say I had this in my preseed:",
+        "ts": "1492181923.494115"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "```d-i clock-setup\/ntp boolean false\n{{end}}\n{{if .ParamExists \"operating-system-disk\"}}\nd-i partman-auto\/disk string {{ .Param \"operating-system-disk\" }}\n{{else}}\nd-i partman-auto\/disk string \/dev\/sda\n{{end}}\nd-i partman-auto\/method string lvm\nd-i partman-lvm\/device_remove_lvm boolean true\nd-i partman-lvm\/device_remove_lvm_span boolean true\nd-i partman-auto\/purge_lvm_from_device boolean true\nd-i partman-md\/device_remove_md boolean true\nd-i partman-lvm\/confirm boolean true\nd-i partman-lvm\/confirm_nochanges boolean true\nd-i partman-lvm\/confirm_nooverwrite boolean true\nd-i partman-auto-lvm\/guided_size string max\nd-i partman-auto-lvm\/new_vg_name string {{ .Machine.ShortName }}\nd-i partman-auto\/choose_recipe select custom_lvm\nd-i partman\/confirm_write_new_label boolean true\nd-i partman\/choose_partition select finish\nd-i partman\/confirm boolean true\nd-i partman\/confirm_nooverwrite boolean true\nd-i partman\/auto expert_recipe string \\\n    custom_lvm::  \\\n      500 50 1024 free $iflabel{ gpt } $reusemethod{ } method{ efi } format{ } . \\\n      128 50 256  ext2 $defaultignore{ } method{ format } format{ } use_filesystem{ } filesystem{ ext2 } mountpoint{ \/boot } . \\\n      10240 20 10240 ext4 $lvmok{ } mountpoint{ \/ } lv_name{ root } in_vg{ {{ .Machine.ShortName }} } method{ format } format{ } use_filesystem{ } filesystem{ ext4 } . \\\n      50% 20 100% linux-swap $lvmok{ } lv_name{ swap } in_vg{ {{ .Machine.ShortName }} } method{ swap } format{ } .\n{{if (and (eq \"ubuntu\" .Env.OS.Family)  (lt \"12.10\" .Env.OS.Version))}}\nd-i live-installer\/net-image string {{.Env.InstallUrl}}\/install\/filesystem.squashfs```",
+        "ts": "1492181928.495747"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I could replace it with this:",
+        "ts": "1492181937.498991"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "```d-i clock-setup\/ntp boolean false\n{{end}}\n{{ .Param \"my-disk-layout-string\" }}\n{{if (and (eq \"ubuntu\" .Env.OS.Family)  (lt \"12.10\" .Env.OS.Version))}}\nd-i live-installer\/net-image string {{.Env.InstallUrl}}\/install\/filesystem.squashfs```",
+        "ts": "1492182010.526977"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Then do:",
+        "ts": "1492182021.531521"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": ".\/drpcli params create '{ \"Name\": \"my-disk-layout-string\", \"Value\": \"custom stuff here - no params though\" }'",
+        "ts": "1492182064.547992"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That would be the default",
+        "ts": "1492182072.550937"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Then for each machine that needed custom from default.",
+        "ts": "1492182082.555337"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": ".\/drpcli machines update &lt;uuid&gt; '{ \"Params\": { \"my-disk-layout-string\": \"other custom form\" } }'",
+        "ts": "1492182137.576182"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "This is giving me some good ideas.",
+        "ts": "1492182151.581418"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "for some features.",
+        "ts": "1492182156.583011"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "make those commands easier",
+        "ts": "1492182190.595619"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "template in template",
+        "ts": "1492182194.597251"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "docs",
+        "ts": "1492182195.597502"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Totally should work on that Tmpl-in-tmpl stuff :)",
+        "ts": "1492182455.690812"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "And all this work will port into future DR?",
+        "ts": "1492182519.713320"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah - eventually, the plan is to have this replace the DHCP\/Provisioner in DR with a real provider.",
+        "ts": "1492182556.726304"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The hope is to start with this to get moving - it should be simpler to start using and it will work on multiple sites without the back haul inet perf\/bandwidth hit.",
+        "ts": "1492182596.740741"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Local control and all that.",
+        "ts": "1492182602.742936"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "It's the gateway drug for full-on DR ;)",
+        "ts": "1492182645.758355"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "well - we dream",
+        "ts": "1492182703.778948"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So the templates are Golang \"text\/template\" ?",
+        "ts": "1492183971.233532"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes",
+        "ts": "1492184376.376877"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U416T0AAX> - you want something like:",
+        "ts": "1492184603.455381"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "{{ .Template (.Param \"disk-template\") }}",
+        "ts": "1492184643.469379"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Where .Param would be a string parameter that is the name of a template to include in this template.",
+        "ts": "1492184667.477990"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Can the resulting master template be rendered to see what it will produce? (Not a Go dev...)",
+        "ts": "1492184729.500368"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah - that was another idea that I was thinking about.  A template preview option.",
+        "ts": "1492184752.508858"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "bootenv preview option as well.",
+        "ts": "1492184765.513331"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Great idea ",
+        "ts": "1492184777.517551"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You can open issues in github for things you see as enhancements as well.  I'm doing these now.",
+        "ts": "1492185021.604829"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yup, will do",
+        "ts": "1492185053.616251"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - I think I created the ones that we talked about.",
+        "ts": "1492185861.913739"
+    },
+    {
+        "text": "Is there public documentation for connecting the docker dhcp container to the \"Real\" network so it can get and response to helper requests hitting the routable ip already? Easy as just making docker bridge in to \"eth0\" on the host?",
+        "username": "crafty_house_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1492196261.569369"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "If you are using FORWARDER mode, yes, you can bridge the eth1 into docker0.  Then the 192.168.124.0\/24 network will be served on that interface as well.",
+        "ts": "1492196441.632212"
+    },
+    {
+        "text": "Running host mode in theory. forwarder simpler?",
+        "username": "crafty_house_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1492196466.640922"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "If you are using HOST mode, the DHCP server is already listening on the interfaces.  You may need to create a specific admin network for that interface.",
+        "ts": "1492196479.645452"
+    },
+    {
+        "text": "I see the host binds on the host",
+        "username": "crafty_house_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1492196480.645819"
+    },
+    {
+        "text": "udp        0      0 192.168.122.1:53        0.0.0.0:_                           1400\/dnsmasq    \nudp        0      0 0.0.0.0:67              0.0.0.0:_                           1400\/dnsmasq    ",
+        "username": "crafty_house_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1492196481.646247"
+    },
+    {
+        "text": "k",
+        "username": "crafty_house_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1492196483.646735"
+    },
+    {
+        "text": "specifically bind it to \"ens3\" ?",
+        "username": "crafty_house_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1492196505.654253"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Actually, you just have to create the network in the UI or CLI.",
+        "ts": "1492196568.675921"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "with the proper ranges and it will just start listening on that interface.",
+        "ts": "1492196590.683572"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That may not make complete sense.",
+        "ts": "1492196614.691763"
+    },
+    {
+        "text": "What does DR consider proper ranges? maybe thats the issue",
+        "username": "crafty_house_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1492196621.693935"
+    },
+    {
+        "text": "does it support dhcp-relay with \"External\" ranges?",
+        "username": "crafty_house_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1492196628.696556"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yes",
+        "ts": "1492196632.697752"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It will handle both.",
+        "ts": "1492196642.700991"
+    },
+    {
+        "text": "hm. the default admin-internal scope is there, I'll fix it up",
+        "username": "crafty_house_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1492196657.706200"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "OR create a new one.",
+        "ts": "1492196664.708638"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "either way.",
+        "ts": "1492196666.709366"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "make sure to get the router at the bottom of the page",
+        "ts": "1492196694.718904"
+    },
+    {
+        "text": "Is \"conduit\" the key field that matters",
+        "username": "crafty_house_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1492196732.731871"
+    },
+    {
+        "text": "not really clear ",
+        "username": "crafty_house_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1492196741.734652"
+    },
+    {
+        "text": "or enable bridge\/put in ens3",
+        "username": "crafty_house_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1492196768.743413"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "conduit is an abstraction for that.",
+        "ts": "1492196833.764600"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "and it is for the client (not the server).",
+        "ts": "1492196844.768301"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "So, it is used to force the network to a specific interface on the client.",
+        "ts": "1492196859.773053"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "For admin, you can use the dhcp conduit.",
+        "ts": "1492196870.776584"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "it will put the network on the interface that dhcp booted\/",
+        "ts": "1492196887.781953"
+    },
+    {
+        "text": "k",
+        "username": "crafty_house_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1492196896.784849"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You can also specify 1g0 or 10g2 or ...  a speed and an index.",
+        "ts": "1492196906.788371"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "1g0 = first 1g capable interface.",
+        "ts": "1492196919.792792"
+    },
+    {
+        "text": "Is there something to tickle to make the new network show up in dhcp subnets",
+        "username": "crafty_house_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1492197119.858572"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "refresh the UI. that page doesn't always reload.",
+        "ts": "1492197149.868151"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Also. make sure you gave the category in the network as admin.",
+        "ts": "1492197160.871786"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "group should be something else.",
+        "ts": "1492197168.874236"
+    },
+    {
+        "text": "didn't :) changing",
+        "username": "crafty_house_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1492197177.877028"
+    },
+    {
+        "text": "shows now",
+        "username": "crafty_house_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1492197199.884000"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": ":slightly_smiling_face:",
+        "ts": "1492197202.885010"
+    },
+    {
+        "text": "would the dhcp container be the appropriate place to do a tcpdump",
+        "username": "crafty_house_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1492197277.908332"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "in host mode, no.  The dhcp container is a host networking container.  So the host is sufficient.",
+        "ts": "1492197304.916882"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "you can also so the DHCP logs",
+        "ts": "1492197345.930028"
+    },
+    {
+        "text": "yea, those are clean\/quiet",
+        "username": "crafty_house_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1492197355.933190"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "cd digitalrebar\/deploy\/compose",
+        "ts": "1492197356.933289"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "docker-compose logs -f dhcp",
+        "ts": "1492197368.937004"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay",
+        "ts": "1492197374.938589"
+    },
+    {
+        "text": "Looks like all api requets",
+        "username": "crafty_house_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1492197394.945013"
+    },
+    {
+        "text": "requests*",
+        "username": "crafty_house_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1492197396.945797"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - so - we aren't seeing the DHCP requests.",
+        "ts": "1492197422.953715"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "hmm",
+        "ts": "1492197426.954806"
+    },
+    {
+        "text": "how do I verify this is host mode",
+        "username": "crafty_house_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1492197438.958663"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "tcpdump or the log",
+        "ts": "1492197449.961783"
+    },
+    {
+        "text": "this was my deploy cli .\/run-in-system.sh --deploy-admin=local --access=host --admin-ip=10.62.7.140\/26 --con-dhcp --con-provisioner",
+        "username": "crafty_house_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1492197455.963787"
+    },
+    {
+        "text": "but it still sat forever on the ansible forwarder task",
+        "username": "crafty_house_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1492197475.970002"
+    },
+    {
+        "text": "skipped host",
+        "username": "crafty_house_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1492197480.971456"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "host should be HOST",
+        "ts": "1492197495.976173"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "you are in forwarder mode.  We have silly args.",
+        "ts": "1492197508.980250"
+    },
+    {
+        "text": "case check?",
+        "username": "crafty_house_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1492197510.981061"
+    },
+    {
+        "text": "lol k",
+        "username": "crafty_house_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1492197511.981473"
+    },
+    {
+        "text": "rerolling, that makes sense for what I'm seeing then :)",
+        "username": "crafty_house_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1492197524.985446"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yes, please.",
+        "ts": "1492197547.992356"
+    },
+    {
+        "text": "tx rob, will bbiab",
+        "username": "crafty_house_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1492197562.996874"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "really - this is Greg.  :slightly_smiling_face: our slack to gitter app bounces through rob.",
+        "ts": "1492197586.004486"
+    },
+    {
+        "text": "AH woops lol",
+        "username": "crafty_house_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1492197616.013671"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "np - all good.",
+        "ts": "1492197641.021857"
+    },
+    {
+        "text": "dhcp_1         | 2017\/04\/14 19:28:47 Recieved DHCP packet: type Discover xid 0x8 ciaddr 0.0.0.0 yiaddr 0.0.0.0 giaddr 10.62.0.1 chaddr 70:10:6f:bc:4f:4c much bettah",
+        "username": "crafty_house_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1492198167.182756"
+    },
+    {
+        "text": "tx again",
+        "username": "crafty_house_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1492198169.183448"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "cool",
+        "ts": "1492198179.186573"
+    },
+    {
+        "text": "cool @crafty_house_twitter ",
+        "username": "csayler",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1492198753.361905"
+    },
+    {
+        "text": "newly deployed digitalrebar system, working with crafty. we are not seeing the nodes added via pxe after dhcp subnet was created. any ideas. nothing in the logs but this: ",
+        "username": "csayler",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1492208490.012895"
+    },
+    {
+        "text": "dhcp_1         | 2017\/04\/14 19:25:30 Recieved DHCP packet: type Discover xid 0xa1be8f5e ciaddr 0.0.0.0 yiaddr 0.0.0.0 giaddr 10.62.16.1 chaddr 9c:dc:71:4a:fa:c0\ndhcp_1         | 2017\/04\/14 19:25:30 xid 0xa1be8f5e: Starting processing: 2017-04-14 19:25:30.948700271 +0000 UTC\ndhcp_1         | 2017\/04\/14 19:25:30 xid 0xa1be8f5e: Config lock acquired: 2017-04-14 19:25:30.948703801 +0000 UTC\ndhcp_1         | 2017\/04\/14 19:25:30 xid 0xa1be8f5e: relay from 10.62.16.1 (hops 1)\ndhcp_1         | 2017\/04\/14 19:25:30 Discover xid 0xa1be8f5e: No subnet for leases",
+        "username": "csayler",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1492208491.013158"
+    },
+    {
+        "text": "any ideas... ",
+        "username": "csayler",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1492208530.020913"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Is your admin network ranges include in 10.62.16.1?",
+        "ts": "1492228782.564786"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "@csayler",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1492228795.000000"
+        },
+        "ts": "1492228786.565157"
+    }
+]

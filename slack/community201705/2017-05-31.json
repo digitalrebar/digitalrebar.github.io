@@ -1,0 +1,64 @@
+[
+    {
+        "text": "<@U02DHRR2L|zehicle> ,",
+        "username": "deepuashokan85",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1496235052.953703"
+    },
+    {
+        "text": "<@U02DHRR2L|zehicle> , Since we are having internet connection issue at company, I am thinking like this, will deploy the digital-rebar on VM host from home internet,  then will take that OS image and will deploy on our  company server,  will that work? ",
+        "username": "deepuashokan85",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1496235233.007536"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You may have to restart it.",
+        "ts": "1496236693.484355"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "it should work.",
+        "ts": "1496236709.490023"
+    },
+    {
+        "text": "How about the Admin IP, It will get change when I move the home based OS image to Company network, how it will work?",
+        "username": "deepuashokan85",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1496244692.823681"
+    },
+    {
+        "text": "<@U02DHRR2L|zehicle> , when I logged into provisioner container, and issued ps -ef command to check the running process.. I see the below.\nroot@59a1537e7152:\/# ps -ef\nUID        PID  PPID  C STIME TTY          TIME CMD\nroot         1     0  0 12:48 ?        00:00:00 \/bin\/bash \/sbin\/docker-entrypoint.sh\nroot        22     1  0 12:48 ?        00:00:00 smbd\nroot        25    22  0 12:48 ?        00:00:00 smbd\nroot        28    22  0 12:48 ?        00:00:00 smbd\nroot        43     1  0 12:48 ?        00:00:00 \/bin\/bash \/sbin\/docker-entrypoint.sh\nroot        44    43  0 12:48 ?        00:00:00 curl -fgL -o \/tftpboot\/sledgehammer\/a42c8c66a60b77ca1c769b8dc7e712f6644579ed\/sha1sums http:\/\/opencrowbar.s3-website-us-east-1.amazonaws.com\/sledgehammer\/a42\nroot        46     0  0 12:48 ?        00:00:00 \/bin\/bash\nroot        60    46  0 12:49 ?        00:00:00 ps -ef\n\nthe PID 44 is running curl  which connects to AWS S3. which required internet. How will it be possible if I import the VM to company network, which will not allow the container to connect ti internet?",
+        "username": "deepuashokan85",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1496244903.917180"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The images are cached in the image.",
+        "ts": "1496246200.477008"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You can stop the containers and restart them with a specific command line that will change the external ip and not run the ansible playbooks.",
+        "ts": "1496246246.496921"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Or you can contact RackN and get support for the offline install mode.",
+        "ts": "1496246269.506984"
+    }
+]

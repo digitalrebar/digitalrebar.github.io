@@ -1,0 +1,395 @@
+[
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Hi gang :wave: Can we talk about imaging to disk as an OS deployment method?",
+        "ts": "1511186894.000515"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We can.",
+        "ts": "1511188003.000018"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So, we have an OS image deployment process that goes like this:",
+        "ts": "1511189991.000272"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "1) Make a “gold-master” OS install image on a small HDD via manual config\/Ansible, and then saving an image via Clonezilla (FOSS image capture\/restore program)",
+        "ts": "1511190065.000134"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "2) Image the target system disk (almost always much bigger than the image) with aforementioned gold master image",
+        "ts": "1511190096.000244"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "3) ^^^ is done via a “LiveCD” ram OS, usually machine booted via a USB key, but also could be PXE - Then after the image is laid down on the machine’s internal HDD, must manually fire up GParted, and resize the partitions to a) create appropriate swap part\/n, and b) resize other existing partition to appropriately fill the target disk",
+        "ts": "1511190133.000653"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "4) Once that is all done, run Ansible from the Live CD (pulling down playbooks from Git) and run them against the target disk which is mounted chroot (which is interesting, as some Ansible “facts” relate to the in-mem OS, not the target disk OS… So we have to set\/use custom facts)",
+        "ts": "1511190191.000226"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So, do you folks have a better way to deploy an image to a different size target disk? Or do you assume the target disk is same size as image disk?",
+        "ts": "1511190298.000415"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "<@U416T0AAX> so why not PXE a 'release' image, then just ansible it via workflow ?",
+        "ts": "1511195375.000328"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I ask as I seem to be messing with the same workflow as you.  In my case, I'm attempting to match the Universities 'training of students' to some governmental 'service' companies",
+        "ts": "1511195474.000219"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U416T0AAX> - I’ll try and get back to this as well.  On call for a while.",
+        "ts": "1511195486.000679"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U62R1805P> one big reason not to do it that way - if you do installs based on PKG systems - you must host and carefully control every single package in your own hosted repo.  Otherwise, you end up with unknown version numbers and releases of pkgs installed on the Machine.",
+        "ts": "1511195526.000835"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "in some environments - especially with large scale systems (1000s to 10000s) - you can NOT afford to be uncertain about an OS deployment with various versions of PKGs installed - and subtle bugs\/interactions with your application and services",
+        "ts": "1511195575.000017"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "Yea, I figured so (which is why I'm looking into this also) but unless you normalize H\/W (which is almost impossible now-days)... you still end up with a blizzard of snowflakes :wink:",
+        "ts": "1511195711.000074"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I'm debating on where to cut the boundaries for 'the next major update' for these governmental systems but make sure the University grads can service the infra... but what <@U416T0AAX> describes seems to be what the 'current pattern' is for the companies... storage seems to be the PIA",
+        "ts": "1511195997.000393"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the Image deployment pattern is a major component of Immutable Infrastructure - which is a pattern popularized (not invented) in Cloud - with instantiating a VM - use it, update your VM images - then blow away VM, and re-instantiate it ... sort of workflow",
+        "ts": "1511196191.000494"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "there have always been similar Image (both raw image and filesystem image) capabilities in several deployment tools for decades that follow the \"Gold Image\" pattern and Immutable Infrastructure - what you do **after** the initial install is what dictates whether you're following those principles or not",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1511196265.000000"
+        },
+        "ts": "1511196261.000728"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if you PKG upgrade things in place after install - you are NOT following Immutable Infrastructure patterns",
+        "ts": "1511196287.000624"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if you nuke a machine and redeploy when you need to update - you are",
+        "ts": "1511196296.000223"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "how you get to a common set of OS, supporting pkgs, and apps - can vary - but the goal is to guarantee WHAT is installed (precisely), along with how you operate that infra after the fact",
+        "ts": "1511196331.000006"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U6QFVRJNB> <@U62R1805P> I wouldn’t call what we are doing “immutable” - it’s just a OS install acceleration mechanism in our case",
+        "ts": "1511200780.000720"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "“Immutable” to me means “read-only”",
+        "ts": "1511200812.000029"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Maybe with COW technology, one could deploy an OS image which would be immutable, but then changes, OS state persisted to files, etc would go into a writeable layer on top",
+        "ts": "1511200919.000259"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "to me \"immutable\" means only initial configuration.  No patch\/upgrade.  so, it's read only after the initial configuration.",
+        "ts": "1511200938.000136"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Not sure if that’s a thing on bare metal",
+        "ts": "1511200944.000107"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "even cloud immutable &amp; containers get initial configuration before they start taking workload.  once they are running, there's nothing in the system that cannot be thrown away",
+        "ts": "1511201003.000447"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DHRR2L> Enforced read-only, or by convention?",
+        "ts": "1511201009.000452"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "by convention",
+        "ts": "1511201020.000043"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "and the fact that the systems can be destroyed at any time",
+        "ts": "1511201033.000255"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yes, ok",
+        "ts": "1511201040.000361"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Not like a memory-booted system then, but actual bits on disk?",
+        "ts": "1511201086.000271"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "either way.  same effect.",
+        "ts": "1511201127.000421"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "I did a post about this.... looking it uyp",
+        "ts": "1511201141.000633"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<https:\/\/thenewstack.io\/immutable-hardware-ops-hygiene-security-efficiency\/>",
+        "attachments": [
+            {
+                "service_name": "The New Stack",
+                "title": "Immutable Hardware: Ops Hygiene For Security and Efficiency - The New Stack",
+                "title_link": "https:\/\/thenewstack.io\/immutable-hardware-ops-hygiene-security-efficiency\/",
+                "text": "There’s a clear pattern of benefit from using automation to reduce cycle time and eliminate manual intervention for all operational components. And that is as true for hardware as it is for software. RackN CTO, Greg Althaus, and I were discussing Jérôme Petazzoni’s ContainerCon 2015 security presentation, in which he argued for limiting the lifespans of containers as …",
+                "fallback": "The New Stack: Immutable Hardware: Ops Hygiene For Security and Efficiency - The New Stack",
+                "image_url": "https:\/\/cdn.thenewstack.io\/media\/2015\/12\/cow-617327_1280-2.jpg",
+                "image_width": 352,
+                "image_height": 250,
+                "ts": 1451322231,
+                "from_url": "https:\/\/thenewstack.io\/immutable-hardware-ops-hygiene-security-efficiency\/",
+                "image_bytes": 190720,
+                "service_icon": "https:\/\/thenewstack.io\/favicon.ico",
+                "id": 1
+            }
+        ],
+        "ts": "1511201211.000392"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Gentlemen’s agreement that local machine state past initial boot\/provisioning is ephemeral, right?",
+        "ts": "1511201256.000197"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I see the utility in that",
+        "ts": "1511201315.000261"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Immutable Infrastructure as applied to OS and App deployment (generally) separates out the state in 3 layers:\n1.  OS deployment guaranteed to be the same across all deployments\/machines\n2. OS state is separate (this includes configuration elements to make a VM or Machine \"operate\" correctly)\n3. application state separated out from deployment\/provisioning activities\nUsually - the \"application state\" part is via \"cloudy\" based services (eg highly replicated technologies) - such that any given Application instance can be destroyed, and the state can \"carry on\" beyond the death of the individual VM\/Machine",
+        "ts": "1511201522.000444"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can consider these \"layers\", but they don't have to be enforced in a layered filesystem model - but Containers very much adhere to this principle with layers",
+        "ts": "1511201556.000335"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "We actually have another cluster here wherein the base OS comes in via PXE, and runs memory-resident, but the nodes also have disk in them to persist certain state",
+        "ts": "1511201834.000569"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Well immutable infrastructure not withstanding.   I’ve started looking at your steps, <@U416T0AAX>.  I think those are possible and I’ve started that process.  With regard to immutable or not.  I think DRP should enable all the insanity possible, but encourage best practices.  Soooo. all 4 steps are actually allowed and done in some of the experimental imaging stuff I’ve been doing.",
+        "ts": "1511203959.000574"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "... I'll sign up to build, use, document and rebuild the path blazed by <@U02DGQYK1> and <@U416T0AAX> :wink:  I've been coming up to speed on  sphinx",
+        "ts": "1511204193.000152"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Sweet.  I've updated the document on documentation in \"latest\" ",
+        "ts": "1511204253.000637"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "ok... I think I follow the doc patterns... I used your 5min demo for both doc gray and mailservices, they had a few general questions like 'why sphinx' and why not just md (as kubespay seems to use)... then github has pages.github.com.... (they really don't care that much other than 'choice motivation'",
+        "ts": "1511204530.000407"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DGQYK1> The sticking point with our imaging process is the manual resizing of partitions after imaging the target disk (as well as creating a swap part’n based on RAM size) - love to hear any ideas for automating that",
+        "ts": "1511208293.000458"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Okay - soooo - I’ve started working on this by using the CoreOS ignition tool with some helpers.",
+        "ts": "1511208508.000186"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It also depends upon what imaging technique you are using.",
+        "ts": "1511208520.000551"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "well - backing up.",
+        "ts": "1511208546.000452"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "First, This can be done as a task in sledgehammer.",
+        "ts": "1511208567.000164"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "We use “Clonezilla” live via PXE-boot ( <http:\/\/clonezilla.org> )",
+        "edited": {
+            "user": "U416T0AAX",
+            "ts": "1511208800.000000"
+        },
+        "ts": "1511208777.000526"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DGQYK1> Is CoreOS Ignition usable as a post-imaging tool? Looks to me from what I’m reading as a pre-install prep tool, as well as an installer...",
+        "edited": {
+            "user": "U416T0AAX",
+            "ts": "1511209278.000000"
+        },
+        "ts": "1511209235.000194"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I’ve added imaging capabilities to it.",
+        "ts": "1511209663.000250"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "so, you can do pre\/post and install.",
+        "ts": "1511209670.000374"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "clonezilla looks interesting.",
+        "ts": "1511209677.000155"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "An interesting thing is that you could build a clonezilla bootenv with custom templates to restore and\/or backup systems.",
+        "ts": "1511209734.000218"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Oh sure",
+        "ts": "1511211256.000304"
+    },
+    {
+        "text": "Can I change the name of a discovered machine?",
+        "username": "Nauxuron",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1511216930.000275"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yes - only through the cli and API (not the UX) currently.",
+        "ts": "1511217040.000383"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "`drpcli machines update &lt;uuid&gt; '{ \"Name\": \"newname\" }'`",
+        "ts": "1511217059.000257"
+    },
+    {
+        "text": "Ah thanks",
+        "username": "Nauxuron",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1511217098.000365"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U62R1805P> we did use markdown for a while - switching to RST and Sphinx lets us use readthedocs and have all the awesome xref, index and PDF features that come with treating the docs like a book.",
+        "ts": "1511239870.000156"
+    }
+]

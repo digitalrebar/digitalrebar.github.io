@@ -1,0 +1,410 @@
+[
+    {
+        "type": "message",
+        "user": "U9DAYGSRL",
+        "text": "thanks !",
+        "thread_ts": "1519910364.000361",
+        "parent_user_id": "U02DJQSG8",
+        "ts": "1519994846.000141"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DGQYK1> Confirming new partman preseed directives in `tip` community content work now...",
+        "ts": "1520010429.000288"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I got:\n```\n#Partitioning Scheme\nd-i partman-auto\/disk string \/dev\/sda\nd-i grub-installer\/choose_bootdev select \/dev\/sda\nd-i grub-installer\/bootdev string \/dev\/sda\nd-i partman-auto\/method string lvm\nd-i partman-auto-lvm\/guided_size string max\nd-i partman-auto-lvm\/new_vg_name string testnode01\nd-i partman-auto\/choose_recipe select atomic\nd-i grub-installer\/only_debian boolean true\n\nd-i partman\/confirm_write_new_label boolean true\nd-i partman\/choose_partition select finish\nd-i partman\/confirm boolean true\nd-i partman\/confirm_nooverwrite boolean true\n```\nand it successfully partitioned the drive.",
+        "ts": "1520010457.000533",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U6QFVRJNB"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Refresh my memory - the string value of `select-kickseed` is the template name WITH or WITHOU the `.tmpl` at the end?",
+        "ts": "1520013204.000622"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "with",
+        "ts": "1520013223.000381"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Ah, that's why it didn't work :stuck_out_tongue_winking_eye:",
+        "ts": "1520013244.000554"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "It's the part-scheme one that doesn't want the .tmpl",
+        "ts": "1520013336.000480"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "is it possible to have like a bootenv with some set templates and kernel parameters, but then also have several stages with an \"extra\" template and kernel parameter?",
+        "ts": "1520019279.000172"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "and while I was typing that out, it just hit me that I guess this is a scenario I could also solve with a drpcli runner, hm...",
+        "edited": {
+            "user": "U54E4SD4G",
+            "ts": "1520019357.000000"
+        },
+        "ts": "1520019332.000537"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "Is there a better way to get the bare DRP server IP or hostname other than parsing out `.Env.InstallUrl` or `.ProvisionerURL`?",
+        "ts": "1520019639.000050"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U54E4SD4G>`.ProvisionerAddress` from <http:\/\/provision.readthedocs.io\/en\/latest\/doc\/arch\/provision.html#rendering-templates>",
+        "ts": "1520019830.000589"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "FYI, something is wrong in either the upstream, or more likley the ubuntu repo pointers:\n```\ndrpcli bootenvs uploadiso ubuntu-16.04-install\nError: Unable to initiate download of <http:\/\/mirrors.kernel.org\/ubuntu-releases\/16.04\/ubuntu-16.04.3-server-amd64.iso>: 404 Not Found\n```",
+        "ts": "1520036606.000242"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "this was from a new install against stable.",
+        "ts": "1520036618.000197"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U43DC40BA> checking it ...",
+        "ts": "1520036685.000130"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we had an issue w\/ CentOS yanking the 7.3 ISOs with zero warnings",
+        "ts": "1520036699.000110"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "seems .3 ISO is gone.",
+        "ts": "1520036707.000179"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "also note ... if you have a copy of the ISO (Until we update the Contents) - you can install the ISO via the UX - go to the Boot ISOs menu item",
+        "ts": "1520036739.000012"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "or you can copy the ISO to your tftpboot\/isos\/ directory (either in ~\/drp\/drpdata, or the \/var\/lib\/dr-provision directory)",
+        "ts": "1520036773.000214"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "then restart DRP",
+        "ts": "1520036777.000053"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we'll put out an updated version of Contents shortly",
+        "ts": "1520036852.000109"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "Ubuntu has the older ISOs here too for future reference:\n<http:\/\/old-releases.ubuntu.com\/releases\/xenial\/ubuntu-16.04.3-server-amd64.iso>",
+        "ts": "1520037269.000150"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yeah ... never mind using a symlink to point \"latest\" at the moving target ... sigh ...",
+        "ts": "1520037292.000274"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "Question, or docs pointer if possible:  The host I installed DR on has letsencrypt credentials, how do I tell DR who it actually is?",
+        "ts": "1520037326.000151"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "did you do `isolated` or production install ?",
+        "ts": "1520037380.000092"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "production",
+        "ts": "1520037399.000251"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "also, can I pass a domain name rather than IP address to the config?",
+        "ts": "1520038207.000136"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U43DC40BA> there is a cert and key that gets installed (the self-signed).  It's either in `\/` or in `\/var\/lib\/dr-provision\/` directories.  replace those with your certs and restart dr-provision",
+        "ts": "1520038399.000128"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "on the domain name - are you referring to `drpcli` commands ?",
+        "ts": "1520038412.000158"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "no, I was thinking about advertised address from the server, I’d rather it passes out the domain name than the IP.",
+        "ts": "1520038585.000161"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "was wondering if I should have passed a name with --static-ip=",
+        "ts": "1520038618.000049"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "via the `--static-ip` flag ?",
+        "ts": "1520038618.000089"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "yeah, that’s what I was wondering :slightly_smiling_face:",
+        "ts": "1520038626.000124"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ah - you really don't need `static-ip` we do a bunch of magic with caching address tables and interface info - and we dynamically serve the correct IP to a client based on their network connection",
+        "ts": "1520038653.000033"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the problem w\/ using a hostname\/domain - you have to make sure that resolves at the PXE firmware\/boot level ... and any DNS issues will impact your provisioning activities",
+        "ts": "1520038696.000027"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can of course hand out DNS servers w\/ the DHCP assignment ... nothing stopping you from doing that ...",
+        "ts": "1520038720.000026"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "ok, won’t worry there then.",
+        "ts": "1520038725.000010"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "but you'll be circumventing our magic logic",
+        "ts": "1520038729.000021"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "so the key\/cert are in \/, this seems like a bad place to put these items. And in reality, I’d rather point to their locations in the letsencrypt directories (so that they stay up to date).  IS there a config parameter I can set somewhere?",
+        "ts": "1520038784.000233"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "no desire to bypass the magic!",
+        "ts": "1520038795.000084"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "```dr-provision --help\n      --tls-key=               The TLS Key File (default: server.key)\n      --tls-cert=              The TLS Cert File (default: server.crt)```",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1520038849.000000"
+        },
+        "ts": "1520038835.000154"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "k. will re-provision with those.",
+        "ts": "1520038854.000096"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can specify the location ... that's just the default",
+        "ts": "1520038867.000172"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "so that doesn’t seem to be working. when I restart dr-provision it regenerates new self signed keys.  Note I’m passing in .pem formatted key\/cert, but I also don’t see any errors in trying to read them",
+        "ts": "1520040209.000066"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U43DC40BA> I'm not sure if we accept a PEM format ... will have to check w\/ <@U02DGQYK1> and\/or <@U02DJQSG8> on that one",
+        "ts": "1520040249.000056"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "Ok, I’m seeing the following:\n```\ncurl -fsSL get.rebar.digital\/stable | bash -s -- --tls-key=\/etc\/letsencrypt\/live\/gitlab.kumulus.co\/privkey.pem --tls-cert=\/etc\/letsencrypt\/live\/gitlab.kumulus.co\/cert.pem install\nOverriding TLS_KEY with \/etc\/letsencrypt\/live\/gitlab.kumulus.co\/privkey.pem\nOverriding TLS_CERT with \/etc\/letsencrypt\/live\/gitlab.kumulus.co\/cert.pem\n'dr-provision' service is not running, beginning install process ...\nEnsuring required tools are installed\nInstalling Version stable of Digital Rebar Provision\n...\n```",
+        "ts": "1520040279.000151"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "started manually, passed the tls params, and that works.",
+        "ts": "1520040480.000066"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "going to restart the service and see if it takes this time",
+        "ts": "1520040507.000131"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You have to add to the service file",
+        "client_msg_id": "2F4D7FDF-85C3-4744-90A7-00C260633575",
+        "ts": "1520040535.000184"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ah",
+        "ts": "1520040544.000098"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "^which - where?",
+        "ts": "1520040548.000112"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yeah - in `\/etc\/systemd\/system\/dr-provision.service` - assuming SystemD",
+        "ts": "1520040560.000015"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The install.sh script doesn’t do anything.  We need a plan for that ",
+        "client_msg_id": "B3E3562A-6C2D-411B-988B-899B7CD9A10E",
+        "ts": "1520040573.000051"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U43DC40BA> the content update w\/ the 16.04.4 fix will be out later this evening the PR just needs to go through approval and release process now",
+        "ts": "1520040639.000128"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<https:\/\/github.com\/digitalrebar\/provision-content\/pull\/65>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "Switched from Kernel.org to Princeton mirror; moved to 16.04.4 by sygibson · Pull Request #65 · digitalrebar\/provision-content",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision-content\/pull\/65",
+                "text": "switched from <http:\/\/kernel.org|kernel.org> to princeton Ubuntu mirror <http:\/\/kernel.org|kernel.org> was taking 15 minutes ... princeton mirror took 10 seconds moved from 16.04.3 to 16.04.4 version",
+                "fallback": "GitHub: Switched from Kernel.org to Princeton mirror; moved to 16.04.4 by sygibson · Pull Request #65 · digitalrebar\/provision-content",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision-content\/pull\/65",
+                "thumb_url": "https:\/\/avatars2.githubusercontent.com\/u\/5308433?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1520040645.000164"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "ok, trying that now. I’ll let you know if\/as I succeed",
+        "ts": "1520040902.000104"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "Yes, success, I had to update the \/etc\/systemd\/system\/dr-provision.service file:\n```\n[Service]\nExecStart=\/usr\/local\/bin\/dr-provision --tls-key=\/etc\/letsencrypt\/live\/gitlab.kumulus.co\/privkey.pem --tls-cert=\/etc\/letsencrypt\/live\/gitlab.kumulus.co\/cert.pem\n```",
+        "ts": "1520041078.000095"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yay !",
+        "ts": "1520041148.000122"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "now I’m stuck, the UI just spins on loading plugins",
+        "ts": "1520042043.000089"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "shift-reload",
+        "ts": "1520042117.000065"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "helps a lot if I read the error message.  gotta go find my glasses…  (e.g. you must install providers before installing plugins…)",
+        "ts": "1520044875.000005"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "interesting behavior with the terraform plugin, only the first node gets provisioned, and the system state doesn’t seem to get updated completely, leaving the one provisioned node in “power off” state, thought it is running in packet.",
+        "ts": "1520058547.000015"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "thoughts on how I might debug this?",
+        "ts": "1520058802.000057"
+    }
+]

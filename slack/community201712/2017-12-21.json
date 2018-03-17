@@ -1,0 +1,630 @@
+[
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<!channel> - the v007 meetup recording is available at: \n<https:\/\/youtu.be\/ZEkzMKhe0f4> \nGreat discussions on:\n    - KubeCon\/CloudNativeCon recap and insights\n    - updates to the DRP Terraform Provider capabilities (what can't this thing do!!?)\n    - Package Repository architectural changes\n    - Immutable Kubernetes (KRIB) extensions and features discussion\n    - L8ist Sh9y audio podcast on Patch APIs, Swagger, and Integrations",
+        "attachments": [
+            {
+                "service_name": "YouTube",
+                "service_url": "https:\/\/www.youtube.com\/",
+                "title": "Digital Rebar Meetup #7",
+                "title_link": "https:\/\/youtu.be\/ZEkzMKhe0f4",
+                "author_name": "RackN & Digital Rebar",
+                "author_link": "https:\/\/www.youtube.com\/channel\/UCr3bBtP-pMsDQ5c0IDjt_LQ",
+                "thumb_url": "https:\/\/i.ytimg.com\/vi\/ZEkzMKhe0f4\/hqdefault.jpg",
+                "thumb_width": 480,
+                "thumb_height": 360,
+                "fallback": "YouTube Video: Digital Rebar Meetup #7",
+                "video_html": "<iframe width=\"400\" height=\"225\" src=\"https:\/\/www.youtube.com\/embed\/ZEkzMKhe0f4?feature=oembed&autoplay=1&iv_load_policy=3\" frameborder=\"0\" gesture=\"media\" allow=\"encrypted-media\" allowfullscreen><\/iframe>",
+                "video_html_width": 400,
+                "video_html_height": 225,
+                "from_url": "https:\/\/youtu.be\/ZEkzMKhe0f4",
+                "service_icon": "https:\/\/a.slack-edge.com\/2089\/img\/unfurl_icons\/youtube.png",
+                "id": 1
+            }
+        ],
+        "ts": "1513879519.000077"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "...AND... greg is about to announce:",
+        "ts": "1513879572.000166"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<!channel> - Also, v3.5.0 of DRP is published to stable.  v1.4.0 of the the content packages and plugins are out as well.",
+        "ts": "1513879593.000044"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": ":slightly_smiling_face:",
+        "ts": "1513879595.000112",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U6QFVRJNB",
+                    "U02DHRR2L",
+                    "U416T0AAX"
+                ],
+                "count": 3
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<https:\/\/github.com\/digitalrebar\/provision\/releases\/tag\/v3.5.0>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/releases\/tag\/v3.5.0",
+                "text": "provision - The Provisioner for DigitalRebar as a Stand Alone Golang Utility",
+                "fallback": "GitHub: digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/releases\/tag\/v3.5.0",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 192,
+                "thumb_height": 192,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1513879625.000507"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Up on v3.5 (w00t!) but have an issue with adding KRIB (which I want to try to play with over the upcoming holiday)",
+        "ts": "1513894906.000034"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I looked in the catalog and saw this, and \"+\"d it into my DRP system",
+        "ts": "1513894946.000037"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F8J64AV7D\/krib_from_catalog.png|KRIB as seen in Catalog>",
+        "file": {
+            "id": "F8J64AV7D",
+            "created": 1513894976,
+            "timestamp": 1513894976,
+            "name": "krib_from_catalog.png",
+            "title": "KRIB as seen in Catalog",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 20319,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8J64AV7D\/krib_from_catalog.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8J64AV7D\/download\/krib_from_catalog.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8J64AV7D-f5dc551de2\/krib_from_catalog_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8J64AV7D-f5dc551de2\/krib_from_catalog_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8J64AV7D-f5dc551de2\/krib_from_catalog_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 52,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8J64AV7D-f5dc551de2\/krib_from_catalog_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 69,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8J64AV7D-f5dc551de2\/krib_from_catalog_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8J64AV7D-f5dc551de2\/krib_from_catalog_720.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 104,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8J64AV7D-f5dc551de2\/krib_from_catalog_800.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 115,
+            "image_exif_rotation": 1,
+            "original_w": 820,
+            "original_h": 118,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F8J64AV7D\/krib_from_catalog.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F8J64AV7D-0c4def40bb",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1513894977.000462"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "But now when I look in my Content screen, I see this:",
+        "ts": "1513894996.000314"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F8J64LEN7\/krib_from_content_pkgs.png|KRIB as seen in Content>",
+        "file": {
+            "id": "F8J64LEN7",
+            "created": 1513895022,
+            "timestamp": 1513895022,
+            "name": "krib_from_content_pkgs.png",
+            "title": "KRIB as seen in Content",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 6602,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8J64LEN7\/krib_from_content_pkgs.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8J64LEN7\/download\/krib_from_content_pkgs.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8J64LEN7-7e79b5d1f1\/krib_from_content_pkgs_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8J64LEN7-7e79b5d1f1\/krib_from_content_pkgs_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8J64LEN7-7e79b5d1f1\/krib_from_content_pkgs_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 198,
+            "thumb_360_h": 122,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8J64LEN7-7e79b5d1f1\/krib_from_content_pkgs_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "image_exif_rotation": 1,
+            "original_w": 198,
+            "original_h": 122,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F8J64LEN7\/krib_from_content_pkgs.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F8J64LEN7-7fc8247691",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1513895023.000116"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So do I have version 1.4.0, or \"tip\"?",
+        "ts": "1513895041.000142"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Click the drop down arrow and see what it says.",
+        "ts": "1513895056.000210"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You may have to select 1.4.0",
+        "ts": "1513895073.000025"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "and update.",
+        "ts": "1513895074.000362"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I have choices \"tip\" or \"v1.1.0\"",
+        "ts": "1513895102.000093"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "hmm",
+        "ts": "1513895108.000539"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I did not \"Transfer\" yet",
+        "ts": "1513895171.000130"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "For mine, I had to scroll down to get the rest of the options.",
+        "ts": "1513895227.000242"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I had to OPne the arrow, then mouse wheel down to get to 1.4.0",
+        "ts": "1513895251.000173"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "did not notice the scroll capability in the drop - I did scroll, select \"v1.4.0\", and transfer",
+        "ts": "1513895289.000149"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "that should be good",
+        "ts": "1513895304.000430"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Why does the UX not show all values by default?",
+        "ts": "1513895338.000488"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "On mine it does, it just could be off the screen.  It doesn’t auto scroll the list into view.",
+        "ts": "1513895365.000233"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK",
+        "ts": "1513895384.000212"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Anyways, all good now.",
+        "ts": "1513895392.000401",
+        "reactions": [
+            {
+                "name": "simple_smile",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "How may nodes minimum for a decent KRIB install - 3, 4?",
+        "ts": "1513895422.000005"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "at least 2 to play with.",
+        "ts": "1513895441.000065"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You will get N-1 minions and 1 master.",
+        "ts": "1513895454.000010"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, have three, could rack &amp; set up a 4th if needed.",
+        "ts": "1513895458.000284"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F8KBFB0S3\/image_uploaded_from_ios.jpg|Bare metal...>",
+        "file": {
+            "id": "F8KBFB0S3",
+            "created": 1513903041,
+            "timestamp": 1513903041,
+            "name": "Image uploaded from iOS.jpg",
+            "title": "Bare metal...",
+            "mimetype": "image\/jpeg",
+            "filetype": "jpg",
+            "pretty_type": "JPEG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 5041325,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8KBFB0S3\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8KBFB0S3\/download\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8KBFB0S3-297fdc117b\/image_uploaded_from_ios_64.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8KBFB0S3-297fdc117b\/image_uploaded_from_ios_80.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8KBFB0S3-297fdc117b\/image_uploaded_from_ios_360.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 360,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8KBFB0S3-297fdc117b\/image_uploaded_from_ios_480.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 480,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8KBFB0S3-297fdc117b\/image_uploaded_from_ios_160.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8KBFB0S3-297fdc117b\/image_uploaded_from_ios_720.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 720,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8KBFB0S3-297fdc117b\/image_uploaded_from_ios_800.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 800,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8KBFB0S3-297fdc117b\/image_uploaded_from_ios_960.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 960,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8KBFB0S3-297fdc117b\/image_uploaded_from_ios_1024.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 1024,
+            "image_exif_rotation": 1,
+            "original_w": 2955,
+            "original_h": 2955,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F8KBFB0S3\/image_uploaded_from_ios.jpg",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F8KBFB0S3-747327b788",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "upload_reply_to": "B5D64FCF-DEEA-4BE0-93EC-40D79A6D764A",
+        "ts": "1513903047.000095"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F8JAMAJBE\/image_uploaded_from_ios.jpg|...about to get KRIB’d>",
+        "file": {
+            "id": "F8JAMAJBE",
+            "created": 1513903216,
+            "timestamp": 1513903216,
+            "name": "Image uploaded from iOS.jpg",
+            "title": "...about to get KRIB’d",
+            "mimetype": "image\/jpeg",
+            "filetype": "jpg",
+            "pretty_type": "JPEG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 13964252,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8JAMAJBE\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8JAMAJBE\/download\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8JAMAJBE-d301ea1761\/image_uploaded_from_ios_64.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8JAMAJBE-d301ea1761\/image_uploaded_from_ios_80.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8JAMAJBE-d301ea1761\/image_uploaded_from_ios_360.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 270,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8JAMAJBE-d301ea1761\/image_uploaded_from_ios_480.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 360,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8JAMAJBE-d301ea1761\/image_uploaded_from_ios_160.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8JAMAJBE-d301ea1761\/image_uploaded_from_ios_720.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 540,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8JAMAJBE-d301ea1761\/image_uploaded_from_ios_800.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 600,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8JAMAJBE-d301ea1761\/image_uploaded_from_ios_960.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 720,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8JAMAJBE-d301ea1761\/image_uploaded_from_ios_1024.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 768,
+            "image_exif_rotation": 1,
+            "original_w": 4032,
+            "original_h": 3024,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F8JAMAJBE\/image_uploaded_from_ios.jpg",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F8JAMAJBE-324bac29e7",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "upload_reply_to": "ED9BD931-D53D-4D4B-BA8A-FBDB62D3C471",
+        "ts": "1513903223.000070"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "<!here> hey guys, thanks again for the help the other day. Since the centos provisioning is working well, now I wanna try to provision Windows. I didnt find a lot of help in the documentation, do you have any tip for me? ",
+        "ts": "1513905330.000150"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U8FAN7PLK> - we can do winders provisioning, but we need to talk a bit first - tmw what's a good time for you ?",
+        "ts": "1513908538.000145"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "<@U6QFVRJNB> From 10Am to 3-5Pm EST :) ",
+        "ts": "1513908640.000004"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ok -  ping us when free around those times",
+        "ts": "1513908660.000239"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "Alright, thanks, will do",
+        "ts": "1513910659.000010"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<!here> - trying to follow <@U02DHRR2L> ‘s KRIB install from the webinar; trying for setting up k8s on installed nodes",
+        "edited": {
+            "user": "U416T0AAX",
+            "ts": "1513911215.000000"
+        },
+        "ts": "1513911076.000150"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "In the webinar vid, he shows a stage map that has a task named “runner-service” — I don’t have that on my system (v3.5.0) ",
+        "ts": "1513911185.000125"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Where to get that?",
+        "ts": "1513911231.000054"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "task-library has it.",
+        "ts": "1513911977.000054"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U416T0AAX>",
+        "ts": "1513912064.000108"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Thx <@U02DGQYK1>",
+        "ts": "1513912186.000083"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "What makes stuff appear in the Content section by default vs having to get it from the Catalog?",
+        "ts": "1513912225.000085"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "settings and some other things like bugs",
+        "ts": "1513912341.000068"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "lol",
+        "ts": "1513912529.000138"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK. So i have already installed nodes (U16.04) that are sitting at stage “complete-nowait” with bootenv “local”",
+        "ts": "1513912838.000020"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I don’t have to reinstall them to get into the KRIB install do I? Can I just start with Docker install? How to structure the stage map?",
+        "ts": "1513912906.000035"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Does this look like a workable stage map? (wondering about the beginning task)",
+        "ts": "1513913122.000070"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F8HQV48SD\/krib-install-stage-map.png|krib-install-stage-map>",
+        "file": {
+            "id": "F8HQV48SD",
+            "created": 1513913154,
+            "timestamp": 1513913154,
+            "name": "krib-install-stage-map.png",
+            "title": "krib-install-stage-map",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 36591,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8HQV48SD\/krib-install-stage-map.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8HQV48SD\/download\/krib-install-stage-map.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8HQV48SD-d3ca5a180b\/krib-install-stage-map_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8HQV48SD-d3ca5a180b\/krib-install-stage-map_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8HQV48SD-d3ca5a180b\/krib-install-stage-map_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 63,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8HQV48SD-d3ca5a180b\/krib-install-stage-map_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 84,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8HQV48SD-d3ca5a180b\/krib-install-stage-map_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8HQV48SD-d3ca5a180b\/krib-install-stage-map_720.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 126,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8HQV48SD-d3ca5a180b\/krib-install-stage-map_800.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 140,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8HQV48SD-d3ca5a180b\/krib-install-stage-map_960.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 168,
+            "image_exif_rotation": 1,
+            "original_w": 977,
+            "original_h": 171,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F8HQV48SD\/krib-install-stage-map.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F8HQV48SD-2368d4ad22",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1513913156.000105"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "N\/m, realized with no runner process running on the node, it would never take instructions to do anything...",
+        "ts": "1513914892.000108"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Starting with OS install &amp; going from there",
+        "ts": "1513914913.000157"
+    }
+]

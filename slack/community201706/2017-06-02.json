@@ -1,0 +1,334 @@
+[
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U0CMQM80G> the link to the gitter chat on the rebar.digital site is wrong -&gt; points to digitalrebar\/digitalrebar but should be digitalrebar\/core",
+        "ts": "1496425101.115934"
+    },
+    {
+        "user": "U0CMQM80G",
+        "inviter": "U02DHRR2L",
+        "text": "<@U0CMQM80G> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1496425108.118062"
+    },
+    {
+        "text": "Howdy! I'm using the rebar-provision quickstart on osx 10.12.5, and after tools\/discovery-load.sh runs, and a subnet is assigned, boxes are able to pull DHCP, but fail on pulling the next file in sequence: The traffic that comes via tcpdump is: 38 RRQ \"lpxelinux.0^A^DM-^?M-^?M-|\" octet blksize 1456\"",
+        "username": "bunchc",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1496425700.315298"
+    },
+    {
+        "text": "the failed message on the server console is the same",
+        "username": "bunchc",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1496425710.318428"
+    },
+    {
+        "text": "*for the same file",
+        "username": "bunchc",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1496425715.320140"
+    },
+    {
+        "text": "Any thoughts on where to look to see what's going on?",
+        "username": "bunchc",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1496425744.329826"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "hm",
+        "ts": "1496426081.442335"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I don't think the extra control characters should be part of the RRQ request.",
+        "ts": "1496426112.452985"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "What are the boxes?",
+        "ts": "1496426128.458944"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "thanks <@U0CMQM80G>",
+        "ts": "1496426138.462182"
+    },
+    {
+        "text": "The boxes are a bit older, based on https:\/\/www.asus.com\/Commercial-Servers-Workstations\/KFSN5DIST\/specifications\/",
+        "username": "bunchc",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1496426174.475077"
+    },
+    {
+        "text": "provision is running locally on my mac, late 2012, retina, 10.12.5",
+        "username": "bunchc",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1496426205.485577"
+    },
+    {
+        "text": "I added the route to point directly at said mac goo",
+        "username": "bunchc",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1496426216.489366"
+    },
+    {
+        "text": "*too",
+        "username": "bunchc",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1496426218.489881"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "hm",
+        "ts": "1496426279.511557"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Is the firewall on the mac set to allow incoming TFTP to dr-provision?",
+        "ts": "1496426300.518885"
+    },
+    {
+        "text": "firewall is off",
+        "username": "bunchc",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1496426325.527131"
+    },
+    {
+        "text": "tcpdump shows the packets getting there",
+        "username": "bunchc",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1496426343.533255"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ok",
+        "ts": "1496426576.617185"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "and lpxelinux.0 is present in drp-data\/tftpboot ?",
+        "ts": "1496426604.626982"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "(it should have been automatically when the provisioner started up",
+        "ts": "1496426631.636296"
+    },
+    {
+        "text": "yes",
+        "username": "bunchc",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1496426636.637949"
+    },
+    {
+        "text": "https:\/\/gist.github.com\/bunchc\/c5909f3289481c0cd9cf6002167c11f2",
+        "username": "bunchc",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1496426667.648573"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ok, that looks fine.",
+        "ts": "1496426760.680139"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Have you created a network in dr-provisioner via the UI?",
+        "ts": "1496426825.702657"
+    },
+    {
+        "text": "Yup: https:\/\/i.imgur.com\/MIUxBlQ.png",
+        "username": "bunchc",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1496426861.714745"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ok",
+        "ts": "1496426916.733113"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "What interface is en3?",
+        "ts": "1496426922.734868"
+    },
+    {
+        "text": "Thunderbolt ethernet",
+        "username": "bunchc",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1496426960.747081"
+    },
+    {
+        "text": "hooked up to the same switch as the box pxe booting",
+        "username": "bunchc",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1496426976.752349"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ok",
+        "ts": "1496427104.793689"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I am seeing if I can duplicate here.",
+        "ts": "1496427113.796562"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Don't have a Mac handy to test with, but I do have a beefy Linux box.",
+        "ts": "1496427137.804465"
+    },
+    {
+        "text": "I can spawn an ubuntu VM if we need, was hoping to avoid that layer tho.",
+        "username": "bunchc",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1496427199.825268"
+    },
+    {
+        "text": "Victor: I need to step away for a few hours. Will be back tho.",
+        "username": "bunchc",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1496427545.939577"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "hm",
+        "ts": "1496427755.008344"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I get \n13:21:00.186474 IP (tos 0x0, ttl 64, id 1045, offset 0, flags [none], proto UDP (17), length 69)\n    192.168.124.41.13686 &gt; m4723.tftp: [udp sum ok]  41 RRQ \"lpxelinux.0\" octet blksize 1432 tsize 0",
+        "ts": "1496427765.011517"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "that is with tcpdump -vvv",
+        "ts": "1496427792.020513"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "@bunchc.  Make sure the subnet option with pxelinux.0 doesn't have extra content in it",
+        "ts": "1496429137.462793"
+    },
+    {
+        "text": "Greg: re: subnet option, the bit in the UI?",
+        "username": "bunchc",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1496439234.285019"
+    },
+    {
+        "text": "Looks like it's getting the bits from somewhere, started over from the top and am now getting two different sets of control chars",
+        "username": "bunchc",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1496439732.388513"
+    },
+    {
+        "text": "lpxelinux.0M-^? in addition to what it have before",
+        "username": "bunchc",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1496439770.396599"
+    },
+    {
+        "text": "The latest with tcpdump -vvv  https:\/\/gist.github.com\/bunchc\/4d9f65cc698bda950f8ae57ebe635c00 looks like it both sends lpxelinux.0 and the one with control charachters",
+        "username": "bunchc",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1496440034.450269"
+    },
+    {
+        "text": "Looks like it's on the NIC end, am able to boot other boxes mostly fine",
+        "username": "bunchc",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1496441535.738118"
+    },
+    {
+        "text": "Thanks!",
+        "username": "bunchc",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1496441612.751561"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "cool - I'd be interested to know what made the NIC do that",
+        "ts": "1496447183.510901"
+    },
+    {
+        "text": "I'm not sure \/why\/ it's sending control charachters, other than it looks to be part of an older tftp spec. I'll dit a little bit once I get it sorted out.",
+        "username": "bunchc",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1496459287.305010"
+    }
+]

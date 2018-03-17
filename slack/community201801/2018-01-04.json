@@ -1,0 +1,281 @@
+[
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "So I've created a 'test user' and as I was doing both the sign up and sign in... I noticed the \"client_id\"... I take it that's tied to the session ? (aka it's the expire token that deals with backend on amazon stuff)...",
+        "ts": "1515079305.000297"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "...wait... I'm going to create an issue in github and just ping here...",
+        "ts": "1515079469.000122"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "<@U02DHRR2L> no happiness on a re-test <https:\/\/github.com\/digitalrebar\/provision\/issues\/612>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "Remove Endpoints on RackN Portal.. Save Button doesent work..  · Issue #612 · digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/issues\/612",
+                "text": "provision - The Provisioner for DigitalRebar as a Stand Alone Golang Utility",
+                "fallback": "GitHub: Remove Endpoints on RackN Portal.. Save Button doesent work..  · Issue #612 · digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/issues\/612",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/7550764?s=400&v=4",
+                "thumb_width": 100,
+                "thumb_height": 100,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1515080691.000384"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "The front end change was in queue - just released it.",
+        "ts": "1515080832.000300"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "will take about 10 minutes",
+        "ts": "1515080845.000177"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "sadly the refresh token thing is fighting against AWS Cognito docs.",
+        "ts": "1515080895.000357"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "ok... I'll hit it later.. I just created a test user and getting scripts to work... so I should be able to regression Signup, Login and Logout (as that pretty generic).",
+        "ts": "1515080932.000390"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "awesome!",
+        "ts": "1515080947.000720"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I'll dump details in issue 620 (just created)",
+        "ts": "1515080963.000166"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "<https:\/\/github.com\/digitalrebar\/provision\/issues\/620>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "TEST: Signup, Login and Logout · Issue #620 · digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/issues\/620",
+                "text": "Issue to track testing Signup, Login and Logout on the UX portal: <https:\/\/rackn.github.io\/provision-ux>",
+                "fallback": "GitHub: TEST: Signup, Login and Logout · Issue #620 · digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/issues\/620",
+                "thumb_url": "https:\/\/avatars3.githubusercontent.com\/u\/2227021?s=400&v=4",
+                "thumb_width": 207,
+                "thumb_height": 207,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1515080974.000246"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "<@U02DHRR2L> that re-direct client ID is session unique ?? correct ??",
+        "ts": "1515088447.000735"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "<https:\/\/rackn.auth.us-west-2.amazoncognito.com\/login?redirect_uri=https:\/\/rackn.github.io\/provision-ux\/&amp;response_type=token&amp;client_id=5lh22f5l4hv3776oasl4a7dcvl>",
+        "ts": "1515088449.000108"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "The client_id part",
+        "ts": "1515088458.000399"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "aka 'oath-ish'",
+        "ts": "1515088476.000673"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I think I get the reason... just messing with my head (and scripts) sorting out URL tracking stuff...",
+        "ts": "1515088574.000413"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "and the hover animations... are they sort of 'required' for event triggering or just for 'looks'",
+        "ts": "1515088696.000252"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U62R1805P> yeah - it's a redirect that returns the JWT session token.  we don't get the passwords at all, just the session token.  we register the specific URLs that are allowed to do a redirect.",
+        "ts": "1515092920.000278"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "a future benefit is that we can use other SSOs to auth",
+        "ts": "1515092943.000464"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I follow... what I was stumbling on is I need to pick up the token THROUGH the redirect BEFORE I attempt login... aka no real static 'login' page as I need to git the token first...",
+        "ts": "1515093679.000443"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "sorry... get token :wink: . Just need to add that to Page Object Login Function... ( it's not immutable ;-)",
+        "ts": "1515093837.000711"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "the token gets stored in the session, so you can recover it",
+        "ts": "1515093838.000318"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "that way it survives browser refresh",
+        "edited": {
+            "user": "U02DHRR2L",
+            "ts": "1515093887.000000"
+        },
+        "ts": "1515093881.000556"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "yup... but I'm starting the test from 'state-less' so I'll need to pick up the token each time for the browser session.  BTW... with all this, I'd suggest NOT doing 'auto refresh' just make sure the browser session js dirties the cache well before token expire AND set a modal in the browser session that forces a re-auth... that lets the users setup deal with re-auth (aka don't attempt to help keep anything alive, just make sure the user see they need to re-auth)... you've got a 're-auth' built-in button I see.. ( that or I'm confused about \"auto-renew\" )",
+        "ts": "1515094335.000361"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "Cognito is supposed to issue a 30 day refresh token so that we don't have to keep forcing a login.  we're working on that right now",
+        "ts": "1515094404.000117"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "once we get that <@U62R1805P> it may be able to just work w\/o login once you have the refresh token stored",
+        "ts": "1515095083.000286"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "catmini:testyourlogin msops$ npm test\n\n&gt; test-your-login@0.0.1 test \/Users\/msops\/Code\/testyourlogin\n&gt; wdio\n\n------------------------------------------------------------------\n[chrome #0-0] Session ID: 70b95f2434c4362c75f4012ac95a0922\n[chrome #0-0] Spec: \/Users\/msops\/Code\/testyourlogin\/test\/login.spec.js\n[chrome #0-0] Running: chrome\n[chrome #0-0]\n[chrome #0-0] Login Page\n[chrome #0-0]   ✓ should look nice\n[chrome #0-0]   ✓ should let you login with valid credentials\n[chrome #0-0]\n[chrome #0-0]\n[chrome #0-0] 2 passing (16s)\n[chrome #0-0]\n\ncatmini:testyourlogin msops$",
+        "ts": "1515103868.000003",
+        "reactions": [
+            {
+                "name": "white_check_mark",
+                "users": [
+                    "U416T0AAX",
+                    "U7U02J6LX"
+                ],
+                "count": 2
+            },
+            {
+                "name": "grinning",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "nice",
+        "ts": "1515103886.000233"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "as ALWAYS... it's something simple that causes me days :wink:",
+        "ts": "1515103891.000363"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "that and remembering yet-another-language-i-had-forgotten",
+        "ts": "1515103933.000455"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "<https:\/\/github.com\/ctrees\/drplogintest>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "ctrees\/drplogintest",
+                "title_link": "https:\/\/github.com\/ctrees\/drplogintest",
+                "text": "drplogintest - drp ux login test",
+                "fallback": "GitHub: ctrees\/drplogintest",
+                "from_url": "https:\/\/github.com\/ctrees\/drplogintest",
+                "thumb_url": "https:\/\/avatars3.githubusercontent.com\/u\/2227021?s=400&v=4",
+                "thumb_width": 207,
+                "thumb_height": 207,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1515123341.000094"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I hung it off of: <https:\/\/github.com\/digitalrebar\/provision\/issues\/620>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "TEST: Signup, Login and Logout · Issue #620 · digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/issues\/620",
+                "text": "Issue to track testing Signup, Login and Logout on the UX portal: <https:\/\/rackn.github.io\/provision-ux>",
+                "fallback": "GitHub: TEST: Signup, Login and Logout · Issue #620 · digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/issues\/620",
+                "thumb_url": "https:\/\/avatars3.githubusercontent.com\/u\/2227021?s=400&v=4",
+                "thumb_width": 207,
+                "thumb_height": 207,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1515123385.000009"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "<@U02DHRR2L> was right... the react stuff does make finding elements (actually waiting for them to appear) abit harder, but there are ways around it and the webdriver community is active... I'm just glad they are moving off ruby ( npm sure helps )",
+        "ts": "1515124093.000024"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I still have to figure out expected failure UX indicators and 'how to bubble problems up to the user'",
+        "ts": "1515124386.000047"
+    }
+]

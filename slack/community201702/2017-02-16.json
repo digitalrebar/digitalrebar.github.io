@@ -1,0 +1,964 @@
+[
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<https:\/\/IP> of master node in k8s\/ui should get you the dashboard.",
+        "ts": "1487255456.000333"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You iwll need to have https open for that security group.",
+        "ts": "1487255478.000334"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "From the AWS digitalrebar node, you should be able to login into the other nodes as root.",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1487255506.000000"
+        },
+        "ts": "1487255501.000335"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "@tnkumar - hopefully, that helps.",
+        "ts": "1487255527.000337"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Test",
+        "ts": "1487259935.000338"
+    },
+    {
+        "text": "@mech422 - strange.  How many nodes are you booting at once?  What is this running on?  I've seen something like this before.  Our simple go-based tftp server wigs out in some environments that I don't understand. ",
+        "username": "galthaus",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487260058.000339"
+    },
+    {
+        "text": "- connection between gitter and slack fixed - sorry about the delays",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487260099.000340"
+    },
+    {
+        "text": "gitter users are welcome to guest accounts on slack",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487260124.000341"
+    },
+    {
+        "text": "what I mean is what is the base OS of your admin node.",
+        "username": "galthaus",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487260138.000342"
+    },
+    {
+        "text": "thanks <@U02DHRR2L|zehicle> ",
+        "username": "galthaus",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487260170.000343"
+    },
+    {
+        "text": "to create Slacks, just use https:\/\/sameroom.io\/SLrYards",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487260304.000344"
+    },
+    {
+        "text": "<@U02DHRR2L|zehicle>  I just tried iptables -F and rebooted the 'test server' - still got dhcp and timeout with tftp",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487260318.000345"
+    },
+    {
+        "text": "<@U02DHRR2L|zehicle>  I'm only booting 1 'test server' at a time atm - I have a total of 16 test nodes availabe",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487260346.000346"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "@mech422 - what is your base OS?  I think I can give you a workaround.",
+        "ts": "1487260412.000347"
+    },
+    {
+        "text": "Ubuntu 16.04",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487260442.000348"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "convenient",
+        "ts": "1487260580.000349"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Let's try this.",
+        "ts": "1487260585.000350"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We are going to do two things.",
+        "ts": "1487260592.000351"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "First we are going to move the tftpport that that provisioner is using to something else.",
+        "ts": "1487260605.000352"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "To do this, we need to do the following:",
+        "ts": "1487260613.000353"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "cd digitalrebar\/deploy\/compose",
+        "ts": "1487260620.000354"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "vi compose.env",
+        "ts": "1487260623.000355"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "add to the end of the file.",
+        "ts": "1487260630.000356"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "TFTPPORT=6699",
+        "ts": "1487260651.000357"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "save the file",
+        "ts": "1487260655.000358"
+    },
+    {
+        "text": "end of file ? I that file doesn't exist for me ?",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487260658.000359"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "oops - common.env",
+        "ts": "1487260673.000360"
+    },
+    {
+        "text": "ok - added",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487260712.000361"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "docker-compose restart provisioner",
+        "ts": "1487260720.000362"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "once that is done.",
+        "ts": "1487260753.000363"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "you should be able to do:",
+        "ts": "1487260759.000364"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "ps auxww | grep provisioner-mgmt",
+        "ts": "1487260760.000365"
+    },
+    {
+        "text": "rebar@bernie:~\/digitalrebar\/deploy\/compose$ sudo netstat -tulpn | grep 69\ntcp6       0      0 :::443                  :::_                    LISTEN      18699\/docker-proxy\nudp6       0      0 :::69                   :::_                                25070\/provisioner-m",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487260777.000366"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "it should show look like this:",
+        "ts": "1487260786.000367"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "root     137266  0.0  0.0 1506036 29616 ?       Sl   Feb12   4:50 provisioner-mgmt --api-port 8092 --static-ip 136.179.33.28 --static-port 8091 --tftp-port 6699 --file-root \/tftpboot",
+        "ts": "1487260786.000368"
+    },
+    {
+        "text": "still says 69....",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487260803.000369"
+    },
+    {
+        "text": "let me double check I saved the file",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487260809.000370"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yeah - thinking .",
+        "ts": "1487260810.000371"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - try this.",
+        "ts": "1487260815.000372"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "docker-compose stop provisioner ; docker-compose rm -f provisioner ; docker-compose start provisioner",
+        "ts": "1487260840.000373"
+    },
+    {
+        "text": "hmm - it keeps saying 'ERROR: no containers to start'",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487260986.000374"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "what directory are you in?",
+        "ts": "1487261044.000375"
+    },
+    {
+        "text": "dr\/deploy\/compose",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487261061.000376"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "flu induced haze.",
+        "ts": "1487261078.000377"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "docker-compose up -d provisioner",
+        "ts": "1487261086.000378"
+    },
+    {
+        "text": "ahh - rebuilding the image",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487261123.000379"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "you need to run another tftp server",
+        "ts": "1487261149.000380"
+    },
+    {
+        "text": "'another' as in tftpd-hpa ? or another dr container ?",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487261177.000381"
+    },
+    {
+        "text": "ohhh... that docker-compose up bombed",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487261221.000382"
+    },
+    {
+        "text": "'Image digitalrebar\/dr_provisioner not found'",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487261240.000383"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "export DR_TAG=latest",
+        "ts": "1487261249.000384"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes tftpd-hpa",
+        "ts": "1487261266.000385"
+    },
+    {
+        "text": "this server is my foreman server too - so I have tftpd-hpa, isc-dhcpd, and bind9 already installed an working...I can restart them if needed",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487261309.000386"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "export DR_TAG=master",
+        "ts": "1487261321.000387"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Let's get the provisioner running again.",
+        "ts": "1487261340.000388"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "IT sounds like you know how to run tftpd-hpa already.",
+        "ts": "1487261359.000389"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I need you to serve the .cache\/digitalrebar\/tftpboot directory.",
+        "ts": "1487261401.000390"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I use this\n```\nfoundry@master-admin:~\/digitalrebar\/deploy\/compose$ cat \/etc\/default\/tftpd-hpa \n# \/etc\/default\/tftpd-hpa\n\nTFTP_USERNAME=\"tftp\"\nTFTP_DIRECTORY=\"\/home\/foundry\/.cache\/digitalrebar\/tftpboot\"\nTFTP_ADDRESS=\"[::]:69\"\nTFTP_OPTIONS=\"--secure\"\n```",
+        "ts": "1487261409.000391"
+    },
+    {
+        "text": "ok  - provisioner is back up ",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487261430.000392"
+    },
+    {
+        "text": "rebar@bernie:~\/digitalrebar\/deploy\/compose$ sudo netstat -tulpn | grep 69\ntcp6       0      0 :::443                  :::_                    LISTEN      18699\/docker-proxy\nudp6       0      0 :::6699                 :::_                                10089\/provisioner-m",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487261431.000393"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Cool",
+        "ts": "1487261438.000394"
+    },
+    {
+        "text": "lemme restart tftpd-hpa real quick",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487261456.000395"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "make sure to change it base directory to the digitialrebar place.",
+        "ts": "1487261499.000396"
+    },
+    {
+        "text": "ok - dir changed, perms checked and service restarted",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487261607.000397"
+    },
+    {
+        "text": "shall I go restart the test node ?",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487261630.000398"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes",
+        "ts": "1487261638.000399"
+    },
+    {
+        "text": "odd - that gave a timeout too... I think I need to change the ip on tftpd-hpa - I had it pinned to the pxe interface, but  I think DR is handing it the mgmt ip",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487261830.000400"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "probably",
+        "ts": "1487261874.000401"
+    },
+    {
+        "text": "ok - its listening on 0.0.0.0:69 now - lemme go reboot",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487261903.000402"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "we use the admin-ip flag",
+        "ts": "1487261905.000403"
+    },
+    {
+        "text": "yeah - I used that to specify the 'web ip' as I wasn't sure what was what...",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487262060.000404"
+    },
+    {
+        "text": "my 'mgmt' network and 'pxe' network are diff",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487262071.000405"
+    },
+    {
+        "text": "ok - so that got me pxelinux ",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487262079.000406"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - should boot into sledgehammer",
+        "ts": "1487262091.000407"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "a centos 7 ram image.",
+        "ts": "1487262097.000408"
+    },
+    {
+        "text": "but it seems to be stuck ",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487262102.000409"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The node should appear in the UX.",
+        "ts": "1487262104.000410"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - sooooo",
+        "ts": "1487262107.000411"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "with regard to networking",
+        "ts": "1487262136.000412"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "is the pxe network routable to the mgmt network and vice versa.",
+        "ts": "1487262153.000413"
+    },
+    {
+        "text": "hmm - tftpd: read: Connection refused ?",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487262159.000414"
+    },
+    {
+        "text": "its sorta like a firewall setup...I have diff interfaces on the box - 1 for the 'pxe network' , 1 for the 'ipmi network' and 1 for the 'mgmt' network",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487262196.000415"
+    },
+    {
+        "text": "the rest of my lab gear can only hit the 'mgmt' network directly, so I need the web interface on that",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487262214.000416"
+    },
+    {
+        "text": "I have ipv4.ip_forward on, so I shouldn't need any routes, right ?",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487262244.000417"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "did you configure networks?",
+        "ts": "1487262260.000418"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "in digitalrebar?",
+        "ts": "1487262264.000419"
+    },
+    {
+        "text": "Umm - I tried too... I never got a 'the_bmc' network...",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487262287.000420"
+    },
+    {
+        "text": "but I added a 'pxe network' - and setup dhcp on it - it appears to be working, since we got dhcp boot",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487262309.000421"
+    },
+    {
+        "text": "last time I re-ran the install, I lost the 'admin-internal' network, though I don't know if thats used for anything",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487262342.000422"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "example more than anything else.",
+        "ts": "1487262358.000423"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "did you add a router in the admin network?",
+        "ts": "1487262400.000424"
+    },
+    {
+        "text": "tftpd-hpa is listening on all IPs now, so even if ips are baked into the DR boot stuff, it should respond....",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487262416.000425"
+    },
+    {
+        "text": "no routers added anywhere",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487262427.000426"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - so my guess is that you gave pxe network address to the node, it tried to tftp to a mgmt-network ip.",
+        "ts": "1487262471.000427"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "it doesn't have a route for that.",
+        "ts": "1487262479.000428"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Two ways to fix this.",
+        "ts": "1487262510.000429"
+    },
+    {
+        "text": "it shouldn't need a route? as both interfaces are on the same box ?",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487262548.000430"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "one is to add the admin node's PXE IP as the router for the network in the network page.",
+        "ts": "1487262552.000431"
+    },
+    {
+        "text": "ok - I can do that",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487262563.000432"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "it doesn't know where to send it though.",
+        "ts": "1487262563.000433"
+    },
+    {
+        "text": "I figured that 'linux responds to arps for all ips' thing would handle that - let me add the router and restart it :-)",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487262609.000434"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "the other is to change rerun the startup script with the PXE ip as the admin ip.  This will clean things up you can then add your network back.  We listen to 0.0.0.0 for ui and api functions.",
+        "ts": "1487262616.000435"
+    },
+    {
+        "text": "ok - if this works, I'll re-install like that",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487262677.000436"
+    },
+    {
+        "text": "brb",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487262678.000437"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "i\"m going offline for a while.  Need to nap.  Later",
+        "ts": "1487262715.000438"
+    },
+    {
+        "text": "thanks :-)",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487262770.000439"
+    },
+    {
+        "text": "sledgehammer is loading :-)",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487262777.000440"
+    },
+    {
+        "text": "<@U02DHRR2L|zehicle>  Wierd - I stopped everything, purged everything, pulled fresh from git again, and ran: .\/run-in-system.sh --help --con-provisioner --con-dhcp --account=rebar --access=HOST --admin-ip=192.168.51.70\/24 --deploy-admin=local",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487268288.000441"
+    },
+    {
+        "text": "admin-internal still came up with the wrong ip ranges - but once I changed it to do dhcp for 192.168.51.0\/24 - dhcp AND TFTPD work ?!?",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487268337.000442"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yeah - we think there are some nat docker tftp issues when not all the ips align.",
+        "ts": "1487268958.000443"
+    },
+    {
+        "text": "oh - wb :-)  How was your nap ?",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487269111.000444"
+    },
+    {
+        "text": "I think I only have 2 more things to fix before I can start provisioning: the 'discovery' stuff and the BMC\/IPMI stuff",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487269210.000445"
+    },
+    {
+        "text": "I can see it booting discovery\/vmlinuz - and it comes up to a centos login... but I'm not seeing any 'discovered' nodes in the webui",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487269255.000446"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "@mech422 that could mean that the booted system cannot connect back to the admin server to register",
+        "ts": "1487272527.000447"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "it would do it via port 443",
+        "ts": "1487272536.000448"
+    },
+    {
+        "text": "rebar@bernie:~\/digitalrebar\/deploy\/compose$ sudo netstat -tulpn | grep 443\ntcp6       0      0 :::443                  :::*                    LISTEN      31737\/docker-proxy\n",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487273073.000449"
+    },
+    {
+        "text": "its only listening on ipv6 - but tftp was the same, and recognized ipv4 sooo...",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487273106.000450"
+    },
+    {
+        "text": "I added the router on the network ",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487273127.000451"
+    },
+    {
+        "text": "oh - should the router have a \/24 or \/32 netmask ? the field auto-fills with a \/32 on the end - but the admin-internal network creates a router with a \/24 ?",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487273203.000452"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "24",
+        "ts": "1487273789.000453"
+    },
+    {
+        "text": "does the discovery image have a login ?",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487273980.000454"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "root\/rebar1",
+        "ts": "1487274016.000455"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "journalctl -u sledgehammer",
+        "ts": "1487274033.000456"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "often has useful info",
+        "ts": "1487274037.000457"
+    },
+    {
+        "text": "dam, I was close - I tried rebar\/rebar1 :-P",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487274209.000458"
+    },
+    {
+        "text": "I think its a dns failure - its setting domain name to local.neode then dying with an unknown hostname a lil bit further down",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487274299.000459"
+    },
+    {
+        "text": "doesn't appear it got as far as trying to talk to the admin node",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487274313.000460"
+    },
+    {
+        "text": "'Unable to connect to Rebar: unable to verify existance of machine-install user: Get https:\/\/192.168.40.70\/api\/v2\/machine-install'",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487275057.000461"
+    },
+    {
+        "text": "looks like its banging it by IP",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487275083.000462"
+    },
+    {
+        "text": "Hmm..thats wierd - none of the interfaces have an ipv4 address - eth0 just has an ipv6",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487275527.000463"
+    },
+    {
+        "text": "dhclient says it got a (correct) dhcp address and bound it to eth0",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487275865.000464"
+    },
+    {
+        "text": "but ip address show eth0 only has an ipv6 ",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487275940.000465"
+    },
+    {
+        "text": "re-ran dhclient and got eth0 an ipv4 address, but its still not happy - its dying around line 105 of \/tmp\/startup.sh",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487276550.000466"
+    },
+    {
+        "text": "(I can't manually create nodes thru the webui either, if that tells you anything ?)",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487276606.000467"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "the webui only can create with providers",
+        "ts": "1487278309.000468"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "you can use the CLI to inject nodes",
+        "ts": "1487278318.000469"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "docker logs -f compose_rebar_api_1 may show you errors if it's related to the node create API",
+        "ts": "1487278347.000470"
+    }
+]

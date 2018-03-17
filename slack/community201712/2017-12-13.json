@@ -1,0 +1,247 @@
+[
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "So, THAT is the ssh less method ? (aka all the config is in the local node setup via DRP.... THEN it's handed over to kubctl... (look ma, no node ssh !)",
+        "ts": "1513176841.000134",
+        "reactions": [
+            {
+                "name": "slightly_smiling_face",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "so all machine control coms is through kubectl via the proxy you setup, and if you want to pull a node out, you use the DRP IPMI ?? to force PXE reboot at which time sledge can setup a new local config ??",
+        "ts": "1513177040.000279"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes - though - you could build a new workflow, that drained the node, and offlined it, and then rebooted it back to sledgehammer.",
+        "ts": "1513177157.000034"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "wait... in the workflow that 'drained the node' how would that work ? seems like you'd have to talk to kubectl ? so DRP would need to know of the gateway that had the kubectl (or was that why rob started the local kube proxy)...",
+        "ts": "1513177757.000202"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I should say in your new workflow...",
+        "ts": "1513177841.000823"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Well, the local kubectl proxy is so that he could access the UI.",
+        "ts": "1513177844.000468"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I’d have to check what powers the kubelet cert conf file has.  I could see two workflows styles being built.",
+        "ts": "1513177891.000035"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "Oh... right... in your thought example you would need DRP to know about that mech ?? correct ?? t",
+        "ts": "1513177895.000622"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "1. single node workflow that kubelet cert has enough to run kubectl on itself to drain, mark offline, and then reboot.  that is really easy.",
+        "ts": "1513177932.000729"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "actually, nvm.  This is ‘easy’.",
+        "ts": "1513177946.000389"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Workflow is this:",
+        "ts": "1513177954.000301"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "create a task call `drain-me`.",
+        "ts": "1513177967.000410"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "as a template.",
+        "ts": "1513177973.000296"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Use the Profile Token expansion to get a token to read the admin conf creds.  Download kbuectl if not already present.",
+        "ts": "1513177998.000058"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "call kubectl drain (admin conf has ip of admin in it).",
+        "ts": "1513178012.000710"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "call kubectl off line",
+        "ts": "1513178017.000291"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "both with admin creds pulled from DRP Profile (with limited access token).",
+        "ts": "1513178042.000710"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That that task and create a stage, ‘decommision-k8s-node’ and put the drain me task on it.",
+        "ts": "1513178091.000341"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Then create a workflow `decommision-k8s-node -&gt; discover:Reboot`",
+        "ts": "1513178113.000152"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "When you are done with a node, set the stage to `decommission-k8s-node`.",
+        "ts": "1513178126.000216"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The node wil drain, offline, and reboot back into discovery.",
+        "ts": "1513178140.000531"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Or you could set the stage to `mount-local-disks` if you wanted to readd it directly to the cluster.",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1513178197.000000"
+        },
+        "ts": "1513178165.000408"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The decommission set could also remove the profile if you really wanted to clean it.",
+        "ts": "1513178181.000595"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "So, you could update k8s this way, I think, as well.",
+        "ts": "1513178245.000404"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The master is a little sketchy in this .",
+        "ts": "1513178272.000691"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "aw... the 'key' to my understanding is \"call kubectl drain (admin conf has ip of admin in it).\"",
+        "ts": "1513178291.000265"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "So, the profile that is the shared write space for the cluster has the admin.conf file in it.",
+        "ts": "1513178351.000020"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "basically in my head, I was attempting to follow the command protocals that are talking when your not ssh'n to a local user....",
+        "ts": "1513178355.000290"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "well - this wouldn’t require ssh.",
+        "ts": "1513178373.000858"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It requires that the DRP runner is still running.",
+        "ts": "1513178383.000476"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Then the task execution will run if something shows up",
+        "ts": "1513178395.000297"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "Awh... the DRP runner is running as local auth on the node... which was what rob mentioned but I was not sure how...",
+        "ts": "1513178531.000629"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "and I get you also have the flexibility to NOT do that :wink:",
+        "ts": "1513178597.000430"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yes, but you lose take-over actions (other than reboot back to sledgehammer).",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1513178628.000000"
+        },
+        "ts": "1513178617.000500"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "For the ram-only case, sledgehammer-wait is still running the runner.",
+        "ts": "1513178647.000198"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "for the centos-install case, the runner-server stage as the runner as a systemd service that runs on startup in the follow on boot and is left running as a consequence of the complete stage.",
+        "ts": "1513178682.000058"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Coming Soon to a tip DRP near you: port aliveness and availability checking with drpcli info status",
+        "ts": "1513190635.000083"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Soonish: runtime stats via event stream.",
+        "ts": "1513190818.000099"
+    }
+]

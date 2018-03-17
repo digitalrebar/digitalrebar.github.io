@@ -1,0 +1,240 @@
+[
+    {
+        "text": "afternoon all! i'm still poking DRP - maybe a little further along the road now. I've done a fairly vanilla install, bound DRP to the interface I want to use (usign --static-ip), but I'm still unable to get any of the files in the tftpboot dir which obviously means the boot fails. I've tried connecting with a tftp client but that also fails with 'transfer timed out'",
+        "username": "analbeard",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1518097266.000187"
+    },
+    {
+        "text": "any suggestion as to where i'm going wrong here?",
+        "username": "analbeard",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1518097276.000442"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Firewall rules?  ",
+        "client_msg_id": "0C432E34-4636-438E-8AF8-BA6960EE9090",
+        "ts": "1518098338.000630"
+    },
+    {
+        "text": "yup i just clocked that about two minutes ago",
+        "username": "analbeard",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1518098392.000018"
+    },
+    {
+        "text": "palm has been vigorously applied to face",
+        "username": "analbeard",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1518098409.000094"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": ":grinning:",
+        "client_msg_id": "513850BD-7D6F-4B71-9C04-FA8154115011",
+        "ts": "1518098420.000481"
+    },
+    {
+        "text": "someone should bust me back down to first line for that",
+        "username": "analbeard",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1518098482.000273"
+    },
+    {
+        "text": "possibly a daft question, but would the serial console show anything when the victim has booted into the sledgehammer env? i can see it in the machine list so it's been successful, but there's nada on the console",
+        "username": "analbeard",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1518099005.000605"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It will depend upon your hardware \/ env.  We don’t pass a serial console, so it is linux defaults.",
+        "ts": "1518099088.000203"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "For packet, we add profiles that set the `kernel-console` parameter",
+        "ts": "1518099114.000722"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "To handle this case.",
+        "ts": "1518099126.000451"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You can set that globally or on a machine or a profile to a machine.",
+        "ts": "1518099140.000517"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Checkout the parameter `kernel-console` in the UX.",
+        "ts": "1518099156.000377"
+    },
+    {
+        "text": "ok, that makes sense. it's not the end of the world, just nice to see some output to understand what's going on, especially whilst i'm just poking it. if we were to use it in production then it wouldn't matter",
+        "username": "analbeard",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1518099168.000523"
+    },
+    {
+        "text": "ok, will do. thanks!",
+        "username": "analbeard",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1518099173.000208"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "make sense.  Also, if you setup the `access-keys` parameter (docs has some stuff on this), you can ssh in to the box as well.",
+        "ts": "1518099224.000225"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "@faq",
+        "ts": "1518099232.000218"
+    },
+    {
+        "text": "FAQs are here &gt; <http:\/\/provision.readthedocs.io\/en\/latest\/doc\/faq-troubleshooting.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1518099232.000287"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "in faq - 22.3",
+        "ts": "1518099251.000238"
+    },
+    {
+        "text": "FAQs are here &gt; <http:\/\/provision.readthedocs.io\/en\/latest\/doc\/faq-troubleshooting.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1518099251.000290"
+    },
+    {
+        "text": "ah yes, that looks handy. thanks Greg!",
+        "username": "analbeard",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1518099316.000698"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You can do the command in the doc to the `global` profile and it will be available to all machines all times.",
+        "ts": "1518099326.000318"
+    },
+    {
+        "text": "ah yes i see what you mean, i can see a key for 'galthaus@Gregs-MacBook-Pro.local' in the root-access-example profile ;)",
+        "username": "analbeard",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1518099642.000662"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "well - you know.  author privs and all",
+        "ts": "1518099668.000622"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The main thing to remember is that the parameter has to be set on the machine (globally, or specifically, or by profile assignment) when the task `ssh-access` runs during the discover stage.  That means for discovered things you have to have it globally set.  Or set it after discovery and reboot.",
+        "ts": "1518099749.000217"
+    },
+    {
+        "text": "sure, that makes sense. I think i've probably got enough to get something going now",
+        "username": "analbeard",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1518099937.000182"
+    },
+    {
+        "text": "thanks again!",
+        "username": "analbeard",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1518099938.000526"
+    },
+    {
+        "text": "hmm, I've had a machine PXE booted for half an hour or so but i'm unable to progress to an install:\n`Can not change bootenv while in a stage unless forced. old: sledgehammer new ubuntu-16.04-install`",
+        "username": "analbeard",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1518102508.000064"
+    },
+    {
+        "text": "the machine is currently sitting in the discover stage according to it's info",
+        "username": "analbeard",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1518102532.000642"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "This means you have a task that didn’t complete   I think.  ",
+        "client_msg_id": "72923B50-C9DF-4F69-B7B3-6E2C7F4A468A",
+        "ts": "1518103499.000347"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Check the jobs area to see if there is a failed job.  The machine has probably been marked not runnable as well. ",
+        "client_msg_id": "83DB876A-B967-45A7-9CFC-6D3DEB0C3E47",
+        "ts": "1518103543.000003"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "```[lae@yuzu fireeye-content]$ drpcli profiles update global global.yaml \nError: Failed to generate changed profiles:global object: invalid character '-' in numeric literal```",
+        "ts": "1518162483.000049"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "I'm getting this I guess after a recent update, did anything change regarding importing profiles from yaml?",
+        "ts": "1518162514.000282"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "kind of expected this to also work, but I guess it's not expecting stdin to be yaml anymore?\n```\n[lae@yuzu fireeye-content]$ drpcli profiles show global -F yaml &gt; tmp.yml\n[lae@yuzu fireeye-content]$ drpcli profiles update global - &lt; tmp.yml\nError: Failed to generate changed profiles:global object: invalid character 'A' looking for beginning of value\n```",
+        "ts": "1518162580.000278"
+    }
+]

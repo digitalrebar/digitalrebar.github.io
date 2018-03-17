@@ -1,0 +1,263 @@
+[
+    {
+        "user": "U7YFG3W94",
+        "text": "<@U7YFG3W94> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1510237497.000188"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "good morning\/<@U7YFG3W94> - welcome",
+        "ts": "1510238502.000024"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "Was going through kubespray and ran into jujucharms... has anyone used ? seems to terraform 'like'",
+        "ts": "1510246050.000132"
+    },
+    {
+        "user": "U7XT5NH2R",
+        "text": "<@U7XT5NH2R> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1510247799.000332"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "welcome <@U7XT5NH2R>",
+        "ts": "1510248517.000317"
+    },
+    {
+        "type": "message",
+        "user": "U7XT5NH2R",
+        "text": "Hey shane!  Thanks for the invite.  I think it was a great idea for us to use slack for comms.",
+        "ts": "1510248565.000206"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": ":slightly_smiling_face:",
+        "ts": "1510248574.000132"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U62R1805P> juju is pretty much a Canonical thing, not nearly as mainstream - it's the basis of all their installers so Ubuntu focused.  It's pretty interesting in how it builds a deployment graph.",
+        "ts": "1510249987.000111"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "typically, Juju is coupled with MaaS (which I consider a DRP alternative) because of the Canonical angle.",
+        "ts": "1510250166.000518"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U7YFG3W94> if you want to follow-up on the twitter thread about RR, this is the place.  We can talk about using the runner for post-provision in Sledgehammer (or any O\/S) or other approaches.",
+        "ts": "1510250280.000564"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "I believe the runner workflow was a topic on the last community meeting (which was recorded).",
+        "ts": "1510250320.000591"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U02DHRR2L> <@U7YFG3W94> - the community meeting centered around `stages`, we indirectly touched on the runner in that presentation - there was some spirited discussion on the Runner (tasks\/jobs\/queues\/etc) related to Stages after the slide-ware presentation",
+        "ts": "1510250393.000683"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the recorded video can be found at:\n<http:\/\/bit.ly\/2yfRXVW>",
+        "attachments": [
+            {
+                "service_name": "YouTube",
+                "title": "Digital Rebar Online Meetup #4",
+                "title_link": "http:\/\/bit.ly\/2yfRXVW",
+                "text": "Welcome to the fourth (v004) Digital Rebar online meetup! In today's meetup we'll discuss the status of Digital Rebar Provision v3.2.0 features (the v3.2.0 a...",
+                "fallback": "YouTube: Digital Rebar Online Meetup #4",
+                "thumb_url": "https:\/\/i.ytimg.com\/vi\/g7VNV0xtG6E\/maxresdefault.jpg",
+                "from_url": "http:\/\/bit.ly\/2yfRXVW",
+                "thumb_width": 1280,
+                "thumb_height": 720,
+                "service_icon": "https:\/\/s.ytimg.com\/yts\/img\/favicon-vfl8qSV2F.ico",
+                "id": 1
+            }
+        ],
+        "ts": "1510250439.000466"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Baked-in repo management support in dr-provision is about ready: <https:\/\/github.com\/digitalrebar\/provision\/pull\/530>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "Add repo management functions to render data by VictorLowther · Pull Request #530 · digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/pull\/530",
+                "text": "This WIP pull request begins adding direct support in DRP for basic repository management at OS install time as well as at OS run time. It is not ready to be pulled yet, but serves as a reference p...",
+                "fallback": "GitHub: Add repo management functions to render data by VictorLowther · Pull Request #530 · digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/pull\/530",
+                "thumb_url": "https:\/\/avatars2.githubusercontent.com\/u\/770578?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1510250889.000615"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<@U54E4SD4G> ^^",
+        "ts": "1510250922.000053"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<@U62R1805P> DRv2 built and maintained a complete graph of everything that should happen to all machines.  It actually turned out to be harder to explain and made things too rigid once the complexity of what any given workload was trying to do got past a certian point.",
+        "ts": "1510251165.000498"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "is why DRP has a per-machine list of tasks that get executed in order by the runner (in-order execution is easy to explain and reason about), and a mechanism for making bulk changes to that list (stages)",
+        "ts": "1510251315.000278"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "Thanks... going over the stages in community and <@U416T0AAX> summary is really helping it to sinking in...",
+        "ts": "1510251580.000387"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I'm going into UNI tomorrow to talk to Dr. Paul Gray... then it's off to talk to prof's at ISU... basically going to see what he thinks of the kubespray and terraform demo's for his microservices classes I think he's using Ceph storage now, but had an AFS (OpenAFS) stack also (which ISU also has)  Dr. Gray is a Proxmox fan.  My boss just wants to make sure he can hire out of the Universities to support what-ever...",
+        "ts": "1510252193.000427"
+    },
+    {
+        "user": "U7YTMBFKR",
+        "text": "<@U7YTMBFKR> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1510254040.000316"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "welcome <@U7YTMBFKR>",
+        "ts": "1510255047.000366"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U62R1805P> cool and good luck",
+        "ts": "1510256503.000119"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": " I've heard of Proxmox but don't know any users.  How light weight?",
+        "ts": "1510256794.000478"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "So... I take it <@U6QFVRJNB> 5min example is 'sort-of' what provision's CI\/CD is\/will be ?",
+        "ts": "1510258623.000132"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "Oh... I'm sure if DocGray likes this, I'll be doing a proxmox setup...",
+        "ts": "1510258698.000494"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "and I'm pretty sure he will... I already mentioned PXE swagger API and he lit up...",
+        "ts": "1510258780.000557"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "Takes a special kind of geek to love that phrase.  Our kind of geek fwiw",
+        "ts": "1510259222.000282"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I'm going to end up doing a Xen one too... plus supporting some Vagrant up... (though I hope to remove as much ruby code as possible as I move old puppet to ansible)",
+        "ts": "1510259235.000018"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U62R1805P> - the 5min-drp stuff is a good model for integrating DRP into a CI\/CD pipeline - right now it has \"packet specific\" plugin_provider, but it's pretty easy to tweak it to change-up the various content you inject",
+        "ts": "1510266441.000163"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U62R1805P> after listening to the OpenStack discussions about Edge, there's a chance that Proxmox would be interesting if it's lighter weight than openstack",
+        "ts": "1510266587.000431"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "proxmox has grown a lot since I last looked at it - it used to be just a lightweight \"manage VM compute instances on KVM",
+        "ts": "1510266693.000089"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "seems to have matured a fair bit beyond just that",
+        "ts": "1510266706.000177"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "*drop* <https:\/\/github.com\/lae\/ansible-role-proxmox>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "lae\/ansible-role-proxmox",
+                "title_link": "https:\/\/github.com\/lae\/ansible-role-proxmox",
+                "text": "ansible-role-proxmox - Configures Proxmox VE 4.x\/5.x clusters.",
+                "fallback": "GitHub: lae\/ansible-role-proxmox",
+                "from_url": "https:\/\/github.com\/lae\/ansible-role-proxmox",
+                "thumb_url": "https:\/\/avatars0.githubusercontent.com\/u\/1318013?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1510269842.000233"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "but yeah, I mean it still is lightweight compared to openstack",
+        "ts": "1510269884.000273",
+        "reactions": [
+            {
+                "name": "sunglasses",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    }
+]

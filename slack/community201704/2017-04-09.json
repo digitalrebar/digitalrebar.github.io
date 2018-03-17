@@ -1,0 +1,394 @@
+[
+    {
+        "text": "If I don't see and DHCP subnets in my GUI, did install fail or something?",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491774116.927566"
+    },
+    {
+        "text": "how do I run the role to install raid-tools?",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491775277.004278"
+    },
+    {
+        "text": "Oh, nevermind. :-)  I guess I need some nodes first.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491775519.022097"
+    },
+    {
+        "text": "The hint at the quickstart should probably say if my_key.key should be the public or private key.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491778702.229668"
+    },
+    {
+        "text": "If I mkdir -p the director path to the keyfile to pre-seed, then quickstart fails on \"directory detected\"",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491778762.233917"
+    },
+    {
+        "text": "during install, rule-engine:master goes up and down a lot... expected?\na793838d8e11        digitalrebar\/rule-engine:master      \"\/sbin\/docker-entr...\"   2 minutes ago       Restarting (1) 12 seconds ago\n                                    compose_rule-engine_1\n",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491779772.308824"
+    },
+    {
+        "text": ":-)",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491788147.058092"
+    },
+    {
+        "text": "I've got VMs and Metal all booting off my Rebar on a VM. ",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491788173.060801"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Nice!",
+        "ts": "1491790137.286884"
+    },
+    {
+        "text": "Yes, happy dance.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491790195.293678"
+    },
+    {
+        "text": "But I don't have any BMC ports on my metal plugged in.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491790217.296169"
+    },
+    {
+        "text": "no ipmi.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491790225.297276"
+    },
+    {
+        "text": "Will rebar fail over to logging into sledgehammer and rebooting?",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491790246.299898"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Hmmm - I'm not sure.  I think it will attempt to talk.  Did you create a BMC network?  It may not because there isn't a network to use.",
+        "ts": "1491790524.332199"
+    },
+    {
+        "text": "Good work <@U02DMB5J3|newgoliath> !",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491791258.414041"
+    },
+    {
+        "text": "Thanks, <@U02DHRR2L|zehicle> .",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491791369.426745"
+    },
+    {
+        "text": "@galthaus - I didn't create a BMC network.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491791432.434637"
+    },
+    {
+        "text": "doing an 'Install OS' just gives a false positive in the Deployment.  Sledgehammer never reboots.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491791814.478604"
+    },
+    {
+        "text": "does it think the machine if off?",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491791862.484106"
+    },
+    {
+        "text": "nope",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491791877.485914"
+    },
+    {
+        "text": "On ready",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491791889.487268"
+    },
+    {
+        "text": "I suspect it's trying to use the BMC to reboot and fails.  so it knows the machine is not off",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491791935.492574"
+    },
+    {
+        "text": "I'm not sure where hammer errors would get surfaced.   I suspect if you try to power off from the UX or API then you'll get an error message",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491791980.497981"
+    },
+    {
+        "text": "the reinstall combines a few steps together.  it's possbile that we're eating the error ",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491792005.500887"
+    },
+    {
+        "text": "No response to a \"cycle\" click.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491792183.521593"
+    },
+    {
+        "text": "rebooting the sledgehammer via ssh",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491792352.540896"
+    },
+    {
+        "text": "I've got a serial console on it, watching it boot.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491792389.545112"
+    },
+    {
+        "text": "for your configuration you may need to manually set the nodes to use the SSH hammer.",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491792392.545352"
+    },
+    {
+        "text": "or mess w\/ the hardware profiles so that they do not recognize your gear as a known type",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491792427.549135"
+    },
+    {
+        "text": "too bad sledgehammer doesn't send output to the serial console by default.  I'd love to watch it boot.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491792725.582980"
+    },
+    {
+        "text": "rebooting sledgehammer via ssh returns the node up, but no ssh.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491792912.604023"
+    },
+    {
+        "text": "there's interaction between the provisioner &amp; hammer so that it knows that you've started a reboot cyckle",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491792977.611764"
+    },
+    {
+        "text": "unless nextboot changes, you'll keep going back to sledgehammer",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491792989.613204"
+    },
+    {
+        "text": "sledgehammer is up - but ssh port is closed.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491793043.619487"
+    },
+    {
+        "text": "host pings ok",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491793054.620739"
+    },
+    {
+        "text": "If I destroy the deployment and send it back to system, you think it will open up ssh?",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491793208.638866"
+    },
+    {
+        "text": "I have no idea - very strange for the image to have ssh",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491793253.645264"
+    },
+    {
+        "text": "It's always reaching back to rebar for instructions, right?",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491793286.649335"
+    },
+    {
+        "text": "<@U02DHRR2L|zehicle> how do I change to the SSH hammer?",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491794149.744171"
+    },
+    {
+        "text": "I think you can nodes update X set {\"hammer\":\"ssh\"} or similar.... checking",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491794205.750527"
+    },
+    {
+        "text": "<@U02DHRR2L|zehicle> interestingly, it's got \"quirks ipmi-dell-dedicated-nic and ipmi-nodelay\"",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491794542.787930"
+    },
+    {
+        "text": "hammer is not an attrib.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491794993.835619"
+    },
+    {
+        "text": "sorry, it's actually a subtype nodes\/#\/hammers",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491797854.150053"
+    },
+    {
+        "text": "or just api\/v2\/hammers",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491797867.151340"
+    },
+    {
+        "text": "I think you can delete the offending hammer(s)",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491797879.152491"
+    },
+    {
+        "text": "leave SSH in place (assuming it's there) - @VictorLowther will have better suggestions",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491797913.156137"
+    },
+    {
+        "text": "I seem to have changed it, because there's a whole new complaint:",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491797963.160947"
+    },
+    {
+        "text": "rebar-access role:  RuntimeError: Did not create remote_tmpdir on da4-ba-db-3e-93-ac.local.neode.org for some reason! (ssh: connect to host 192.168.1.110 port 22: Connection refused\n) ",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491798022.167093"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "could be a template generation problem",
+        "ts": "1491798167.182573"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "from the provisioner - these things are all connected together",
+        "ts": "1491798192.185080"
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "text": "Just try out the standalone Provision. Looks great. ",
+        "username": "chilicat",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1492294311.923005"
+    },
+    {
+        "text": "I was able to pxe boot a machine, now I was wondering if the machine should appear in machines list (drpcli machines list) ?",
+        "username": "chilicat",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1492294356.927191"
+    }
+]

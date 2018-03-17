@@ -1,0 +1,1321 @@
+[
+    {
+        "user": "U9LQK5KDF",
+        "text": "<@U9LQK5KDF> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1520605620.000639"
+    },
+    {
+        "type": "message",
+        "user": "U32PZNCP5",
+        "text": "Welcome <@U9LQK5KDF> $",
+        "ts": "1520605781.000008"
+    },
+    {
+        "type": "message",
+        "user": "U32PZNCP5",
+        "text": "sorry, $Welcome",
+        "ts": "1520605809.000640"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1520605809.000705"
+    },
+    {
+        "type": "message",
+        "user": "U9LQK5KDF",
+        "text": "Are there shims or example entrypoints for DRP that show things like: \"This is where you put your script that SSH's into a switch and configures ip dhcp-helper on an interface so that a machine will pxeboot when it reboots\" or \"this is the URL where DRP can retrieve information about the network interfaces for a machine\" or are defining all of the tasks left to the user?",
+        "ts": "1520606108.000263"
+    },
+    {
+        "type": "message",
+        "user": "U32PZNCP5",
+        "text": "Thanks for the question, I am on our short morning meeting with engineering, they will be checking this channel shortly.",
+        "ts": "1520606721.000123"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<@U9LQK5KDF> We provide several common tasks as part of the community content",
+        "ts": "1520609410.000115"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "For example, getting the information about network interfaces for a machine is done as part of initial system discovery, which runs the gohai task.",
+        "ts": "1520609537.000425"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "We don't have one that configured the DHCP helper on a switch -- our usual assumption is that everything is using DHCP all the time anyways, and that the networking guys don't want us touching their switches.",
+        "ts": "1520609608.000740"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U9LQK5KDF> - If you have the admin access to the switches in question - and if you have existing tooling to be able to implement those changes, you can build a Stage that would make switch port changes as part of the Workflow aspects of Digital Rebar Provision",
+        "ts": "1520609894.000276"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "More generally, we expect that each environment will need some customized content (tasks, stages, etc) and workflows to accomplish your deployment goals.",
+        "ts": "1520609946.000254"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "however, as <@U02DJQSG8> states, we don't have precanned components in the community tooling that does that - there is a bit of a chicken-and-egg issue, if you are not DHCPing your host against DRP, you'd need to build Reservations for the machine in advance, and add a machine in advance of it booting against us - and your first Stage would be to configure the Switch port to dhcp relay - then power on",
+        "ts": "1520610456.000486"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you either have to have DHCP and our Discovery mechanisms to add machines in to DRP - or you have to build the information in advance to manage the Machine - then make the switch port changes and boot the machine for provisioning",
+        "ts": "1520610496.000160"
+    },
+    {
+        "user": "U9LUGRKFB",
+        "text": "<@U9LUGRKFB> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1520616995.000488"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U9LUGRKFB> $welcome",
+        "ts": "1520617014.000377"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1520617014.000459"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "howdy, very cool stuff you're doing :slightly_smiling_face:",
+        "ts": "1520617075.000431"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "thanks !",
+        "ts": "1520617083.000109"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "i hope you don't mind me just popping in to ask questions...",
+        "ts": "1520617095.000354"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Well, since you ask nicxely. :slightly_smiling_face:",
+        "ts": "1520617207.000020"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": ":slightly_smiling_face: I've got dr-provision working nicely in a libvirt environment. I'm trying to get it working on metal. I have the server set up, dhcp relay is working. I have a serial console to my baremetal box. When I pxeboot, I see on tcpdump that dhcp works, and tftp for lpxelinux.0 works.",
+        "ts": "1520617329.000628"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "then... nothing",
+        "ts": "1520617332.000262"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "I believe the next thing that should happen is another tftp for a series of files, which should fail, then a tftp for pxelinux.cfg\/default",
+        "ts": "1520617363.000577"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "fw or iptables blocking ports 8091 and 8092 on the DRP endpoint ?",
+        "ts": "1520617371.000556"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "wide open",
+        "ts": "1520617404.000205"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Yep, that is what you should see.",
+        "ts": "1520617438.000721"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "so my theory is lpxelinux.0 doesn't like my hardware?",
+        "ts": "1520617514.000240"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "What version of dr-provision are you running, what hardware are you testing, and is it booting via UEFI or legacy BIOS?",
+        "ts": "1520617525.000155"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "...and what does your serial console on your Machine show ?",
+        "ts": "1520617546.000139"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "i _think_ it's legacy BIOS.",
+        "ts": "1520617553.000250"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "``` $ dr-provision --version\ndr-provision2018\/03\/09 17:45:45.087689 Version: v3.7.3-tip-5-eb82a0429c7c94bb1885cc32528c15e376417138\n```",
+        "ts": "1520617561.000452"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Cool.",
+        "ts": "1520617568.000093"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "and I don't have access to vga -- only serial console",
+        "ts": "1520617569.000648"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "No worries.",
+        "ts": "1520617581.000157"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "vga is only for winders ... a real OS only needs a serial console ...",
+        "ts": "1520617597.000557"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "heh",
+        "ts": "1520617603.000213"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "lol nice",
+        "ts": "1520617619.000287"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "do you want to see the subnet def?",
+        "ts": "1520617629.000159"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "nothing special",
+        "ts": "1520617637.000041"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "What does the subnet definition looklike?",
+        "ts": "1520617646.000075"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "yes. :slightly_smiling_face:",
+        "ts": "1520617649.000517"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "haha\n```{\n  \"ActiveEnd\": \"10.10.24.171\",\n  \"ActiveLeaseTime\": 60,\n  \"ActiveStart\": \"10.10.24.151\",\n  \"Available\": true,\n  \"Description\": \"\",\n  \"Enabled\": true,\n  \"Errors\": [],\n  \"Meta\": {},\n  \"Name\": \"kube1_subnet\",\n  \"NextServer\": \"\",\n  \"OnlyReservations\": false,\n  \"Options\": [\n    {\n      \"Code\": 1,\n      \"Value\": \"255.255.254.0\"\n    },\n    {\n      \"Code\": 3,\n      \"Value\": \"10.10.24.1\"\n    },\n    {\n      \"Code\": 6,\n      \"Value\": \"10.40.20.101,10.40.20.102\"\n    },\n    {\n      \"Code\": 15,\n      \"Value\": \"<http:\/\/tower-research.com|tower-research.com>\"\n    },\n    {\n      \"Code\": 28,\n      \"Value\": \"10.10.25.255\"\n    }\n  ],\n  \"Pickers\": [\n    \"hint\",\n    \"nextFree\",\n    \"mostExpired\"\n  ],\n  \"Proxy\": false,\n  \"ReadOnly\": false,\n  \"ReservedLeaseTime\": 7200,\n  \"Strategy\": \"MAC\",\n  \"Subnet\": \"10.10.24.0\/23\",\n  \"Unmanaged\": false,\n  \"Validated\": true\n}\n```",
+        "ts": "1520617668.000277"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "That is fine for 3.7.3",
+        "ts": "1520617735.000074"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I wanted to make sure it wasn't forcing the wrong bootloader or something like that.",
+        "ts": "1520617760.000010"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Can you throw a  screenshot of the failed boot into the channel?",
+        "ts": "1520617805.000608"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "it's blank",
+        "ts": "1520617816.000356"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "...",
+        "ts": "1520617823.000398"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "serial",
+        "ts": "1520617829.000678"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "so F12, then blank",
+        "ts": "1520617837.000217"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "so the serial console shows the nic firmware doing its thing, loads lpxelinux.0, then goes blank?",
+        "ts": "1520617868.000120"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "^^^",
+        "ts": "1520617884.000008"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "yessir",
+        "ts": "1520617889.000654"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you need to set serial console on the DRP side",
+        "ts": "1520617903.000048"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "actually, as usual, my bios is blanking the screen after POST",
+        "ts": "1520617913.000203"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "hm",
+        "ts": "1520617924.000423"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "I've set serial console, and I see it in the rendered pxelinux.cfg\/default",
+        "ts": "1520617928.000744"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "but i'm not getting that far",
+        "ts": "1520617940.000283"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "can whatever you are serial cnsoling into the system cwith capture the output?",
+        "ts": "1520617942.000303"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ah",
+        "ts": "1520617947.000315"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Yeah, I suspect it is what shane mentioned then.",
+        "ts": "1520617961.000370"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "lpxelinux.0 doesn't download the config file, so it doesn't know to output on serial",
+        "ts": "1520617972.000076"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "We should make having a serial console enabled the default one if these fine days.",
+        "ts": "1520617982.000266"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "and even if it did, the rendered pxelinux.cfg\/default has console=... for the kernel but not for itself",
+        "ts": "1520618000.000052"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "```$ tftp REDACTEDHOSTNAME -c get pxelinux.cfg\/default \n$ cat default\nDEFAULT discovery\nPROMPT 0\nTIMEOUT 10\nLABEL discovery\n  KERNEL sledgehammer\/9743e672ff33179cd5218d8fe506c03cf2a31d18\/vmlinuz0\n  INITRD sledgehammer\/9743e672ff33179cd5218d8fe506c03cf2a31d18\/stage1.img\n  APPEND rootflags=loop root=live:\/sledgehammer.iso rootfstype=auto ro liveimg rd_NO_LUKS rd_NO_MD rd_NO_DM provisioner.web=<http:\/\/10.40.20.30:8091> -- console=ttyS1,115200n8\n  IPAPPEND 2\n```",
+        "ts": "1520618057.000534"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Another thing to try would be to set option 67 in the subnet to `ipxe.pxe` and see if that works.",
+        "ts": "1520618068.000692"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "is your serial console *actually* on ttyS1 ?  not ttyS0 ?",
+        "ts": "1520618075.000604"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ttyS1 is kinda non-standard - it's what <http:\/\/packet.net|packet.net> baremetal systems use by default",
+        "ts": "1520618098.000344"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "tried both :slightly_smiling_face:",
+        "ts": "1520618098.000577"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "i tried this, no change in behavior `drpcli subnets set kube1_subnet option 67 to '{{if (eq (index . 77) \"iPXE\") }}default.ipxe{{else if (eq (index . 93) \"0\")}}lpxelinux.0{{else}}bootx64.efi{{end}}'`",
+        "edited": {
+            "user": "U9LUGRKFB",
+            "ts": "1520618133.000000"
+        },
+        "ts": "1520618128.000624"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "wow, that old string is still out there.",
+        "ts": "1520618153.000081"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "try {{if (eq (index . 77) \"iPXE\") }}default.ipxe{{else if (eq (index . 93) \"0\")}}ipxe.pxe{{else}}ipxe.efi{{end}}",
+        "ts": "1520618187.000282"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "are you using a USB to Serial converter, or an actual 9-pin serial port ?",
+        "ts": "1520618200.000401"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "from <http:\/\/provision.readthedocs.io\/en\/latest\/doc\/faq-troubleshooting.html#uefi-boot-support-option-67>",
+        "ts": "1520618215.000351"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "actually i have an avocent",
+        "ts": "1520618230.000291"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "um ... that's my fault ...",
+        "ts": "1520618230.000363"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "ok trying that option67 value",
+        "ts": "1520618288.000098"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "```    {\n      \"Code\": 67,\n      \"Value\": \"try {{if (eq (index . 77) \\\"iPXE\\\") }}default.ipxe{{else if (eq (index . 93) \\\"0\\\")}}ipxe.pxe{{else}}ipxe.efi{{end}}\"\n    }\n``` gonna give it a go",
+        "ts": "1520618340.000643"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "too much",
+        "ts": "1520618359.000108"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "get rid of try",
+        "ts": "1520618367.000338"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "there is no try. :slightly_smiling_face:",
+        "ts": "1520618370.000419"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "lol",
+        "ts": "1520618377.000428"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "do or do not",
+        "ts": "1520618392.000205"
+    },
+    {
+        "type": "message",
+        "user": "U9LQK5KDF",
+        "text": "What backend system does DRP use to store information gathered with gohai\/etc ?",
+        "ts": "1520618398.000516"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "This command: `drpcli subnets set kube1_subnet option 67 to '{{if (eq (index . 77) \"iPXE\") }}default.ipxe{{else if (eq (index . 93) \"0\")}}ipxe.pxe{{else}}ipxe.efi{{end}}'`",
+        "ts": "1520618418.000733"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It uses a file-based data store.",
+        "ts": "1520618433.000528"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U9LQK5KDF>",
+        "ts": "1520618441.000322"
+    },
+    {
+        "type": "message",
+        "user": "U9LQK5KDF",
+        "text": "Oh, I figured it was using Collins or something like that.",
+        "ts": "1520618465.000130"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U9LQK5KDF> - we try to keep it minimal \/ lightweight for embedding in things.",
+        "ts": "1520618495.000577"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Nope.  We want complete standalone operation + a zero-dependency install.",
+        "ts": "1520618507.000625"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We can use different backend but they need to be more blob store like than Collins.",
+        "ts": "1520618521.000588"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "so the dr-provison binary embeds all the things it must have to install.",
+        "ts": "1520618558.000573"
+    },
+    {
+        "type": "message",
+        "user": "U9LQK5KDF",
+        "text": "So I asked the question earlier about having DRP configure switchports for DHCP when it needs to pxeboot a system rather than having DHCP always on. I've been watching alot of the videos about DRP (that use packet as infrastructure) and it seems a little odd that a network of that size would want every port forwarding DHCP traffic from every host to the DHCP server all the time. Although I guess they probably don't use DR for their own DHCP\/pxe so maybe they do actually configure the ports.",
+        "ts": "1520618712.000353"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yes, they configure switch ports dynamically for every single host - every single host by default is isolated in a \/31 size L3 boundary and VXVLAN separated (updated my typo to \/31 boundary)",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1520618887.000000"
+        },
+        "ts": "1520618767.000132"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Digital Rebar Provision can configure ports just like they do ... it would be part of the Stages of workflow that you'd write for content",
+        "ts": "1520618812.000004"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "lol i thought you were making a yoda joke but I get it now. removed the \"try \", retrying",
+        "ts": "1520618812.000332"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the open source Digital Rebar Provision out-of-the-box does not have switch management built in",
+        "ts": "1520618943.000431"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "boys i see many packets",
+        "ts": "1520619027.000193"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U6QFVRJNB> uploaded a file: <https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/F9MKL36H3\/screen_shot_2018-03-09_at_10.10.59.png|do they look like this?>",
+        "file": {
+            "id": "F9MKL36H3",
+            "created": 1520619084,
+            "timestamp": 1520619084,
+            "name": "Screen Shot 2018-03-09 at 10.10.59.png",
+            "title": "do they look like this?",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U6QFVRJNB",
+            "editable": false,
+            "size": 310706,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9MKL36H3\/screen_shot_2018-03-09_at_10.10.59.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9MKL36H3\/download\/screen_shot_2018-03-09_at_10.10.59.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9MKL36H3-14355c62fe\/screen_shot_2018-03-09_at_10.10.59_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9MKL36H3-14355c62fe\/screen_shot_2018-03-09_at_10.10.59_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9MKL36H3-14355c62fe\/screen_shot_2018-03-09_at_10.10.59_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 232,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9MKL36H3-14355c62fe\/screen_shot_2018-03-09_at_10.10.59_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "image_exif_rotation": 1,
+            "original_w": 474,
+            "original_h": 306,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/F9MKL36H3\/screen_shot_2018-03-09_at_10.10.59.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F9MKL36H3-450b9a62a0",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U6QFVRJNB",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "shane",
+        "bot_id": null,
+        "ts": "1520619086.000468"
+    },
+    {
+        "type": "message",
+        "user": "U9LQK5KDF",
+        "text": "Hmm I was under the impression that they didn't actually use any L2 VLAN\/VXLAN stuff so that people can use their own overlays.",
+        "ts": "1520619098.000090"
+    },
+    {
+        "type": "message",
+        "user": "U9LQK5KDF",
+        "text": "but it's amusing to me that they use \/31s just because of NANOG's history of arguing about whether or not anyone should ever use \/31s haha",
+        "ts": "1520619123.000034"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "i forgot to put serial console back on ttyS0, but the machine showed up in drpcli machines list",
+        "ts": "1520619160.000084"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "will give it another crack with proper serial",
+        "ts": "1520619183.000319"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "but you are the _man_",
+        "ts": "1520619194.000466"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "seems I'd have been stuck without the slack inquiry",
+        "ts": "1520619215.000310"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "thanks guys! much appreciated.",
+        "ts": "1520619233.000499"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "What type of hardware is it? <@U9LUGRKFB>",
+        "ts": "1520619243.000484"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "supermicro X10 series with mellanox 10g",
+        "ts": "1520619256.000198"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "hmm - the mellanox drivers may not be in the open source centos\/ubuntu - have you checked that ?",
+        "ts": "1520619290.000229"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "lpxelinux.0 might not like the mellanox.  `ipxe.pxe` is “newer”",
+        "ts": "1520619293.000150"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I know they were a problem (especially Ubuntu 14.x)",
+        "ts": "1520619299.000554"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "which Mellanox cards ?",
+        "ts": "1520619351.000413"
+    },
+    {
+        "type": "message",
+        "user": "U9LQK5KDF",
+        "text": "Anyway, earlier I wasn't asking about whether DRP has the ability to configure networking equipment I was asking whether there were example workflows that illustrate where one might just pop in their own code to look stuff up from IPAM\/configure switches, etc",
+        "ts": "1520619366.000488"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "02:00.0 Ethernet controller: Mellanox Technologies MT27520 Family [ConnectX-3 Pro]",
+        "ts": "1520619452.000345"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "should be good - that's an older gen card - which I think is supported in the mlx4 driver",
+        "ts": "1520619473.000512"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(it might be in the mlx5 driver - but both are in CentOS7 by default ... pretty sure ubuntu 16 too)",
+        "ts": "1520619496.000266"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "one more quick question -- I haven't looked into this yet. is IPMI support behind the pay wall?",
+        "ts": "1520619502.000131"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Yep.",
+        "ts": "1520619521.000583"
+    },
+    {
+        "type": "message",
+        "user": "U9LQK5KDF",
+        "text": "Hmm, I think crowbar used to manage ipmi",
+        "ts": "1520619557.000320"
+    },
+    {
+        "type": "message",
+        "user": "U9LQK5KDF",
+        "text": "odd that they would decide to make that a paid for feature",
+        "ts": "1520619580.000675"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We have to have some encouragement to move to revenue generating customers.",
+        "ts": "1520619637.000695"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "okay, if this sexy thing keeps looking sexy i'll hit up your sales team for at least ballpark pricing :slightly_smiling_face:",
+        "ts": "1520619657.000578"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You can play with it in the content bundles of IPMI.",
+        "ts": "1520619661.000135"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U9LUGRKFB> - that is amazingly easy.  Seeing as you’ve talked with over half the team.  :slightly_smiling_face:",
+        "ts": "1520619697.000031"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "okay that triggers one more question. what sort of features do we get with the paywall bios support?",
+        "ts": "1520619706.000037"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Dell firmware updates and BIOS config are there presently",
+        "ts": "1520619756.000491"
+    },
+    {
+        "text": "Time to feed the :bear:!",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1520619756.000597"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "seeing as how that is what we have the most experience.",
+        "ts": "1520619768.000285"
+    },
+    {
+        "type": "message",
+        "user": "U9LQK5KDF",
+        "text": "<@U9LUGRKFB> You should be able to just boot into a thin linux environment like Alpine and then use whatever vendor's tools to configure your BIOS by just having alpine curl a script that builds the config based on either the MAC or IP of the client.",
+        "ts": "1520619790.000652"
+    },
+    {
+        "type": "message",
+        "user": "U9LQK5KDF",
+        "text": "omconfig is especially easy to do that with",
+        "ts": "1520619852.000387"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I have implemented Supermicro support (via sum) for DRv2 and an earlier customer, and have been waiting for demand to port that support over to dr-provision.",
+        "ts": "1520619858.000426"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "<@U9LQK5KDF> thanks, we have such stuff for our old heavy OS builds. lots of witchcraft though with our mixed hardcware platforms",
+        "ts": "1520619872.000556"
+    },
+    {
+        "type": "message",
+        "user": "U9LQK5KDF",
+        "text": "I don't know how far along redfish is but some of that may be standardized now",
+        "ts": "1520619897.000549"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U9LQK5KDF> - or you could use our tools and workflows to automate and orchestrate.  Or build a task\/stage that runs your own tools as part of the process.  DRP is flexible.",
+        "ts": "1520619903.000114"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ya, our BIOS and RAID plugins go through an in-house tool that implements a standard format and idempotent config flow on top of vendor-provided tooling.",
+        "ts": "1520619924.000577"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U9LQK5KDF>...it all sounds so _easy_ on paper .... :stuck_out_tongue_winking_eye:",
+        "ts": "1520619944.000578"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "yeah, we take care of blundering into and padding all the sharp bits so you don't have to.",
+        "edited": {
+            "user": "U02DJQSG8",
+            "ts": "1520619991.000000"
+        },
+        "ts": "1520619982.000007"
+    },
+    {
+        "type": "message",
+        "user": "U9LQK5KDF",
+        "text": "and i'm guessing that also Windows is paywalled too?",
+        "ts": "1520620020.000298"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "so you can (for instance) hand us a JSON blob representing a RAID config and we take care of driving megacli\/storcli\/whatever to make that config happen.",
+        "ts": "1520620063.000704"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Ditto for BIOS config.",
+        "ts": "1520620077.000341"
+    },
+    {
+        "type": "message",
+        "user": "U9LQK5KDF",
+        "text": "You mean in the event that we have access to the rackn stuff",
+        "ts": "1520620097.000040"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U9LQK5KDF> - yes, image-based deploys are paywalled.  Because they are tricky usually require consulting.",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1520620154.000000"
+        },
+        "ts": "1520620098.000503"
+    },
+    {
+        "type": "message",
+        "user": "U9LQK5KDF",
+        "text": "oh, we have it down to where we boot into PE and use command-line DISM to do phase 1 then the system reboots and finishes the install. We didn't find it very complicated even using pxelinux",
+        "ts": "1520620155.000291"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Okay - then that is good for you.  We’ve found that building images and deploying them is much faster and our customers like that workflow better.  It fits into CICD pipelines better and gives better controls.",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1520620215.000000"
+        },
+        "ts": "1520620206.000339"
+    },
+    {
+        "type": "message",
+        "user": "U9LQK5KDF",
+        "text": "I assume you are referring to non .wim images?",
+        "ts": "1520620248.000350"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Correct - though I have prototypes that deploy those as well.",
+        "ts": "1520620281.000239"
+    },
+    {
+        "type": "message",
+        "user": "U9LQK5KDF",
+        "text": "So you are referring to images that you drop onto the disk when the install is past what is commonly referred to as the 'PE' phase?",
+        "ts": "1520620463.000575"
+    },
+    {
+        "type": "message",
+        "user": "U9LUGRKFB",
+        "text": "hey I want to thank you guys again. will go have a play, and may come back for more magic.",
+        "ts": "1520620497.000407"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<@U9LQK5KDF>: yes.",
+        "ts": "1520620547.000649"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<@U9LUGRKFB>: No problemo.",
+        "ts": "1520620563.000151"
+    },
+    {
+        "type": "message",
+        "user": "U9LQK5KDF",
+        "text": "That is interesting, I haven't really looked for different imaging formats than .wim since we used ghost+floppies to do installs but I suppose if you include the right drivers or only use hardware that has native drivers in $target_windows_version that method could be a bit faster.",
+        "ts": "1520620890.000648"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "It is extremely fast - only requires one reboot of the machine to provision to a completed OS, and we support adding in post-provisioning bootstrap config changes as well",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1520620995.000000"
+        },
+        "ts": "1520620944.000714"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "along with our Agent, which you can enable longer term lifecycle management (if desired, by default our Agent \"dissolves\" after initial provisioning\" )",
+        "ts": "1520620978.000147"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "coupled with a CI\/CD pipeline to validate\/test your \"gold\" image, you can roll out patch updates very very quickly across very large scale infrastructure",
+        "ts": "1520621033.000443"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you also can roll forward\/roll back images quickly through this mechanism in the event a new image exhibits behavior problems \"in the wild\"",
+        "ts": "1520621067.000689"
+    },
+    {
+        "type": "message",
+        "user": "U9LQK5KDF",
+        "text": "So, pardon me if I am nosy but you would take the image when it is at the \"Please wait while we are setting everything up for you\" phase which I believe they still call OOBE and then have an execution configured to grab a script in powershell or (whatever) to execute the changes?",
+        "ts": "1520621135.000454"
+    },
+    {
+        "type": "message",
+        "user": "U9LQK5KDF",
+        "text": "I suppose one could also just roll cloud-init into an imagine for physical hosts",
+        "ts": "1520621270.000342"
+    },
+    {
+        "type": "message",
+        "user": "U9LQK5KDF",
+        "text": "err image",
+        "ts": "1520621276.000254"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Hmmm. Maybe. :grinning:",
+        "client_msg_id": "5A0ED7C5-17A9-43D0-816C-EA18AACC8649",
+        "ts": "1520621339.000201"
+    },
+    {
+        "type": "message",
+        "user": "U9LQK5KDF",
+        "text": "although you would want to avoid joining the domain with such a host until after the computer name is changed for obvious reasons",
+        "ts": "1520621409.000161"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "If that is a concern. Most definitely ",
+        "client_msg_id": "44CB12EF-91F0-4407-A843-C453E8AE6F4F",
+        "ts": "1520621441.000684"
+    },
+    {
+        "type": "message",
+        "user": "U9LQK5KDF",
+        "text": "Discovery uses open sledgehammer? does that do cdp\/lldp to gather network info?",
+        "ts": "1520621866.000111"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "lldp is in the Sledgehammer image so you can definitely build a Stage to collect switch port info",
+        "ts": "1520621894.000699"
+    },
+    {
+        "type": "message",
+        "user": "U9LQK5KDF",
+        "text": "Cool, i'm having the team install 40 PowerEdge 440s to play with DRP next week so I'm just trying to think of everything I am going to wonder about ahead of time.",
+        "ts": "1520621973.000043",
+        "reactions": [
+            {
+                "name": "grin",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Stages can be used to integrate in to external DCIM\/Asset Mgmt\/Cfg Mgmt databases as well - we can either push inventory info to them, or pull info to build provisioning decisions against",
+        "ts": "1520622046.000384"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(and IPAM as well)",
+        "ts": "1520622055.000464"
+    },
+    {
+        "type": "message",
+        "user": "U9LQK5KDF",
+        "text": "The problem I find mostly is that the team will rack 500 servers and then make a bunch of mistakes describing them whether it's the actual specs, the network info, whatever. so thats really the part that is the biggest pain in the ass. I didn't realize this until today but Packet never changing their hardware after it is installed makes alot of things a whole lot easier.",
+        "ts": "1520622196.000407"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yep, I know that pain ...",
+        "ts": "1520622232.000056"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "correlating the physical infrastructure design from what it _should_ be to what it really is (or isn't; if it's broken) ... can be a mess",
+        "ts": "1520622264.000755"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can audit via Sledgehammer what the reality of your network ports are and compare that to a \"it should be this\" design",
+        "ts": "1520622288.000440"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we use the LLDPD implementation which supports LLDP, CDP, EDP, SONMP, and FDP protocols",
+        "ts": "1520622309.000292"
+    },
+    {
+        "type": "message",
+        "user": "U9LQK5KDF",
+        "text": "Well, if you devote a portion of your DC to being totally 'fixed' i.e. you won't change the specs\/wont change the network, etc it makes alot of that trivial",
+        "ts": "1520622323.000502"
+    },
+    {
+        "type": "message",
+        "user": "U9LQK5KDF",
+        "text": "but if you are constantly adding\/removing drives+ram+pci-e cards, etc",
+        "ts": "1520622367.000670"
+    },
+    {
+        "type": "message",
+        "user": "U9LQK5KDF",
+        "text": "your inventory is going to get out of date pretty quickly",
+        "ts": "1520622397.000181"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "one could implement use of our Agent (i.e. not let it dissolve), and built in `gohai` inventory to report back to your provisioning service or other external services on a periodic basis",
+        "ts": "1520622455.000581"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "then you can support continual sweeping of inventory management - these are some of the larger lifecycle management solutions that can be built around the Agent if desired",
+        "ts": "1520622484.000581"
+    },
+    {
+        "type": "message",
+        "user": "U9LQK5KDF",
+        "text": "my initial thought on that was to have a maintenance mode that would cause it to boot back into the discovery to update the inventory but then I just figured out that we could probably just make a certain percentage of stuff not changeable",
+        "ts": "1520622511.000076"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Sledgehammer is designed to support that use, and DRP is designed to let you in-memory\/live boot systems \"do stuff\", then boot them back to their installed OS easily enough",
+        "ts": "1520622560.000728"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "but that's a fairly disruptive pattern to have ...",
+        "ts": "1520622571.000003"
+    },
+    {
+        "type": "message",
+        "user": "U9LQK5KDF",
+        "text": "I always find it humorous that if you add RAM to a dell server it takes a new inventory but there is no way to tell it to send that information anywhere",
+        "ts": "1520622573.000282"
+    },
+    {
+        "text": "Time to feed the :bear:!",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1520622573.000399"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "use of the Agent reporting back to DRP can centralize and manage that information as opposed to the rebooting - our Agent is crosscompiled for Arm, Intel, 32, 64bit, Linux, Windows, and Darwin (Mac) currently - pretty easy to port to other things if desired",
+        "ts": "1520622631.000291"
+    },
+    {
+        "type": "message",
+        "user": "U9LQK5KDF",
+        "text": "Oh, yeah man but it's not like you are going to upgrade RAM on a server while it's running",
+        "ts": "1520622651.000323"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I would call those workflows. :grinning:",
+        "client_msg_id": "2C74C85E-C0B0-44FB-B785-1C254D4B624A",
+        "ts": "1520622658.000182"
+    },
+    {
+        "type": "message",
+        "user": "U9LQK5KDF",
+        "text": "so there will be some amount of disruption anyway",
+        "ts": "1520622660.000339"
+    },
+    {
+        "type": "message",
+        "user": "U9LQK5KDF",
+        "text": "and if it's something that can't be disrupted it should be running on block storage that is accessible from more than a single host anyway",
+        "ts": "1520622710.000461"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "that is a good modern design pattern, but sadly, not all shops are there ...",
+        "ts": "1520622735.000120"
+    },
+    {
+        "type": "message",
+        "user": "U9LQK5KDF",
+        "text": "Yeah earlier I was moslty just asking if there were example workflows that are just missing the rackn pieces",
+        "ts": "1520622900.000203"
+    },
+    {
+        "type": "message",
+        "user": "U9LQK5KDF",
+        "text": "like \"this would be where rackn did this cool thing\"",
+        "ts": "1520622910.000157"
+    },
+    {
+        "type": "message",
+        "user": "U9LQK5KDF",
+        "text": "that would make it easy to figure out what pieces we have\/need to build\/want to buy",
+        "ts": "1520622945.000457"
+    },
+    {
+        "type": "message",
+        "user": "U9LQK5KDF",
+        "text": "You guys have piqued my interest on this windows image thing, must find file format :smiley:",
+        "ts": "1520623380.000106"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "this Tuesday we will be demo'ing our Image Deployment capabilities - including the Windows Image deploy on the weekly Meetup",
+        "ts": "1520623626.000165"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U9LQK5KDF> - The default community content has stages and tasks in it.  You can see the tasks \/ stages in the RackN content that is available by logging into the RackN SaaS.",
+        "ts": "1520624015.000110"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<https:\/\/portal.rackn.io\/>",
+        "ts": "1520624033.000691"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "When you create an account,  you'll have access to some licensed content on a trial basis from the catalog.",
+        "client_msg_id": "251ff924-c6bb-4bee-abdd-9820005e3e5b",
+        "ts": "1520635625.000058"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "The account turns on \"registration wall\" UX features.",
+        "client_msg_id": "d37f219b-6e70-4efe-aa68-c17c61e6f5fe",
+        "ts": "1520635713.000164"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "little bonus features.... added live Task view to Bulk Edit",
+        "ts": "1520651000.000039"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U02DHRR2L> uploaded a file: <https:\/\/rackn.slack.com\/files\/U02DHRR2L\/F9MMKKU04\/image.png|image.png>",
+        "file": {
+            "id": "F9MMKKU04",
+            "created": 1520651003,
+            "timestamp": 1520651003,
+            "name": "image.png",
+            "title": "image.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U02DHRR2L",
+            "editable": false,
+            "size": 28945,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9MMKKU04\/image.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9MMKKU04\/download\/image.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9MMKKU04-21bbaebabf\/image_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9MMKKU04-21bbaebabf\/image_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9MMKKU04-21bbaebabf\/image_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 241,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9MMKKU04-21bbaebabf\/image_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 321,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9MMKKU04-21bbaebabf\/image_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "image_exif_rotation": 1,
+            "original_w": 544,
+            "original_h": 364,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U02DHRR2L\/F9MMKKU04\/image.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F9MMKKU04-47544f7a07",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U02DHRR2L",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "zehicle",
+        "bot_id": null,
+        "ts": "1520651005.000024"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "It will be in the latest after we test it a bit",
+        "ts": "1520651022.000066"
+    }
+]

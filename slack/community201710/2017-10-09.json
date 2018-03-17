@@ -1,0 +1,587 @@
+[
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "<@U02DGQYK1> do you have a recommended video\/URL\/etc that would explain more of the concepts to me? For example, stages\/workflow\/jobs\/plugins etc.",
+        "ts": "1507561559.000099"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "I'm going to redo the setup but this time instead of hacking I'd like to get a working process down and feel like I'm lacking some of the concepts that might make me successful",
+        "ts": "1507561806.000227"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We need to build some of those. We are going to be talking about them a little tomorrow on the community call.  We have some plans to do those shortly.  I need to do some videos about that.",
+        "ts": "1507562809.000231"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "ok thanks",
+        "ts": "1507562844.000142"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "I'm going to go back through some of the process again today and try to learn a bit more. I'm especially interested in some of the post install stuff you have like kubespray",
+        "ts": "1507562872.000341"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "<@U02DGQYK1> remind me what magic is needed to get packet IPMI working? I installed it and added my API key",
+        "ts": "1507567263.000644"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That is all from the plugin side.",
+        "ts": "1507567347.000579"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The content side needs to have the `packet-discover` stage chained after the `discover` stage.",
+        "ts": "1507567369.000298"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "ok",
+        "ts": "1507567373.000326"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "so packet discover is how rackn knows I have a <http:\/\/packet.net|packet.net> box",
+        "ts": "1507567380.000398"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes - the tasks in the stage do two things",
+        "ts": "1507567398.000433"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "1. test to see if the machine is a packet machine and set the packet uuid as a parameter on the node.",
+        "ts": "1507567418.000362"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "2. put hte packet ssh keys into the discovery environment so that ssh access to the discovered nodes is allowed.",
+        "ts": "1507567438.000375"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "discover -&gt; packet-disc:Success is what I will set",
+        "ts": "1507567441.000477"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes",
+        "ts": "1507567445.000279"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "then I do: packet-discover-&gt;terraform-ready:Success  - this creates a hang env for a node.",
+        "ts": "1507567470.000129"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "I'm going to skip that and install ubuntu but concepts making more sense now",
+        "ts": "1507567504.000681"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - cool",
+        "ts": "1507567630.000026"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "full disclosure, if you are watching the ssh console for a machine, you won’t see log output until the machine reboots again.  The running of packet-discover adds the serial console parameters for boot environs.  That doesn’t take effect until the next reboot.",
+        "ts": "1507567711.000304"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U6QFVRJNB> Upgraded the os-discovery Content, now see that sledgehammer needs upgrade - refresh my memory on how to upload?",
+        "ts": "1507568328.000080"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "```drpcli bootenvs uploadiso ce-sledgehammer```",
+        "ts": "1507568556.000417"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "is one of the ways.",
+        "ts": "1507568566.000375"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "UX can also do it.",
+        "ts": "1507568570.000196"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Thx @greg",
+        "ts": "1507569108.000477"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "np",
+        "ts": "1507569155.000276"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "@greg - did param names change sometime lately?",
+        "ts": "1507569370.000192"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "a few, but you should have had it already.",
+        "ts": "1507569389.000420"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "For instance I have “access_keys” type object, but I now see “access-keys” type object...",
+        "ts": "1507569436.000404"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yeah - we tried to normalize everything from `_` to `-`",
+        "ts": "1507569456.000269"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "we were all over the map.",
+        "ts": "1507569465.000428"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Ah, OK - so should reset those...",
+        "ts": "1507569483.000390"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes",
+        "ts": "1507569491.000222"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Ok. Also, a “Profile” seems to not be just a collection of Params, but now is a class of machines, as used in Workflows?",
+        "ts": "1507569683.000141"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I’ll have to handle describe in a bit.  have to step away.",
+        "ts": "1507569751.000136"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Ok",
+        "ts": "1507569786.000301"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "<@U02DGQYK1> when I apply a profile to a machine does it need to re-pxe to get it applied? for example kube-master",
+        "ts": "1507578401.000207"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "ah \/me finds the docs",
+        "ts": "1507578654.000062"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "where do I report bugs?",
+        "ts": "1507584518.000021"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<https:\/\/github.com\/digitalrebar\/provision\/issues>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/issues",
+                "text": "provision - The Provisioner for DigitalRebar as a Stand Alone Golang Utility",
+                "fallback": "GitHub: digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/issues",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?v=4&s=400",
+                "thumb_width": 192,
+                "thumb_height": 192,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1507584536.000039"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "I think this is a RackN UI issue specifically",
+        "ts": "1507584558.000131"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "please use the labels related to UX appropriately (enhancement or bug) :slightly_smiling_face:",
+        "ts": "1507584581.000007"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "ok",
+        "ts": "1507584624.000043"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "just need to figrue out how to label it",
+        "ts": "1507584991.000211"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "or maybe I cant?",
+        "ts": "1507585001.000429"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "when you create a new issues, there should be a \"Label\" pull down on the right - if not, you can go ahead and create it without a label, and apply label after you create",
+        "ts": "1507585071.000164"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "I think I need write access ... okay let me look again",
+        "ts": "1507585080.000315"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U6QFVRJNB> uploaded a file: <https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/F7FR94HV3\/screen_shot_2017-10-09_at_14.37.40.png|Screen Shot 2017-10-09 at 14.37.40.png>",
+        "file": {
+            "id": "F7FR94HV3",
+            "created": 1507585082,
+            "timestamp": 1507585082,
+            "name": "Screen Shot 2017-10-09 at 14.37.40.png",
+            "title": "Screen Shot 2017-10-09 at 14.37.40.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U6QFVRJNB",
+            "editable": false,
+            "size": 17244,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7FR94HV3\/screen_shot_2017-10-09_at_14.37.40.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7FR94HV3\/download\/screen_shot_2017-10-09_at_14.37.40.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7FR94HV3-16a2774c6b\/screen_shot_2017-10-09_at_14.37.40_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7FR94HV3-16a2774c6b\/screen_shot_2017-10-09_at_14.37.40_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7FR94HV3-16a2774c6b\/screen_shot_2017-10-09_at_14.37.40_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 216,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7FR94HV3-16a2774c6b\/screen_shot_2017-10-09_at_14.37.40_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "image_exif_rotation": 1,
+            "original_w": 388,
+            "original_h": 233,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/F7FR94HV3\/screen_shot_2017-10-09_at_14.37.40.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F7FR94HV3-4ac1eb3929",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U6QFVRJNB",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "shane",
+        "bot_id": null,
+        "ts": "1507585085.000084"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "I lack the cog wheel",
+        "ts": "1507585106.000320"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U7F67C94M> uploaded a file: <https:\/\/rackn.slack.com\/files\/U7F67C94M\/F7F21S22U\/screen_shot_2017-10-09_at_3.38.29_pm.png|Screen Shot 2017-10-09 at 3.38.29 PM.png>",
+        "file": {
+            "id": "F7F21S22U",
+            "created": 1507585123,
+            "timestamp": 1507585123,
+            "name": "Screen Shot 2017-10-09 at 3.38.29 PM.png",
+            "title": "Screen Shot 2017-10-09 at 3.38.29 PM.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U7F67C94M",
+            "editable": false,
+            "size": 49421,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7F21S22U\/screen_shot_2017-10-09_at_3.38.29_pm.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7F21S22U\/download\/screen_shot_2017-10-09_at_3.38.29_pm.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7F21S22U-a01fac6b93\/screen_shot_2017-10-09_at_3.38.29_pm_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7F21S22U-a01fac6b93\/screen_shot_2017-10-09_at_3.38.29_pm_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7F21S22U-a01fac6b93\/screen_shot_2017-10-09_at_3.38.29_pm_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 327,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7F21S22U-a01fac6b93\/screen_shot_2017-10-09_at_3.38.29_pm_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 435,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7F21S22U-a01fac6b93\/screen_shot_2017-10-09_at_3.38.29_pm_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7F21S22U-a01fac6b93\/screen_shot_2017-10-09_at_3.38.29_pm_720.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 653,
+            "image_exif_rotation": 1,
+            "original_w": 733,
+            "original_h": 665,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U7F67C94M\/F7F21S22U\/screen_shot_2017-10-09_at_3.38.29_pm.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F7F21S22U-acf8debb66",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U7F67C94M",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "mfischer",
+        "bot_id": null,
+        "ts": "1507585125.000168"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "hmm - will look in to that - plz go ahead an file issue, I'll label it",
+        "ts": "1507585139.000344"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "\"Assign labels to issues and pull requests to help organize your projects. You can do this in repositories to which you have write access.\"",
+        "ts": "1507585145.000102"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "done",
+        "ts": "1507585151.000182"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "<https:\/\/github.com\/digitalrebar\/provision\/issues\/474>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "no way back after cloning a profile · Issue #474 · digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/issues\/474",
+                "text": "After cloning a profile and editing the name and clicking Add (which should probably be \"Save\" by thats another issue), there's no way back. You can see the new profile but can't close it. The only...",
+                "fallback": "GitHub: no way back after cloning a profile · Issue #474 · digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/issues\/474",
+                "thumb_url": "https:\/\/avatars0.githubusercontent.com\/u\/1686293?v=4&s=400",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1507585152.000053"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Running into a problem with my Ubuntu install...",
+        "ts": "1507585786.000026"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7F26BQHE\/image_uploaded_from_ios.jpg|Image uploaded from iOS>",
+        "file": {
+            "id": "F7F26BQHE",
+            "created": 1507585801,
+            "timestamp": 1507585801,
+            "name": "Image uploaded from iOS.jpg",
+            "title": "Image uploaded from iOS",
+            "mimetype": "image\/jpeg",
+            "filetype": "jpg",
+            "pretty_type": "JPEG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 7347750,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7F26BQHE\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7F26BQHE\/download\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7F26BQHE-0c70810177\/image_uploaded_from_ios_64.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7F26BQHE-0c70810177\/image_uploaded_from_ios_80.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7F26BQHE-0c70810177\/image_uploaded_from_ios_360.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 270,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7F26BQHE-0c70810177\/image_uploaded_from_ios_480.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 360,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7F26BQHE-0c70810177\/image_uploaded_from_ios_160.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7F26BQHE-0c70810177\/image_uploaded_from_ios_720.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 540,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7F26BQHE-0c70810177\/image_uploaded_from_ios_800.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 600,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7F26BQHE-0c70810177\/image_uploaded_from_ios_960.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 720,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7F26BQHE-0c70810177\/image_uploaded_from_ios_1024.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 768,
+            "image_exif_rotation": 1,
+            "original_w": 4032,
+            "original_h": 3024,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7F26BQHE\/image_uploaded_from_ios.jpg",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F7F26BQHE-06d30adfdb",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "upload_reply_to": "FC68B4A6-DEBE-4787-8658-3E06F5662F7A",
+        "ts": "1507585809.000258"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "How can I see generated preseed?",
+        "ts": "1507585829.000131"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "<@U416T0AAX> preseed URL is defined in the bootenv\n<https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/bootenvs\/ce-ubuntu-16.04.yml#L36>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision-content",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/bootenvs\/ce-ubuntu-16.04.yml#L36",
+                "text": "provision-content - DigitalRebar Provision Content",
+                "fallback": "GitHub: digitalrebar\/provision-content",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/bootenvs\/ce-ubuntu-16.04.yml#L36",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?v=4&s=400",
+                "thumb_width": 192,
+                "thumb_height": 192,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1507588368.000154"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "`{{.Machine.Path}}` will typically be http:\/\/$drphost:8091\/machines\/$uuid",
+        "edited": {
+            "user": "U54E4SD4G",
+            "ts": "1507680080.000000"
+        },
+        "ts": "1507588410.000199"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "so for that bootenv, the preseed can be fetched from e.g. <http:\/\/provision.local:8091\/machines\/ffa946f1-d4fa-4b3d-a347-1e018904dd8e\/seed>",
+        "edited": {
+            "user": "U54E4SD4G",
+            "ts": "1507680069.000000"
+        },
+        "ts": "1507588468.000177"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "also I'd check the screen on alt+f8 (iirc) for any relevant error messages too",
+        "ts": "1507588674.000175"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "(or esc esc esc all the way until you can get back to the main menu prompt and open a shell\/start a web server to view logs from somewhere else)",
+        "ts": "1507588715.000297"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Thanks <@U54E4SD4G>",
+        "ts": "1507599985.000065"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "The URL seems to be: `url={{.Machine.Url}}\/seed`",
+        "ts": "1507600006.000219"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "What does `{{.Machine.Url}}` translate into?",
+        "ts": "1507600043.000085"
+    }
+]

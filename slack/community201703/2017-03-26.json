@@ -1,0 +1,22 @@
+[
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Not familiar with DDWRT off the bat.  ",
+        "ts": "1490537387.161396"
+    },
+    {
+        "text": "http:\/\/www.dd-wrt.com\/help\/english\/HManagement.asp ?  We used to see issues w\/ port fast settings on switches not being set correctly.",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490550145.045150"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Okay.  We routinely tell people to set portfast on server ports. To keep ipxe firm wares from timing out",
+        "ts": "1490567295.317844"
+    }
+]

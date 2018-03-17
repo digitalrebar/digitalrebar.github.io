@@ -1,0 +1,376 @@
+[
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "And now it’s another day.. time for more preseed wrasslin’",
+        "ts": "1517421329.000066"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Oh my lord, this is harder than it should be…",
+        "ts": "1517427360.000652"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So, I have the following in my machine’s preseed:",
+        "ts": "1517431753.000772"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F91VDKNNR\/preseed_partitioning.txt|preseed partitioning>",
+        "file": {
+            "id": "F91VDKNNR",
+            "created": 1517431780,
+            "timestamp": 1517431780,
+            "name": "preseed_partitioning.txt",
+            "title": "preseed partitioning",
+            "mimetype": "text\/plain",
+            "filetype": "text",
+            "pretty_type": "Plain Text",
+            "user": "U416T0AAX",
+            "editable": true,
+            "size": 1947,
+            "mode": "snippet",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F91VDKNNR\/preseed_partitioning.txt?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F91VDKNNR\/download\/preseed_partitioning.txt?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F91VDKNNR\/preseed_partitioning.txt",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F91VDKNNR-5b55870673",
+            "edit_link": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F91VDKNNR\/preseed_partitioning.txt\/edit",
+            "preview": "#Partitioning Scheme\r\nd-i partman-auto\/disk string \/dev\/sda\r\nd-i grub-installer\/choose_bootdev select \/dev\/sda\r\nd-i grub-installer\/bootdev string \/dev\/sda\r\nd-i partman-auto\/method string lvm\r",
+            "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>#Partitioning Scheme<\/pre><\/div>\n<div><pre>d-i partman-auto\/disk string \/dev\/sda<\/pre><\/div>\n<div><pre>d-i grub-installer\/choose_bootdev select \/dev\/sda<\/pre><\/div>\n<div><pre>d-i grub-installer\/bootdev string \/dev\/sda<\/pre><\/div>\n<div><pre>d-i partman-auto\/method string lvm<\/pre><\/div>\n<div><pre><\/pre><\/div>\n<\/div>\n<\/div>\n",
+            "lines": 37,
+            "lines_more": 32,
+            "preview_is_truncated": true,
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1517431781.000476"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "However, when the install completes, I’m getting this…",
+        "ts": "1517431830.000213"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F92TN9DCP\/disk_partitioning_info_after_install.txt|Disk partitioning info after install>",
+        "file": {
+            "id": "F92TN9DCP",
+            "created": 1517431959,
+            "timestamp": 1517431959,
+            "name": "Disk_partitioning_info_after_install.txt",
+            "title": "Disk partitioning info after install",
+            "mimetype": "text\/plain",
+            "filetype": "text",
+            "pretty_type": "Plain Text",
+            "user": "U416T0AAX",
+            "editable": true,
+            "size": 1305,
+            "mode": "snippet",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F92TN9DCP\/disk_partitioning_info_after_install.txt?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F92TN9DCP\/download\/disk_partitioning_info_after_install.txt?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F92TN9DCP\/disk_partitioning_info_after_install.txt",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F92TN9DCP-1701165d5e",
+            "edit_link": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F92TN9DCP\/disk_partitioning_info_after_install.txt\/edit",
+            "preview": "root@testinstall:~# parted \/dev\/sda print free\r\nModel: Dell VIRTUAL DISK (scsi)\r\nDisk \/dev\/sda: 1000GB\r\nSector size (logical\/physical): 512B\/512B\r\nPartition Table: gpt\r",
+            "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>root@testinstall:~# parted \/dev\/sda print free<\/pre><\/div>\n<div><pre>Model: Dell VIRTUAL DISK (scsi)<\/pre><\/div>\n<div><pre>Disk \/dev\/sda: 1000GB<\/pre><\/div>\n<div><pre>Sector size (logical\/physical): 512B\/512B<\/pre><\/div>\n<div><pre>Partition Table: gpt<\/pre><\/div>\n<div><pre><\/pre><\/div>\n<\/div>\n<\/div>\n",
+            "lines": 37,
+            "lines_more": 32,
+            "preview_is_truncated": true,
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1517431960.000395"
+    },
+    {
+        "text": "Why u make no \/home LV???????",
+        "type": "message",
+        "subtype": "me_message",
+        "user": "U416T0AAX",
+        "ts": "1517432004.000227"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Anyone out there in DRP with a clue, I’m buying…",
+        "ts": "1517432092.000208"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U416T0AAX> - I think your root partition is min size 10G and max size 100G. with a priority of 102401.  Your home drive is min size 10G and max size lots priority 102433.  i think that means it will make the root full size and then have no room for \/home.",
+        "ts": "1517432656.000022"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It appears you have 100GB drive.",
+        "ts": "1517432669.000500"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You may want to try and change 102400 on the \/ part to 51200 and see if you get a home drive.",
+        "ts": "1517432694.000438"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Just for a test.",
+        "ts": "1517432697.000229"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "It’s a 1TB (1000GB) drive…",
+        "ts": "1517432746.000089"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "hmm",
+        "ts": "1517432755.000737"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "not sure.",
+        "ts": "1517432761.000052"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "but I just read the priority should be between the min and max",
+        "ts": "1517432772.000133"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yes, it’s basically a weighting value from what I understand",
+        "ts": "1517432797.000595"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I have no idea where to get help on this… #debian in IRC yielded nothing…",
+        "ts": "1517432865.000660"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I’d try putting the 102401 priority to 102399.",
+        "ts": "1517432871.000638"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "There’s random blog posts, etc but none with any magic for me",
+        "ts": "1517432887.000217"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "da",
+        "ts": "1517432936.000416"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "That is the problem with preseeds",
+        "ts": "1517432963.000092"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Horrible docs and horrible perl when the docs are not good enough.",
+        "ts": "1517432982.000136"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I made a test server, installed by hand, with a correct partitioning, so I know it can be done; just not know how via preseed…",
+        "ts": "1517432982.000212"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Does anyone know if Ubuntu changed the Debian preseed logic, or if they stick strictly to Debian’s?",
+        "ts": "1517433035.000576"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "(That would help with where to ask…)",
+        "ts": "1517433052.000822"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "not sure.  You may also need to make sure root is first and then home",
+        "ts": "1517433151.000030"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "in the list.",
+        "ts": "1517433153.000155"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I did play with that… It was that way, then I thought to flip them and see if that did anything different",
+        "ts": "1517433206.000265"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I’ve done like 10 installs on the server w\/ different partman params…",
+        "ts": "1517433243.000589"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I’m thinking of when I (ever) understand this and get it, then it would be cool to have a community library (content pack) of these disk partitioning layouts (both preseed and kickstart) to choose from",
+        "ts": "1517433339.000141"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DJQSG8> Do you know where to read the source code that handles the preseed processing?",
+        "ts": "1517433711.000382"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "(yes, I’ve sunk to that level :disappointed:)",
+        "ts": "1517433729.000884"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "uh",
+        "ts": "1517434570.000168"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Spread out across the repos in <https:\/\/anonscm.debian.org\/cgit\/d-i\/>",
+        "ts": "1517434583.000165"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "$DEITY help us all",
+        "ts": "1517434608.000355"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Where is your $DEITY now???",
+        "ts": "1517434884.000700"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "That is some heavy theology that we should probably avoid. :slightly_smiling_face:",
+        "ts": "1517434936.000067"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Well, all I know is I’m in $PARTMAN_HELL :rage::imp::tired_face:",
+        "ts": "1517435455.000452"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, out of desperation, posted a question on Ubuntu Launchpad... <https:\/\/answers.launchpad.net\/ubuntu\/+question\/663937>",
+        "attachments": [
+            {
+                "title": "Question #663937 : Questions : Ubuntu",
+                "title_link": "https:\/\/answers.launchpad.net\/ubuntu\/+question\/663937",
+                "text": "I have the following partitioning config in my preseed file: ``` # Partitioner Label Default (GPT) d-i partman\/choose_label string gpt d-i partman-basicfilesystems\/choose_label string gpt d-i partman-partitioning\/choose_label string gpt d-i partman\/default_label string gpt d-i partman-basicfilesystems\/default_label string gpt d-i partman-partitioning\/default_label string gpt # Partitioner Prompt Confirmations d-i partman-auto\/purge_lvm_from_device boolean true d-i partman-md\/confirm boolean...",
+                "fallback": "Question #663937 : Questions : Ubuntu",
+                "from_url": "https:\/\/answers.launchpad.net\/ubuntu\/+question\/663937",
+                "service_icon": "https:\/\/answers.launchpad.net\/@@\/launchpad.png",
+                "service_name": "answers.launchpad.net",
+                "id": 1
+            }
+        ],
+        "ts": "1517447695.000020"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Beginning to think the LVM partitioner only supports root and swap LVs",
+        "ts": "1517447735.000327"
+    },
+    {
+        "text": "wonders if chucking partman out the window is a better idea and just using `parted`, or other tools as part of a `d-i preseed\/late_command string...` method",
+        "type": "message",
+        "subtype": "me_message",
+        "user": "U6QFVRJNB",
+        "ts": "1517449470.000056"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "w00t new UX feature rolling through testing allows you to set Machine icon &amp; color",
+        "ts": "1517453195.000076"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Now investigating this: <https:\/\/launchpad.net\/kickseed>",
+        "ts": "1517467529.000074"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "kickstart to preseed has several limitations",
+        "ts": "1517468061.000207"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "last i looked",
+        "ts": "1517468077.000219"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "also i'll take a closer look at your preseed later, heading out atm",
+        "ts": "1517468101.000242"
+    }
+]

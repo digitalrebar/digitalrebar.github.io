@@ -1,0 +1,630 @@
+[
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<!channel> - Hi all, v3.4.0 is out and content updates to v1.3.0.  Check out the release notes here: <https:\/\/github.com\/digitalrebar\/provision\/releases\/tag\/v3.4.0>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/releases\/tag\/v3.4.0",
+                "text": "provision - The Provisioner for DigitalRebar as a Stand Alone Golang Utility",
+                "fallback": "GitHub: digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/releases\/tag\/v3.4.0",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 192,
+                "thumb_height": 192,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1512427724.000374",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U54E4SD4G",
+                    "U02DHRR2L"
+                ],
+                "count": 2
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "Any ideas what might cause this? (just attempted an upgrade)\n```\nDec 04 23:32:52 labs-provision dr-provision[30920]: dr-provision2017\/12\/04 23:32:52.762604 Version: v3.4.0-0-3af10535d31b6367778d34446d3092ed543aa059\nDec 04 23:32:52 labs-provision dr-provision[30920]: dr-provision2017\/12\/04 23:32:52.762662 Extracting Default Assets\nDec 04 23:32:53 labs-provision dr-provision[30920]: panic: assignment to entry in nil map\nDec 04 23:32:53 labs-provision dr-provision[30920]: goroutine 1 [running]:\nDec 04 23:32:53 labs-provision dr-provision[30920]: <http:\/\/github.com\/digitalrebar\/provision\/models.(*MetaData).ClearFeatures(...)|github.com\/digitalrebar\/provision\/models.(*MetaData).ClearFeatures(...)>\nDec 04 23:32:53 labs-provision dr-provision[30920]:         \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/models\/meta.go:23\nDec 04 23:32:53 labs-provision dr-provision[30920]: <http:\/\/github.com\/digitalrebar\/provision\/backend.(*Machine).BeforeSave(0xc4202b5340|github.com\/digitalrebar\/provision\/backend.(*Machine).BeforeSave(0xc4202b5340>, 0xcc9548, 0xc4202b5340)\nDec 04 23:32:53 labs-provision dr-provision[30920]:         \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/backend\/machines.go:605 +0x10a\nDec 04 23:32:53 labs-provision dr-provision[30920]: <http:\/\/github.com\/digitalrebar\/provision\/backend.(*Machine).OnLoad(0xc4202b5340|github.com\/digitalrebar\/provision\/backend.(*Machine).OnLoad(0xc4202b5340>, 0x0, 0x0)\nDec 04 23:32:53 labs-provision dr-provision[30920]:         \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/backend\/machines.go:647 +0x135\nDec 04 23:32:53 labs-provision dr-provision[30920]: <http:\/\/github.com\/digitalrebar\/provision\/vendor\/github.com\/digitalrebar\/store.load(0x10d3e80|github.com\/digitalrebar\/provision\/vendor\/github.com\/digitalrebar\/store.load(0x10d3e80>, 0xc4200f74d0, 0x10cc680, 0xc4202b5340, 0xc42005850c, 0x24, 0x1, 0xb9b300, 0xc4200e9c00, 0x7f1a6f0c7000)\nDec 04 23:32:53 labs-provision dr-provision[30920]:         \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/vendor\/github.com\/digitalrebar\/store\/keySaver.go:114 +0xf1\nDec 04 23:32:53 labs-provision dr-provision[30920]: <http:\/\/github.com\/digitalrebar\/provision\/vendor\/github.com\/digitalrebar\/store.List(0x10d3e80|github.com\/digitalrebar\/provision\/vendor\/github.com\/digitalrebar\/store.List(0x10d3e80>, 0xc4200f74d0, 0x10cc680, 0xc420010480, 0x10cc680, 0xc420010480, 0x15, 0x0, 0x0)\nDec 04 23:32:53 labs-provision dr-provision[30920]:         \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/vendor\/github.com\/digitalrebar\/store\/keySaver.go:129 +0x174\nDec 04 23:32:53 labs-provision dr-provision[30920]: <http:\/\/github.com\/digitalrebar\/provision\/backend.(*DataTracker).rebuildCache(0xc4211fc0e0|github.com\/digitalrebar\/provision\/backend.(*DataTracker).rebuildCache(0xc4211fc0e0>, 0xc9e2dd, 0x4)\nDec 04 23:32:53 labs-provision dr-provision[30920]:         \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/backend\/dataTracker.go:548 +0x2d9\nDec 04 23:32:53 labs-provision dr-provision[30920]: <http:\/\/github.com\/digitalrebar\/provision\/backend.NewDataTracker(0x10d3a00|github.com\/digitalrebar\/provision\/backend.NewDataTracker(0x10d3a00>, 0xc4211fc000, 0xc420252140, 0x1e, 0xc420252180, 0x1e, 0x7ffdb0c0df3d, 0xc, 0xc420016400, 0x1f9b, ...)\nDec 04 23:32:53 labs-provision dr-provision[30920]:         \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/backend\/dataTracker.go:679 +0x67d\nDec 04 23:32:53 labs-provision dr-provision[30920]: <http:\/\/github.com\/digitalrebar\/provision\/server.Server(0x188c6a0)|github.com\/digitalrebar\/provision\/server.Server(0x188c6a0)>\nDec 04 23:32:53 labs-provision dr-provision[30920]:         \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/server\/server.go:152 +0x1128\nDec 04 23:32:53 labs-provision dr-provision[30920]: main.main()\nDec 04 23:32:53 labs-provision dr-provision[30920]:         \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/cmds\/dr-provision\/dr-provision.go:26 +0x97\n```",
+        "ts": "1512430681.000150"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "I guess one of the machine definitions is causing this",
+        "ts": "1512430878.000159"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "or...all of them",
+        "ts": "1512431060.000131"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<!channel> - the v006 meetup tomorrow (11am PST) agenda is posted at:\n<https:\/\/docs.google.com\/document\/d\/1PrdLhpR_AbPEahjRC4AoDvR3NPcvKrCYb95leOYy-Iw>\nCool demo on Immutable Kubernetes via the new \"KRIB\" (Kubernetes Rebar\/RackN Immutable Bootstrapping\"",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1512431460.000000"
+        },
+        "ts": "1512431208.000041"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "```\n{\"Validated\":false,\"Available\":false,\"Errors\":[],\"ReadOnly\":false,\"Meta\":null,\"Name\":\"some.example.machine\",\"Description\":\"\",\"Uuid\":\"e313c00d-0f9f-4bd2-913b-4e0f78baaf9a\",\"CurrentJob\":\"\",\"Address\":\"1.1.1.1\",\"Stage\":\"none\",\"BootEnv\":\"local\",\"Profiles\":[\"some_profile\"],\"Profile\":{\"Validated\":false,\"Available\":false,\"Errors\":null,\"ReadOnly\":false,\"Meta\":null,\"Name\":\"\",\"Description\":\"\",\"Params\":null},\"Tasks\":[],\"CurrentTask\":0,\"Runnable\":false,\"Secret\":\"0SXxivTmio-jB00w\"}\n```\nhere's an example definition in `\/var\/lib\/dr-provision\/digitalrebar\/machines` that's causing DRP not to start",
+        "edited": {
+            "user": "U54E4SD4G",
+            "ts": "1512431345.000000"
+        },
+        "ts": "1512431332.000194"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Cool demo on Immutable Kubernetes via the new \"KRIB\" (Kubernetes Rebar\/RackN Immutable Bootstrapping\"",
+        "ts": "1512431335.000148"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U54E4SD4G> - I'm guessing you're trying to update to the newly released v3.4?  There were some structural changes, and it's possible that some of the content needs changed to match ....",
+        "ts": "1512431393.000115"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "yeah",
+        "ts": "1512431401.000246"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "release notes at: \n<https:\/\/github.com\/digitalrebar\/provision\/releases\/tag\/v3.4.0>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/releases\/tag\/v3.4.0",
+                "text": "provision - The Provisioner for DigitalRebar as a Stand Alone Golang Utility",
+                "fallback": "GitHub: digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/releases\/tag\/v3.4.0",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 192,
+                "thumb_height": 192,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1512431436.000356"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "Oh, i was looking at \"stable\" doc",
+        "ts": "1512431442.000365"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "actually never mind I don't see any 3.2 to 3.4 specific instructions on RTD",
+        "ts": "1512431558.000219"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "DRP was still starting with existing content, probably since I was following tip for a bit (though I didn't check to see if they were functional). It's just the machine definitions that seem to be causing an issue and I don't quite see anything in the release notes about that",
+        "ts": "1512431653.000283"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "going to need <@U02DGQYK1> and\/or <@U02DJQSG8> to wade in on that",
+        "ts": "1512431746.000281"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U54E4SD4G> - what is the error?",
+        "ts": "1512436938.000302"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "nvm - read farther up",
+        "ts": "1512436951.000002"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I’ll fix it.",
+        "ts": "1512436980.000029"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You machines have `null` meta data.",
+        "ts": "1512436990.000009"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I’ll fix it.",
+        "ts": "1512436992.000180"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We assume something.",
+        "ts": "1512437005.000171"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I suppose that's better than assuming everything ....",
+        "ts": "1512437041.000296"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "... or nothing ?",
+        "ts": "1512437046.000141"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "With 3.3.0, objects populate all fields all the time.  For the most part, it is okay.  I’ll fix the spot that isn’t.",
+        "ts": "1512437264.000091"
+    },
+    {
+        "user": "U89LVBDM2",
+        "text": "<@U89LVBDM2> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1512438936.000102"
+    },
+    {
+        "type": "message",
+        "user": "U89LVBDM2",
+        "text": "I have install with guide at <http:\/\/provision.readthedocs.io\/en\/latest\/doc\/quickstart.html> but I have met appear error after install command line curl -fsSL get.rebar.digital\/stable | bash -s -- install --isolated then run next command line .\/drpcli bootenvs uploadiso centos-7-install",
+        "ts": "1512439030.000006"
+    },
+    {
+        "type": "message",
+        "user": "U89LVBDM2",
+        "text": "<https:\/\/user-images.githubusercontent.com\/8796104\/33585144-5dc294d4-d995-11e7-9ea5-4958024d23f1.png>",
+        "attachments": [
+            {
+                "fallback": "662x81px image",
+                "image_url": "https:\/\/user-images.githubusercontent.com\/8796104\/33585144-5dc294d4-d995-11e7-9ea5-4958024d23f1.png",
+                "image_width": 662,
+                "image_height": 81,
+                "image_bytes": 12863,
+                "from_url": "https:\/\/user-images.githubusercontent.com\/8796104\/33585144-5dc294d4-d995-11e7-9ea5-4958024d23f1.png",
+                "id": 1
+            }
+        ],
+        "ts": "1512439038.000062"
+    },
+    {
+        "type": "message",
+        "user": "U89LVBDM2",
+        "text": "Please give me advice and resolve this issue.\nThank you !",
+        "ts": "1512439046.000020"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U89LVBDM2> welcome to the Digital Rebar Provision (DRP) <#C02L9P26Q|community>",
+        "ts": "1512439062.000166"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Please insure you have started your DRP Endpoint service on the host first.  After the initial quickstart install, you must still start the service up",
+        "ts": "1512439084.000220"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can verify if the service is running on that host, with:\n`ps -ef | grep -v grep | grep dr-provision`",
+        "ts": "1512439142.000084"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the appropriate start command should have been sent to your shell\/terminal when the installer ran - but it should be something like:\n```sudo .\/dr-provision --static-ip=&lt;SOME IP ADDRESS&gt; --file-root=`pwd`\/drp-data\/tftpboot --data-root=`pwd`\/drp-data\/digitalrebar --local-store=\"\" --default-store=\"\"```\nWhen run from the directory that you performed the install in",
+        "ts": "1512439235.000209"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the `&lt;SOME IP ADDRESS&gt;` portion should be an IP address on the node that is running `dr-provision` - and is the network that you will be doing provisioning activities on",
+        "ts": "1512439281.000193"
+    },
+    {
+        "type": "message",
+        "user": "U89LVBDM2",
+        "text": "It's running but command line .\/drpcli bootenvs uploadiso ubuntu-16.04-install or .\/drpcli bootenvs uploadiso centos-7-install Error: GET: bootenvs\/ubuntu-16.04-install: Not Found",
+        "ts": "1512439304.000094"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if you have a single interface dr-provision service - then you can safely leave that out of the command line",
+        "ts": "1512439307.000108"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "can you please provide the output of:\n`.\/drpcli bootenvs show ubuntu-16.04-install`\n??",
+        "ts": "1512439376.000116"
+    },
+    {
+        "type": "message",
+        "user": "U89LVBDM2",
+        "text": "Error: GET: bootenvs\/ubuntu-16.04-install: Not Found",
+        "ts": "1512439761.000237"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "do you have the exact command you used to install with ?",
+        "ts": "1512439785.000246"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "specifically - did you use the `--no-content` flag ?",
+        "ts": "1512439800.000024"
+    },
+    {
+        "type": "message",
+        "user": "U89LVBDM2",
+        "text": "i don't choice --no-content flag. I have used command line curl -fsSL get.rebar.digital\/stable | bash -s -- install --isolated. Can you give me command to install this.",
+        "ts": "1512439948.000215"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "can  you please provide output of:\n`.\/drpcli contents list | jq '.[].meta.Name'`\n(you need the `jq` tool installed on the endpoint)",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1512440150.000000"
+        },
+        "ts": "1512440118.000152"
+    },
+    {
+        "type": "message",
+        "user": "U89LVBDM2",
+        "text": "\"BackingStore\"\n\"LocalStore\"\n\"DefaultStore\"\n\"BasicStore\"",
+        "ts": "1512440586.000228"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U89LVBDM2> - you are missing the \"content\" that includes the BootEnvs for some reason",
+        "ts": "1512441397.000161"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "have you used the Web UX yet with your endpoint ?",
+        "ts": "1512441405.000123"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the easiest way to get \"content\" installed is via the UX, via the \"contents\" panel",
+        "ts": "1512441428.000143"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if you visit:  `https:\/\/&lt;IP_ADDRESS_OF_YOUR_DRP_ENDPOINT&gt;:8092`",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1512441496.000000"
+        },
+        "ts": "1512441486.000225"
+    },
+    {
+        "type": "message",
+        "user": "U89LVBDM2",
+        "text": "<http:\/\/prntscr.com\/hj73k2>",
+        "attachments": [
+            {
+                "service_name": "Lightshot",
+                "title": "Screenshot",
+                "title_link": "http:\/\/prntscr.com\/hj73k2",
+                "text": "Captured with Lightshot",
+                "fallback": "Lightshot: Screenshot",
+                "image_url": "https:\/\/image.prntscr.com\/image\/8yZ2CSJJS0euLt7cvkRNww.png",
+                "from_url": "http:\/\/prntscr.com\/hj73k2",
+                "image_width": 324,
+                "image_height": 250,
+                "image_bytes": 13924,
+                "service_icon": "http:\/\/prntscr.com\/favicon.ico",
+                "id": 1
+            }
+        ],
+        "ts": "1512441498.000059"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "that is port 8091 - can you please visit HTTPS port 8092 for the same IP addr",
+        "ts": "1512441530.000191"
+    },
+    {
+        "type": "message",
+        "user": "U89LVBDM2",
+        "text": "Above present website",
+        "ts": "1512441531.000075"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the web service on port 8092 is the TFTP directory contents",
+        "ts": "1512441580.000134"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "port 8092 is the API - and will also redirect a connection (for HTTPS) to the RackN Portal",
+        "ts": "1512441606.000016"
+    },
+    {
+        "type": "message",
+        "user": "U89LVBDM2",
+        "text": "<http:\/\/prntscr.com\/hj7431>",
+        "attachments": [
+            {
+                "service_name": "Lightshot",
+                "title": "Screenshot",
+                "title_link": "http:\/\/prntscr.com\/hj7431",
+                "text": "Captured with Lightshot",
+                "fallback": "Lightshot: Screenshot",
+                "image_url": "https:\/\/image.prntscr.com\/image\/yUdC8DqrTxOi54KWsdxVjQ.png",
+                "from_url": "http:\/\/prntscr.com\/hj7431",
+                "image_width": 461,
+                "image_height": 250,
+                "image_bytes": 85575,
+                "service_icon": "http:\/\/prntscr.com\/favicon.ico",
+                "id": 1
+            }
+        ],
+        "ts": "1512441618.000331"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "log in to your endpoint with the user\/pass (use defaults if you didn't change them)",
+        "ts": "1512441622.000082"
+    },
+    {
+        "type": "message",
+        "user": "U89LVBDM2",
+        "text": "yeah",
+        "ts": "1512441623.000080"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "nice",
+        "ts": "1512441627.000070"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "now go to `Contents` in lower left corner",
+        "ts": "1512441635.000125"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(sorry - `Content Packages`)",
+        "ts": "1512441669.000066"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you should see `drp-community-content` in the right side panel - click on the `Transfer` button for that content pack",
+        "ts": "1512441698.000238"
+    },
+    {
+        "type": "message",
+        "user": "U89LVBDM2",
+        "text": "I have transfer",
+        "ts": "1512441805.000004"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you should be able to do the \"uploadiso\" commands from the command line now",
+        "ts": "1512441856.000191"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "for some reason the `drp-community-content` was missing - this includes the BootEnvs with the Operating System installation content necessary to be able to install CentOS\/Ubuntu systems",
+        "ts": "1512441885.000031"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "usually this is installed by default during the installation phase, as long as the `--no-content` option is NOT specified",
+        "ts": "1512441908.000159"
+    },
+    {
+        "type": "message",
+        "user": "U89LVBDM2",
+        "text": "oh",
+        "ts": "1512441942.000190"
+    },
+    {
+        "type": "message",
+        "user": "U89LVBDM2",
+        "text": "Now I will finish other configuration",
+        "ts": "1512441983.000203"
+    },
+    {
+        "type": "message",
+        "user": "U89LVBDM2",
+        "text": "thank you.",
+        "ts": "1512441992.000143"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you're welcome",
+        "ts": "1512442848.000179"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U54E4SD4G> - fix going through build tests now.",
+        "ts": "1512445551.000117"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "builds are all cranking.  I’ll let the channel now when they are finished.",
+        "ts": "1512447733.000012"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<!channel> - 3.4.1 is release.  Should address <@U54E4SD4G>’s issue.",
+        "ts": "1512449495.000068"
+    },
+    {
+        "type": "message",
+        "user": "U89LVBDM2",
+        "text": "Hi all,",
+        "ts": "1512455967.000227"
+    },
+    {
+        "type": "message",
+        "user": "U89LVBDM2",
+        "text": "why run command line drpcli machines list not found",
+        "ts": "1512455992.000006"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U89LVBDM2> uploaded a file: <https:\/\/rackn.slack.com\/files\/U89LVBDM2\/F89NT2QBE\/image.png|image.png>",
+        "file": {
+            "id": "F89NT2QBE",
+            "created": 1512456011,
+            "timestamp": 1512456011,
+            "name": "image.png",
+            "title": "image.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U89LVBDM2",
+            "editable": false,
+            "size": 3652,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F89NT2QBE\/image.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F89NT2QBE\/download\/image.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F89NT2QBE-fad2db1fbd\/image_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F89NT2QBE-fad2db1fbd\/image_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F89NT2QBE-fad2db1fbd\/image_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 296,
+            "thumb_360_h": 58,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F89NT2QBE-fad2db1fbd\/image_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "image_exif_rotation": 1,
+            "original_w": 296,
+            "original_h": 58,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U89LVBDM2\/F89NT2QBE\/image.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F89NT2QBE-077dc9b04f",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U89LVBDM2",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "nguyenhappy92",
+        "bot_id": null,
+        "ts": "1512456012.000181"
+    },
+    {
+        "type": "message",
+        "user": "U89LVBDM2",
+        "text": "can you give me  solve this case",
+        "ts": "1512456056.000037"
+    },
+    {
+        "type": "message",
+        "user": "U89LVBDM2",
+        "text": "thank you",
+        "ts": "1512456059.000212"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U89LVBDM2> uploaded a file: <https:\/\/rackn.slack.com\/files\/U89LVBDM2\/F896BN70R\/image.png|image.png>",
+        "file": {
+            "id": "F896BN70R",
+            "created": 1512456093,
+            "timestamp": 1512456093,
+            "name": "image.png",
+            "title": "image.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U89LVBDM2",
+            "editable": false,
+            "size": 15411,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F896BN70R\/image.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F896BN70R\/download\/image.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F896BN70R-baf561deaa\/image_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F896BN70R-baf561deaa\/image_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F896BN70R-baf561deaa\/image_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 214,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F896BN70R-baf561deaa\/image_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "image_exif_rotation": 1,
+            "original_w": 456,
+            "original_h": 271,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U89LVBDM2\/F896BN70R\/image.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F896BN70R-46b9ac1068",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U89LVBDM2",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "nguyenhappy92",
+        "bot_id": null,
+        "ts": "1512456094.000113"
+    }
+]

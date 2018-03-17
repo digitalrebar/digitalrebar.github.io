@@ -1,0 +1,577 @@
+[
+    {
+        "text": "Hey guys, I'm starting to test digitalrebar\/provision and seems that the docs are out of sync (Compared to doc folder in GitHub repo). ",
+        "username": "amontalban",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1516891234.000062"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "@amontalban - please use the `latest` version - it is the most up to date in relation to the current version (v3.6.0)",
+        "ts": "1516891889.000179"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<http:\/\/provision.readthedocs.io\/en\/latest\/README.html>",
+        "ts": "1516891908.000210"
+    },
+    {
+        "text": "Great thanks :+1: ",
+        "username": "amontalban",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1516891981.000361"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "no problem - if you bump in to any issues or obvious errors in doc - please let me know .... we've been working on cleaning them up and enhancing them",
+        "ts": "1516892177.000488"
+    },
+    {
+        "text": "Awesome, will do",
+        "username": "amontalban",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1516892230.000539"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we'd also be happy to send you a Slack invite so you can use the native Slack app to communicate with us",
+        "ts": "1516892269.000491"
+    },
+    {
+        "text": "Sure, do yo need my email or something?",
+        "username": "amontalban",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1516892326.000141"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yes - feel free to email me directly, if you'd rather not post it here (<mailto:shane@rackn.com|shane@rackn.com>)",
+        "ts": "1516892358.000138"
+    },
+    {
+        "text": ":+1: ",
+        "username": "amontalban",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1516892368.000632"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "not sure if you can direct message me via the sameroom integration ... ?",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1516892388.000000"
+        },
+        "ts": "1516892374.000939"
+    },
+    {
+        "text": "Seems so",
+        "username": "amontalban",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1516892419.000951"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(I didn't receive a D.M. )",
+        "ts": "1516892502.000302"
+    },
+    {
+        "text": "Alright, it's amontalban AT perceptyx DOT com",
+        "username": "amontalban",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1516892548.000048"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "sent",
+        "ts": "1516892595.000862"
+    },
+    {
+        "user": "U8YJ0FW9Y",
+        "text": "<@U8YJ0FW9Y> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1516892677.000594"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "welcome (officially...!) <@U8YJ0FW9Y>",
+        "ts": "1516892688.000255"
+    },
+    {
+        "type": "message",
+        "user": "U8YJ0FW9Y",
+        "text": "Thanks :slightly_smiling_face:",
+        "ts": "1516892711.000224"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "$welcome",
+        "edited": {
+            "user": "U02DHRR2L",
+            "ts": "1516896463.000000"
+        },
+        "ts": "1516896461.000139"
+    },
+    {
+        "type": "message",
+        "user": "U8YJ0FW9Y",
+        "text": "Guys, I’m trying to have a machine use a custom bootenv (Want to install FreeBSD)",
+        "ts": "1516901714.000856"
+    },
+    {
+        "type": "message",
+        "user": "U8YJ0FW9Y",
+        "text": "I have set the BootEnv for the machine, but for some reason it still loads sledgehammer",
+        "ts": "1516901736.000763"
+    },
+    {
+        "type": "message",
+        "user": "U8YJ0FW9Y",
+        "text": "Any pointer?",
+        "ts": "1516901746.000580"
+    },
+    {
+        "type": "message",
+        "user": "U8YJ0FW9Y",
+        "text": "NVM, I think I know what’s going on",
+        "ts": "1516902278.000068"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "<@U02DGQYK1> upon upgrading from 3.4.1 to 3.5.0 (and 3.6.0) I'm running into what seems like it might be the same issue with there being null values in our machine's metadata",
+        "ts": "1516904207.000055"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "hmm ... <@U54E4SD4G> do you have hand built content that this is occurring in ?",
+        "ts": "1516904249.000198"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I haven't seen the issue w\/ upgrades to v3.5.0 or v3.6.0 - with Digital Rebar or RackN content",
+        "ts": "1516904273.000332"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I don't think I've had hand hacked content that I tried upgrading around ...",
+        "ts": "1516904283.000053"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "<https:\/\/up.lae.is\/p\/1516904295-725ec.txt>",
+        "ts": "1516904299.000113"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "are you generating the machine objects in advance of machines showing up - or is this generated by DRP on new machines ?",
+        "ts": "1516904318.000318"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "I removed machine definitions and it starts up fine",
+        "ts": "1516904318.000416"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "if I re-add one of them, it fails to start",
+        "ts": "1516904324.000442"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "we're usually creating machine objects with drpcli",
+        "ts": "1516904347.000323"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "def. sounds similar to the `null` issue",
+        "ts": "1516904351.000669"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you do _have_ to create them with a value for required fields, not let it `null` out",
+        "ts": "1516904368.000011"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "but - we shouldn't let you create a machine if a required field is missing ... ?",
+        "ts": "1516904383.000924"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "are Meta and Params supposed to be required fields?",
+        "ts": "1516904413.000183"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "not sure what Meta would be set to",
+        "ts": "1516904428.000212"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Can you send me one?  They are now, but the code should have migrated them.",
+        "ts": "1516904433.000467"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "There's one at the bottom of that paste I linked",
+        "ts": "1516904443.000538"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Params and Meta can be ‘{}’ to start.",
+        "ts": "1516904447.000043"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "missed that.",
+        "ts": "1516904449.000251"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Okay - I know what it is.",
+        "ts": "1516904866.000544"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We thought we were already doing this.",
+        "ts": "1516904873.000600"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "Should I go ahead and string replace the null values with [] (by looks of it iI see null values in Meta\/Errors\/Params\/Profiles spread across all of the machines) or just wait for an update that'll take care of validating\/cleaning it up?",
+        "ts": "1516905203.000706"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "(gonna head to sleep since it's almost 4am, I'll check back later)",
+        "ts": "1516905496.000190"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "lazy bones ...",
+        "ts": "1516905514.000723"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yes - string replace w\/ `[]` should fix it",
+        "ts": "1516905538.000796"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "no - `{}`",
+        "ts": "1516906053.000473"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "well.",
+        "ts": "1516906061.000179"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Meta, Params are `{}`",
+        "ts": "1516906074.000224"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "depends - array -vs- object",
+        "ts": "1516906077.000218"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Errors would be `[]`",
+        "ts": "1516906078.000190"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U54E4SD4G> - I’m fixing.  It maybe a few hours.",
+        "ts": "1516906409.000377"
+    },
+    {
+        "type": "message",
+        "user": "U8YJ0FW9Y",
+        "text": "Guys, how can I validate the generated pxelinux file for a machine?",
+        "ts": "1516907599.000706"
+    },
+    {
+        "type": "message",
+        "user": "U8YJ0FW9Y",
+        "text": "(My drp-data\/tftpboot\/pxelinux.cfg is empty)",
+        "ts": "1516907644.000072"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "it will be.  It is a virtual filesystem file.",
+        "ts": "1516907757.000678"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "you will need to curl them from their expected location",
+        "ts": "1516907768.000035"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "`http:\/\/&lt;ip&gt;:8091\/pxelinux.cfg\/default`",
+        "ts": "1516907818.000153"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That would be the one served by discovery bootenv.",
+        "ts": "1516907829.000778"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "If the machine has the bootenv set, you can go to the expanded url from the template list in the bootenv.",
+        "ts": "1516907865.000778"
+    },
+    {
+        "type": "message",
+        "user": "U8YJ0FW9Y",
+        "text": "Ah alright, thanks!",
+        "ts": "1516907875.000430"
+    },
+    {
+        "type": "message",
+        "user": "U8YJ0FW9Y",
+        "text": "BTW, would be great to have the `memdisk` file from syslinux out of the box",
+        "ts": "1516908611.000048"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Issue, please!  <@U8YJ0FW9Y>",
+        "ts": "1516908685.000104"
+    },
+    {
+        "type": "message",
+        "user": "U8YJ0FW9Y",
+        "text": "Sure, I’m trying to boot FreeBSD so once I get that will do a PR if possible :slightly_smiling_face:",
+        "ts": "1516908718.000001"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Or better:  Pull Request !! :slightly_smiling_face:",
+        "ts": "1516908720.000009"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U54E4SD4G> - I think I have a fix for you in tip.  It will be there in about 30 minutes.",
+        "ts": "1516909003.000634"
+    },
+    {
+        "type": "message",
+        "user": "U8NV2GC21",
+        "text": "<@U02DJQSG8> <@U02DGQYK1> I'm hitting some issues with pxe booting with uefi, and it looks like the situation is worst post 3.5 for me, since &lt;= 3.5 my host would attempt to use binl on 4011, and &gt; 3.5 it just keeps resending dhcp discover on 68",
+        "ts": "1516913501.000764"
+    },
+    {
+        "type": "message",
+        "user": "U8NV2GC21",
+        "text": "I think something like the uefi workflow from <https:\/\/github.com\/google\/netboot\/blob\/master\/pixiecore\/README.booting.md> might be needed for hardware like mine",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "google\/netboot",
+                "title_link": "https:\/\/github.com\/google\/netboot\/blob\/master\/pixiecore\/README.booting.md",
+                "text": "netboot - Packages and utilities for network booting",
+                "fallback": "GitHub: google\/netboot",
+                "from_url": "https:\/\/github.com\/google\/netboot\/blob\/master\/pixiecore\/README.booting.md",
+                "thumb_url": "https:\/\/avatars0.githubusercontent.com\/u\/1342004?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1516913573.000413"
+    },
+    {
+        "type": "message",
+        "user": "U8NV2GC21",
+        "text": "As an aside, the api for the dhcp library used by pixiecore looks a lot cleaner than the one that is currently being used, but it isn't a drop in replacement :slightly_smiling_face:",
+        "ts": "1516913657.000791"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah. I thought about. You mean the krakow vs pxicore parts.  I assume. ",
+        "ts": "1516913765.000134"
+    },
+    {
+        "type": "message",
+        "user": "U8NV2GC21",
+        "text": "<@U02DGQYK1> indeed, I started to try and take a hack at swapping out the libraries, but ended up in a rabbit hole that I wasn't prepared for :slightly_smiling_face:",
+        "ts": "1516913794.000295"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I had the pixie UEFI path but victor tested it on our UEFi system it didn’t work and he altered to work in our lab.  What hardware are. You running.  This is really hard on a phone with autocorrect.  ",
+        "ts": "1516913898.000378"
+    },
+    {
+        "type": "message",
+        "user": "U8NV2GC21",
+        "text": "I haven't fully diagnosed what is going on yet, but it appears that I have at least 2 boxes that work with pixiecore but not dr-provision. One is a LivaX (<http:\/\/www.ecs.com.tw\/ECSWebSite\/Product\/Product_LIVA.aspx?DetailID=1593&amp;LanID=0>) and the other is a frakenbox using this MB: <https:\/\/www.asus.com\/us\/Motherboards\/SABERTOOTH_X79\/>",
+        "attachments": [
+            {
+                "title": "ECS &gt; LIVA X Mini PC",
+                "title_link": "http:\/\/www.ecs.com.tw\/ECSWebSite\/Product\/Product_LIVA.aspx?DetailID=1593&LanID=0",
+                "text": "World's Smallest Windows Base Mini PC Kit, The Best Choice Mini PC Kit",
+                "fallback": "ECS &gt; LIVA X Mini PC",
+                "from_url": "http:\/\/www.ecs.com.tw\/ECSWebSite\/Product\/Product_LIVA.aspx?DetailID=1593&LanID=0",
+                "service_icon": "http:\/\/www.ecs.com.tw\/ECSWebSite\/favicon\/favicon.ico",
+                "service_name": "ecs.com.tw",
+                "id": 1
+            },
+            {
+                "service_name": "ASUS USA",
+                "title": "SABERTOOTH X79   | Motherboards | ASUS USA",
+                "title_link": "https:\/\/www.asus.com\/us\/Motherboards\/SABERTOOTH_X79\/",
+                "fallback": "ASUS USA: SABERTOOTH X79   | Motherboards | ASUS USA",
+                "image_url": "https:\/\/www.asus.com\/media\/US\/products\/RPOIwd0pKLoXnbFV\/P_600.jpg",
+                "from_url": "https:\/\/www.asus.com\/us\/Motherboards\/SABERTOOTH_X79\/",
+                "image_width": 250,
+                "image_height": 250,
+                "image_bytes": 42972,
+                "service_icon": "https:\/\/www.asus.com\/media\/img\/favicon.ico",
+                "id": 2
+            }
+        ],
+        "ts": "1516913980.000420"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Okay.  Was 3.5 working?",
+        "ts": "1516914068.000464"
+    },
+    {
+        "type": "message",
+        "user": "U8NV2GC21",
+        "text": "No, but 3.5 seemed to attempt to boot using binl on port 4011, but still failed. With newer builds it just keeps resending dhcp discover packets on 68",
+        "ts": "1516914131.000144"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Hm.",
+        "client_msg_id": "0ae149f7-2bdd-4355-a247-80c675052bbb",
+        "ts": "1516918542.000160"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Do you have a pxe stack that works with that gear?",
+        "client_msg_id": "52f830c9-9135-4b10-8bab-59025a0c2fa2",
+        "ts": "1516918583.000542"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "It would be good to get a packet trace of all the ports involved.",
+        "client_msg_id": "fd148c3d-a903-467e-b580-c0c671736591",
+        "ts": "1516918629.000382"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I have also been working on a DHCP stack refactor, so that would be a good Branch to test with.",
+        "client_msg_id": "0b7b88d5-d1a4-43d2-9e0f-4b89ac84ad9a",
+        "ts": "1516918754.000292"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<https:\/\/github.com\/digitalrebar\/provision\/pull\/649> would be a good branch to test with.",
+        "client_msg_id": "6152d713-fa15-4067-89c4-714ab03cb537",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "WIP More dhcp service tweaks by VictorLowther · Pull Request #649 · digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/pull\/649",
+                "text": "Leaving this out there for Greg and intereste parties to review. This PR adds more intelligence to the DHCP service. See the individual commit messages for more details.",
+                "fallback": "GitHub: WIP More dhcp service tweaks by VictorLowther · Pull Request #649 · digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/pull\/649",
+                "thumb_url": "https:\/\/avatars2.githubusercontent.com\/u\/770578?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1516918895.000370"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "fix in tip appears to work - although I do still see the null values in the machine objects",
+        "ts": "1516946683.000199"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "<@U02DGQYK1>",
+        "ts": "1516946692.000026"
+    }
+]

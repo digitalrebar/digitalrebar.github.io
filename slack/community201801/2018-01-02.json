@@ -1,0 +1,116 @@
+[
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "<@U416T0AAX> on the UX testing... in previous life-times I used a lot of selenium.... I'm good with starting with that and probably some sort of cucumber top-level-document.... ideally work that in with read-the-docs...",
+        "ts": "1514897721.000172"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "The issue I've had in the past is 'words'... the 'wording' and 're-use' become pretty darn pivital... so most the time code base dies the death of no-useage",
+        "ts": "1514897892.000157"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I'm good with coding up some selenium \/ cucumber I'll attempt something this morning...",
+        "ts": "1514898406.000241"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "So... I'm taking some guesses... I'm going to assume nodejs as the backend for cucumber that drives webdriver... (there is a golang version... but I figure this is really for UX so js is probably the choice for UX stuff...  I'll probably fire up Shayne's 5min test with packet target...",
+        "ts": "1514905117.000398"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "Since DRP is so command line... I'm thinking the test should 'check the command line' and use that to go find in the UX... and sort of helps my mental map of the cli and reflective UX...",
+        "ts": "1514905325.000452"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<!channel> - our first meetup of 2018 starts in about 90 minutes ... hope to see you all there ... \nagenda:  <https:\/\/docs.google.com\/document\/d\/1cQsuWdkHQU-uHh0S3N9RqgYhHGW8gi5tb4fbE98OWvc>\nmeetup page:  <https:\/\/www.meetup.com\/digitalrebar\/events\/xmrktnyxcbdb\/>",
+        "attachments": [
+            {
+                "service_name": "Meetup",
+                "title": "v008 - 20180102 - Release planning, Enhanced Logging, UI Tweaks, Community",
+                "title_link": "https:\/\/www.meetup.com\/digitalrebar\/events\/xmrktnyxcbdb\/",
+                "text": "1\/2, 11:00 AM: zoom link: <https:\/\/zoom.us\/j\/3403934274Welcome> back to our first meetup of the New Year!We&amp;#39;ll be discussing:• Release Planning and Status• Enhanced Logging Capabilities• New UI Twea",
+                "fallback": "Meetup: v008 - 20180102 - Release planning, Enhanced Logging, UI Tweaks, Community",
+                "image_url": "https:\/\/secure.meetupstatic.com\/photos\/event\/b\/c\/9\/4\/600_464508276.jpeg",
+                "from_url": "https:\/\/www.meetup.com\/digitalrebar\/events\/xmrktnyxcbdb\/",
+                "image_width": 504,
+                "image_height": 186,
+                "image_bytes": 14465,
+                "service_icon": "https:\/\/www.meetup.com\/mu_static\/en-US\/5a55b7f35a300adf7c619ca2aadb8057.png",
+                "id": 1
+            }
+        ],
+        "ts": "1514914441.000274"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U6QFVRJNB> shared a file: <https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/F8N1NM63G\/v008_-_20180102_-_release_planning_and_status__enhanced_logging__new_ui_tweaks__community_feedback|v008 - 20180102 - Release planning and status, Enhanced Logging, New UI Tweaks, Community Feedback>",
+        "file": {
+            "id": "F8N1NM63G",
+            "created": 1514914445,
+            "timestamp": 1514914445,
+            "name": "v008 - 20180102 - Release planning and status, Enhanced Logging, New UI Tweaks, Community Feedback",
+            "title": "v008 - 20180102 - Release planning and status, Enhanced Logging, New UI Tweaks, Community Feedback",
+            "mimetype": "application\/vnd.google-apps.document",
+            "filetype": "gdoc",
+            "pretty_type": "GDocs Document",
+            "user": "U6QFVRJNB",
+            "editable": false,
+            "size": 4470,
+            "mode": "external",
+            "is_external": true,
+            "external_type": "gdrive",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/docs.google.com\/document\/d\/1cQsuWdkHQU-uHh0S3N9RqgYhHGW8gi5tb4fbE98OWvc",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8N1NM63G-f5aff13383\/v008_-_20180102_-_release_planning_and_status__enhanced_logging__new_ui_tweaks__community_feedback_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8N1NM63G-f5aff13383\/v008_-_20180102_-_release_planning_and_status__enhanced_logging__new_ui_tweaks__community_feedback_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8N1NM63G-f5aff13383\/v008_-_20180102_-_release_planning_and_status__enhanced_logging__new_ui_tweaks__community_feedback_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 278,
+            "thumb_360_h": 360,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8N1NM63G-f5aff13383\/v008_-_20180102_-_release_planning_and_status__enhanced_logging__new_ui_tweaks__community_feedback_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 371,
+            "thumb_480_h": 480,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8N1NM63G-f5aff13383\/v008_-_20180102_-_release_planning_and_status__enhanced_logging__new_ui_tweaks__community_feedback_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8N1NM63G-f5aff13383\/v008_-_20180102_-_release_planning_and_status__enhanced_logging__new_ui_tweaks__community_feedback_720.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 557,
+            "thumb_720_h": 720,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8N1NM63G-f5aff13383\/v008_-_20180102_-_release_planning_and_status__enhanced_logging__new_ui_tweaks__community_feedback_800.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 1035,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8N1NM63G-f5aff13383\/v008_-_20180102_-_release_planning_and_status__enhanced_logging__new_ui_tweaks__community_feedback_960.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 742,
+            "thumb_960_h": 960,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8N1NM63G-f5aff13383\/v008_-_20180102_-_release_planning_and_status__enhanced_logging__new_ui_tweaks__community_feedback_1024.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 791,
+            "thumb_1024_h": 1024,
+            "image_exif_rotation": 1,
+            "original_w": 800,
+            "original_h": 1035,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/F8N1NM63G\/v008_-_20180102_-_release_planning_and_status__enhanced_logging__new_ui_tweaks__community_feedback",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0,
+            "has_rich_preview": true
+        },
+        "user": "U6QFVRJNB",
+        "upload": false,
+        "display_as_bot": false,
+        "username": "shane",
+        "bot_id": null,
+        "ts": "1514914448.000033"
+    }
+]

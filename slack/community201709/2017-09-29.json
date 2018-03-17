@@ -1,0 +1,707 @@
+[
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U6QFVRJNB> \/ <@U02DGQYK1> - would it be possible to create a video based on the already-published vid of Terraform\/DRP integration, showing creation of the stages \/ workflows \/ parameters used to do the install at Packet?",
+        "ts": "1506708041.000015"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "hey <@U416T0AAX> - you can see the drpcli calls I made in that video in the github content - it's all posted there",
+        "ts": "1506708080.000122"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<https:\/\/github.com\/digitalrebar\/provision\/tree\/master\/examples\/5min-drp>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/tree\/master\/examples\/5min-drp",
+                "text": "provision - The Provisioner for DigitalRebar as a Stand Alone Golang Utility",
+                "fallback": "GitHub: digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/tree\/master\/examples\/5min-drp",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?v=4&s=400",
+                "thumb_width": 192,
+                "thumb_height": 192,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1506708095.000160"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the \"demo-run.sh\" is just the front-end driver to the process which controls the bin\/control.sh script - that script makes all of the direct calls to do the work",
+        "ts": "1506708122.000715"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we have the \"5min-drp\" video posted in youtube - but it doesn't directly show the drpcli commands",
+        "ts": "1506708158.000510"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "It's not the 5-min DRP install one, but the Terraform integration one <@U02DGQYK1> did the demo on",
+        "ts": "1506708176.000006"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<https:\/\/youtu.be\/5bxcpmxQXx4>  - interested in how the stuff used at around 5:00 in the vid was created",
+        "attachments": [
+            {
+                "service_name": "YouTube",
+                "service_url": "https:\/\/www.youtube.com\/",
+                "title": "Digital Rebar Provision Plugin for Terraform for Bare Metal",
+                "title_link": "https:\/\/youtu.be\/5bxcpmxQXx4",
+                "author_name": "RackN & Digital Rebar",
+                "author_link": "https:\/\/www.youtube.com\/channel\/UCr3bBtP-pMsDQ5c0IDjt_LQ",
+                "thumb_url": "https:\/\/i.ytimg.com\/vi\/5bxcpmxQXx4\/hqdefault.jpg",
+                "thumb_width": 480,
+                "thumb_height": 360,
+                "fallback": "YouTube Video: Digital Rebar Provision Plugin for Terraform for Bare Metal",
+                "video_html": "<iframe width=\"400\" height=\"225\" src=\"https:\/\/www.youtube.com\/embed\/5bxcpmxQXx4?feature=oembed&autoplay=1&iv_load_policy=3\" frameborder=\"0\" allowfullscreen><\/iframe>",
+                "video_html_width": 400,
+                "video_html_height": 225,
+                "from_url": "https:\/\/youtu.be\/5bxcpmxQXx4",
+                "service_icon": "https:\/\/a.slack-edge.com\/2089\/img\/unfurl_icons\/youtube.png",
+                "id": 1
+            }
+        ],
+        "ts": "1506708323.000299"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "stage maps ?",
+        "ts": "1506708395.000319"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "those are plumbed in via the 5min-drp cli calls too",
+        "ts": "1506708412.000048"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Well, how to create the stages 1st, then tie them together in maps (workflows?)",
+        "ts": "1506708435.000475"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "sure - the JSON blob that's used to inject the stages ... sort of shows it ... we're working on getting better doc on the 3.1 features on the website around that",
+        "ts": "1506708487.000534"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can also piece stages together in the UI ... so for first time work - it's a good process to follow",
+        "ts": "1506708505.000566"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "then you can pull the JSON blob that gets built from the UI",
+        "ts": "1506708525.000142"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I'll review the 5-min vid in the meantime ",
+        "ts": "1506708548.000408"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<https:\/\/www.youtube.com\/watch?v=UGjMruuH4jE>",
+        "attachments": [
+            {
+                "service_name": "YouTube",
+                "service_url": "https:\/\/www.youtube.com\/",
+                "title": "5 Minutes to Digital Rebar Provision Installation",
+                "title_link": "https:\/\/www.youtube.com\/watch?v=UGjMruuH4jE",
+                "author_name": "RackN & Digital Rebar",
+                "author_link": "https:\/\/www.youtube.com\/channel\/UCr3bBtP-pMsDQ5c0IDjt_LQ",
+                "thumb_url": "https:\/\/i.ytimg.com\/vi\/UGjMruuH4jE\/hqdefault.jpg",
+                "thumb_width": 480,
+                "thumb_height": 360,
+                "fallback": "YouTube Video: 5 Minutes to Digital Rebar Provision Installation",
+                "video_html": "<iframe width=\"400\" height=\"300\" src=\"https:\/\/www.youtube.com\/embed\/UGjMruuH4jE?feature=oembed&autoplay=1&iv_load_policy=3\" frameborder=\"0\" allowfullscreen><\/iframe>",
+                "video_html_width": 400,
+                "video_html_height": 300,
+                "from_url": "https:\/\/www.youtube.com\/watch?v=UGjMruuH4jE",
+                "service_icon": "https:\/\/a.slack-edge.com\/2089\/img\/unfurl_icons\/youtube.png",
+                "id": 1
+            }
+        ],
+        "ts": "1506708555.000182"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<!here> problem - restarted DRP (isolated mode) and am getting a TLS Exception error when trying UI...",
+        "ts": "1506718060.000476"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7AMFJ67K\/image_uploaded_from_ios.jpg|Image uploaded from iOS>",
+        "file": {
+            "id": "F7AMFJ67K",
+            "created": 1506718067,
+            "timestamp": 1506718067,
+            "name": "Image uploaded from iOS.jpg",
+            "title": "Image uploaded from iOS",
+            "mimetype": "image\/jpeg",
+            "filetype": "jpg",
+            "pretty_type": "JPEG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 7063725,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7AMFJ67K\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7AMFJ67K\/download\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7AMFJ67K-8e21020ac6\/image_uploaded_from_ios_64.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7AMFJ67K-8e21020ac6\/image_uploaded_from_ios_80.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7AMFJ67K-8e21020ac6\/image_uploaded_from_ios_360.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 270,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7AMFJ67K-8e21020ac6\/image_uploaded_from_ios_480.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 360,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7AMFJ67K-8e21020ac6\/image_uploaded_from_ios_160.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7AMFJ67K-8e21020ac6\/image_uploaded_from_ios_720.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 540,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7AMFJ67K-8e21020ac6\/image_uploaded_from_ios_800.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 600,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7AMFJ67K-8e21020ac6\/image_uploaded_from_ios_960.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 720,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7AMFJ67K-8e21020ac6\/image_uploaded_from_ios_1024.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 768,
+            "image_exif_rotation": 1,
+            "original_w": 4032,
+            "original_h": 3024,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7AMFJ67K\/image_uploaded_from_ios.jpg",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F7AMFJ67K-90572018ae",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "upload_reply_to": "DE8B993E-BB88-4FBA-B850-9DE457E86521",
+        "ts": "1506718073.000234"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "reclick it- your certs should be generated.",
+        "ts": "1506718201.000004"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "could have been",
+        "ts": "1506718206.000201"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "No good",
+        "ts": "1506718232.000268"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Still getting error",
+        "ts": "1506718241.000203"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Hard reset the browser window?  Not sure.",
+        "ts": "1506718285.000180"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7B8XQPNG\/image_uploaded_from_ios.jpg|Command used to start DRP>",
+        "file": {
+            "id": "F7B8XQPNG",
+            "created": 1506718331,
+            "timestamp": 1506718331,
+            "name": "Image uploaded from iOS.jpg",
+            "title": "Command used to start DRP",
+            "mimetype": "image\/jpeg",
+            "filetype": "jpg",
+            "pretty_type": "JPEG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 7085255,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7B8XQPNG\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7B8XQPNG\/download\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7B8XQPNG-1177001839\/image_uploaded_from_ios_64.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7B8XQPNG-1177001839\/image_uploaded_from_ios_80.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7B8XQPNG-1177001839\/image_uploaded_from_ios_360.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 270,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7B8XQPNG-1177001839\/image_uploaded_from_ios_480.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 360,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7B8XQPNG-1177001839\/image_uploaded_from_ios_160.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7B8XQPNG-1177001839\/image_uploaded_from_ios_720.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 540,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7B8XQPNG-1177001839\/image_uploaded_from_ios_800.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 600,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7B8XQPNG-1177001839\/image_uploaded_from_ios_960.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 720,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7B8XQPNG-1177001839\/image_uploaded_from_ios_1024.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 768,
+            "image_exif_rotation": 1,
+            "original_w": 4032,
+            "original_h": 3024,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7B8XQPNG\/image_uploaded_from_ios.jpg",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F7B8XQPNG-b1415115cc",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "upload_reply_to": "3DBE1989-2377-4882-A93C-347F58769932",
+        "ts": "1506718332.000006"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Did restart browser - still getting the error...",
+        "ts": "1506718501.000171"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Ddi you click to <https:\/\/192.168.1.148>",
+        "ts": "1506718529.000154"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yes",
+        "ts": "1506718539.000117"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "How to \"Accept Certificate\"?",
+        "ts": "1506718691.000472"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "advanced button usually.",
+        "ts": "1506718715.000178"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The browser should warn saying self-signed cert.",
+        "ts": "1506718734.000137"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": " If I go to the DRP server's URL, it just flips me back to the RackN UX",
+        "ts": "1506718825.000623"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7B933A4U\/image_uploaded_from_ios.jpg|Looks like no SSL cert available...>",
+        "file": {
+            "id": "F7B933A4U",
+            "created": 1506718923,
+            "timestamp": 1506718923,
+            "name": "Image uploaded from iOS.jpg",
+            "title": "Looks like no SSL cert available...",
+            "mimetype": "image\/jpeg",
+            "filetype": "jpg",
+            "pretty_type": "JPEG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 12378888,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7B933A4U\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7B933A4U\/download\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7B933A4U-48185abef9\/image_uploaded_from_ios_64.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7B933A4U-48185abef9\/image_uploaded_from_ios_80.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7B933A4U-48185abef9\/image_uploaded_from_ios_360.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 270,
+            "thumb_360_h": 360,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7B933A4U-48185abef9\/image_uploaded_from_ios_480.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 360,
+            "thumb_480_h": 480,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7B933A4U-48185abef9\/image_uploaded_from_ios_160.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7B933A4U-48185abef9\/image_uploaded_from_ios_720.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 540,
+            "thumb_720_h": 720,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7B933A4U-48185abef9\/image_uploaded_from_ios_800.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 1067,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7B933A4U-48185abef9\/image_uploaded_from_ios_960.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 720,
+            "thumb_960_h": 960,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7B933A4U-48185abef9\/image_uploaded_from_ios_1024.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 768,
+            "thumb_1024_h": 1024,
+            "image_exif_rotation": 1,
+            "original_w": 3024,
+            "original_h": 4032,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7B933A4U\/image_uploaded_from_ios.jpg",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F7B933A4U-a72ead65a9",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "upload_reply_to": "EFE48D30-33FF-4ADA-9ACF-B9CFCF6C7D1E",
+        "ts": "1506718923.000234"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Then you’ve accepted the cert",
+        "ts": "1506718929.000114"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "The DRP server software gens a SSL cert?",
+        "ts": "1506718976.000050"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes to do ssl",
+        "ts": "1506718985.000088"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Where located?",
+        "ts": "1506718996.000005"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "in the directory where you started drp",
+        "ts": "1506719007.000073"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "server.crt and server.key",
+        "ts": "1506719011.000124"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I see 'server.crt' and 'server.key' in my base DRP directory, but they have old dates...",
+        "ts": "1506719083.000128"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "we will reuse them.",
+        "ts": "1506719109.000110"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It is most likely something else.",
+        "ts": "1506719120.000432"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "does the cli work?",
+        "ts": "1506719144.000501"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yes, drpcli works",
+        "ts": "1506719206.000087"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7CA4C2J3\/image_uploaded_from_ios.jpg|Image uploaded from iOS>",
+        "file": {
+            "id": "F7CA4C2J3",
+            "created": 1506719247,
+            "timestamp": 1506719247,
+            "name": "Image uploaded from iOS.jpg",
+            "title": "Image uploaded from iOS",
+            "mimetype": "image\/jpeg",
+            "filetype": "jpg",
+            "pretty_type": "JPEG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 7764537,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7CA4C2J3\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7CA4C2J3\/download\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7CA4C2J3-b53ca16a61\/image_uploaded_from_ios_64.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7CA4C2J3-b53ca16a61\/image_uploaded_from_ios_80.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7CA4C2J3-b53ca16a61\/image_uploaded_from_ios_360.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 270,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7CA4C2J3-b53ca16a61\/image_uploaded_from_ios_480.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 360,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7CA4C2J3-b53ca16a61\/image_uploaded_from_ios_160.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7CA4C2J3-b53ca16a61\/image_uploaded_from_ios_720.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 540,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7CA4C2J3-b53ca16a61\/image_uploaded_from_ios_800.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 600,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7CA4C2J3-b53ca16a61\/image_uploaded_from_ios_960.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 720,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7CA4C2J3-b53ca16a61\/image_uploaded_from_ios_1024.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 768,
+            "image_exif_rotation": 1,
+            "original_w": 4032,
+            "original_h": 3024,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7CA4C2J3\/image_uploaded_from_ios.jpg",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F7CA4C2J3-bdbd0d839c",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "upload_reply_to": "625DBB8E-314E-42AB-9F52-2D920B6D7205",
+        "ts": "1506719253.000081"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You closed the browser and repoened it.",
+        "ts": "1506719295.000238"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Log out from the Saas Part (in the upper right corner) and refresh everything.",
+        "ts": "1506719321.000182"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yup, then even rebooted browser host system",
+        "ts": "1506719346.000339"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Ok, signed out then back in to RackN UX site",
+        "ts": "1506719400.000197"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Now will use sandwich menu and select my endpoint ",
+        "ts": "1506719426.000483"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Still getting TLS Exception",
+        "ts": "1506719465.000226"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "just use the DRP endpoint redirect.  I’m worried that some cookies are something are getting in the way.",
+        "ts": "1506719467.000049"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Because it may be that you need to enter https:\/\/",
+        "ts": "1506719502.000155"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "it is supposed to add it, but it may not be working.",
+        "ts": "1506719511.000318"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Did that, no good still",
+        "ts": "1506719527.000063"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That is why I want you to log out of the RackN Portal.  Then use the DRP redirect to see if you can access the DRP pages.",
+        "ts": "1506719542.000236"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I did",
+        "ts": "1506719607.000164"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1506719619.000000"
+        },
+        "ts": "1506719617.000236"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Trying another client system now",
+        "ts": "1506719619.000330"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Port 8092 right?",
+        "ts": "1506719738.000121"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes",
+        "ts": "1506719751.000130"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Browser can't connect on this one...",
+        "ts": "1506719797.000272"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "firewall rules?",
+        "ts": "1506719837.000060"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Oh goddamn it",
+        "ts": "1506719881.000066"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "YES",
+        "ts": "1506719893.000022"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Stupid docker",
+        "ts": "1506719903.000243"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Note to self: find way of perma-clearing docker-created iptables rules on my DRP host",
+        "ts": "1506720152.000024"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So, that's weird that the UX was throwing a TLS error when really it couldn't connect to the endpoint...",
+        "ts": "1506720231.000504"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "apparently.  It is the normal cause for failure.",
+        "ts": "1506720267.000049"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I think it is a guess and points to the most likely failure.",
+        "ts": "1506720283.000384"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "'systemctl stop firewalld; systemctl mask firewalld' FTW",
+        "ts": "1506720623.000281"
+    }
+]

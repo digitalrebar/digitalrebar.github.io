@@ -1,0 +1,265 @@
+[
+    {
+        "text": "Hi there,  can anyone help me with a weird issue we are having running dr-provision.  It looks like it's only binding to IPv6 ports, and leaving the v4 address alone.",
+        "username": "chrishemmings",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1503413618.000229"
+    },
+    {
+        "text": "[<https:\/\/files.gitter.im\/digitalrebar\/core\/DVO7\/image.png|image.png](https:\/\/files.gitter.im\/digitalrebar\/core\/DVO7\/thumb\/image.png)>",
+        "username": "chrishemmings",
+        "bot_id": "B41PS9J94",
+        "attachments": [
+            {
+                "fallback": "1136x434px image",
+                "image_url": "https:\/\/files.gitter.im\/digitalrebar\/core\/DVO7\/image.png",
+                "image_width": 1136,
+                "image_height": 434,
+                "image_bytes": 155187,
+                "from_url": "https:\/\/files.gitter.im\/digitalrebar\/core\/DVO7\/image.png",
+                "id": 1
+            }
+        ],
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1503413650.000379"
+    },
+    {
+        "text": "I'm getting something that looks like ^^",
+        "username": "chrishemmings",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1503413654.000072"
+    },
+    {
+        "text": "can you provide the start-up parameters and the type of system you are running on?  you can use ``.\/drpcli info get`` to recover the info",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1503413793.000459"
+    },
+    {
+        "text": "it would be helpful to know if you specified a static ip too",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1503413856.000084"
+    },
+    {
+        "text": "Thanks <@U02DHRR2L|zehicle> ,  The startup command I'm running is `.\/dr-provision --static-ip=10.10.1.10 --file-root=\/home\/dave\/digital-rebar\/drp-data\/tftpboot --data-root=drp-data\/digitalrebar`",
+        "username": "chrishemmings",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1503413931.000087"
+    },
+    {
+        "text": "Nothing fancy, just want it to bind to ip4 address and access the UI",
+        "username": "chrishemmings",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1503413949.000256"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That looks normal. The kernel will bind to both by default   And it looks like that ",
+        "ts": "1503413964.000125"
+    },
+    {
+        "text": "I thought `8091` and `8092` were just on v6 addresses?",
+        "username": "chrishemmings",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1503414040.000906"
+    },
+    {
+        "text": "(Unless I'm reading this completely wrong, which is quite possible)",
+        "username": "chrishemmings",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1503414064.000655"
+    },
+    {
+        "text": "<@U02DHRR2L|zehicle> All sorted.. gumble grumble firewall.. Thanks for your help anyway :-)",
+        "username": "chrishemmings",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1503416215.000259"
+    },
+    {
+        "text": "if you can share the troubleshooting steps, I'll put it into the docs",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1503416246.000312"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": ":::8091 is unspecified IP (both).  Great that you’ve worked it out.",
+        "ts": "1503417146.000069"
+    },
+    {
+        "text": "Hey Folks - I'm having a heck of a time getting DR up and running. Tried the quickstart but DHCP provisioning wasn't enabled and trying to enable it would fail with ansible errors. Tried to follow the docs, and it all seems to start but I cannot login to the control panel. I feel like I am missing something obvious.",
+        "username": "edolnx",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1503421443.000490"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "Dr or Dr provision?",
+        "ts": "1503421576.000301"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": " If you are using ansible, then DRv2.  Check out the DR P install.  Its much lighter.",
+        "ts": "1503421680.000648"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "For DR v2, check the docker log,  it may not be all the way started if you cannot login",
+        "ts": "1503421802.000667"
+    },
+    {
+        "text": "Are there docs for DR P?",
+        "username": "edolnx",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1503421969.000204"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<http:\/\/provision.readthedocs.io\/en\/stable\/>",
+        "ts": "1503421987.000224"
+    },
+    {
+        "text": "Thanks!",
+        "username": "edolnx",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1503422173.000536"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "for boot provision, the provision is much simpler, smaller and easier to understand",
+        "ts": "1503422205.000006"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "with some of the new additions (tasks, plugins, content) , we think it covers all of the key use cases",
+        "ts": "1503422250.000438"
+    },
+    {
+        "text": ":+1: ",
+        "username": "edolnx",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1503422346.000404"
+    },
+    {
+        "text": "setting up a lab cluster of 10 Intel NUCs... doesn't seem to be able to get through pxe with `dr-provision: dr-provision2017\/08\/22 17:16:14.566078 sending block 0: code=0, error: TFTP Aborted`",
+        "username": "stanchan",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1503422937.000364"
+    },
+    {
+        "text": "trying to debug it, but I can't seem to change the preferences in the UI ",
+        "username": "stanchan",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1503422960.000011"
+    },
+    {
+        "text": "two questions... where are the logs stored and how do I persist the debug levels in preferences?",
+        "username": "stanchan",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1503423008.000587"
+    },
+    {
+        "text": "running tip v3.0.4-tip-235-9f07bd96cefa80f66b9d10062f50f1048a7cf8ff\n",
+        "username": "stanchan",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1503423069.000353"
+    },
+    {
+        "text": "we're working on UX - CLI is safer right now to set things, especially for tip",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1503423832.000217"
+    },
+    {
+        "text": "are you running this in a container?",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1503423889.000138"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "We log to stderr by default -- curerntly, we don't save logs to disk by ourselves.",
+        "ts": "1503423932.000359"
+    },
+    {
+        "text": "no... just  install.sh without isolated",
+        "username": "stanchan",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1503423949.000341"
+    },
+    {
+        "text": "systemd",
+        "username": "stanchan",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1503423978.000607"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "We rely on stderr being handled appropriately by your init or container system for persistent logging right now.",
+        "ts": "1503424013.000135"
+    },
+    {
+        "text": "cool... I'll set debug using drpcli",
+        "username": "stanchan",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1503424082.000183"
+    }
+]

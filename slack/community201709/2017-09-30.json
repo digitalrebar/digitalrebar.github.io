@@ -1,0 +1,52 @@
+[
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "or just, `firewall-cmd --zone=public --addport=8092\/tcp --permanent &amp;&amp; firewall-cmd --reload`",
+        "ts": "1506804909.000048"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "anyway, I just happened to stumble onto this, happy birthday to rackn's twitter account",
+        "ts": "1506804931.000035"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "or well whoever's birthday the rackn's twitter account is set to",
+        "ts": "1506804954.000015"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "Thanks!  Tomorrow is our official 3 year anniversary",
+        "ts": "1506829564.000001"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "we just updated the Ansible integration to make it easier.  Demo is of Kubernetes deploy.  <https:\/\/youtu.be\/b5himGQ1Zew>",
+        "attachments": [
+            {
+                "service_name": "YouTube",
+                "service_url": "https:\/\/www.youtube.com\/",
+                "title": "Kubernetes via Ansible Kubespray on Digital Rebar",
+                "title_link": "https:\/\/youtu.be\/b5himGQ1Zew",
+                "author_name": "RackN & Digital Rebar",
+                "author_link": "https:\/\/www.youtube.com\/channel\/UCr3bBtP-pMsDQ5c0IDjt_LQ",
+                "thumb_url": "https:\/\/i.ytimg.com\/vi\/b5himGQ1Zew\/hqdefault.jpg",
+                "thumb_width": 480,
+                "thumb_height": 360,
+                "fallback": "YouTube Video: Kubernetes via Ansible Kubespray on Digital Rebar",
+                "video_html": "<iframe width=\"400\" height=\"225\" src=\"https:\/\/www.youtube.com\/embed\/b5himGQ1Zew?feature=oembed&autoplay=1&iv_load_policy=3\" frameborder=\"0\" allowfullscreen><\/iframe>",
+                "video_html_width": 400,
+                "video_html_height": 225,
+                "from_url": "https:\/\/youtu.be\/b5himGQ1Zew",
+                "service_icon": "https:\/\/a.slack-edge.com\/2089\/img\/unfurl_icons\/youtube.png",
+                "id": 1
+            }
+        ],
+        "ts": "1506829613.000043"
+    }
+]

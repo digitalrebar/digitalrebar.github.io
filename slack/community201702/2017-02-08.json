@@ -1,0 +1,147 @@
+[
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Epic - a lot to digest here...",
+        "edited": {
+            "user": "U416T0AAX",
+            "ts": "1486567130.000000"
+        },
+        "ts": "1486565782.000295"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "\"Digital Rebar - The Missing Manual\" :)",
+        "ts": "1486565847.000296"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I like to think it as the \"DigitalRebar - An Epic Journey of a Thousand Poorly Worded Pages That You Can Not Find\"",
+        "ts": "1486568061.000298"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "lulz",
+        "ts": "1486571316.000299"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "All things in time...",
+        "ts": "1486571329.000300"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Yes, and the most important words are scattered about as comments in the source :slightly_smiling_face:",
+        "ts": "1486572912.000301"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I created a glossary for myself; do these definitions make sense (or if not, how should I rewrite them?)\n\n* “Annealer\" - the system that executes NodeRoles\n* \"Barclamp\" - Collections (associations, \"bags\") of Roles, each having a \"Jig\" that implements them, along with Attributes and possibly a wizard\n* \"Jig\" - modular plug-in arch that abstracts configuration managers (i.e. Chef, shell, Ansible, “noop”, etc) - \"noop\" jigs are milestones \n* \"Sledgehammer\" - PXE boot img used to do initial bare-metal Node discovery &amp; inventory\n* \"Node\" - Object that DR operates on; Metal or VM system managed by DR\n* “NodeRoles\" - an instance of a Role applied to a Node within a Deployment\n* \"Deployments\" - Collections (associations, \"bags\") of Nodes.  We usually ascribe purpose to a Deployment.\n* “DeploymentRoles\" - special NodeRoles for the Roles included in a Deployment.\n* \"Workloads\" - Barclamps with wizards\n* \"Profiles\" - lets you create a block of Attributes that can be applied to Nodes to override NodeRole settings\n* \"Roles\" - atomic functions (actions) that we want to apply to a Node; have dependencies and Attribute requirements that are used to build a graph of actions to sequence against Nodes; members of a Barclamp and are run by a Jig; can have Parent(s) and Children Roles\n* Attributes - typed pieces of information that are stored on the objects. Attributes can exist on NodeRoles, Nodes, and DeploymentRoles. They are used as configuration parameters by the Role.",
+        "ts": "1486574169.000302"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Looks pretty good.",
+        "ts": "1486574719.000303"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U416T0AAX> - great job on decoding the rambings",
+        "ts": "1486574810.000304"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Hey <@U02DGQYK1> - every time I hack on the Ubuntu kickstart template, and want to give it another try (the installer is currently failing with an error), it is enough to simply reboot the node, or do I have to do the \n```\nrebar nodes update 12 '{ \"bootenv\": \"sledgehammer\" }'\nrebar nodes update 12 '{ \"bootenv\": \"ubuntu-16.04-ks-install\" }’\n```\ndance?",
+        "edited": {
+            "user": "U416T0AAX",
+            "ts": "1486582476.000000"
+        },
+        "ts": "1486582357.000305"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You have to do the dance to rebuild the static files.",
+        "ts": "1486582549.000309"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F43G5QKN2\/screen_shot_2017-02-08_at_1.12.47_pm.png|\"software installation failed\"> and commented: ...not helpful...",
+        "file": {
+            "id": "F43G5QKN2",
+            "created": 1486582556,
+            "timestamp": 1486582556,
+            "name": "Screen Shot 2017-02-08 at 1.12.47 PM.png",
+            "title": "\"software installation failed\"",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 31040,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F43G5QKN2\/screen_shot_2017-02-08_at_1.12.47_pm.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F43G5QKN2\/download\/screen_shot_2017-02-08_at_1.12.47_pm.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F43G5QKN2-2b4d3b1677\/screen_shot_2017-02-08_at_1.12.47_pm_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F43G5QKN2-2b4d3b1677\/screen_shot_2017-02-08_at_1.12.47_pm_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F43G5QKN2-2b4d3b1677\/screen_shot_2017-02-08_at_1.12.47_pm_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 286,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F43G5QKN2-2b4d3b1677\/screen_shot_2017-02-08_at_1.12.47_pm_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 381,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F43G5QKN2-2b4d3b1677\/screen_shot_2017-02-08_at_1.12.47_pm_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "image_exif_rotation": 1,
+            "original_w": 672,
+            "original_h": 534,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F43G5QKN2\/screen_shot_2017-02-08_at_1.12.47_pm.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F43G5QKN2-d131b705f4",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 1,
+            "initial_comment": {
+                "id": "Fc43GH5K8F",
+                "created": 1486582556,
+                "timestamp": 1486582556,
+                "user": "U416T0AAX",
+                "is_intro": true,
+                "comment": "...not helpful..."
+            }
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1486582558.000310"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The files are not built upon request.",
+        "ts": "1486582563.000311"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, thanks",
+        "ts": "1486582600.000312"
+    }
+]

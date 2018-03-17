@@ -1,0 +1,32 @@
+[
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "are there instructions for deploying DR on a mac directly? I thought I’d seen them before, but I can’t seem to find quite the right incantation.",
+        "ts": "1487704320.000648"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "there are and there aren't\/",
+        "ts": "1487706809.000649"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Docker made it much harder.",
+        "ts": "1487706815.000650"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Their latest attempt to run docker on Macs does NOT work well with what we need to do in the environment for networking.  So, you need the boot2docker based methodology that is harder to find now.",
+        "ts": "1487706872.000651"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "Ok, I can just deploy via VM then!",
+        "ts": "1487710912.000652"
+    }
+]

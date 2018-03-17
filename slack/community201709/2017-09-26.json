@@ -1,0 +1,1434 @@
+[
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "```\n{{if .ParamExists \"part-scheme\"}}\n{{template \"part-seed-\"+(.Param \"part-scheme\")+\".tmpl\" .}}\n{{else}}\n{{template \"part-seed-default.tmpl\" .}}\n{{end}}\n```\nso this isn't valid but I hope it should be obvious what I'm trying to do here - how can I get this effect of picking a template given a particular parameter? (not too familiar with golang\/`text\/template` and I'm still lost after looking at documentation)",
+        "edited": {
+            "user": "U54E4SD4G",
+            "ts": "1506410359.000000"
+        },
+        "ts": "1506409638.000089"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "```{{template (printf \"part-seed-%s.tmpl\" (.Param \"part-scheme)) .}}```",
+        "ts": "1506431468.000298"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I think, <@U54E4SD4G>",
+        "ts": "1506431473.000202"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U54E4SD4G> <@U02DGQYK1> Parameterizing the OS install disks and the partitioning thereof should totally be a thing…",
+        "ts": "1506432177.000084"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "the os-disk is parameterized.  <@U54E4SD4G> is working on parameterizing the partitioning scheme in a kickstart\/preseed.",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1506432269.000000"
+        },
+        "ts": "1506432256.000531"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Of course, learning ‘d-i partman’ syntax is half the battle :stuck_out_tongue:",
+        "ts": "1506432264.000653"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I suspect that <@U54E4SD4G> is just coming up with way to inject templates by variable name.",
+        "ts": "1506432306.000391"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Then lots of templates could be hanging around.",
+        "ts": "1506432316.000190"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "by OS - most likely.",
+        "ts": "1506432326.000035"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DGQYK1> The only edge-case I might see if making a linux-raid out of two\/more hard disks before using the md as the disk to install on…",
+        "ts": "1506432348.000659"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U54E4SD4G> is trying to do sub-templates?",
+        "ts": "1506432393.000103"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "It would be a great thing to have community-provided disk partitioning templates for preseed\/kickstart",
+        "ts": "1506432490.000359"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "sub-templates work.",
+        "ts": "1506432527.000394"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U54E4SD4G> is trying to generate parameterized named templates",
+        "ts": "1506432541.000521"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DGQYK1> Sorry for my ignorance, but is that an entire “top-level” template (like the standard ‘net_seed.tmpl’) or a sub-template that would nest inside the top-level template?",
+        "ts": "1506433196.000318"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "golang text templates allow for templates in templates.",
+        "ts": "1506433236.000275"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "DRP originally (3.0.1) didn’t.  We then added it to like 3.0.3 or 3.0.4.",
+        "ts": "1506433283.000049"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "This allows templates to include templates (recursively).",
+        "ts": "1506433308.000387"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "v3.1.0 adds tasks and stages which an alternative to some templates in templates.",
+        "ts": "1506433329.000074"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Kickstarts\/preseeds (the non-script parts) are perfect places for sub-templates.  The command parts can be do better with tasks\/stages now.",
+        "ts": "1506433375.000319"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Hopefully we can learn about the new tasks\/stages during the community call today",
+        "ts": "1506433407.000336"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U416T0AAX> - we'll be talking about the new v3.1.0 features :slightly_smiling_face:",
+        "ts": "1506433438.000088"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can check out the full agenda:\n<https:\/\/docs.google.com\/document\/d\/1utYrt4x0VIvTTlZqMHA1Jm489ab4W-Nlma9EVvBTdDk>",
+        "ts": "1506433487.000188"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U6QFVRJNB> shared a file: <https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/F7847GB6H\/v001_-_20170926_-_intro__naming__digital_rebar_provision_3.1_and_3|v001 - 20170926 - Intro, Naming, Digital Rebar Provision 3.1 and 3.2, DRP Demo>",
+        "file": {
+            "id": "F7847GB6H",
+            "created": 1506276639,
+            "timestamp": 1506276639,
+            "name": "v001 - 20170926 - Intro, Naming, Digital Rebar Provision 3.1 and 3",
+            "title": "v001 - 20170926 - Intro, Naming, Digital Rebar Provision 3.1 and 3.2, DRP Demo",
+            "mimetype": "application\/vnd.google-apps.document",
+            "filetype": "gdoc",
+            "pretty_type": "GDocs Document",
+            "user": "U6QFVRJNB",
+            "editable": false,
+            "size": 3597,
+            "mode": "external",
+            "is_external": true,
+            "external_type": "gdrive",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/docs.google.com\/document\/d\/1utYrt4x0VIvTTlZqMHA1Jm489ab4W-Nlma9EVvBTdDk",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7847GB6H-37ff3254fd\/v001_-_20170926_-_intro__naming__digital_rebar_provision_3.1_and_3_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7847GB6H-37ff3254fd\/v001_-_20170926_-_intro__naming__digital_rebar_provision_3.1_and_3_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7847GB6H-37ff3254fd\/v001_-_20170926_-_intro__naming__digital_rebar_provision_3.1_and_3_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 278,
+            "thumb_360_h": 360,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7847GB6H-37ff3254fd\/v001_-_20170926_-_intro__naming__digital_rebar_provision_3.1_and_3_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 371,
+            "thumb_480_h": 480,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7847GB6H-37ff3254fd\/v001_-_20170926_-_intro__naming__digital_rebar_provision_3.1_and_3_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7847GB6H-37ff3254fd\/v001_-_20170926_-_intro__naming__digital_rebar_provision_3.1_and_3_720.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 557,
+            "thumb_720_h": 720,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7847GB6H-37ff3254fd\/v001_-_20170926_-_intro__naming__digital_rebar_provision_3.1_and_3_800.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 1035,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7847GB6H-37ff3254fd\/v001_-_20170926_-_intro__naming__digital_rebar_provision_3.1_and_3_960.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 742,
+            "thumb_960_h": 960,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7847GB6H-37ff3254fd\/v001_-_20170926_-_intro__naming__digital_rebar_provision_3.1_and_3_1024.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 791,
+            "thumb_1024_h": 1024,
+            "image_exif_rotation": 1,
+            "original_w": 800,
+            "original_h": 1035,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/F7847GB6H\/v001_-_20170926_-_intro__naming__digital_rebar_provision_3.1_and_3",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0,
+            "has_rich_preview": true
+        },
+        "user": "U6QFVRJNB",
+        "upload": false,
+        "display_as_bot": false,
+        "username": "shane",
+        "bot_id": null,
+        "ts": "1506433488.000065"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yes, parameter-driven sub-templates would be great for partitioning schemes - a collection of such templates could be community (or DR) provided, and less wheels reinvented",
+        "ts": "1506433527.000320"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U6QFVRJNB>, Thanks! will check this stuff out before the call",
+        "ts": "1506433543.000161"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U416T0AAX> the content system is also a key feature for 3.1 to help those reuse thoughts",
+        "ts": "1506435784.000256"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U6QFVRJNB> Meetup soon, right?",
+        "ts": "1506448655.000462"
+    },
+    {
+        "type": "message",
+        "user": "U32PZNCP5",
+        "text": "Meetup underway at <https:\/\/www.meetup.com\/digitalrebar\/events\/243477494\/>",
+        "attachments": [
+            {
+                "service_name": "Meetup",
+                "title": "Digital Rebar",
+                "title_link": "https:\/\/www.meetup.com\/digitalrebar\/events\/243477494\/",
+                "text": "Welcome to the first Digital Rebar online meetup!  In our inaugural meetup we'll provide an introduction to  Digital Rebar Provision, name our mascot, disc",
+                "fallback": "Meetup: Digital Rebar",
+                "thumb_url": "https:\/\/secure.meetupstatic.com\/photos\/event\/c\/a\/0\/0\/highres_464511712.jpeg",
+                "from_url": "https:\/\/www.meetup.com\/digitalrebar\/events\/243477494\/",
+                "thumb_width": 188,
+                "thumb_height": 186,
+                "service_icon": "https:\/\/secure.meetupstatic.com\/s\/img\/144395054627769971357\/logo\/swarm\/m_swarm_120x120.png",
+                "id": 1
+            }
+        ],
+        "ts": "1506449512.000377"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Nice work <@U6QFVRJNB> :slightly_smiling_face:",
+        "ts": "1506452857.000245"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Thx <@U416T0AAX> - pleasure to \"virtually meet\" you :slightly_smiling_face:",
+        "ts": "1506452878.000112"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<!here> - for those of you couldn't attend the meetup - we'll post the video shortly and provide links here ...  keep an eye out for additional announcements on scheduling and agenda items for v002 meetup",
+        "ts": "1506452929.000473"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "<@U02DGQYK1> <@U416T0AAX> that's exactly what I'm trying to do - have separate partitioning templates based on what workload is required\nthe \"edge-case\" of making linux raid is well, an understatement. there are lots of possible disk layouts, including with LVM (such as making a layout that follows CIS benchmarks (<https:\/\/www.cisecurity.org\/cis-benchmarks\/>)) - I was originally doing the same thing back when I was using cobbler.",
+        "attachments": [
+            {
+                "title": "CIS Benchmarks",
+                "title_link": "https:\/\/www.cisecurity.org\/cis-benchmarks\/",
+                "text": "CIS Benchmarks help you safeguard systems, software, and networks against today's evolving cyber threats.",
+                "fallback": "CIS Benchmarks",
+                "from_url": "https:\/\/www.cisecurity.org\/cis-benchmarks\/",
+                "service_name": "cisecurity.org",
+                "id": 1
+            }
+        ],
+        "ts": "1506456550.000539"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "Anyway, so I tried what <@U02DGQYK1> provided but I get this:\n```\n[lae@yuzu provision-content]$ drpcli templates upload templates\/labs-seed.tmpl as labs-seed.tmpl\nError: Parse error for template labs-seed.tmpl: template: labs-seed.tmpl:65: unexpected \"(\" in template clause\n```",
+        "edited": {
+            "user": "U54E4SD4G",
+            "ts": "1506456697.000000"
+        },
+        "ts": "1506456664.000344"
+    },
+    {
+        "text": "<@U02DHRR2L> Can't seem to find your slack invite. My gmail or uber account?",
+        "username": "stanchan",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1506457753.000035"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U63ACQT8A> checking...",
+        "ts": "1506457885.000364"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "gmail",
+        "ts": "1506457944.000310"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U54E4SD4G> Will have to let <@U02DGQYK1> respond, not a golang guy myself, so not going to try to t’shoot the syntax… But, powerful idea, and looking forward to the solution :slightly_smiling_face:",
+        "ts": "1506458704.000462"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "My idea would be to have a library of disk partitioning templates that one could choose from for a given deployment",
+        "ts": "1506458753.000501"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Most of my use cases use a single disk (could be a RAID virtual disk al la Dell PERC) with partitions for swap and then LVM PV, as is the case with default net_seed template",
+        "ts": "1506458831.000125"
+    },
+    {
+        "text": "Time to feed the :bear:!",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1506458831.000212"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "But every once in a while, I get a more custom request, which I have to handle when I provision the ‘n’ systems of that type",
+        "ts": "1506458876.000213"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@USLACKBOT> use should be using the DR bear icon! :stuck_out_tongue:",
+        "ts": "1506458962.000504"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U416T0AAX> - we have a hardware RAID partitioning solution that will be released soon - that piece is a paid-for-content piece, as we've put a LOT of development and testing work in to it ... but it's designed to do a large number of flexible hw raid setups",
+        "ts": "1506458972.000378"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U6QFVRJNB> sounds very cool, but really thinking more about flexibility of Linux partitioning of one disk",
+        "ts": "1506459059.000139"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "are you using ubuntu or centos based distros ?",
+        "ts": "1506459094.000557"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "yes :stuck_out_tongue:",
+        "ts": "1506459102.000209"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Actually mostly Ubuntu these days",
+        "ts": "1506459123.000382"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "well - as bad as 'debian installer' is - the 'partman' pieces do have some pretty flexible capabilities - albeit - not very intuitive .... and those could be pretty easily pushed in to a flexible set of templates",
+        "ts": "1506459149.000348"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "But have folks who occasionally spec CentOS",
+        "ts": "1506459152.000551"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "yeah, I'm pretty familiar with d-i's partman now",
+        "ts": "1506459173.000406"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yes, I wish d-i was as easy as kickstart…",
+        "ts": "1506459180.000162"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U54E4SD4G> ... my condolences ... :slightly_smiling_face:",
+        "ts": "1506459195.000067"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "so like, I'd prefer to be able to use my own existing seeds with those layouts but at the moment I can only really do a copy of a seed per layout...which is gonna be a pain to manage if I brought every layout I used",
+        "ts": "1506459252.000456"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "hence, trying to parametrize the partitioning scheme template",
+        "ts": "1506459271.000367"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I’d pay for a sane disk partitioning UI (like the Ubuntu installer’s for instance) that generates correct d-i partman lines…",
+        "ts": "1506459276.000390"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "disk partitioning UI sounds great",
+        "ts": "1506459288.000309"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "lot of work though, don't think that's what rackn worked on",
+        "ts": "1506459320.000393"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "(or maybe it is)",
+        "ts": "1506459334.000195"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Once you have the correct d-i in a library of configs, it should be easy enough (?) to modify",
+        "ts": "1506459342.000620"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Sounds like a community-contrib thing…",
+        "ts": "1506459356.000246"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Would be great to have a way to have something like “Ansible Galaxy” for DR community-provided resources",
+        "ts": "1506459436.000054"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Exposed thru the DRP UX :slightly_smiling_face:",
+        "ts": "1506459476.000350"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "not UI pieces - but templates\/profiles to and a plugin to drive the raid configs",
+        "ts": "1506459517.000066"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "What I was trying to say was if there is community-provided content (such as templates, content packs, plugins, etc.) There could be a way to browse them thru the UX (kind of like what’s available in GitHub Atom editor in the way of Packagaes \/ Themes)",
+        "ts": "1506459717.000060"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "It would be up to the end-user whether to trust them and utilize them or not (perhaps with a rating system?)",
+        "ts": "1506459769.000323"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U416T0AAX> - we have content browsing already in the UI ...",
+        "ts": "1506459775.000158"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": ":slightly_smiling_face:",
+        "ts": "1506459780.000560"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U6QFVRJNB> Need to learn more about that :wink:",
+        "ts": "1506459797.000303"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if you go to the Content page - the right side panel labeled \"organization content\" is a library of available content to pull in to your local Endpoint",
+        "ts": "1506459821.000338"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Not too familiar yet about Content packs, Plugins, Stages, Tasks, Jobs",
+        "ts": "1506459827.000092"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U6QFVRJNB> uploaded a file: <https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/F78JEAR4Y\/screen_shot_2017-09-26_at_14.03.53.png|DRP provision-ux Content page>",
+        "file": {
+            "id": "F78JEAR4Y",
+            "created": 1506459871,
+            "timestamp": 1506459871,
+            "name": "Screen Shot 2017-09-26 at 14.03.53.png",
+            "title": "DRP provision-ux Content page",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U6QFVRJNB",
+            "editable": false,
+            "size": 212758,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F78JEAR4Y\/screen_shot_2017-09-26_at_14.03.53.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F78JEAR4Y\/download\/screen_shot_2017-09-26_at_14.03.53.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F78JEAR4Y-18748faa42\/screen_shot_2017-09-26_at_14.03.53_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F78JEAR4Y-18748faa42\/screen_shot_2017-09-26_at_14.03.53_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F78JEAR4Y-18748faa42\/screen_shot_2017-09-26_at_14.03.53_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 215,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F78JEAR4Y-18748faa42\/screen_shot_2017-09-26_at_14.03.53_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 286,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F78JEAR4Y-18748faa42\/screen_shot_2017-09-26_at_14.03.53_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F78JEAR4Y-18748faa42\/screen_shot_2017-09-26_at_14.03.53_720.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 429,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F78JEAR4Y-18748faa42\/screen_shot_2017-09-26_at_14.03.53_800.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 477,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F78JEAR4Y-18748faa42\/screen_shot_2017-09-26_at_14.03.53_960.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 572,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F78JEAR4Y-18748faa42\/screen_shot_2017-09-26_at_14.03.53_1024.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 611,
+            "image_exif_rotation": 1,
+            "original_w": 1263,
+            "original_h": 753,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/F78JEAR4Y\/screen_shot_2017-09-26_at_14.03.53.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F78JEAR4Y-48a0442670",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U6QFVRJNB",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "shane",
+        "bot_id": null,
+        "ts": "1506459875.000063"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "in that view, the middle panel is content I've added; the right panel is the available content",
+        "ts": "1506459896.000431"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I added the content from the content library - but I did do it via the CLI - not UI ... could just as easily have clicked on the UI \"Transfer\" link",
+        "ts": "1506459932.000049"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the content also is versioned - as you can see if something has an upgrade available - and you can choose to Upgrade your content pack for what you currently have installed",
+        "ts": "1506459962.000451"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "in that screen shot - the drp-community-content has an upgrade available",
+        "ts": "1506459982.000084"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yes, I see it in my DRP UI - all the available content right now is RackN-provided?",
+        "ts": "1506459988.000087"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "\"drp-community-content\" is the ... ahem ... Community Content :slightly_smiling_face: freely available",
+        "ts": "1506460011.000385"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "lol",
+        "ts": "1506460032.000045"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "some of that content you see is going to shuffle over to the \"free-for-register\" content",
+        "ts": "1506460034.000119"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "like I mentioned - UX is still Tech Preview ... and we're baking a few of the last bits",
+        "ts": "1506460057.000466"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "About registering - can self-create a RackN beta account, or how to do so?",
+        "ts": "1506460070.000013"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U02DHRR2L> and team did an amazing job pulling all of that together",
+        "ts": "1506460084.000393"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "n.m - found “sign up” link",
+        "ts": "1506460090.000105"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Upper right - click on \"RackN Login\" and then sign up",
+        "ts": "1506460098.000332"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, did signup",
+        "ts": "1506460568.000374"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Went to Content page and tried to d\/l update for community content, got error...",
+        "ts": "1506460612.000341"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F799Z242Y\/image_uploaded_from_ios.jpg|Image uploaded from iOS>",
+        "file": {
+            "id": "F799Z242Y",
+            "created": 1506460631,
+            "timestamp": 1506460631,
+            "name": "Image uploaded from iOS.jpg",
+            "title": "Image uploaded from iOS",
+            "mimetype": "image\/jpeg",
+            "filetype": "jpg",
+            "pretty_type": "JPEG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 10131006,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F799Z242Y\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F799Z242Y\/download\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F799Z242Y-8361937734\/image_uploaded_from_ios_64.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F799Z242Y-8361937734\/image_uploaded_from_ios_80.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F799Z242Y-8361937734\/image_uploaded_from_ios_360.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 270,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F799Z242Y-8361937734\/image_uploaded_from_ios_480.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 360,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F799Z242Y-8361937734\/image_uploaded_from_ios_160.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F799Z242Y-8361937734\/image_uploaded_from_ios_720.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 540,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F799Z242Y-8361937734\/image_uploaded_from_ios_800.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 600,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F799Z242Y-8361937734\/image_uploaded_from_ios_960.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 720,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F799Z242Y-8361937734\/image_uploaded_from_ios_1024.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 768,
+            "image_exif_rotation": 1,
+            "original_w": 4032,
+            "original_h": 3024,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F799Z242Y\/image_uploaded_from_ios.jpg",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F799Z242Y-86eefd51f7",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "upload_reply_to": "DB1C54F0-8434-4180-8AED-D80978E33D5C",
+        "ts": "1506460639.000133"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "looks like you tried to add content that already exists",
+        "ts": "1506460722.000486"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "But anyways, get the idea...",
+        "ts": "1506460727.000335"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "\"ce-root-access\" already exists - you'd have to destroy it first, then re-create",
+        "ts": "1506460739.000301"
+    },
+    {
+        "type": "message",
+        "user": "U75QJVA3Y",
+        "text": "So, `explode_iso.sh` is failing for every ISO I have uploaded with an exit code of 255",
+        "ts": "1506460946.000346"
+    },
+    {
+        "type": "message",
+        "user": "U75QJVA3Y",
+        "text": "any ideas?",
+        "ts": "1506460950.000114"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U416T0AAX> - you have an older version of \"drp-community-content\" (note the long winded name w\/ spaces)",
+        "ts": "1506461046.000294"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you probably tried adding the newer pack \"drp-community-content\" - they're same things - just renamed",
+        "ts": "1506461069.000236"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "that's a bug I ran in to - and we got cleaned up a bit",
+        "ts": "1506461085.000398"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you should be able to nuke the \"Digital Rebar Provision Community Content\" pack then Transfer the \"drp-community-content\" pack",
+        "ts": "1506461111.000558"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Ok",
+        "ts": "1506461125.000068"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Remember the golden rule:  UX is Tech Preview still",
+        "ts": "1506461151.000231"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": ":slightly_smiling_face:",
+        "ts": "1506461152.000154"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "And a damn fine tech preview it is",
+        "ts": "1506461364.000069"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U75QJVA3Y> - can you check the tftpboot\/isos\/ directory on your DRP Endpoint - the ISO gets staged there with \"drpcli bootenvs uploadiso FOO\" - then explode_iso.sh runs on it",
+        "ts": "1506461760.000074"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "additionally - check the filesystem space of your tftpboot\/isos\/ directory",
+        "ts": "1506461777.000063"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if you did \"isolated\" install - then it's going to be in $HOME\/drp-data\/ location - if you did \"production\" install - it should be in \/var\/lib\/dr-provision\/tftpboot  (for 3.1) or \/var\/lib\/tftpboot (for 3.0.x)",
+        "ts": "1506461829.000322"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U54E4SD4G> - I’ll try and look at it tonight.",
+        "ts": "1506462684.000079"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I probably messed something up.",
+        "ts": "1506462693.000256"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "also thanks for the stickers! (they arrived today)",
+        "ts": "1506463403.000037"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Nice!",
+        "ts": "1506463421.000072"
+    },
+    {
+        "type": "message",
+        "user": "U32PZNCP5",
+        "text": "For anyone who missed the meetup today, here is the <https:\/\/youtu.be\/LpVHYY9NdYo>",
+        "attachments": [
+            {
+                "service_name": "YouTube",
+                "service_url": "https:\/\/www.youtube.com\/",
+                "title": "Digital Rebar Online Meetup #1",
+                "title_link": "https:\/\/youtu.be\/LpVHYY9NdYo",
+                "author_name": "RackN & Digital Rebar",
+                "author_link": "https:\/\/www.youtube.com\/channel\/UCr3bBtP-pMsDQ5c0IDjt_LQ",
+                "thumb_url": "https:\/\/i.ytimg.com\/vi\/LpVHYY9NdYo\/hqdefault.jpg",
+                "thumb_width": 480,
+                "thumb_height": 360,
+                "fallback": "YouTube Video: Digital Rebar Online Meetup #1",
+                "video_html": "<iframe width=\"400\" height=\"225\" src=\"https:\/\/www.youtube.com\/embed\/LpVHYY9NdYo?feature=oembed&autoplay=1&iv_load_policy=3\" frameborder=\"0\" allowfullscreen><\/iframe>",
+                "video_html_width": 400,
+                "video_html_height": 225,
+                "from_url": "https:\/\/youtu.be\/LpVHYY9NdYo",
+                "service_icon": "https:\/\/a.slack-edge.com\/2089\/img\/unfurl_icons\/youtube.png",
+                "id": 1
+            }
+        ],
+        "ts": "1506463818.000104"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "hmm",
+        "ts": "1506468987.000062"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "I guess I could use ansible as another way to manage my templates",
+        "ts": "1506469006.000099"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U54E4SD4G> uploaded a file: <https:\/\/rackn.slack.com\/files\/U54E4SD4G\/F79A7LEFL\/image.png|image.png> and commented: oh right - the machine overview is a little unwieldy when a lot of profiles exist",
+        "file": {
+            "id": "F79A7LEFL",
+            "created": 1506470017,
+            "timestamp": 1506470017,
+            "name": "image.png",
+            "title": "image.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U54E4SD4G",
+            "editable": false,
+            "size": 138654,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F79A7LEFL\/image.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F79A7LEFL\/download\/image.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F79A7LEFL-09fd9c64fb\/image_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F79A7LEFL-09fd9c64fb\/image_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F79A7LEFL-09fd9c64fb\/image_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 194,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F79A7LEFL-09fd9c64fb\/image_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 259,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F79A7LEFL-09fd9c64fb\/image_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F79A7LEFL-09fd9c64fb\/image_720.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 388,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F79A7LEFL-09fd9c64fb\/image_800.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 431,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F79A7LEFL-09fd9c64fb\/image_960.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 518,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F79A7LEFL-09fd9c64fb\/image_1024.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 552,
+            "image_exif_rotation": 1,
+            "original_w": 1920,
+            "original_h": 1035,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U54E4SD4G\/F79A7LEFL\/image.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F79A7LEFL-32d60ac90e",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 1,
+            "initial_comment": {
+                "id": "Fc78QE1CKB",
+                "created": 1506470017,
+                "timestamp": 1506470017,
+                "user": "U54E4SD4G",
+                "is_intro": true,
+                "comment": "oh right - the machine overview is a little unwieldy when a lot of profiles exist"
+            }
+        },
+        "user": "U54E4SD4G",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "lae",
+        "bot_id": null,
+        "ts": "1506470020.000058"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U54E4SD4G> - thx for the feedback on that - we know that page can get a bit crowded, and working on some ideas\/thoughts around filtering and presentation of that information.   If you have any ideas - feel free to share.  :slightly_smiling_face:",
+        "ts": "1506471316.000171"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<!here> - the v002 meetup details have been posted:\nmeetup link:  <https:\/\/www.meetup.com\/digitalrebar\/events\/243490128\/> \nagenda document:  <https:\/\/docs.google.com\/document\/d\/1FRFI-vONJY9yje9UsBqCI8XhojJ0XARsFgs4jbm-VRk> \nalso - vote now - if you'd like to see us move to a Weekly format with more demo\/content versus the current published every-other-week format:\nmeetup poll:  <https:\/\/www.meetup.com\/digitalrebar\/polls\/1255504\/>",
+        "attachments": [
+            {
+                "service_name": "Meetup",
+                "title": "Digital Rebar",
+                "title_link": "https:\/\/www.meetup.com\/digitalrebar\/events\/243490128\/",
+                "text": "Proposed outline agenda: • Welcome and recap from v001 meetup • Weekly \/ or every-other-weekly meetups? • Release planning and features for v3.2.0 • Conten",
+                "fallback": "Meetup: Digital Rebar",
+                "thumb_url": "https:\/\/secure.meetupstatic.com\/photos\/event\/c\/a\/0\/0\/highres_464511712.jpeg",
+                "from_url": "https:\/\/www.meetup.com\/digitalrebar\/events\/243490128\/",
+                "thumb_width": 188,
+                "thumb_height": 186,
+                "service_icon": "https:\/\/secure.meetupstatic.com\/s\/img\/144395054627769971357\/logo\/swarm\/m_swarm_120x120.png",
+                "id": 1
+            },
+            {
+                "title": "Weekly ... or every-other-weekly ?? -  Digital Rebar (Mountain View, CA)   | Meetup",
+                "title_link": "https:\/\/www.meetup.com\/digitalrebar\/polls\/1255504\/",
+                "text": "Digital Rebar Provision (DRP) is the open source (APLv2) , fast and simple data center provisioning and control scaffolding designed with a cloud native architecture. This Online Meetup group will dis",
+                "fallback": "Weekly ... or every-other-weekly ?? -  Digital Rebar (Mountain View, CA)   | Meetup",
+                "from_url": "https:\/\/www.meetup.com\/digitalrebar\/polls\/1255504\/",
+                "service_icon": "https:\/\/secure.meetupstatic.com\/s\/img\/144395054627769971357\/logo\/swarm\/m_swarm_120x120.png",
+                "service_name": "meetup.com",
+                "id": 2
+            }
+        ],
+        "ts": "1506471673.000200"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U6QFVRJNB> shared a file: <https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/F78DZGSTS\/v002_-_20171010_-_digital_rebar_provision_3|v002 - 20171010 - Digital Rebar Provision 3.2 planning and status, Kubernetes Deployment Demo>",
+        "file": {
+            "id": "F78DZGSTS",
+            "created": 1506445769,
+            "timestamp": 1506445769,
+            "name": "v002 - 20171010 - Digital Rebar Provision 3",
+            "title": "v002 - 20171010 - Digital Rebar Provision 3.2 planning and status, Kubernetes Deployment Demo",
+            "mimetype": "application\/vnd.google-apps.document",
+            "filetype": "gdoc",
+            "pretty_type": "GDocs Document",
+            "user": "U6QFVRJNB",
+            "editable": false,
+            "size": 2566,
+            "mode": "external",
+            "is_external": true,
+            "external_type": "gdrive",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/docs.google.com\/document\/d\/1FRFI-vONJY9yje9UsBqCI8XhojJ0XARsFgs4jbm-VRk",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F78DZGSTS-7edca30e0b\/v002_-_20171010_-_digital_rebar_provision_3_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F78DZGSTS-7edca30e0b\/v002_-_20171010_-_digital_rebar_provision_3_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F78DZGSTS-7edca30e0b\/v002_-_20171010_-_digital_rebar_provision_3_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 278,
+            "thumb_360_h": 360,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F78DZGSTS-7edca30e0b\/v002_-_20171010_-_digital_rebar_provision_3_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 371,
+            "thumb_480_h": 480,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F78DZGSTS-7edca30e0b\/v002_-_20171010_-_digital_rebar_provision_3_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F78DZGSTS-7edca30e0b\/v002_-_20171010_-_digital_rebar_provision_3_720.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 557,
+            "thumb_720_h": 720,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F78DZGSTS-7edca30e0b\/v002_-_20171010_-_digital_rebar_provision_3_800.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 1035,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F78DZGSTS-7edca30e0b\/v002_-_20171010_-_digital_rebar_provision_3_960.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 742,
+            "thumb_960_h": 960,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F78DZGSTS-7edca30e0b\/v002_-_20171010_-_digital_rebar_provision_3_1024.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 791,
+            "thumb_1024_h": 1024,
+            "image_exif_rotation": 1,
+            "original_w": 800,
+            "original_h": 1035,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/F78DZGSTS\/v002_-_20171010_-_digital_rebar_provision_3",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0,
+            "has_rich_preview": true
+        },
+        "user": "U6QFVRJNB",
+        "upload": false,
+        "display_as_bot": false,
+        "username": "shane",
+        "bot_id": null,
+        "ts": "1506471674.000314"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So, question about the RackN login on the DRP UI...",
+        "ts": "1506478760.000217"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "When I log in, it has my org as \"Personal\", no way to change that?",
+        "ts": "1506478805.000056"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "But bigger question - when I use the \"sandwich\" UI widget to open the left nav, and select Endpoints, I just see \"127.0.0.1:8092\" which of course is bogus, and there's no way to add actual DRP endpoints to that",
+        "ts": "1506478951.000028"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "\"tech preview\" :relaxed:",
+        "ts": "1506478993.000054"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Multi-endpoint management not baked yet - simply change URL reference for now ",
+        "ts": "1506479061.000243"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Ah, got it",
+        "ts": "1506479085.000055"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Maybe when I run into these problems, you can say I've been \"TP'd\" (tech previewed) :P",
+        "ts": "1506479165.000204"
+    },
+    {
+        "text": "Hi Gents. Update on yesterday - the issue is definitely the embedded dhcp server in dr-provision. I switched dhcp out to my firewall and enabled the pxeboot bits to pull off drp's tftp server and the sledgehammer env. booted fine, and now I have a machine registered.",
+        "username": "nzsouthernman_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1506479184.000032"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7AE3QR4P\/image_uploaded_from_ios.jpg|Image uploaded from iOS>",
+        "file": {
+            "id": "F7AE3QR4P",
+            "created": 1506479307,
+            "timestamp": 1506479307,
+            "name": "Image uploaded from iOS.jpg",
+            "title": "Image uploaded from iOS",
+            "mimetype": "image\/jpeg",
+            "filetype": "jpg",
+            "pretty_type": "JPEG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 216970,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7AE3QR4P\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7AE3QR4P\/download\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7AE3QR4P-f3541103c2\/image_uploaded_from_ios_64.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7AE3QR4P-f3541103c2\/image_uploaded_from_ios_80.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7AE3QR4P-f3541103c2\/image_uploaded_from_ios_360.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 351,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7AE3QR4P-f3541103c2\/image_uploaded_from_ios_480.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 468,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7AE3QR4P-f3541103c2\/image_uploaded_from_ios_160.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "image_exif_rotation": 1,
+            "original_w": 551,
+            "original_h": 537,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7AE3QR4P\/image_uploaded_from_ios.jpg",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F7AE3QR4P-d5d06ecbb5",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "upload_reply_to": "E4106C07-7D1C-4886-BFB4-BF3B955119BF",
+        "ts": "1506479307.000098"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U416T0AAX> that is exactly the feature set that I'm working on right now... adding an endpoint exposed a validation loop.  Once it's working, you'll be able to add\/remove endpoints from your org.   You'll also be able to shared orgs for multiple users.  In the meantime, we can manually add endpoints for you on the backend so they correct on your list if you ask 1x1",
+        "ts": "1506479513.000076"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DHRR2L> Cool, will PM details",
+        "ts": "1506479860.000165"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "@nzsouthernman_twitter - we should talk about it some more.  We need to fix that.  My guess is that the subnet isn’t quite right.",
+        "ts": "1506481340.000117"
+    },
+    {
+        "text": "Is there anything I can provide from my end to help? My working firewall is pfSense, and I just reloaded dr-provision with --disable-dhcp",
+        "username": "nzsouthernman_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1506481388.000146"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The subnet will still be there",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1506481457.000000"
+        },
+        "ts": "1506481454.000241"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "IT would be nice to see the subnet object and what the network specs are.  Is DRP directly attached to the network in question?",
+        "ts": "1506481497.000008"
+    },
+    {
+        "text": "I first had it working by disabling the subnet in the UX entirely, then enabled fw dhcp server, entered the right next server &amp; lpxelinux.o file and hey presto!",
+        "username": "nzsouthernman_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1506481505.000113"
+    },
+    {
+        "text": "Yes, drp is directly on the network.  Network is an esxi 6.5 vswitch.",
+        "username": "nzsouthernman_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1506481525.000058"
+    },
+    {
+        "text": "{\n  \"ActiveEnd\": \"192.168.1.200\",\n  \"ActiveLeaseTime\": 60,\n  \"ActiveStart\": \"192.168.1.100\",\n  \"Available\": true,\n  \"Enabled\": false,\n  \"Errors\": [],\n  \"Name\": \"ens192\",\n  \"NextServer\": \"192.168.1.10\",\n  \"OnlyReservations\": false,\n  \"Options\": [\n    {\n      \"Code\": 1,\n      \"Value\": \"255.255.255.0\"\n    },\n    {\n      \"Code\": 3,\n      \"Value\": \"192.168.1.1\"\n    },\n    {\n      \"Code\": 6,\n      \"Value\": \"192.168.1.1\"\n    },\n    {\n      \"Code\": 15,\n      \"Value\": \"burnside.school.nz\"\n    },\n    {\n      \"Code\": 28,\n      \"Value\": \"192.168.1.255\"\n    },\n    {\n      \"Code\": 66,\n      \"Value\": \"192.168.1.10\"\n    },\n    {\n      \"Code\": 67,\n      \"Value\": \"lpxelinux.0\"\n    }\n  ],\n  \"Pickers\": [\n    \"hint\",\n    \"nextFree\",\n    \"mostExpired\"\n  ],\n  \"ReadOnly\": false,\n  \"ReservedLeaseTime\": 7200,\n  \"Strategy\": \"MAC\",\n  \"Subnet\": \"192.168.1.0\/24\",\n  \"Validated\": true\n}",
+        "username": "nzsouthernman_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1506481559.000117"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Okay - so - it sounds like it might be subnet config, but it also could be the vswitch.  I seem to recall that the vswitch can “help” by not letting broadcasts through in some cases and some settings.",
+        "ts": "1506481580.000101"
+    },
+    {
+        "text": "The test client is a vm with one vnic, on the drp vswitch.  The drp host has one nic, on the drp vswitch. The pfsense fw has two nics, one on drp vswitch and one on our core lan.",
+        "username": "nzsouthernman_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1506481665.000129"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The subnet looks okay - 66 isn’t required. the server fills it in.",
+        "ts": "1506481669.000171"
+    },
+    {
+        "text": "(all three machines are client vm's on the same esxi host)",
+        "username": "nzsouthernman_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1506481710.000140"
+    },
+    {
+        "text": "But you're probably right, it's most likely b\/c drp is sitting on esxi. Ubuntu 16.04.3 with open-vm-tools installed, so the vnic should be 10gigE.",
+        "username": "nzsouthernman_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1506481798.000051"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "hmmm - A couple of other things you can try.  If you want, the subnet looks okay.  DRP has some preferences that control debugging.  You can change the debugDhcp preference to 2 (through the cli) or HIGH in the global setup UI page.  This will cause the DHCP server part of DRP to dump packet content.",
+        "ts": "1506481822.000146"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That way we can see if DRP is getting and responding to DHCP messages.",
+        "ts": "1506481847.000150"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Well, if we are in an Ubuntu vm, it should be okay.",
+        "ts": "1506481860.000017"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Now, ubuntu firewall rules could get in the way.  Not sure what you have there.",
+        "ts": "1506481876.000047"
+    },
+    {
+        "text": "It is indeed dishing out dhcp leases - I had them coming through yesterday ok.",
+        "username": "nzsouthernman_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1506481899.000116"
+    },
+    {
+        "text": "firewall should be disabled - that was one of the install instructions I followed yesterday when setting this all up.",
+        "username": "nzsouthernman_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1506481925.000135"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - cool and good.",
+        "ts": "1506481944.000021"
+    },
+    {
+        "text": "dr-provision2017\/09\/27 02:29:48.674105 Received DHCP packet: type Discover xid 0x4f61e751 ciaddr 0.0.0.0 yiaddr 0.0.0.0 giaddr 0.0.0.0 chaddr 00:50:56:9e:6e:cb\ndr-provision2017\/09\/27 02:29:48.674494 Received DHCP packet: type Request xid 0x4f61e751 ciaddr 0.0.0.0 yiaddr 0.0.0.0 giaddr 0.0.0.0 chaddr 00:50:56:9e:6e:cb\ndr-provision2017\/09\/27 02:29:48.674718 xid 0x4f61e751: 192.168.1.104 is no longer able to be leased: No lease for 192.168.1.104, covered by subnet 192.168.1.0\nThese are from before I --disable-dhcp",
+        "username": "nzsouthernman_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1506481998.000109"
+    },
+    {
+        "text": "When I fired it up it cleaned out yesterday's leases",
+        "username": "nzsouthernman_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1506482018.000042"
+    },
+    {
+        "text": "ooh, ubuntu firewall may have been running... give me a sec...",
+        "username": "nzsouthernman_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1506482096.000158"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "also apparmor can do funky things to DHCP servers (though mostly keep them from starting).",
+        "ts": "1506482123.000126"
+    },
+    {
+        "text": "dr-provision2017\/09\/27 03:16:12.941340 Received DHCP packet: type Discover xid 0x579e6ecb ciaddr 0.0.0.0 yiaddr 0.0.0.0 giaddr 0.0.0.0 chaddr 00:50:56:9e:6e:cb\ndr-provision2017\/09\/27 03:16:15.028534 Received DHCP packet: type Discover xid 0x589e6ecb ciaddr 0.0.0.0 yiaddr 0.0.0.0 giaddr 0.0.0.0 chaddr 00:50:56:9e:6e:cb\ndr-provision2017\/09\/27 03:16:19.093171 Received DHCP packet: type Discover xid 0x599e6ecb ciaddr 0.0.0.0 yiaddr 0.0.0.0 giaddr 0.0.0.0 chaddr 00:50:56:9e:6e:cb\ndr-provision2017\/09\/27 03:16:27.167050 Received DHCP packet: type Discover xid 0x5a9e6ecb ciaddr 0.0.0.0 yiaddr 0.0.0.0 giaddr 0.0.0.0 chaddr 00:50:56:9e:6e:cb\ndang.",
+        "username": "nzsouthernman_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1506482203.000078"
+    },
+    {
+        "text": "No dice. However under Subnets\/Leases I see a brand new lease listed.",
+        "username": "nzsouthernman_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1506482237.000233"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Make sure you enable the subnet if you are testing it",
+        "ts": "1506482239.000171"
+    },
+    {
+        "text": "dr-provision2017\/09\/27 03:17:45.724011 Received DHCP packet: type Discover xid 0x599e6ecb ciaddr 0.0.0.0 yiaddr 0.0.0.0 giaddr 0.0.0.0 chaddr 00:50:56:9e:6e:cb\ndr-provision2017\/09\/27 03:17:45.724446 Subnet ens192: handing out existing lease for 192.168.1.101 to MAC:00:50:56:9e:6e:cb\ndr-provision2017\/09\/27 03:17:53.798103 Received DHCP packet: type Discover xid 0x5a9e6ecb ciaddr 0.0.0.0 yiaddr 0.0.0.0 giaddr 0.0.0.0 chaddr 00:50:56:9e:6e:cb\ndr-provision2017\/09\/27 03:17:53.798614 Subnet ens192: handing out existing lease for 192.168.1.101 to MAC:00:50:56:9e:6e:cb\nGood catch Greg.",
+        "username": "nzsouthernman_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1506482290.000061"
+    },
+    {
+        "text": "But no pxeboot. :(",
+        "username": "nzsouthernman_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1506482302.000036"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah - your node isn’t accepting the DHCP reply for some reason, it appears.",
+        "ts": "1506482330.000013"
+    },
+    {
+        "text": "No matter - handing the pxeboot off to the firewall works for me while I'm fiddling around.",
+        "username": "nzsouthernman_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1506482350.000146"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You should see an ACK and Request message.",
+        "ts": "1506482366.000008"
+    },
+    {
+        "text": "Have to head home now, will have another crack getting further tomorrow.",
+        "username": "nzsouthernman_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1506482372.000006"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Make sure that the otehr DHCP servers are off as well in the future (just in case).",
+        "ts": "1506482386.000094"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "cool - though DRP is designed to work in the pfSense case as well.",
+        "ts": "1506482400.000025"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I’m using pfSense as the DHCP server, handing off PXE boot to DRP",
+        "ts": "1506482432.000064"
+    }
+]

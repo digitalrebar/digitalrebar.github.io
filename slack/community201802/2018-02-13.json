@@ -1,0 +1,1002 @@
+[
+    {
+        "type": "message",
+        "user": "U982K4UJX",
+        "text": "Hey,\nI’m new to digital rebar and I have a question regarding workflows.\n\nFrom what I understand different profiles can have different workflows for different Bare-metal installation types (please correct me if I’m wrong).\n\nThe thing I don’t understand is how to determine which machine will “pxe-boot” to the right profile? How do I make the connection between a machine that just booted-up snd the appropriate profile?\n\nThanks",
+        "ts": "1518525605.000230"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U982K4UJX> - the profile containing the workflow you want needs to be added to the machine’s profile list.",
+        "ts": "1518529138.000165"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That is the simple answer.  The question is how and when to do that.",
+        "ts": "1518529152.000312"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "There are a lot methods for that.  One is manually from the UX or CLI.  Another is terraform for a “grab and go” style of operations.  Another is to write a stage\/task set to classify the node as it goes through discovery.  The workflow can be modified “inflight” during the discovery workflow.",
+        "ts": "1518529247.000369"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "This where your use and goals for deployment and operation come in to help you make that decision.",
+        "ts": "1518529283.000180"
+    },
+    {
+        "type": "message",
+        "user": "U982K4UJX",
+        "text": "I want to automate (not via the UI) the process of installing bare metal.\nI want to create profile for each “type of installation” - for example: centos 7 for DB cassandra, ubuntu 16.04 for openstack etc…\n\nHow do I identify the machine that just “PXE booted” to appropriate profile?\nI hope I’m clear about what I’m trying to do…",
+        "ts": "1518530895.000148"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U990RCTC6> $welcome",
+        "ts": "1518531334.000094"
+    },
+    {
+        "text": "Digital Rebar community welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1518531334.000174"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U982K4UJX> - at some point, you have to be able to classify your systems - if you can do that based on CPU\/Memory\/Disk - then you can use the Gohai Inventory components (except for disk) ... and you can write a Param back to Digital Rebar Provision (DRP) Endpoint that has that classification - then in later Stages in the Workflow - you can use that Param to \"do something\" specific with the classification",
+        "ts": "1518531426.000141"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can also write a Stage (that uses a Task and Template) to call out to a DCIM\/Asset Management system of some sort and ask it what the system should be (maybe based on MAC address, Serial Number ... or something else)",
+        "thread_ts": "1518531471.000636",
+        "reply_count": 1,
+        "replies": [
+            {
+                "user": "U982K4UJX",
+                "ts": "1518531663.000248"
+            }
+        ],
+        "unread_count": 1,
+        "ts": "1518531471.000636"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "again - you'd then tag your Machine with a Param with the classification info and adjust your workflow accordingly",
+        "ts": "1518531494.000416"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if you use the Stage\/Task\/Template route - note that any queries made to your DCIM\/Asset Management will be **from** the Machine being provisioned",
+        "ts": "1518531544.000636"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "in some environments, this will not work - as the provisioning networks do not have access based on security policy - in which case you might need to write a Plugin for the DRP Endpoint, to make the query on behalf of the Machine - so you can control the security aspects",
+        "ts": "1518531602.000053"
+    },
+    {
+        "type": "message",
+        "user": "U982K4UJX",
+        "text": "Thanks for the detailed answer.\nI’ll try to go in with the “DCIM way”\nThanks :slightly_smiling_face:",
+        "thread_ts": "1518531471.000636",
+        "parent_user_id": "U6QFVRJNB",
+        "ts": "1518531663.000248"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U54E4SD4G> - hit me up when you can.  I want to move all the partman directives into the part template.  I think this will hit you the most.",
+        "ts": "1518536526.000578"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Bug #53 in community content.",
+        "ts": "1518536538.000886"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DGQYK1> ^^^ nice - would affect me as well (but I asked for it)",
+        "ts": "1518539826.000342"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yeah - I figured. :slightly_smiling_face:",
+        "ts": "1518540085.000036"
+    },
+    {
+        "type": "message",
+        "user": "U32PZNCP5",
+        "text": "Community - I sent out a Monthly RackN Newsletter yesterday and if you did not receive and would like too, please ping me. I do this 1x a month and it is pretty short but highlights events we are attending and key themes; this month was Cobbler. I understand that Digital Rebar is an open source community and I am not going to market to you (I promise) but just wanted to make everyone aware of this newsletter in case you are interested. Return to your open source goodness…",
+        "ts": "1518540097.000822"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "<@U02DGQYK1> I was actually meaning to talk about that",
+        "ts": "1518542852.000120"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "(not the issue but about partman directives)",
+        "ts": "1518542866.000225"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "<https:\/\/github.com\/digitalrebar\/provision-content\/compare\/master...lae:fix\/part-scheme?expand=1>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision-content",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision-content\/compare\/master...lae:fix\/part-scheme?expand=1",
+                "text": "provision-content - DigitalRebar Provision Content",
+                "fallback": "GitHub: digitalrebar\/provision-content",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision-content\/compare\/master...lae:fix\/part-scheme?expand=1",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1518542905.000696"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yikes — oops",
+        "ts": "1518543015.000364"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "We're currently using our own debian-9 and ubuntu-16 stages with that change as well as a change specifying a repo mirror (since it doesn't look like the Repo stuff is in community-content - and I haven't had a chance to look into it)",
+        "ts": "1518543036.000194"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "Anyway, I remembered why I may not have submitted that PR",
+        "ts": "1518543049.000779"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "I wasn't sure if we should have, e.g., \"part-seed-X\" for d-i templates and \"part-ks-X\" for ks templates",
+        "ts": "1518543095.000036"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "I had named it \"part-scheme-X\" to reduce the number of files to maintain and because we can check for OS in the part-scheme - this is actually how I was doing part templates in cobbler",
+        "edited": {
+            "user": "U54E4SD4G",
+            "ts": "1518543152.000000"
+        },
+        "ts": "1518543143.000171"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "but, apart from a default template, in my experience it's not very common to use a single template for both centos\/debian",
+        "ts": "1518543202.000584"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I thought about it.  You have to manage profiles either way.  So I let it be a single variable.  Part-scheme is a bug above",
+        "ts": "1518543211.000568"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "the `select-kickseed` parameter is used in the default bootenvs to override.  If you have your own bootenvs, then it is less of an issue.",
+        "ts": "1518543278.000336"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U54E4SD4G> uploaded a file: <https:\/\/rackn.slack.com\/files\/U54E4SD4G\/F98J9QR29\/image.png|image> and commented: actually never mind, turns out I didn't check for OS within the templates during our cobbler days, lol",
+        "file": {
+            "id": "F98J9QR29",
+            "created": 1518543382,
+            "timestamp": 1518543382,
+            "name": "image.png",
+            "title": "image",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U54E4SD4G",
+            "editable": false,
+            "size": 57488,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F98J9QR29\/image.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F98J9QR29\/download\/image.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F98J9QR29-fa2a437ce4\/image_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F98J9QR29-fa2a437ce4\/image_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F98J9QR29-fa2a437ce4\/image_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 157,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F98J9QR29-fa2a437ce4\/image_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 209,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F98J9QR29-fa2a437ce4\/image_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "image_exif_rotation": 1,
+            "original_w": 657,
+            "original_h": 286,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U54E4SD4G\/F98J9QR29\/image.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F98J9QR29-039020bed6",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 1,
+            "initial_comment": {
+                "id": "Fc99GCSD5M",
+                "created": 1518543382,
+                "timestamp": 1518543382,
+                "user": "U54E4SD4G",
+                "is_intro": true,
+                "comment": "actually never mind, turns out I didn't check for OS within the templates during our cobbler days, lol"
+            }
+        },
+        "user": "U54E4SD4G",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "lae",
+        "bot_id": null,
+        "ts": "1518543384.000019"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": ":slightly_smiling_face:",
+        "ts": "1518543402.000256"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "want me to submit that PR?",
+        "ts": "1518543478.000235"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "already took it.  :slightly_smiling_face:",
+        "ts": "1518543491.000368"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "tip content already updated",
+        "ts": "1518543503.000070"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "wew, kk",
+        "ts": "1518543505.000198"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U54E4SD4G> - the net of this was meant for me to warn you that I’m going to move all the partman refs inside the scheme tmpl.  This way people can deal with their own gpt or not.  Lvm or not.",
+        "ts": "1518543694.000657"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "hm",
+        "ts": "1518543735.000431"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "moving *all* of `d-i partman` is going to introduce a lot of duplication",
+        "ts": "1518543763.000255"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "I can understand moving some of them that actually configure partitioning, but several of them are to avoid prompts",
+        "edited": {
+            "user": "U54E4SD4G",
+            "ts": "1518543799.000000"
+        },
+        "ts": "1518543793.000183"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yeah the question is one of ordering.",
+        "ts": "1518543808.000268"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "ordering of the commands? it shouldn't matter I'm pretty sure",
+        "ts": "1518543834.000611"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U02DGQYK1> uploaded a file: <https:\/\/rackn.slack.com\/files\/U02DGQYK1\/F98EC1UKW\/-.yaml|Untitled> and commented: This is it right now.",
+        "file": {
+            "id": "F98EC1UKW",
+            "created": 1518543854,
+            "timestamp": 1518543854,
+            "name": "-.yaml",
+            "title": "Untitled",
+            "mimetype": "text\/plain",
+            "filetype": "yaml",
+            "pretty_type": "YAML",
+            "user": "U02DGQYK1",
+            "editable": true,
+            "size": 1289,
+            "mode": "snippet",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F98EC1UKW\/-.yaml?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F98EC1UKW\/download\/-.yaml?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "permalink": "https:\/\/rackn.slack.com\/files\/U02DGQYK1\/F98EC1UKW\/-.yaml",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F98EC1UKW-5cf7227a5a",
+            "edit_link": "https:\/\/rackn.slack.com\/files\/U02DGQYK1\/F98EC1UKW\/-.yaml\/edit",
+            "preview": "# Partitioner Label Default (GPT)\r\nd-i partman\/choose_label string gpt\r\nd-i partman-basicfilesystems\/choose_label string gpt\r\nd-i partman-partitioning\/choose_label string gpt\r\nd-i partman\/default_label string gpt\r",
+            "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre><span class=\"cm-comment\"># Partitioner Label Default (GPT)<\/span><\/pre><\/div>\n<div><pre>d-i partman\/choose_label string gpt<\/pre><\/div>\n<div><pre>d-i partman-basicfilesystems\/choose_label string gpt<\/pre><\/div>\n<div><pre>d-i partman-partitioning\/choose_label string gpt<\/pre><\/div>\n<div><pre>d-i partman\/default_label string gpt<\/pre><\/div>\n<\/div>\n<\/div>\n",
+            "lines": 31,
+            "lines_more": 26,
+            "preview_is_truncated": true,
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 1,
+            "initial_comment": {
+                "id": "Fc99GJAT71",
+                "created": 1518543854,
+                "timestamp": 1518543854,
+                "user": "U02DGQYK1",
+                "is_intro": true,
+                "comment": "This is it right now."
+            }
+        },
+        "user": "U02DGQYK1",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "greg",
+        "bot_id": null,
+        "ts": "1518543855.000088"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It seems to have for others in the community.",
+        "ts": "1518543866.000408"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U54E4SD4G> I'm emprically finding out that the partman directive odering does count... (it seems anyways)",
+        "ts": "1518543883.000641"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The last four could live outside.  They are common and always that value I think.",
+        "ts": "1518543902.000553"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "And for LVM vs. not, or md raid with LVM on top, directives differ",
+        "ts": "1518543919.000493"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "like, putting just the labels inside part-scheme causes issues?",
+        "edited": {
+            "user": "U54E4SD4G",
+            "ts": "1518543935.000000"
+        },
+        "ts": "1518543920.000623"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "No, the directives may need to change depending on what partitioning scheme is used",
+        "ts": "1518543947.000467"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "makes sense to have them all in one \"container\" (template)",
+        "ts": "1518543967.000024"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "instead of split between two",
+        "ts": "1518543983.000545"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I use `select-kickseed` to template non-partitioning directives",
+        "ts": "1518544064.000217"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "that may differ among my builds",
+        "ts": "1518544080.000248"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "I'm just not a big fan of a lot of boilerplate, but I guess if people are actually having issues with the current layout, I can't really quite complain",
+        "ts": "1518544106.000047"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "(and I'm just slightly surprised I haven't run into any issues with the part-schemes I've written)",
+        "ts": "1518544137.000176"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "then `part-scheme` should have all of the partitioning in it, enabling \"mix-n-match\" between the two",
+        "ts": "1518544137.000256"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I’m in favoring of localizing common stuff.  I need to think about this some more.",
+        "ts": "1518544145.000114"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "well the problem becomes one of depth of nesting.",
+        "ts": "1518544161.000380"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Does anyone know if you add d-i directives that aren't needed\/call on, if it messes up the installer automation?",
+        "ts": "1518544196.000725"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "not sure",
+        "ts": "1518544213.000364"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "me either",
+        "ts": "1518544217.000377"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "I don't usually need several of the boilerplate in net-seed - specifically LVM, and stuff provisions fine",
+        "ts": "1518544249.000460"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "probably depends upon the directive and its use.",
+        "ts": "1518544258.000134"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Also, was thinking of if all partitoning in a single template, then community could build up a library of partitoning templates that could be easily plugged into the default DRP-provided kickseed, or a customized one",
+        "ts": "1518544306.000093"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "(also need to think about\/do the same for RedHat-family distros, using kickstart syntax)",
+        "ts": "1518544378.000240"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "need to think about this and let it cook a little.  I’m not going to change anything at this instant.  I think.",
+        "ts": "1518544414.000570"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, fair enough",
+        "ts": "1518544421.000718"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I think I can environ some ways to get everybody to where they want to go, but want it bake a little more.",
+        "ts": "1518544454.000546"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I just had to fall back to Cobbler \/ Clonezilla imaging to do deploys, b\/c DRP preseed templates were erroring out on platforms I need to install with specific partitioning requirements...",
+        "ts": "1518544526.000351"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I was thinking it was the interaction between the `d-i partman*` directives in the net-seed.tmpl (or custom version thereof) and the directives I put in my custom `part-scheme`-called template",
+        "ts": "1518544599.000405"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "ok",
+        "ts": "1518544623.000138"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "It's basically not really a DRP-related problem (except of the `d-i partman*` directives split, if that's the issue) but more of a \"how to do a specific partitioning recipe in preseed\" problem",
+        "ts": "1518544720.000052"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I just don't want to have to have pairs of `select-kickseed` and `part-scheme` templates that I need to keep track of",
+        "ts": "1518544827.000666"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Hence the ask to combine all `d-i partman*` stuff into one template",
+        "ts": "1518544874.000571"
+    },
+    {
+        "type": "message",
+        "user": "U968XRW4E",
+        "text": "for a new deployment would the recommended path be to use the dockerized DRP?",
+        "ts": "1518546775.000408"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U968XRW4E> - I hope you are not referring to the old Digital Rebar ver2 version?   Digital Rebar Provision (DRP) ver3 is NOT containerized as distributed (but can easily be built in to a container)",
+        "ts": "1518546882.000092"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<!channel> We look forward to seeing you at the V011 meetup in 20 mins or so ... details:\n<https:\/\/www.meetup.com\/digitalrebar\/events\/247321385>",
+        "attachments": [
+            {
+                "service_name": "Meetup",
+                "title": "v011: DHCP Changes, Feature Flags and Version, Scrub 'dem bugz, NextBoot magic",
+                "title_link": "https:\/\/www.meetup.com\/digitalrebar\/events\/247321385",
+                "text": "Tue, Feb 13, 2018, 11:00 AM: Start Time is 11:00 am PST (12:00 pm MST, 1:00 pm CST, 2:00 pm EST ... )Welcome to the Digital Rebar online meetup. Please note we'll be using <http:\/\/Zoom.us|Zoom.us> for our meeting; so",
+                "fallback": "Meetup: v011: DHCP Changes, Feature Flags and Version, Scrub 'dem bugz, NextBoot magic",
+                "image_url": "https:\/\/secure.meetupstatic.com\/photos\/event\/d\/1\/b\/1\/600_467453681.jpeg",
+                "fields": [
+                    {
+                        "title": "Where",
+                        "value": "Online <https:\/\/zoom.us\/j\/3403934274> Mountain View, CA",
+                        "short": true
+                    },
+                    {
+                        "title": "When",
+                        "value": "Tue, Feb 13, 2018, 11:00 AM",
+                        "short": true
+                    }
+                ],
+                "from_url": "https:\/\/www.meetup.com\/digitalrebar\/events\/247321385",
+                "image_width": 472,
+                "image_height": 250,
+                "image_bytes": 69998,
+                "service_icon": "https:\/\/www.meetup.com\/mu_static\/en-US\/5a55b7f35a300adf7c619ca2aadb8057.png",
+                "id": 1
+            }
+        ],
+        "ts": "1518547083.000070"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "our agenda is at:  <https:\/\/docs.google.com\/document\/d\/1bt5fTVRFrvDBg_ZOHnsxtmZhMDIDEnX4SuBSNBgXFxU>",
+        "ts": "1518547270.000546"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U6QFVRJNB> shared a file: <https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/F98G2E0AE\/v011__dhcp_changes__feature_flags_and_version__scrub__dem_bugz__nextboot_magic|v011: DHCP Changes, Feature Flags and Version, Scrub 'dem bugz, NextBoot magic>",
+        "file": {
+            "id": "F98G2E0AE",
+            "created": 1518547272,
+            "timestamp": 1518547272,
+            "name": "v011: DHCP Changes, Feature Flags and Version, Scrub 'dem bugz, NextBoot magic",
+            "title": "v011: DHCP Changes, Feature Flags and Version, Scrub 'dem bugz, NextBoot magic",
+            "mimetype": "application\/vnd.google-apps.document",
+            "filetype": "gdoc",
+            "pretty_type": "GDocs Document",
+            "user": "U6QFVRJNB",
+            "editable": false,
+            "size": 3369,
+            "mode": "external",
+            "is_external": true,
+            "external_type": "gdrive",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/docs.google.com\/document\/d\/1bt5fTVRFrvDBg_ZOHnsxtmZhMDIDEnX4SuBSNBgXFxU",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F98G2E0AE-2487a25c62\/v011__dhcp_changes__feature_flags_and_version__scrub__dem_bugz__nextboot_magic_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F98G2E0AE-2487a25c62\/v011__dhcp_changes__feature_flags_and_version__scrub__dem_bugz__nextboot_magic_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F98G2E0AE-2487a25c62\/v011__dhcp_changes__feature_flags_and_version__scrub__dem_bugz__nextboot_magic_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 278,
+            "thumb_360_h": 360,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F98G2E0AE-2487a25c62\/v011__dhcp_changes__feature_flags_and_version__scrub__dem_bugz__nextboot_magic_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 371,
+            "thumb_480_h": 480,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F98G2E0AE-2487a25c62\/v011__dhcp_changes__feature_flags_and_version__scrub__dem_bugz__nextboot_magic_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F98G2E0AE-2487a25c62\/v011__dhcp_changes__feature_flags_and_version__scrub__dem_bugz__nextboot_magic_720.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 557,
+            "thumb_720_h": 720,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F98G2E0AE-2487a25c62\/v011__dhcp_changes__feature_flags_and_version__scrub__dem_bugz__nextboot_magic_800.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 1035,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F98G2E0AE-2487a25c62\/v011__dhcp_changes__feature_flags_and_version__scrub__dem_bugz__nextboot_magic_960.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 742,
+            "thumb_960_h": 960,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F98G2E0AE-2487a25c62\/v011__dhcp_changes__feature_flags_and_version__scrub__dem_bugz__nextboot_magic_1024.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 791,
+            "thumb_1024_h": 1024,
+            "image_exif_rotation": 1,
+            "original_w": 800,
+            "original_h": 1035,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/F98G2E0AE\/v011__dhcp_changes__feature_flags_and_version__scrub__dem_bugz__nextboot_magic",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0,
+            "has_rich_preview": true
+        },
+        "user": "U6QFVRJNB",
+        "upload": false,
+        "display_as_bot": false,
+        "username": "shane",
+        "bot_id": null,
+        "ts": "1518547276.000201"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "reference to <https:\/\/github.com\/Azure\/azure-cli\/issues\/5541>? lol",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "[feature]: easter egg mode where all errors are spit out by clippy · Issue #5541 · Azure\/azure-cli",
+                "title_link": "https:\/\/github.com\/Azure\/azure-cli\/issues\/5541",
+                "text": "There could be an optional flag to turn it on. For example (<http:\/\/textart.io\/cowsay\/clippy>): \/ it looks like you want to allocate \\ \\ an ipv4 addr but you're all out \/ ----------------------...",
+                "fallback": "GitHub: [feature]: easter egg mode where all errors are spit out by clippy · Issue #5541 · Azure\/azure-cli",
+                "from_url": "https:\/\/github.com\/Azure\/azure-cli\/issues\/5541",
+                "thumb_url": "https:\/\/avatars2.githubusercontent.com\/u\/1445228?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1518552214.000758"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "<@U416T0AAX> hold up - when you made custom `part-scheme` templates are you sure you weren't hitting this bug? <https:\/\/github.com\/digitalrebar\/provision-content\/pull\/56\/files>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "Correct part-scheme reference in preseed template by galthaus · Pull Request #56 · digitalrebar\/provision-content",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision-content\/pull\/56\/files",
+                "text": "provision-content - DigitalRebar Provision Content",
+                "fallback": "GitHub: Correct part-scheme reference in preseed template by galthaus · Pull Request #56 · digitalrebar\/provision-content",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision-content\/pull\/56\/files",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/724965?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1518552324.000637"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "where the part-scheme wouldn't have been loaded if it wasn't named `part-seed-$scheme`",
+        "ts": "1518552362.000692"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "I had fixed it in a local template a long time ago",
+        "ts": "1518552377.000211"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U54E4SD4G> Yeah, figured that one out...",
+        "ts": "1518552378.000229"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<!here> - v3.7.0 is going to be cut in the next day or two ... if any of you have extra cycles to test `tip` - please do so - there are a LOT of changes, bug fixes, and enhancements ... we appreciate any additional testing and verification in different environments prior to cutting the v3.7.0 release - THANKS !!",
+        "ts": "1518552480.000148"
+    },
+    {
+        "type": "message",
+        "user": "U968XRW4E",
+        "text": "i think <@U02DGQYK1> already captured this, but pinning major versions in docker hub would be super cool",
+        "ts": "1518552750.000490"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "there are docker image releases?",
+        "ts": "1518552794.000377"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "strangely enough there kinda is.",
+        "ts": "1518552827.000486"
+    },
+    {
+        "type": "message",
+        "user": "U968XRW4E",
+        "text": "i mean, as long as you love living off `master` there are",
+        "ts": "1518552842.000530"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<https:\/\/hub.docker.com\/r\/digitalrebar\/provision\/>",
+        "ts": "1518552853.000381"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "but like <@U968XRW4E> mentions it is rebuilt when I move tip.  So not quite master, but close.",
+        "ts": "1518552874.000031"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "oh",
+        "ts": "1518552886.000139"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "i've just been living through my ansible stuff lol",
+        "ts": "1518552897.000078"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "More thinking for me todo.",
+        "ts": "1518553089.000365"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "while I'm still awake",
+        "ts": "1518555258.000616"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "I have the following stage",
+        "ts": "1518555266.000422"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "```\n[lae@yuzu fireeye-content]$ cat content\/stages\/labs-debian-9.yml \n---\nName: \"labs-debian-9-install\"\nDescription: \"Debian 9 install stage for FireEye Labs environment.\"\nBootEnv: \"labs-debian-9-install\"\nRunnerWait: true\nTasks:\n  - \"ubuntu-drp-only-repos\"\n  - \"enforce-public-key-authentication\"\n  - \"default-user-access\"\nMeta:\n  icon: \"download\"\n  color: \"yellow\"\n  title: \"FireEye Content\"\n```",
+        "ts": "1518555292.000409"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "I removed change-stage recently after parsing through some chat logs and community-content commit history, but I still have the issue where `drpcli processjobs` hangs after all tasks complete",
+        "edited": {
+            "user": "U54E4SD4G",
+            "ts": "1518555542.000000"
+        },
+        "ts": "1518555359.000280"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "i see all the completed jobs in the UI",
+        "ts": "1518555376.000549"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "but if I run `drpcli machines update $UUID '{ \"Runnable\": true }'` externally, it exits and finishes the install",
+        "ts": "1518555451.000384"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Not sure why that frees it.  Two things:",
+        "ts": "1518555538.000154"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "1 set runnerwait to false will cause the runner to exit when done with all tasks in the stage assuming no workflow changes stage on you ",
+        "ts": "1518555589.000518"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "2 if this is part of a workflow, use the stop action instead of success for the last stage you want to run during the seed file ",
+        "ts": "1518555637.000707"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Stop in the workflow will cause the runner to exit on the stage change. ",
+        "ts": "1518555667.000394"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "`    labs-debian-9-install: \"complete-nowait:Success\"`",
+        "ts": "1518555670.000382"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "oh",
+        "ts": "1518555671.000309"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "I see",
+        "ts": "1518555674.000545"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "I had also tried setting `RunnerWait: false` previously but it hadn't helped (and noticed it was true in the community repo anyway)",
+        "ts": "1518555707.000157"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Well that should have worked.  I think. ",
+        "ts": "1518555771.000107"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Does complete-nowait have runnerwait true?",
+        "ts": "1518555814.000252"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "complete-nowait is in community repo and it has runnerwait false last i checked",
+        "ts": "1518555871.000101"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "(which is the point of nowait after all)",
+        "ts": "1518555887.000565"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "let me try again",
+        "ts": "1518555897.000212"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "while i'm at it guess I'll test some things in drpcli tip",
+        "ts": "1518556017.000396"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "yeah so setting RunnerWait: false in the stage itself had no effect, I needed to update change-stage\/map to Stop",
+        "ts": "1518558485.000539"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "also my yaml issue and the change stage error both appear resolved for me on tip",
+        "ts": "1518558670.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "woot woot !!",
+        "ts": "1518558688.000567"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U54E4SD4G> ... go to sleep - you're making me tired just thinking about you being up still :slightly_smiling_face:",
+        "ts": "1518558701.000414"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "I'm like, not sleepy",
+        "ts": "1518558789.000131"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Yay for energy drinks !!",
+        "ts": "1518558808.000338"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": ":joy:",
+        "ts": "1518558825.000175"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "<https:\/\/aur.archlinux.org\/packages\/drpcli-tip> and for the arch-initiated users I guess I made a drpcli-tip PKGBUILD",
+        "attachments": [
+            {
+                "title": "AUR (en) - drpcli-tip",
+                "title_link": "https:\/\/aur.archlinux.org\/packages\/drpcli-tip",
+                "text": "Command-line client for Digital Rebar Provision, an API-driven DHCP\/PXE\/TFTP provisioning system. (Latest unstable release)",
+                "fallback": "AUR (en) - drpcli-tip",
+                "from_url": "https:\/\/aur.archlinux.org\/packages\/drpcli-tip",
+                "service_name": "aur.archlinux.org",
+                "id": 1
+            }
+        ],
+        "ts": "1518559128.000500"
+    }
+]

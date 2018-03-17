@@ -1,0 +1,207 @@
+[
+    {
+        "type": "message",
+        "user": "U7YFG3W94",
+        "text": "Well I'm going to call it a night. I tried provisioning centos7 on one system but couldn't figure out the necessary steps. \n<@U6QFVRJNB> I'm assuming you want to update discovery -&gt; discover <http:\/\/provision.readthedocs.io\/en\/stable\/doc\/operation.html#preference-setting>",
+        "ts": "1510473894.000049"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "He did on the latest tree.  Once we push the next release stable will update.  ",
+        "ts": "1510504640.000004",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U7YFG3W94"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "text": "HI all, I seem to be missing something. In the docs you claim 5mins to install on a R-Pi, but there are no ARM binaries?",
+        "username": "chriscowley",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1510511667.000005"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "hi @chriscowley - welcome ...",
+        "ts": "1510511825.000051"
+    },
+    {
+        "text": "hi @rackneng ",
+        "username": "chriscowley",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1510511880.000083"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Install can indeed happen in under 5mins - however, I believe our ARM builds were dropped due to lack of interest - if you have an ARM platform w\/ Go 1.9 on it - you can pretty easily build from source",
+        "ts": "1510511882.000094"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if there's enough interest in ARM platform - we definitely would add it back in to the builds",
+        "ts": "1510511903.000009"
+    },
+    {
+        "text": "Given the proliferation of R-Pis in the world, I think it would be cool - at least remove it from the docs :-)",
+        "username": "chriscowley",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1510511937.000003"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "can you point me to which doc specifically you're referring to ?",
+        "ts": "1510511954.000119"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I'm working on some doc cleanup right now - I'll address that",
+        "ts": "1510511965.000045"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(BTW - this is Shane, pleased to meet you)",
+        "ts": "1510511977.000069"
+    },
+    {
+        "text": "http:\/\/rebar.digital\/#overview \"Our extensible stand-alone DHCP\/PXE\/IPXE service has minimal overhead so it can be installed and provisioning in under 5 minutes on a laptop, RPi or switch\"",
+        "username": "chriscowley",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1510512326.000023"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Ah yes - the claim is still true, we just haven't released ARM binaries for a while.   Thank you for pointing that out - I'm not hacking on those docs at the moment, but we'll get that cleaned up.   It's possible that <@U02DGQYK1> can add cross-compile support for ARM via our existing build system - not sure off hand how hard that will be to add in though ...",
+        "ts": "1510512527.000112"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "In the meantime - I'm taking off for a motorcycle ride ... back in a bit ... :slightly_smiling_face:",
+        "ts": "1510512545.000063"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The compilation is easy.  The packaging isn’t too bad.  The challenge is the target. ",
+        "ts": "1510512694.000049"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Finishing a Sunday. Thing. ",
+        "ts": "1510512718.000007"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "@chriscowley - if we cut an ARM release for you - do you have a RPi you'll play with it on ??",
+        "ts": "1510516905.000033"
+    },
+    {
+        "text": "Odroid actually (which is ARM64)",
+        "username": "chriscowley",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1510516924.000133"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if you intend to run w\/ the TFTP services enabled for DRP - you'll need the bsdtar, p7zip, and unzip tools installed in your Linux OS - those are (currently) the only external dependencies we have.",
+        "ts": "1510517234.000015"
+    },
+    {
+        "text": "I know",
+        "username": "chriscowley",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1510517252.000021"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "We have plans to get away from them as external dependencies, but the Go Lang libraries are still lacking in ISO support features we need",
+        "ts": "1510517265.000139"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Cool ... just wanted to highlight that.  :slightly_smiling_face:",
+        "ts": "1510517275.000122"
+    },
+    {
+        "text": "@rackneng I can read the docs - even if I am apparently not capable of reading the architecture of the golang binary I download :-( (arm6l != arm64)",
+        "username": "chriscowley",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1510517439.000088"
+    },
+    {
+        "text": "I've probably got an R-Pi I can test on too",
+        "username": "chriscowley",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1510517463.000041"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<!channel> - before you get your Turkey fix ... we hope you plan on joining us for our 5th installment of the Digital Rebar Provision online meetup ... our primary discussion will be around the Runner and Jobs as they relate to stage transitions - this was a hot topic we touched on in the previous meetup - and we'll continue in more depth ... see the Meetup pages for more details, RSVP, and link to full agenda:\n<https:\/\/www.meetup.com\/digitalrebar\/events\/243490159\/>",
+        "attachments": [
+            {
+                "service_name": "Meetup",
+                "title": "Digital Rebar",
+                "title_link": "https:\/\/www.meetup.com\/digitalrebar\/events\/243490159\/",
+                "text": "<https:\/\/zoom.us\/j\/3403934274> Welcome to the fifth (v005) Digital Rebar online meetup!  In today's meetup we'll discuss the status of Digital Rebar Provisio",
+                "fallback": "Meetup: Digital Rebar",
+                "thumb_url": "https:\/\/secure.meetupstatic.com\/photos\/event\/c\/a\/0\/0\/highres_464511712.jpeg",
+                "from_url": "https:\/\/www.meetup.com\/digitalrebar\/events\/243490159\/",
+                "thumb_width": 188,
+                "thumb_height": 186,
+                "service_icon": "https:\/\/secure.meetupstatic.com\/s\/img\/144395054627769971357\/logo\/swarm\/m_swarm_120x120.png",
+                "id": 1
+            }
+        ],
+        "ts": "1510521894.000088",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Meetup is schedule for Tuesday November 21st at 11am PST ...",
+        "ts": "1510521916.000063"
+    }
+]

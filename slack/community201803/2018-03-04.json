@@ -1,0 +1,33 @@
+[
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "<@U63ACQT8A> I'm only skimming through chat but 3.7.0 deployed fine for me with the following:\n```\n- name: Configure DR Provision API user\n  shell: \"drpcli users create {{ provision_api_user }}\"\n  args:\n    creates: \"\/var\/lib\/dr-provision\/digitalrebar\/users\/{{ provision_api_user }}.json\"\n\n- name: Update DR Provision API password\n  shell: \"drpcli -U {{ provision_api_user }} -P \\\"{{ provision_api_password }}\\\" prefs list &gt;\/dev\/null 2&gt;&amp;1 &amp;&amp; exit 0 || drpcli users password {{ provision_api_user }} \\\"{{ provision_api_password }}\\\" &amp;&amp; exit 114\"\n  register: provision_password_update\n  changed_when: provision_password_update.rc == 114\n  failed_when: provision_password_update.rc != 114 and provision_password_update.rc != 0\n\n- name: Update shell environment with DR Provision API credentials\n  copy:\n    content: \"#!\/bin\/bash\\nexport RS_KEY=\\\"{{ provision_api_user }}:{{ provision_api_password }}\\\"\"\n    dest: \"\/etc\/profile.d\/dr-provision.sh\"\n    mode: 0755\n\n- name: Remove default rocketskates user if different api_user is set\n  shell: \"drpcli users destroy rocketskates\"\n  args:\n    removes: \"\/var\/lib\/dr-provision\/digitalrebar\/users\/rocketskates.json\"\n```",
+        "ts": "1520193258.000124"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "well 3.7.1",
+        "ts": "1520193296.000096"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "(hadn't modified that since 3.2.0 or whatever was out last august)",
+        "ts": "1520193405.000071"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U54E4SD4G> I think that would only work if you already the admin user created and password set.  A fresh install wouldn’t work. Until 3.7.3",
+        "client_msg_id": "8C0B287F-3B4F-47EC-A551-5B06D76CC149",
+        "ts": "1520194650.000161"
+    },
+    {
+        "type": "message",
+        "user": "U7A3BJ884",
+        "text": "yah… I usually create a new instance everytime I test a change",
+        "ts": "1520196074.000092"
+    }
+]

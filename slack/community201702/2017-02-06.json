@@ -1,0 +1,1568 @@
+[
+    {
+        "text": "a call or meeting instead of via the community chat",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486388247.000081"
+    },
+    {
+        "text": "<@U416T0AAX|wdennis> I checked out the redeploy process and recorded a demo of how it should work for the UX and CLI.",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486418087.000082"
+    },
+    {
+        "text": "ubuntu-16.04",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486418089.000083"
+    },
+    {
+        "text": "I had some issues at first because I was using the CLI with \"rebar nodes commit X\" after I changed the value and that was causing issues if the noderoles were still in process.  Skipping the commit is OK for redeploy.",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486418176.000084"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DHRR2L> Thanks for the redeploy vid",
+        "ts": "1486432689.000085"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Am bring up a new DR system to try things out on now",
+        "ts": "1486432713.000086"
+    },
+    {
+        "text": "<@U02DHRR2L|zehicle> Ah okay, thanks will keep it in mind. Following through the deployment guide and videos for now to get a feel for it.",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486433360.000087"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Hmmm, installing DR via the ‘quickstart.sh’ script as a non-priv’d user does not seem to work… UI comes up, but no objects within",
+        "ts": "1486436723.000088"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Looks like I have all the needed containers running...",
+        "ts": "1486436814.000089"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F41U9CV5K\/docker_ps.txt|docker ps>",
+        "file": {
+            "id": "F41U9CV5K",
+            "created": 1486436860,
+            "timestamp": 1486436860,
+            "name": "docker_ps.txt",
+            "title": "docker ps",
+            "mimetype": "text\/plain",
+            "filetype": "text",
+            "pretty_type": "Plain Text",
+            "user": "U416T0AAX",
+            "editable": true,
+            "size": 2849,
+            "mode": "snippet",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F41U9CV5K\/docker_ps.txt?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F41U9CV5K\/download\/docker_ps.txt?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F41U9CV5K\/docker_ps.txt",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F41U9CV5K-4994383a72",
+            "edit_link": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F41U9CV5K\/docker_ps.txt\/edit",
+            "preview": "[dradmin@dr-admin ~]$ docker ps\r\nCONTAINER ID        IMAGE                                COMMAND                  CREATED             STATUS              PORTS                                          NAMES\r\n099aae20a075        digitalrebar\/dr_rebar_api:master     \"\/sbin\/docker-entr...\"   49 minutes ago      Up 49 minutes                                                      compose_rebar_api_1\r\n1cc2a084e7a7        digitalrebar\/dr_goiardi:master       \"\/sbin\/docker-entr...\"   49 minutes ago      Up 49 minutes                                                      compose_goiardi_1\r\nbf4ac44a69a7        digitalrebar\/dr_webproxy:master      \"\/sbin\/docker-entr...\"   49 minutes ago      Up 49 minutes                                                      compose_webproxy_1\r",
+            "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>[dradmin@dr-admin ~]$ docker ps<\/pre><\/div>\n<div><pre>CONTAINER ID        IMAGE                                COMMAND                  CREATED             STATUS              PORTS                                          NAMES<\/pre><\/div>\n<div><pre>099aae20a075        digitalrebar\/dr_rebar_api:master     &quot;\/sbin\/docker-entr...&quot;   49 minutes ago      Up 49 minutes                                                      compose_rebar_api_1<\/pre><\/div>\n<div><pre>1cc2a084e7a7        digitalrebar\/dr_goiardi:master       &quot;\/sbin\/docker-entr...&quot;   49 minutes ago      Up 49 minutes                                                      compose_goiardi_1<\/pre><\/div>\n<div><pre>bf4ac44a69a7        digitalrebar\/dr_webproxy:master      &quot;\/sbin\/docker-entr...&quot;   49 minutes ago      Up 49 minutes                                                      compose_webproxy_1<\/pre><\/div>\n<div><pre><\/pre><\/div>\n<\/div>\n<\/div>\n",
+            "lines": 16,
+            "lines_more": 11,
+            "preview_is_truncated": true,
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1486436861.000090"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "did you start it before as root?  your permissions may be in a bad state",
+        "ts": "1486437029.000091"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U416T0AAX>  - cd digitalrebar\/deploy\/compose",
+        "ts": "1486437270.000092"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "docker-compose logs -f rebar_api",
+        "ts": "1486437281.000093"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "or",
+        "ts": "1486437282.000094"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "docker-compose logs rebar_api &gt; \/tmp\/rebar.log",
+        "ts": "1486437293.000095"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That can give some hints to where we are at.  Hung, or errored or skipped.",
+        "ts": "1486437310.000096"
+    },
+    {
+        "text": "I’m getting confused about choosing access mode - host or forwarder. I’m trying to create a metal admin node, to manage all metal nodes.",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486437409.000097"
+    },
+    {
+        "text": "\"For a Metal or KVM booting dev-test add: --con-provisioner --access=FORWARDER\"",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486437425.000098"
+    },
+    {
+        "text": "generally, you want to use --access=HOST",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486437448.000099"
+    },
+    {
+        "text": "unless you are trying to run VMs locally",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486437454.000100"
+    },
+    {
+        "text": "\"Host mode … is useful for systems that are managing … joined nodes (VMs or physical nodes), or dedicated hosts\"",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486437468.000101"
+    },
+    {
+        "text": "which page are you reading?  I'll see about updating it.  because you also want --con-dhcp",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486437483.000102"
+    },
+    {
+        "text": "http:\/\/digital-rebar.readthedocs.io\/en\/latest\/deployment\/questions.html#what-access-mode-should-i-use",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486437491.000103"
+    },
+    {
+        "text": "what are you trying to do?",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486437496.000104"
+    },
+    {
+        "text": "http:\/\/digital-rebar.readthedocs.io\/en\/latest\/deployment\/install\/linux.html",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486437499.000105"
+    },
+    {
+        "text": "Create an admin node on metal, to manage systems all on metal.",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486437523.000106"
+    },
+    {
+        "text": "then you'll want host mode.   ",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486437552.000107"
+    },
+    {
+        "text": "Thanks",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486437560.000108"
+    },
+    {
+        "text": "I did see a —con-dhcp reference somewhere in the docs",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486437571.000109"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DHRR2L> negative, downloaded quickstart.sh &amp; then exec’d it as a non-priv’d user (one I made for DR, ‘dradmin’)",
+        "ts": "1486437573.000110"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "I think you may need that user to have sudoer rights",
+        "ts": "1486437634.000111"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Oh, I see <@U02DGQYK1> responded - stand by, let me look...",
+        "ts": "1486437637.000112"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DHRR2L> yes, the user does have sudo rights (in the ‘wheel’ group in CentOS 7)",
+        "ts": "1486437673.000113"
+    },
+    {
+        "text": "Ah yes, last question on deployhment\/questions.html in context of Provisioner - mentions DHCP and —con-dhcp",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486437673.000114"
+    },
+    {
+        "text": "@gregoryo2008_twitter you'll need to make sure you understand your DHCP \/ Network environment.  Do you have another DHCP server on your network?",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486437702.000115"
+    },
+    {
+        "text": "Currently yes, but we’re about to turn it off (:",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486437718.000116"
+    },
+    {
+        "text": "Here's a video about setting up DHCP - it MUST match your network environment",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486437755.000117"
+    },
+    {
+        "text": "https:\/\/www.youtube.com\/watch?v=5YWMlYYuu-s&amp;index=9&amp;list=PLXPBeIrpXjfgurJuwVjZkcfmatCoXYM_v",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486437756.000118"
+    },
+    {
+        "text": "Okay I’ll leap ahead and watch that first. I was planning to hit go and then watch vids - I’m up to 002",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486437781.000119"
+    },
+    {
+        "text": "that one is pretty important for bare metal.",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486437811.000120"
+    },
+    {
+        "text": "Yep, makes sense",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486437818.000121"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DGQYK1> Seeing stuff in rebar_api logs like this:",
+        "ts": "1486437833.000122"
+    },
+    {
+        "text": "forwarder is used when you don't want to leak DHCP to your tenwork",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486437839.000123"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F41PS2FJ7\/-.txt|Untitled>",
+        "file": {
+            "id": "F41PS2FJ7",
+            "created": 1486437840,
+            "timestamp": 1486437840,
+            "name": "-.txt",
+            "title": "Untitled",
+            "mimetype": "text\/plain",
+            "filetype": "text",
+            "pretty_type": "Plain Text",
+            "user": "U416T0AAX",
+            "editable": true,
+            "size": 2079,
+            "mode": "snippet",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F41PS2FJ7\/-.txt?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F41PS2FJ7\/download\/-.txt?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F41PS2FJ7\/-.txt",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F41PS2FJ7-bc773b035a",
+            "edit_link": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F41PS2FJ7\/-.txt\/edit",
+            "preview": "rebar_api_1    | 2017\/02\/06 22:04:40 Could not connect to Rebar: Unable to verify existence of system user, cannot use trusted session: Get https:\/\/172.17.0.9:3000\/api\/v2\/users\/system: dial tcp 172.17.0.9:3000: getsockopt: connection refused\r\nrebar_api_1    |     2017\/02\/06 22:04:43 [WARN] agent: Check 'service:rebar-api-service' is now warning\r\nrebar_api_1    |     2017\/02\/06 22:04:43 [INFO] agent: Synced check 'service:rebar-api-service'\r\nrebar_api_1    | 2017\/02\/06 22:04:48 Could not connect to Rebar: Unable to verify existence of system user, cannot use trusted session: Get https:\/\/172.17.0.9:3000\/api\/v2\/users\/system: dial tcp 172.17.0.9:3000: getsockopt: connection refused\r\nrebar_api_1    |     2017\/02\/06 22:04:52 [INFO] memberlist: Suspect eaa4592facee has failed, no acks received\r",
+            "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>rebar_api_1    | 2017\/02\/06 22:04:40 Could not connect to Rebar: Unable to verify existence of system user, cannot use trusted session: Get https:\/\/172.17.0.9:3000\/api\/v2\/users\/system: dial tcp 172.17.0.9:3000: getsockopt: connection refused<\/pre><\/div>\n<div><pre>rebar_api_1    |     2017\/02\/06 22:04:43 [WARN] agent: Check 'service:rebar-api-service' is now warning<\/pre><\/div>\n<div><pre>rebar_api_1    |     2017\/02\/06 22:04:43 [INFO] agent: Synced check 'service:rebar-api-service'<\/pre><\/div>\n<div><pre>rebar_api_1    | 2017\/02\/06 22:04:48 Could not connect to Rebar: Unable to verify existence of system user, cannot use trusted session: Get https:\/\/172.17.0.9:3000\/api\/v2\/users\/system: dial tcp 172.17.0.9:3000: getsockopt: connection refused<\/pre><\/div>\n<div><pre>rebar_api_1    |     2017\/02\/06 22:04:52 [INFO] memberlist: Suspect eaa4592facee has failed, no acks received<\/pre><\/div>\n<div><pre><\/pre><\/div>\n<\/div>\n<\/div>\n",
+            "lines": 13,
+            "lines_more": 8,
+            "preview_is_truncated": true,
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1486437841.000124"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That seems like consul didn't start right.",
+        "ts": "1486437895.000125"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "hmmm -",
+        "ts": "1486437957.000126"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U416T0AAX> - have you confessed to me your setup?",
+        "ts": "1486438144.000127"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Forgive me father for I have sinned… :wink:",
+        "ts": "1486438274.000128"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "CentOS 7.3, made a regular user ‘dradmin’, home = \/home\/dradmin",
+        "ts": "1486438327.000129"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Added to ‘wheel’ group which grants sudoer rights",
+        "ts": "1486438349.000130"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "D\/l’d ‘quickstart’ script via: curl -fsSL <https:\/\/raw.githubusercontent.com\/digitalrebar\/digitalrebar\/master\/deploy\/quickstart.sh> -o drqs.sh",
+        "ts": "1486438384.000131"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "(into \/home\/dradmin)",
+        "ts": "1486438399.000132"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "curl | bash",
+        "ts": "1486438418.000133"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "curl | bash",
+        "ts": "1486438420.000134"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "curl | bash",
+        "ts": "1486438422.000135"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay or not",
+        "ts": "1486438425.000136"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "chmod +x, then .\/drqs.sh --con-provisioner --con-dhcp --access=FORWARDER",
+        "ts": "1486438442.000137"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "hmm",
+        "ts": "1486438484.000138"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Talk to me of your networking.",
+        "ts": "1486438501.000139"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "and what are you going to boot off this powerful tool that is DigitalRebar",
+        "ts": "1486438515.000140"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Ansible all ran fine, except at end got:",
+        "ts": "1486438572.000141"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F41U5N7B6\/-.txt|Untitled>",
+        "file": {
+            "id": "F41U5N7B6",
+            "created": 1486438579,
+            "timestamp": 1486438579,
+            "name": "-.txt",
+            "title": "Untitled",
+            "mimetype": "text\/plain",
+            "filetype": "text",
+            "pretty_type": "Plain Text",
+            "user": "U416T0AAX",
+            "editable": true,
+            "size": 726,
+            "mode": "snippet",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F41U5N7B6\/-.txt?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F41U5N7B6\/download\/-.txt?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F41U5N7B6\/-.txt",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F41U5N7B6-49fb43adba",
+            "edit_link": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F41U5N7B6\/-.txt\/edit",
+            "preview": "TASK [HOSTMODE wait until Digital Rebar service is up [1 upto 40 minutes]] *****\r\nskipping: [192.168.1.148]\r\n\r\nTASK [debug] *******************************************************************\r\nok: [192.168.1.148] => {\r",
+            "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>TASK [HOSTMODE wait until Digital Rebar service is up [1 upto 40 minutes]] *****<\/pre><\/div>\n<div><pre>skipping: [192.168.1.148]<\/pre><\/div>\n<div><pre><\/pre><\/div>\n<div><pre>TASK [debug] *******************************************************************<\/pre><\/div>\n<div><pre>ok: [192.168.1.148] =&gt; {<\/pre><\/div>\n<div><pre><\/pre><\/div>\n<\/div>\n<\/div>\n",
+            "lines": 14,
+            "lines_more": 9,
+            "preview_is_truncated": false,
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1486438580.000142"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "checking something.",
+        "ts": "1486438610.000143"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Have an awesome Dell PE2950 (newer one, yeah still old now but wth) with 16GB RAM",
+        "ts": "1486438619.000144"
+    },
+    {
+        "text": "Time to feed the :bear:!",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1486438620.000145"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "server is just on a single flat network, but am planning on testing w\/ KVM nodes on the server itself",
+        "ts": "1486438685.000146"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You might be up.",
+        "ts": "1486438717.000147"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<https:\/\/192.168.1.148>",
+        "ts": "1486438730.000148"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "nvm - you showed me stuff that shouldn't be up.",
+        "ts": "1486438750.000149"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You can try it, but I don't htink it is likely",
+        "ts": "1486438776.000150"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I got nuthin'",
+        "ts": "1486438780.000151"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "(nothing in Deployments, Workloads, Networks, etc.)",
+        "ts": "1486438822.000152"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You login though?",
+        "ts": "1486438856.000153"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yup, that worked",
+        "ts": "1486438864.000154"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Except I authd at the web UI login, then got an additional login as so:",
+        "ts": "1486438901.000155"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah - we have challenges at that.  We really need to get out of digest auth\/ssl mode and move to basic\/ssl.",
+        "ts": "1486438940.000156"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F41RWH3PU\/screen_shot_2017-02-06_at_9.57.05_pm.png|Screen Shot 2017-02-06 at 9.57.05 PM.png> and commented: double login screen",
+        "file": {
+            "id": "F41RWH3PU",
+            "created": 1486438941,
+            "timestamp": 1486438941,
+            "name": "Screen Shot 2017-02-06 at 9.57.05 PM.png",
+            "title": "Screen Shot 2017-02-06 at 9.57.05 PM.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 84615,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F41RWH3PU\/screen_shot_2017-02-06_at_9.57.05_pm.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F41RWH3PU\/download\/screen_shot_2017-02-06_at_9.57.05_pm.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F41RWH3PU-64523d6c5c\/screen_shot_2017-02-06_at_9.57.05_pm_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F41RWH3PU-64523d6c5c\/screen_shot_2017-02-06_at_9.57.05_pm_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F41RWH3PU-64523d6c5c\/screen_shot_2017-02-06_at_9.57.05_pm_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 247,
+            "thumb_360_h": 360,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F41RWH3PU-64523d6c5c\/screen_shot_2017-02-06_at_9.57.05_pm_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 329,
+            "thumb_480_h": 480,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F41RWH3PU-64523d6c5c\/screen_shot_2017-02-06_at_9.57.05_pm_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "image_exif_rotation": 1,
+            "original_w": 468,
+            "original_h": 682,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F41RWH3PU\/screen_shot_2017-02-06_at_9.57.05_pm.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F41RWH3PU-cee1f28495",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 1,
+            "initial_comment": {
+                "id": "Fc41548UJC",
+                "created": 1486438941,
+                "timestamp": 1486438941,
+                "user": "U416T0AAX",
+                "is_intro": true,
+                "comment": "double login screen"
+            }
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1486438943.000157"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It will clean that up.",
+        "ts": "1486438946.000158"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah.  We have an issue on in the UX.",
+        "ts": "1486438957.000159"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We use digest auth, but it really mucks up the browsers and since we switched to single page material design app, it gets confused.",
+        "ts": "1486438996.000160"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Anyway ...",
+        "ts": "1486439005.000161"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So lonely with nothing around...",
+        "ts": "1486439029.000162"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F41UHE7HT\/screen_shot_2017-02-06_at_10.43.18_pm.png|Screen Shot 2017-02-06 at 10.43.18 PM.png>",
+        "file": {
+            "id": "F41UHE7HT",
+            "created": 1486439040,
+            "timestamp": 1486439040,
+            "name": "Screen Shot 2017-02-06 at 10.43.18 PM.png",
+            "title": "Screen Shot 2017-02-06 at 10.43.18 PM.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 57185,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F41UHE7HT\/screen_shot_2017-02-06_at_10.43.18_pm.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F41UHE7HT\/download\/screen_shot_2017-02-06_at_10.43.18_pm.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F41UHE7HT-a4916dfb26\/screen_shot_2017-02-06_at_10.43.18_pm_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F41UHE7HT-a4916dfb26\/screen_shot_2017-02-06_at_10.43.18_pm_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F41UHE7HT-a4916dfb26\/screen_shot_2017-02-06_at_10.43.18_pm_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 119,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F41UHE7HT-a4916dfb26\/screen_shot_2017-02-06_at_10.43.18_pm_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 159,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F41UHE7HT-a4916dfb26\/screen_shot_2017-02-06_at_10.43.18_pm_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F41UHE7HT-a4916dfb26\/screen_shot_2017-02-06_at_10.43.18_pm_720.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 239,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F41UHE7HT-a4916dfb26\/screen_shot_2017-02-06_at_10.43.18_pm_960.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 319,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F41UHE7HT-a4916dfb26\/screen_shot_2017-02-06_at_10.43.18_pm_1024.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 340,
+            "image_exif_rotation": 1,
+            "original_w": 1437,
+            "original_h": 477,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F41UHE7HT\/screen_shot_2017-02-06_at_10.43.18_pm.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F41UHE7HT-a45b5b5d80",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1486439042.000163"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "can you check top on the system and see if it is pounding.",
+        "ts": "1486439057.000164"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Do you have a system deployment?",
+        "ts": "1486439079.000165"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Top looks OK to me...",
+        "ts": "1486439199.000166"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "ps auxwww | grep puma",
+        "ts": "1486439213.000167"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F41U800J0\/screen_shot_2017-02-06_at_10.45.55_pm.png|Screen Shot 2017-02-06 at 10.45.55 PM.png> and commented: top",
+        "file": {
+            "id": "F41U800J0",
+            "created": 1486439214,
+            "timestamp": 1486439214,
+            "name": "Screen Shot 2017-02-06 at 10.45.55 PM.png",
+            "title": "Screen Shot 2017-02-06 at 10.45.55 PM.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 106328,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F41U800J0\/screen_shot_2017-02-06_at_10.45.55_pm.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F41U800J0\/download\/screen_shot_2017-02-06_at_10.45.55_pm.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F41U800J0-75c542d209\/screen_shot_2017-02-06_at_10.45.55_pm_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F41U800J0-75c542d209\/screen_shot_2017-02-06_at_10.45.55_pm_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F41U800J0-75c542d209\/screen_shot_2017-02-06_at_10.45.55_pm_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 117,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F41U800J0-75c542d209\/screen_shot_2017-02-06_at_10.45.55_pm_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 156,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F41U800J0-75c542d209\/screen_shot_2017-02-06_at_10.45.55_pm_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F41U800J0-75c542d209\/screen_shot_2017-02-06_at_10.45.55_pm_720.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 234,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F41U800J0-75c542d209\/screen_shot_2017-02-06_at_10.45.55_pm_960.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 312,
+            "image_exif_rotation": 1,
+            "original_w": 978,
+            "original_h": 318,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F41U800J0\/screen_shot_2017-02-06_at_10.45.55_pm.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F41U800J0-aee870e810",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 1,
+            "initial_comment": {
+                "id": "Fc42GUNGDV",
+                "created": 1486439214,
+                "timestamp": 1486439214,
+                "user": "U416T0AAX",
+                "is_intro": true,
+                "comment": "top"
+            }
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1486439216.000168"
+    },
+    {
+        "text": "<@U02DHRR2L|zehicle> Okay the DHCP stuff all makes sense. Regarding the option to collapse ‘dhcp’ and ‘host’ networks into one - what is the benefit of having them separate?",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486439226.000169"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F41RXLFJ6\/puma.txt|puma>",
+        "file": {
+            "id": "F41RXLFJ6",
+            "created": 1486439255,
+            "timestamp": 1486439255,
+            "name": "puma.txt",
+            "title": "puma",
+            "mimetype": "text\/plain",
+            "filetype": "text",
+            "pretty_type": "Plain Text",
+            "user": "U416T0AAX",
+            "editable": true,
+            "size": 184,
+            "mode": "snippet",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F41RXLFJ6\/puma.txt?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F41RXLFJ6\/download\/puma.txt?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F41RXLFJ6\/puma.txt",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F41RXLFJ6-bdd5d107b2",
+            "edit_link": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F41RXLFJ6\/puma.txt\/edit",
+            "preview": "[dradmin@dr-admin digitalrebar]$ ps auxwww | grep puma\r\ndradmin  26746 16.9  1.8 1899128 295464 ?      Sl   17:04  16:12 puma 2.15.3 (ssl:\/\/[::]:3000?key=\/var\/run\/rebar\/server.key&cert",
+            "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>[dradmin@dr-admin digitalrebar]$ ps auxwww | grep puma<\/pre><\/div>\n<div><pre>dradmin  26746 16.9  1.8 1899128 295464 ?      Sl   17:04  16:12 puma 2.15.3 (ssl:\/\/[::]:3000?key=\/var\/run\/rebar\/server.key&amp;cert<\/pre><\/div>\n<\/div>\n<\/div>\n",
+            "lines": 2,
+            "lines_more": 0,
+            "preview_is_truncated": false,
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1486439255.000170"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "@gregoryo2008_twitter - well - it style and history",
+        "ts": "1486439271.000171"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U416T0AAX> - something seems to be running very slow",
+        "ts": "1486439302.000172"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DGQYK1> Ah, but what?",
+        "ts": "1486439330.000173"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "@gregoryo2008_twitter - the two ranges act as a discovery limiter for large environments.",
+        "ts": "1486439357.000174"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The dhcp range has a set of short leases and nodes are only in that range until they are assigned a more permanent static-ish IP.",
+        "ts": "1486439390.000175"
+    },
+    {
+        "text": "Sure, but it appears that anon leases can be short, while the known ones be longer, even when in the same pool.",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486439432.000176"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It is also the case that the ranges act as buffers for people that may not know all the things DHCP on their network.",
+        "ts": "1486439434.000177"
+    },
+    {
+        "text": "Something for us to keep in mind I guess. Sticking mostly to defaults for now!",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486439462.000178"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah - I'm not sure we've tried setting both anon and bound in the same range.  It seems like it should work the way you described and what makes sense in my head, but ...",
+        "ts": "1486439505.000179"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U416T0AAX> - hmmm - can you restart the rebar_api container?",
+        "ts": "1486439563.000180"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "cd digitalrebar\/deploy\/compose",
+        "ts": "1486439570.000181"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "docker-compose restart rebar_api",
+        "ts": "1486439576.000182"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "docker-compose logs -f rebar_api",
+        "ts": "1486439588.000183"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "This is slow (but not 49 minutes slow).  Rails apps start slowly.",
+        "ts": "1486439628.000184"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, restarted, but still seeing:",
+        "ts": "1486439886.000185"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F41UABRFE\/-.txt|Untitled>",
+        "file": {
+            "id": "F41UABRFE",
+            "created": 1486439894,
+            "timestamp": 1486439894,
+            "name": "-.txt",
+            "title": "Untitled",
+            "mimetype": "text\/plain",
+            "filetype": "text",
+            "pretty_type": "Plain Text",
+            "user": "U416T0AAX",
+            "editable": true,
+            "size": 1633,
+            "mode": "snippet",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F41UABRFE\/-.txt?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F41UABRFE\/download\/-.txt?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F41UABRFE\/-.txt",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F41UABRFE-402f64952b",
+            "edit_link": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F41UABRFE\/-.txt\/edit",
+            "preview": "rebar_api_1    | 2017\/02\/06 23:49:02 Could not connect to Rebar: Unable to verify existence of system user, cannot use trusted session: Get https:\/\/172.17.0.9:3000\/api\/v2\/users\/system: dial tcp 172.17.0.9:3000: getsockopt: connection refused\r\nrebar_api_1    |     2017\/02\/06 23:49:04 [WARN] agent: Check 'service:rebar-api-service' is now warning\r\nrebar_api_1    | 2017\/02\/06 23:49:08 Could not connect to Rebar: Unable to verify existence of system user, cannot use trusted session: Get https:\/\/172.17.0.9:3000\/api\/v2\/users\/system: dial tcp 172.17.0.9:3000: getsockopt: connection refused\r\nrebar_api_1    |     2017\/02\/06 23:49:15 [WARN] agent: Check 'service:rebar-api-service' is now warning\r\nrebar_api_1    | 2017\/02\/06 23:49:15 Could not connect to Rebar: Unable to verify existence of system user, cannot use trusted session: Get https:\/\/172.17.0.9:3000\/api\/v2\/users\/system: dial tcp 172.17.0.9:3000: getsockopt: connection refused\r",
+            "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>rebar_api_1    | 2017\/02\/06 23:49:02 Could not connect to Rebar: Unable to verify existence of system user, cannot use trusted session: Get https:\/\/172.17.0.9:3000\/api\/v2\/users\/system: dial tcp 172.17.0.9:3000: getsockopt: connection refused<\/pre><\/div>\n<div><pre>rebar_api_1    |     2017\/02\/06 23:49:04 [WARN] agent: Check 'service:rebar-api-service' is now warning<\/pre><\/div>\n<div><pre>rebar_api_1    | 2017\/02\/06 23:49:08 Could not connect to Rebar: Unable to verify existence of system user, cannot use trusted session: Get https:\/\/172.17.0.9:3000\/api\/v2\/users\/system: dial tcp 172.17.0.9:3000: getsockopt: connection refused<\/pre><\/div>\n<div><pre>rebar_api_1    |     2017\/02\/06 23:49:15 [WARN] agent: Check 'service:rebar-api-service' is now warning<\/pre><\/div>\n<div><pre>rebar_api_1    | 2017\/02\/06 23:49:15 Could not connect to Rebar: Unable to verify existence of system user, cannot use trusted session: Get https:\/\/172.17.0.9:3000\/api\/v2\/users\/system: dial tcp 172.17.0.9:3000: getsockopt: connection refused<\/pre><\/div>\n<div><pre><\/pre><\/div>\n<\/div>\n<\/div>\n",
+            "lines": 9,
+            "lines_more": 4,
+            "preview_is_truncated": true,
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1486439894.000186"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That is \"normal\"",
+        "ts": "1486439902.000187"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Oh good :stuck_out_tongue:",
+        "ts": "1486439912.000188"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That part about the rails app coming up taking forever.  That is it.",
+        "ts": "1486439919.000189"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Ah",
+        "ts": "1486439929.000190"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "how about now?",
+        "ts": "1486440390.000191"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "same few lines?",
+        "ts": "1486440396.000192"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "This is where I’m at now:",
+        "ts": "1486440478.000193"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F41UNMQ5T\/-.txt|Untitled>",
+        "file": {
+            "id": "F41UNMQ5T",
+            "created": 1486440506,
+            "timestamp": 1486440506,
+            "name": "-.txt",
+            "title": "Untitled",
+            "mimetype": "text\/plain",
+            "filetype": "text",
+            "pretty_type": "Plain Text",
+            "user": "U416T0AAX",
+            "editable": true,
+            "size": 1195,
+            "mode": "snippet",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F41UNMQ5T\/-.txt?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F41UNMQ5T\/download\/-.txt?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F41UNMQ5T\/-.txt",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F41UNMQ5T-c43dc02204",
+            "edit_link": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F41UNMQ5T\/-.txt\/edit",
+            "preview": "rebar_api_1    | Calling cmd: \/usr\/local\/entrypoint.d\/24-build-initial-machine-keys.sh\r\nrebar_api_1    | {\r\nrebar_api_1    |   \"id\": 3,\r\nrebar_api_1    |   \"uuid\": \"3b78c792-856a-4f36-9043-6f1f3e7cf7b4\",\r\nrebar_api_1    |   \"username\": \"machine-install\",\r",
+            "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>rebar_api_1    | Calling cmd: \/usr\/local\/entrypoint.d\/24-build-initial-machine-keys.sh<\/pre><\/div>\n<div><pre>rebar_api_1    | {<\/pre><\/div>\n<div><pre>rebar_api_1    |   &quot;id&quot;: 3,<\/pre><\/div>\n<div><pre>rebar_api_1    |   &quot;uuid&quot;: &quot;3b78c792-856a-4f36-9043-6f1f3e7cf7b4&quot;,<\/pre><\/div>\n<div><pre>rebar_api_1    |   &quot;username&quot;: &quot;machine-install&quot;,<\/pre><\/div>\n<div><pre><\/pre><\/div>\n<\/div>\n<\/div>\n",
+            "lines": 19,
+            "lines_more": 14,
+            "preview_is_truncated": true,
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1486440506.000194"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Do the disks work? :slightly_smiling_face:",
+        "ts": "1486440598.000195"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "umm - sooo - it is trying to load the basic content.",
+        "ts": "1486440615.000196"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You should see something like this:",
+        "ts": "1486440620.000197"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "```rebar_api_1    | trueCalling cmd: \/usr\/local\/entrypoint.d\/25-load-initial-workloads.sh\nrebar_api_1    |     2017\/02\/03 21:35:42 [INFO] serf: EventMemberJoin: 4afe50dc6d03 172.17.0.3\nrebar_api_1    | Loading the core barclamp metadata\nrebar_api_1    |     2017\/02\/03 21:35:52 [INFO] serf: EventMemberUpdate: 45f9fd79fd96\nrebar_api_1    | Loading barclamp metadata from \/opt\/digitalrebar\/rackn-workloads\/6fusion\/rebar.yml\nrebar_api_1    | Loading barclamp metadata from \/opt\/digitalrebar\/rackn-workloads\/burnin\/rebar.yml\nrebar_api_1    | Loading barclamp metadata from \/opt\/digitalrebar\/rackn-workloads\/kubernetes\/efk-logging\/rebar.yml\nrebar_api_1    | Loading barclamp metadata from \/opt\/digitalrebar\/rackn-workloads\/kubernetes\/deis\/rebar.yml\nrebar_api_1    | Loading barclamp metadata from \/opt\/digitalrebar\/rackn-workloads\/kubernetes\/openstack\/rebar.yml\nrebar_api_1    | Loading barclamp metadata from \/opt\/digitalrebar\/rackn-workloads\/kubernetes\/helm\/rebar.yml\nrebar_api_1    | Loading barclamp metadata from \/opt\/digitalrebar\/rackn-workloads\/kubernetes\/heapster-monitoring\/rebar.yml\n```",
+        "ts": "1486440664.000198"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "kinda like that - that is my private play things, but ...",
+        "ts": "1486440682.000199"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "loading core is the first one though.  Always.",
+        "ts": "1486440722.000200"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - new issue to check.",
+        "ts": "1486440751.000201"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "docker-compose ps | grep rule",
+        "ts": "1486440757.000202"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The rule-engine may be having problems - that start up script waits for it to start.",
+        "ts": "1486440826.000203"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "docker-compose restart rule-engine",
+        "ts": "1486440839.000204"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "might help as well.",
+        "ts": "1486440843.000205"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F41UQAELV\/-.txt|Untitled>",
+        "file": {
+            "id": "F41UQAELV",
+            "created": 1486440984,
+            "timestamp": 1486440984,
+            "name": "-.txt",
+            "title": "Untitled",
+            "mimetype": "text\/plain",
+            "filetype": "text",
+            "pretty_type": "Plain Text",
+            "user": "U416T0AAX",
+            "editable": true,
+            "size": 339,
+            "mode": "snippet",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F41UQAELV\/-.txt?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F41UQAELV\/download\/-.txt?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F41UQAELV\/-.txt",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F41UQAELV-9c2ab9ed58",
+            "edit_link": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F41UQAELV\/-.txt\/edit",
+            "preview": "WARNING: The DR_TAG variable is not set. Defaulting to a blank string.\r\ncompose_rule-engine_1   \/sbin\/docker-entrypoint.sh       Up\r\n[dradmin@dr-admin compose]$ docker-compose restart rule-engine\r\nWARNING: The DR_TAG variable is not set. Defaulting to a blank string.\r\nRestarting compose_rule-engine_1 ... done\r",
+            "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>WARNING: The DR_TAG variable is not set. Defaulting to a blank string.<\/pre><\/div>\n<div><pre>compose_rule-engine_1   \/sbin\/docker-entrypoint.sh       Up<\/pre><\/div>\n<div><pre>[dradmin@dr-admin compose]$ docker-compose restart rule-engine<\/pre><\/div>\n<div><pre>WARNING: The DR_TAG variable is not set. Defaulting to a blank string.<\/pre><\/div>\n<div><pre>Restarting compose_rule-engine_1 ... done<\/pre><\/div>\n<div><pre><\/pre><\/div>\n<\/div>\n<\/div>\n",
+            "lines": 6,
+            "lines_more": 1,
+            "preview_is_truncated": false,
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1486440984.000206"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "docker-compose logs -f rule-engine",
+        "ts": "1486441087.000207"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, that seemed to kick things, but from rebar_api log:",
+        "ts": "1486441125.000208"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F41UQQD8D\/-.txt|Untitled>",
+        "file": {
+            "id": "F41UQQD8D",
+            "created": 1486441136,
+            "timestamp": 1486441136,
+            "name": "-.txt",
+            "title": "Untitled",
+            "mimetype": "text\/plain",
+            "filetype": "text",
+            "pretty_type": "Plain Text",
+            "user": "U416T0AAX",
+            "editable": true,
+            "size": 1543,
+            "mode": "snippet",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F41UQQD8D\/-.txt?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F41UQQD8D\/download\/-.txt?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F41UQQD8D\/-.txt",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F41UQQD8D-376759b698",
+            "edit_link": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F41UQQD8D\/-.txt\/edit",
+            "preview": "rebar_api_1    | Calling cmd: \/usr\/local\/entrypoint.d\/25-load-initial-workloads.sh\r\nrebar_api_1    |     2017\/02\/06 23:49:38 [INFO] agent: Synced check 'service:rebar-api-service'\r\nrebar_api_1    |     2017\/02\/06 23:52:35 [INFO] agent: Synced check 'service:rebar-job-runner-service'\r\nrebar_api_1    |     2017\/02\/06 23:52:53 [INFO] agent: Synced check 'service:rebar-api-service'\r\nrebar_api_1    |     2017\/02\/06 23:55:54 [INFO] agent: Synced check 'service:rebar-job-runner-service'\r",
+            "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>rebar_api_1    | Calling cmd: \/usr\/local\/entrypoint.d\/25-load-initial-workloads.sh<\/pre><\/div>\n<div><pre>rebar_api_1    |     2017\/02\/06 23:49:38 [INFO] agent: Synced check 'service:rebar-api-service'<\/pre><\/div>\n<div><pre>rebar_api_1    |     2017\/02\/06 23:52:35 [INFO] agent: Synced check 'service:rebar-job-runner-service'<\/pre><\/div>\n<div><pre>rebar_api_1    |     2017\/02\/06 23:52:53 [INFO] agent: Synced check 'service:rebar-api-service'<\/pre><\/div>\n<div><pre>rebar_api_1    |     2017\/02\/06 23:55:54 [INFO] agent: Synced check 'service:rebar-job-runner-service'<\/pre><\/div>\n<div><pre><\/pre><\/div>\n<\/div>\n<\/div>\n",
+            "lines": 15,
+            "lines_more": 10,
+            "preview_is_truncated": true,
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1486441136.000209"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "ok",
+        "ts": "1486441149.000210"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That is okay.  apparently dcos workload is now out of date and broke.",
+        "ts": "1486441167.000211"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK",
+        "ts": "1486441187.000212"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Here’s end of rule-engine log:",
+        "ts": "1486441201.000213"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F41UETL3E\/-.txt|Untitled>",
+        "file": {
+            "id": "F41UETL3E",
+            "created": 1486441208,
+            "timestamp": 1486441208,
+            "name": "-.txt",
+            "title": "Untitled",
+            "mimetype": "text\/plain",
+            "filetype": "text",
+            "pretty_type": "Plain Text",
+            "user": "U416T0AAX",
+            "editable": true,
+            "size": 3150,
+            "mode": "snippet",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F41UETL3E\/-.txt?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F41UETL3E\/download\/-.txt?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F41UETL3E\/-.txt",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F41UETL3E-ce61ec5f06",
+            "edit_link": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F41UETL3E\/-.txt\/edit",
+            "preview": "rule-engine_1  | Talking to Rebar API at https:\/\/172.17.0.9:3000, our API at 172.17.0.2:19202\r\nrule-engine_1  | Creating capability RULESET_READ\r\nrule-engine_1  | Creating capability RULESET_UPDATE\r\nrule-engine_1  |     2017\/02\/07 00:09:12 [INFO] agent: Synced check 'service:rule-engine-service'\r\nrule-engine_1  | Ready to handle events\r",
+            "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>rule-engine_1  | Talking to Rebar API at https:\/\/172.17.0.9:3000, our API at 172.17.0.2:19202<\/pre><\/div>\n<div><pre>rule-engine_1  | Creating capability RULESET_READ<\/pre><\/div>\n<div><pre>rule-engine_1  | Creating capability RULESET_UPDATE<\/pre><\/div>\n<div><pre>rule-engine_1  |     2017\/02\/07 00:09:12 [INFO] agent: Synced check 'service:rule-engine-service'<\/pre><\/div>\n<div><pre>rule-engine_1  | Ready to handle events<\/pre><\/div>\n<div><pre><\/pre><\/div>\n<\/div>\n<\/div>\n",
+            "lines": 32,
+            "lines_more": 27,
+            "preview_is_truncated": true,
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1486441208.000214"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That looks better",
+        "ts": "1486441253.000215"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "hmm - wonder what caused this timing\/startup mess up",
+        "ts": "1486441270.000216"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "And now we got stuffs in the UI :slightly_smiling_face:",
+        "ts": "1486441282.000217"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The rule-engine hang up is what was causing your system.",
+        "ts": "1486441313.000218"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "again not sure why.",
+        "ts": "1486441318.000219"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, so to roll back: it is supported to run the DR system as no non-priv’d user (albeit one with sudo rights)?",
+        "ts": "1486441379.000220"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "*as a non-priv’d user",
+        "ts": "1486441404.000221"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes",
+        "ts": "1486441418.000222"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "cool",
+        "ts": "1486441422.000223"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "right answer :slightly_smiling_face:",
+        "ts": "1486441434.000224"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yeah - I got one finally right",
+        "ts": "1486441442.000225"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "blind squirrel and all that :wink:",
+        "ts": "1486441482.000226"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Hmm… still noting showing under Networks… I should see something there, yes?",
+        "ts": "1486441632.000227"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "*nothing",
+        "ts": "1486441639.000228"
+    },
+    {
+        "text": "it can take time to get the networks there - it's part of the init sequence",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486441700.000229"
+    },
+    {
+        "text": "you should be able to watch them from the rebar api log when it uses the API to add networks",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486441716.000230"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK",
+        "ts": "1486441725.000231"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "They are after the core components.",
+        "ts": "1486441999.000232"
+    },
+    {
+        "text": "Hmm, that DHCP video said I could change configs before deployment, but they don’t seem to have taken effect. I changed IPs in `compose\/config-dir\/api\/config\/networks\/the_admin.json.mac` and then ran `.\/run-in-system.sh --deploy-admin=local --access=host --con-provisioner --con-dhcp --admin-ip=$IPA`, now https:\/\/$IPA\/ux\/#\/networks\/1 shows the default 192.168.124 network.",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486445260.000233"
+    },
+    {
+        "text": "From the web UX I tried to change them, and it gave an error and now “Ranges … Error Loading Ranges\"",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486445388.000234"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "--access=HOST",
+        "ts": "1486446180.000235"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "caps matter for that one.",
+        "ts": "1486446188.000236"
+    },
+    {
+        "text": "Ah, thanks. So, can I rerun and fix this, or should I blow it away (uh, how?) and start again. I could of course reformat the host.",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486446229.000237"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "with regard to the UX changes, I think we fixed them, but need to rebuild the revproxy container to pull the set of changes.",
+        "ts": "1486446259.000238"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You can rerun and it will blow it away and start over.",
+        "ts": "1486446272.000239"
+    },
+    {
+        "text": "Excellent",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486446291.000240"
+    },
+    {
+        "text": "Reading http:\/\/digital-rebar.readthedocs.io\/en\/latest\/deployment\/install\/raid-bios.html I can’t seem to download MegaCLI version 8.07.14 - only 8.07.07 is available.",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486453067.000241"
+    },
+    {
+        "text": "Heh, some guy at http:\/\/techedemic.com is hosting it.",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486453252.000242"
+    }
+]

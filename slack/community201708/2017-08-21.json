@@ -1,0 +1,248 @@
+[
+    {
+        "text": "Hi all, I’m playing with Digital Rebar for the first time, it looks like an awesome tool!\n\nI’ve watched a few videos and now I’m following the guide http:\/\/provision.readthedocs.io\/en\/stable\/doc\/os-support\/linuxkit.html\n\nI’m having an issue right out of the gate though, the first think to run is `curl -fsSL https:\/\/raw.githubusercontent.com\/digitalrebar\/provision\/master\/tools\/install.sh | bash -s -- --isolated --rs-version=tip install` which gives me back `sudo .\/dr-provision --static-ip=10.10.1.10 --file-root=\/home\/since\/rebar-digital\/lk-dr-trial\/dr-provision\/drp-data\/tftpboot --data-root=drp-data\/digitalrebar --local-store=\"\" --default-store=\"\" &amp;` but when I run that I get back `unknown flag `local-store’` :worried: ",
+        "username": "Simon-Ince",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1503323289.000416"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Oh wait - just fixed that last night or Saturday night.  I think.  Should be local-content and default-content.  May need to blow away dir and start over.   Sorry.  Tip has been in flux the last few days.  Should be back together.  ",
+        "ts": "1503324648.000471"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Of course if you tried the install stable and got this message that is a bug.  ",
+        "ts": "1503324703.000338"
+    },
+    {
+        "text": "<@U02DHRR2L|zehicle> I just started clean, thought I’d try the most basic thing first, so I went to http:\/\/provision.readthedocs.io\/en\/stable\/doc\/quickstart.html and ran the first command shown `curl -fsSL https:\/\/raw.githubusercontent.com\/digitalrebar\/provision\/master\/tools\/install.sh | bash -s -- --isolated install` whcih gave me back `sudo .\/dr-provision --static-ip=10.10.1.10 --file-root=\/home\/since\/drp-data\/tftpboot --data-root=drp-data\/digitalrebar --local-store=\"\" --default-store=\"\" &amp;` and if I run that then I also get `unknown flag `local-store'`",
+        "username": "Simon-Ince",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1503324998.000652"
+    },
+    {
+        "text": "I’m guessing the version on the \"Quick Start” is stable, so is this a bug?",
+        "username": "Simon-Ince",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1503325096.000130"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "we've changed some flags in tip",
+        "ts": "1503325117.000427"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "so the quick start script is straddling",
+        "ts": "1503325138.000483"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "the simplest solution is to `.\/dr-provision --help` to make sure the flags are right",
+        "ts": "1503325178.000313"
+    },
+    {
+        "text": "Thanks, looks like those flags have gone.",
+        "username": "Simon-Ince",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1503325529.000709"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "could you check .\/dr-provision --version?",
+        "edited": {
+            "user": "U02DHRR2L",
+            "ts": "1503325966.000000"
+        },
+        "ts": "1503325956.000249"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "the quckstart should be using 3.0 by default.  we're just about to release 3.1 from tip to stable, so there may be some accidental leakage.",
+        "ts": "1503326083.000486"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It is a bug.  Too aggressive on my flag littering.",
+        "ts": "1503326432.000017"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Just don’t use local-store\/local-content and default-store\/default-content on 3.0 systems.",
+        "ts": "1503326457.000097"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It is a bug in the install script.",
+        "ts": "1503326464.000181"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Actually, instead of me fixing it.  The stable tree and docs should use: ```curl -fsSl <https:\/\/raw.githubusercontent.com\/digitalrebar\/provision\/stable\/tools\/install.sh>```",
+        "ts": "1503326576.000275"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Tip installs should use:\n```curl -fsSl <https:\/\/raw.githubusercontent.com\/digitalrebar\/provision\/tip\/tools\/install.sh>```",
+        "ts": "1503326624.000223"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Hopefully, that will give you enough to deal with the issue:",
+        "ts": "1503326648.000702"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Three things should work:",
+        "ts": "1503326656.000003"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "1. change initial curl to stable from master.",
+        "ts": "1503326668.000109"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "2. Change the initial comment to add ```--drp-version=tip``` - this would get the tip which is functionally equivalent.",
+        "ts": "1503326696.000465"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "to stable.",
+        "ts": "1503326702.000301"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U02DGQYK1> should I update the quickstart to show stable &amp; tip install choices?",
+        "ts": "1503326703.000200"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah.",
+        "ts": "1503326724.000682"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We shouldn’t have the install script cross the “streams” as it were.",
+        "ts": "1503326738.000463"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "we tried and it works for point releases ,but will get hairy as we go forward.",
+        "ts": "1503326764.000429"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Since we can access the trees, it is better to have a consistent command line.",
+        "ts": "1503326777.000391"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "This is stable install:  ```curl -fsSL <https:\/\/raw.githubusercontent.com\/digitalrebar\/provision\/stable\/tools\/install.sh> | bash -s -- --isolated install```",
+        "ts": "1503326816.000470"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "This is tip install:\n```curl -fsSL <https:\/\/raw.githubusercontent.com\/digitalrebar\/provision\/tip\/tools\/install.sh> | bash -s -- --isolated install --drp-version=tip```",
+        "ts": "1503326837.000423"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We should avoid master because it isn’t necessarily completely vetted like a tip is.  I move tip slightly independently of master.  This way straddling features and PRs can be brought together into tip.",
+        "ts": "1503326882.000277"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "makes sense.  I like people make a specific choice and being clear about it",
+        "ts": "1503327038.000710"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "and then dropping --isolated install makes it “production”",
+        "ts": "1503327112.000105"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Also I didn’t want to fix it because the install.sh script now has different methods for getting content.",
+        "ts": "1503327133.000261"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Tip uses the validated community content repo.  stable pulls from assets.",
+        "ts": "1503327151.000075"
+    },
+    {
+        "text": "<@U02DHRR2L|zehicle> Thank you! I thought I was being stupid, I’ll work thought it like you said.",
+        "username": "Simon-Ince",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1503327554.000227"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We’ve got to get a better bot.  :slightly_smiling_face:   Or get everyone into slack.  @Simon-Ince - you’ve been talking to two of us.    :slightly_smiling_face:",
+        "ts": "1503328087.000064"
+    },
+    {
+        "text": "Thank you everybody!",
+        "username": "Simon-Ince",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1503328318.000617"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "More for awareness than praise.  <@U02DHRR2L> and <@U02DGQYK1> will get peoples attention.",
+        "ts": "1503328389.000271"
+    },
+    {
+        "text": "@Simon-Ince happy to talk 1x1 and also pull you over to the Slack channel too",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1503329430.000680"
+    }
+]

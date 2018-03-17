@@ -1,0 +1,606 @@
+[
+    {
+        "text": "@galthaus Just a heads up - after following: http:\/\/digital-rebar.readthedocs.io\/en\/latest\/deployment\/install\/raid-bios.html  the 'raid tools install' step is still red, and 'bios-discover' is still yellow",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487535910.000562"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It has a log in the node role.  It will probably tell you what is wrong.",
+        "ts": "1487535954.000563"
+    },
+    {
+        "text": "@galthaus Also, am I understanding correctly that rebar needs to control\/configure the BMCs ? my IPMI\/BMC network is a seperate DHCP network, currently not under rebar control",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487535991.000564"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It won't since you don't have one configured.",
+        "ts": "1487536027.000565"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It will look at your current settings though.",
+        "ts": "1487536039.000566"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I think.",
+        "ts": "1487536043.000567"
+    },
+    {
+        "text": "@galthaus err... you mean a log on the node?  or a log named after the node on the admin node ?",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487536048.000568"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "In the UI, you can click into the red icon and see the log of what went wrong.",
+        "ts": "1487536075.000569"
+    },
+    {
+        "text": "hmm - looks like the rpm version got bumped: caution: filename not matched:  Linux\/MegaCli-8.07.14-1.noarch.rpm",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487536153.000570"
+    },
+    {
+        "text": "lemme unpack the zip and see whats in there",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487536170.000571"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "hmm _ thought I fixed this potentially.",
+        "ts": "1487536196.000572"
+    },
+    {
+        "text": "oh - the download name was different too - it downloaded as 'Linux_MegaCLI_8.07.07.zip' so I symlinked it to '8.07.14_MegaCLI.zip'",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487536261.000573"
+    },
+    {
+        "text": "yeah - it extracts to 'MegaCli-8.07.07-1.noarch.rpm'",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487536308.000574"
+    },
+    {
+        "text": "btw - do I also need to download the dell\/supermicro\/etc bios tools ?",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487536459.000575"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "you will need the sum tool, I believe.",
+        "ts": "1487536480.000576"
+    },
+    {
+        "text": "grrr...this boils down to broadcom's site sucks, I think :-P  the search doesnt seem to find 8.07.14 and some results claim MegaCLi 5.5 P2 is 'latest'",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487537122.000577"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes - I had the exact link earlier.",
+        "ts": "1487537152.000578"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I use this",
+        "ts": "1487537242.000579"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I use this: <https:\/\/docs.broadcom.com\/docs\/12351587>",
+        "ts": "1487537258.000580"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Then rename it to: 8.07.14_MegaCLI.zip in files\/raid under the tftpboot directory.",
+        "ts": "1487537308.000581"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<https:\/\/docs.broadcom.com\/docs\/SAS2IRCU_P20.zip>",
+        "ts": "1487537388.000582"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "is the other one.",
+        "ts": "1487537391.000583"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "In fact, updating barclamp info shortly.",
+        "ts": "1487537435.000584"
+    },
+    {
+        "text": "thanks - rebooting client node",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487537509.000585"
+    },
+    {
+        "text": "Woot!  Node shows all green upto 'firmware flash'",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487537762.000586"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "cool",
+        "ts": "1487537790.000587"
+    },
+    {
+        "text": "'firmware-flash' 'ipmi-configure' and 'rebar-hardware-configured' are all blue",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487537822.000588"
+    },
+    {
+        "text": "guess I need the bios flash tools now ?",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487537831.000589"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "no",
+        "ts": "1487537968.000590"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "They are waiting to run.",
+        "ts": "1487537975.000591"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It indicates that they are awaiting config.",
+        "ts": "1487537987.000592"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You can commit those and they will run with their current config or you can make changes.",
+        "ts": "1487538012.000593"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "At this point, you usually add a workload (os install, or k8s or whatever) and when you commit, it pushes the node through the rest of the process.",
+        "ts": "1487538039.000594"
+    },
+    {
+        "text": "ahh - lets see if I can do an OS install...",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487538065.000595"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "firmware-flash may not do aything if nothing matches.  ipmi-configure will set the root password to cr0wBar! and configure an IP if there is a BMC network.",
+        "ts": "1487538083.000596"
+    },
+    {
+        "text": "Hmm - I like IPMI - saves me having to walk around rebooting stuff - I'll probably have to redo my ipmi network to play nice with rebar though",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487538225.000597"
+    },
+    {
+        "text": "well, that was painless :-)",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487539099.000598"
+    },
+    {
+        "text": "both foreman and rebar end up with unbootable systems on the HP nodes though",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487539119.000599"
+    },
+    {
+        "text": "something funky with the bios\/grub I think - oddly enough, it works fine if you install manually via the installer",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487539154.000600"
+    },
+    {
+        "text": "Firing up one of the dell nodes now",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487539283.000601"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": " What OS?  Probably a tweak for the kickstart.  We would like to know more about that.  ",
+        "ts": "1487539642.000602"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Batman movie time ",
+        "ts": "1487539649.000603"
+    },
+    {
+        "text": "ohhh - sounds good - I'm waiting for Dr. Strange to hit Vudu",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487539673.000604"
+    },
+    {
+        "text": "its ubuntu 16.04 (for some reason, thats the only OS option I get - could have sworn the Centos iso was there too)",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487539701.000605"
+    },
+    {
+        "text": "I'll try and track down the preseed issue - its gotta be some setting in there somewhere",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487539724.000606"
+    },
+    {
+        "text": "Hmm - Dell C6100 cloud server nodes not booting after install either",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487540230.000607"
+    },
+    {
+        "text": "starting to think ubuntu 16.04 does a crap job with grub :-P",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487540243.000608"
+    },
+    {
+        "text": "I think I FOUND IT!",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487543358.000609"
+    },
+    {
+        "text": "the hp machine was installed with no partition flagged as bootable",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487543380.000610"
+    },
+    {
+        "text": "I marked \/boot as bootable and it seems to be fine",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487543400.000611"
+    },
+    {
+        "text": "gonna check the Dell node now",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487543523.000612"
+    },
+    {
+        "text": "err - whats the default login for machines provisined as Ubuntu 16.04  ? I've tried 'rebar\/rebar', 'rebar\/rebar!', 'rebar\/cr0wBar!', 'root\/rebar' , 'root\/rebar!', 'root\/Cr0wBar!'....",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487545596.000613"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "rebar\/rebar1",
+        "ts": "1487548360.000614"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "If we configure raid, then we mark the drive bootable.",
+        "ts": "1487548390.000615"
+    },
+    {
+        "text": "yeah - I tried rebar\/rebar1 - but I'm rebooting and I'll give it another try",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487549341.000616"
+    },
+    {
+        "text": "I couldn't figure out which preseed is actually being used - theres 4 or 5 of them in the tftpd ubuntu\/preseed dir",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487549385.000617"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "regardless.  From the admin node, root passwordlesss should work.",
+        "ts": "1487549418.000618"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "if that doesn't work, then add your ssh key to the rebar-access data attribute and rerun the role.",
+        "ts": "1487549443.000619"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That willl allow you root access.",
+        "ts": "1487549449.000620"
+    },
+    {
+        "text": "I was trying to figure out how you set attributes....",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487549474.000621"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "propose the deployment the node is in.",
+        "ts": "1487549493.000622"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Edit the attribute.",
+        "ts": "1487549498.000623"
+    },
+    {
+        "text": "ahh - ok",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487549505.000624"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Commit the deployment.",
+        "ts": "1487549519.000625"
+    },
+    {
+        "text": "yeah - no bootable partition on the dell node either",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487549582.000626"
+    },
+    {
+        "text": "not sure why it even booted ?",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487549591.000627"
+    },
+    {
+        "text": "and it keeps powering off - hope its not a hardware problem",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487549637.000628"
+    },
+    {
+        "text": "gitter to IRC bridge test....",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487549700.000629"
+    },
+    {
+        "text": "damn - it's not a three way thing",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487549723.000630"
+    },
+    {
+        "text": "IRC to gitter",
+        "username": "23.112.37.202 - http:\/\/webchat.freenode.net, irc.f",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487549777.000631"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Oh - we power things off.",
+        "ts": "1487549782.000632"
+    },
+    {
+        "text": "gitter to irc",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487549782.000633"
+    },
+    {
+        "text": "nm-&gt; it's working.  user error",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487549792.000634"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "@mech422 - DR powers things off by default.",
+        "ts": "1487549799.000635"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "if IPMI is configured and usable, DR will power off nodes that are \"bored\".",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1487549823.000000"
+        },
+        "ts": "1487549816.000636"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You can change that with stay_on attribute on the node.  It defaults to false.  Set it to true and it will keep the node on.",
+        "ts": "1487549861.000638"
+    },
+    {
+        "text": "ok - so the boot issues appear to just be the \/boot partition not being marked bootable in the MBR",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487550332.000639"
+    },
+    {
+        "text": "I'm trying to re-deploy now after having changed the attributes",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487550347.000640"
+    },
+    {
+        "text": "it wasn't happy with 'redeploy all nodes' after commiting the deployment, so I'm powering the node back up before trying it again",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487550409.000641"
+    },
+    {
+        "text": "hmm - still an error",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487550475.000642"
+    },
+    {
+        "text": "and it turned the node off again",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487550788.000643"
+    },
+    {
+        "text": "it was about half way thru the 'node roles' thing - I don't think I can 'redeploy all' until the node is 'green' again, right ?",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487550825.000644"
+    },
+    {
+        "text": "dinner time!",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1487551045.000645"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "you redeploy before.  iT should not have turned the node off until all green.  You may need to refresh the UI to get the latest data.  Also powering off the node marks it as not alive and not all green as a consequence.",
+        "ts": "1487553364.000646"
+    }
+]

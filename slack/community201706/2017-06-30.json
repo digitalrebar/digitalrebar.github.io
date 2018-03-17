@@ -1,0 +1,49 @@
+[
+    {
+        "user": "U635J89C6",
+        "text": "<@U635J89C6> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1498839244.333228"
+    },
+    {
+        "text": "OK... I 'think' I understand my DHCP\/PXE problem... see if I can explain as I'm sure it's just me missing something.\nI've got a HPE C7000 that I'm testing with... I pulled all the blades and drives, put in one blade and one new drive, loaded Ubuntu on that and did the quick config mentioned above.   I think my issue is that the fabric switches (Cisco 3020), OnboardAdmin Module, and iLO use the little MikroTik to grab management IP's via DHCP.  I listened to your RackN Digital Rebar Training (006): Configure DHCP and Network, where I extracted the fact that you need to put an IP on the admin DHCP network.  So, I went into the UI, DHCP Subnets, admin-internal where the subnet was 192.168.99.0\/24.  Given that network, I added 192.168.99.2 IP to enp3s0 (static) and ifup.  I went out to the mikrotik and disabled it's DHCP.  I then inserted another blade, set it to PXE boot.... thinking this 'should' work.",
+        "username": "ctrees",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1498840157.643959"
+    },
+    {
+        "text": "The new blade is now in a PXE boot-loop, not finding the DHCP\/PXE that I 'think' is running on 192.168.99.2 enp5s0",
+        "username": "ctrees",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1498840332.704155"
+    },
+    {
+        "text": "OR... is the 'ADMIN_IP' need to change from 192.168.88.2 enp3s0 (as installed) to 192.168.99.2 enp5s0",
+        "username": "ctrees",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1498840409.729967"
+    },
+    {
+        "text": "I'll go through that video again and take another look at the docs... that video does have a lot of deep 'gems'  plus I know it showed how to get to the logs...",
+        "username": "ctrees",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1498840519.766668"
+    },
+    {
+        "text": "What I might do is put DR on a machine OUTSIDE of the c7000 and let the DR machine capure all the DHCP...  I may be fighting all the management IP DHCP from the OA, iLO and interconnect switches of the c7000.",
+        "username": "ctrees",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1498840757.846147"
+    }
+]

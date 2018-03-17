@@ -1,0 +1,1331 @@
+[
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Thanks <@U02DGQYK1> that did the trick",
+        "ts": "1509110826.000384"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7S3LBRC7\/drp-tip-ver-info.tiff|So now up on tip -->",
+        "file": {
+            "id": "F7S3LBRC7",
+            "created": 1509111398,
+            "timestamp": 1509111398,
+            "name": "drp-tip-ver-info.tiff",
+            "title": "So now up on tip --",
+            "mimetype": "image\/tiff",
+            "filetype": "tiff",
+            "pretty_type": "TIFF",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 51170,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7S3LBRC7\/drp-tip-ver-info.tiff?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7S3LBRC7\/download\/drp-tip-ver-info.tiff?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7S3LBRC7-996557b8ec\/drp-tip-ver-info_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7S3LBRC7-996557b8ec\/drp-tip-ver-info_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7S3LBRC7-996557b8ec\/drp-tip-ver-info_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 205,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7S3LBRC7-996557b8ec\/drp-tip-ver-info_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "image_exif_rotation": 1,
+            "original_w": 423,
+            "original_h": 241,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7S3LBRC7\/drp-tip-ver-info.tiff",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F7S3LBRC7-fcab66e3fc",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1509111400.000123"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "However, I still have the exact same errors on the Ubuntu bootenvs as before…",
+        "ts": "1509111437.000091"
+    },
+    {
+        "type": "message",
+        "subtype": "file_mention",
+        "text": "<@U416T0AAX> mentioned a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7QNNT326\/broken-bootenv.tiff|broken-bootenv.tiff>.",
+        "file": {
+            "id": "F7QNNT326",
+            "created": 1509064165,
+            "timestamp": 1509064165,
+            "name": "broken-bootenv.tiff",
+            "title": "broken-bootenv.tiff",
+            "mimetype": "image\/tiff",
+            "filetype": "tiff",
+            "pretty_type": "TIFF",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 85832,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7QNNT326\/broken-bootenv.tiff?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7QNNT326\/download\/broken-bootenv.tiff?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7QNNT326-732610b808\/broken-bootenv_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7QNNT326-732610b808\/broken-bootenv_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7QNNT326-732610b808\/broken-bootenv_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 247,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7QNNT326-732610b808\/broken-bootenv_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 329,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7QNNT326-732610b808\/broken-bootenv_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7QNNT326-732610b808\/broken-bootenv_720.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 494,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7QNNT326-732610b808\/broken-bootenv_800.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 549,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7QNNT326-732610b808\/broken-bootenv_960.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 659,
+            "image_exif_rotation": 1,
+            "original_w": 975,
+            "original_h": 669,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7QNNT326\/broken-bootenv.tiff",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F7QNNT326-9d1ff7733c",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "ts": "1509111459.000016"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "tried removing \/ re-adding the os-linux content via the UX, no change",
+        "ts": "1509111497.000011"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<!here>, let me ask this question… If I start over with a fresh new DRP tip install, can I move my machines over from my existing DRP install? (Obvs I’d install new tip in another directory, running isolated)",
+        "edited": {
+            "user": "U416T0AAX",
+            "ts": "1509111999.000000"
+        },
+        "ts": "1509111977.000315"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You could move the machines directory over.",
+        "ts": "1509112135.000147"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I’ll try and see about the stuff.",
+        "ts": "1509112160.000622"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "My existing install directory has been existent since v3.0; upgraded from 3.0 --&gt; 3.1 stable --&gt; 3.1 tip, may have a lot of cruft built up by now…",
+        "ts": "1509112346.000556"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Could be - I’ trying to make sure that content is working.",
+        "ts": "1509112368.000331"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DGQYK1> - just copy the *.json files in drp-data\/digitalrebar\/machines\/ over to new?",
+        "ts": "1509112715.000484"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes",
+        "ts": "1509112724.000228"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "stop DRP first",
+        "ts": "1509112725.000346"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "then copy",
+        "ts": "1509112729.000279"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "then start",
+        "ts": "1509112731.000203"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, did all that, *still* getting the bootenv errors for Ubuntu (`ubuntu-[14,16].04-install`) as well as CentOS (`centos-7.3.1611-install`)",
+        "ts": "1509113563.000388"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U416T0AAX> - we're investigating it ... plz standby",
+        "ts": "1509113581.000257"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Oversight in the template naming convention.  Will be a content update.",
+        "ts": "1509113876.000534"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U416T0AAX> - remove os-linux and os-discovery content and re-add it.",
+        "thread_ts": "1509114328.000016",
+        "reply_count": 11,
+        "replies": [
+            {
+                "user": "U416T0AAX",
+                "ts": "1509136647.000299"
+            },
+            {
+                "user": "U416T0AAX",
+                "ts": "1509136676.000314"
+            },
+            {
+                "user": "U416T0AAX",
+                "ts": "1509136762.000415"
+            },
+            {
+                "user": "U02DGQYK1",
+                "ts": "1509136765.000180"
+            },
+            {
+                "user": "U416T0AAX",
+                "ts": "1509136777.000163"
+            },
+            {
+                "user": "U02DGQYK1",
+                "ts": "1509136778.000526"
+            },
+            {
+                "user": "U416T0AAX",
+                "ts": "1509137120.000064"
+            },
+            {
+                "user": "U02DGQYK1",
+                "ts": "1509137260.000108"
+            },
+            {
+                "user": "U02DGQYK1",
+                "ts": "1509137312.000309"
+            },
+            {
+                "user": "U416T0AAX",
+                "ts": "1509137425.000152"
+            },
+            {
+                "user": "U02DGQYK1",
+                "ts": "1509137603.000519"
+            }
+        ],
+        "unread_count": 11,
+        "ts": "1509114328.000016"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "Quick question... CheCat keep appearing in my user directory... I think it's associated with the Go compile when I followed shane's 5min-dr... is that right ?",
+        "ts": "1509115353.000185"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "\"CheCat\" ??",
+        "ts": "1509115387.000138"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "yea... I'm on a mac... it looks like it's some sort of go thing but can't figure out what it is... it may be something else...",
+        "ts": "1509115458.000399"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "the only go thing I did was for the terraform packet",
+        "ts": "1509115491.000290"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "BUT who knows... it might be an artifact from Che (<https:\/\/www.eclipse.org\/che\/>)",
+        "attachments": [
+            {
+                "title": "Eclipse Che | Eclipse Next-Generation IDE, Cloud IDE, and Workspace Server",
+                "title_link": "https:\/\/www.eclipse.org\/che\/",
+                "text": "Eclipse Che Next-Generation Eclipse IDE.",
+                "fallback": "Eclipse Che | Eclipse Next-Generation IDE, Cloud IDE, and Workspace Server",
+                "from_url": "https:\/\/www.eclipse.org\/che\/",
+                "service_icon": "https:\/\/www.eclipse.org\/che\/images\/ico\/57x57.png",
+                "service_name": "eclipse.org",
+                "id": 1
+            }
+        ],
+        "ts": "1509115668.000151"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I don't do anything with 'Che' in it ...",
+        "ts": "1509115686.000298"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you also do not need to do the \"go get...\" business anymore",
+        "ts": "1509115694.000384"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "note the README has been update (that stuff has been removed)",
+        "ts": "1509115705.000298"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the `terraform init` piece will correctly pull down the terraform-provider-packet plugin without go compile - the Packet folks got an updated\/fixed version in to the Terraform repo finally",
+        "ts": "1509115751.000624"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "Cool... (no go compile)... and 'in theory' I should be able to morph you 5min to setup greg's 'vbox' demo also ? correct ? putting a dev on laptop then pushing that out to packet is sort of the 'golden stack push demo' I'm going for mailservices",
+        "ts": "1509116174.000765"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "virtualbox is fairly different - and for now ... the two (5min + vbox) shall remain separate",
+        "ts": "1509116227.000307"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "5min is designed heavily to orchestrate\/control <http:\/\/packet.net|packet.net> via terraform",
+        "ts": "1509116252.000251"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "ok... so greg was ansible to talk to vbox ? or was that just IPMI",
+        "ts": "1509116352.000306"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "guess I'll go look at the video... thanks...",
+        "ts": "1509116374.000416"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "no - we use a DRP plugin that talks to vbox for \"Machine Power Actions\" (eg \"ipmi-like\" capabilities)",
+        "ts": "1509116387.000184"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "for vbox you have to do a little set up in advance because of vbox's limitations",
+        "ts": "1509116420.000353"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "the DRP plugin is v3.2 tip beta ?",
+        "ts": "1509116558.000101"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "3.2 doesn't exist yet - we're closing in on cutting that release soon",
+        "ts": "1509116597.000425"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U62R1805P> - I didn’t automate or create script calls to vbox to make the machines like the system is doing in packet.",
+        "ts": "1509116767.000577"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Also, I started with an “installed” DRP where 5min builds its own.",
+        "ts": "1509116784.000425"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "got it, it was a demo of the 'ipmi-like' plugin",
+        "ts": "1509116905.000009"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah - the scripts that drive through drpcli should function the same.",
+        "ts": "1509116932.000173"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "<@U6QFVRJNB> what did I miss (looks like an env thing)",
+        "ts": "1509135599.000107"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "--------------------------------------------------------------------------------\nACTION :: terraform apply -target=packet_ssh_key.drp-ssh-key\nRun next step?  [ &lt;Enter&gt; | No | Ctrl-C ]  \n--------------------------------------------------------------------------------\n\nPlugin reinitialization required. Please run \"terraform init\".\nReason: Could not satisfy plugin requirements.\n\nPlugins are external binaries that Terraform uses to access and manipulate\nresources. The configuration provided requires plugins which can't be located,\ndon't satisfy the version constraints, or are otherwise incompatible.\n\n1 error(s) occurred:\n\n* provider.packet: no suitable version installed\n  version requirements: \"~&gt; 1.0\"\n  versions installed: \"0.0.0\"\n\nTerraform automatically discovers provider requirements from your\nconfiguration, including providers used in child modules. To see the\nrequirements and constraints from each module, run \"terraform providers\".\n\n\nError: error satisfying plugin requirements\n\n\nFAILED\n\n--------------------------------------------------------------------------------\nACTION :: terraform apply -target=packet_ssh_key.machines-ssh-key\nRun next step?  [ &lt;Enter&gt; | No | Ctrl-C ]",
+        "ts": "1509135600.000475"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "`terraform init` is run via `demo-run.sh`, during the `terraform-install` stage",
+        "ts": "1509135708.000131"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "You want the full log in a snippet ?",
+        "ts": "1509135752.000270"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "check your `~\/.terraformrc` file to make sure there aren't a whole bunch of incorrect plugin configs to non-existent plugin location for the `terraform-provider-packet`",
+        "ts": "1509135756.000452"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "catmini:5min-drp cat$ vi ~\/.terraformrc \n\nproviders { packet = \"\/Users\/cat\/CodeOps\/5min-drp\/bin\/terraform-provider-packet\" }\nproviders { packet = \"\/Users\/cat\/CodeOps\/5min-drp\/bin\/terraform-provider-packet\" }\nproviders { packet = \"\/Users\/cat\/CodeOps\/5min-drp\/bin\/terraform-provider-packet\" }",
+        "ts": "1509135818.000360"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "after that - the `terraform-provider-packet` should have been installed in something like `.\/.terraform\/plugins\/darwin_amd64\/` (substitute darwin... for correct OS\/arch)",
+        "ts": "1509135825.000155"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yeah - that's left over cruft from your previous runs",
+        "ts": "1509135834.000453"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "should I just nuke .terraformrc ?",
+        "ts": "1509135852.000115"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "remove those - and if you have nothing else in that file - you can nuke it",
+        "ts": "1509135852.000343"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it's poor idempotency handling on my part with multiple runs of the tool - and the .terraformrc file",
+        "ts": "1509135870.000354"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "running now...",
+        "ts": "1509135957.000300"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "that left over was required because the v0.10.0 plugin didn't have the right <http:\/\/packet.net|packet.net> API call capabilities in it - so you had to go compile a version - since terraform does not maintain plugins for beta\/non-release - so `terraform init` won't get the right version",
+        "ts": "1509135959.000072"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "make sure after the `terraform-install` stage completes - that you get the plugin as mentioned above",
+        "ts": "1509135990.000404"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DGQYK1> Removed it thru UX, but then when went to re-add, got this error:\n```Content Upload Failed: ValidationError\nNew layer violates key restrictions: keysCannotBeOverridden: runner.tmpl is already in layer 1 keysCannotBeOverridden: access-keys.sh.tmpl is already in layer 1 keysCannotBeOverridden: change-stage.sh.tmpl is already in layer 1```",
+        "edited": {
+            "user": "U416T0AAX",
+            "ts": "1509136982.000000"
+        },
+        "thread_ts": "1509114328.000016",
+        "parent_user_id": "U02DGQYK1",
+        "ts": "1509136647.000299"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Sorry, that was on `os-discovery`",
+        "thread_ts": "1509114328.000016",
+        "parent_user_id": "U02DGQYK1",
+        "ts": "1509136676.000314"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "And got:\n```Content Upload Failed: ValidationError\nNew layer violates key restrictions: keysCannotBeOverridden: ubuntu-16.04-install is already in layer 1 keysCannotBeOverridden: debian-8-install is already in layer 1```",
+        "thread_ts": "1509114328.000016",
+        "parent_user_id": "U02DGQYK1",
+        "ts": "1509136762.000415"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "not sure.",
+        "thread_ts": "1509114328.000016",
+        "parent_user_id": "U02DGQYK1",
+        "ts": "1509136765.000180"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "when tried to transfer `os-linux`",
+        "thread_ts": "1509114328.000016",
+        "parent_user_id": "U02DGQYK1",
+        "ts": "1509136777.000163"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Let me finish content.",
+        "thread_ts": "1509114328.000016",
+        "parent_user_id": "U02DGQYK1",
+        "ts": "1509136778.000526"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Any ETA? How will I know when available?",
+        "thread_ts": "1509114328.000016",
+        "parent_user_id": "U02DGQYK1",
+        "ts": "1509137120.000064"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I’m going to announce.  Because I don’t understand what you have.",
+        "thread_ts": "1509114328.000016",
+        "parent_user_id": "U02DGQYK1",
+        "ts": "1509137260.000108"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You may need to start over, but I’m not sure.",
+        "thread_ts": "1509114328.000016",
+        "parent_user_id": "U02DGQYK1",
+        "ts": "1509137312.000309"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Let me know when to nuke &amp; repave…",
+        "thread_ts": "1509114328.000016",
+        "parent_user_id": "U02DGQYK1",
+        "ts": "1509137425.000152"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "ok",
+        "thread_ts": "1509114328.000016",
+        "parent_user_id": "U02DGQYK1",
+        "ts": "1509137603.000519"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "so does the machine in the demo script stay at sledghammer ? Or the centOS image didn't go into the endpoint",
+        "ts": "1509138406.000169"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "147.75.64.7",
+        "ts": "1509138409.000079"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "is the endpoint",
+        "ts": "1509138413.000081"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the work flow should take the Machine through to OS installed - what OS type did you set it to ?",
+        "ts": "1509138443.000383"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "all defaults",
+        "ts": "1509138463.000038"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ah",
+        "ts": "1509138485.000240"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "just a sec... I can look up in the script... I just saw that...",
+        "ts": "1509138488.000219"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it probably failed CentOS install",
+        "ts": "1509138491.000090"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the centos folks yanked the 7.3.1611 ISOs off of the repos",
+        "ts": "1509138501.000162"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we're working on a 7.4 content update to fix the issue",
+        "ts": "1509138513.000026"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "ah... so it makes sense...",
+        "ts": "1509138525.000254"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I'm just happy I'm following enough to notice...",
+        "ts": "1509138557.000169"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if you take a look at Profiles --&gt; Global",
+        "ts": "1509138558.000103"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you'll see the stagemap that gets installed - and it's specifying the centos install",
+        "ts": "1509138570.000219"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": ":slightly_smiling_face:",
+        "ts": "1509138580.000005"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "so - you can use this as a \"learning\" exercise now ... :slightly_smiling_face:",
+        "ts": "1509138621.000116"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you'd need to upload an Ubuntu 16 ISO",
+        "ts": "1509138629.000294"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can either do that via \"drpcli\" from your laptop - setting your Endpoint correctly - or you can do it locally on the DPR Endpoint itself",
+        "ts": "1509138650.000273"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the `drpcli` binary will point to 127.0.0.1:8092 by default - so you have to change who it talks to",
+        "ts": "1509138669.000211"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "from  your laptop you can do:\n`drpcli -E \"<https:\/\/147.75.64.7:8092>\" bootenvs list`",
+        "ts": "1509138723.000082"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "to list the bootenvs",
+        "ts": "1509138727.000075"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(json blob)  - you can amend `| jq ` to get pretty print",
+        "ts": "1509138747.000186"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if you have jq on your local laptop",
+        "ts": "1509138752.000204"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "now do:\n`drpcli -E \"<https:\/\/147.75.64.7:8092>\" bootenvs show centos-7.3.1611-install`",
+        "ts": "1509138777.000165"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "to see *just* the centos bootenv",
+        "ts": "1509138785.000002"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "```shane@gala:~\/5min-drp$ drpcli -E \"<https:\/\/147.75.64.7:8092>\" bootenvs show centos-7.3.1611-install | jq '.OS.IsoUrl'\n\"<http:\/\/mirrors.kernel.org\/centos\/7.3.1611\/isos\/x86_64\/CentOS-7-x86_64-Minimal-1611.iso>\"```",
+        "ts": "1509138806.000249"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "to use `jq` to grab JUST the IsoUrl location ... now of we go (manually) check out the mirror HTTP location - we see that it's been yanked and a bare `readme` dropped in place, telling us it's been yanked ( we have to \"walk\" up the HTTP path to find the readme ... thankyou ... centos team ...",
+        "ts": "1509138863.000054"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "now - you want to upload the Ubuntu ISO for now if you don't care which OS we hit it with",
+        "ts": "1509138877.000175"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "`drpcli -E \"<https:\/\/147.75.64.7:8092>\" bootenvs uploadiso ubuntu-16.04-install`",
+        "ts": "1509138902.000448"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "NOTE:  you can do `export RS_ENDPOINT=\"<https:\/\/147.75.64.7:8092>\"` then you don't have to specify the `-E` or equivalent `--endpoint` flag)",
+        "ts": "1509139028.000220"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "and that's the iso defined by the boot environment which points to <http:\/\/mirrors.kernel.org\/ubuntu-releases\/16.04\/ubuntu-16.04.3-server-amd64.iso>",
+        "ts": "1509139053.000220"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "exactly",
+        "ts": "1509139061.000139"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the \"uploadiso\" is just a helper function to help download and inject the ISO in to the tftpboot structure (it'll call `explode_iso.sh` on the local DRP Endpoint to ... explode out ... the ISO contents appropriately)",
+        "ts": "1509139104.000089"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if you have an appropriately named ISO file - you can copy it in to the `~\/drp-data\/tftpboot\/isos\/` directory on Endpoint",
+        "ts": "1509139146.000302"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "and either restart, or `kill -HUP &lt;pid&gt;` of the dr-provision service",
+        "ts": "1509139169.000076"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "that will trigger an `explode_iso.sh` on the endpoint",
+        "ts": "1509139179.000159"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "also - we probably need to ... either re-run the 5min stuff and use `tip` version - or you need to do an inplace upgrade of the current 5min endpoint",
+        "ts": "1509139235.000342"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "does the drpcli bootenvs uploadiso trigger the explode ?",
+        "ts": "1509139243.000074"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yep ... well, technically ... no ... but yes",
+        "ts": "1509139255.000173"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": ":slightly_smiling_face:",
+        "ts": "1509139256.000146"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the uploadiso pushes the ISO in place, and then the dr-provision endpoint calls the explode_iso.sh - so indirectly it happens because of the uploadiso run",
+        "ts": "1509139284.000101"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "but technically ... \"drpcli bootenvs uploadiso ...\" doesn't actually call the \"explode_iso.sh\"",
+        "ts": "1509139301.000050"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "but it restarts drp ?",
+        "ts": "1509139349.000090"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "dr-provision service",
+        "ts": "1509139366.000382"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it signals dr-provision appropriately",
+        "ts": "1509139368.000367"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it doesn't restart it",
+        "ts": "1509139372.000202"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if you take a look at your \"bootenvs\" page on the UX",
+        "ts": "1509139397.000212"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "got it... and then it shows up in the UX",
+        "ts": "1509139404.000187"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you'll see that the \"ubuntu...\" bootenv is marked \"good\" now",
+        "ts": "1509139407.000160"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the blue check mark means good",
+        "ts": "1509139417.000072"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "now we have to modify the stagemap to use Ubuntu instead of Centos",
+        "ts": "1509139451.000129"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can do i via UX - or I can walk you through the CLI",
+        "ts": "1509139467.000167"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "so is that the 'copy' in the UX (cause the States are locked) thing ?",
+        "ts": "1509139550.000328"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if stages are locked - you need to log in with a RackN account (upper Right)",
+        "ts": "1509139629.000156"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "that unlocks stages\/workflow",
+        "ts": "1509139638.000104"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "however - the stagemap itself is in \"profiles\" --&gt; \"global\"",
+        "ts": "1509139657.000278"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "in this case I just (lazily) inject the stagemap in to the \"global\" profile - so every Machine will be subject to it",
+        "ts": "1509139677.000201"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I did (I think) login",
+        "ts": "1509139688.000247"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "in a \"proper\" setup, you'd create a new profile ... maybe \"global-ubuntu\" or something - that has the stagemap configuration",
+        "ts": "1509139696.000245"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "then apply that Profile to the machines you want to get Ubuntu installed",
+        "ts": "1509139706.000117"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "lets do the CLI (and I'll look at the UX) :wink:",
+        "ts": "1509139737.000304"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you could \"clone\" the \"global\" Profile as \"global-centos\", then make the changes to the current \"global\" to use the Ubuntu BootEnv (ubuntu-16.04-install)",
+        "ts": "1509139762.000098"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "sure easy enough - and the right answer :slightly_smiling_face:",
+        "ts": "1509139773.000230"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "yea... and if your busy... I can figure it out... but appreciate the CLI command guidance if you not... :wink:",
+        "ts": "1509139824.000135"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "create a JSON blob (maybe call it \"global-ubuntu-stagemap.json\" or something) - with the following:\n```    {\n      \"Available\": true,\n      \"Description\": \"packet-map\",\n      \"Name\": \"global\",\n      \"Params\": {\n          \"change-stage\/map\": {\n            \"discover\": \"packet-discover:Success\",\n            \"packet-discover\": \"${MACHINES_OS}:Reboot\",\n            \"packet-ssh-keys\": \"complete-nowait:Success\",\n            \"${MACHINES_OS}\": \"packet-ssh-keys:Success\"\n        }\n      }\n    }```",
+        "ts": "1509139848.000070"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "replace the BASH variables (MACHINE_OS) with \"ubuntu-16.04-install\"",
+        "ts": "1509139865.000303"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I'm going to assume you run \"drpcli\" locally on Endpoint, or you set the RS_ENDPOINT variable",
+        "ts": "1509139888.000296"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "`drpcli profiles show global`  # dump the current global profile",
+        "ts": "1509139921.000017"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can redirect that to a JSON file, and modify that ... or just save it \"as a backup\"",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1509139942.000000"
+        },
+        "ts": "1509139939.000211"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the easiest solution ... path of least resistance for now",
+        "ts": "1509139966.000403"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "is to just \"destroy\" the profile named \"global\"",
+        "ts": "1509139974.000241"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "then recreate it with the new JSON blob definition",
+        "ts": "1509139990.000009"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "`drpcli profiles destroy global`\n`drpcli profiles create - &lt; global-ubuntu-stagemap.json`",
+        "ts": "1509140028.000101"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "now if you do the \"show\" again - it should be \"changed\"",
+        "ts": "1509140044.000397"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Note that the \"Name\" key in the JSON defines the Profile ... ahem ... name",
+        "ts": "1509140189.000247"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "so in this case you want to make sure you don't change it from \"global\"",
+        "ts": "1509140199.000069"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(unless you mean to :slightly_smiling_face: )",
+        "ts": "1509140206.000168"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U62R1805P> you've got an error in your JSON ... :slightly_smiling_face:",
+        "ts": "1509140288.000046"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "woops..",
+        "ts": "1509140294.000129"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "<https:\/\/rackn.github.io\/provision-ux\/#\/e\/147.75.64.7:8092\/profiles\/global>",
+        "ts": "1509140296.000208"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I don't want the var redirect...",
+        "ts": "1509140361.000034"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "?",
+        "ts": "1509140362.000120"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "no ... that was just a construct from the BASH script in 5min-drp",
+        "ts": "1509140377.000266"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "remove the dollar and curly braces",
+        "ts": "1509140389.000105"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "and I though I was being 'smart'",
+        "ts": "1509140397.000007"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "see the existing \"centos\" stagemap",
+        "ts": "1509140401.000099"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "yea.. saw it when I uploaded...",
+        "ts": "1509140419.000297"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "now... I have to activate the stage (ubuntu-16.04-install) correct ?",
+        "ts": "1509140550.000154"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "nope",
+        "ts": "1509140566.000085"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "\"global\" profile is \"activated\" ... by default ... globally ...",
+        "ts": "1509140578.000087"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if you take a look at the Machine in the UX",
+        "ts": "1509140648.000323"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "OH...",
+        "ts": "1509140655.000065"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "click on your single Machine there - you'll see the \"centos\" error message about the BootEnv not being available in the \"Stage\"",
+        "ts": "1509140677.000195"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "yup... saw that... so now enable ?",
+        "ts": "1509140697.000193"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "but - you see the \"gohai\" inventory - so sledghammer ran fine, and got the Inventory report",
+        "ts": "1509140703.000031"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "then it failed to transition to \"centos\"",
+        "ts": "1509140711.000109"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can do a couple things ... delete the \"Machine\" from DRP itself, and restart it - it'll re-PXE and start over, and go with Ubuntu now",
+        "ts": "1509140745.000020"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "or you can \"Edit\" the Machine - and put it back in to \"discover\" stage",
+        "ts": "1509140867.000242"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "set it to \"Runnable\", then save it",
+        "ts": "1509140873.000052"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "once done, reboot it",
+        "ts": "1509140875.000408"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "either via the Packet UX, or via the DRP Machines panel - \"reboot\" action",
+        "ts": "1509140892.000231"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Too late.... I saw it! ",
+        "ts": "1509158341.000040"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "wrong screen! trying to change tmux panes, wondering why not working…",
+        "ts": "1509158375.000018"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "But while I have you… does this look right (doing a install just via a stage)\n```[GIN] 2017\/10\/27 - 18:24:26 | 204 |     290.217µs |   192.168.1.143 | POST     \/api\/v3\/jobs\n[GIN] 2017\/10\/27 - 18:24:26 | 200 |     383.925µs |   192.168.1.143 | GET      \/api\/v3\/machines\/5fcbf69d-287e-4c2c-b085-5858665cd442\n[GIN] 2017\/10\/27 - 18:24:26 | 200 |     349.233µs |   192.168.1.143 | GET      \/api\/v3\/stages\/debian-9-install\n[GIN] 2017\/10\/27 - 18:24:31 | 200 |     444.117µs |   192.168.1.143 | GET      \/api\/v3\/machines\/5fcbf69d-287e-4c2c-b085-5858665cd442\n[GIN] 2017\/10\/27 - 18:24:31 | 200 |    4.006366ms |   192.168.1.143 | GET      \/api\/v3\/ws\n[GIN] 2017\/10\/27 - 18:24:31 | 204 |     378.599µs |   192.168.1.143 | POST     \/api\/v3\/jobs\n[GIN] 2017\/10\/27 - 18:24:31 | 200 |     382.419µs |   192.168.1.143 | GET      \/api\/v3\/machines\/5fcbf69d-287e-4c2c-b085-5858665cd442\n[GIN] 2017\/10\/27 - 18:24:31 | 200 |     360.142µs |   192.168.1.143 | GET      \/api\/v3\/stages\/debian-9-install\n[GIN] 2017\/10\/27 - 18:24:36 | 200 |     449.955µs |   192.168.1.143 | GET      \/api\/v3\/machines\/5fcbf69d-287e-4c2c-b085-5858665cd442\n[GIN] 2017\/10\/27 - 18:24:36 | 200 |    2.224572ms |   192.168.1.143 | GET      \/api\/v3\/ws\n[GIN] 2017\/10\/27 - 18:24:36 | 204 |     459.116µs |   192.168.1.143 | POST     \/api\/v3\/jobs\n[GIN] 2017\/10\/27 - 18:24:36 | 200 |     583.233µs |   192.168.1.143 | GET      \/api\/v3\/machines\/5fcbf69d-287e-4c2c-b085-5858665cd442\n[GIN] 2017\/10\/27 - 18:24:36 | 200 |     348.412µs |   192.168.1.143 | GET      \/api\/v3\/stages\/debian-9-install\n[GIN] 2017\/10\/27 - 18:24:41 | 200 |     445.652µs |   192.168.1.143 | GET      \/api\/v3\/machines\/5fcbf69d-287e-4c2c-b085-5858665cd442\n[GIN] 2017\/10\/27 - 18:24:41 | 200 |    2.135051ms |   192.168.1.143 | GET      \/api\/v3\/ws\n[GIN] 2017\/10\/27 - 18:24:41 | 204 |     295.203µs |   192.168.1.143 | POST     \/api\/v3\/jobs\n[GIN] 2017\/10\/27 - 18:24:41 | 200 |     646.374µs |   192.168.1.143 | GET      \/api\/v3\/machines\/5fcbf69d-287e-4c2c-b085-5858665cd442\n[GIN] 2017\/10\/27 - 18:24:41 | 200 |     402.289µs |   192.168.1.143 | GET      \/api\/v3\/stages\/debian-9-install\n[GIN] 2017\/10\/27 - 18:24:46 | 200 |     489.889µs |   192.168.1.143 | GET      \/api\/v3\/machines\/5fcbf69d-287e-4c2c-b085-5858665cd442\n[GIN] 2017\/10\/27 - 18:24:46 | 200 |    2.295319ms |   192.168.1.143 | GET      \/api\/v3\/ws\n[GIN] 2017\/10\/27 - 18:24:46 | 204 |     297.802µs |   192.168.1.143 | POST     \/api\/v3\/jobs\n[GIN] 2017\/10\/27 - 18:24:46 | 200 |     402.409µs |   192.168.1.143 | GET      \/api\/v3\/machines\/5fcbf69d-287e-4c2c-b085-5858665cd442\n[GIN] 2017\/10\/27 - 18:24:46 | 200 |     380.674µs |   192.168.1.143 | GET      \/api\/v3\/stages\/debian-9-install\n[GIN] 2017\/10\/27 - 18:24:51 | 200 |     468.003µs |   192.168.1.143 | GET      \/api\/v3\/machines\/5fcbf69d-287e-4c2c-b085-5858665cd442\n[GIN] 2017\/10\/27 - 18:24:51 | 200 |    2.199664ms |   192.168.1.143 | GET      \/api\/v3\/ws\n[GIN] 2017\/10\/27 - 18:24:51 | 204 |     388.935µs |   192.168.1.143 | POST     \/api\/v3\/jobs\n[GIN] 2017\/10\/27 - 18:24:51 | 200 |     387.637µs |   192.168.1.143 | GET      \/api\/v3\/machines\/5fcbf69d-287e-4c2c-b085-5858665cd442\n[GIN] 2017\/10\/27 - 18:24:51 | 200 |     382.491µs |   192.168.1.143 | GET      \/api\/v3\/stages\/debian-9-install```",
+        "ts": "1509158558.000020"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "looks like some sort of loop…",
+        "ts": "1509158578.000012"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Stupid technology.... Should know what you _meant_ to do... ",
+        "ts": "1509158592.000032"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> shared a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7S83CMSA\/Status_|Status:>",
+        "file": {
+            "id": "F7S83CMSA",
+            "created": 1509158691,
+            "timestamp": 1509158726,
+            "name": "Status_",
+            "title": "Status:",
+            "mimetype": "text\/plain",
+            "filetype": "space",
+            "pretty_type": "Post",
+            "user": "U416T0AAX",
+            "editable": true,
+            "size": 153,
+            "mode": "space",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7S83CMSA\/Status_?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7S83CMSA\/download\/Status_?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7S83CMSA\/Status_",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F7S83CMSA-d5dbc49203",
+            "preview": "<document><div class=\"unfurl-container unfurl-render-pending\"><a class=\"unfurl-placeholder\" href=\"https:\/\/media.giphy.com\/media\/a9xhxAxaqOfQs\/giphy.gif\">https:\/\/media.giphy.com\/media\/a9xhxAxaqOfQs\/giphy.gif<\/a><\/div><p><\/p><\/document>",
+            "updated": 1509158726,
+            "editor": "U416T0AAX",
+            "last_editor": "U416T0AAX",
+            "state": "locked",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 1
+        },
+        "user": "U416T0AAX",
+        "upload": false,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1509158797.000073"
+    },
+    {
+        "type": "message",
+        "subtype": "file_comment",
+        "text": "<@U416T0AAX> commented on <@U416T0AAX>’s file <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7S83CMSA\/Status_|Status:>: nothing I’ve done for days is working…",
+        "file": {
+            "id": "F7S83CMSA",
+            "created": 1509158691,
+            "timestamp": 1509158726,
+            "name": "Status_",
+            "title": "Status:",
+            "mimetype": "text\/plain",
+            "filetype": "space",
+            "pretty_type": "Post",
+            "user": "U416T0AAX",
+            "editable": true,
+            "size": 153,
+            "mode": "space",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7S83CMSA\/Status_?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7S83CMSA\/download\/Status_?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7S83CMSA\/Status_",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F7S83CMSA-d5dbc49203",
+            "preview": "<document><div class=\"unfurl-container unfurl-render-pending\"><a class=\"unfurl-placeholder\" href=\"https:\/\/media.giphy.com\/media\/a9xhxAxaqOfQs\/giphy.gif\">https:\/\/media.giphy.com\/media\/a9xhxAxaqOfQs\/giphy.gif<\/a><\/div><p><\/p><\/document>",
+            "updated": 1509158726,
+            "editor": "U416T0AAX",
+            "last_editor": "U416T0AAX",
+            "state": "locked",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 1
+        },
+        "comment": {
+            "id": "Fc7RFLTVRT",
+            "created": 1509158797,
+            "timestamp": 1509158797,
+            "user": "U416T0AAX",
+            "is_intro": false,
+            "comment": "nothing I’ve done for days is working…"
+        },
+        "is_intro": false,
+        "ts": "1509158797.000090"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "looks like a loop",
+        "ts": "1509159394.000054"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "what's your stagemap look like ?",
+        "ts": "1509159398.000068"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": " That is the pattern of a loop of the runner waiting for more jobs. ",
+        "ts": "1509159927.000024"
+    }
+]

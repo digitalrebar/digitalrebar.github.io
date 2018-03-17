@@ -1,0 +1,2945 @@
+[
+    {
+        "text": "Looks like i am missing out on the 'ux' - how do i get those tools",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507811519.000247"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "@IAMJES The “UX” (techno term for “user experience”) is the RackN portal website (the one you redirect to when you hit `https:\/\/&lt;drp_server_ip&gt;:8092`)",
+        "ts": "1507811646.000402"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Also, if you are using Gitter, you should request a Slack invite to <http:\/\/rackn.slack.com|rackn.slack.com>",
+        "ts": "1507811706.000308"
+    },
+    {
+        "text": "my page looks nothing like what i am seeing in the videos",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507811753.000357"
+    },
+    {
+        "text": "I am in Gitter",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507811771.000025"
+    },
+    {
+        "text": ":worried:  i guess i  need that ",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507811866.000291"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7GJZ0AUQ\/drp_ux.png|drp_ux.png> and commented: DRP UX screen",
+        "file": {
+            "id": "F7GJZ0AUQ",
+            "created": 1507812089,
+            "timestamp": 1507812089,
+            "name": "drp_ux.png",
+            "title": "drp_ux.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 159053,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7GJZ0AUQ\/drp_ux.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7GJZ0AUQ\/download\/drp_ux.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7GJZ0AUQ-a996b98e55\/drp_ux_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7GJZ0AUQ-a996b98e55\/drp_ux_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7GJZ0AUQ-a996b98e55\/drp_ux_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 224,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7GJZ0AUQ-a996b98e55\/drp_ux_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 299,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7GJZ0AUQ-a996b98e55\/drp_ux_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7GJZ0AUQ-a996b98e55\/drp_ux_720.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 448,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7GJZ0AUQ-a996b98e55\/drp_ux_800.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 498,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7GJZ0AUQ-a996b98e55\/drp_ux_960.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 598,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7GJZ0AUQ-a996b98e55\/drp_ux_1024.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 638,
+            "image_exif_rotation": 1,
+            "original_w": 1280,
+            "original_h": 797,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7GJZ0AUQ\/drp_ux.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F7GJZ0AUQ-d9f8942c69",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 1,
+            "initial_comment": {
+                "id": "Fc7H6G76SF",
+                "created": 1507812089,
+                "timestamp": 1507812089,
+                "user": "U416T0AAX",
+                "is_intro": true,
+                "comment": "DRP UX screen"
+            }
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1507812093.000161"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "You aren’t getting this?",
+        "ts": "1507812106.000198"
+    },
+    {
+        "text": "thats the one i get but thats not the one you see in the youtube videos",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507812242.000326"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "YouTube link?",
+        "ts": "1507812256.000457"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Is the webpage color green?",
+        "ts": "1507812274.000167"
+    },
+    {
+        "text": "https:\/\/www.youtube.com\/watch?v=6xuVm9PJ2ck",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507812330.000120"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Ah yes, that’s the prior version (v2) of what was then called just “Digital Rebar”",
+        "ts": "1507812407.000227"
+    },
+    {
+        "text": "those wizards were slick! where did they go?",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507812458.000028"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Now they’ve moved to v3 (current ver 3.1.0) of what’s now called “Digital Rebar Provision”",
+        "ts": "1507812467.000302"
+    },
+    {
+        "text": "deploying openstack on k8 is the goal",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507812498.000565"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "They refactored the “product” into DRP — greatly simplified it",
+        "ts": "1507812535.000211"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "You should speak with <@U02DHRR2L> about how to get O’stack on K8s — DRP can provide the K8s (via Ansible “Kubespray” integration with DRP) but how to then get O’stack running on K8s, I’m not too sure of…",
+        "ts": "1507812673.000150"
+    },
+    {
+        "text": "in this video he made it look to easy",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507812713.000281"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yes, YMMV though — I found DR v2 to be a twisty maze, all passages looking alike :slightly_smiling_face:",
+        "ts": "1507812761.000516"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "(my opinion\/experience only)",
+        "ts": "1507812776.000272"
+    },
+    {
+        "text": "I will take your word for it",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507812984.000527"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "@IAMJES that integration broke when they moved into big tent and started to vertically integrate the install.  Happy to talk 1x1 on what it would take.   I'm still excited about the approach, but...",
+        "ts": "1507813137.000298"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": " It's going to take some investment",
+        "ts": "1507813154.000118"
+    },
+    {
+        "text": "<@U02DHRR2L> I am still working through some of the other options to get them working the way i need them. I really liked the wizards you all were showing in the videos. My long term goal is to either deploy openstack using your tool or making it so people can login and launch environments as needed",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507813380.000099"
+    },
+    {
+        "text": "I am getting a little turned around in the profiles, templates, etc... I am trying to make it so a machine goes through sledgehammer, and then is deployed ubuntu 16.04 with 32gb swap",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507814970.000371"
+    },
+    {
+        "text": "I am thinking it is a operator error",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507814982.000521"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "have you successfully deployed Ubuntu with the stock templates first ?",
+        "ts": "1507815014.000425"
+    },
+    {
+        "text": "thats also part of my confusion.. i created a new template i thought from ubuntu drp... and made START. in start the contents are the IP addresses of the machines that have been through sledgehammer",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507815100.000397"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I'd suggest you do things in very small steps - first deploy the stock Ubuntu to a single node.",
+        "ts": "1507815413.000330"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Then make a small change to inject new Root PW and SSH Keys - get comfortable with that",
+        "ts": "1507815428.000274"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "then clone a template (say ce-net-post-install.sh.tmpl) make a few tweaks, and see how it operates",
+        "ts": "1507815490.000112"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "from there you can clone ce-net-seed.tmpl - and start making hacks to reflect your requirements",
+        "ts": "1507815517.000163"
+    },
+    {
+        "text": "i cloned the ubuntu drp to START",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507815525.000551"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "do you mean you cloned the \"boot environment\"  ?",
+        "ts": "1507815554.000440"
+    },
+    {
+        "text": "no - templates right below boot environments",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507815611.000127"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "which was the source template you cloned ?",
+        "ts": "1507815631.000462"
+    },
+    {
+        "text": "ubuntu-drp-only-repos.tmpl",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507815682.000082"
+    },
+    {
+        "text": "my portal is acting odd and i little locks...",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507815747.000103"
+    },
+    {
+        "text": "i have*",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507815751.000103"
+    },
+    {
+        "text": "ill be back and go through more of the tutorials",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507816046.000230"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "@iamjes - the UI is definitely still a Beta version - it's only a couple of weeks old at this point - there are a few places when the UI will \"hang\" (like after cloning a template) - you need to reload the page, and that fixes it ...",
+        "ts": "1507816176.000087"
+    },
+    {
+        "text": "how do i put a png in here",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507817246.000056"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "what do you mean by a png?",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1507817321.000000"
+        },
+        "ts": "1507817309.000406"
+    },
+    {
+        "text": "This is the error i am getting ... I have cloned the template and nothing not even the defaults appear - png is a file type for pictures https:\/\/imgur.com\/a\/UIKf8",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507817348.000541"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ah - you mean a png in the conversation ? :slightly_smiling_face:",
+        "ts": "1507817370.000697"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "do you have Slack ?  It's easier to add snippets of text, images, etc via the Slack app - not sure how to do it through the gateway you're coming in from",
+        "ts": "1507817423.000556"
+    },
+    {
+        "text": "im just using the web page - anyway the link i put in there is the error i am getting",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507817451.000106"
+    },
+    {
+        "text": "or lack thereof",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507817463.000680"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "can you point me to the web page you're using ?",
+        "ts": "1507817477.000040"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if you choose to use slack, you can request a Slack invite from:  <http:\/\/www.rackn.com\/support\/slack\/>",
+        "ts": "1507817486.000472"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "is your goal to simple use a local repo for your installs ?",
+        "ts": "1507817611.000626"
+    },
+    {
+        "text": "@rackneng yes it is i sent a PM to rackneng",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507818131.000452"
+    },
+    {
+        "text": "@rackneng  here is the url https:\/\/rackn.github.io\/provision-ux\/#\/e\/rebar.010101.info:8092\/stages\/  ",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507818425.000182"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "@iamjes - if you are just trying to change the Repo mirror you use, it's simple to add a few Params with the right names, to change the mirror.  You don't need to clone\/modify the Template file",
+        "ts": "1507818940.000270"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "would again ask - what is your goal you are trying to achieve - and lets help you get there, best if we take it slow steps as you get used to the system",
+        "ts": "1507818975.000807"
+    },
+    {
+        "text": "OK - step one provision a machine with ubuntu",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507819279.000204"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": ":slightly_smiling_face:",
+        "ts": "1507819296.000403"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we recommend doing things iteratively - first make sure a stock ubuntu deploy works happily ...",
+        "ts": "1507819317.000321"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "then lets start sorting out how to hack it make it your own",
+        "ts": "1507819326.000088"
+    },
+    {
+        "text": "Ok",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507819601.000488"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "For those building DRP directly, you will now need go 1.9 for tip builds.  We are using some new testing features so that we can get better stack traces on test failures.",
+        "ts": "1507821355.000803"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Specifically, some of the test helpers have been marked with the new t.Helper() method",
+        "ts": "1507821386.000317"
+    },
+    {
+        "text": "hi there!  can you discuss few minutes around built-in iso\\images on next meetup?\ni'm interesting about the level of support, is this a community feature or you have some plan on it? \nfor example - my opinion: sledgehammer build script has too many hardcore URL with blobs, and the only proper way to use it - download already built tar archive, or build own discovery image\\reinvent the wheel.",
+        "username": "kolomnitcki",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507822153.000485"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "@kolomnitcki - we'd be happy to have you post a comment in the Agenda document requesting this - we are planning to have a community feedback discussion as part of next meetup - you're input would be appreciated:\n<https:\/\/docs.google.com\/document\/d\/1DGuqkjM-oZQ37GLcpwkSIzyTKpPZknTgqjQBS5uusoY\/edit#heading=h.ifc9tve9wbk4>",
+        "ts": "1507822427.000213"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U6QFVRJNB> shared a file: <https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/F7J8GUYNA\/v003_-_20171024_-_drp_3|v003 - 20171024 - DRP 3.2 planning and status, Demo of Virtual Box plugin, community feedback>",
+        "file": {
+            "id": "F7J8GUYNA",
+            "created": 1507822430,
+            "timestamp": 1507822430,
+            "name": "v003 - 20171024 - DRP 3",
+            "title": "v003 - 20171024 - DRP 3.2 planning and status, Demo of Virtual Box plugin, community feedback",
+            "mimetype": "application\/vnd.google-apps.document",
+            "filetype": "gdoc",
+            "pretty_type": "GDocs Document",
+            "user": "U6QFVRJNB",
+            "editable": false,
+            "size": 3272,
+            "mode": "external",
+            "is_external": true,
+            "external_type": "gdrive",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/docs.google.com\/document\/d\/1DGuqkjM-oZQ37GLcpwkSIzyTKpPZknTgqjQBS5uusoY\/edit#heading=h.ifc9tve9wbk4",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7J8GUYNA-79a152288c\/v003_-_20171024_-_drp_3_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7J8GUYNA-79a152288c\/v003_-_20171024_-_drp_3_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7J8GUYNA-79a152288c\/v003_-_20171024_-_drp_3_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 278,
+            "thumb_360_h": 360,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7J8GUYNA-79a152288c\/v003_-_20171024_-_drp_3_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 371,
+            "thumb_480_h": 480,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7J8GUYNA-79a152288c\/v003_-_20171024_-_drp_3_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7J8GUYNA-79a152288c\/v003_-_20171024_-_drp_3_720.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 557,
+            "thumb_720_h": 720,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7J8GUYNA-79a152288c\/v003_-_20171024_-_drp_3_800.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 1035,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7J8GUYNA-79a152288c\/v003_-_20171024_-_drp_3_960.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 742,
+            "thumb_960_h": 960,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7J8GUYNA-79a152288c\/v003_-_20171024_-_drp_3_1024.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 791,
+            "thumb_1024_h": 1024,
+            "image_exif_rotation": 1,
+            "original_w": 800,
+            "original_h": 1035,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/F7J8GUYNA\/v003_-_20171024_-_drp_3",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0,
+            "has_rich_preview": true
+        },
+        "user": "U6QFVRJNB",
+        "upload": false,
+        "display_as_bot": false,
+        "username": "shane",
+        "bot_id": null,
+        "ts": "1507822434.000523"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if you'd add a Comment to the \"Community Feedback\" section ...",
+        "ts": "1507822477.000141"
+    },
+    {
+        "text": "ok",
+        "username": "kolomnitcki",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507822640.000398"
+    },
+    {
+        "text": "@rackneng  - Greg - 1.9 ?",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507822703.000687"
+    },
+    {
+        "text": "The other question i have is how do i make it so docker is part of the initial build",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507822838.000270"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "golang 1.9",
+        "ts": "1507822863.000395"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "sorry - most people aren’t building DRP directly.",
+        "ts": "1507822891.000006"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "just a warning.  And really it is only required for running the tests, but run the tests please if you build it.",
+        "ts": "1507822915.000645"
+    },
+    {
+        "text": "also in this url http:\/\/provision.readthedocs.io\/en\/stable\/doc\/install.html - talks about the user experience 'ux' still being available - is it not gone?",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507822976.000150"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "it is now \/ui or \/.  The redirect is the new way.",
+        "ts": "1507823008.000154"
+    },
+    {
+        "text": "which drp has the wizards that i saw in the youtube videos.. once i get to where i am going how hard is it to upgrade drp",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507823049.000165"
+    },
+    {
+        "text": "sorry if i didnt say that right - still learning the language here",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507823134.000545"
+    },
+    {
+        "text": "I knew i worked on this before... back in the day...",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507823327.000232"
+    },
+    {
+        "text": "cd ~\nmkdir digitalrebar\ngit clone https:\/\/github.com\/rackn\/digitalrebar-deploy digitalrebar\/deploy\nln -s digitalrebar\/ digitalrebar\/deploy\/compose\/digitalrebar\ncd digitalrebar\/deploy\n.\/run-in-system.sh --deploy-admin=local --wl-docker --access=HOST --con-provisioner --con-dhcp --admin-ip=192.168.99.1\/24",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507823329.000119"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "are these moved ?",
+        "ts": "1507831784.000152"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "<https:\/\/github.com\/rackn\/provision-plugins\/releases\/download\/$%7BVER_PLUGINS%7D\/drp-rack-plugins-$%7BDRP_OS%7D-$%7BDRP_ARCH%7D.sha256>",
+        "ts": "1507831785.000119"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "via:\n<https:\/\/github.com\/digitalrebar\/provision\/tree\/master\/examples\/5min-drp>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/tree\/master\/examples\/5min-drp",
+                "text": "provision - The Provisioner for DigitalRebar as a Stand Alone Golang Utility",
+                "fallback": "GitHub: digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/tree\/master\/examples\/5min-drp",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?v=4&s=400",
+                "thumb_width": 192,
+                "thumb_height": 192,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1507831809.000235"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "aka rackn &gt;sb&gt; digitalrebar",
+        "ts": "1507831924.000145"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "* download RackN \"drp-rack-plugin\", which is available at:",
+        "ts": "1507832019.000040"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "hey chris - I'm updating that code to work correctly - but in generaly the \"VER_PLUGINS\", \"DRP_OS\", and \"DRP_ARCH\" variables needs to be set correctly",
+        "ts": "1507832538.000538"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I don't see the <http:\/\/github.com\/rackn\/provision-plugins|github.com\/rackn\/provision-plugins>",
+        "ts": "1507832638.000334"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "so I just figured it's moving ?",
+        "ts": "1507832646.000535"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "... unless your doing github 'magic'",
+        "ts": "1507832690.000004"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "Or that's private repo stuff...",
+        "ts": "1507832719.000200"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "private repo stuff - (most) all of the public content has moved to the digitalrebar repo",
+        "ts": "1507832958.000110"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "so... how would I actually get that OR is the script going to do that ?",
+        "ts": "1507833401.000359"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I'm working on those details right now for you - and that'll be updated either in the README or the script - depending on how automated I can make it - it requires authentication since it's registered (free) use content from RackN that makes it work in the <http:\/\/packet.net|packet.net> environment",
+        "ts": "1507833529.000215"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "OK... I'm about done for day anyway, should I just check the git readme tomorrow ?",
+        "ts": "1507833595.000367"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I did register myself for beta rackn... got the email back",
+        "ts": "1507833633.000190"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "OH... I just saw if [[ \"$USER\" == \"shane\" ]]",
+        "ts": "1507833710.000291"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": ":wink:",
+        "ts": "1507833712.000449"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "excellent - yes, I'll update the git repo README today when I sort it out - and I'll drop you a DM here to let you know",
+        "ts": "1507833717.000091"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "ok... thanks",
+        "ts": "1507833731.000010"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yeah ... make it easy-peasy for me to grab my pre-staged secrets\/content :slightly_smiling_face:",
+        "ts": "1507833739.000124"
+    },
+    {
+        "text": "how do i pay for the rackn add-ons?",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507833834.000334"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "um",
+        "ts": "1507833865.000435"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I could go do it manually... but you had the terraform going AND the guys here think they want to go terraform too... so figure I'd sort of force-feed your pattern... if Doc Gray accepts then at least 3 user groups and companies will follow...",
+        "ts": "1507833867.000164"
+    },
+    {
+        "text": "just a fyi - i am not able to add providers",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507834986.000218"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "@iamjes - are you getting an error?  how are you trying to add a Provider ?",
+        "ts": "1507835378.000064"
+    },
+    {
+        "text": "@rackneng - no errors nothing happens",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507835417.000092"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it looks like the 3 plugin providers are installed correctly - \"slack\", \"ipmi\", and \"packet-ipmi\"",
+        "ts": "1507835711.000441"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you don't need \"packet-ipmi\" if you aren't provisioning in the <http:\/\/packet.net|packet.net> environment",
+        "ts": "1507835733.000019"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "once you add the \"Plugin Provider\", you have to create System --&gt; \"Plugin\" of the type you want to use",
+        "ts": "1507835764.000024"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "for example - Add a plugin of type \"IPMI\" to enable IPMI (power on\/off\/reset) actions",
+        "ts": "1507835799.000335"
+    },
+    {
+        "text": "when i go to systems -&gt; plugins and click on IPMI nothing happens",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507835863.000440"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Did you do \"Add\", then \"Use Provider\"  ??",
+        "ts": "1507835929.000363"
+    },
+    {
+        "text": "yes - when i do that i get a box in the middle of the screen to click on 'Add'",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507835981.000600"
+    },
+    {
+        "text": "@rackneng - nice youtube video on how to use packet for using community content - is there any that shows how to deploy ubuntu  machines on premise?",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507839100.000483"
+    },
+    {
+        "text": "@rackneng - maybe its just me the UI has some catching up to do of how things are done at CLI",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507841254.000194"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "@iamjes ... UI is BETA - it was only released about 2 weeks ago tops - so, yes, it has some catching up to do - but it's leaps and bounds better than the green UI in the 3.0.x versions !!  :wink:",
+        "ts": "1507841850.000270"
+    },
+    {
+        "text": "@rackneng - Shane ill take your word for it once i see all the lines of code in json i get lost so fast trying to keep with the video",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507841996.000514"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "JSON makes any sane persons eyes go crossed ....",
+        "ts": "1507842025.000172"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "anyone that likes JSON has something slightly wrong with them ... but goodness help me ... it's a MILLION times better than XML !!!",
+        "ts": "1507842047.000217"
+    },
+    {
+        "text": "all i want for is to learn how to 'hammer' the ubuntu deployment",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507842086.000320"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can do that without any of the advanced plugins - with purely the Community Content - the \"ce-discovery\", \"ce-sledgehammer\", and the \"ce-ubuntu-16.04-install\" content - but you won't get the IPMI reboot capabilities and the advanced Workflows of the Stages and Tasks stuff - which is pretty cool stuff",
+        "ts": "1507842169.000340"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "but the UI isn't 100% nailed yet, and so some of the things may need to be finished at CLI ... I'm happy to help you with those things",
+        "ts": "1507842196.000050"
+    },
+    {
+        "text": "i have all the other groundwork done i think",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507842304.000175"
+    },
+    {
+        "text": "rebooting server",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507842311.000011"
+    },
+    {
+        "text": "done and online",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507842533.000440"
+    },
+    {
+        "text": "there was another template video in march and the paths were different and i couldnt find my way around - hence my emphasis on the UI",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507842587.000373"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "There are 3 main versions of the product that you are going to find videos for .... the older Digital Rebar version 2 solution which was based on containerized system, Digital Rebar Provision (DRP) ver 3.0.x, and the current DRP 3.1 version",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1507842644.000000"
+        },
+        "ts": "1507842642.000097"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "any videos for DRver2 should be ignored ... half of the content in the DRP 3.0.x videos is ... probably ... not right ...",
+        "ts": "1507842672.000039"
+    },
+    {
+        "text": ":worried: ",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507842684.000137"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you want to focus on any videos for DRP ver 3.1",
+        "ts": "1507842685.000253"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the product went through a very large metamorphosis between DRver2 and DRP ver 3 ...",
+        "ts": "1507842752.000053"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "from 3.0.x to 3.1 there was a huge amount of new features and capabilities added - and that was released only a month ago",
+        "ts": "1507842769.000181"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "in addition, the UI was completely reworked\/rebuilt\/rewritten from scratch along with that",
+        "ts": "1507842791.000340"
+    },
+    {
+        "text": "is version 3 the wizards?",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507842801.000458"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I think the \"wizards\"  you are referring to is the older DRver2 product",
+        "ts": "1507842844.000242"
+    },
+    {
+        "text": "once i get this figured out i dont mind working on some training word documents for dummies",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507842858.000105"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "none of those work\/relate\/pertain to the DRPv3 line",
+        "ts": "1507842858.000310"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "DRP is a community open source project, and we'd definitely welcome any additions\/help with the documentation as it is... we know it's pretty rough",
+        "ts": "1507842894.000179"
+    },
+    {
+        "text": "once i am able to understand this again and be able to do it over again i dont mind documenting my steps screen for screen and any commands done in the terminal",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507842965.000510"
+    },
+    {
+        "text": "then you all can wordsmith and then publish however you like",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507842982.000261"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "sounds good !",
+        "ts": "1507843065.000345"
+    },
+    {
+        "text": "so here is where i am now .. https:\/\/rackn.github.io\/provision-ux\/#\/e\/rebar.010101.info:8092\/system",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507843094.000320"
+    },
+    {
+        "text": "i have grabbed all the boot environments i think i need and uploaded them to the server, the preferences are correct i think",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507843138.000370"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you're not operating in the <http:\/\/packet.net|packet.net> environment - I don't think ... right ?",
+        "ts": "1507843205.000495"
+    },
+    {
+        "text": "so reading the panes i am led to believe that we work our way down from templates -&gt; params -&gt; profiles? or am i working backwards",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507843211.000444"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "so no need for anything labeled with \"packet\"",
+        "ts": "1507843219.000228"
+    },
+    {
+        "text": "No i have all my servers here",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507843223.000221"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "future note; you can delete all content\/plugins related to packet and you'll be fine",
+        "ts": "1507843242.000214"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "those are just helper pieces that do reboots and help inject SSH keys through packet's metadata services to add to a provisioned server",
+        "ts": "1507843273.000518"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the ordering of setting things up doesn't matter - just that \"all the things get set up\"",
+        "ts": "1507843306.000555"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "before you try to provision",
+        "ts": "1507843310.000423"
+    },
+    {
+        "text": "ok i found the packet item and removed it",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507843383.000194"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "also - if you are using the RackN content, you do not need the \"drp-community-content\" Contents",
+        "ts": "1507843394.000547"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "and - the associated BootEnvs of ce-* (eg ce-discovery, ce-sledgehammer, ce-ubuntu...)",
+        "ts": "1507843417.000119"
+    },
+    {
+        "text": "this was what i used curl -fsSL https:\/\/raw.githubusercontent.com\/digitalrebar\/provision\/stable\/tools\/install.sh | bash -s -- --isolated install",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507843424.000392"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it'll just confuse things if you try and mix-n-match them inappropriately",
+        "ts": "1507843428.000369"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "when you do the install - if you know you are going to use RackN content - and not drp-community-content, you can add a `--nocontent` flag to the install",
+        "ts": "1507843460.000058"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "and it won't be installed",
+        "ts": "1507843462.000486"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "should you decide to add it back in - you can just add the \"drp-community-content\" Contents back, along w\/ the associated BootEnvs",
+        "ts": "1507843486.000102"
+    },
+    {
+        "text": "you are talking about the content packages? the default items never downloaded so i did it myself for the files",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507843524.000388"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "right - there are 2 types of \"Content\"",
+        "ts": "1507843540.000489"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "\"community content\" == drp-community-content in the Contents screen, and associated BootEnvs with ce-* names",
+        "ts": "1507843565.000093"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "that stuff is all 100% open\/free to community use and input\/modifications\/etc",
+        "ts": "1507843586.000537"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "RackN also distributes more advanced content ... which we just refer to as \"RackN Content\" - you must register for the use of that content, and a lot of it's free for use, as long as you register",
+        "ts": "1507843620.000139"
+    },
+    {
+        "text": "i am registered",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507843636.000521"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "there is some content you can purchase, which is even more advanced and customized pieces that are pay for content",
+        "ts": "1507843638.000178"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": ":slightly_smiling_face:  yep",
+        "ts": "1507843642.000027"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "with the use of the RackN registered\/free content - you do NOT need the Community Content",
+        "ts": "1507843663.000223"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "and in your case, since you are not operating in <http:\/\/packet.net|packet.net> - you do not need any \"packet\" stuff",
+        "ts": "1507843674.000142"
+    },
+    {
+        "text": "i think i removed all the packet stuff",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507843688.000149"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "now - \"Content\" is a number of things",
+        "ts": "1507843692.000220"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "\"Contents\" are just bundles of similarly grouped things",
+        "ts": "1507843702.000286"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "\"Plugin Providers\" are add-on features - which need to be configured as a \"Plugin\" (you saw that earlier)",
+        "ts": "1507843726.000240"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "\"BootEnvs\" are individual install pieces (eg Centos or Ubuntu) operating systems",
+        "ts": "1507843748.000374"
+    },
+    {
+        "text": "i have both ubuntu iso's there",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507843762.000095"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yep",
+        "ts": "1507843768.000306"
+    },
+    {
+        "text": "so it is easier to make a new profile",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507843855.000021"
+    },
+    {
+        "text": "call it plain-ubuntu-16",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507843907.000422"
+    },
+    {
+        "text": "*^%$! - profile isnt responding through the UI",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507844009.000240"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I've noticed that your Endpoint seems to pause occasionally",
+        "ts": "1507844055.000075"
+    },
+    {
+        "text": "i am on 150\/150 fiber - so i dont know",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507844082.000264"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "is it a VM on a busy hypervisor or something?  it feels like either I\/O blocking on hypervisor (eg \"noisy neighbor\"), or a network connection issue",
+        "ts": "1507844083.000358"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the DRP Endpoint - is it running as a Virtual Machine ?",
+        "ts": "1507844100.000156"
+    },
+    {
+        "text": "it is not on a vm",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507844105.000223"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the DRP 3.1 binary is pretty stable, and doesn't block - unless you are \"exploding\" ISO content - it will block API calls temporarily as it writes to disk to protect any concurrent access to the written content",
+        "ts": "1507844143.000409"
+    },
+    {
+        "text": "i dont know",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507844194.000411"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "our binary is pretty light weight (29 mbyte in size on disk) ... and only requires a few 100 mbyte memory in general",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1507844233.000000"
+        },
+        "ts": "1507844227.000233"
+    },
+    {
+        "text": "there's more than enough for it to run",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507844264.000305"
+    },
+    {
+        "text": "provisioning a machine on pxe is done in about 30 seconds",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507844319.000139"
+    },
+    {
+        "text": "(the start process anyways)",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507844337.000024"
+    },
+    {
+        "text": "so whats the next step",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507844607.000160"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we can either drive provisioning manually - or create a stagemap to automate the stepping through of each stage",
+        "ts": "1507844683.000038"
+    },
+    {
+        "text": "automate!",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507844706.000185"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ok - easiest thing to do is create the stagemap with our good old friend JSON",
+        "ts": "1507844807.000306"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "```{\n  \"Available\": true,\n  \"Description\": \"Global Ubuntu Stage Map\",\n  \"Name\": \"global\",\n  \"Params\": {\n    \"change-stage\/map\": {\n      \"discover\": \"ubuntu-16.04-install:Reboot\",\n      \"ssh-access\": \"complete-nowait:Success\",\n      \"ubuntu-16.04-install\": \"ssh-access:Success\"\n    }\n  }\n}```",
+        "ts": "1507844810.000405"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "assuming you want to Provision Ubuntu 16.04",
+        "ts": "1507844827.000312"
+    },
+    {
+        "text": "yes",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507844832.000089"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "write that to something like \"stagemap-ubuntu.json\" on your DRP endpoint",
+        "ts": "1507844851.000428"
+    },
+    {
+        "text": "let me find that directory",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507844930.000214"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "doesn't matter where - we'll inject it with CLI",
+        "ts": "1507844943.000159"
+    },
+    {
+        "text": "so just put the file anywhere",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507844984.000129"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yes - but change the \"Name\" value to \"ubuntu-16.04\" lets not override with the \"global\" name",
+        "ts": "1507845017.000318"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we'll apply this profile to Machines - otherwise, all machines will get the profile (that's what \"global\" means)",
+        "ts": "1507845042.000024"
+    },
+    {
+        "text": "i remember some of this from back in the day - when you needed a minimum of 8gb ram to run the install",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507845131.000033"
+    },
+    {
+        "text": "file made",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507845141.000297"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "on the DRP endpoint, lets run:\n```   drpcli profiles create - &lt; stagemap-ubuntu.json ```",
+        "ts": "1507845158.000450"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(substitute \"stagemap-ubuntu.json\" with whatever you named your json file on disk)",
+        "ts": "1507845174.000132"
+    },
+    {
+        "text": "thats what i used",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507845189.000236"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": ":slightly_smiling_face:",
+        "ts": "1507845194.000172"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "nice - I see it there in Profiles now",
+        "ts": "1507845265.000331"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "so - that \"stagemap\" is the Workflow that system will go through:",
+        "ts": "1507845289.000332"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "discover node will be put in to \"ubuntu-16.04-install\" bootenv and installed according to that boot environment",
+        "ts": "1507845331.000432"
+    },
+    {
+        "text": "so then i bring in a new node and use the stagemap after the sledhammer process?",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507845341.000223"
+    },
+    {
+        "text": "sledgehammer*",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507845410.000154"
+    },
+    {
+        "text": "i dont see that in the system preferences",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507845491.000016"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "correct - we boot the Machine - and assuming the hardware is set up to PXE Boot - and we have it in the same Layer 2 network - or you have \"ip helper\" on your switch\/router to pass DHCP through to your DRP endpoint",
+        "ts": "1507845585.000044"
+    },
+    {
+        "text": "just a second",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507845605.000277"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the Machine will be initially \"discovered\" according to the \"unknown\" BootEnv (discovery)",
+        "ts": "1507845619.000257"
+    },
+    {
+        "text": "node booted",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507845626.000044"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "once it's been discovered - we should see it in Machines",
+        "ts": "1507845650.000147"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(assuming your \"Subnets\" specification is also correct for the machine network)",
+        "ts": "1507845663.000060"
+    },
+    {
+        "text": "stage 2 almost done ",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507845666.000057"
+    },
+    {
+        "text": "were done",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507845694.000073"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "boom !",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1507845699.000000"
+        },
+        "ts": "1507845696.000244"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "now you want to edit the machine - and add the new stagemap profile we created",
+        "ts": "1507845719.000239"
+    },
+    {
+        "text": "almost every time i do that the page never finishes for me to edit",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507845764.000014"
+    },
+    {
+        "text": "cant edit",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507845776.000449"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "change the Profile to \"Ubuntu-16.04\" and set it \"runnable\"",
+        "ts": "1507845784.000143"
+    },
+    {
+        "text": "i went to overview and clicked the + for ubuntu 1604",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507845913.000213"
+    },
+    {
+        "text": "or was i to take a different path",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507845944.000341"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Um ... I've never used the \"overview\" screen :slightly_smiling_face:",
+        "ts": "1507846017.000098"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I'd make the change in the Machines screen and edit the machine - I'm not certain what \"things\" overview will twiddle for us",
+        "ts": "1507846041.000207"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "also - your IPMI plugin isn't actually created (under System) - so you'd have to manually reboot your node for now - until you add your IPMI user\/pass credentials",
+        "ts": "1507846088.000234"
+    },
+    {
+        "text": "went to system -&gt; machines and clicked the name but the screen just says loading",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507846111.000120"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "try again",
+        "ts": "1507846141.000173"
+    },
+    {
+        "text": "no luck",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507846170.000187"
+    },
+    {
+        "text": "i broke it",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507846255.000407"
+    },
+    {
+        "text": "i have been using chrome ...",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507846368.000053"
+    },
+    {
+        "text": "its chrome - i switched to edge and it worked no problem",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507846476.000227"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ok - if you edit the Machine - you want to change it to:\nRunnable (enabled \/ true)\nStage set to \"ubuntu-16.04-install\"\nProfiles - add \"Ubuntu-16.04\"",
+        "ts": "1507846909.000101"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "but we also want to fix your IPMI plugin",
+        "ts": "1507846917.000162"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U6QFVRJNB> Can one change a name of an existing profile?",
+        "ts": "1507847071.000252"
+    },
+    {
+        "text": "changed it but i am not seeing it refresh",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507847365.000163"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U416T0AAX> nope - you can destroy and recreate pretty easily - which is \"sort of\" a rename function :slightly_smiling_face:",
+        "ts": "1507847368.000018"
+    },
+    {
+        "text": "ok it updated",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507847428.000381"
+    },
+    {
+        "text": "for now to get through the exercise i rebooted the node and it is installing ubuntu 16.04",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507847793.000163"
+    },
+    {
+        "text": "uh-oh bad archive mirror",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507847815.000245"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ok - that's a good start !",
+        "ts": "1507847816.000326"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "dang, I got happy too soon",
+        "ts": "1507847826.000153"
+    },
+    {
+        "text": "did i miss something in the subnet?",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507847873.000347"
+    },
+    {
+        "text": "it looks fine",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507847982.000113"
+    },
+    {
+        "text": "i removed the next server value as there is no other server",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507848213.000032"
+    },
+    {
+        "text": "it still hangs up on the mirror",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507848276.000110"
+    },
+    {
+        "text": "i need to stop for now ",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507848291.000273"
+    },
+    {
+        "text": "need brain fuel - maybe come back to this tonight or in the morning - also need some place to help tell you enter IPMI details here",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507848333.000327"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "is 10.0.0.2 your valid DNS server ?",
+        "ts": "1507848575.000237"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "@iamjes - if you sign up for a Slack account ... we can direct message",
+        "ts": "1507848672.000132"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U6QFVRJNB> There’s a drpcli command to dump the JSON of the profile?",
+        "ts": "1507848673.000067"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yes",
+        "ts": "1507848679.000104"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "drpcli profiles show &lt;profile-name&gt;",
+        "ts": "1507848696.000116"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "And there’s bash-completion for drpcli right?",
+        "ts": "1507848778.000101"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can do `drpcli profiles list | jq '.[].Name'`",
+        "ts": "1507848780.000335"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "that'll show the list of Named",
+        "ts": "1507848789.000029"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "profiles",
+        "ts": "1507848792.000007"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<http:\/\/provision.readthedocs.io\/en\/tip\/doc\/faq-troubleshooting.html#turn-on-autocomplete-for-the-cli>",
+        "ts": "1507848880.000105"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you have to install the autocompletion",
+        "ts": "1507848898.000216"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, failed to delete my profile that I want to rename…\n```[dradmin@dr-admin drp]$ drpcli profiles destroy os-install-necla-defaults\nError: Unable to destroy profile os-install-necla-defaults: unknown error (status 422): {resp:0xc42010c000}```",
+        "ts": "1507849332.000112"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Ah, it cannot be referenced anywhere…",
+        "ts": "1507849511.000138"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Needs a better error message :wink:",
+        "ts": "1507849522.000283"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Once I deleted the references, the destroy worked",
+        "ts": "1507849541.000055"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "api\/cli == less warm and fuzzy ...",
+        "ts": "1507849550.000250"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Now to re-add it…",
+        "ts": "1507849570.000093"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, worked",
+        "ts": "1507849646.000148"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "woot !",
+        "ts": "1507849685.000132"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Hmmm, still in the UX as the old name…",
+        "ts": "1507849697.000238"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "\"refresh\"",
+        "ts": "1507849718.000289"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if not that - try Shift-Reload",
+        "ts": "1507849736.000200"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yes, was a PEBKAC problem… Didn’t rename the “Name” attrib in the JSON :stuck_out_tongue_winking_eye:",
+        "ts": "1507849830.000331"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ah yes ... AI is going to solve the worlds PEBKAC issues !!",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1507851778.000000"
+        },
+        "ts": "1507851774.000094"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Need an issues for <@U416T0AAX> issue.  That is a swagger annotation error with delete of a profile.  ",
+        "ts": "1507852042.000089"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Will open one",
+        "ts": "1507852106.000100"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Now about the bash completion…",
+        "ts": "1507852745.000101"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "??",
+        "ts": "1507852855.000118"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<http:\/\/provision.readthedocs.io\/en\/tip\/doc\/faq-troubleshooting.html#turn-on-autocomplete-for-the-cli>",
+        "ts": "1507852863.000152"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Running CentOS 7.3 - I see both `\/etc\/bash_completion.d\/` and `\/etc\/profile.d\/` - where is the correct target dir to put the bash completion into?",
+        "ts": "1507852928.000012"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "```. \/etc\/bash_completion # On Ubuntu\n. \/etc\/profile.d\/bash_completion.sh # On Centos\n. \/usr\/local\/etc\/bash_completion # On OS X with bash 4 installed.```",
+        "ts": "1507852963.000101"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Wonder what `\/etc\/bash_completion.d\/` is for then?",
+        "ts": "1507853019.000179"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if your linux version has that - create it as drp.bash in that directory",
+        "ts": "1507853078.000007"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "```[root@5min-drp-ewr1-00 ~]# drpcli autocomplete \/etc\/bash_completion.d\/drp.bash\n[root@5min-drp-ewr1-00 ~]# exit\nlogout\nConnection to 147.75.65.3 closed.\nshane@gala:~\/5min-drp$ ssh -x -i 5min-nodes-ssh-key root@147.75.65.3\nLast login: Thu Oct 12 22:12:40 2017 from <http:\/\/c-69-181-139-202.hsd1.ca.comcast.net|c-69-181-139-202.hsd1.ca.comcast.net>\n[root@5min-drp-ewr1-00 ~]# drpcli\nautocomplete      events            interfaces        leases            plugin_providers  profiles          subnets           users\nbootenvs          files             isos              machines          plugins           reservations      tasks             version\ncontents          info              jobs              params            prefs             stages            templates```",
+        "ts": "1507853125.000004"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Tried `drp.bash` as well as `drpcli` in that dir - no dice…",
+        "edited": {
+            "user": "U416T0AAX",
+            "ts": "1507854444.000000"
+        },
+        "ts": "1507854433.000090"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Ah, need to install support pkgs on CentOS\/RHEL…\n`yum install bash-completion bash-completion-extras`",
+        "ts": "1507855074.000082"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So it ended up being `sudo .\/drpcli autocomplete \/etc\/bash_completion.d\/drpcli` that worked",
+        "ts": "1507855152.000113"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Have a workflow question…",
+        "ts": "1507856399.000159"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "How can one send existing machines into a profile’s workflow?",
+        "ts": "1507856428.000188"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Say it exists in machine inventory with the ‘local’ bootenv… How to get it when rebooted into PXE to invoke another profile’s workflow?",
+        "ts": "1507856596.000041"
+    },
+    {
+        "text": "@rackneng  wdennis - have the slack app installed",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507856998.000215"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Using Slack is so much better than Gitter for this",
+        "ts": "1507857052.000105"
+    },
+    {
+        "text": "never used it -only ever used chrome",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507857167.000229"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "you mean Gitter in Chrome (the browser?)",
+        "ts": "1507857194.000006"
+    },
+    {
+        "text": "yes",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507857221.000148"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Did you request an invite to the community channel?",
+        "ts": "1507857250.000016"
+    },
+    {
+        "text": "ive been a member here for a long time just inactive",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507857330.000144"
+    },
+    {
+        "text": "@rackneng -wdennis to answer the first question 10.0.0.x is the network for nodes",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507857746.000211"
+    },
+    {
+        "text": "10.0.0.x is on eth1 and 192.168.1.x is on eth0",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507857773.000060"
+    },
+    {
+        "text": "now that i think about there can only be one gateway when there is two cards",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507857878.000076"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "@IAMJES - you need to have a valid DNS server passed in via the DHCP Options (option 6) to resolve the default Ubuntu Mirror",
+        "ts": "1507857930.000151"
+    },
+    {
+        "text": "can  i have more than one?",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507857971.000045"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the mirror used by default (unless you override it with a parameter) is:  <http:\/\/us.debian.org>",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1507858005.000000"
+        },
+        "ts": "1507857997.000021"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U6QFVRJNB> in System &gt; Plugins, if I click “Add”, I see the IPMI provider; but when I click “Use Provider”, nothing happens…",
+        "ts": "1507858034.000198"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I think eet eez a bugz in duh seeestem",
+        "ts": "1507858056.000002"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(beta UI)",
+        "ts": "1507858066.000065"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "yeah yeah yeah … :beetle:",
+        "ts": "1507858116.000056"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I can provide you the CLI JSON equiv.",
+        "ts": "1507858124.000171"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Let’s have it",
+        "ts": "1507858150.000045"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "System --&gt; Info &amp; Preferences (that menu item was recently renamed)",
+        "ts": "1507858231.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "DHCP options are comma separated, but haven't validated if we input and pass through that way",
+        "ts": "1507858246.000103"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "so for DHCP Option 6, in theory, you'd do:  8.8.8.8,8.8.4.4 (for example using google dns)",
+        "ts": "1507858264.000217"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "hmm ... grubbing through the Go code, I can't find a definitive answer for you offhand - but I suspect comma separated",
+        "ts": "1507858415.000076"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if <@U02DGQYK1> is awake, he might know off the top of his head",
+        "ts": "1507858438.000106"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I think it is but let me check",
+        "ts": "1507858477.000078"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "rfc spec is comma - and I only find models\/dhcpOptions.go specifying \"Multiple IP address\" in the comment, but no parsing code to verify",
+        "ts": "1507858525.000238"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "(reposted)",
+        "attachments": [
+            {
+                "fallback": "[October 12th, 2017 9:00 PM] wdennis: How can one send existing machines into a profile’s workflow?",
+                "ts": "1507856428.000188",
+                "author_id": "U416T0AAX",
+                "author_subname": "Will Dennis",
+                "channel_id": "C02L9P26Q",
+                "channel_name": "community",
+                "is_msg_unfurl": true,
+                "text": "How can one send existing machines into a profile’s workflow?",
+                "author_name": "Will Dennis",
+                "author_link": "https:\/\/rackn.slack.com\/team\/U416T0AAX",
+                "author_icon": "https:\/\/secure.gravatar.com\/avatar\/e0423b823331f6b489f99b939d5c669d.jpg?s=48&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0003-48.png",
+                "mrkdwn_in": [
+                    "text"
+                ],
+                "color": "D0D0D0",
+                "from_url": "https:\/\/rackn.slack.com\/archives\/C02L9P26Q\/p1507856428000188",
+                "is_share": true,
+                "footer": "Posted in #community"
+            }
+        ],
+        "ts": "1507858672.000044"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "rfc spec is comma for string specified items.  The problem is that Multiple IP address are byte encoded (no comma separated).  But you found the right code, <@U6QFVRJNB>.",
+        "ts": "1507858746.000032"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U416T0AAX> edit the Machines change stage\/profile and enable Runnable",
+        "ts": "1507858767.000088"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK - not sure I’m doing this workflows thang right…",
+        "ts": "1507858817.000041"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah - we need a video\/docs\/discussion about stages and workflows.",
+        "ts": "1507858855.000075"
+    },
+    {
+        "text": "@rackneng  - no luck on the dns option",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507858855.000195"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DGQYK1> Your lips to God’s ears",
+        "ts": "1507858899.000168"
+    },
+    {
+        "text": "i can ping the 10.0.0.x ip address",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507858899.000178"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "@iamjes - set your DNS option to just a single DNS for now (just in case) - and make sure you can reach it (eg from DRP Endpoint - do \"host <http:\/\/www.google.com|www.google.com>\") to make sure you have access to it",
+        "ts": "1507858956.000055"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U6QFVRJNB>  what is the “not runnable” (runnable not selected) state mean?",
+        "ts": "1507859031.000032"
+    },
+    {
+        "text": "shane - sorry i am not familiar with all the end points",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507859043.000089"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "@IAMJES - do your machines have one interface or two? Does the PXE booting interface have internet access?",
+        "ts": "1507859127.000061"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I think <@U6QFVRJNB> meant DRP machine you are going to install.",
+        "ts": "1507859161.000153"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U416T0AAX> - “not runnable” means that the task system tried to run something and it failed.  This could be because of a task error or it could be because of a bad stage map\/profile setup.  You can check jobs to see if there is a failed job in the list.",
+        "ts": "1507859222.000134"
+    },
+    {
+        "text": "@rackneng  greg - PXE \/ DHCP is on eth1 for the 10.0.0.x net",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507859235.000186"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Okay - does 10.0.0.x route out to the internet?",
+        "ts": "1507859251.000010"
+    },
+    {
+        "text": "checking",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507859385.000180"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DGQYK1> So in the UX, in Systems &gt; Machines, there is a “State” column, with either a green :white_check_mark: or a black “power switch” symbol",
+        "ts": "1507859403.000118"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "If I edit a node, I see a slider switch widget, that sets the node to Runnable (or not)",
+        "ts": "1507859446.000005"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "If “runnable” is set “off”, what does that do\/mean?",
+        "ts": "1507859484.000004"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "runnable off turns the black power switch on in the UX.  it means that something in the task system needs to be examined.",
+        "ts": "1507859576.000058"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The runnable flag is set to true by users or if the node runs `drpcli machines processjobs`.  This is usually done as part of a bootenv (like sledgehammer or the install bootenvs).",
+        "ts": "1507859641.000202"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It is meant to be an indicator that something might be amiss.",
+        "ts": "1507859675.000192"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "If a job fails, process jobs will wait until it becomes runnable again and retry the jobs.",
+        "ts": "1507859695.000208"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK… It seems that when I’ve installed a node, and the bootenv goes to ‘local’, then the “runnable” switch is off",
+        "edited": {
+            "user": "U416T0AAX",
+            "ts": "1507859763.000000"
+        },
+        "ts": "1507859724.000118"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "What I’m trying to do is take a node that’s in a ‘local’ bootenv (i.e., was previously installed), and set it to reinstall and trigger a workflow for the profile that I’ve assigned to it",
+        "ts": "1507859831.000155"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - so apply the profile to the machine that as the workflow in it.",
+        "ts": "1507859878.000107"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Set the machine’s stage to the first stage in your workflow (like discover).",
+        "ts": "1507859913.000113"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Reboot the node (so it PXE boots).",
+        "ts": "1507859922.000079"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "What I’ve done is edit the node, set the bootenv to (for example) `ubuntu-16.04-install`, set the profile to the desired one, and then set the stage to the first stage in the workflow",
+        "ts": "1507859925.000036"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "If you are using stages, you don’t need to deal with bootenvs directly.  Stages imply bootenvs.",
+        "ts": "1507859962.000047"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That should work assuming you have a starting stage of like `ubuntu-16.04-install`",
+        "ts": "1507860037.000013"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yes, I see that now - if I select a stage of `ubuntu-16.04-install`, the bootenv is set to the same and not edittable",
+        "ts": "1507860081.000012"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "This is good to see you guys use this and ask questions.  I’m tweaking in now for 3.2.  I’m going to try and make this more explicit.",
+        "ts": "1507860090.000124"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yes, the workflow has a starting stage of `ubuntu-16.04-install`",
+        "ts": "1507860114.000016"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "So, set the machine’s stage to that.  Make sure the machine has a profile with a `change-stage\/map` parameter (or in global).  Then PXE boot the machine.",
+        "ts": "1507860160.000170"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I will check the profile",
+        "ts": "1507860196.000070"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "BTW, what’s the IPMI plugin for (do)?",
+        "ts": "1507860218.000231"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I activated it, but then in UX System &gt; Plugins, can’t seem to Add &gt; Use Provider",
+        "ts": "1507860262.000057"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "IPMI plug does IPMI calls to manage the bare metal machines.",
+        "ts": "1507860335.000017"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It needs a node to have a couple of parameters to function.",
+        "ts": "1507860353.000137"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Love to be able to use it…",
+        "ts": "1507860373.000175"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yes, my node’s profile does have the stage map:\n```      \"change-stage\/map\": {\n        \"ssh-access\": \"complete-nowait:Success\",\n        \"ubuntu-16.04-install\": \"ssh-access:Success\"\n      },\n```",
+        "ts": "1507860407.000116"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - looks good.",
+        "ts": "1507860435.000235"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I’m using some old Dell PE 860's to test with, so they tend to take a while to PXE -&gt; install",
+        "edited": {
+            "user": "U416T0AAX",
+            "ts": "1507860560.000000"
+        },
+        "ts": "1507860485.000242"
+    },
+    {
+        "text": "Time to feed the :bear:!",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1507860486.000013"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I’m not on site now, so hard to know what’s going on with them once I set to PXE next boot &amp; restart via IPMI…",
+        "ts": "1507860538.000105"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yeah ….",
+        "ts": "1507860616.000016"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So was hoping that the IPMI plugin would let me set the nodes to PXE next boot and restart…",
+        "ts": "1507860648.000083"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It can",
+        "ts": "1507860655.000080"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "THere is a content package that goes with it.",
+        "ts": "1507860671.000044"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It can be used to configure the BMC.",
+        "ts": "1507860679.000077"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Currently doing it by:\n```[dradmin@dr-admin ~]$ ipmitool -I lan -H testnode01-ipmi -U root -a chassis bootparam set bootflag force_pxe\nPassword:\nSet Boot Device to force_pxe\n[dradmin@dr-admin ~]$ ipmitool -I lan -H testnode01-ipmi -U root -a chassis power cycle\nPassword:\nChassis Power Control: Cycle```",
+        "ts": "1507860693.000172"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "and set the parameters needed by the plugin.",
+        "ts": "1507860695.000098"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "it does those commands - well we use a slightly different one for the top one.",
+        "ts": "1507860723.000090"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "```drpcli plugin_providers list``` I think will show you the actions that will get added to a machine whtn the plug provider is configured with a plugin and the machine has the required parameters.",
+        "ts": "1507860815.000121"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "```{\n    \"AvailableActions\": [\n      {\n        \"Command\": \"poweron\",\n        \"OptionalParams\": null,\n        \"Provider\": \"ipmi\",\n        \"RequiredParams\": [\n          \"ipmi\/username\",\n          \"ipmi\/password\",\n          \"ipmi\/address\"\n        ]\n      },\n      {\n        \"Command\": \"poweroff\",\n        \"OptionalParams\": null,\n        \"Provider\": \"ipmi\",\n        \"RequiredParams\": [\n          \"ipmi\/username\",\n          \"ipmi\/password\",\n          \"ipmi\/address\"\n        ]\n      },\n      {\n        \"Command\": \"powercycle\",\n        \"OptionalParams\": null,\n        \"Provider\": \"ipmi\",\n        \"RequiredParams\": [\n          \"ipmi\/username\",\n          \"ipmi\/password\",\n          \"ipmi\/address\"\n        ]\n      },\n      {\n        \"Command\": \"nextbootpxe\",\n        \"OptionalParams\": null,\n        \"Provider\": \"ipmi\",\n        \"RequiredParams\": [\n          \"ipmi\/username\",\n          \"ipmi\/password\",\n          \"ipmi\/address\"\n        ]\n      },\n      {\n        \"Command\": \"nextbootdisk\",\n        \"OptionalParams\": null,\n        \"Provider\": \"ipmi\",\n        \"RequiredParams\": [\n          \"ipmi\/username\",\n          \"ipmi\/password\",\n          \"ipmi\/address\"\n        ]\n      },\n      {\n        \"Command\": \"identify\",\n        \"OptionalParams\": [\n          \"ipmi\/identify-duration\"\n        ],\n        \"Provider\": \"ipmi\",\n        \"RequiredParams\": [\n          \"ipmi\/username\",\n          \"ipmi\/password\",\n          \"ipmi\/address\"\n        ]\n      }\n    ],\n    \"Name\": \"ipmi\",\n    \"OptionalParams\": null,\n    \"Parameters\": [\n      {\n        \"Available\": true,\n        \"Description\": \"IP Address of the BMC\",\n        \"Documentation\": \"This parameter is used by the IPMI Plugin to access the BMC\",\n        \"Errors\": [],\n        \"Meta\": {\n          \"color\": \"blue\",\n          \"icon\": \"address card outline\",\n          \"title\": \"RackN Content\"\n        },\n        \"Name\": \"ipmi\/address\",\n        \"ReadOnly\": false,\n        \"Schema\": {\n          \"type\": \"string\"\n        },\n        \"Validated\": true\n      },\n      {\n        \"Available\": true,\n        \"Description\": \"Username to access the BMC\",\n        \"Documentation\": \"This parameter is used by the IPMI Plugin to access the BMC\",\n        \"Errors\": [],\n        \"Meta\": {\n          \"color\": \"blue\",\n          \"icon\": \"user circle\",\n          \"title\": \"RackN Content\"\n        },\n        \"Name\": \"ipmi\/username\",\n        \"ReadOnly\": false,\n        \"Schema\": {\n          \"type\": \"string\"\n        },\n        \"Validated\": true\n      },\n      {\n        \"Available\": true,\n        \"Description\": \"Password to access the BMC\",\n        \"Documentation\": \"This parameter is used by the IPMI Plugin to access the BMC\",\n        \"Errors\": [],\n        \"Meta\": {\n          \"color\": \"blue\",\n          \"icon\": \"lock\",\n          \"password\": \"hideme\",\n          \"title\": \"RackN Content\"\n        },\n        \"Name\": \"ipmi\/password\",\n        \"ReadOnly\": false,\n        \"Schema\": {\n          \"type\": \"string\"\n        },\n        \"Validated\": true\n      },\n      {\n        \"Available\": true,\n        \"Description\": \"Duration in seconds to leave the identify light on\",\n        \"Documentation\": \"Duration in seconds to leave the identify light on\",\n        \"Errors\": [],\n        \"Meta\": {\n          \"color\": \"blue\",\n          \"icon\": \"podcast\",\n          \"title\": \"RackN Content\"\n        },\n        \"Name\": \"ipmi\/identify-duration\",\n        \"ReadOnly\": false,\n        \"Schema\": {\n          \"type\": \"integer\"\n        },\n        \"Validated\": true\n      }\n    ],\n    \"RequiredParams\": null,\n    \"Version\": \"v1.0.0-0-3c742d9c049e008ad86d3c1cf2b420e44318bc9f\"\n  }```",
+        "ts": "1507860873.000102"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That monstrosity is the ipmi plugin provider’s definition.  It shows the parameters that are needed to control it and the actions that machines get.",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1507860921.000000"
+        },
+        "ts": "1507860905.000060"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yeah, will have to try the `nextbootpxe` and `powercycle` ones",
+        "ts": "1507860950.000106"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "For example, add `ipmi\/address`, `ipmi\/username`, `ipmi\/password` to a machine as parameters (with good values) and the actions should show up in the UX and CLI.  Then you can call them from the UX or CLI to drive those actions.",
+        "ts": "1507861002.000021"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Do you know if the command should be `chassis bootparam set bootflag nextbootpxe`? Or something other?",
+        "ts": "1507861042.000208"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Nope:",
+        "ts": "1507861082.000248"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "```[dradmin@dr-admin ~]$ ipmitool -I lan -H testnode02-ipmi -U root -a chassis bootparam set bootflag nextbootpxe\nPassword:\nInvalid argument: nextbootpxe```",
+        "ts": "1507861088.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "we use ```ipmitool &lt;flags to connect&gt; chassis bootdev pxe```",
+        "ts": "1507861102.000147"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "There are additional flags to make it persistent, but we are mostly just trying to get the next boot to be pxe.",
+        "ts": "1507861138.000039"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yup, that worked",
+        "ts": "1507861148.000099"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "What’s your reboot one?",
+        "ts": "1507861189.000016"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "`chassis power cycle`?",
+        "ts": "1507861205.000171"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes",
+        "ts": "1507861272.000159"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Cool, thx",
+        "ts": "1507861285.000140"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I don’t see any IPMI-related stuff in Content Packages…",
+        "ts": "1507861305.000166"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Dude… I think I’m getting the workflow \/ stages thing now… :grinning:",
+        "ts": "1507861559.000113"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Good - I’m about to change.  :slightly_smiling_face:",
+        "ts": "1507861588.000098"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "First node is in Stage “complete-nowait” and BootEnv “local”",
+        "ts": "1507861624.000010"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Let’s log in and take a look…",
+        "ts": "1507861642.000048"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "that looks good.  That looks like a success.",
+        "ts": "1507861642.000176"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So wait wat - you are going to change the way Stages work now?? :cry:",
+        "ts": "1507861686.000197"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "A little bit.  There are some issue with stages and workflows that we should fix before we get to much further along.  The concepts will be the same and names won’t change.  The map is going to change a little.",
+        "ts": "1507861739.000090"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I promise I’ll document it just as good as the current scheme.  :slightly_smiling_face:",
+        "ts": "1507861770.000032"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "lol",
+        "ts": "1507861776.000088"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "What is the sound of one hand clapping?",
+        "ts": "1507861790.000013"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": ":slightly_smiling_face:",
+        "ts": "1507861802.000202"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "These are the changes we talked about in the community meetup around stage changes.",
+        "ts": "1507861828.000212"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yes - t’would be great to have the Workflow stage map actually be graph-like…",
+        "ts": "1507861870.000201"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Alpha-ordering the stages is a bit confusing",
+        "ts": "1507861896.000173"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That is part,  Differentiating different workflows in the same map space.  Tracking the current workflow in process.  These are nice usability changes that are coming.  There are more subtle issues that we are addressing as well.",
+        "ts": "1507862004.000178"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Tracking workflow in progress - W00T!",
+        "ts": "1507862041.000036"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The success path and task failure paths through stages are fine and safe, but the random failure cases aren’t handled completely safe.",
+        "ts": "1507862071.000017"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Kind of like the v2 checkmarks thing?",
+        "ts": "1507862077.000044"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Kinda - in a very gross way, you could use stages as roles and workflows as deployments, but that isn’t really a completely accurate analogy.",
+        "ts": "1507862146.000103"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The intent is to make workflows a parameter-based thing so it is all content driven.",
+        "ts": "1507862166.000207"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I really can’t wait until you guys document this — very powerful, but you gotta know how to use it…",
+        "ts": "1507862203.000133"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The random failure cases are if machines randomly reboot (power outage, hurricane, …) and catch machines mid cycle.",
+        "ts": "1507862209.000123"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yup, “inconsistent state”",
+        "ts": "1507862223.000153"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "exactly.  The stages can have issues recovering from that.",
+        "ts": "1507862235.000168"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "A couple of tweaks and a few more pieces of actions will allow both stages and workflows to handle those cases as well.",
+        "ts": "1507862268.000015"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U62R1805P> - I've updated the examples\/5min-drp\/ stuff ... however I think it's broken a bit due to some terraform provider plugin breakage by either Terraform or <http:\/\/Packet.net|Packet.net> - I'm not sure at the moment ... and I'm toast for the evening.  I'll pick it back up again tmw morning.  Please check out the README though - as it's updated with the \"new way\" of getting things, and AUTHing to get content - you no longer have to stage the RackN DRP Plugin  content ...",
+        "ts": "1507863152.000078"
+    }
+]

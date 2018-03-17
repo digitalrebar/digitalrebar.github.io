@@ -1,0 +1,62 @@
+[
+    {
+        "text": "I did the quick config on a 32GB Ubuntu 16.08 clean install:\ncurl -fsSL https:\/\/raw.githubusercontent.com\/digitalrebar\/digitalrebar\/master\/deploy\/quickstart.sh | bash -s -- --con-provisioner --con-dhcp --admin-ip=192.168.88.228\/24",
+        "username": "ctrees",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1498775557.797231"
+    },
+    {
+        "text": "Of which the 192.168.88.228 was the DHCP IP handed out on the .88 sub by a mikrotik router....  I'm still waiting for the ansible playbook to end, but I had started to poke around on the web UI... I had earlier installed the provisioner ONLY on another machine on another test network",
+        "username": "ctrees",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1498775767.840461"
+    },
+    {
+        "text": "Your comments above lead me to believe the provisioner is not installed ? \nhttp:\/\/provision.readthedocs.io\/en\/stable\/doc\/quickstart.html\n",
+        "username": "ctrees",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1498775921.870707"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You are mixing docs.",
+        "ts": "1498776086.903062"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Your command line is for digitalrebar and not digitalrebar provision (the doc link).  You want the <http:\/\/digitalrebar.readthedocs.io\/en\/stable\/doc\/quickstart.html>",
+        "ts": "1498776121.909908"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "WIth that command line, you should have the provisioner and the dhcp server",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1498776147.000000"
+        },
+        "ts": "1498776142.914031"
+    },
+    {
+        "text": "OK... I though so, just was not sure if the other is better to use for metal ?  I noticed you've broke it out into an independent github repo... but you've got such flexibility with all these services it, I have to check the 'spinning top' ",
+        "username": "ctrees",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1498776435.970201"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah - we are slowly splitting things out for better control and non-monolithic services.  Slowly.",
+        "ts": "1498777601.190786"
+    }
+]

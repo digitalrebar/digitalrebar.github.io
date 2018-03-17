@@ -1,0 +1,304 @@
+[
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "anyone have a good 'ssh key rotation strategy for ops' reference or article ?",
+        "ts": "1511879189.000482"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "So far... This is what I've got:",
+        "ts": "1511879883.000345"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "<http:\/\/nvlpubs.nist.gov\/nistpubs\/ir\/2015\/NIST.IR.7966.pdf>",
+        "ts": "1511879884.000377"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "hm, that seems more geared to auditing purposes than anything else.",
+        "ts": "1511880939.000463",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<https:\/\/access.redhat.com\/documentation\/en-us\/red_hat_enterprise_linux\/6\/html\/deployment_guide\/sec-using_openssh_certificate_authentication> might be a good read",
+        "ts": "1511881151.000653"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "along with the SSH certificates section of <https:\/\/ef.gy\/hardening-ssh>",
+        "attachments": [
+            {
+                "service_name": "ef.gy :: le bloeg d'enfer",
+                "title": "How to Harden SSH with Identities and Certificates",
+                "title_link": "https:\/\/ef.gy\/hardening-ssh",
+                "text": "It's 2014 and remote unix shells are as popular as ever. Which is great, except that people don't seem to be using the more advanced security features nearly enough. So, what are they and how can you use them?",
+                "fallback": "ef.gy :: le bloeg d'enfer: How to Harden SSH with Identities and Certificates",
+                "image_url": "https:\/\/ef.gy\/jpeg\/7389234452_a0d7b0fd34_o",
+                "ts": 1407427980,
+                "from_url": "https:\/\/ef.gy\/hardening-ssh",
+                "image_width": 375,
+                "image_height": 250,
+                "image_bytes": 131889,
+                "id": 1
+            }
+        ],
+        "ts": "1511881193.000763"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "tl;dr: SSH supports auth using signed certs that have valid lifetimes instead of the classic public\/provate keypairs with unbounded lifetimes",
+        "ts": "1511881289.000375"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "Thanks!",
+        "ts": "1511884156.000769"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U6QFVRJNB> Thx for the more precise gohai removal syntax",
+        "ts": "1511888463.000716"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": ":slightly_smiling_face: no problem ... I fought that for a bit before I realized a dash was \"important\" to JSON ...",
+        "ts": "1511888495.000114"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "There's always a \"sin tax\" :wink:",
+        "ts": "1511888529.000337"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I added it to the FAQ documentation - will be updated next time we push to \"latest\"",
+        "ts": "1511888662.000216"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So, <@U02DGQYK1> I'm guessing that `CurrentTask` == `0` means \"no more tasks\"",
+        "ts": "1511888683.000070"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "it depends upon the task list length. :slightly_smiling_face:",
+        "ts": "1511889157.000350"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "CurrentTask is the index into the task list.",
+        "ts": "1511889165.000329"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "CurrentTask == 0 means the zeroth task in the list is the current one.",
+        "ts": "1511889202.000286"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": ":slightly_smiling_face:",
+        "ts": "1511889206.000398"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "CurrentTask == len(Tasks) means nothing else to do.",
+        "ts": "1511889229.000217"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "if CT == len(tasklist), then done.  Otherwise, it is that that position (programmer style) in the list.",
+        "ts": "1511889229.000515"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "ah, got it",
+        "ts": "1511894071.000459"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I take it then the `Tasks` list persists until the pointer == len(Tasks), then is deleted?",
+        "ts": "1511894141.000481"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "the UX machines page should have a task list now (with x-links)",
+        "ts": "1511895161.000093"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "so, <!channel>: Spaces in names of things: Awesome, ok i guess, or heresy?",
+        "ts": "1511897122.000295"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I am adding validation to various names of things,, and it would be good to know before I make everyone's life just that much harder.",
+        "ts": "1511897247.000057"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "Jobs: \"Awesome\" Woz: \"Heresy, spaces are my HEX delimiter\" ... pick your abstraction camp",
+        "ts": "1511898608.000078"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "So, here are the validations I am contemplating:",
+        "ts": "1511899491.000055"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "var (\n\tvalidName      = regexp.MustCompile(`^\\pL+([- _.]+|\\pN+|\\pL+)+$`)\n\tvalidParamName = regexp.MustCompile(`^\\pL+([- _.\/]+|\\pN+|\\pL+)+$`)\n)",
+        "ts": "1511899499.000162"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "the former is for everything that is not a param",
+        "ts": "1511899514.000798"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "the latter is for params for $REASONS",
+        "ts": "1511899526.000133"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "\\pN is everything Unicode considers a number, and \\pL is everything Unicode considers a letter",
+        "ts": "1511899581.000190"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "the rest of it should be obvious enough to anyone who has stared at too much Perl.",
+        "ts": "1511899608.000446"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "or obsessed about DFA vs NFA ww.r.t speed and feature completeness.",
+        "ts": "1511899650.000182"
+    },
+    {
+        "user": "U86MW1GJW",
+        "text": "<@U86MW1GJW> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1511900375.000353"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<@U416T0AAX> the Tasks list persists until someone or something changes it",
+        "ts": "1511900495.000088"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "either directly via the API or indirectly via stage change.",
+        "ts": "1511900515.000434"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U86MW1GJW> - welcome ",
+        "ts": "1511900522.000182"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "<@U02DJQSG8> so must start with letter... maybe that's why my \"2cld\" name had issues",
+        "ts": "1511902065.000274"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "my regexp foo is weak though...",
+        "ts": "1511902144.000078"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "well, these are what I am working on right now.",
+        "ts": "1511902178.000133"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "They are not in a tree you would be using, unless you hafve some crazy access to my laptop I have not noticed. :slightly_smiling_face:",
+        "ts": "1511902205.000039"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "oh... it was on other 'ansible' or 'vagrant' things... you just got me thinking 'oh... that's probably why'",
+        "ts": "1511902263.000383"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "i changed to \"tocld\" name and it worked... didn't dig that deep... I can ping some moz 'data collection log guys' if you need intense regex foo'ness",
+        "ts": "1511902528.000063"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DJQSG8> No to spaces! (and double no to tabs! :stuck_out_tongue_winking_eye: )",
+        "ts": "1511907445.000520"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "That makes it a tie!",
+        "ts": "1511907585.000524"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "For now, it is spaces because some of my unit tests have them.",
+        "ts": "1511907601.000147"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I need to work on some mods to my preseed file.... Need to create custom one and link it in; how do I go about doing that?",
+        "ts": "1511907676.000186"
+    }
+]

@@ -1,0 +1,39 @@
+[
+    {
+        "user": "U40CEEFPS",
+        "inviter": "U02DHRR2L",
+        "text": "<@U40CEEFPS> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1486253733.000002"
+    },
+    {
+        "type": "message",
+        "user": "U40CEEFPS",
+        "text": "I've connected *1 new room* _digitalrebar\/core_ on Gitter. See <https:\/\/sameroom.io\/maps\/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODYzMzkyMDAsInJvb21faWQiOjI1ODYyNjksImlkZW50aXR5X2lkIjoxOTU3NzJ9.26dcTYlbnS9aSQR_n_Jv4Tt2FelG8aJg03FjodwAPms|map>",
+        "bot_id": "B41PS9J94",
+        "ts": "1486253733.000003"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "testing bot",
+        "ts": "1486253749.000004"
+    },
+    {
+        "text": "bot reverse",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486253763.000005"
+    },
+    {
+        "text": "<@U02DHRR2L|zehicle> - thanks for the update. I'll look on Monday morning. Is there a threaded\/batched way to engage with these sorts of conversations? Email list, web forum etc? IM is clunky when I'm online maybe 30hrs\/week and in the wrong timezone.",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486281180.000006"
+    }
+]

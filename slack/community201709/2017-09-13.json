@@ -1,0 +1,8 @@
+[
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "lion_kg_twitter - if you are running Digital Rebar Provision - then you can get the version via `drpcli version`  - if you have a Digital Rebar v2 server - you'll have a \"rebar\" command - which would be `rebar version`.    Your binaries may be installed in different locations - depending on how you did the original install.",
+        "ts": "1505308468.000179"
+    }
+]

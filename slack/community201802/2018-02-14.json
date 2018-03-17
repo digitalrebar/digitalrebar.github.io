@@ -1,0 +1,421 @@
+[
+    {
+        "user": "U98GE6YRF",
+        "text": "<@U98GE6YRF> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1518624385.000062"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U98GE6YRF> $welcome",
+        "ts": "1518635847.000616"
+    },
+    {
+        "text": "Digital Rebar community welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1518635847.000699"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I updated the 'impi' plugin to latest (tip) on my v3.6.0 install, and it seems to have hung the server... I killed it and restarted (running isolated), and this is what I see:",
+        "ts": "1518638013.000478"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F9A9NPQ6B\/drp_startup_errror.txt|DRP startup errror>",
+        "file": {
+            "id": "F9A9NPQ6B",
+            "created": 1518638030,
+            "timestamp": 1518638030,
+            "name": "DRP_startup_errror.txt",
+            "title": "DRP startup errror",
+            "mimetype": "text\/plain",
+            "filetype": "text",
+            "pretty_type": "Plain Text",
+            "user": "U416T0AAX",
+            "editable": true,
+            "size": 581,
+            "mode": "snippet",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9A9NPQ6B\/drp_startup_errror.txt?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9A9NPQ6B\/download\/drp_startup_errror.txt?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F9A9NPQ6B\/drp_startup_errror.txt",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F9A9NPQ6B-5ca4279b5c",
+            "edit_link": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F9A9NPQ6B\/drp_startup_errror.txt\/edit",
+            "preview": "[dradmin@dr-admin drp]$ sudo .\/dr-provision --static-ip=192.168.1.148 --base-root=\/home\/dradmin\/drp\/drp-data --local-content=\"\" --default-content=\"\" --disable-dhcp\r\n[sudo] password for dradmin:\r\ndr-provision2018\/02\/14 15:30:31.741113 Version: v3.6.0-0-0e5ccf678a3e5b5fdb10f86261247cd28c858ac0\r\ndr-provision2018\/02\/14 15:30:31.741232 Extracting Default Assets\r\ndr-provision2018\/02\/14 15:30:32.836079 [1:1]plugins [error]: \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/midlayer\/messaging.go:61\r",
+            "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>[dradmin@dr-admin drp]$ sudo .\/dr-provision --static-ip=192.168.1.148 --base-root=\/home\/dradmin\/drp\/drp-data --local-content=&quot;&quot; --default-content=&quot;&quot; --disable-dhcp<\/pre><\/div>\n<div><pre>[sudo] password for dradmin:<\/pre><\/div>\n<div><pre>dr-provision2018\/02\/14 15:30:31.741113 Version: v3.6.0-0-0e5ccf678a3e5b5fdb10f86261247cd28c858ac0<\/pre><\/div>\n<div><pre>dr-provision2018\/02\/14 15:30:31.741232 Extracting Default Assets<\/pre><\/div>\n<div><pre>dr-provision2018\/02\/14 15:30:32.836079 [1:1]plugins [error]: \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/midlayer\/messaging.go:61<\/pre><\/div>\n<div><pre><\/pre><\/div>\n<\/div>\n<\/div>\n",
+            "lines": 6,
+            "lines_more": 1,
+            "preview_is_truncated": false,
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1518638031.000272"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yep - that will do it",
+        "ts": "1518638031.000483"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "`tip` plugins are `plugin-v2` style",
+        "ts": "1518638046.000669"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "v3.6.0 stable is `plugin-v1` style - radically different",
+        "ts": "1518638062.000642"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Why did it let me update?",
+        "ts": "1518638064.000648"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "completely and utterly non-compatible",
+        "ts": "1518638073.000251"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "because",
+        "ts": "1518638076.000343"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "And I would know that how?",
+        "ts": "1518638085.000557"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "what UX endpoint were you using ?",
+        "ts": "1518638101.000774"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<http:\/\/rackn.github.io|rackn.github.io>",
+        "ts": "1518638118.000700"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Same as ever...",
+        "ts": "1518638129.000534"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "our new `stable` UX endpoint going forward, which you should use instead of that is: \n<https:\/\/portal.rackn.io>",
+        "ts": "1518638204.000374"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I thought that's with the new v3.7 when released?",
+        "ts": "1518638222.000760"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "In this channel, I said NOT to do that.",
+        "ts": "1518638225.000645"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the default redirect in v3.7.0 will switch to that",
+        "ts": "1518638237.000730"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DGQYK1> must have missed that...",
+        "ts": "1518638242.000138"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we're still working out all the kinks between Feature Flags, UX Endpoint Version, DRP Endpoint Version ... and applying appropriate guardrails on those things",
+        "ts": "1518638271.000304"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "anyway, it does.  It will be resolved on v3.7.0 stable - ux, plugins, and all will have better trigger to prevent bad behaviour.",
+        "ts": "1518638277.000266"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "good to hear",
+        "ts": "1518638279.000101"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "No way to roll back? (Or if v3.7 in the next few days, I could just wait and upgrade...)",
+        "ts": "1518638353.000645"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "or move to tip drp",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1518638370.000000"
+        },
+        "ts": "1518638364.000311"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Can upgrade from current tip to future stable?",
+        "ts": "1518638410.000478"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yep",
+        "ts": "1518638421.000446"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I usually do `tools\/install.sh --isolated --upgrade install` -- what do i need to add to get `tip`?",
+        "ts": "1518638504.000678"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "depends - do you have a copy of the `stable` or `tip` install.sh script ?  (note:  `tip` has `--version` flag - don't look at the usage, look at the `case` statement)",
+        "ts": "1518638700.000094"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "prolly `stable`",
+        "ts": "1518638719.000041"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I fixed a bit of the version stuff in there - but it's only in `tip` - after v3.7.0 publishes, it'll be in `stable`",
+        "ts": "1518638728.000266"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I'd suggest:\n```curl -s get.rebar.digital\/tip -o install.sh\nbash .\/install.sh install --isolated --upgrade --force --version=tip\n```",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1518638788.000000"
+        },
+        "ts": "1518638775.000083"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Cool, done",
+        "ts": "1518638939.000364"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "On `v3.6.0-tip-149-4d49d65825eaab25ce0e3bfde8871d3ee05337db`",
+        "ts": "1518639040.000249"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "UX via `<http:\/\/portal.rackn.io|portal.rackn.io>`",
+        "ts": "1518639072.000490"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "In a machine, was `select-kickseed` a `string` before, but now an `object`?",
+        "ts": "1518640025.000147"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "it should always be a string.",
+        "ts": "1518640055.000137"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DGQYK1> looks like it's an object now in the UX...",
+        "edited": {
+            "user": "U416T0AAX",
+            "ts": "1518646268.000000"
+        },
+        "ts": "1518646222.000315"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F9A64URCN\/select-kickseed-obj.png|select-kickseed-obj.png>",
+        "file": {
+            "id": "F9A64URCN",
+            "created": 1518646245,
+            "timestamp": 1518646245,
+            "name": "select-kickseed-obj.png",
+            "title": "select-kickseed-obj.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 22876,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9A64URCN\/select-kickseed-obj.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9A64URCN\/download\/select-kickseed-obj.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9A64URCN-b9bd1ad5ed\/select-kickseed-obj_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9A64URCN-b9bd1ad5ed\/select-kickseed-obj_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9A64URCN-b9bd1ad5ed\/select-kickseed-obj_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 90,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9A64URCN-b9bd1ad5ed\/select-kickseed-obj_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 120,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9A64URCN-b9bd1ad5ed\/select-kickseed-obj_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9A64URCN-b9bd1ad5ed\/select-kickseed-obj_720.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 180,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9A64URCN-b9bd1ad5ed\/select-kickseed-obj_800.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 200,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9A64URCN-b9bd1ad5ed\/select-kickseed-obj_960.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 240,
+            "image_exif_rotation": 1,
+            "original_w": 1018,
+            "original_h": 255,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F9A64URCN\/select-kickseed-obj.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F9A64URCN-b6b7c4ba50",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1518646248.000289"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "And on the last install, it did not seem to use my custom `necla-ubu-seed.tmpl`",
+        "ts": "1518646317.000093"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Is the `select-kickseed` in the parameters list in the UX?",
+        "ts": "1518646463.000565"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "What version is the content?  I think select-kickseed is in tip content as a parameter.",
+        "ts": "1518646510.000584"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "It is not.",
+        "ts": "1518646512.000108"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "drp-community-content is at v1.1.0 in \"Content Packages\"",
+        "ts": "1518646561.000001"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That is really old.",
+        "ts": "1518646578.000317"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Version inspections says:\n```drp-community-content content\nMajor  Upgrade from v1.1.0 to v1.5.0```",
+        "ts": "1518646611.000305"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "However... I can't upgrade, the upgrade button is greyed in Content Packages",
+        "ts": "1518646638.000494"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "(a bug reported to <@U02DHRR2L> that I believe he said he has a fix for...)",
+        "ts": "1518646685.000488"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "use <http:\/\/tip.rackn.io|tip.rackn.io>",
+        "ts": "1518646697.000010"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "aha",
+        "ts": "1518646740.000244"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, fixed, thanks",
+        "ts": "1518646781.000062"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I'll be glad to get back to stable when it's 3.7.x and use the stable UX",
+        "ts": "1518646826.000379"
+    }
+]

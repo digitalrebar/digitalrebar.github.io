@@ -1,0 +1,529 @@
+<html><body><style>
+			* {
+				font-family:sans-serif;
+			}
+			body {
+				text-align:center;
+				padding:1em;
+			}
+			.messages {
+				width:100%;
+				max-width:700px;
+				text-align:left;
+				display:inline-block;
+			}
+			.messages img {
+				background-color:rgb(248,244,240);
+				width:36px;
+				height:36px;
+				border-radius:0.2em;
+				display:inline-block;
+				vertical-align:top;
+				margin-right:0.65em;
+			}
+			.messages .time {
+				display:inline-block;
+				color:rgb(200,200,200);
+				margin-left:0.5em;
+			}
+			.messages .username {
+				display:inline-block;
+				font-weight:600;
+				line-height:1;
+			}
+			.messages .message {
+				display:inline-block;
+				vertical-align:top;
+				line-height:1;
+				width:calc(100% - 3em);
+			}
+			.messages .message .msg {
+				line-height:1.5;
+			}
+		</style><div class="messages"><div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-03 15:07</div><div class="msg">Hi</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-03 15:08</div><div class="msg">How can we have access to Kubernetes Config? Deployed Kubernetes in Amazon</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-03 15:12</div><div class="msg">You can edit the role attributes on k8s-config (it is in the upper corner of the deployment view).  Changing values and committing the deployment will make the attributes take effect.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-20 17:49</div><div class="msg">Hi All <!channel> - I've update to latest kargo and let most of our defaults that same.  The big change is that the default api server port has moved from 443 to 6443.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-20 17:50</div><div class="msg">So you will need to add :6443 to your url to access the api server.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-20 18:02</div><div class="msg">Hello! Can anyone please tell me how to add additional arguments to openstack cloud provider? I'm using v3 api, and I need to add os-user-domain-name and os-identity-api-version, but there are no such fields in provider interface. Thanks in advance!</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-20 18:06</div><div class="msg">hmm - checking</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-20 18:23</div><div class="msg">@alex3594 - My guess is that we don't currently handle that.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-20 18:24</div><div class="msg">We would need to update the cloudwrap container with a version of the openstack command that supports v3 if it doesn't already, and then add those two fields to the passed through structure and put them on the openstack command.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-20 18:24</div><div class="msg">Can you open an issue for this, please?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-20 18:25</div><div class="msg">@zehicle Sure, thanks!</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-20 18:30</div><div class="msg">I created the issue, here is the link: https://github.com/digitalrebar/digitalrebar/issues/237 Thanks!</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-20 18:31</div><div class="msg">Thanks</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2017-03-20 18:33</div><div class="msg">Here's the parameter mapping for the openstack CLI in cloudwrap</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2017-03-20 18:33</div><div class="msg">openstack --os-username \'#{endpoint['os-username']}\' " \
+                    "--os-password \'#{endpoint['os-password']}\' " \
+                    "--os-project-name \'#{endpoint['os-project-name']}\' " \
+                    "--os-region-name \'#{endpoint['os-region-name']}\' " \
+                    "--os-auth-url \'#{endpoint['os-auth-url']}\' " \
+                    "#{cmd}"</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2017-03-20 18:34</div><div class="msg">what fields do you require for your regular openstack CLI calls?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-20 18:34</div><div class="msg">@zehicle - he opened a bug for it with the fields and all.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-20 18:34</div><div class="msg">--os-user-domain-name 'default' and --os-identity-api-version '3'</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2017-03-20 18:35</div><div class="msg">ah, thanks</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2017-03-21 13:12</div><div class="msg">I've got a patch out there for that --os issue</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 13:19</div><div class="msg">I'll attempt to pull it in and rebuild the container.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 14:49</div><div class="msg">alex3594 - Containers and code are updated.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 14:49</div><div class="msg">You can do a git pull in the digitalrebar directory.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 14:50</div><div class="msg">You will need to do the following commands from the deploy/compose directory</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 14:50</div><div class="msg">docker-compose restart rebar-api</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 14:50</div><div class="msg">docker-compose stop cloudwrap ; docker-compose rm -f cloudwrap ; docker-compose up -d cloudwrap</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 14:50</div><div class="msg">or just start over.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 16:23</div><div class="msg">Thank you! Will test it now!</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2017-03-21 16:59</div><div class="msg">You should watch the cloudwrap log to make sure parameters are right</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 20:04</div><div class="msg">hey guys</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 20:05</div><div class="msg">I am trying to setup a digitalrebar admin server</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 20:05</div><div class="msg">and I keep getting an error in this ansible task : TASK [Pull compose images [SLOW]]</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 20:06</div><div class="msg">the output basically says that the images are already up-to-date</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 20:07</div><div class="msg">https://gist.github.com/dadicool/e1ee0ab50bcec157dedf0ac4e3f18a57</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 20:07</div><div class="msg">I tried to rerunning multiple times as suggested here : http://digital-rebar.readthedocs.io/en/latest/deployment/troubleshooting/specific-environment/Run-In-System.html</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 20:07</div><div class="msg">but I keep hitting the same error ...</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 20:08</div><div class="msg">any suggestions would be welcome!</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 20:13</div><div class="msg">it is me.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 20:13</div><div class="msg">I built a bad cloudwrap again.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 20:14</div><div class="msg">:)</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 20:14</div><div class="msg">any reason why the script tries to pull with DR_TAG=master</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 20:14</div><div class="msg">that feels ... adventurous </div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 20:14</div><div class="msg">Because your git tree is master.  We only currently have a functioning master.  Our bad probably.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 20:15</div><div class="msg">is there anything I could do at this moment to get me a functional setup?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 20:16</div><div class="msg">no - I need to repush an image.  I'd love for people to yell at docker for changing how docker works on a mac, but ...</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 20:16</div><div class="msg">got it</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 20:16</div><div class="msg">is this a matter of minutes, hours, days?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 20:16</div><div class="msg">And I need time to generate a good branch strategy.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 20:16</div><div class="msg">hopefully, minutes to 1 hour.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 20:16</div><div class="msg">got it</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 20:17</div><div class="msg">drop a message here when your push is good to go. </div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 20:17</div><div class="msg">We have the tools ,but haven't spent the time to push cut releases.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 20:17</div><div class="msg">and thanks!</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 20:17</div><div class="msg">is this something we can help with in the open or is this behind the firewall?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 20:18</div><div class="msg">All open.  In theory, you could build your own image.  It is in the containers tree of the source code.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 20:18</div><div class="msg">./rebuild-containers --pull  --force cloudwrap</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 20:19</div><div class="msg">in which folder is that script?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 20:19</div><div class="msg">I don't see it in the checkout</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 20:19</div><div class="msg">containers</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 20:19</div><div class="msg">digitalrebar/containers</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 20:20</div><div class="msg">I need a working GO environment for rebuilding the containers? fun times :)</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 20:20</div><div class="msg">sorry.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 20:20</div><div class="msg">you need a sws command.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 20:21</div><div class="msg">since I don't have my GO env setup on this machine, I will wait for your signal that there is a new cloudwrap image</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 20:22</div><div class="msg">and for reference, I am on ubuntu 16.04LTS with latest docker</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 20:22</div><div class="msg">ubuntu@ip-172-30-0-51:~/digitalrebar/containers$ docker --version
+Docker version 17.03.0-ce, build 60ccb22</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 20:22</div><div class="msg">ooo - shiny</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 20:22</div><div class="msg">thanks a lot for the help - hoping for another drop later tonight (in CET here)</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 20:22</div><div class="msg">docker 1.12.5 is what I use on mac.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 20:55</div><div class="msg">@dadicool - you should be good now.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 21:40</div><div class="msg">I can confirm the new image looks good - hoping to get my hands on my first digital.rebar environment shortly :)</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 21:41</div><div class="msg">thanks @galthaus </div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 21:41</div><div class="msg">awesome! Sorry about the break.  We try to keep master runnable always.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 21:42</div><div class="msg">At some point, it would be cool to hear about what you are doing with DR.  publicly or privately.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 21:53</div><div class="msg">I am happy to share why digital.rebar caught my attention</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 21:53</div><div class="msg">basically, we're a startup operating in the healthcare space in europe</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 21:54</div><div class="msg">and there pretty specific regulations that prevent us from hosting on public clouds</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 21:54</div><div class="msg">we want to benefit from the latest innovation in infrastructure automation (looking really closely at K8S)</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 21:55</div><div class="msg">but given that the approved hosting providers for healthcare data are 2-3x more expensive than your standard public cloud, we only want to host our production workloads at the "fancy" hosting provider, our dev, qa, etc would be on a public cloud</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 21:56</div><div class="msg">therefore, we want to be able to deploy/manage K8S on public cloud and a "sea of VMs" using the same tools, especially for upgrades and rollouts</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 21:57</div><div class="msg">this is where digital.rebar comes into the picture</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 21:57</div><div class="msg">I really see it as the "spinnaker of infrastructure"</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 21:57</div><div class="msg">hopefully, that's how you guys see it too:)</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 21:57</div><div class="msg">It should be able to do must of that or could be added.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 21:58</div><div class="msg">big huge covering sail that drives everything.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 21:58</div><div class="msg">nice - not one we've used before.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 21:59</div><div class="msg">now, my first question is how do I join existing nodes (say the VMs that the hosting provider has spun up for me) to DR?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 21:59</div><div class="msg">the docs are detailed on the baremetal case and the public cloud case</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:01</div><div class="msg">I obviously already have an admin DR running</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:01</div><div class="msg">on the same subnet</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:01</div><div class="msg">Initially, you will need a script for that.  It mostly exists.  Let me find it.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:01</div><div class="msg">The second way is to create a provider for your cloud host.  I assume they have some kinda of API.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:02</div><div class="msg">I have no api available, it's one of those "managed vmware" environmnets</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:02</div><div class="msg">so that script is probably the way to go</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:02</div><div class="msg">okay - we lose some managability, but you may not need it.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:02</div><div class="msg">can you be more explicit?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:03</div><div class="msg">well - we won't necessarily be able to reboot or config bios and other stuff, but that is probably okay.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:03</div><div class="msg">You want post os-install operation most likely.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:03</div><div class="msg">so , the "join" script should be fine.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:03</div><div class="msg">in deed</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:04</div><div class="msg">you seems script aware so here we go.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:04</div><div class="msg">There are two scripts.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:06</div><div class="msg">in digitalrebar/deploy - add-from-ssh.sh  - script assumes you have some ssh path to the node in question.  It will attempt to ssh into the provided IP and then run a couple of script to join the node to rebar so that rebar can ssh into it.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:06</div><div class="msg">let try that</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:06</div><div class="msg">it runs scripts/ssh-copy-id.sh to attempt to setup keys if your current running user can't access the node.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:07</div><div class="msg">Then it runs scripts/join_rebar.sh from scripts/rebar_join.sh</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:07</div><div class="msg">BUT FIRST You need to make an edit that I haven't done yet.  We don't use these often.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:07</div><div class="msg">what's the edit and can I submit it as a PR after I verify that it works? :-)</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:08</div><div class="msg">in all three scripts, find :3000 and remove it.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:09</div><div class="msg">yep - that is annoying, but missed those on the unified frontend change.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:09</div><div class="msg">ubuntu@ip-172-30-0-51:~/digitalrebar/deploy/scripts$ grep -r ":3000" *
+wait_for_rebar.sh:export REBAR_ENDPOINT=${REBAR_ENDPOINT:-https://127.0.0.1:3000}</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:09</div><div class="msg">do I need to change wait_for_rebar.sh?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:10</div><div class="msg">checking.  It won't hurt.  :3000 isn't exposed directly, anymore</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:10</div><div class="msg">./add-from-ssh.sh --admin-ip &lt;ADMINIP&gt; &lt;cidr IP of target node&gt;</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:10</div><div class="msg">e.g. ./add-from-ssh.sh --admin-ip 192.168.124.11 192.168.124.100/24</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:11</div><div class="msg">:3000 no mode</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:11</div><div class="msg">cool</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:12</div><div class="msg">If that completes, you should be able to see the node in the UX.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:20</div><div class="msg">what is the argument to that script : init-ident </div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:22</div><div class="msg">the user to login the first time.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:22</div><div class="msg">that your system as access to, I think.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:23</div><div class="msg">if your initial allowed user is fred (and it has sudo access), then use fred.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:23</div><div class="msg">for example</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:23</div><div class="msg">understood - I am finding a couple of typos in the scripts, working through them :)</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:25</div><div class="msg">this is the first ssh call in the add-from-ssh script</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:25</div><div class="msg">ssh -oBatchMode=yes -o StrictHostKeyChecking=no root@$IP date</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:25</div><div class="msg">we haven't driven them in awhile.   Yeah - it is trying to see if your current user has ssh access as root to the IP in question.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:25</div><div class="msg">that clearly assumes that root is a user that is (1) usable for ssh </div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:26</div><div class="msg">let me adjust things to use the script params into account</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:26</div><div class="msg">hmm - yeah.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:30</div><div class="msg">Yes - the first one is testing if the current running system/user combo can log in as root.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:30</div><div class="msg">If not, then you need to run ssh-copy-id.sh to add root access.  The ssh-copy-id.sh script takes the init-ident parameter to let you use a non-root user to setup root user access.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:30</div><div class="msg">The rest of the script assume root.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:31</div><div class="msg">In the end, you need the following.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:31</div><div class="msg">I am pretty familiar with bash</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:31</div><div class="msg">I will get through this and I will try to clean things up and submit it back</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:31</div><div class="msg">okay - then I'll quit splaining that.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:31</div><div class="msg">In the end, the goal is that the target node has the following:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:32</div><div class="msg">the ssh access keys from the rebar attribute that is acquired by curl in the root authorized keys file.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:32</div><div class="msg">and that a node has been created in DR, with the rebar-joined node role attached, and the node marked alive.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:33</div><div class="msg">That last one is done by the rebar-join script (calls to rebar).</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:34</div><div class="msg">we used this script to add packet nodes that were already existing so it will need to be tailored to your environment.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:41</div><div class="msg">The ssh part is work-ish with some hacking, now to the node registration part</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:41</div><div class="msg">I am hitting this : curl: (22) The requested URL returned error: 502 Bad Gateway</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:42</div><div class="msg">I am trying to figure out why the admin is responding like that when it's clearly running fine</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:42</div><div class="msg">yeah - that is an issue.  Give me  second.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:44</div><div class="msg">do you have rebar cli in your path?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:44</div><div class="msg">rebar nodes list</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:45</div><div class="msg">nope</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:45</div><div class="msg">another script typo, it seems :</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:45</div><div class="msg">no</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:45</div><div class="msg">oh</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:45</div><div class="msg">ssh root@$IP /root/join_rebar.sh $ADMIN_IP</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:46</div><div class="msg">when join_rebar.sh expects a second arg</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:46</div><div class="msg">ok</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:46</div><div class="msg">ADMIN_IP=$1
+PASSED_IN_IP=$2</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:46</div><div class="msg">Let me try to fix this first</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:47</div><div class="msg">ok, that didn't help</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:47</div><div class="msg">so what about the rebar cli</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:47</div><div class="msg">I must have missed the pre step to in the docs</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:47</div><div class="msg">I was looking at wrong curl.  You are farther than I thought</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:48</div><div class="msg">add nodes curl call</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:48</div><div class="msg">I am trying to add some echo logging to figure out which curl call in join_rebar is blowing up</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:49</div><div class="msg">Okay the PASSED_IN_IP isn't needed unless you want to explicitly declare the IP to use.  If these aren't multi-homed boxes, it shouldn't matter.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:49</div><div class="msg">The other thing is to log into your system and run the script from there with -x set.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:50</div><div class="msg">This is dire need of updating.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:51</div><div class="msg">:)</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:51</div><div class="msg">I logged into the system I am trying to join to rebar</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:51</div><div class="msg">and run join_rebar by hand</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:54</div><div class="msg">yeah - I'll probably have to update this.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:54</div><div class="msg">This is the curl that's returning a 502 bad gateway</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:54</div><div class="msg">exists=$(curl -k -s -o /dev/null -w "%{http_code}" --digest -u "$REBAR_KEY" \
+      -X GET "$REBAR_WEB/api/v2/nodes/$HOSTNAME")</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:55</div><div class="msg">hmm what are rebar_key and rebar_web</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:56</div><div class="msg">export REBAR_KEY="$REBAR_USER:$REBAR_PASSWORD"
+export REBAR_WEB="https://$ADMIN_IP"</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:56</div><div class="msg">Have you logged in the UX?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:57</div><div class="msg">yes</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:57</div><div class="msg">good.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:57</div><div class="msg">just making sure</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:57</div><div class="msg">from the node do this:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:58</div><div class="msg">curl http://&lt;admin_ip&gt;:8092/files/rebar -o rebar</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:58</div><div class="msg">chmod +x rebar</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:58</div><div class="msg">export REBAR_ENDPOINT=https://&lt;ADMIN_IP&gt;</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:58</div><div class="msg">export REBAR_KEY=rebar:rebar1</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 22:58</div><div class="msg">./rebar nodes list</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:59</div><div class="msg">ubuntu@k8s-node1:~$ curl -v http://172.30.0.51:8092/files/rebar
+_   Trying 172.30.0.51...
+_ Connected to 172.30.0.51 (172.30.0.51) port 8092 (#0)
+&gt; GET /files/rebar HTTP/1.1
+&gt; Host: 172.30.0.51:8092
+&gt; User-Agent: curl/7.47.0
+&gt; Accept: _/_
+&gt;
+
+* Connection #0 to host 172.30.0.51 left intact</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 22:59</div><div class="msg">I am getting nothing back</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:00</div><div class="msg">is the admin node multi-homed?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:00</div><div class="msg">hmm - that shouldn't matter.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:00</div><div class="msg">at least not for this.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:00</div><div class="msg">it's not</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:00</div><div class="msg">and that's the IP that I access the UI at</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:01</div><div class="msg">on the admin node as the user you run the install script from, ls ~/.cache/digitalrebar/tftpboot/files</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:01</div><div class="msg">looking at the various docker containers of the admin, I don't see any port 8092 that is open ...</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:01</div><div class="msg">oh - sigh.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:01</div><div class="msg">do you have a provisioner?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:01</div><div class="msg">not yet</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:02</div><div class="msg">how does that work for nodes that are already existing?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:02</div><div class="msg">thinking about it.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:02</div><div class="msg">okay - should be okay, but you don't have a quick and handy rebar cli to get.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:02</div><div class="msg">Sooo - from the admin node do this:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:03</div><div class="msg">docker cp compose_rebar_api_1:/usr/local/bin/rebar rebar</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:03</div><div class="msg">that will get you one to play with</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:03</div><div class="msg">got it</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:03</div><div class="msg">now I want to push this to the node I want to join, right?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:03</div><div class="msg">sure.  Let's go for it.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:04</div><div class="msg">got it</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:04</div><div class="msg">that is handy to keep around on the admin node because you can tweak things and get at some things programmatically easier with it.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:05</div><div class="msg">```chmod +x rebar
+export REBAR_ENDPOINT=https://&lt;ADMIN_IP&gt; 
+export REBAR_KEY=rebar:rebar1 
+./rebar nodes list```</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:05</div><div class="msg">ubuntu@k8s-node1:~$ ./rebar nodes list
+[
+  {
+    "admin": false,
+    "alive": true,
+    "allocated": false,
+    "arch": "x86_64",
+    "available": true,
+    "bootenv": "local",
+    "created_at": "2017-03-21T21:43:48.650Z",
+    "deployment_id": 1,
+    "description": "",
+    "icon": "check_circle",
+    "id": 1,
+    "name": "system-phantom.internal.local",
+    "node-control-address": null,
+    "os_family": "linux",
+    "profiles": [],
+    "provider_id": 1,
+    "quirks": [],
+    "state": 0,
+    "system": true,
+    "target_role_id": null,
+    "tenant_id": 1,
+    "updated_at": "2017-03-21T21:43:48.650Z",
+    "uuid": "557d47bc-4abd-44a9-83e8-58d6176ffe1a",
+    "variant": "phantom"
+  }</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:05</div><div class="msg">already did</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:05</div><div class="msg">yeah - something</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:05</div><div class="msg">so the node can drive it.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:05</div><div class="msg">The curl commands are wonky.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:06</div><div class="msg">is the plan to replace the curls with the rebar cli ?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:06</div><div class="msg">The curl worked for me on my system here.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:06</div><div class="msg">So - I was wanting to make sure that something worked.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:07</div><div class="msg">If you could add set -x to the top of the script and dump the curl command that is executing for me to try would be helpful.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:07</div><div class="msg">right away</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:08</div><div class="msg">+ curl -k -f -g --digest -u rebar:rebar1 -X POST -d name=k8s-node1.xxxx -d ip=172.30.yyy.zzz/24 -d provider=metal -d variant=metal -d os_family=linux -d arch=x86_64 https://172.30.0.51/api/v2/nodes/</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:09</div><div class="msg">okay - here you go- change the curl to this:</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:10</div><div class="msg">I think the curl I mentioned further above was the wrong one</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:10</div><div class="msg">This is the one in the script that is blowing up</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:10</div><div class="msg">    curl -k -f -g --digest -u "$REBAR_KEY" -X POST \
+      -d "name=$HOSTNAME" \
+      -d "ip=$IP" \
+      -d "provider=metal" \
+      -d "variant=metal" \
+      -d "os_family=linux" \
+      -d "arch=$(uname -m)" \
+      "$REBAR_WEB/api/v2/nodes/" || {</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:12</div><div class="msg">```
+curl -k -f -g --digest -u "$REBAR_KEY" -X POST \
+      -d "{ \"name\": \"$HOSTNAME\", \
+      \"ip\": \"$IP\", \
+      \"provider\": \"metal\", \
+      \"variant\": \"metal\", \
+      \"os_family\": \"linux\", \
+      \"arch\": \"$(uname -m)\" }" \
+      "$REBAR_WEB/api/v2/nodes/"
+```</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:13</div><div class="msg">There is a missing } somewhere</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:13</div><div class="msg">```curl -k -f -g --digest -u "$REBAR_KEY" -X POST \
+      -d "{ \"name\": \"$HOSTNAME\", \
+      \"ip\": \"$IP\", \
+      \"provider\": \"metal\", \
+      \"variant\": \"metal\", \
+      \"os_family\": \"linux\", \
+      \"arch\": \"$(uname -m)\" }" \
+      "$REBAR_WEB/api/v2/nodes/"```</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:14</div><div class="msg">trying</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:17</div><div class="msg">youhou</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:17</div><div class="msg">I got my first node in :)</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:17</div><div class="msg">okay</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:17</div><div class="msg">did the other curls value or work?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:18</div><div class="msg">I just run that curl on the cli and the node appeared</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:18</div><div class="msg">let me fix the script and try to run it completelz</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:19</div><div class="msg">it won't, but it is better.  :slightly_smiling_face:</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:24</div><div class="msg">I have another one that's blowing up : </div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:24</div><div class="msg">curl -k -f -g --digest -u rebar:rebar1 -X POST -d '{"node":"k8s-node1.xxx.zzz" , "role":"rebar-joined-node" }' https://172.30.0.51/api/v2/node_roles/</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:28</div><div class="msg">ok, it's all good</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:28</div><div class="msg">a couple of missing things </div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:28</div><div class="msg">really need to have : -H "Content-Type: application/json"</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:28</div><div class="msg">yes</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:28</div><div class="msg">Did it make it through?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:28</div><div class="msg">that's what was leading to the 502</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:28</div><div class="msg">yeap, full script made it through</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:29</div><div class="msg">need to try running it now from the add-from-ssh.sh</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:29</div><div class="msg">so your node should have start starting to run on it.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:29</div><div class="msg">stuff that is.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:29</div><div class="msg">I think.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:29</div><div class="msg">You should see it in the system deployment with some node roles</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:29</div><div class="msg">I see</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:30</div><div class="msg">side note : if rebar expect to use root to remote ssh into nodes under management, that's a real problem</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:31</div><div class="msg">it currently does.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:31</div><div class="msg">We can talk about that at some point.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:31</div><div class="msg">hmm</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:31</div><div class="msg">ok</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:33</div><div class="msg">I think it will be a "small" change for your environment, but has consequences that I think I need to work through.  We should change away from root access.  The problem is that it requires sudo because some of the actions need root abilities.  That isn't always done consistently.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:33</div><div class="msg">for example, do you have unrestricted sudo access?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:33</div><div class="msg">or is it command level enablement?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:34</div><div class="msg">for the user I would use for rebar, it would be unrestricted</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:34</div><div class="msg">okay - so, we have this thing called an SSH hammer. It is the underlying component that provides SSH access to the rest of the system.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:34</div><div class="msg">It assumes that the root user has the keys in place.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:35</div><div class="msg">I understand that that is a sensible assumption for bare metal environments</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:35</div><div class="msg">I am just a little surprised that the same practice carried over to the cloud provisioners for example</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:35</div><div class="msg">it is and it isn't.  ubuntu makes us do extra gyrations</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:35</div><div class="msg">(at least, that's my conclusion)</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:35</div><div class="msg">common shared code</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:36</div><div class="msg">we try to try everything the same after certain points from a normalization perspective.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:36</div><div class="msg">classic cross-OS scripting ...</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:36</div><div class="msg">That way same code runs in both places.  Part of the value.  Normalize hardware so the cloud instance looks like the hardware instance and vice versa.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:37</div><div class="msg">Yeah - but in this case it is more at platform boundaries as well.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:37</div><div class="msg">is there a way on gitter to send a screen capture?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:37</div><div class="msg">not sure.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:37</div><div class="msg">email:greg@rackn.com if that is easier</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:38</div><div class="msg">For a quick check, can you do this for me from the admin node:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:38</div><div class="msg">rebar hammers list</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:39</div><div class="msg">ubuntu@ip-172-30-0-51:~/digitalrebar/deploy$ ./rebar hammers list
+[
+  {
+    "actions": {
+      "power": [
+        "reboot"
+      ],
+      "run": [
+        "run"
+      ],
+      "xfer": [
+        "copy_from",
+        "copy_to"
+      ]
+    },
+    "available_hammer_id": 4,
+    "endpoint": null,
+    "id": 1,
+    "name": "ssh",
+    "node_id": 2,
+    "priority": 0,
+    "username": "root",
+    "uuid": "c117a7d0-2b89-44bd-8333-82a5b39801ff"
+  }
+]</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:40</div><div class="msg">I think the "node prep" isn't starting because the admin doesn't know how to ssh to node</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:40</div><div class="msg">that is the secure shell hammer (you don't have an IPMI because you aren't hardware)</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:40</div><div class="msg">okay - probably.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:40</div><div class="msg">I suspect that we are missing a parameter on node create.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:41</div><div class="msg">By the way, to start over. just delete the NODE in the UI and rerun the join script.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:41</div><div class="msg">let me check real quick</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:41</div><div class="msg">The username in hammer could be changed to something else, but a core change is also needed.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:41</div><div class="msg">no container rebuilds though</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:42</div><div class="msg">what does this mean : "but a core change is also needed."</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:42</div><div class="msg">the rails app needs two changes.  We didn't use username correctly in all the places and you need a way to set something other than root.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:43</div><div class="msg">yeap - understood</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:44</div><div class="msg">ah</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:44</div><div class="msg">I took a step back and I rerun add-from-ssh after dropping in the updated join_rebar.sh script and things seem to be moving somehow </div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:44</div><div class="msg">okay</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:45</div><div class="msg">all components are green in the UI </div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:45</div><div class="msg">hmm</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:45</div><div class="msg">It's getting late here (1am almost)</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:46</div><div class="msg">I am gonna fork the repo, push my fixes to my fork, try to cleanup somethings that I hardcoded to ubuntu</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:46</div><div class="msg">and try with a second node out of the box tomorrow as I find time.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:46</div><div class="msg">okay - I'm missing family dinner time here.  :slightly_smiling_face:  Thanks for playing along and working through.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:46</div><div class="msg">That would be great.  I'll be around tomorrow.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:46</div><div class="msg">sounds good</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:46</div><div class="msg">thanks for all the help</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:47</div><div class="msg">I understand we're a special case but I do believe we're not alone though</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:47</div><div class="msg">to be continued</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-21 23:47</div><div class="msg">cheers</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-21 23:47</div><div class="msg">no prob.  THis is good for us too.   You are and not.  Later.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-23 16:30</div><div class="msg">hello, I'm new at DigitalRebar and will try something out before i can make a advice for a customer project in my company. One point I have find is the need of have full access to the internet for some installation reason. Can you provide a list of packages which will used/ needed by DigitalRebar to be sure all packages are available at a customer repository? In a prodictive customer environment we have no chance for direct internet access. all packages will be stored on a private SatelliteServer p.e.. Thanks!</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-23 16:43</div><div class="msg">@theta-my - is this for the initial install of digital rebar or post-install of Digital rebar and you are trying to provision the managed nodes?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-23 16:47</div><div class="msg">Hi, this at first for the first installation steps via quickstart.sh.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-23 16:47</div><div class="msg">okay - so installing digitalrebar.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-23 16:47</div><div class="msg">yes</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-23 16:47</div><div class="msg">It is not packages based.  It is container based.  So, you will need docker packages, ansible, and python packages.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-23 16:48</div><div class="msg">An other approach can be I would find the missing packages in a log...</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-23 16:48</div><div class="msg">Then you will need a way for docker to get images from docker hub and then you will need to stage some boot discovery images in a cache directory.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-23 16:49</div><div class="msg">There are a lot of steps that we haven't documented outside of code I'm afraid.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-23 16:49</div><div class="msg">I know, and that's is my problem ;)</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-23 16:49</div><div class="msg">Our assumption is that the admin node will have at least proxy-based internet access.  We are trying to change some of that in the coming months, but we aren't there yet.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-23 16:50</div><div class="msg">Once installed, the admin node can be configured to point at internal repos and things like that to address the internet gap.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-23 16:51</div><div class="msg">I can understand your problem, but in a proper production environment no one will give your a direct link to the internet to download some stuff without a security check.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-23 16:52</div><div class="msg">And the best way to prevent this needs, is to have a own repository. That's why i need the list. </div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-23 16:52</div><div class="msg">well - we've found that many differentiate tool install from tool use, but I understand your point.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-23 16:53</div><div class="msg">A proper log, where i can find in a first (dry) run all needed packages can be a good solution to reduce the effort on your site...</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-23 16:54</div><div class="msg">Tool use can use other repos.  Tool install currently can't.  You can get close by from an internet accessible location - docker pull all of our images, docker export them, and the docker import them on the admin node.  That will get you most of the way to running digitalrebar without internet access, but there are all sorts of little gotchas.  It just hasn't come up has a high priority item.  It is something we are tracking because we hear about it as a concern but not a blocker (until now).</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-23 16:55</div><div class="msg">What is the OS you are using for the admin node?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-23 16:56</div><div class="msg">This must run at RHEL7</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-23 16:57</div><div class="msg">I will try to go further with minimum tools/ services you have described and will come back if i need more... ;)</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-23 16:57</div><div class="msg">Thanks for your intention!</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-23 16:58</div><div class="msg">The base system will need: sudo, git, ansible, python-netaddr, curl, jq (epel-release required)</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-23 16:58</div><div class="msg">This will get you ansible capable.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-23 16:59</div><div class="msg">You will need this: curl -so rebar <a href="https://s3-us-west-2.amazonaws.com/rebar-bins/linux/amd64/rebar">https://s3-us-west-2.amazonaws.com/rebar-bins/linux/amd64/rebar</a> - in /usr/local/bin and chmod +x</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-23 16:59</div><div class="msg">on the admin node target as a user:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-23 16:59</div><div class="msg">you will need the digitalrebar repo pulled from git as the directory digitalrebar.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-23 17:01</div><div class="msg">The last step is clear. I have make a git get to my workstation and copy the complete download to the target server. Than i have run the quickstart script and this ends with one error</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-23 17:01</div><div class="msg">no proper epel repository access...</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-23 17:02</div><div class="msg">At that point, you should be able to run quickstart.sh (assuming other packages are installed).</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-23 17:02</div><div class="msg">So, what error do you get?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-23 17:03</div><div class="msg">Did you add the provisioner flag to quickstart, you probably should.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-23 17:03</div><div class="msg">TASK [Install EPEL [SLOW]] *****************************************************
+failed: [10.241.236.92] (item=[u'epel-release']) =&gt; {"changed": true, "failed": true, "item": ["epel-release"], "msg": "warning: /var/cache/yum/x86_64/7Server/BA-20170319-epel_rhel7_x86_64/packages/epel-release-7-7.noarch.rpm: Header V3 RSA/SHA256 Signature, key ID 352c64e5: NOKEY\n\n\nPublic key for epel-release-7-7.noarch.rpm is not installed\n Warning: Due to potential bad behaviour with rhnplugin and certificates, used slower repoquery calls instead of Yum API.", "rc": 1, "results": ["Loaded plugins: langpacks, product-id, rhnplugin, search-disabled-repos,\n              : subscription-manager\nThis system is receiving updates from RHN Classic or Red Hat Satellite.\nResolving Dependencies\n--&gt; Running transaction check\n---&gt; Package epel-release.noarch 0:7-7 will be installed\n--&gt; Finished Dependency Resolution\n\nDependencies Resolved\n\n================================================================================\n Package          Arch       Version    Repository                         Size\n================================================================================\nInstalling:\n epel-release     noarch     7-7        BA-20170319-epel_rhel7_x86_64      14 k\n\nTransaction Summary\n================================================================================\nInstall  1 Package\n\nTotal download size: 14 k\nInstalled size: 24 k\nDownloading packages:\nPublic key for epel-release-7-7.noarch.rpm is not installed\n"]}
+</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-23 17:04</div><div class="msg">@theta-my were you able to get an end-to-end system running before trying to get DR running w/o internet connectivity?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-23 17:04</div><div class="msg">not for this case, but before you tried to run disconnected...</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-23 17:05</div><div class="msg">only on a laptop by my site, yes, this should be go</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-23 17:06</div><div class="msg">you mean, I install all this stuff on a local system and provide the docker container to the target location?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-23 17:07</div><div class="msg">this should be run, than i only need the base services and tools to run docker.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-23 17:07</div><div class="msg">good idea</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-23 17:08</div><div class="msg">Some time I can not see a tree in a forest... :)</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-23 17:10</div><div class="msg">I will try this approach out. Thanks!</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:06</div><div class="msg">Hi all. Just got started with a 3 node Dell r610 cluster. Just looking to see  if I can also have the Admin Node run a workload as well. </div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:15</div><div class="msg">Also looking at clustering Admin Nodes between hosts. </div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:30</div><div class="msg">@Orionx86 - you already have rebar running or are you trying to get started?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:31</div><div class="msg">the default install will include several workloads, Kubernetes is the one I'd recommend first</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:32</div><div class="msg">clustering of Rebar admin would likely take some 1x1 discussion</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:32</div><div class="msg">building a k8s cluster should work fine - will require a external load balancer </div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:33</div><div class="msg">[<a href="https://files.gitter.im/digitalrebar/core/kFPY/Screen-Shot-2017-03-25-at-3.32.40-PM.png">https://files.gitter.im/digitalrebar/core/kFPY/Screen-Shot-2017-03-25-at-3.32.40-PM.png</a></div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:33</div><div class="msg">I have rebar running already on a dell Centos Admin node</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:33</div><div class="msg">getting no available nodes for kubernetes wizard though</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:34</div><div class="msg">nice, for the wizard, you need to have discovered nodes in a deployment (defaults to system)</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:34</div><div class="msg">or create a provider and install to cloud</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:34</div><div class="msg">the wizard will let you choose which deployment to use as the source for "use existing nodes"</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:34</div><div class="msg">Can I add to system? won't let me throw on to it.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:35</div><div class="msg">discovered nodes go into system when they are booted</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:35</div><div class="msg">are you trying to add existing nodes?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:35</div><div class="msg">I will but I wanted to see if I can also use the admin node since most of it is currently unused</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:36</div><div class="msg">ah, not a recommended config because systems could be asked to reboot</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:36</div><div class="msg">you CAN install the kvm-slaves and boot those locally</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:36</div><div class="msg">we do that all the time to run the provisioning cycle</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:37</div><div class="msg">gotcha. worth a try.  Just sad because I have a 16 thread/32 gb system and im using threads and 4 gb's</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:37</div><div class="msg">4 thread/4gbs</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:37</div><div class="msg">yeah, that's what we use core/tools/kvm-slave for ... getting a doc link</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:37</div><div class="msg">Just about to spin up node 2. This is a great system. I've watched a bunch of your videos so far</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:38</div><div class="msg">http://digital-rebar.readthedocs.io/en/latest/development/dev_env/kvm-slaves.html</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:38</div><div class="msg">thanks!</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:38</div><div class="msg">Will you guys be at docker con this year?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:38</div><div class="msg">yes, I'll be there (attending, no booth)</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:38</div><div class="msg">we're based in Austin, so the team's nearby.   (also, my daughter is presenting)</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:39</div><div class="msg">I'll be in town all week. That's great! whats she presenting?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:42</div><div class="msg">talking about workplace diversity on Tuesday 11:05 - Moby's Theater, EH-4 &amp; EH-5 </div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:42</div><div class="msg">cool I'll make it a point to attend. </div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:44</div><div class="msg">I'll be online for a while if you have more questions</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:45</div><div class="msg">ya definitly. I saw there is integration between the 4 big automation tools but havent seen too much on saltstack. Are their any docs I cant find surrounding  it? looking to build a workflow around Vmware</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:46</div><div class="msg">Salt Proxy Minion is the obvious choice for me</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:52</div><div class="msg">it's been a long time since we worked on the salt integration.  it's still there but likely needs work</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:52</div><div class="msg">ansible &amp; bash are our primary targets for latest dev</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:53</div><div class="msg">provisioning VMware or using a VMware provider?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:53</div><div class="msg">Yes, a  provider. </div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:54</div><div class="msg">for providers, check out the pattern w/ the openstack provider.  it's the most recent and splits all the code into a dedicated file.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:55</div><div class="msg">I'm happy to put together a training video on how to build a provider</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:56</div><div class="msg">dusting off the salt jig would likely involve talking w/ @galthaus because there are some choices that we could revisit based on the use-cases.  Right now, the plan was mainly to plug it into an existing salt server and turn over control.  We've got some more integration capabilities that could be used.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 19:59</div><div class="msg">I understand. I've been toying with  openstack ironic and saltstack in my org so this is a welcomed addition if I can get this up and running in my homelab atleast.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-25 20:05</div><div class="msg">Have you seen any issues with people using DDWRT configs with PXE booting?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-26 14:09</div><div class="msg">Not familiar with DDWRT off the bat.  </div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-03-26 17:42</div><div class="msg">http://www.dd-wrt.com/help/english/HManagement.asp ?  We used to see issues w/ port fast settings on switches not being set correctly.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-03-26 22:28</div><div class="msg">Okay.  We routinely tell people to set portfast on server ports. To keep ipxe firm wares from timing out</div></div></div><br/>
+</div></body></html>

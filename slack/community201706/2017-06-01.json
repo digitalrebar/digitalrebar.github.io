@@ -1,0 +1,71 @@
+[
+    {
+        "text": "hi guys, i have tried to install some times, but no networks coming up or adjustable in the web interface. each time i have tried to add one, i can not configure this to fits to my needs. I need following design:",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1496303538.684236"
+    },
+    {
+        "text": "!(\/home\/de1235092\/Documents\/Projekts\/Talanx\/rebar\/system_layout_V01.png)",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1496303645.705809"
+    },
+    {
+        "text": "(how can i insert a picture?)",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1496303659.708746"
+    },
+    {
+        "text": "[<https:\/\/files.gitter.im\/digitalrebar\/core\/7KfE\/system_layout_V01.png|system_layout_V01.png](https:\/\/files.gitter.im\/digitalrebar\/core\/7KfE\/thumb\/system_layout_V01.png)>",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "attachments": [
+            {
+                "fallback": "488x262px image",
+                "image_url": "https:\/\/files.gitter.im\/digitalrebar\/core\/7KfE\/system_layout_V01.png",
+                "image_width": 488,
+                "image_height": 262,
+                "image_bytes": 15527,
+                "from_url": "https:\/\/files.gitter.im\/digitalrebar\/core\/7KfE\/system_layout_V01.png",
+                "id": 1
+            }
+        ],
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1496303719.721150"
+    },
+    {
+        "text": "which asses mode i should use? host or forwarder?",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1496303789.735820"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "HOST - note the capitalize the word on the command line.  Create a network with category admin and group lab for the deploy network.  set conduit to dhcp.  For BMC, create a network with category bmc and group lab for the bmc network.  set conduit to bmc.",
+        "ts": "1496321187.585470"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "DigitalRebar runs on an Admin node.  The admin node can have any amount of networks it needs, but there are two requirements.  That the admin node has routable access to the BMC network and that nodes and the admin node can have bidirectional communication on a admin network.\n\n[11:06] \nThe Admin node will be required to be in the L2 network for all DHCP networks unless DHCP relays\/BOOTP forwarders can be configured to relay on its behalf.\n\n[11:07] \nThe DigitalRebar admin node will only serve DHCP from configured networks for networks in the bmc and admin categories (I believe).  You can through the cli\/api force the DHCP server to do more, but it will not necessarily be reflected on the node in DigialRebar.\n\n[11:09] \nDigitalRebar Networks are defined by a category and a group.  The group is an arbitrary string that allows networks of different categories to be applied to nodes in the same group.\n\n[11:09] \nThe category defines what the network is used for.  This is a free form field that has two special values.\n\n[11:10] \nThe first is admin - networks in this category are assumed to be the PXE booting networks for the bare metal system.  These networks when containing a network range \"dhcp\" will server those addresses to unregistered nodes\n\n[11:11] \nThe DigitalRebar will assign an IP from the host range once the node is discovered and treat that address as a more static address (though it can still be delivered by DHCP).\n\n[11:12] \nThe other reserved category is Bmc.  This is used by  the IPMI roles \/ management system to direct IPMI configuration.  It too should have a host range that will assign addresses from the pool.  It can also use DHCP to deliver those bound addresses.\n\n[11:15] \nOther categories are for use of the administrator.  These can be applied to nodes for configuration post installation (or pre, but most useful post) and will assign addresses from the host range to nodes.  The group is used to figure out which sets of categories go together.  For example, if DigitalRebar discovers a node on network admin-rack1 and it is told to configure ipmi, it will look for a bmc-rack1 network to draw its IPMI address from.  Falling back to the first bmc network, I think.  or none.\n\n[11:15] \nAlso, the system attempts to last octet alignment across networks if possible.\n\n[11:15] \nWhat interface a network is configured on is determined by the conduit.\n\n[11:16] \nThe conduit is only applicable to managed nodes (not the admin node).\n\n[11:17] \nFor non-bmc networks, the conduit can be dhcp, or [-+?][1,10,100,40][gm][0-100]  (e.g. 10g1 - which means second 10g found on box).\n\n[11:18] \ndhcp means that what ever the box dhcp on is the interface used.  This is really only useful for the admin network.\n\n[11:18] \nFor bmc networks, the conduit can be dhcp or bmc.  DHCP says use DHCP to get the address for the bmc, other set the bmc statically.\n\n[11:19] \nconduits can be multiple interfaces separated by a comma.  This will generate a bonded set\n\n[11:20] \nVlans can also be added on top.\n\n[11:20] \nIn general, admin and bmc don't use conduits or vlans.\n\n[11:21] \nWhen an admin or dhcp network is configured for DHCP correctly, you should be able to see in the DHCP nav section of the UX that configuration and current leases.  You may have to hard refresh the UX page to get the latest data.\n\n[11:21] \nNetworks also define routers.  The pref of the router determines if it becomes the default gateway.  Lower is high priority.\n\n[11:22] \nSooo - when the network is configured the available interfaces are consulted and the lowest preference is used to set the default gateway.",
+        "ts": "1496321228.595924"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Dump from another slack conversation.",
+        "ts": "1496321246.600687"
+    }
+]

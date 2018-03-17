@@ -1,0 +1,47 @@
+[
+    {
+        "text": "I'd add that we believe strongly in decoupling the UX from the DRP service &amp; CLI.  The design for the service is to keep it very small, stable and focused.  We are seeing use cases where 1000s of DRP endpoints are deployed for embedded edge or top of rack infrastructure.   Since the service is API driven, there's no need to bundle UI code into the service.",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1505588124.000023"
+    },
+    {
+        "text": "Can I get an invite to the slack channel?",
+        "username": "stanchan",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1505598851.000077"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Hey <@U63ACQT8A> - you can sign up at <https:\/\/www.rackn.com\/support>",
+        "attachments": [
+            {
+                "service_name": "Rackn",
+                "title": "Support - Rackn",
+                "title_link": "https:\/\/www.rackn.com\/support",
+                "text": "Signup for our Community Slack We are very excited to engage with our customers and the Digital Rebar community interactively.  Our preferred tool is Slack and you’re invited to join us there for ongoing discussions and support.  When needed, we...",
+                "fallback": "Rackn: Support - Rackn",
+                "thumb_url": "https:\/\/www.rackn.com\/wp-content\/uploads\/2017\/08\/slack_rgb-300x141.png",
+                "from_url": "https:\/\/www.rackn.com\/support",
+                "thumb_width": 300,
+                "thumb_height": 141,
+                "service_icon": "https:\/\/www.rackn.com\/wp-content\/uploads\/2017\/09\/cropped-RackN-180x180.png",
+                "id": 1
+            }
+        ],
+        "ts": "1505601579.000028"
+    },
+    {
+        "text": "<@U63ACQT8A> I've got your email - invite sent",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1505608409.000037"
+    }
+]

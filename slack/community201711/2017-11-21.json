@@ -1,0 +1,950 @@
+[
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Did not notice an announcement that there’s a v3.3 (new stable) out now…",
+        "ts": "1511271310.000133"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I think the community meetup is still on for ?? Wed ??",
+        "ts": "1511271567.000048"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "idk",
+        "ts": "1511271691.000350"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Today.  Sorry about that.  Finished it yesterday but had to take care of some family things.  Will discuss it today",
+        "ts": "1511271697.000135"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "<https:\/\/www.meetup.com\/digitalrebar\/events\/243490159\/>",
+        "attachments": [
+            {
+                "service_name": "Meetup",
+                "title": "v005: DRP v3.3, Runner and Jobs, community feedback",
+                "title_link": "https:\/\/www.meetup.com\/digitalrebar\/events\/243490159\/",
+                "text": "11\/21, 11:00 AM: <https:\/\/zoom.us\/j\/3403934274Welcome> to the fifth (v005) Digital Rebar online meetup! In today&amp;#39;s meetup we&amp;#39;ll discuss the status of Digital Rebar Provision v3.3.0 features and",
+                "fallback": "Meetup: v005: DRP v3.3, Runner and Jobs, community feedback",
+                "thumb_url": "https:\/\/secure.meetupstatic.com\/photos\/event\/b\/c\/9\/4\/600_464508276.jpeg",
+                "from_url": "https:\/\/www.meetup.com\/digitalrebar\/events\/243490159\/",
+                "thumb_width": 504,
+                "thumb_height": 186,
+                "service_icon": "https:\/\/www.meetup.com\/mu_static\/en-US\/d1a443950ae54dec62c776ca997135b7.png",
+                "id": 1
+            }
+        ],
+        "ts": "1511271705.000079"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Every other Tuesday ",
+        "ts": "1511271716.000367"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "thx",
+        "ts": "1511271725.000141"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Anyways, no problem, just wondered if I missed the announcement…",
+        "edited": {
+            "user": "U416T0AAX",
+            "ts": "1511271780.000000"
+        },
+        "ts": "1511271765.000172"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The short of it is. Small release   Minor bump is because I tweaked the api in subnets. Addition of field that defaults to good value.  ",
+        "ts": "1511271814.000240"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I see from commits that Swagger is going away soon?",
+        "ts": "1511271859.000325"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The cli generate from swagger.   It is a pain.   Bloated and wrong.  We will talk about that to. ",
+        "ts": "1511271910.000504"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK",
+        "ts": "1511271931.000252"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Too",
+        "ts": "1511271932.000269"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Could I get some help configuring the IPMI plugin?",
+        "ts": "1511284189.000405"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "In just about an hour, we'll be hosting the v005 Digital Rebar online meetup - lots to discuss around new features, the new v3.3 release, content use case, documentation, etc... check out Agenda items, along with links to the meetup zoom URL, at:\n<https:\/\/docs.google.com\/document\/d\/1EDme5I05Sxwe111iluQDa1E-OiLY0xkKTCEn7bQIvfA>",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1511287114.000000"
+        },
+        "ts": "1511287057.000298"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U6QFVRJNB> shared a file: <https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/F836ZEQGZ\/v005_-_20171121_-_drp_3|v005 - 20171121 - DRP 3.3 planning and status, Runner and Jobs, community feedback>",
+        "file": {
+            "id": "F836ZEQGZ",
+            "created": 1511280556,
+            "timestamp": 1511280556,
+            "name": "v005 - 20171121 - DRP 3",
+            "title": "v005 - 20171121 - DRP 3.3 planning and status, Runner and Jobs, community feedback",
+            "mimetype": "application\/vnd.google-apps.document",
+            "filetype": "gdoc",
+            "pretty_type": "GDocs Document",
+            "user": "U6QFVRJNB",
+            "editable": false,
+            "size": 4900,
+            "mode": "external",
+            "is_external": true,
+            "external_type": "gdrive",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/docs.google.com\/document\/d\/1EDme5I05Sxwe111iluQDa1E-OiLY0xkKTCEn7bQIvfA",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F836ZEQGZ-c22a34cf6a\/v005_-_20171121_-_drp_3_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F836ZEQGZ-c22a34cf6a\/v005_-_20171121_-_drp_3_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F836ZEQGZ-c22a34cf6a\/v005_-_20171121_-_drp_3_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 278,
+            "thumb_360_h": 360,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F836ZEQGZ-c22a34cf6a\/v005_-_20171121_-_drp_3_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 371,
+            "thumb_480_h": 480,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F836ZEQGZ-c22a34cf6a\/v005_-_20171121_-_drp_3_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F836ZEQGZ-c22a34cf6a\/v005_-_20171121_-_drp_3_720.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 557,
+            "thumb_720_h": 720,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F836ZEQGZ-c22a34cf6a\/v005_-_20171121_-_drp_3_800.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 1035,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F836ZEQGZ-c22a34cf6a\/v005_-_20171121_-_drp_3_960.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 742,
+            "thumb_960_h": 960,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F836ZEQGZ-c22a34cf6a\/v005_-_20171121_-_drp_3_1024.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 791,
+            "thumb_1024_h": 1024,
+            "image_exif_rotation": 1,
+            "original_w": 800,
+            "original_h": 1035,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/F836ZEQGZ\/v005_-_20171121_-_drp_3",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0,
+            "has_rich_preview": true
+        },
+        "user": "U6QFVRJNB",
+        "upload": false,
+        "display_as_bot": false,
+        "username": "shane",
+        "bot_id": null,
+        "ts": "1511287058.000113"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<!channel> ^^^^^^",
+        "ts": "1511287101.000329"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U02DHRR2L> uploaded a file: <https:\/\/rackn.slack.com\/files\/U02DHRR2L\/F84U08JRM\/rackn_provisioning_automation__bonus_immutable_and_edge__-_nov_2017.png|RackN Provisioning Automation (bonus Immutable and Edge) - Nov 2017.png>",
+        "file": {
+            "id": "F84U08JRM",
+            "created": 1511291856,
+            "timestamp": 1511291856,
+            "name": "RackN Provisioning Automation (bonus Immutable and Edge) - Nov 2017.png",
+            "title": "RackN Provisioning Automation (bonus Immutable and Edge) - Nov 2017.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U02DHRR2L",
+            "editable": false,
+            "size": 53803,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F84U08JRM\/rackn_provisioning_automation__bonus_immutable_and_edge__-_nov_2017.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F84U08JRM\/download\/rackn_provisioning_automation__bonus_immutable_and_edge__-_nov_2017.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F84U08JRM-4a72587132\/rackn_provisioning_automation__bonus_immutable_and_edge__-_nov_2017_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F84U08JRM-4a72587132\/rackn_provisioning_automation__bonus_immutable_and_edge__-_nov_2017_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F84U08JRM-4a72587132\/rackn_provisioning_automation__bonus_immutable_and_edge__-_nov_2017_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 203,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F84U08JRM-4a72587132\/rackn_provisioning_automation__bonus_immutable_and_edge__-_nov_2017_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 270,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F84U08JRM-4a72587132\/rackn_provisioning_automation__bonus_immutable_and_edge__-_nov_2017_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F84U08JRM-4a72587132\/rackn_provisioning_automation__bonus_immutable_and_edge__-_nov_2017_720.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 405,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F84U08JRM-4a72587132\/rackn_provisioning_automation__bonus_immutable_and_edge__-_nov_2017_800.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 450,
+            "image_exif_rotation": 1,
+            "original_w": 960,
+            "original_h": 540,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U02DHRR2L\/F84U08JRM\/rackn_provisioning_automation__bonus_immutable_and_edge__-_nov_2017.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F84U08JRM-c8d2ade39e",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0,
+            "num_stars": 1
+        },
+        "user": "U02DHRR2L",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "zehicle",
+        "bot_id": null,
+        "ts": "1511291858.000469"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "a very very simple version of the runner",
+        "ts": "1511291870.000159"
+    },
+    {
+        "type": "message",
+        "user": "U75QJVA3Y",
+        "text": "A discussion point for next week unless it's already been covered: UEFI support (it's sadly becoming a problem for me, and will be required for most commercial ARM platforms)",
+        "ts": "1511294534.000155"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we have discussed it very briefly - but have not focused on it much",
+        "ts": "1511294557.000133"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "UEFI PXE options",
+        "attachments": [
+            {
+                "fallback": "[November 13th, 2017 1:40 PM] vlowther: Similarly, `{{if (eq (index . 77) “iPXE”) }}default.ipxe{{else if (eq (index . 93) “0\")}}ipxe.pxe{{else}}ipxe.efi{{end}}` will force the use of ipxe for BIOS and UEFI systems.",
+                "ts": "1510609235.000065",
+                "author_id": "U02DJQSG8",
+                "author_subname": "Victor Lowther",
+                "channel_id": "C02L9P26Q",
+                "channel_name": "community",
+                "is_msg_unfurl": true,
+                "text": "Similarly, `{{if (eq (index . 77) “iPXE”) }}default.ipxe{{else if (eq (index . 93) “0\")}}ipxe.pxe{{else}}ipxe.efi{{end}}` will force the use of ipxe for BIOS and UEFI systems.",
+                "author_name": "Victor Lowther",
+                "author_link": "https:\/\/rackn.slack.com\/team\/U02DJQSG8",
+                "author_icon": "https:\/\/avatars.slack-edge.com\/2014-07-15\/2462284870_48.jpg",
+                "mrkdwn_in": [
+                    "text"
+                ],
+                "color": "D0D0D0",
+                "from_url": "https:\/\/rackn.slack.com\/archives\/C02L9P26Q\/p1510609235000065",
+                "is_share": true,
+                "footer": "Posted in #community"
+            }
+        ],
+        "thread_ts": "1511294586.000750",
+        "reply_count": 1,
+        "replies": [
+            {
+                "user": "U75QJVA3Y",
+                "ts": "1511295624.000157"
+            }
+        ],
+        "unread_count": 1,
+        "ts": "1511294586.000750"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "In your `subnets` specification - you'd set DHCP options similarly.  We also support the use of the Golang Template language within the subnets\/DHCP options to do interesting things - namely change which PXE file is provided based on the options we receive from a Machine",
+        "ts": "1511294667.000016"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "around the Nov13th time frame there was discussion here in <#C02L9P26Q|community> you might want to review and see if that helps ?",
+        "ts": "1511294699.000105"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Also discussed in today's meetup was the Runner\/Workflow system - here's the drawing:",
+        "ts": "1511295344.000606"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U6QFVRJNB> uploaded a file: <https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/F83QJ667M\/digital_rebar_runner_workflow.pdf|Digital Rebar Runner Workflow> and commented: From 2017\/11\/21 DRP v005 meetup discussion.",
+        "file": {
+            "id": "F83QJ667M",
+            "created": 1511295372,
+            "timestamp": 1511295372,
+            "name": "Digital Rebar Runner Workflow.pdf",
+            "title": "Digital Rebar Runner Workflow",
+            "mimetype": "application\/pdf",
+            "filetype": "pdf",
+            "pretty_type": "PDF",
+            "user": "U6QFVRJNB",
+            "editable": false,
+            "size": 64616,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F83QJ667M\/digital_rebar_runner_workflow.pdf?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F83QJ667M\/download\/digital_rebar_runner_workflow.pdf?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_pdf": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F83QJ667M-db6d6f3e7e\/digital_rebar_runner_workflow_thumb_pdf.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_pdf_w": 1323,
+            "thumb_pdf_h": 1018,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/F83QJ667M\/digital_rebar_runner_workflow.pdf",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F83QJ667M-93c4589148",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 1,
+            "initial_comment": {
+                "id": "Fc837DLQ3A",
+                "created": 1511295372,
+                "timestamp": 1511295372,
+                "user": "U6QFVRJNB",
+                "is_intro": true,
+                "comment": "From 2017\/11\/21 DRP v005 meetup discussion."
+            }
+        },
+        "user": "U6QFVRJNB",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "shane",
+        "bot_id": null,
+        "ts": "1511295373.000217"
+    },
+    {
+        "type": "message",
+        "user": "U75QJVA3Y",
+        "text": "Good to know. Thanks!",
+        "thread_ts": "1511294586.000750",
+        "parent_user_id": "U6QFVRJNB",
+        "ts": "1511295624.000157"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U6QFVRJNB> Could I get some help configuring the IPMI plugin? (are there any docs on this?)",
+        "ts": "1511295946.000456"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I don't think there are docs",
+        "ts": "1511296032.000655"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I installed the plugin, \"activated\" it, and have set a param on it for password",
+        "ts": "1511296101.000140"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Not sure what else might need to be done, but big issue is how to apply it to the machines...",
+        "ts": "1511296144.000595"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "which param",
+        "ts": "1511296145.000373"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "`ipmi\/configure\/password`",
+        "ts": "1511296174.000622"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I haven't played w\/ the IPMI plugin much lately - but I'm guessing you also have to set a username and machine IP address",
+        "ts": "1511296216.000669"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "so you'd have to create either a set of Params you apply to a machine - or a profile which has those settings - per machine",
+        "ts": "1511296240.000211"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "There's only one entry in Systems &gt; Plugins, correct?",
+        "ts": "1511296301.000288"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Corresponding to this from drpcli:\n```\n[dradmin@dr-admin ~]$ drpcli plugins list\n[\n  {\n    \"Available\": true,\n    \"Errors\": [],\n    \"Name\": \"ipmi\",\n    \"Params\": {\n      \"ipmi\/configure\/password\": \"xxxxxxx\"\n    },\n    \"PluginErrors\": [],\n    \"Provider\": \"ipmi\",\n    \"ReadOnly\": false,\n    \"Validated\": true\n  }\n]\n```",
+        "edited": {
+            "user": "U416T0AAX",
+            "ts": "1511296479.000000"
+        },
+        "ts": "1511296444.000484"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": ":slightly_smiling_face:",
+        "ts": "1511296501.000549"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "other params:\n`ipmi\/configure\/username`",
+        "ts": "1511296508.000290"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "`ipmi\/address`",
+        "ts": "1511296531.000307"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "If they are all the same across my hosts, I can set the param values in the plugin, correct?",
+        "ts": "1511296549.000538"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ah - so the ones w\/ `configure` in them are for bootenv install time to SET the username\/password parameters (etc.)",
+        "ts": "1511296676.000058"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "are you just looking to add power management controls ?",
+        "ts": "1511296683.000063"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yes, power cycle, next boot pxe, etc",
+        "ts": "1511296710.000239"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I don't see how to \"enable\" a host for IPMI (and get the power controls in the UX for the host)",
+        "ts": "1511296948.000128"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U6QFVRJNB> Any idea?",
+        "ts": "1511297750.000172"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "discussing it - I haven't played with this plugin - my work to date has only been in packet - which is very different enabling it",
+        "ts": "1511297901.000057"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I am very familiar w\/ BMCs and IPMI management - just checking out how to do this properly w\/in the product right now",
+        "ts": "1511297918.000576"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Cool, thx",
+        "ts": "1511297930.000051"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "sadly - I don't have any hardware to really test this against ... so reading code, and what not",
+        "ts": "1511298003.000378"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I'm using `ipmitool` outboard right now to kick the machines, like to control them from the UX (a la Rob's recent terraform vid)",
+        "ts": "1511298184.000216"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yep",
+        "ts": "1511298205.000448"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "maybe it isn't integrated into the UX yet?",
+        "ts": "1511298277.000410"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "there's the `task` named `ipmi-configure` which implements the actual configuration which would happen as a stage - there are templates which are used for the configure",
+        "ts": "1511298300.000318"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "but looking at pure power management - I think the only 3 params that matter are:\n`ipmi\/address`\n`ipmi\/username`\n`ipmi\/password`",
+        "ts": "1511298355.000176"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you need these applied to a Machine - which then should enable the IPMI power actions in the UX",
+        "ts": "1511298372.000318"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "username and password can be a profile - that you apply (even in `global` if you wanted to apply to everything)",
+        "ts": "1511298389.000093"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Cool, I have all three set on one of my machines - however, no IPMI buttons showing up...",
+        "ts": "1511298397.000605"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "address would have to be a per-Machine param",
+        "ts": "1511298400.000308"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "yes",
+        "ts": "1511298405.000490"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "It looks like setting ipmy\/enabled, ipmi\/username, ipmi\/password, and ipmi\/address to the proper values on each node (via profile for all but address, which is definitly node-specific) is what is required",
+        "ts": "1511298423.000437"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "the ipmi-configure task will do that",
+        "ts": "1511298430.000037"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "if you have existing settings, it looks like ipmi\/configure\/network=false and ipmi\/configure\/user=false params will keep the ipmi-configure task from mucking about with your settings.",
+        "ts": "1511298436.000550"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Ah, `ipmi\/enabled`...",
+        "ts": "1511298460.000616"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Let me try setting that",
+        "ts": "1511298474.000112"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "make sure you're profile applies the `ipmi\/configure\/...=false` settings as <@U02DJQSG8> mentioned for safety reasons, too",
+        "ts": "1511298527.000155"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, now without doing anything... The IPMI buttons are showing up on the machine",
+        "ts": "1511298610.000459"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "As expected.",
+        "ts": "1511298624.000100"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "(Perhaps I moved off the machine screen and then back on?)",
+        "ts": "1511298638.000224"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "When I clicked \"Reboot\" I got a popup saying \"Action Error\"",
+        "ts": "1511298682.000068"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The ipmi plugin requires no parameters.  The configure parameters would need to be on a machine.",
+        "ts": "1511298710.000472"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Just these three?\n```\n        \"ipmi\/address\": \"testnode01-ipmi\",\n        \"ipmi\/password\": \"xxxxxxx\",\n        \"ipmi\/username\": \"root\"\n```",
+        "ts": "1511298772.000581"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "might be dns problem w\/ ipmi address resolution ?",
+        "ts": "1511298791.000115"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "from command line on DRP Endpoint - does that short name resolve correctly ?",
+        "ts": "1511298807.000262"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "yes",
+        "ts": "1511298832.000335"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "```[dradmin@dr-admin ~]$ dig testnode01-ipmi\n\n; &lt;&lt;&gt;&gt; DiG 9.9.4-RedHat-9.9.4-51.el7 &lt;&lt;&gt;&gt; testnode01-ipmi\n;; global options: +cmd\n;; Got answer:\n;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 31366\n;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 4096\n;; QUESTION SECTION:\n;testnode01-ipmi.\t\tIN\tA\n\n;; ANSWER SECTION:\ntestnode01-ipmi.\t1\tIN\tA\t192.168.1.161\n\n;; Query time: 0 msec\n;; SERVER: 192.168.1.254#53(192.168.1.254)\n;; WHEN: Tue Nov 21 11:57:16 EST 2017\n;; MSG SIZE  rcvd: 60\n```",
+        "ts": "1511298875.000319"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "can you confirm that `ipmitool -U root -P xxxxx -H testnode01-ipmi chassis power status` runs successfully **from** the DRP Endpoint ?",
+        "ts": "1511298891.000283"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Interesting... I usually don't use the `-P` param (if you omit it, it asks for the password interactively)... When I passed it, here's what I see:\n```[dradmin@dr-admin ~]$ ipmitool -I lan -H testnode01-ipmi -U root -P xxxxxxx -a chassis power status\nPassword:```",
+        "ts": "1511299109.000576"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "If I just hit &lt;CR&gt; at the password prompt, I get a fail:\n```[dradmin@dr-admin ~]$ ipmitool -I lan -H testnode01-ipmi -U root -P xxxxxx -a chassis power status\nPassword:\nActivate Session command failed\nError: Unable to establish LAN session\nError: Unable to establish IPMI v1.5 \/ RMCP session```",
+        "ts": "1511299167.000120"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "-I lanplus",
+        "ts": "1511299182.000143"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "and -a?",
+        "ts": "1511299202.000074"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "same diff...",
+        "ts": "1511299213.000413"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Let me add `-a`",
+        "ts": "1511299223.000137"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "can you `ping testnode01-ipmi` ?",
+        "ts": "1511299237.000511"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Nope, still asking for password",
+        "ts": "1511299267.000244"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U6QFVRJNB> - I can, it resolves the IP, but the IPMI interface doesn't allow pings",
+        "ts": "1511299298.000257"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "```[dradmin@dr-admin ~]$ ping testnode01-ipmi\nPING testnode01-ipmi.necla.lab (192.168.1.161) 56(84) bytes of data.\n^C\n--- testnode01-ipmi.necla.lab ping statistics ---\n9 packets transmitted, 0 received, 100% packet loss, time 7999ms```",
+        "ts": "1511299331.000464"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "But, I know IPMI works when I use `ipmitool` with user &amp; password",
+        "ts": "1511299361.000048"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "remove the `-a`",
+        "ts": "1511299373.000323"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "duh",
+        "ts": "1511299411.000347"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "```[dradmin@dr-admin ~]$ ipmitool -I lanplus -H testnode01-ipmi -U root -P xxxxxx chassis power status\nError: Unable to establish IPMI v2 \/ RMCP+ session```",
+        "ts": "1511299432.000016"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "This *is* a fairly old box; a PowerEdge 860 circa 2009...",
+        "ts": "1511299478.000642"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Needs to use IPMIv2, huh?",
+        "ts": "1511299540.000666"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "So far it just looks like the dr-admin box cannot talk to that IPMI controller.",
+        "ts": "1511299542.000083"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "unless I missed somethbing in the backscroll.",
+        "ts": "1511299563.000133"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "No, I can talk to it via IPMIv1.5...",
+        "ts": "1511299583.000291"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Well then.",
+        "ts": "1511299599.000009"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "We may need to make the IPMI protocol configurable. :slightly_smiling_face:",
+        "ts": "1511299623.000228"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "```[dradmin@dr-admin ~]$ ipmitool -I lan -H testnode01-ipmi -U root -a chassis power status\nPassword:\nChassis Power is on```",
+        "ts": "1511299624.000053"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "IIRC, we have lanplus hardcoded right now",
+        "ts": "1511299646.000134"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "ah",
+        "ts": "1511299654.000281"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes",
+        "ts": "1511299662.000536"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "due to lan being old, trivially crackable, and the 9 and 10gen box we started dev on way back in the day supporting lanplus. :)\\",
+        "ts": "1511299695.000409"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, then maybe only supporting `lanplus` is reasonable then :slightly_smiling_face:",
+        "ts": "1511299732.000107"
+    },
+    {
+        "text": "notes to self must get more recent test platforms...",
+        "type": "message",
+        "subtype": "me_message",
+        "user": "U416T0AAX",
+        "ts": "1511299769.000063"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I do have a PE R320 with standard iDRAC on my testbed, lemme try that...",
+        "ts": "1511299817.000545"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "note that lanplus is also crackable, but it is at least possible to makei it harder to do so",
+        "ts": "1511300124.000272"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<http:\/\/fish2.com\/ipmi\/cipherzero.html> &lt;-- for your viewing pleasure",
+        "ts": "1511300496.000166"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DJQSG8> thx",
+        "ts": "1511301309.000090"
+    },
+    {
+        "text": "shudders",
+        "type": "message",
+        "subtype": "me_message",
+        "user": "U416T0AAX",
+        "ts": "1511301314.000424"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yay, working platform!",
+        "ts": "1511301376.000481"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "cool - we'll add an option to configure the IPMI Interface type to use",
+        "ts": "1511301418.000538"
+    },
+    {
+        "text": "note to find more recent Dell platforms for testbed",
+        "type": "message",
+        "subtype": "me_message",
+        "user": "U416T0AAX",
+        "ts": "1511301446.000670"
+    },
+    {
+        "text": "Time to feed the :bear:!",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1511301447.000049"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DJQSG8> <@U02DGQYK1> What does \"Disk\" impi plugin button do?",
+        "ts": "1511301596.000216"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "(and why is \"PXE' represented as a paperclip??)",
+        "ts": "1511301613.000206"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Set next boot pxe to disk",
+        "ts": "1511301613.000459"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "ah ok",
+        "ts": "1511301619.000478"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U416T0AAX> what would you represent \"PXE\" as in icon form ?",
+        "ts": "1511301730.000070"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Tinkerbell’s shoe (the one with the little Pom-Pom on the tip) :stuck_out_tongue_winking_eye:",
+        "ts": "1511303010.000054"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "“Pixie”, get it? Huh huh huh",
+        "ts": "1511303052.000450"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Yep",
+        "ts": "1511303852.000246"
+    }
+]

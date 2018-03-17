@@ -1,0 +1,55 @@
+[
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": " The ln let me run it from kubespray without a long path ",
+        "client_msg_id": "2f9b2eee-4470-4d07-bb0c-0910c513370c",
+        "ts": "1516717110.000189"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<!channel> - hi all - Some issues were found with gohai on UEFI enabled systems.  We’ve updated gohai, sledegehammer, and community content in tip.  Additionally, we’ve added the gohai function into drpcli.  So, you can now do `drpcli gohai` and it will attempt to inventory the system.  This really on works on linux.  The community content has also been updated to use drpcli gohai if available over gohai.  This means that for gohai updates in the future we will not need to rev sledgehammer, but instead rev drpcli. \n\nwhat this means to you!  If you update to tip community content, you will need to run: `drpcli bootenvs uploadiso sledgehammer` before booting new machines.",
+        "ts": "1516729823.000065",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U8RFVLLG1",
+                    "U02DHRR2L"
+                ],
+                "count": 2
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Oh - for reference, the content has been updated to allow for not updating DRP to tip while still using the tip content.  If you choose to do that.",
+        "ts": "1516729875.000552"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "So... I took a shot and attempted to create a clone of the kubespray yaml to create another type of feed for ansible ( calling it blender2cld ) this is in prep for my visit to the animation studio",
+        "ts": "1516731910.000431"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "is there a 'trick' to get dr-provision to use ? (I basically just stuffed the updated yaml into saas-content )",
+        "ts": "1516731982.000242"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "basically the studio has an old grid of mine that they fire up when they need animation rendering so I was going to test it out there while I'm down doing other maintainance",
+        "ts": "1516732124.000558"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "... got it... important to maintain unique names... even read it in the arch docs...",
+        "ts": "1516741451.000028"
+    }
+]

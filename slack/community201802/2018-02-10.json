@@ -1,0 +1,79 @@
+[
+    {
+        "text": "Just reinstalled with force.  When I go to setup subnets in UX I just get a spinning \"Loading Interfaces\".  Any suggestions?  I am a newbie at drp.",
+        "username": "MattyBoy4444",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1518290925.000040"
+    },
+    {
+        "text": "Running v3.6.0",
+        "username": "MattyBoy4444",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1518290951.000088"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "@MattyBoy4444 - are you sure your DRP Endpoint is accessible from your Laptop\/Management machine - no Firewalls or IPTables rules blocking access?    You can also check the process to make sure it's running on the Endpoint as well (`ps -ef | grep dr-provision`) ... also - any log output from the running instance if it is running ?",
+        "ts": "1518291791.000011"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you need TCP Port 8092 access to the DRP Endpoint from the system you are running the Web Browser connection to the Portal",
+        "ts": "1518291840.000106"
+    },
+    {
+        "text": "@rackneng I can access the UX frontend from my management machine.  I did check Chrome console and found a jquery warning",
+        "username": "MattyBoy4444",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1518293734.000099"
+    },
+    {
+        "text": "@rackneng  jquery.min.js:2 jQuery.Deferred exception: Cannot read property 'push' of undefined TypeError: Cannot read property 'push' of undefined\n    at https:\/\/rackn.github.io\/provision-ux\/build.js:14099:48\n    at Array.map (&lt;anonymous&gt;)\n    at https:\/\/rackn.github.io\/provision-ux\/build.js:14076:38\n    at l (https:\/\/rackn.github.io\/provision-ux\/vendor.js:93588:443)\n    at uu (https:\/\/rackn.github.io\/provision-ux\/vendor.js:93649:252)\n    at Function.On.flatMap (https:\/\/rackn.github.io\/provision-ux\/vendor.js:93681:101)\n    at Object.&lt;anonymous&gt; (https:\/\/rackn.github.io\/provision-ux\/build.js:14073:36)\n    at j (https:\/\/rackn.github.io\/provision-ux\/vendor.js:93579:29999)\n    at k (https:\/\/rackn.github.io\/provision-ux\/vendor.js:93579:30313) undefined",
+        "username": "MattyBoy4444",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1518293753.000052"
+    },
+    {
+        "text": "[<https:\/\/files.gitter.im\/digitalrebar\/core\/yklT\/error1.jpg|error1.jpg](https:\/\/files.gitter.im\/digitalrebar\/core\/yklT\/thumb\/error1.jpg)>",
+        "username": "MattyBoy4444",
+        "bot_id": "B41PS9J94",
+        "attachments": [
+            {
+                "fallback": "1680x1010px image",
+                "image_url": "https:\/\/files.gitter.im\/digitalrebar\/core\/yklT\/error1.jpg",
+                "image_width": 1680,
+                "image_height": 1010,
+                "image_bytes": 242314,
+                "from_url": "https:\/\/files.gitter.im\/digitalrebar\/core\/yklT\/error1.jpg",
+                "id": 1
+            }
+        ],
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1518294261.000033"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You may want to try changing the base url to <http:\/\/portal.rackn.io|portal.rackn.io>",
+        "ts": "1518294340.000036"
+    },
+    {
+        "text": "@rackneng the log inside ux is basically empty",
+        "username": "MattyBoy4444",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1518294453.000087"
+    }
+]

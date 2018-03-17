@@ -1,0 +1,53 @@
+[
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DHRR2L> <@U02DGQYK1> I think publishing roadmap\/design would be great - would like to know futures of DRP and DR, and what the proposed use-cases are for each. Have always thought that since DRP used Sledgehammer to initially boot new nodes, it could be used to create an inventory of machines and their hardware\/firmware (more useful for those of us using self-owned bare metal.) And after OS installation, have the ability to run an Ansible playbook against the node(s). Or will stuff like this be reserved for \"full-on\" DR?\n\nOn a non-technical note, hope all you folks in TX remain safe with the coming hurricane\/storms, and recover quickly!",
+        "ts": "1503669618.000387"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U416T0AAX> we DO have an Ansible dynamic inventory generator - checkout out \/integrations\/ansible and there's even docs for it",
+        "ts": "1503675084.000305"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "we'll get a 3.1 release notes and then start community meetings back up to draft a roadmap",
+        "ts": "1503675106.000339"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "(there's a Terraform provider in the works too... that will require 3.1 workflow capabilities).",
+        "ts": "1503675161.000610"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DHRR2L> Thanks, looking fwd to the docs",
+        "ts": "1503679826.000130"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "for Ansible Inventory &gt; <https:\/\/github.com\/digitalrebar\/provision\/blob\/master\/doc\/integrations\/ansible.rst>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/blob\/master\/doc\/integrations\/ansible.rst",
+                "text": "provision - The Provisioner for DigitalRebar as a Stand Alone Golang Utility",
+                "fallback": "GitHub: digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/blob\/master\/doc\/integrations\/ansible.rst",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?v=4&s=400",
+                "thumb_width": 192,
+                "thumb_height": 192,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1503680601.000057"
+    }
+]

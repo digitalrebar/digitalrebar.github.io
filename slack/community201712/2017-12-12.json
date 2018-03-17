@@ -1,0 +1,37 @@
+[
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "If you missed the 5-minute Kubernetes install we did at Kubecon, here's a recap of the demo <https:\/\/youtu.be\/OMm6Oz1NF6I>",
+        "attachments": [
+            {
+                "service_name": "YouTube",
+                "service_url": "https:\/\/www.youtube.com\/",
+                "title": "KRIB zero config kubernetes cluster",
+                "title_link": "https:\/\/youtu.be\/OMm6Oz1NF6I",
+                "author_name": "RackN & Digital Rebar",
+                "author_link": "https:\/\/www.youtube.com\/channel\/UCr3bBtP-pMsDQ5c0IDjt_LQ",
+                "fallback": "YouTube Video: KRIB zero config kubernetes cluster",
+                "video_html": "<iframe width=\"400\" height=\"225\" src=\"https:\/\/www.youtube.com\/embed\/OMm6Oz1NF6I?feature=oembed&autoplay=1&iv_load_policy=3\" frameborder=\"0\" gesture=\"media\" allow=\"encrypted-media\" allowfullscreen><\/iframe>",
+                "video_html_width": 400,
+                "video_html_height": 225,
+                "from_url": "https:\/\/youtu.be\/OMm6Oz1NF6I",
+                "service_icon": "https:\/\/a.slack-edge.com\/2089\/img\/unfurl_icons\/youtube.png",
+                "id": 1
+            }
+        ],
+        "ts": "1513117408.000048"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "we'll go into more detail on Thursday",
+        "ts": "1513117416.000457"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "Small update for the UX - we added dynamic updates to all the list views today.  If things are running behind the scenes, you will see live changes as they happen on the lists.  This is very helpful on the machines &amp; bulk edit screens.",
+        "ts": "1513144190.000067"
+    }
+]

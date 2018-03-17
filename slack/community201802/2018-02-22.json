@@ -1,0 +1,777 @@
+[
+    {
+        "type": "message",
+        "user": "U9DAYGSRL",
+        "text": "Thanks for the information, Ideally, it should be there in the docs. currently, it needs improvement IMO :slightly_smiling_face:",
+        "thread_ts": "1510610638.000413",
+        "parent_user_id": "U6QFVRJNB",
+        "ts": "1519290819.000008"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U9DAYGSRL> - no worries ... in our next release (due out today, in fact), v3.7.0 - we have a new feature that should mean you do not need to specify the `next-server` in your subnet - it automatically inserts the value for you",
+        "ts": "1519307054.000406"
+    },
+    {
+        "type": "message",
+        "user": "U9DAYGSRL",
+        "text": "cool",
+        "ts": "1519308905.000356"
+    },
+    {
+        "type": "message",
+        "user": "U9DAYGSRL",
+        "text": "I have added drp as next-server for an existing dhcp deployment in our company.",
+        "ts": "1519308933.000170"
+    },
+    {
+        "type": "message",
+        "user": "U9DAYGSRL",
+        "text": "existing one is WDS",
+        "ts": "1519308943.000273"
+    },
+    {
+        "type": "message",
+        "user": "U9DAYGSRL",
+        "text": "I need to migrate the existing windows install images to drp",
+        "ts": "1519308963.000285"
+    },
+    {
+        "type": "message",
+        "user": "U9DAYGSRL",
+        "text": "hope it should be straight forward ?",
+        "ts": "1519308976.000103"
+    },
+    {
+        "type": "message",
+        "user": "U9DAYGSRL",
+        "text": "ll update",
+        "ts": "1519308989.000352"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "windows image provisioning is entirely possible w\/ DRP, however, it's not available in the Open Community pieces - that is an advanced RackN functionality piece",
+        "ts": "1519309007.000208"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we have done windows images for other customers, so we can do it, but it's not as straight forward ... because ... Windows ...",
+        "ts": "1519309051.000376"
+    },
+    {
+        "type": "message",
+        "user": "U9DAYGSRL",
+        "text": "yup",
+        "ts": "1519309059.000466"
+    },
+    {
+        "type": "message",
+        "user": "U9DAYGSRL",
+        "text": "but then the issue becomes how do I support both",
+        "ts": "1519309076.000282"
+    },
+    {
+        "type": "message",
+        "user": "U9DAYGSRL",
+        "text": "if it is feasible at all with community version",
+        "ts": "1519309094.000421"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Could someone give me a brief explanation of what it means to make a machine \"runnable\" or what the runner is\/does?  I'm kind of confused on that.",
+        "ts": "1519314275.000475"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "If the \"runner\" is waiting can you assign a stage to a machine and have it immediately start doing its thing?",
+        "ts": "1519314330.000850"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Sure!  The runner is simply an agent used during the install process to enable the job queue and tasks to be executed.  The Runner is ... actually ... just the `drpcli` binary put in to a special mode to listen for jobs to execute during the Stage transitions.",
+        "ts": "1519314334.000607"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Ahh",
+        "ts": "1519314347.000290"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "So when the host is sitting at the OS login prompt after the sledgehammer boot, the runner is waiting for further instructions basically?",
+        "ts": "1519314381.000616"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "The Runner (drpcli) runs in the Sledgehammer (discovery) stages, and executed work.  By default and by design, it \"dissolves\" and does not remain resident after install.  However, for larger and more complex full lifecycle management solutions - we can leave the Runner in place as a long-lived service (ala `systemd`, etc.) that enables deeper integration for lifecycle management and other enforcement activities, if you should choose.",
+        "ts": "1519314432.000099"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Yes - generally speaking, as long as you have not run a Stage\/Task that disables the runner ... :slightly_smiling_face:",
+        "ts": "1519314457.000390"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can check for it by simply doing `ps -ef | grep drpcli | grep -v grep` on a target Machine",
+        "ts": "1519314551.000547"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Ok cool.",
+        "ts": "1519314588.000566"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Thank you.",
+        "ts": "1519314636.000871"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "an example stage that disable the Runner is `complete-nowait`",
+        "ts": "1519314729.000548"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "inversely, the stage `complete` marks the Machine as done, but leaves the Runner ... ahem ... running",
+        "ts": "1519314765.000336"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Hehe",
+        "ts": "1519314777.000761"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "It's starting to make sense now.  I'm starting to wrap my head around everything.",
+        "ts": "1519314855.000034"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U9DAYGSRL> Good work getting your first machines booted!!  \n\nJust to clarify: There is a single code base for Digital Rebar Provision (DRP), which includes the provisioning service and the client. DRP is APLv2 licensed.  RackN offers commercial support of that code and pushes patches and features back into the open (community) repos.  We also offer a significant amount of RackN advanced content, plugins, and functionality for the DRP ecosystem that are sold commercially and, in many cases, offered without charge to the community.",
+        "ts": "1519315938.000758"
+    },
+    {
+        "type": "message",
+        "user": "U9DAYGSRL",
+        "text": "Thanks. I am pretty happy myself. I was unsure about DRP since I couldnt get in touch with its community. Now I have :slightly_smiling_face: ll definitely go through the DRP as well as RackN components.",
+        "ts": "1519316640.000768"
+    },
+    {
+        "user": "U9EENC9KR",
+        "text": "<@U9EENC9KR> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1519330695.000321"
+    },
+    {
+        "type": "message",
+        "user": "U32PZNCP5",
+        "text": "Welcome Mohammed Mehdi",
+        "ts": "1519336635.000618"
+    },
+    {
+        "type": "message",
+        "user": "U9EENC9KR",
+        "text": "Thanks Spector",
+        "ts": "1519340357.000330"
+    },
+    {
+        "type": "message",
+        "user": "U32PZNCP5",
+        "text": "There is a FAQ, I think this will bring it up for you $Welcome",
+        "ts": "1519340449.000563"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1519340450.000075"
+    },
+    {
+        "type": "message",
+        "user": "U9EENC9KR",
+        "text": "Yeah I have been doing some reading about digital rebar for the last one week. Trying to get this up and running in virtualbox.",
+        "ts": "1519340613.000511"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "VirtualBox is a bit of a pain - because it tries to interfere w\/ your DHCP services, and you may have some other issues if you're on a Mac",
+        "ts": "1519340650.000087",
+        "reactions": [
+            {
+                "name": "point_up",
+                "users": [
+                    "U9BU09D51"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U9EENC9KR",
+        "text": "yeah I am currently running into dhcp issues on my mac",
+        "ts": "1519340681.000113"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "also see this:\n<http:\/\/provision.readthedocs.io\/en\/latest\/doc\/faq-troubleshooting.html?highlight=virtual%20box#missing-vboxnet-network>",
+        "ts": "1519340746.000500"
+    },
+    {
+        "type": "message",
+        "user": "U9EENC9KR",
+        "text": "Yeah trying to use hostonly network on both dr and client but for some reason its getting dhcp from somewhere else. Disabled virtualbox dhcp along with docker daemon.",
+        "ts": "1519340932.000136"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "for my MAC - I did this:\n1. setup a single VM as my DRP Endpoint, w\/ 2 NIC\n    a) 1st Bridged to my WiFi (or your local LAN)\n    b)  2nd as Host-Only (using vboxnet0) - this way, my Mac can participate in connecting to the VMs (Machines) directly too\n2. set up my VMs with only 1 NIC, connected to Host-Only (vboxnet0)\n3. on the DRP Endpoint, turn on packet forwarding (routing), and add IPTables NAT rules\n4. disable DHCP on vboxnet0 - and then KILL the DHCP server that doesn't stop when you disable",
+        "ts": "1519340950.000263"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "when you disable it - it does NOT stop the DHCP service - you have to kill it, after disabling it",
+        "ts": "1519340971.000501"
+    },
+    {
+        "type": "message",
+        "user": "U9EENC9KR",
+        "text": "aha..need to kill the dhcp service...probably thats it, otherwise my setup is exactly the same as yours",
+        "ts": "1519340998.000024"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I also added an IP addr to my Mac vboxnet0 network in the VirtualBox management tool - static IP assignment",
+        "ts": "1519341173.000120"
+    },
+    {
+        "type": "message",
+        "user": "U9EENC9KR",
+        "text": "ok so it gets an ip from dr but getting error ```Exec format error```",
+        "ts": "1519341377.000273"
+    },
+    {
+        "type": "message",
+        "user": "U9EENC9KR",
+        "text": "looks like some configuration issue with sledgehammer",
+        "ts": "1519341433.000139"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U9EENC9KR> uploaded a file: <https:\/\/rackn.slack.com\/files\/U9EENC9KR\/F9EBNL2TG\/image.png|image.png>",
+        "file": {
+            "id": "F9EBNL2TG",
+            "created": 1519341481,
+            "timestamp": 1519341481,
+            "name": "image.png",
+            "title": "image.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U9EENC9KR",
+            "editable": false,
+            "size": 52620,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9EBNL2TG\/image.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9EBNL2TG\/download\/image.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9EBNL2TG-094a6ea46d\/image_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9EBNL2TG-094a6ea46d\/image_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9EBNL2TG-094a6ea46d\/image_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 198,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9EBNL2TG-094a6ea46d\/image_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 264,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9EBNL2TG-094a6ea46d\/image_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9EBNL2TG-094a6ea46d\/image_720.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 396,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9EBNL2TG-094a6ea46d\/image_800.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 439,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9EBNL2TG-094a6ea46d\/image_960.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 527,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9EBNL2TG-094a6ea46d\/image_1024.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 563,
+            "image_exif_rotation": 1,
+            "original_w": 1438,
+            "original_h": 790,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U9EENC9KR\/F9EBNL2TG\/image.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F9EBNL2TG-1dd5345bee",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U9EENC9KR",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "mohd.mehdim",
+        "bot_id": null,
+        "ts": "1519341484.000139"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "hmm - not sure off the top of my head - I just upgraded my DRP version to the latest v3.7.0 (incidentally - you were the FIRST to download it - mere seconds after it released ... )",
+        "ts": "1519341762.000279"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I was able to boot a VM smoothly",
+        "ts": "1519341774.000088"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "did you use the `--static-ip` flag when you started DRP ?",
+        "ts": "1519341795.000252"
+    },
+    {
+        "type": "message",
+        "user": "U9EENC9KR",
+        "text": "yeah",
+        "ts": "1519341808.000344"
+    },
+    {
+        "type": "message",
+        "user": "U9EENC9KR",
+        "text": "oh this is brand new :sunglasses:",
+        "ts": "1519341827.000148"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "can you please copy-n-paste the process listing\/options for your running DRP Endpoint ?   (`ps -ef | grep dr-provision | grep -v grep`)",
+        "ts": "1519342103.000396"
+    },
+    {
+        "type": "message",
+        "user": "U9EENC9KR",
+        "text": "```root      1510  1442  0 17:58 pts\/0    00:00:00 sudo .\/dr-provision --static-ip=192.168.99.201 --base-root=\/root\/drp-data --local-content= --default-content=\nroot      1512  1510  0 17:58 pts\/0    00:00:01 .\/dr-provision --static-ip=192.168.99.201 --base-root=\/root\/drp-data --local-content= --default-content=```",
+        "ts": "1519342342.000179"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "did you create a `subnet` for 192.168.99.0\/24 ?",
+        "ts": "1519342432.000366"
+    },
+    {
+        "type": "message",
+        "user": "U9EENC9KR",
+        "text": "yes",
+        "ts": "1519342447.000238"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "can you please provide the output of `drpcli subnets show &lt;NAME _OF_SUBNET&gt;` ?",
+        "ts": "1519342473.000163"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we have some new changes that make adding a subnet not necessary - but I'd like to inspect what you set there",
+        "ts": "1519342497.000381"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U6QFVRJNB> uploaded a file: <https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/F9CSHS532\/screen_shot_2018-02-22_at_15.35.03.png|v3.7.0 VM booting successfully> and commented: this is my vbox VM booting up against a brand new v3.7.0 DRP endpoint",
+        "file": {
+            "id": "F9CSHS532",
+            "created": 1519342547,
+            "timestamp": 1519342547,
+            "name": "Screen Shot 2018-02-22 at 15.35.03.png",
+            "title": "v3.7.0 VM booting successfully",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U6QFVRJNB",
+            "editable": false,
+            "size": 89615,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9CSHS532\/screen_shot_2018-02-22_at_15.35.03.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9CSHS532\/download\/screen_shot_2018-02-22_at_15.35.03.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9CSHS532-bc39b68838\/screen_shot_2018-02-22_at_15.35.03_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9CSHS532-bc39b68838\/screen_shot_2018-02-22_at_15.35.03_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9CSHS532-bc39b68838\/screen_shot_2018-02-22_at_15.35.03_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 222,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9CSHS532-bc39b68838\/screen_shot_2018-02-22_at_15.35.03_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 296,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9CSHS532-bc39b68838\/screen_shot_2018-02-22_at_15.35.03_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9CSHS532-bc39b68838\/screen_shot_2018-02-22_at_15.35.03_720.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 443,
+            "image_exif_rotation": 1,
+            "original_w": 721,
+            "original_h": 444,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/F9CSHS532\/screen_shot_2018-02-22_at_15.35.03.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F9CSHS532-b9ccbf7343",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 1,
+            "initial_comment": {
+                "id": "Fc9DKVD1L5",
+                "created": 1519342547,
+                "timestamp": 1519342547,
+                "user": "U6QFVRJNB",
+                "is_intro": true,
+                "comment": "this is my vbox VM booting up against a brand new v3.7.0 DRP endpoint"
+            }
+        },
+        "user": "U6QFVRJNB",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "shane",
+        "bot_id": null,
+        "ts": "1519342549.000108"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Ok - I replicated the issue - but only be deleting my Subnet - and I get the same errors you see when I do that",
+        "ts": "1519342825.000073"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U9EENC9KR> which UX URL are you using?",
+        "ts": "1519342873.000240"
+    },
+    {
+        "type": "message",
+        "user": "U9EENC9KR",
+        "text": "<https:\/\/portal.rackn.io\/#\/e\/192.168.99.201:8092\/subnets>",
+        "ts": "1519343081.000216"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": ":slightly_smiling_face: I can't access your DRP Endpoint via the Portal - I have to have direct access to the 192.168.99.201 IP address for that to work",
+        "ts": "1519343148.000293"
+    },
+    {
+        "type": "message",
+        "user": "U9EENC9KR",
+        "text": "```{\n  \"ActiveEnd\": \"192.168.99.254\",\n  \"ActiveLeaseTime\": 60,\n  \"ActiveStart\": \"192.168.99.250\",\n  \"Available\": true,\n  \"Description\": \"\",\n  \"Enabled\": true,\n  \"Errors\": [],\n  \"Meta\": {},\n  \"Name\": \"local_subnet\",\n  \"NextServer\": \"\",\n  \"OnlyReservations\": false,\n  \"Options\": [\n    {\n      \"Code\": 1,\n      \"Value\": \"255.255.255.0\"\n    },\n    {\n      \"Code\": 3,\n      \"Value\": \"192.168.99.1\"\n    },\n    {\n      \"Code\": 6,\n      \"Value\": \"8.8.8.8\"\n    },\n    {\n      \"Code\": 15,\n      \"Value\": \"<http:\/\/example.com|example.com>\"\n    },\n    {\n      \"Code\": 28,\n      \"Value\": \"192.168.99.255\"\n    }\n  ],\n  \"Pickers\": [\n    \"hint\",\n    \"nextFree\",\n    \"mostExpired\"\n  ],\n  \"Proxy\": false,\n  \"ReadOnly\": false,\n  \"ReservedLeaseTime\": 7200,\n  \"Strategy\": \"MAC\",\n  \"Subnet\": \"192.168.99.0\/24\",\n  \"Unmanaged\": false,\n  \"Validated\": true\n}```",
+        "ts": "1519343159.000372"
+    },
+    {
+        "type": "message",
+        "user": "U9EENC9KR",
+        "text": "yeah that ip is on hostonly network",
+        "edited": {
+            "user": "U9EENC9KR",
+            "ts": "1519343198.000000"
+        },
+        "ts": "1519343195.000001"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "that's a security mechanism - DRP Endpoint NEVER talks to the Portal directly - it only talks to the management workstation (aka your laptop) ... and provides a \"passthrough\" connection between the Portal and the Endpoint via the single-page React application that's running in your browser",
+        "ts": "1519343195.000027"
+    },
+    {
+        "type": "message",
+        "user": "U9EENC9KR",
+        "text": "So, the above is indeed the UX URL right?",
+        "ts": "1519343291.000392"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yes - that's the Production version of the UX (our Stable Portal)",
+        "ts": "1519343314.000335"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Ok - you need to edit the Subnet you created, add add the Param for Option Code 67, and set it to the value \"lpxelinux.0\"",
+        "ts": "1519343400.000340"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "`drpcli subnets set local_subnet option 67 to \"lpxelinux.0\"`",
+        "ts": "1519343430.000317"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the DHCP changes in v3.7.0 release have made it necessary to now add that - I'll update the quickstart doc right now",
+        "ts": "1519343475.000203"
+    },
+    {
+        "type": "message",
+        "user": "U9EENC9KR",
+        "text": "cool..let me try that",
+        "ts": "1519343632.000285"
+    },
+    {
+        "type": "message",
+        "user": "U9EENC9KR",
+        "text": "Works :+1:",
+        "ts": "1519343711.000119",
+        "reactions": [
+            {
+                "name": "sunglasses",
+                "users": [
+                    "U6QFVRJNB"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "woot! woot!",
+        "ts": "1519343737.000391"
+    },
+    {
+        "type": "message",
+        "user": "U9EENC9KR",
+        "text": "So, can we use static names for machine names and use it to assign bootenv?",
+        "ts": "1519343920.000237"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yep - just Edit the machine and change the name",
+        "ts": "1519344069.000315"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can do that in the UX, or via `drpcli` - see $FAQ for a FAQ note on that",
+        "ts": "1519344101.000149"
+    },
+    {
+        "text": "FAQs are here &gt; <http:\/\/provision.readthedocs.io\/en\/latest\/doc\/faq-troubleshooting.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1519344101.000195"
+    },
+    {
+        "type": "message",
+        "user": "U9EENC9KR",
+        "text": "I am more of a cli guy and will automate this provisioning using ansible",
+        "edited": {
+            "user": "U9EENC9KR",
+            "ts": "1519344184.000000"
+        },
+        "ts": "1519344166.000244"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the FAQ has the CLI option there",
+        "ts": "1519344188.000342"
+    },
+    {
+        "text": "FAQs are here &gt; <http:\/\/provision.readthedocs.io\/en\/latest\/doc\/faq-troubleshooting.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1519344188.000381"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "We have some limited support for Ansible playbooks - we demonstrated it using the Kubernetes Kubespray Ansible playbook",
+        "ts": "1519344247.000118"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<http:\/\/provision.readthedocs.io\/en\/latest\/doc\/integrations\/ansible.html>",
+        "ts": "1519344270.000381"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "note:  it's been a while since we exercised that code - so it may be a bit crusty",
+        "ts": "1519344296.000349"
+    },
+    {
+        "type": "message",
+        "user": "U9EENC9KR",
+        "text": "cool…let me look into it…thanks",
+        "ts": "1519344425.000332"
+    },
+    {
+        "type": "message",
+        "user": "U9EENC9KR",
+        "text": "Another question, I see that DR does has the capability of doing hardware raid. Does it support any vendor or specific vendors?",
+        "ts": "1519344506.000386"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we do - but that is a RackN commercial piece - if you're interested in that we should discuss that in context of the Trial you're running",
+        "ts": "1519344556.000170"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<!channel> - The release is out!",
+        "ts": "1519350398.000291"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "DRP stable is now v3.7.0.  Content packages are v1.6.0.  Plugins are now at v2.0.0.  UX is now at v1.0.0.",
+        "ts": "1519350431.000030"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "If you update to stable, please immediately update your plugins to their v2.0.0 counterparts.",
+        "ts": "1519350467.000304"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Updating default content will require a sledgehammer update.",
+        "ts": "1519350479.000202"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Release notes are here: <https:\/\/github.com\/digitalrebar\/provision\/releases\/tag\/v3.7.0>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/releases\/tag\/v3.7.0",
+                "text": "Digital Rebar Provision is a simple but powerful Golang executable that provides a complete API-driven DHCP\/PXE\/TFTP provisioning system.",
+                "fallback": "GitHub: digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/releases\/tag\/v3.7.0",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1519350512.000199"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "UX release notes:",
+        "ts": "1519350565.000301"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U02DGQYK1> uploaded a file: <https:\/\/rackn.slack.com\/files\/U02DGQYK1\/F9EK88EDV\/UX_v1_0_0_release_notes.md|UX v1.0.0 release notes>",
+        "file": {
+            "id": "F9EK88EDV",
+            "created": 1519350616,
+            "timestamp": 1519350616,
+            "name": "UX_v1_0_0_release_notes.md",
+            "title": "UX v1.0.0 release notes",
+            "mimetype": "text\/plain",
+            "filetype": "markdown",
+            "pretty_type": "Markdown (raw)",
+            "user": "U02DGQYK1",
+            "editable": true,
+            "size": 2064,
+            "mode": "snippet",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9EK88EDV\/UX_v1_0_0_release_notes.md?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9EK88EDV\/download\/UX_v1_0_0_release_notes.md?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "permalink": "https:\/\/rackn.slack.com\/files\/U02DGQYK1\/F9EK88EDV\/UX_v1_0_0_release_notes.md",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F9EK88EDV-0f08aaaea9",
+            "edit_link": "https:\/\/rackn.slack.com\/files\/U02DGQYK1\/F9EK88EDV\/UX_v1_0_0_release_notes.md\/edit",
+            "preview": "# v1.0.0 - Content management and  Machine\/Bulk Features\r\n\r\n## Features\r\n\r\n* Add general JSON viewer to all individual object pages\r",
+            "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre><span class=\"cm-header cm-header-1\"># <\/span><span class=\"cm-header cm-header-1\">v1.0.0<\/span><span class=\"cm-header cm-header-1\"> <\/span><span class=\"cm-header cm-header-1\">-<\/span><span class=\"cm-header cm-header-1\"> <\/span><span class=\"cm-header cm-header-1\">Content<\/span><span class=\"cm-header cm-header-1\"> <\/span><span class=\"cm-header cm-header-1\">management<\/span><span class=\"cm-header cm-header-1\"> <\/span><span class=\"cm-header cm-header-1\">and<\/span><span class=\"cm-header cm-header-1\"> <\/span><span class=\"cm-header cm-header-1\"> <\/span><span class=\"cm-header cm-header-1\">Machine\/Bulk<\/span><span class=\"cm-header cm-header-1\"> <\/span><span class=\"cm-header cm-header-1\">Features<\/span><\/pre><\/div>\n<div><pre>&#8203;<\/pre><\/div>\n<div><pre><span class=\"cm-header cm-header-2\">## <\/span><span class=\"cm-header cm-header-2\">Features<\/span><\/pre><\/div>\n<div><pre>&#8203;<\/pre><\/div>\n<div><pre><span class=\"cm-variable-2\">* <\/span><span class=\"cm-variable-2\">Add<\/span><span class=\"cm-variable-2\"><\/span><span class=\"cm-variable-2\"> <\/span><span class=\"cm-variable-2\">general<\/span><span class=\"cm-variable-2\"> <\/span><span class=\"cm-variable-2\">JSON<\/span><span class=\"cm-variable-2\"> <\/span><span class=\"cm-variable-2\">viewer<\/span><span class=\"cm-variable-2\"> <\/span><span class=\"cm-variable-2\">to<\/span><span class=\"cm-variable-2\"> <\/span><span class=\"cm-variable-2\">all<\/span><span class=\"cm-variable-2\"> <\/span><span class=\"cm-variable-2\">individual<\/span><span class=\"cm-variable-2\"> <\/span><span class=\"cm-variable-2\">object<\/span><span class=\"cm-variable-2\"> <\/span><span class=\"cm-variable-2\">pages<\/span><\/pre><\/div>\n<\/div>\n<\/div>\n",
+            "lines": 51,
+            "lines_more": 46,
+            "preview_is_truncated": true,
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U02DGQYK1",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "greg",
+        "bot_id": null,
+        "ts": "1519350616.000293"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": ":nerd_face: great news.  This is a big release w plugins, lots of bug fixes, dhcp and other updates.   Well done!!",
+        "client_msg_id": "55aedc79-a27b-4fc6-9a23-243aea6ee51e",
+        "ts": "1519353193.000043",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U9DAYGSRL",
+                    "U9BU09D51",
+                    "U968XRW4E"
+                ],
+                "count": 3
+            }
+        ]
+    }
+]

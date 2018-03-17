@@ -1,0 +1,97 @@
+[
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "Speaking of BM FW.... <https:\/\/tools.ietf.org\/html\/draft-moran-suit-architecture-00>",
+        "ts": "1510152606.000204"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "ietf IoT firmware update working draft",
+        "ts": "1510152690.000150"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "got around to updating the drpcli package in AUR to 3.2.1 <https:\/\/aur.archlinux.org\/packages\/drpcli\/>",
+        "attachments": [
+            {
+                "title": "AUR (en) - drpcli",
+                "title_link": "https:\/\/aur.archlinux.org\/packages\/drpcli\/",
+                "text": "Command-line client for Digital Rebar Provision, an API-driven DHCP\/PXE\/TFTP provisioning system.",
+                "fallback": "AUR (en) - drpcli",
+                "from_url": "https:\/\/aur.archlinux.org\/packages\/drpcli\/",
+                "service_name": "aur.archlinux.org",
+                "id": 1
+            }
+        ],
+        "ts": "1510176115.000165"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "aieee!",
+        "ts": "1510179358.000414"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "you have AUR rights!",
+        "ts": "1510179379.000031"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Feel free to do one for dr-provision as well. :slightly_smiling_face:",
+        "ts": "1510179422.000290"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I will also gleefully accept a PR for a pkgbuild",
+        "ts": "1510179573.000030"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I could use it locally. :slightly_smiling_face:",
+        "ts": "1510179596.000015"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "although I will have to refresh my makepkg memory.  It has been awhile.",
+        "ts": "1510179630.000295"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "do you run dr-provision on arch? I don't exactly have that requirement (it gets deployed in a Debian LXC container running in our engineering environment)",
+        "ts": "1510180080.000085"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "In fact, I do.",
+        "ts": "1510180109.000126"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Although in my case, it is from locally-built source, not from the pre-built tarballs. :slightly_smiling_face:",
+        "ts": "1510180253.000172"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "sudo systemctl stop dr-provision &amp;&amp; tools\/install.sh install &amp;&amp; sudo systemctl start dr-provision is a fairly common thing for me.",
+        "ts": "1510180313.000082"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "In fact, I will whip up a -git version",
+        "ts": "1510180389.000019"
+    }
+]

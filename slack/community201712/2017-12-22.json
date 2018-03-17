@@ -1,0 +1,1090 @@
+[
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Try #2 stage-map:",
+        "ts": "1513952325.000276"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F8JDUR8HH\/krib-install-stage-map-2.png|krib-install-stage-map-2>",
+        "file": {
+            "id": "F8JDUR8HH",
+            "created": 1513952343,
+            "timestamp": 1513952343,
+            "name": "krib-install-stage-map-2.png",
+            "title": "krib-install-stage-map-2",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 43784,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8JDUR8HH\/krib-install-stage-map-2.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8JDUR8HH\/download\/krib-install-stage-map-2.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8JDUR8HH-f0c4ee07a7\/krib-install-stage-map-2_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8JDUR8HH-f0c4ee07a7\/krib-install-stage-map-2_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8JDUR8HH-f0c4ee07a7\/krib-install-stage-map-2_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 41,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8JDUR8HH-f0c4ee07a7\/krib-install-stage-map-2_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 55,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8JDUR8HH-f0c4ee07a7\/krib-install-stage-map-2_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8JDUR8HH-f0c4ee07a7\/krib-install-stage-map-2_720.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 82,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8JDUR8HH-f0c4ee07a7\/krib-install-stage-map-2_800.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 91,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8JDUR8HH-f0c4ee07a7\/krib-install-stage-map-2_960.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 109,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8JDUR8HH-f0c4ee07a7\/krib-install-stage-map-2_1024.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 117,
+            "image_exif_rotation": 1,
+            "original_w": 1501,
+            "original_h": 171,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F8JDUR8HH\/krib-install-stage-map-2.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F8JDUR8HH-a890b77871",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1513952345.000367"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Does the `krib\/cluster-profile` param value have to be set to the name of the profile? Here’s what I have:",
+        "ts": "1513952803.000275"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F8JH689U4\/krib-profile-params.png|krib-profile-params>",
+        "file": {
+            "id": "F8JH689U4",
+            "created": 1513952817,
+            "timestamp": 1513952817,
+            "name": "krib-profile-params.png",
+            "title": "krib-profile-params",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 22920,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8JH689U4\/krib-profile-params.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8JH689U4\/download\/krib-profile-params.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8JH689U4-8526703731\/krib-profile-params_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8JH689U4-8526703731\/krib-profile-params_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8JH689U4-8526703731\/krib-profile-params_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 325,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8JH689U4-8526703731\/krib-profile-params_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "image_exif_rotation": 1,
+            "original_w": 366,
+            "original_h": 330,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F8JH689U4\/krib-profile-params.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F8JH689U4-c6baa07227",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1513952818.000371"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes - it needs to be",
+        "ts": "1513953099.000305"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "<@U416T0AAX> thanks for the blow by blow.... I want to do the same thing over vacation and this has already helped my 'motivation'",
+        "ts": "1513953208.000287"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U62R1805P> n\/p, please follow along as I bloody myself :wink:",
+        "ts": "1513953262.000238"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DGQYK1> something’s not going correctly here…",
+        "ts": "1513953289.000286"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Machines all seem to be stuck in these states:",
+        "ts": "1513953390.000147"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F8JLG74GM\/machines_state.png|machine_states>",
+        "file": {
+            "id": "F8JLG74GM",
+            "created": 1513953406,
+            "timestamp": 1513953406,
+            "name": "machines_state.png",
+            "title": "machine_states",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 63680,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8JLG74GM\/machines_state.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8JLG74GM\/download\/machines_state.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8JLG74GM-7652f57e8c\/machines_state_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8JLG74GM-7652f57e8c\/machines_state_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8JLG74GM-7652f57e8c\/machines_state_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 51,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8JLG74GM-7652f57e8c\/machines_state_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 68,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8JLG74GM-7652f57e8c\/machines_state_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8JLG74GM-7652f57e8c\/machines_state_720.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 102,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8JLG74GM-7652f57e8c\/machines_state_800.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 113,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8JLG74GM-7652f57e8c\/machines_state_960.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 136,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8JLG74GM-7652f57e8c\/machines_state_1024.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 145,
+            "image_exif_rotation": 1,
+            "original_w": 1552,
+            "original_h": 220,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F8JLG74GM\/machines_state.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F8JLG74GM-0aebd3ba0d",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1513953409.000299"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "What exactly is the `finish-install` task for?",
+        "ts": "1513953524.000124"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Your workflow is not what Rob was using.",
+        "ts": "1513953597.000170"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Hmmm… Other than starting with U16.04 rather than C7, I think it is… Duped it off the webinar vid",
+        "ts": "1513953678.000031"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Can you open change-stage\/map and show me?",
+        "ts": "1513953695.000199"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "also make sure the `k8s-cluster1` is the only profile on the node with a `change-stage\/map`",
+        "ts": "1513953729.000272"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You should have two workflows",
+        "ts": "1513953740.000056"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Discover workflow:\n    discover-&gt;sledgehammer:Success",
+        "ts": "1513953774.000116"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Krib Workflow for Install:\n    ubuntu-16.04-install-&gt;runner-service:Success\n    runner-service-&gt;finish-install:STOP &lt;- This is STOP\n    finish-install-&gt;docker-install:Success\n    docker-install-&gt;krib-install:Success\n    krib-install-&gt;complete:Success",
+        "ts": "1513954031.000365"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "to add centos7 -&gt; centos-7-install-&gt;runner-service:Success",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1513954067.000000"
+        },
+        "ts": "1513954052.000331"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "```\n[dradmin@dr-admin drp]$ drpcli profiles show k8s-cluster1\n{\n  \"Available\": true,\n  \"Description\": \"\",\n  \"Errors\": [],\n  \"Meta\": {\n    \"color\": \"\",\n    \"icon\": \"\",\n    \"title\": \"\"\n  },\n  \"Name\": \"k8s-cluster1\",\n  \"Params\": {\n    \"access-keys\": {\n      \"root\": \"ssh-rsa .... will@Wills-MacBook-Air\"\n    },\n    \"access-ssh-root-mode\": \"yes\",\n    \"change-stage\/map\": {\n      \"docker-install\": \"krib-install:Success\",\n      \"finish-install\": \"docker-install:Success\",\n      \"krib-install\": \"complete:Success\",\n      \"runner-service\": \"finish-install:Success\",\n      \"ssh-access\": \"runner-service:Success\",\n      \"ubuntu-16.04-install\": \"ssh-access:Success\"\n    },\n    \"dns-domain\": \"<http:\/\/nec-labs.com|nec-labs.com>\",\n    \"krib\/cluster-profile\": \"k8s-cluster1\",\n    \"local-repo\": false,\n    \"ntp_servers\": [\n      \"138.15.xxx.97\",\n      \"138.15.yyy.4\"\n    ],\n    \"operating-system-disk\": \"sda\",\n    \"provisioner-default-fullname\": \"IST Group\",\n    \"provisioner-default-password-hash\": \"...\",\n    \"provisioner-default-user\": \"istgroup\"\n  },\n  \"ReadOnly\": false,\n  \"Validated\": true\n}\n```",
+        "ts": "1513954061.000335"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "finish-install:Stop in the runner-service piece",
+        "ts": "1513954083.000048"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yes, just saw that",
+        "ts": "1513954137.000015"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So, why?",
+        "ts": "1513954143.000039"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Because it is how you Stop the runner to let the install complete.",
+        "ts": "1513954156.000236"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Ah, if not, race condition?",
+        "ts": "1513954173.000409"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "docker-install and krib-install can NOT be run in the install environment because it must start services in systemd that are not allowed.",
+        "ts": "1513954185.000358"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Any way to edit that step in the Profile via drpcli so as to just change `\"runner-service\": \"finish-install:Success\"` to `\"runner-service\": \"finish-install:Stop\"` ?",
+        "edited": {
+            "user": "U416T0AAX",
+            "ts": "1513954310.000000"
+        },
+        "ts": "1513954295.000109"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes - that would match what I’m saying.",
+        "ts": "1513954388.000236"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, just re-set the stage-map thru the UX; now I have it as:\n```\n    \"change-stage\/map\": {\n      \"docker-install\": \"krib-install:Success\",\n      \"finish-install\": \"docker-install:Success\",\n      \"krib-install\": \"complete:Success\",\n      \"runner-service\": \"finish-install:Stop\",\n      \"ssh-access\": \"runner-service:Success\",\n      \"ubuntu-16.04-install\": \"ssh-access:Success\"\n    },\n```",
+        "ts": "1513954569.000026"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Look OK?",
+        "ts": "1513954682.000424"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "For the krib workflow.",
+        "ts": "1513954771.000223"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You should also add the discover transitions as well.  So that you can recycle the nodes if you need to.",
+        "ts": "1513954814.000404"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Oh, OK — skipped that since I had already discovered the nodes previously",
+        "ts": "1513954852.000218"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Also — from my prior try, I have another k8s profile I bulk added to the machines, that I cannot seem to get rid of now (at least thru the UX) - it’s named `k8s-cluster-installer`\n```\n[dradmin@dr-admin drp]$ drpcli machines list | jq .[].Profiles\n[\n  \"k8s-cluster-installer\",\n  \"k8s-cluster1\"\n]\n[\n  \"k8s-cluster-installer\",\n  \"k8s-cluster1\"\n]\n[\n  \"k8s-cluster-installer\",\n  \"k8s-cluster1\"\n]\n[\n  \"k8s-cluster-installer\",\n  \"k8s-cluster1\"\n]\n```",
+        "ts": "1513955286.000288"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "YOu need to remove those or remove their parameters.",
+        "ts": "1513955330.000074"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "It does not have a stage-map or params…\n```\n[dradmin@dr-admin drp]$ drpcli profiles show k8s-cluster-installer\n{\n  \"Available\": true,\n  \"Description\": \"\",\n  \"Errors\": [],\n  \"Meta\": {\n    \"color\": \"black\",\n    \"icon\": \"hashtag\",\n    \"title\": \"User added profile\"\n  },\n  \"Name\": \"k8s-cluster-installer\",\n  \"Params\": {},\n  \"ReadOnly\": false,\n  \"Validated\": true\n}\n```",
+        "ts": "1513955351.000404"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - that is fine.  It shouldn’t interfere",
+        "ts": "1513955371.000128"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "But for some reason, the UX won’t let me remove it from the machines…",
+        "ts": "1513955383.000007"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "in bulk? or machine edit?",
+        "ts": "1513955397.000271"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Either",
+        "ts": "1513955403.000149"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Hard refresh the bulk action page.",
+        "ts": "1513955414.000305"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The remove profiles from machine.  See if UX was out of date.",
+        "ts": "1513955488.000118"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Getting this error:",
+        "ts": "1513955510.000285"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F8JLYR65B\/profile-del-err.png|profile-del-err>",
+        "file": {
+            "id": "F8JLYR65B",
+            "created": 1513955522,
+            "timestamp": 1513955522,
+            "name": "profile-del-err.png",
+            "title": "profile-del-err",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 8156,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8JLYR65B\/profile-del-err.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8JLYR65B\/download\/profile-del-err.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8JLYR65B-5a6b204c7b\/profile-del-err_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8JLYR65B-5a6b204c7b\/profile-del-err_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8JLYR65B-5a6b204c7b\/profile-del-err_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 241,
+            "thumb_360_h": 135,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8JLYR65B-5a6b204c7b\/profile-del-err_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "image_exif_rotation": 1,
+            "original_w": 241,
+            "original_h": 135,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F8JLYR65B\/profile-del-err.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F8JLYR65B-351eb7a30c",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1513955523.000201"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "When I try to delete the profile from a machine",
+        "ts": "1513955542.000421"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "show me a machine please.",
+        "ts": "1513955581.000158"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "What’s the `jq` syntax to omit the gohai inventory?",
+        "ts": "1513955708.000532"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "or do `jq .[].Profiles`",
+        "ts": "1513955736.000426"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Representative machine:\n```\n[dradmin@dr-admin drp]$ drpcli machines show \"1bcd8472-6c20-47b3-b9ff-f32731905bf1\" | jq .Profiles\n[\n  \"k8s-cluster-installer\",\n  \"k8s-cluster1\"\n]\n```",
+        "ts": "1513955780.000251"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "```drpcli machines removeprofile 1bcd8472-6c20-47b3-b9ff-f32731905bf1 k8s-cluster-installer```",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1513955834.000000"
+        },
+        "ts": "1513955816.000013"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, that worked",
+        "ts": "1513955880.000527"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Now I have to fix the other three",
+        "ts": "1513955897.000486"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It is a UX bug I think",
+        "ts": "1513955913.000501"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, down to the one Profile\/machine. Let’s try again.",
+        "ts": "1513956095.000526"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "And we’re off",
+        "ts": "1513956177.000318"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "when you get greg chat'n I get lots of insights into the mental 'D&amp;D' map of DRP (wizards playbook) with lighted sign posts (your UI images)... super insightful 4me... wishing for a 'christmas krib miracle'",
+        "ts": "1513957017.000410"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "lol",
+        "ts": "1513957202.000034"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Looks promising…\n```\n[discovery] Successfully established connection with API Server \"192.168.1.114:6443\"\n\nThis node has joined the cluster:\n* Certificate signing request was sent to master and a response\n  was received.\n* The Kubelet was informed of the new secure connection details.\n\nRun 'kubectl get nodes' on the master to see this node join the cluster.\nFinished successfully\nCommand exited with status 0\nAction krib-install.sh.tmpl finished\nTask krib-install finished\nUpdated job 12fb4cb3-c96d-47ab-b7fe-0d07071fd818 to finished\n```",
+        "ts": "1513958096.000281"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "looks good",
+        "ts": "1513958123.000154"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "And on the master (192.168.1.114):\n```\nDeterminig master - see if it is already decided or configured\n\"1bcd8472-6c20-47b3-b9ff-f32731905bf1\"\nMaster is 1bcd8472-6c20-47b3-b9ff-f32731905bf1\nI am master - run kubeadm\nMAKE SURE SWAP IS OFF!- kubeadm requirement\n\t[WARNING FileExisting-crictl]: crictl not found in system path\nStarting calico networking...\nconfigmap \"calico-config\" created\ndaemonset \"calico-etcd\" created\nservice \"calico-etcd\" created\ndaemonset \"calico-node\" created\ndeployment \"calico-kube-controllers\" created\ndeployment \"calico-policy-controller\" created\nclusterrolebinding \"calico-cni-plugin\" created\nclusterrole \"calico-cni-plugin\" created\nserviceaccount \"calico-cni-plugin\" created\nclusterrolebinding \"calico-kube-controllers\" created\nclusterrole \"calico-kube-controllers\" created\nserviceaccount \"calico-kube-controllers\" created\nsecret \"kubernetes-dashboard-certs\" created\nserviceaccount \"kubernetes-dashboard\" created\nrole \"kubernetes-dashboard-minimal\" created\nrolebinding \"kubernetes-dashboard-minimal\" created\ndeployment \"kubernetes-dashboard\" created\nservice \"kubernetes-dashboard\" created\nclusterrolebinding \"kubernetes-dashboard\" created\nWait for admin container to start\n```",
+        "ts": "1513958239.000194"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Where is it that I can see the credentials to connect to the cluster? Thought it was on the machine’s params…",
+        "ts": "1513958297.000515"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Oh, the params are in the `k8s-cluster1` profile",
+        "ts": "1513958424.000249"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "YAAAAAAAAAAAS!\n```\nWills-MacBook-Air:Documents will$ kubectl --kubeconfig=krib-cluster1-admin.conf get nodes\nNAME         STATUS    ROLES     AGE       VERSION\ntestnode01   Ready     &lt;none&gt;    28m       v1.9.0\ntestnode02   Ready     &lt;none&gt;    28m       v1.9.0\ntestnode03   Ready     master    29m       v1.9.0\ntestnode04   Ready     &lt;none&gt;    28m       v1.9.0\n```",
+        "ts": "1513959050.000270"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "woot woot",
+        "ts": "1513959331.000369"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Anyone know how to remove a k8s proxy?",
+        "ts": "1513959746.000106"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I was running minikube on my Macbook, but even when stopping minikube, the proxy remains to it…",
+        "ts": "1513959779.000300"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "```Wills-MacBook-Air:Documents will$ kubectl get nodes\nNAME       STATUS    ROLES     AGE       VERSION\nminikube   Ready     &lt;none&gt;    14d       v1.8.0\nWills-MacBook-Air:Documents will$ kubectl --kubeconfig=krib-cluster1-admin.conf get nodes\nNAME         STATUS    ROLES     AGE       VERSION\ntestnode01   Ready     &lt;none&gt;    38m       v1.9.0\ntestnode02   Ready     &lt;none&gt;    38m       v1.9.0\ntestnode03   Ready     master    39m       v1.9.0\ntestnode04   Ready     &lt;none&gt;    38m       v1.9.0\nWills-MacBook-Air:Documents will$ minikube stop\nStopping local Kubernetes cluster...\nMachine stopped.\nWills-MacBook-Air:Documents will$ kubectl --kubeconfig=krib-cluster1-admin.conf proxy\nF1222 11:21:45.491092    5271 proxy.go:153] listen tcp 127.0.0.1:8001: bind: address already in use```",
+        "ts": "1513959786.000054"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "netstat for the port, kill the process?",
+        "ts": "1513962606.000326"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DHRR2L> I was hoping for something like `kubectl proxy delete` or the like :slightly_smiling_face:",
+        "ts": "1513963138.000145"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Interestingly enough, couldn't see it in `netstat`...",
+        "ts": "1513963172.000366"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "But there was a `kubectl proxy` process running, which I `-TERM`'d",
+        "thread_ts": "1513963207.000164",
+        "reply_count": 1,
+        "replies": [
+            {
+                "user": "U416T0AAX",
+                "ts": "1513964607.000221"
+            }
+        ],
+        "unread_count": 1,
+        "ts": "1513963207.000164"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So now I can hit the k8s API OK, but not the Dashboard - getting:\n```\n{\n  \"kind\": \"Status\",\n  \"apiVersion\": \"v1\",\n  \"metadata\": {\n    \n  },\n  \"status\": \"Failure\",\n  \"message\": \"no endpoints available for service \\\"https:kubernetes-dashboard:\\\"\",\n  \"reason\": \"ServiceUnavailable\",\n  \"code\": 503\n}\n```",
+        "ts": "1513964213.000252"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Duh - forgot that I had backgrounded it…",
+        "thread_ts": "1513963207.000164",
+        "parent_user_id": "U416T0AAX",
+        "ts": "1513964607.000221"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "not sure - did it start?  See if the pods are up.  and what URL did you use to access it?",
+        "ts": "1513964631.000283"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U416T0AAX>",
+        "ts": "1513964637.000322"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Does kubeadm start the kubernetes mgmt services? No pods are running…",
+        "ts": "1513964738.000015"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "```Wills-MacBook-Air:Documents will$ kubectl --kubeconfig=krib-cluster1-admin.conf get pods\nNo resources found.```",
+        "ts": "1513964753.000276"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Could be that I’m just a k8sN00b and I don’t know what I’m doing yet :confused:",
+        "ts": "1513964806.000181"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Reading this: <https:\/\/github.com\/kubernetes\/dashboard\/blob\/master\/README.md>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "kubernetes\/dashboard",
+                "title_link": "https:\/\/github.com\/kubernetes\/dashboard\/blob\/master\/README.md",
+                "text": "dashboard - General-purpose web UI for Kubernetes clusters",
+                "fallback": "GitHub: kubernetes\/dashboard",
+                "from_url": "https:\/\/github.com\/kubernetes\/dashboard\/blob\/master\/README.md",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13629408?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1513965096.000031"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Did the following per that page, got this:\n```\nWills-MacBook-Air:Documents will$ kubectl --kubeconfig=krib-cluster1-admin.conf apply -f <https:\/\/raw.githubusercontent.com\/kubernetes\/dashboard\/master\/src\/deploy\/recommended\/kubernetes-dashboard.yaml>\nsecret \"kubernetes-dashboard-certs\" unchanged\nserviceaccount \"kubernetes-dashboard\" unchanged\nrole \"kubernetes-dashboard-minimal\" unchanged\nrolebinding \"kubernetes-dashboard-minimal\" unchanged\ndeployment \"kubernetes-dashboard\" unchanged\nservice \"kubernetes-dashboard\" unchanged\nWills-MacBook-Air:Documents will$ kubectl --kubeconfig=krib-cluster1-admin.conf proxy\nStarting to serve on 127.0.0.1:8001\n```",
+        "ts": "1513965145.000033"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Then tried to go to `<http:\/\/localhost:8001\/api\/v1\/namespaces\/kube-system\/services\/https:kubernetes-dashboard:\/proxy\/>` and got the same 503 error…",
+        "ts": "1513965255.000173"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "This is the process tree on the k8s master:\n```\nroot@testnode03:~# pstree\nsystemd─┬─accounts-daemon─┬─{gdbus}\n        │                 └─{gmain}\n        ├─acpid\n        ├─agetty\n        ├─atd\n        ├─cron\n        ├─dbus-daemon\n        ├─dhclient\n        ├─dockerd─┬─containerd─┬─5*[containerd-shim─┬─pause]\n        │         │            │                    └─9*[{containerd-shim}]]\n        │         │            ├─containerd-shim─┬─kube-scheduler───31*[{kube-scheduler}]\n        │         │            │                 └─11*[{containerd-shim}]\n        │         │            ├─containerd-shim─┬─kube-controller───32*[{kube-controller}]\n        │         │            │                 └─10*[{containerd-shim}]\n        │         │            ├─containerd-shim─┬─kube-apiserver───24*[{kube-apiserver}]\n        │         │            │                 └─9*[{containerd-shim}]\n        │         │            ├─containerd-shim─┬─etcd───34*[{etcd}]\n        │         │            │                 └─9*[{containerd-shim}]\n        │         │            ├─containerd-shim─┬─pause\n        │         │            │                 └─11*[{containerd-shim}]\n        │         │            ├─containerd-shim─┬─pause\n        │         │            │                 └─10*[{containerd-shim}]\n        │         │            ├─containerd-shim─┬─kube-proxy───32*[{kube-proxy}]\n        │         │            │                 └─10*[{containerd-shim}]\n        │         │            ├─containerd-shim─┬─sh───etcd───32*[{etcd}]\n        │         │            │                 └─9*[{containerd-shim}]\n        │         │            ├─containerd-shim─┬─runsvdir─┬─runsv───confd───28*[{confd}]\n        │         │            │                 │          ├─runsv───bird\n        │         │            │                 │          ├─runsv───bird6\n        │         │            │                 │          └─runsv───calico-felix───36*[{calico-felix}]\n        │         │            │                 └─10*[{containerd-shim}]\n        │         │            ├─containerd-shim─┬─install-cni.sh───sleep\n        │         │            │                 └─10*[{containerd-shim}]\n        │         │            └─36*[{containerd}]\n        │         └─52*[{dockerd}]\n        ├─drpcli───31*[{drpcli}]\n        ├─irqbalance\n        ├─2*[iscsid]\n        ├─kubelet───39*[{kubelet}]\n        ├─lvmetad\n        ├─lxcfs───2*[{lxcfs}]\n        ├─mdadm\n        ├─polkitd─┬─{gdbus}\n        │         └─{gmain}\n        ├─rsyslogd─┬─{in:imklog}\n        │          ├─{in:imuxsock}\n        │          └─{rs:main Q:Reg}\n        ├─snapd───8*[{snapd}]\n        ├─sshd───sshd───sshd───bash───sudo───bash───pstree\n        ├─systemd───(sd-pam)\n        ├─systemd-journal\n        ├─systemd-logind\n        ├─systemd-timesyn───{sd-resolve}\n        └─systemd-udevd\n```",
+        "ts": "1513965608.000452"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Try with 127.0.0.1 instead of local host. ",
+        "ts": "1513967469.000345"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Kubectl —all-namespaces get pods",
+        "ts": "1513967500.000283"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "No `--all-namespaces` flag (at least on my `kubectl` version)",
+        "ts": "1513968321.000178"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "But, `man kubectl` FTW…",
+        "ts": "1513968340.000245"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "```Wills-MacBook-Air:Documents will$ kubectl --kubeconfig=krib-cluster1-admin.conf -n=kube-system get pods\nNAME                                     READY     STATUS             RESTARTS   AGE\ncalico-etcd-hwwn2                        1\/1       Running            0          3h\ncalico-kube-controllers-d6c6b9b8-2lvz4   1\/1       Running            0          3h\ncalico-node-bpzp2                        2\/2       Running            0          3h\ncalico-node-mr6hx                        2\/2       Running            0          3h\ncalico-node-vnscf                        2\/2       Running            1          3h\ncalico-node-x6g2b                        2\/2       Running            0          3h\netcd-testnode03                          1\/1       Running            0          3h\nkube-apiserver-testnode03                1\/1       Running            0          3h\nkube-controller-manager-testnode03       1\/1       Running            0          3h\nkube-dns-6f4fd4bdf-5lzmh                 2\/3       CrashLoopBackOff   75         3h\nkube-proxy-67745                         1\/1       Running            0          3h\nkube-proxy-6nmh7                         1\/1       Running            0          3h\nkube-proxy-lpc79                         1\/1       Running            0          3h\nkube-proxy-ztkp2                         1\/1       Running            0          3h\nkube-scheduler-testnode03                1\/1       Running            0          3h\nkubernetes-dashboard-7b7b5cd79b-pvj6w    0\/1       CrashLoopBackOff   36         3h```",
+        "edited": {
+            "user": "U416T0AAX",
+            "ts": "1513968357.000000"
+        },
+        "ts": "1513968346.000036"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "More on-topic (DRP-related), it doesn’t seem intuitive to me that the `finish-install` stage has an action of `Stop` in the stage-map - shouldn’t it be “Wait” or something?",
+        "ts": "1513970394.000166"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "isn't the 'stop' more of 'stop the runner from getting more commands' so the action of 'stop' in the stage-map is the flag put into the runner que that it knows finish what it's doing, then 'get out of the way' ??? but I'm still sorting out the instructional layers and names in my head... my D&amp;D wizard map has a lot of grey and black clouds....",
+        "ts": "1513975334.000150"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U62R1805P> win the read the mind of Greg award ",
+        "ts": "1513982129.000133"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Success could be renamed to wait but that isn’t accurate either.   ",
+        "ts": "1513982211.000144"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Success means do what the current stage says to do.  ",
+        "ts": "1513982234.000041"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The stage has a runnerwait flag.  Success says do that.   Stop says really runner ignore the stage and stop",
+        "ts": "1513982295.000194"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The third one is Reboot.  That tells the runner to change stage and reboot.  ",
+        "ts": "1513982322.000126"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "This is the core of workflow.  Though we need to address one last issue with it.  ",
+        "ts": "1513982383.000115"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U416T0AAX> you dashboard is crashing.  You need to look at pod logs to see why.  ",
+        "ts": "1513982446.000141"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Also dns is crashing.  Logs may tell you there as well.  ",
+        "ts": "1513982468.000165"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So the “action” is at the “front” of the stage? “Success” is “kick this off and if successful keep going”, “Stop” is “kick this off and stop (wait)”? I thought it was at the “end”, like Success = “if stage run was successful then change stage”, “Stop” = “once stage is complete (ends successfully) then stop.”",
+        "ts": "1513982940.000034"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "No ",
+        "ts": "1513983026.000006"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It is at the end ",
+        "ts": "1513983037.000049"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The change stage only happens if success.  Otherwise a task failed, a job was marked failed with the job and the runner is paused because the machine is marked not runnable on failure ",
+        "ts": "1513983113.000196"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "So a set tasks in the stage completes, the stage map is checked to see what the next stage and action is.  If no atage is found, the current stage’s runnerwait flag is used to determine if the runner should keep running ",
+        "ts": "1513983211.000064"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "If a next stage is found, the machine stage is changed to that. The action is done.  Success means loop bacj around and run new tasks if there are any, reboot means reboot the machine. And stop means stop the runner even if there are new tasks to do ",
+        "ts": "1513983321.000205"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So if the action does not happen until the end (successful completion) of the stage, why do you have to tell the runner to stop and wait until the OS install stage is complete via the “finish-install:Stop” stage?",
+        "ts": "1513983324.000022"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Because it is in the single thread execution of the kickstart or preseed and is blocking the finishing of the install.  Anything other than stop will hang the install or do a reboot loop ",
+        "ts": "1513983418.000087"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "How does the runner “know” when the OS install process is complete?",
+        "ts": "1513983476.000111"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You could set up the stages so that you don’t have any tasks left and a stage with runnerwait to false.  It would accomplish the escape of the install process.  But not run anything ever again. ",
+        "ts": "1513983513.000168"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It doesn’t know.  It just runs as part of the install process and when it exits.  The install process completes. ",
+        "ts": "1513983577.000001"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The first paragraph is how normals installs work when then last stage is complete no wait.   It sets the Bootenv to local, has no tasks, and the runnerwait flag set to false.  It runner exits and the install finishes and reboots.  The machine boots ty local disk and the os runs.  ",
+        "ts": "1513983731.000040"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We want to do more so we do the longer stage sequence ",
+        "ts": "1513983767.000132"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "In the krib example",
+        "ts": "1513983822.000182"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DGQYK1> sorry I’m so thick, just wanting to understand…",
+        "ts": "1513984411.000021"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So the stage-map is like this:\n```\n  \"change-stage\/map\": {\n    \"docker-install\": \"krib-install:Success\",\n    \"finish-install\": \"docker-install:Success\",\n    \"krib-install\": \"complete:Success\",\n    \"runner-service\": \"finish-install:Stop\",\n    \"ssh-access\": \"runner-service:Success\",\n    \"ubuntu-16.04-install\": \"ssh-access:Success\"\n  },\n```",
+        "ts": "1513984432.000130"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So a map that says `\"ubuntu-16.04-install\": \"ssh-access:Success\"` means: ???",
+        "ts": "1513984501.000143"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "“when in the ubuntu-16.04-install stage and runner has no more tasks, change stage to ssh-access and see if there are more tasks to run”",
+        "ts": "1513986631.000014"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So “Success” means “see if there are more tasks to run”?",
+        "ts": "1513989278.000125"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Why did you name it “Success”?",
+        "ts": "1513989292.000022"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "And so let’s see if I have it: `\"runner-service\": \"finish-install:Stop\"` means “when in the runner-service stage and runner has no more tasks, change stage to the finish-install stage and Stop and wait” (for what?)",
+        "ts": "1513989699.000038"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DGQYK1> ^^^ can I get you to answer the last two q’s when you can?",
+        "ts": "1513992682.000021"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Success means continue processing. ",
+        "ts": "1513992888.000077"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "If nothing stops you",
+        "ts": "1513992901.000135"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Why did you add “and wait”?  Stop is just stop",
+        "ts": "1513992939.000071"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Success was named success because it is the success path.  It didnt fail. It didn’t stop it didn’t reboot",
+        "ts": "1513993003.000033"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I was assuming the “and wait” - because it’s in the middle of a pipeline of stages. If it hard stopped, why would the pipeline continue?",
+        "ts": "1513993078.000067"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I want to understand your logic, so that I can successfully construct my own stage maps instead of having to cargo-cult what you guys come up with and not understand why it fails… Sorry if my questions are annoying…",
+        "ts": "1513993272.000023"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "If `\"finish-install:Stop\"` stops the runner, what starts it up again that picks up and goes on to do `docker-install` etc.?",
+        "ts": "1513993457.000048"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The runner-service installs two services.  One that marks the machine runnnable on startup and another that starts a runner.",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1513993744.000000"
+        },
+        "ts": "1513993651.000070"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "This causes the machine to run a drpcli when the OS boots.  The runner runs all the tasks in finish-install (no tasks) and then goes to the change stage map to change stage to docker-install (with success) to continue running tasks.",
+        "ts": "1513993724.000131"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "There is no assumed waits.",
+        "ts": "1513993793.000004"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "If you look at the bootenvs, sledgehammer (startup script) and the os-install bootenvs (through the kickseed files) mark the machine runnable and start the runner.  This means that booting into those environments starts a task runnable runner.    THe finished OSes don’t do this unless you add the runner service stage previously in the process.",
+        "ts": "1513994273.000063"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Waiting for more tasks when none are present is controlled by the RunnerWait flag on the stage.  If no tasks are present after a stage change that doesn’t change stage (getting to the end of a workflow), the curent stage decides wait.  Stop is a wait for the workflow to exit the runner after a stage change independent of the RunnerWait Flag  Success just means continue doing what you are doing.  Reboot is a way to say change stage and reboot before you run the next set of tasks.",
+        "ts": "1513994453.000065"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "This is very helpful. Thanks for the explanations.",
+        "ts": "1513995305.000057"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I don’t know why I have a mental block on understanding the “runner” concept and the way it works and is manipulated; I just don’t find it intuitive somehow…",
+        "ts": "1513995403.000095"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "What I think I know at this point is:",
+        "ts": "1513995594.000010"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "- Stages have a bool (RunnerWait) that indicates to the runner process that is started either by an OS install stage or runner service instantiation to either continue running and wait for more tasks to hit the task list (“true”), or to terminate after the task list is completed (“false”)",
+        "ts": "1513995796.000063"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "- Stage maps have a normal “happy path” that is named “Success” (i.e. keep going and process further tasks as they show up.) Alternate paths are “failure” (something went wrong in the task, so terminate the runner and report an error), “Reboot” (get to the end of the current stage’s task list, then reboot the machine and pick up processing more tasks thereafter), “Stop” (after the current stage’s task list is completed, act as if the stage has RunnerWait == ‘false’, even if it is actually ‘true’) _are the last two def’s correct?_",
+        "edited": {
+            "user": "U416T0AAX",
+            "ts": "1513996531.000000"
+        },
+        "ts": "1513996425.000015"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Stop is exit regardless of task list.   `Change stage and then stop`  This leaves tasks in place to run next time the runner starts.",
+        "ts": "1513996886.000080"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "And the thing that starts the runner after it is stopped by finish-install:Stop in the krib stage-map is the runner service starting up after the OS install process completes and Linux starts the services for the “normal run level”?",
+        "ts": "1513997702.000066"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes",
+        "ts": "1514001745.000024"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I do believe I’m beginning to understand…",
+        "ts": "1514001790.000003"
+    }
+]

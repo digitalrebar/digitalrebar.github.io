@@ -1,0 +1,2074 @@
+[
+    {
+        "text": "The problem is that newly created vboxes still loaded with sledgehammer. \nI tried to change bootenv but failed:\n\nstas@stas-custis-desktop \/data\/app\/rebar $ .\/drpcli machines list | grep UUI\n            \"UUID\": \"2AE16CA9-4A90-41A3-90D9-C23DBFD78F57\",\n            \"UUID\": \"FD352D17-EFC3-4297-85CA-0CCBDD37F8CA\",\nstas@stas-custis-desktop \/data\/app\/rebar $ .\/drpcli machines bootenv 2AE16CA9-4A90-41A3-90D9-C23DBFD78F57 centos-7-install\nError: GET: machines\/2AE16CA9-4A90-41A3-90D9-C23DBFD78F57: Not Found\nstas@stas-custis-desktop \/data\/app\/rebar $ .\/drpcli machines bootenv FD352D17-EFC3-4297-85CA-0CCBDD37F8CA centos-7-install\nError: GET: machines\/FD352D17-EFC3-4297-85CA-0CCBDD37F8CA: Not Found\nstas@stas-custis-desktop \/data\/app\/rebar $ .\/drpcli machines list | grep UUI\n            \"UUID\": \"2AE16CA9-4A90-41A3-90D9-C23DBFD78F57\",\n            \"UUID\": \"FD352D17-EFC3-4297-85CA-0CCBDD37F8CA\",\nstas@stas-custis-desktop \/data\/app\/rebar $ \n\n",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514384088.000187"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "@belonesox - newly create vboxes will boot sledgehammer unless you change the `defaultKnownStage` to `centos-7-install`.",
+        "ts": "1514388542.000012"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "sorry `defaultStage`",
+        "ts": "1514388567.000120"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "actually, you have to build a workflow to get this to work the way you are maybe describing.",
+        "ts": "1514388705.000151"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "What are you trying to do?  You may want to watch some of <@U02DHRR2L>’s youtube videos on workflows.  Or <@U6QFVRJNB>’s 5min scripts and docs.  To automatically install machines from discovery, you need to go through discover\/sledgehammer to centos-7-install with a reboot. You can code this into a workflow change-stage\/map.   YOu can get close without workflows, but setting `defaultStage` to `none`, set the `defaultUnknownBootenv` to `discover` and the `defaultKnownBootEnv` to `centos-7-install`.",
+        "ts": "1514388958.000239"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Once the machine is discover, reboot it.  It should then go through centos-7-install process.",
+        "ts": "1514388978.000375"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You basically have to discover the machine and then reboot it.   Workflows can do the reboot.",
+        "ts": "1514389003.000212"
+    },
+    {
+        "text": "I try to archive simple task: all boxes in subnet will load centos 7 with specific kiskstart file\/",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514389009.000276"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "otherwise, you need something to do it.",
+        "ts": "1514389012.000153"
+    },
+    {
+        "text": "First, still can force all boxes load centos. Second, I see dead link from http:\/\/digital-rebar.readthedocs.io\/en\/latest\/user\/cases\/add_operating_system.html#ug-uc-edit-bootenv to https:\/\/github.com\/rackn\/digitalrebar-deploy\/blob\/master\/containers\/provisioner\/update-nodes\/templates\/centos-7.ks.tmpl",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514389071.000113"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yeah - those moved.  Need to update the docs.  Thanks for finding it.",
+        "ts": "1514389102.000203"
+    },
+    {
+        "text": "I have:\nstas@stas-custis-desktop \/data\/app\/rebar $ .\/drpcli prefs list\n{\n  \"baseTokenSecret\": \"PbddMkbveOfSB-0hlx8oRjzxA36ahC_A\",\n  \"debugBootEnv\": \"2\",\n  \"debugDhcp\": \"2\",\n  \"debugFrontend\": \"1\",\n  \"debugPlugins\": \"0\",\n  \"debugRenderer\": \"2\",\n  \"defaultBootEnv\": \"centos-7-install\",\n  \"defaultStage\": \"centos-7-install\",\n  \"knownTokenTimeout\": \"3600\",\n  \"systemGrantorSecret\": \"RHdms47MX1cK6xDJMsB5YiwZFMXqiVm7\",\n  \"unknownBootEnv\": \"discovery\",\n  \"unknownTokenTimeout\": \"600\"\n}\n",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514389779.000115"
+    },
+    {
+        "text": "but newly created boxes still loading sledgehammer.",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514389795.000116"
+    },
+    {
+        "text": "What am I doing wrong?",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514389888.000366"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "@belonesox - unknown - discovery",
+        "ts": "1514389900.000036"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "are these machines new or already created?",
+        "ts": "1514389907.000208"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "you may have to set unknown to centos-7 too.",
+        "ts": "1514389927.000032"
+    },
+    {
+        "text": "stas@stas-custis-desktop \/data\/app\/rebar $ .\/drpcli prefs set unknownBootEnv centos-7-install\nError: POST: prefs: BootEnv centos-7-install cannot be used for the unknownBootEnv\nstas@stas-custis-desktop \/data\/app\/rebar $ \n",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514389945.000223"
+    },
+    {
+        "text": "Now I create new boxes with VirtualBox.",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514389976.000163"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "have you been able to get it working if you set the stage?",
+        "ts": "1514390075.000055"
+    },
+    {
+        "text": "Sorry, set the stage for what? ",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514390172.000006"
+    },
+    {
+        "text": "I see that \n_ I can not set unknownBootEnv to centos-7-install\n_ I can not change boot env for specific machine:\n\nstas@stas-custis-desktop \/data\/app\/rebar $  .\/drpcli machines list | grep UUI\n            \"UUID\": \"2AE16CA9-4A90-41A3-90D9-C23DBFD78F57\",\n            \"UUID\": \"FD352D17-EFC3-4297-85CA-0CCBDD37F8CA\",\nstas@stas-custis-desktop \/data\/app\/rebar $  .\/drpcli machines bootenv 2AE16CA9-4A90-41A3-90D9-C23DBFD78F57 centos-7-install\nError: GET: machines\/2AE16CA9-4A90-41A3-90D9-C23DBFD78F57: Not Found\nstas@stas-custis-desktop \/data\/app\/rebar $ \n",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514390429.000479"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "@belonesox, run this: `drpcli bootenvs list | grep Name`",
+        "ts": "1514390473.000375"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Actually, you need to see if the `centos-7-install` bootenv and stage are available.",
+        "ts": "1514390535.000160"
+    },
+    {
+        "text": "https:\/\/kopy.io\/Av5V7",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514390560.000265"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "@belonesox I'm giving bad advice.... the os*-install requires the machines to be defined.  It would be like having the MACs defined in cobbler",
+        "ts": "1514390562.000218"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "@belonesox, `.\/drpcli bootenvs show centos-7-install`",
+        "ts": "1514390616.000230"
+    },
+    {
+        "text": "https:\/\/kopy.io\/kdgJM",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514390653.000074"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It is available and valid.",
+        "ts": "1514390699.000154"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "@belonesox, `.\/drpcli machines stage 2AE16CA9-4A90-41A3-90D9-C23DBFD78F57 none --force`",
+        "ts": "1514390830.000074"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "`.\/drpcli machines  bootenv 2AE16CA9-4A90-41A3-90D9-C23DBFD78F57 centos-7-install --force`",
+        "ts": "1514390852.000131"
+    },
+    {
+        "text": "stas@stas-custis-desktop \/data\/app\/rebar $ .\/drpcli machines stage 2AE16CA9-4A90-41A3-90D9-C23DBFD78F57 none --force\nError: GET: machines\/2AE16CA9-4A90-41A3-90D9-C23DBFD78F57: Not Found\n",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514390855.000104"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "umm -",
+        "ts": "1514390878.000245"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "`.\/drpcli machines list`",
+        "ts": "1514390892.000326"
+    },
+    {
+        "text": "https:\/\/kopy.io\/n4rps",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514390931.000054"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You are using the uuid of the motherboard, you Uuid - ae271a28-9a57-4f21-bfef-1b8d8c27e9e2",
+        "ts": "1514390976.000107"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "`Uuid` is the machine field.",
+        "ts": "1514391000.000141"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The UUID you are using is the motherboard’s UUID.  It is not guaranteed to be set or unique across all systms.  THough for VirtualBox it is the VirualBox id.  Our virtual box plugin grabs that.",
+        "ts": "1514391082.000260"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I need to be away for a while.  I’ll be back on later.  Happy Holidays.",
+        "ts": "1514391100.000123"
+    },
+    {
+        "text": "So how to force centos-7-install for all by default?",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514391128.000090"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "for new machines, you can build a workflow that moves from discovery into centos-7 install as an automatic workflow.  once the machine is discovered\/know then you can just reset it back to centos-7.",
+        "ts": "1514392182.000135"
+    },
+    {
+        "text": ":(  By hand? Possible to automate it? Why default env can not be just Centos-7",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514392302.000274"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "no, that's that workflows do",
+        "ts": "1514392347.000081"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "workflows move between stages automatically",
+        "ts": "1514392389.000244"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "\"stagemap\" parameter in the profile",
+        "ts": "1514392409.000358"
+    },
+    {
+        "text": "[<https:\/\/files.gitter.im\/digitalrebar\/core\/KR1X\/___________.png|изображение.png](https:\/\/files.gitter.im\/digitalrebar\/core\/KR1X\/thumb\/___________.png)>",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "attachments": [
+            {
+                "fallback": "307x255px image",
+                "image_url": "https:\/\/files.gitter.im\/digitalrebar\/core\/KR1X\/___________.png",
+                "image_width": 307,
+                "image_height": 255,
+                "image_bytes": 13518,
+                "from_url": "https:\/\/files.gitter.im\/digitalrebar\/core\/KR1X\/___________.png",
+                "id": 1
+            }
+        ],
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514392463.000426"
+    },
+    {
+        "text": "I see this in UI",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514392469.000392"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "what's your endpint version?",
+        "ts": "1514392511.000304"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "DRP version",
+        "ts": "1514392514.000265"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "`drpcli info get`",
+        "ts": "1514392562.000260"
+    },
+    {
+        "text": "[<https:\/\/files.gitter.im\/digitalrebar\/core\/2bbd\/___________.png|изображение.png](https:\/\/files.gitter.im\/digitalrebar\/core\/2bbd\/thumb\/___________.png)>",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "attachments": [
+            {
+                "fallback": "756x274px image",
+                "image_url": "https:\/\/files.gitter.im\/digitalrebar\/core\/2bbd\/___________.png",
+                "image_width": 756,
+                "image_height": 274,
+                "image_bytes": 33458,
+                "from_url": "https:\/\/files.gitter.im\/digitalrebar\/core\/2bbd\/___________.png",
+                "id": 1
+            }
+        ],
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514392584.000067"
+    },
+    {
+        "text": "https:\/\/kopy.io\/njOQ3",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514392611.000159"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "hmmm, you should be able to see workflow page",
+        "ts": "1514392629.000228"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "let me check something",
+        "ts": "1514392671.000091"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "iI don't get that my v3.4 test right - trying a v3.5 install",
+        "ts": "1514393127.000118"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "you may need to refresh the page",
+        "ts": "1514393135.000349"
+    },
+    {
+        "text": "OK",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514393155.000019"
+    },
+    {
+        "text": "Page OK",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514393160.000319"
+    },
+    {
+        "text": "possible to create desired workflow by drpcli commands?",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514393186.000337"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "@belonesox - yes - the workflow can be created by adding a stagemap to the `global` profile, then any Machine booted\/discovered by DRP Endpoint will be installed with your OS of choice (eg CentOS 7) - give me one minute, I'll dig up the CLI I use in my `5min-demo` harness",
+        "ts": "1514393368.000394"
+    },
+    {
+        "text": "Now I have the workflow",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514393532.000109"
+    },
+    {
+        "text": "[<https:\/\/files.gitter.im\/digitalrebar\/core\/NVMH\/___________.png|изображение.png](https:\/\/files.gitter.im\/digitalrebar\/core\/NVMH\/thumb\/___________.png)>",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "attachments": [
+            {
+                "fallback": "513x305px image",
+                "image_url": "https:\/\/files.gitter.im\/digitalrebar\/core\/NVMH\/___________.png",
+                "image_width": 513,
+                "image_height": 305,
+                "image_bytes": 25878,
+                "from_url": "https:\/\/files.gitter.im\/digitalrebar\/core\/NVMH\/___________.png",
+                "id": 1
+            }
+        ],
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514393538.000120"
+    },
+    {
+        "text": "But newly created boxes still loaded by sledgehammer (hate it already",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514393564.000005"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "I've duplicated the \"workflow page is now allowed until after refresh\" -&gt; we'll see about how to fix",
+        "ts": "1514393585.000317"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "steps are:\n1)  create a JSON blob w\/ the `change-stage\/map` Parameter with the workflow you desire\n2) add the Parameter to the `global` profile\n3) boot a NEW machine - or force an existing Machine to re-run through workflow \n\ncreate JSON blob is as follows\n```cat &lt;&lt;EOFPARAM &gt; stagemap-param.json\n      {\n        \"discover\": \"centos-7-install:Reboot\",\n        \"centos-7-install\": \"ssh-keys:Success\",\n        \"ssh-keys\": \"complete-nowait:Success\"\n      }\nEOFPARAM```\n\nNow apply the Param to the `global` profile:\n```drpcli profiles set global param change-stage\/map to - &lt; stagemap-param.json```",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1514393673.000000"
+        },
+        "ts": "1514393607.000251"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(sorry - let me remove the Packet specific stages from there - hold on)",
+        "ts": "1514393635.000119"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "In case you can't see edits - the correct JSON blob is:\n```cat &lt;&lt;EOFPARAM &gt; stagemap-param.json\n      {\n        \"discover\": \"centos-7-install:Reboot\",\n        \"centos-7-install\": \"ssh-keys:Success\",\n        \"ssh-keys\": \"complete-nowait:Success\"\n      }\nEOFPARAM```",
+        "ts": "1514393701.000106"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "this will also inject SSH keys in to the CentOS 7 installed node for you - if they are defined",
+        "ts": "1514393720.000077"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "`sledgehammer` is an extremely useful tool - it allows us to do some very interesting advanced workflow installations - and it also allows us to implement \"immutable infrastructure\" practices ...  we typically don't see an installation requirement that is a simple \"slap centos 7 on everything\" - usually infrastructure we encounter has much more complex requirements",
+        "ts": "1514393832.000374"
+    },
+    {
+        "text": "so profiles  not workflows need for this?",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514393845.000173"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Profiles are used by workflow to define the stages to advance a Machine through",
+        "ts": "1514393862.000228"
+    },
+    {
+        "text": "can I specify my kickstart files in this params?",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514393876.000165"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "to use your own custom Kickstart, you'll want to \"clone\" an existing BootEnv (for example the existing centos-7-install) BootEnv",
+        "ts": "1514393922.000062"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the you'll modify it to use a different Kickstart than our community provided kickstart",
+        "ts": "1514393937.000154"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "BUT",
+        "ts": "1514393938.000347"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "lets start w\/ small steps - lets get you booting CentOS 7 installs first",
+        "ts": "1514393949.000078"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "lets get that working - and then we can evaluate how you modify the Kickstart to be customized for your needs",
+        "ts": "1514393975.000220"
+    },
+    {
+        "text": "stas@stas-custis-desktop \/data\/app\/rebar $ .\/drpcli profiles set global param change-stage\/map to - &lt; stagemap-param.json\n{\n  \"centos-7-install\": \"ssh-keys:Success\",\n  \"discover\": \"centos-7-install:Reboot\",\n  \"ssh-keys\": \"complete-nowait:Success\"\n}\n",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514394029.000227"
+    },
+    {
+        "text": "But still .... SLEDGEHAMMER",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514394042.000433"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "how are you booting your Machines - did the machine exist already - or is it brand new ?",
+        "ts": "1514394058.000146"
+    },
+    {
+        "text": "brand new created VBox",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514394071.000087"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if it existed already - it's already been \"discovered\" and you'll never match the workflow to kick off the work flow process",
+        "ts": "1514394084.000370"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "please provide output of `drpcli profiles show global`",
+        "ts": "1514394096.000189"
+    },
+    {
+        "text": "[<https:\/\/files.gitter.im\/digitalrebar\/core\/ZtjJ\/___________.png|изображение.png](https:\/\/files.gitter.im\/digitalrebar\/core\/ZtjJ\/thumb\/___________.png)>",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "attachments": [
+            {
+                "fallback": "300x331px image",
+                "image_url": "https:\/\/files.gitter.im\/digitalrebar\/core\/ZtjJ\/___________.png",
+                "image_width": 300,
+                "image_height": 331,
+                "image_bytes": 51111,
+                "from_url": "https:\/\/files.gitter.im\/digitalrebar\/core\/ZtjJ\/___________.png",
+                "id": 1
+            }
+        ],
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514394098.000413"
+    },
+    {
+        "text": "Every test - newly created. May be I should restart drp-service?",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514394126.000350"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "shouldn't be necessary",
+        "ts": "1514394136.000387"
+    },
+    {
+        "text": "stas@stas-custis-desktop \/data\/app\/rebar $ .\/drpcli profiles show global\n{\n  \"Available\": true,\n  \"Description\": \"Global profile attached automatically to all machines.\",\n  \"Errors\": [],\n  \"Meta\": {\n    \"color\": \"blue\",\n    \"icon\": \"world\",\n    \"title\": \"Digital Rebar Provision\"\n  },\n  \"Name\": \"global\",\n  \"Params\": {\n    \"change-stage\/map\": {\n      \"centos-7-install\": \"ssh-keys:Success\",\n      \"discover\": \"centos-7-install:Reboot\",\n      \"ssh-keys\": \"complete-nowait:Success\"\n    }\n  },\n  \"ReadOnly\": false,\n  \"Validated\": true\n}\n",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514394174.000390"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "for the last Machine you booted that you said failed - can you please pull and post the Jobs logs for that machine?  To do it from the CLI - get the Machines UUID, and replace it as appropriate in the below `UUID` shell variable:\n```export UUID=&lt;uuid_here&gt;\n.\/drpcli jobs list | jq \".[] | select(.Machine==\\\"$UUID\\\")\"```",
+        "ts": "1514394720.000005"
+    },
+    {
+        "text": "Last machine stated loading sledgehammer so I halt it. \n\nLooks like drp  not know about last machine:\n\nstas@stas-custis-desktop \/data\/app\/rebar $ VBoxManage list vms | grep test-rebar\n\"test-rebar\" {fd352d17-efc3-4297-85ca-0ccbdd37f8ca}\n\"test-rebar-centos\" {2ae16ca9-4a90-41a3-90d9-c23dbfd78f57}\n\"test-rebar-centos-2\" {4abb1333-ee36-4cec-8de4-5d0002f25a31}\n\"test-rebar-centos-4\" {ff8c3a52-fde6-4c59-bab4-7405ae2fb3be}\n\"test-rebar-centos-5\" {a825f944-e3d3-4ec0-b0bc-8aae6096ea0d}\n\"test-rebar-centos-6\" {25daff02-af44-4f2c-b60d-04b351ff3933}\nstas@stas-custis-desktop \/data\/app\/rebar $ .\/drpcli machines list | grep Uuid\n    \"Uuid\": \"90d9a5cd-bb35-4edc-81d8-b3a349099d14\",\n    \"Uuid\": \"9cbe8582-d713-4361-bca9-f11eb2bd0b85\",\n    \"Uuid\": \"ae271a28-9a57-4f21-bfef-1b8d8c27e9e2\",\nstas@stas-custis-desktop \/data\/app\/rebar $ ",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514395019.000258"
+    },
+    {
+        "text": "so \n.\/drpcli jobs list | jq \".[] | select(.Machine==\\\"25daff02-af44-4f2c-b60d-04b351ff3933\\\")\"\nreturn nothing",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514395066.000210"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you need a machine UUID from Rebar - not from virtual box - they're different things",
+        "ts": "1514395202.000131"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "so it'd be either of the `90d...` , `9cb...`, or `ae2...` IDs",
+        "ts": "1514395223.000342"
+    },
+    {
+        "text": "Sorry, cannot find\/match appropriate VBox \"test-rebar-centos-6\" and drp machines.\nSee https:\/\/kopy.io\/zANQF\nAlso no drpcli machines match MAC 080027ADB4C3\n",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514395847.000280"
+    },
+    {
+        "text": "Create yet another \"test-rebar-centos-7\"\nhttps:\/\/vimeo.com\/195094441\n\nWait until booted.\n\nstas@stas-custis-desktop \/data\/app\/rebar $  .\/drpcli machines list | grep Uuid\n    \"Uuid\": \"42620a9a-a375-417c-a5c5-6ec694aeb9a0\",\n    \"Uuid\": \"90d9a5cd-bb35-4edc-81d8-b3a349099d14\",\n    \"Uuid\": \"9cbe8582-d713-4361-bca9-f11eb2bd0b85\",\n    \"Uuid\": \"ae271a28-9a57-4f21-bfef-1b8d8c27e9e2\",\n\nWow! \nThis \"test-rebar-centos-7\" shurely must be \"42620a9a-a375-417c-a5c5-6ec694aeb9a0\" in  DRP\n\nBut\n\nstas@stas-custis-desktop \/data\/app\/rebar $ .\/drpcli jobs list | jq \".[] | select(.Machine==\\\"42620a9a-a375-417c-a5c5-6ec694aeb9a0\\\")\"\n",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514396549.000029"
+    },
+    {
+        "text": "current machines list → https:\/\/kopy.io\/jeDUY",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514396973.000087"
+    },
+    {
+        "text": "drpcli jobs list → https:\/\/kopy.io\/yIpLz",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514397045.000210"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<!here> - does v3.5.0 have the \"dynamic refresh\" of machine state thing?",
+        "ts": "1514398095.000279"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "can you pull just the job log for the Machine UUID starting with `90d...`",
+        "ts": "1514398100.000169"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U416T0AAX> that's a UX side feature, and it is in the current UX version",
+        "ts": "1514398117.000223"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Doesn't seem to be working on my DRP",
+        "ts": "1514398131.000010"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "(stable 3.5.0)",
+        "ts": "1514398145.000339"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it's also only in certain fields - not all fields\/pages fully \"dynamically refresh\"",
+        "ts": "1514398164.000356"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I thought \"Bulk Actions\" did?",
+        "ts": "1514398178.000255"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Bulk Actions fields in the table should dynamically refresh, yes",
+        "ts": "1514398201.000066"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Hmmm, it's not for me (until I click the top \"Refresh\" button)",
+        "ts": "1514398232.000386"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "\"Works For Me\" :tm:",
+        "ts": "1514398418.000122"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(unless is broke in the last 3 or 4 days - I haven't tested it since before xmas)",
+        "ts": "1514398538.000264"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F8KKJLFNF\/worked-fine-in-dev-ops-problem-now.jpg|Worked-Fine-In-Dev-Ops-Problem-Now>",
+        "file": {
+            "id": "F8KKJLFNF",
+            "created": 1514398540,
+            "timestamp": 1514398540,
+            "name": "Worked-Fine-In-Dev-Ops-Problem-Now.jpg",
+            "title": "Worked-Fine-In-Dev-Ops-Problem-Now",
+            "mimetype": "image\/jpeg",
+            "filetype": "jpg",
+            "pretty_type": "JPEG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 35054,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8KKJLFNF\/worked-fine-in-dev-ops-problem-now.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8KKJLFNF\/download\/worked-fine-in-dev-ops-problem-now.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8KKJLFNF-10bbc9b2d3\/worked-fine-in-dev-ops-problem-now_64.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8KKJLFNF-10bbc9b2d3\/worked-fine-in-dev-ops-problem-now_80.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8KKJLFNF-10bbc9b2d3\/worked-fine-in-dev-ops-problem-now_360.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 269,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8KKJLFNF-10bbc9b2d3\/worked-fine-in-dev-ops-problem-now_160.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "image_exif_rotation": 1,
+            "original_w": 400,
+            "original_h": 299,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F8KKJLFNF\/worked-fine-in-dev-ops-problem-now.jpg",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F8KKJLFNF-dd30767582",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1514398542.000247"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "(j\/k - and yes I know it's Beta!)",
+        "ts": "1514398593.000082"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we have a lot of UX fixes going in this week ... <@U0CMQM80G> is back and he and <@U02DHRR2L> have been hammering on some of the pernicious bugs and features",
+        "ts": "1514398667.000228",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U416T0AAX"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U416T0AAX> you should be able to see events scrolling in the event viewer",
+        "ts": "1514398759.000275"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "those should be reflected live on lists",
+        "ts": "1514398769.000115"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "if you don't have events on the view, then they won't make it anywhere else",
+        "ts": "1514398784.000129"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Oh also <@U6QFVRJNB> - what's involved with enabling alternate kickstart\/preseed templates in a profile? Lots of work?",
+        "ts": "1514398785.000166"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DHRR2L> Let me check...",
+        "ts": "1514398802.000047"
+    },
+    {
+        "text": "<@U6QFVRJNB> All logs for 90d9a5cd-bb35-4edc-81d8-b3a349099d14 → https:\/\/kopy.io\/Xqbb4",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514398805.000083"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "not lots of work - just got back burnered and waiting on some normalization on OS family stage from ... <@U02DJQSG8>",
+        "ts": "1514398818.000142"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DJQSG8> blocker",
+        "ts": "1514398831.000109"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "hm?",
+        "ts": "1514398851.000336"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "My feature request that <@U6QFVRJNB> is working on he says is waiting on your work... ^^^",
+        "ts": "1514398924.000160"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the branch is: <https:\/\/github.com\/digitalrebar\/provision-content\/tree\/select-kickseed>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision-content",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision-content\/tree\/select-kickseed",
+                "text": "provision-content - DigitalRebar Provision Content",
+                "fallback": "GitHub: digitalrebar\/provision-content",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision-content\/tree\/select-kickseed",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 192,
+                "thumb_height": 192,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1514399001.000194"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Sorrt, Christmas and per-request log threading have eaten my brain.",
+        "ts": "1514399003.000182"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "\"My brain hurts!\"",
+        "ts": "1514399031.000283"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "heh",
+        "ts": "1514399058.000203"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<@U6QFVRJNB>, that PR looks complete in and of itself.",
+        "ts": "1514399085.000254"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the `templates\/select-kickseed.tmpl` needs to be update to reflect `OS.Family` correctly to match the kickstart\/seed appropriately",
+        "ts": "1514399095.000062"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Ah.",
+        "ts": "1514399106.000403"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we never resolved the if\/eq statements to match",
+        "ts": "1514399121.000199"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you said \"something\" needed changing to model that right ... or... something ... I forget, that was back a few weeks ago (by general rule, I never remember anything before lunch ... )",
+        "ts": "1514399167.000146"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "hm, don't see an issue about it, so it is probablly written down on the whiteboard in the office.",
+        "ts": "1514399316.000189"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DHRR2L> Does the DRP-UX browser machine have to be reachable by the DRP server to enable the events viewer feature?",
+        "ts": "1514399370.000160"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "No more than it has to be reachable for any other UX interaction.",
+        "ts": "1514399408.000379"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "no, it's one way",
+        "ts": "1514399420.000199"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK. It was not working when the browser (on my laptop) was on my home network",
+        "ts": "1514399456.000045"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "The UX recieves events by opening a websocket on the server (which is glorified TCP over HTTP), then the server pushes events over the open channel.",
+        "ts": "1514399457.000187"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I access work thru a site-to-site VPN tunnel, but work's network does not have a route to my home network...",
+        "ts": "1514399490.000371"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "websockets hijack the HTTP session",
+        "ts": "1514399502.000293"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So if the DRP-server machine was trying to intiate traffic to my laptop on my home network, then I could see how it could fail",
+        "ts": "1514399528.000167"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "It is not.",
+        "ts": "1514399534.000437"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "All the initiation happens on the client side.",
+        "ts": "1514399548.000373"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(client in this case is your web browser)",
+        "ts": "1514399559.000171"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK. Wonder why it wasn't working?",
+        "ts": "1514399573.000112"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I'm back at work, and it is working now.",
+        "ts": "1514399584.000160"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Any one of a frankly ridiculous number of reasons",
+        "ts": "1514399606.000385"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Bah, computers!",
+        "ts": "1514399620.000189"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the answer is to just never leave work ....",
+        "ts": "1514399649.000200"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yes, that's it...",
+        "ts": "1514399656.000243"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I'll try it again tonight",
+        "ts": "1514399695.000155"
+    },
+    {
+        "text": "<@U6QFVRJNB> About my case, I sent you email how to ssh to my desktop... \nI am not sure if it possible to private communications in gitter…",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514402065.000134"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can join slack w\/ us via requesting an invite at <http:\/\/rackn.com\/slack>",
+        "ts": "1514402828.000120"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "not sure where your email went to",
+        "ts": "1514402837.000006"
+    },
+    {
+        "text": "shanev@gmail",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514402850.000176"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "nope - not me ... :slightly_smiling_face:",
+        "ts": "1514402863.000069"
+    },
+    {
+        "text": "aaaa",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514402871.000271"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<mailto:shane@rackn.com|shane@rackn.com>",
+        "ts": "1514402874.000162"
+    },
+    {
+        "text": "Sent to this mail, also requested slack access.",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514403111.000025"
+    },
+    {
+        "text": "[<https:\/\/files.gitter.im\/digitalrebar\/core\/T3w3\/___________.png|изображение.png](https:\/\/files.gitter.im\/digitalrebar\/core\/T3w3\/thumb\/___________.png)>",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "attachments": [
+            {
+                "fallback": "601x518px image",
+                "image_url": "https:\/\/files.gitter.im\/digitalrebar\/core\/T3w3\/___________.png",
+                "image_width": 601,
+                "image_height": 518,
+                "image_bytes": 94165,
+                "from_url": "https:\/\/files.gitter.im\/digitalrebar\/core\/T3w3\/___________.png",
+                "id": 1
+            }
+        ],
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514403196.000302"
+    },
+    {
+        "text": "That is why I get wrong email.",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514403208.000041"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "dunno who \"Shane Vitarana\" is ... I'm \"Shane Gibson\"",
+        "ts": "1514403242.000124"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "there's only one true Shane - that's me - the rest are all imposters",
+        "ts": "1514403263.000227"
+    },
+    {
+        "text": "I just get, that this is not real gitter chat but replication from slack",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514403268.000198"
+    },
+    {
+        "text": "That is why I use standard gitter interface to get contacts .... ",
+        "username": "belonesox",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1514403311.000147"
+    },
+    {
+        "user": "U8K7C542V",
+        "text": "<@U8K7C542V> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1514403708.000234"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "Hello, <@U6QFVRJNB>, did you receive the mail, and can you login to my box?",
+        "ts": "1514403782.000053"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U8K7C542V> - welcome to our Slack - yes got email",
+        "ts": "1514403816.000099"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "all four of your machines show they are in centos-7-install bootenv",
+        "ts": "1514403927.000236"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "what makes you think they're still in sledgehammer ?",
+        "ts": "1514403934.000096"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "sledgehammer happens to ALSO be CentOS 7 as well - so the console prompt will look similar",
+        "ts": "1514403961.000063"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "<https:\/\/vimeo.com\/195094441>",
+        "attachments": [
+            {
+                "service_name": "Vimeo",
+                "service_url": "https:\/\/vimeo.com\/",
+                "title": "test-rebar-centos-7 still loading sledgehammer",
+                "title_link": "https:\/\/vimeo.com\/195094441",
+                "author_name": "Stas Fomin",
+                "author_link": "https:\/\/vimeo.com\/belonesox",
+                "thumb_url": "http:\/\/i.vimeocdn.com\/video\/674539244_295x166.jpg",
+                "thumb_width": 295,
+                "thumb_height": 166,
+                "fallback": "Vimeo Video: test-rebar-centos-7 still loading sledgehammer",
+                "video_html": "<iframe src=\"https:\/\/player.vimeo.com\/video\/195094441?autoplay=1\" width=\"400\" height=\"300\" frameborder=\"0\" title=\"test-rebar-centos-7 still loading sledgehammer\" webkitallowfullscreen mozallowfullscreen allowfullscreen><\/iframe>",
+                "video_html_width": 400,
+                "video_html_height": 300,
+                "from_url": "https:\/\/vimeo.com\/195094441",
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/vimeo.png",
+                "id": 1
+            }
+        ],
+        "ts": "1514404052.000361"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "last freshly created \"test-rebar-centos-7\"",
+        "ts": "1514404097.000217"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "Should I create another test-rebar-centos-8?",
+        "ts": "1514404134.000130"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "nope - do you have any other DHCP or provisioning systems on the same network ?",
+        "ts": "1514404211.000146"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "provisioning — no. DHCP — yes, but local DRP-DHCP usually processed requests faster",
+        "edited": {
+            "user": "U8K7C542V",
+            "ts": "1514404266.000000"
+        },
+        "ts": "1514404244.000363"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "not guaranteed to be faster - so you could have conflict there",
+        "ts": "1514404382.000156"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "can you plz restart DRP - with the following:\n```sudo .\/dr-provision --static-ip=172.31.1.3 --base-root=\/data\/app\/rebar\/drp-data --local-content= --default-content= &gt; \/tmp\/drp.log 2&gt;&amp;1 &amp;```",
+        "ts": "1514404443.000182"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "Yes, it possible, but I think it does not matters for this \"Centos7 instead of SH\" problem",
+        "ts": "1514404444.000335"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "Hmm...\n\nstas@stas-custis-desktop \/data\/app\/rebar $ sudo .\/dr-provision --static-ip=172.31.1.3 --base-root=\/data\/app\/rebar\/drp-data --local-content= --default-content= &gt; \/tmp\/drp.log 2&gt;&amp;1 &amp;\n[1] 19701\n\n[1]+  Остановлено  sudo .\/dr-provision --static-ip=172.31.1.3 --base-root=\/data\/app\/rebar\/drp-data --local-content= --default-content= &gt; \/tmp\/drp.log 2&gt;&amp;1\nstas@stas-custis-desktop \/data\/app\/rebar $ ps -ef | grep dr-p\nroot     19701 18083  0 22:55 pts\/3    00:00:00 sudo .\/dr-provision --static-ip=172.31.1.3 --base-root=\/data\/app\/rebar\/drp-data --local-content= --default-content=\nstas     19716 18083  0 22:55 pts\/3    00:00:00 grep --color dr-p\nstas@stas-custis-desktop \/data\/app\/rebar $ tail -f \/tmp\/drp.log",
+        "ts": "1514404572.000117"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "nothing in \/tmp\/drp.log",
+        "ts": "1514404583.000362"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "OK?",
+        "ts": "1514404636.000135"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it's not running:\n```test@stas-custis-desktop \/data\/app\/rebar $ .\/drpcli info get\n2017\/12\/27 22:58:54 Error creating session: CLIENT_ERROR: Get <https:\/\/127.0.0.1:8092\/api\/v3\/users\/rocketskates\/token>: dial tcp 127.0.0.1:8092: getsockopt: connection refused```",
+        "ts": "1514404748.000058"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "dr-provision2017\/12\/27 20:00:12.116728 Version: v3.5.0-0-8dd3ac9c62a2555d315e07f5a190f2230e3a7ca7\ndr-provision2017\/12\/27 20:00:12.116766 Extracting Default Assets\ndr-provision2017\/12\/27 20:00:12.435654 Failed to render unknown bootenv: StartupError: bootenvs\/centos-7-install: BootEnv centos-7-install cannot be used for the unknownBootEnv",
+        "ts": "1514404833.000274"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ah - yes, we need to set our system preferences back",
+        "ts": "1514404870.000137"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "stas@stas-custis-desktop \/data\/app\/rebar $ .\/drpcli prefs set unknownBootEnv discovery\n2017\/12\/27 23:01:50 Error creating session: CLIENT_ERROR: Get <https:\/\/127.0.0.1:8092\/api\/v3\/users\/rocketskates\/token>: dial tcp 127.0.0.1:8092: getsockopt: connection refused\nstas@stas-custis-desktop \/data\/app\/rebar $",
+        "ts": "1514404923.000281"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "?",
+        "ts": "1514404956.000174"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": ":slightly_smiling_face: no DPR Endpoint to talk to - you can't change something not running",
+        "ts": "1514404995.000300"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "hold on - I'm finding the wiring for it in the config files",
+        "ts": "1514405003.000312"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "Check-and-mate",
+        "ts": "1514405009.000036"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you'll need to modify 3 files in the filesystem - so they match the `\"val\":` JSON value like:\n```defaultStage discover \ndefaultBootEnv sledgehammer \nunknownBootEnv discovery```",
+        "ts": "1514405102.000144"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "files are in `drp-data\/digitalrebar\/preferences\/`",
+        "ts": "1514405120.000002"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "unknownBootEnv.json\ndefaultStage.json\ndefaultBootEnv.json",
+        "ts": "1514405143.000213"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "welcome <@U8K7C542V>",
+        "ts": "1514405169.000129"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "started ... OK \/tmp\/drp.log",
+        "ts": "1514405368.000288"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "do: `.\/drpcli prefs set defaultStage discover defaultBootEnv sledgehammer unknownBootEnv discovery`",
+        "ts": "1514405416.000006"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(rather, I did ... that)",
+        "ts": "1514405431.000062"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "I should repeat this command?",
+        "ts": "1514405469.000089"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I'd suggest destroying all of the current machines, wiping out the jobs logs, then starting over, so we have a clean setup - and no extra logs and machines cluttering things up",
+        "ts": "1514405471.000271"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(no - I did it already)",
+        "ts": "1514405477.000069"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "OK, perform clean installation somethere else?",
+        "ts": "1514405513.000234"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if you're ok w\/ me wiping the machines and jobs log - I'll do that right now",
+        "ts": "1514405538.000028"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you'll want to destroy the extra machines in VirtualBox",
+        "ts": "1514405552.000054"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(or we can just reuse them - should be fine after destroying inside DRP)",
+        "ts": "1514405569.000310"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "Should I destroy all VMs  test-rebar in VirtualBox?",
+        "edited": {
+            "user": "U8K7C542V",
+            "ts": "1514405615.000000"
+        },
+        "ts": "1514405596.000119"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "no - I don't think you need to",
+        "ts": "1514405635.000057"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we'll reuse the vbox nodes - just give me a minute to clean up the system",
+        "ts": "1514405647.000341"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "I think if I will make \n.\/drpcli prefs set defaultStage discover defaultBootEnv centos-7-install unknownBootEnv discovery\nin clean virgin installation\neverything will be OK.\n\nBut I am insterested how to fix this situation (from sledhammer to centos)?",
+        "ts": "1514405698.000026"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "```test@stas-custis-desktop \/data\/app\/rebar $ for K in `.\/drpcli machines list | jq -r '.[].Uuid'`; do echo \"NUKE: $K\";.\/drpcli machines destroy $K; done\nNUKE: 42620a9a-a375-417c-a5c5-6ec694aeb9a0\nDeleted machine 42620a9a-a375-417c-a5c5-6ec694aeb9a0\nNUKE: 90d9a5cd-bb35-4edc-81d8-b3a349099d14\nDeleted machine 90d9a5cd-bb35-4edc-81d8-b3a349099d14\nNUKE: 9cbe8582-d713-4361-bca9-f11eb2bd0b85\nDeleted machine 9cbe8582-d713-4361-bca9-f11eb2bd0b85\nNUKE: ae271a28-9a57-4f21-bfef-1b8d8c27e9e2\nDeleted machine ae271a28-9a57-4f21-bfef-1b8d8c27e9e2```",
+        "ts": "1514405706.000138"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "Shoud I halt all VMs in VirtualBox?",
+        "ts": "1514405752.000059"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "nope",
+        "ts": "1514405759.000341"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "```test@stas-custis-desktop \/data\/app\/rebar $ for K in `.\/drpcli jobs list | jq -r '.[].Uuid'`; do .\/drpcli jobs destroy $K; done\nDeleted job 0ee3101e-4fa6-47fe-b184-6cd416408280\n&lt;...snip...&gt;\nDeleted job d4bd5d66-8dfb-463e-b37e-19afc26c8068```",
+        "ts": "1514405779.000073"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(you can see the subsequent actions now in the `\/tmp\/drp.log` file - just for reference)",
+        "ts": "1514405814.000068"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "OK, dont worry for it",
+        "ts": "1514405831.000070"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U8K7C542V> go ahead and reboot one of your vbox nodes now",
+        "ts": "1514406121.000128"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "reboot or create new?",
+        "ts": "1514406139.000208"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you should be able to just reboot an existing empty vbox node - and it'll DHCP\/PXE off of DRP now",
+        "ts": "1514406231.000227"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "Aaaaa sledgehammer",
+        "ts": "1514406264.000316"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "on another new box",
+        "ts": "1514406282.000041"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "<https:\/\/www.dropbox.com\/s\/bo5l8yuhbh7os8a\/test-rebar-centos-8.webm?dl=0> — video",
+        "ts": "1514406352.000160"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ok - we have forward progress ... ! but not success !",
+        "ts": "1514406404.000344"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": ":disappointed:",
+        "ts": "1514406425.000192"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it rebooted successfully based on the workflow to start the CentOS install - but it failed on \"no bootable medium\" to the Virtual Machine",
+        "ts": "1514406454.000225"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U6QFVRJNB> uploaded a file: <https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/F8KLSPDDZ\/dr-provision_install_log_for_1_machine.js|dr-provision install log for 1 machine>",
+        "file": {
+            "id": "F8KLSPDDZ",
+            "created": 1514406478,
+            "timestamp": 1514406478,
+            "name": "dr-provision_install_log_for_1_machine.js",
+            "title": "dr-provision install log for 1 machine",
+            "mimetype": "text\/plain",
+            "filetype": "javascript",
+            "pretty_type": "JavaScript\/JSON",
+            "user": "U6QFVRJNB",
+            "editable": true,
+            "size": 29656,
+            "mode": "snippet",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8KLSPDDZ\/dr-provision_install_log_for_1_machine.js?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8KLSPDDZ\/download\/dr-provision_install_log_for_1_machine.js?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "permalink": "https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/F8KLSPDDZ\/dr-provision_install_log_for_1_machine.js",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F8KLSPDDZ-e3dffb2722",
+            "edit_link": "https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/F8KLSPDDZ\/dr-provision_install_log_for_1_machine.js\/edit",
+            "preview": "\r\ndr-provision2017\/12\/27 20:24:10.726351 Received DHCP packet: type Discover xid 0x6b75d75 ciaddr 0.0.0.0 yiaddr 0.0.0.0 giaddr 0.0.0.0 server 0.0.0.0 chaddr 08:00:27:f3:d1:65\r\ndr-provision2017\/12\/27 20:24:10.726543 Subnet enp0s31f6: MAC:08:00:27:f3:d1:65 is in my range, attempting lease creation.\r\ndr-provision2017\/12\/27 20:24:10.726694 xid 0x6b75d75: Testing to see if 172.31.1.18 is in use\r\ndr-provision2017\/12\/27 20:24:11.679683 Received DHCP packet: type Discover xid 0x6b75d75 ciaddr 0.0.0.0 yiaddr 0.0.0.0 giaddr 0.0.0.0 server 0.0.0.0 chaddr 08:00:27:f3:d1:65\r",
+            "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>&#8203;<\/pre><\/div>\n<div><pre><span class=\"cm-variable\">dr<\/span><span class=\"cm-operator\">-<\/span><span class=\"cm-variable\">provision2017<\/span><span class=\"cm-operator\">\/<\/span><span class=\"cm-number\">12<\/span><span class=\"cm-operator\">\/<\/span><span class=\"cm-number\">27<\/span> <span class=\"cm-number\">20<\/span>:<span class=\"cm-number\">24<\/span>:<span class=\"cm-number\">10.726351<\/span> <span class=\"cm-variable\">Received<\/span> <span class=\"cm-variable\">DHCP<\/span> <span class=\"cm-variable\">packet<\/span>: <span class=\"cm-variable\">type<\/span> <span class=\"cm-variable\">Discover<\/span> <span class=\"cm-variable\">xid<\/span> <span class=\"cm-number\">0x6b75d75<\/span> <span class=\"cm-variable\">ciaddr<\/span> <span class=\"cm-number\">0.0<\/span><span class=\"cm-number\">.0<\/span><span class=\"cm-number\">.0<\/span> <span class=\"cm-variable\">yiaddr<\/span> <span class=\"cm-number\">0.0<\/span><span class=\"cm-number\">.0<\/span><span class=\"cm-number\">.0<\/span> <span class=\"cm-variable\">giaddr<\/span> <span class=\"cm-number\">0.0<\/span><span class=\"cm-number\">.0<\/span><span class=\"cm-number\">.0<\/span> <span class=\"cm-variable\">server<\/span> <span class=\"cm-number\">0.0<\/span><span class=\"cm-number\">.0<\/span><span class=\"cm-number\">.0<\/span> <span class=\"cm-variable\">chaddr<\/span> <span class=\"cm-number\">08<\/span>:<span class=\"cm-number\">00<\/span>:<span class=\"cm-number\">27<\/span>:<span class=\"cm-variable\">f3<\/span>:<span class=\"cm-variable\">d1<\/span>:<span class=\"cm-number\">65<\/span><\/pre><\/div>\n<div><pre><span class=\"cm-variable\">dr<\/span><span class=\"cm-operator\">-<\/span><span class=\"cm-variable\">provision2017<\/span><span class=\"cm-operator\">\/<\/span><span class=\"cm-number\">12<\/span><span class=\"cm-operator\">\/<\/span><span class=\"cm-number\">27<\/span> <span class=\"cm-number\">20<\/span>:<span class=\"cm-number\">24<\/span>:<span class=\"cm-number\">10.726543<\/span> <span class=\"cm-variable\">Subnet<\/span> <span class=\"cm-variable\">enp0s31f6<\/span>: <span class=\"cm-variable\">MAC<\/span>:<span class=\"cm-number\">08<\/span>:<span class=\"cm-number\">00<\/span>:<span class=\"cm-number\">27<\/span>:<span class=\"cm-variable\">f3<\/span>:<span class=\"cm-variable\">d1<\/span>:<span class=\"cm-number\">65<\/span> <span class=\"cm-variable\">is<\/span> <span class=\"cm-keyword\">in<\/span> <span class=\"cm-variable\">my<\/span> <span class=\"cm-variable\">range<\/span>, <span class=\"cm-variable\">attempting<\/span> <span class=\"cm-variable\">lease<\/span> <span class=\"cm-variable\">creation<\/span>.<\/pre><\/div>\n<div><pre><span class=\"cm-property\">dr<\/span><span class=\"cm-operator\">-<\/span><span class=\"cm-variable\">provision2017<\/span><span class=\"cm-operator\">\/<\/span><span class=\"cm-number\">12<\/span><span class=\"cm-operator\">\/<\/span><span class=\"cm-number\">27<\/span> <span class=\"cm-number\">20<\/span>:<span class=\"cm-number\">24<\/span>:<span class=\"cm-number\">10.726694<\/span> <span class=\"cm-variable\">xid<\/span> <span class=\"cm-number\">0x6b75d75<\/span>: <span class=\"cm-variable\">Testing<\/span> <span class=\"cm-variable\">to<\/span> <span class=\"cm-variable\">see<\/span> <span class=\"cm-keyword\">if<\/span> <span class=\"cm-number\">172.31<\/span><span class=\"cm-number\">.1<\/span><span class=\"cm-number\">.18<\/span> <span class=\"cm-variable\">is<\/span> <span class=\"cm-keyword\">in<\/span> <span class=\"cm-variable\">use<\/span><\/pre><\/div>\n<div><pre><span class=\"cm-variable\">dr<\/span><span class=\"cm-operator\">-<\/span><span class=\"cm-variable\">provision2017<\/span><span class=\"cm-operator\">\/<\/span><span class=\"cm-number\">12<\/span><span class=\"cm-operator\">\/<\/span><span class=\"cm-number\">27<\/span> <span class=\"cm-number\">20<\/span>:<span class=\"cm-number\">24<\/span>:<span class=\"cm-number\">11.679683<\/span> <span class=\"cm-variable\">Received<\/span> <span class=\"cm-variable\">DHCP<\/span> <span class=\"cm-variable\">packet<\/span>: <span class=\"cm-variable\">type<\/span> <span class=\"cm-variable\">Discover<\/span> <span class=\"cm-variable\">xid<\/span> <span class=\"cm-number\">0x6b75d75<\/span> <span class=\"cm-variable\">ciaddr<\/span> <span class=\"cm-number\">0.0<\/span><span class=\"cm-number\">.0<\/span><span class=\"cm-number\">.0<\/span> <span class=\"cm-variable\">yiaddr<\/span> <span class=\"cm-number\">0.0<\/span><span class=\"cm-number\">.0<\/span><span class=\"cm-number\">.0<\/span> <span class=\"cm-variable\">giaddr<\/span> <span class=\"cm-number\">0.0<\/span><span class=\"cm-number\">.0<\/span><span class=\"cm-number\">.0<\/span> <span class=\"cm-variable\">server<\/span> <span class=\"cm-number\">0.0<\/span><span class=\"cm-number\">.0<\/span><span class=\"cm-number\">.0<\/span> <span class=\"cm-variable\">chaddr<\/span> <span class=\"cm-number\">08<\/span>:<span class=\"cm-number\">00<\/span>:<span class=\"cm-number\">27<\/span>:<span class=\"cm-variable\">f3<\/span>:<span class=\"cm-variable\">d1<\/span>:<span class=\"cm-number\">65<\/span><\/pre><\/div>\n<\/div>\n<\/div>\n",
+            "lines": 373,
+            "lines_more": 368,
+            "preview_is_truncated": true,
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U6QFVRJNB",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "shane",
+        "bot_id": null,
+        "ts": "1514406479.000326"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "VirtualBox cannot automatically select PXE",
+        "ts": "1514406485.000342"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "User have to press F12, select lan boot, etc....",
+        "ts": "1514406510.000004"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "Yes, after manual install it loads centos 7",
+        "ts": "1514406571.000280"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "right now....",
+        "ts": "1514406577.000096"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yeah - I see it walking through the install right now",
+        "ts": "1514406602.000020"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "But this Automation should use manual actions... not OK",
+        "ts": "1514406639.000337"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we don't automate VirtualBox - we automate bare metal (bearmetal ... remember that quip you made ... :slightly_smiling_face: )",
+        "ts": "1514406667.000006"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "Why is it not possible to get rid of sledgehammer and boot Centos 7 directly?",
+        "ts": "1514406677.000306"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we do have a VirtualBox plugin - and I think it will do some of this automation - I don't play with it much",
+        "ts": "1514406687.000222"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we don't do things that way - Sledgehammer is required to inventory, collect machine information, start a `runner` to process Jobs\/Task to implement Workflow, etc ...",
+        "ts": "1514406723.000054"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "Hmm",
+        "ts": "1514406731.000310"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it also allows us to provide protections about what should and shouldn't be imaged",
+        "ts": "1514406760.000013"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if you just boot anything against a Provisioner that automatically installs an Operating System - you can very easily nuke something you didn't mean to",
+        "ts": "1514406781.000021"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yes, you can control it by setting the Machine boot options (i.e. do not PXE boot) - but many production operations shops don't do it that way",
+        "ts": "1514406825.000071"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Now - I _think_ that we can do it straight to CentOS install - if you create the Machine first - if the machine is created - before you first time boot it - it can then go straight to CentOS install",
+        "ts": "1514406899.000288"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "Yes, OK.  So what the problem?",
+        "ts": "1514406900.000203"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "but that requires the `machine` object to be created first",
+        "ts": "1514406919.000075"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "What is right way to automatically recreate this workflow?",
+        "ts": "1514406935.000069"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "our view of Provisioning is based on creating workflows for environments with 1000s, 10000s, and more Machines",
+        "ts": "1514406947.000204"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we have to be flexible to implement provisioning across huge infrastructure",
+        "ts": "1514406957.000238"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we generally don't have shops that want to slap CentOS 7 only on machines straight out of the box",
+        "ts": "1514406978.000001"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "so - the problems was the `prefs` conflicting with the workflow (the \"global\" profile param I had you add)",
+        "ts": "1514407008.000176"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "once we set the `prefs` for the unknown\/default BootEnv\/Stage correctly - then the workflow to provision Machines to CentOS 7 install is working",
+        "ts": "1514407046.000148"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the last piece you need is to \"automate\" the reboot actions within the VirtualBox environment",
+        "ts": "1514407064.000227"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "OK. What command line to create this \"discover\"-&gt;\"centos7-install\"  workflow?",
+        "ts": "1514407132.000214"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you did it already :slightly_smiling_face:",
+        "ts": "1514407144.000185"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "I did it by UI",
+        "ts": "1514407154.000380"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "",
+        "attachments": [
+            {
+                "fallback": "[December 27th, 2017 9:00 AM] belonesox: stas@stas-custis-desktop \/data\/app\/rebar $ .\/drpcli profiles set global param change-stage\/map to - &lt; stagemap-param.json\n{\n  \"centos-7-install\": \"ssh-keys:Success\",\n  \"discover\": \"centos-7-install:Reboot\",\n  \"ssh-keys\": \"complete-nowait:Success\"\n}\n",
+                "ts": "1514394029.000227",
+                "msg_subtype": "bot_message",
+                "author_subname": "belonesox",
+                "channel_id": "C02L9P26Q",
+                "channel_name": "community",
+                "is_msg_unfurl": true,
+                "text": "stas@stas-custis-desktop \/data\/app\/rebar $ .\/drpcli profiles set global param change-stage\/map to - &lt; stagemap-param.json\n{\n  \"centos-7-install\": \"ssh-keys:Success\",\n  \"discover\": \"centos-7-install:Reboot\",\n  \"ssh-keys\": \"complete-nowait:Success\"\n}\n",
+                "author_icon": "https:\/\/slack-files2.s3-us-west-2.amazonaws.com\/avatars\/2015-10-09\/12230134576_dce77779c08b78a24c82_48.jpg",
+                "author_link": "https:\/\/rackn.slack.com\/services\/B41PS9J94",
+                "mrkdwn_in": [
+                    "text"
+                ],
+                "color": "D0D0D0",
+                "from_url": "https:\/\/rackn.slack.com\/archives\/C02L9P26Q\/p1514394029000227",
+                "is_share": true,
+                "footer": "Posted in #community"
+            }
+        ],
+        "ts": "1514407195.000088"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "So I wish to know two coherent magic spells:\n* workflow\n* global prefs",
+        "ts": "1514407196.000187"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "`prefs` is separate from `global` Profile",
+        "ts": "1514407221.000111"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "`prefs` sets the default conditions for Unknown and Default stages (workflow) and BootEnvs (install environments)",
+        "ts": "1514407265.000207"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "`global` Profile is applied to all machines that get installed",
+        "ts": "1514407281.000065"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "in this case, we used the `global` profile to specify that ALL machines should ALWAYS install ONLY centos-7-install workflow",
+        "ts": "1514407300.000245"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "in \"real world use\" - you'd normally `drpcli profiles create ... ` to create a new Profile for a given use case, then you'd apply this specific new Profile to a set of Machines",
+        "ts": "1514407358.000278"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "that Profile would specify the appropriate workflow stagemap  (named `change-stage\/map`)",
+        "ts": "1514407388.000007"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "other Machines might have *other* profiles with different settings - different BootEnvs, different Params, etc...",
+        "ts": "1514407408.000200"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "there are 2 more pieces you need to do \n1. install the VirtualBox plugin \n2. set `access-keys` to add SSH keys to inject in to the CentOS nodes that get installed",
+        "ts": "1514407448.000153"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(because I'm assuming you want to be able to log in to them !)",
+        "ts": "1514407457.000349"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "« be able to log in to them» — there is no default passwords in your kickstarts?",
+        "ts": "1514407492.000226"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "heck NO !!",
+        "ts": "1514407501.000064"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "ok-ok-ok",
+        "ts": "1514407511.000053"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "that'd be a huge security hole - imagine 200 machines in an environment that get installed with know user\/pass pairs ... !!",
+        "ts": "1514407527.000055"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "now I wish to try baremetal install — but for this I have to unplug ethernet cable from hub (to avoid DHCP-conflict)... end your ssh connection will drop. OK?",
+        "edited": {
+            "user": "U8K7C542V",
+            "ts": "1514407600.000000"
+        },
+        "ts": "1514407573.000315"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "sure - but we should fix your DRP endpoint",
+        "ts": "1514407611.000266"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "so that you can get access-keys setup correctly first",
+        "ts": "1514407621.000045"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "basically - you want to inject the Public key half of a private\/public key pair that you will use to SSH to the built machines",
+        "ts": "1514407689.000293"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "OK, what command for access-keys?",
+        "ts": "1514407697.000023"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "like this:\n```drpcli profiles set global param access-keys to '{ \"username\": \"ssh-rsa &lt;...SSH_PUBLIC_KEY_HALF_HERE...&gt; MY_KEY_NAME\" }'```",
+        "ts": "1514407735.000119"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "replace `username`, `&lt;...SSH_PUBLIC_KEY_HALF_HERE...&gt;`, and `MY_KEY_NAME`",
+        "ts": "1514407762.000043"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "May be drpcli can grab it from github? (<https:\/\/github.com\/belonesox.keys>)",
+        "ts": "1514407764.000227"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "not from github - but we have plugins that operate in other environments to get keys (for example in <http:\/\/packet.net|packet.net> we get the SSH key half from the Packet metadata services)",
+        "ts": "1514407796.000187"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "This OK? → <https:\/\/kopy.io\/8Clgy>",
+        "ts": "1514407919.000053"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the above `drpcli` command adds the `access-keys` Parameter to the _global profile_ which means any and all machines provisioned AFTER you add this param - will get the SSH key injected in to the `~root\/.ssh\/authorized_keys` file",
+        "ts": "1514407954.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I think that's fine - there's no \"key name\" added so it won't be documented in the authorized_keys file",
+        "ts": "1514408094.000153"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "last step is to install the VirtualBox plugin - if you want to continue to use the VirtualBox environment\n```curl -s -o \/tmp\/virtualbox-ipmi-plugin <https:\/\/s3-us-west-2.amazonaws.com\/rebar-catalog\/virtualbox-ipmi\/v1.4.0-0-2bad605790ca75f85add0414ea2624684ae0a499\/amd64\/linux\/virtualbox-ipmi>\n.\/drpcli plugin_providers upload virtualbox-plug from \/tmp\/virtualbox-ipmi-plugin\necho '{ \"Name\": \"virtualbox-ipmi\", \"Available\": true, \"Validated\": true, \"ReadOnly\": false, \"Provider\": \"virtualbox-ipmi\", \"Errors\": [], \"Params\": { \"virtualbox\/user\": \"stas\" } }' &gt; \/tmp\/plug.json\n.\/drpcli plugins create - &lt; \/tmp\/plug.json\n```",
+        "ts": "1514409112.000074"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "I successfully installed Centos7 on baremetal, thank you.",
+        "ts": "1514409153.000227"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "NOTE: the `virtualbox\/user` is set to `stas` (I think that was your username)",
+        "ts": "1514409161.000253"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it must be set to your username - and only works for a specific non-root user - that's a limitation of VirtualBox",
+        "ts": "1514409179.000090"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "Now I have to go (midnight in Moscow, subway will be closed soon...)",
+        "ts": "1514409188.000025"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the plugin implements Power events (reboot, power on, power off), and nextboot (PXE\/disk) stuff for automating VirtualBox more",
+        "ts": "1514409205.000184"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "glad to hear the bearmetal install was successful !!",
+        "ts": "1514409223.000141"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "last question: why UI (172.31.1.3:8092) cannot works locally, without internet access?",
+        "edited": {
+            "user": "U8K7C542V",
+            "ts": "1514409261.000000"
+        },
+        "ts": "1514409234.000250"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "there is no embedded HTTP UI\/UX on the DRP Endpoint",
+        "ts": "1514409254.000086"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "Only redirect to your service?",
+        "ts": "1514409281.000126"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "our SaaS\/Portal is run by us, so we can apply updates, new features, etc.... at a MUCH faster pace than most people deploy new updates to the DRP Endpoing service locally",
+        "ts": "1514409285.000021"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yes - but it's a single-page CORS application - which means it downloads the page to your browser and runs in browser - we do connect back to our Content Library system for getting content and managing Portal based logins",
+        "ts": "1514409322.000197"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "Yes, but I think about deploying to private clouds... without internet access",
+        "ts": "1514409341.000097"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "your DRP Endpoint only connects to YOUR laptop\/browser session - it does NOT connect to our Portal",
+        "ts": "1514409342.000084"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yes - and we have a roadmap plan for Enterprise customers to be able to deploy a local Portal inside their environment",
+        "ts": "1514409374.000244"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we don't have that feature enabled yet - but it's on the road map for our paying enterprise customers",
+        "ts": "1514409387.000155"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "OK, thank you.",
+        "ts": "1514409398.000349"
+    }
+]

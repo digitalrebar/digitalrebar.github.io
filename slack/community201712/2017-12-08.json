@@ -1,0 +1,92 @@
+[
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "So any kubecon 2017 reports ? I'd especially like to hear about storage ideas :wink:",
+        "ts": "1512740824.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Wouldn’t we all ",
+        "ts": "1512741026.000237"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": ":grinning:",
+        "ts": "1512741079.000357"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Haven’t seen. But.  Persistent claim controllers and bridges to storage but not much details ",
+        "ts": "1512741141.000107"
+    },
+    {
+        "type": "message",
+        "user": "U8A2N44HH",
+        "text": "ok is there a repository for exemples such has part-scheme jsons, etc ?",
+        "ts": "1512745598.000016"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Not really.  We have the default one.  We may build up more overtime.  We are open to adding more. ",
+        "ts": "1512747507.000177"
+    },
+    {
+        "type": "message",
+        "user": "U8A2N44HH",
+        "text": "ok other bug",
+        "ts": "1512758976.000156"
+    },
+    {
+        "type": "message",
+        "user": "U8A2N44HH",
+        "text": "if I clone ubuntu-16.04-install bootenvs I lose the InitRds value",
+        "ts": "1512759338.000085"
+    },
+    {
+        "type": "message",
+        "user": "U8A2N44HH",
+        "text": "through UI even in Edit Mode I cannot define",
+        "ts": "1512759356.000525"
+    },
+    {
+        "type": "message",
+        "user": "U8A2N44HH",
+        "text": "through DRPCLI I get the following error",
+        "ts": "1512759366.000569"
+    },
+    {
+        "type": "message",
+        "user": "U8A2N44HH",
+        "text": "provision # .\/drpcli bootenvs update “etg-ubuntu-16.04-install” {“Initrds”:“install\/netboot\/ubuntu-installer\/amd64\/initrd.gz”}\nError: Failed to generate changed bootenvs:etg-ubuntu-16.04-install object: invalid character ‘I’ looking for beginning of object key string",
+        "ts": "1512759392.000197"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Make sure you use a single quote around the Json blob.  ",
+        "ts": "1512762027.000711"
+    },
+    {
+        "type": "message",
+        "user": "U8A2N44HH",
+        "text": "got this instead Error: Failed to generate changed bootenvs:etg-ubuntu-16.04-install object: json: cannot unmarshal string into Go struct field BootEnv.Initrds of type []string",
+        "ts": "1512764923.000154"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Make sure the initrds is a list",
+        "ts": "1512765326.000002"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U8A2N44HH>",
+        "ts": "1512765366.000117"
+    }
+]

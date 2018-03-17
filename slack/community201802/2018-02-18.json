@@ -1,0 +1,50 @@
+[
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U9A16V6TT> $welcome !",
+        "ts": "1519019039.000093"
+    },
+    {
+        "text": "Digital Rebar community welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1519019039.000121"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "slackbot help",
+        "ts": "1519019073.000154"
+    },
+    {
+        "text": "Available Commands: FAQ, $FAQ, $faq, $KRIB, $krib, $meetup, $Meetup, $issue, $Issue, $issues, $Issues, $quickstart, $QuickStart, $welcome, $conduct, $code-of-conduct",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1519019073.000174"
+    },
+    {
+        "type": "message",
+        "user": "U991XQ7T2",
+        "text": "Howdy all, question...  If I want to use RackN DR Provision at a site with no internet connectivity how can I access the features which require a RackN login?",
+        "ts": "1519023251.000064"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U991XQ7T2> Provision does NOT require connectivity to function - it does not connect the the internet. \nWe (RackN) can help you adjust templates so the the O\/S installs only use local resources too.\nThe UX is a cross-origin application that uses your browser to connect between the end-point and our SaaS.   In that way, all management is actually behind your firewall.   DR Provision is not \"going through\" the public internet in any way.\n\nWe also offer a license of the UX that also runs on-prem (\"air gap\") so connection is needed at all.",
+        "edited": {
+            "user": "U02DHRR2L",
+            "ts": "1519025034.000000"
+        },
+        "ts": "1519024980.000014"
+    },
+    {
+        "type": "message",
+        "user": "U991XQ7T2",
+        "text": "Ok Thanks for the clarification <@U02DHRR2L> .. let me run a few builds and simulations and see how we go..",
+        "ts": "1519025183.000153"
+    }
+]

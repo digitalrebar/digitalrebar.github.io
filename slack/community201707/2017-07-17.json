@@ -1,0 +1,89 @@
+[
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I viewed the new Packet IPXE Test w DRP Endpoint RackN &amp; Digital Rebar video.  What is the best source to setup the DHCPd Options and\/or DNSMasq Options to emulate how the PXE hand-off ( as seen in video timecode: 4:22 )",
+        "ts": "1500306961.346913"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "Following that hand-off sequence seems to be key to putting DR into an existing PXE setup.  I found: <http:\/\/provision.readthedocs.io\/en\/stable\/doc\/arch\/data.html#rs-dhcp-models> - 6.3.2.1 Subnet, but also remember seeing a more detailed DR doc about the PXE process, but cannot find it again.",
+        "ts": "1500307897.900491"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I found this helpful: <http:\/\/provision.readthedocs.io\/en\/stable\/doc\/workflows.html>",
+        "ts": "1500309893.008949"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I take it the 'custom iPXE' option basically maps a 'Request Next Boot' to the provisioned mac I think I'm just struggling with what the first PXE boot is on the main DNS... I am just assuming on the packet side they are setting up a VLAN but maybe not...  it all could be my weakness in following PXE... so your new video showed how the packet server was bouncing through a few NEXT BOOT (I think)",
+        "ts": "1500310657.431669"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "OH... I think I get it now:\n1 - Server gets IP 147.75.90.81 (very small subnet) via DHCP at 147.75.200.3 and asks for PXE (video TC: 4:19)\n2 - DCHP server sends <http:\/\/147.75.200.3\/auto.ipxe> (<http:\/\/packet.net|packet.net> Baremetal boot image i'm guessing)\n3 - (guessing as video refresh hits) auto.ipxe has 'next server' set to what was entered in the iPXE config: <http:\/\/packet.rebar.digital\/default.ipxe>\n4 - Server (PXE proto) looks for <tftp:\/\/147.75.73.23\/147.75.90.81.ipxe> which does not exist... so it uses <http:\/\/packet.rebar.digital\/default.ipxe> to find the next server\n5 - At this point the server does 'goto sledgehammer' which points to  <http:\/\/147.75.73.23:80\/sledgehammer\/b3c09ebd5a9c228c66d8a617b6f5d10ccbe1c273\/vmlinuz0>\n6 - THEN this image and it's control string adjusts the console... and loads the stage1.img of sledgehammer\n7 - I assume now that's the discovery image but it's going to REPORT findings back to 147.75.73.23 ?",
+        "ts": "1500318314.655381"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes",
+        "ts": "1500318562.783316"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That is the flow",
+        "ts": "1500318565.784712"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "Thanks... so sometimes when I load up DR, I don't see the docker ports mapped to Host ports... which part of the Ansible does that docker mapping, or can those run out-of-order ?",
+        "ts": "1500318721.861634"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "it is part of compose and docker",
+        "ts": "1500318737.870001"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Ansible runs it",
+        "ts": "1500318744.873387"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "<https:\/\/github.com\/digitalrebar\/digitalrebar\/blob\/master\/deploy\/compose\/docker-compose-common.yml>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/digitalrebar",
+                "title_link": "https:\/\/github.com\/digitalrebar\/digitalrebar\/blob\/master\/deploy\/compose\/docker-compose-common.yml",
+                "text": "digitalrebar - Digital Rebar: Open Hybrid DevOps &amp; SRE Automation Platform",
+                "fallback": "GitHub: digitalrebar\/digitalrebar",
+                "from_url": "https:\/\/github.com\/digitalrebar\/digitalrebar\/blob\/master\/deploy\/compose\/docker-compose-common.yml",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?v=4&s=400",
+                "thumb_width": 192,
+                "thumb_height": 192,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1500318816.908683"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yep",
+        "ts": "1500319116.058387"
+    }
+]

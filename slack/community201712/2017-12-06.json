@@ -1,0 +1,265 @@
+[
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Yeah, no containers for drp.",
+        "ts": "1512568027.000086"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "For drv2, we settled in containers as a delivery mechanism and as a basis for eventual distributed\/ha work.",
+        "ts": "1512568107.000074"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "We decided that the additional overhead that required was too much work for drp, and that we should aim for a single binary deploy mechanism\n",
+        "ts": "1512568184.000362"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "In drv2 we were originally a rails + other things stack, and containers were a great way to provide the operating environment we wanted.",
+        "ts": "1512568372.000090"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "When we started refactoring parts out into smaller services written in go, that specialized environment aspect was less relevant.",
+        "ts": "1512568434.000098"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "When we decided to split out the provisioning bits of drv2 into their own product, Greg and I had enough expertise in go to be able to combine the bits we needed into a single binary that embedded everything we needed to bring the service up.",
+        "ts": "1512568579.000332"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Which made the requirement we used to have for containers (and some of the UDP related issues they caused) to go away.",
+        "ts": "1512568641.000503"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Also hi from kubecon.:grinning:",
+        "ts": "1512568765.000207"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": " Note: There are users who package DRP in containers.  It can work fine.  It adds extra complexity for new users that can trip them up. ",
+        "ts": "1512570133.000596"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U8ACKLW93>  welcome ",
+        "ts": "1512570469.000021"
+    },
+    {
+        "type": "message",
+        "user": "U8A2N44HH",
+        "text": "thanks guys … have v3.4.1 running in docker",
+        "edited": {
+            "user": "U8A2N44HH",
+            "ts": "1512574297.000000"
+        },
+        "ts": "1512574294.000675"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "I think there's a dockerfile in the project <@U8A2N44HH> - maybe too late to help",
+        "ts": "1512576491.000749"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "if you missed the community meetup -&gt; there's a critical discussion half way in about atomic updates that's worth listening to",
+        "ts": "1512576556.000307"
+    },
+    {
+        "type": "message",
+        "user": "U8A2N44HH",
+        "text": "will listen to it later tonight",
+        "ts": "1512576788.000004"
+    },
+    {
+        "type": "message",
+        "user": "U8A2N44HH",
+        "text": "yes there is one, I forked it to run on stable instead of tiop",
+        "ts": "1512576808.000059",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U8A2N44HH",
+        "text": "tip",
+        "ts": "1512576809.000335"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F8AJ2U1UK\/unknown-endpoint-notice.png|unknown-endpoint-notice.png> and commented: Just upgraded to v3.4.1 - Any reason my endpoint is showing as \"unknown\"?",
+        "file": {
+            "id": "F8AJ2U1UK",
+            "created": 1512581774,
+            "timestamp": 1512581774,
+            "name": "unknown-endpoint-notice.png",
+            "title": "unknown-endpoint-notice.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 56298,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8AJ2U1UK\/unknown-endpoint-notice.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8AJ2U1UK\/download\/unknown-endpoint-notice.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8AJ2U1UK-3fa686c23a\/unknown-endpoint-notice_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8AJ2U1UK-3fa686c23a\/unknown-endpoint-notice_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8AJ2U1UK-3fa686c23a\/unknown-endpoint-notice_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 129,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8AJ2U1UK-3fa686c23a\/unknown-endpoint-notice_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 172,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8AJ2U1UK-3fa686c23a\/unknown-endpoint-notice_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8AJ2U1UK-3fa686c23a\/unknown-endpoint-notice_720.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 258,
+            "image_exif_rotation": 1,
+            "original_w": 794,
+            "original_h": 284,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F8AJ2U1UK\/unknown-endpoint-notice.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F8AJ2U1UK-46f407f140",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 1,
+            "initial_comment": {
+                "id": "Fc8A538ZC1",
+                "created": 1512581774,
+                "timestamp": 1512581774,
+                "user": "U416T0AAX",
+                "is_intro": true,
+                "comment": "Just upgraded to v3.4.1 - Any reason my endpoint is showing as \"unknown\"?"
+            }
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1512581776.000745"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "May not have updated the SaaS data database for that version.",
+        "ts": "1512581864.000596"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "How to check?",
+        "ts": "1512581893.000476"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "that is an our side problem.  It is fine.  The Saas database doesn’t know to say that it is latest.",
+        "ts": "1512581925.000155"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It is fine.  Trust me.  :slightly_smiling_face:",
+        "ts": "1512581935.000087"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F8AMLGQ76\/screen_shot_2015-05-12_at_3.31.31_pm.png|Probably Fine> and commented: Oh I trust you, <@U02DGQYK1> :wink:",
+        "file": {
+            "id": "F8AMLGQ76",
+            "created": 1512582020,
+            "timestamp": 1512582020,
+            "name": "Screen_Shot_2015-05-12_at_3.31.31_PM.png",
+            "title": "Probably Fine",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 184587,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8AMLGQ76\/screen_shot_2015-05-12_at_3.31.31_pm.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8AMLGQ76\/download\/screen_shot_2015-05-12_at_3.31.31_pm.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8AMLGQ76-911cb6e705\/screen_shot_2015-05-12_at_3.31.31_pm_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8AMLGQ76-911cb6e705\/screen_shot_2015-05-12_at_3.31.31_pm_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8AMLGQ76-911cb6e705\/screen_shot_2015-05-12_at_3.31.31_pm_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 277,
+            "thumb_360_h": 268,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8AMLGQ76-911cb6e705\/screen_shot_2015-05-12_at_3.31.31_pm_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "image_exif_rotation": 1,
+            "original_w": 277,
+            "original_h": 268,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F8AMLGQ76\/screen_shot_2015-05-12_at_3.31.31_pm.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F8AMLGQ76-ce754b1ca9",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 1,
+            "initial_comment": {
+                "id": "Fc8ALB2NHG",
+                "created": 1512582020,
+                "timestamp": 1512582020,
+                "user": "U416T0AAX",
+                "is_intro": true,
+                "comment": "Oh I trust you, <@U02DGQYK1> :wink:"
+            }
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1512582021.000418"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": " I did the 3.4.0.  Missed the update",
+        "ts": "1512583297.000123"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I need to learn it.",
+        "ts": "1512583335.000566"
+    }
+]

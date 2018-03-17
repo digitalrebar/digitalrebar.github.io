@@ -1,0 +1,579 @@
+[
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<!here> DR folk, if I scp a ISO into tftpboot\/isos\/ then the DRP system will pick up on it and mark the bootenv as :white_check_mark:",
+        "ts": "1507080236.000203"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "??",
+        "ts": "1507080242.000122"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "My `drpcli bootenvs uploadiso ...` is timing out",
+        "ts": "1507080277.000049"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "do you have the endpoint\/username\/password set to point to your DRP Endpoint correctly ?",
+        "ts": "1507080452.000138"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "...but to answer your question ... yes, wget\/curl\/scp\/rsync\/whatever an ISO to the `tftpboot\/isos\/`",
+        "ts": "1507080596.000051"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I mean it works (I see the bits being pulled if I do an `iftop`) but it eventually times out",
+        "ts": "1507080611.000035"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "directory - then kill w\/ HUP signal the DRP server (eg `killall -s HUP dr-provision`)",
+        "ts": "1507080614.000200"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "this will force it to re-read directories and explode the iso",
+        "ts": "1507080626.000236"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "IPtables rules ... :wink:",
+        "ts": "1507080640.000228"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "It fails with the message `Error: Error uploading &lt;foo&gt;.iso: context deadline exceeded`",
+        "ts": "1507080704.000129"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we have seen that - and it's an incorrect timing bug - if the DRP endpoint is just a tiny bit slow responding",
+        "ts": "1507080741.000111"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U02DGQYK1> is aware of this one",
+        "ts": "1507080748.000145"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "It did it multiple times yesterday eve trying to get the ubuntu 16.04 ISO",
+        "ts": "1507080775.000035"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can avoid this by running the drpcli command directly on your Endpoint, or downloading the ISO via the URL and dropping it (with correct name) in to the tftpboot\/isos\/ directory",
+        "ts": "1507080813.000024"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I did run the drpcli on the endpoint…",
+        "ts": "1507080840.000031"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "DRP does need a kick in the pants to re-read the isos directory to recognize the ISO showing up (eg the HUP signal)",
+        "ts": "1507080852.000063"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ok - only solution I have for you right now is the DL into the isos directory - that will work",
+        "ts": "1507080867.000064"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "SO the correct path (on isolated) is `.\/drp-data\/tftpboot\/isos` correct?",
+        "ts": "1507080945.000160"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yep exactly",
+        "ts": "1507080954.000043"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Cool",
+        "ts": "1507080957.000213"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can pull the URL path from the bootenv spec if you need it",
+        "ts": "1507080971.000274"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "for example `drpcli bootenvs show ubuntu-16.04-install | jq '.OS.IsoUrl'`",
+        "ts": "1507081024.000046"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "```[root@5min-drp-ewr1-00 isos]# drpcli bootenvs show ubuntu-16.04-install | jq '.OS.IsoUrl'\n\"<http:\/\/mirrors.kernel.org\/ubuntu-releases\/16.04\/ubuntu-16.04.3-server-amd64.iso>\"```",
+        "ts": "1507081033.000103"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "or .... `wget $(drpcli bootenvs show ubuntu-16.04-install | jq -r '.OS.IsoUrl') &amp;&amp; killall -s HUP dr-provision`",
+        "ts": "1507081082.000139"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "nice :slightly_smiling_face:",
+        "ts": "1507081095.000171"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "UNIX FTW",
+        "ts": "1507081101.000101"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "hell yeah baby !!",
+        "ts": "1507081111.000044"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if you're watching the dr-provision output, you'll see something like:\n```dr-provision2017\/10\/04 01:39:02.048432 Reloading data stores...\ndr-provision2017\/10\/04 01:39:17.612217 Reload Complete```",
+        "ts": "1507081175.000239"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the first step takes a short bit as it explodes the ISO and stages the bits",
+        "ts": "1507081191.000053"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Just +1'd <https:\/\/github.com\/digitalrebar\/provision\/issues\/437> — need to clean out the older Ubuntu 16.04.2 ISO + tree now that DRP has moved up to using 16.04.3",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "clean up exploded ISOs · Issue #437 · digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/issues\/437",
+                "text": "Currently - if I upload an iso, it gets exploded out in the tftpboot structure. In an operational lifecycle, I may need to clean up ISOs (that have been exploded out). There should be an option to...",
+                "fallback": "GitHub: clean up exploded ISOs · Issue #437 · digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/issues\/437",
+                "thumb_url": "https:\/\/avatars2.githubusercontent.com\/u\/5308433?v=4&s=400",
+                "thumb_width": 246,
+                "thumb_height": 246,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1507081332.000043"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "oye!  ...recognize that one... :slightly_smiling_face:",
+        "ts": "1507081438.000219"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U6QFVRJNB> Any idea if DRP will eventually do some sort of node hardware inventory via sledgehammer? (I think DRv2 did this)",
+        "ts": "1507081440.000190"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "what's your use case for that ?   the short answer is quite probably ... but what exactly do you mean ?",
+        "ts": "1507081473.000028"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "inventory out to ... some 3rd party CMS\/CMDB ?",
+        "ts": "1507081483.000064"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I’d love it if, for instance, you have a pool of available hw in DRP that you could pass hardware requirements for a deployment, such as minimum node memory, # vCPUs, availability of GPUs, …",
+        "ts": "1507081579.000109"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I think of the ‘facts’ that something like Ansible `setup` module returns (more than DRP needs, but has most of the relevant hw details)",
+        "ts": "1507081657.000100"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "If they could be set as node properties",
+        "ts": "1507081677.000064"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we have some nascent ansible inventory export capabilities that <@U02DHRR2L> has been momming along",
+        "ts": "1507081701.000155"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yes, have see that, very cool",
+        "ts": "1507081721.000124"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "But what I’m thinking of I don’t want to tie into Ansible (or Puppet\/Chef\/whatever)",
+        "ts": "1507081760.000073"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "this can also be done in a roll-your-own fashion by applying parameters to `machines` and then you can build your own DevOps\/CfgMgmt tooling that can query the DRP API to get a list of ready-state machines ... but right now that is definitely possible only with a bit of hand polishing",
+        "ts": "1507081778.000047"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(amending that to read:  \"ready-state machines with specific parameters ... \")",
+        "ts": "1507081838.000126"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "It would be cool if the post-install routine of s’hammer that registers the node in DRP could also set some parameters as to hardware characteristics",
+        "ts": "1507081844.000057"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "definitely possible with a little polish on your own with use of stages - you could write your own `stage` that calls a `task` to register a set of `parameters` back to DRP ... that's the nice thing about the stages\/stage map solution",
+        "ts": "1507081979.000273"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it's relatively easy to inject new steps in the process",
+        "ts": "1507081988.000058"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Hmmm… interesting",
+        "ts": "1507081997.000207"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the `task` would simply collect inventory for you, presumably right after the `discover` stage",
+        "ts": "1507082025.000068"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it could report back to an External Node Classifier (ENC), or to register specific params to DRP (essentially making it a poor-mans ENC)",
+        "ts": "1507082054.000016"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "after discovery - you can do a wait .... or you could do a burn-in workload .... or you could do a full install ... just depends how you want to piece together the stage map",
+        "ts": "1507082097.000119"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "for your process and workflow",
+        "ts": "1507082104.000039"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I'd suggest that an ENC is a better thing to use for collecting inventory and asset data for re-use, but once a `machine` is registered, there's nothing stopping you from applying `parameters` to that machine which future jobs can pick up on and utilize",
+        "ts": "1507082181.000131"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it's certainly a valid use case to place discovered machines in to some sort of \"ready-state\" that shows they've been discovered, verified, and classified some how",
+        "ts": "1507082234.000026"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "ENC is a new concept to me — found <http:\/\/reclass.pantsfullofunix.net> which is an interesting example which I shall explore…",
+        "ts": "1507082242.000143"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yeah - reclass is really cool - but unfortunately, I think it's fallen out of maintenance in the last 2 years or so ...",
+        "ts": "1507082273.000043"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I've pinged Martin (the author) of that recently to get a feel for the status of it, but so far, haven't gotten a response from him",
+        "ts": "1507082305.000073"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "though that was only a few days ago .... :slightly_smiling_face:",
+        "ts": "1507082317.000002"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "reclass is interesting because there are integrations for ansible\/puppet\/saltstack making it relatively ubuquitous",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1507082370.000000"
+        },
+        "ts": "1507082344.000062"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yeah, I see what you mean from the GH insights graphs",
+        "ts": "1507082423.000150"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, that worked :slightly_smiling_face:",
+        "ts": "1507082958.000190"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "woot !!",
+        "ts": "1507082966.000133"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U416T0AAX>...gotta roll, the Mrs. is home and we're going to go grab some chow - any other burning issues ?",
+        "ts": "1507083029.000096"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Got the DR-provided `os-discovery` and `os-linux` content packs transferred and all objects :white_check_mark:",
+        "ts": "1507083039.000148",
+        "reactions": [
+            {
+                "name": "tada",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "awesome",
+        "ts": "1507083047.000134"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "No, thx again for your assistance!",
+        "ts": "1507083049.000186"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "no prob - feel free to ping us if anything else comes up ... I'll take a look at it when I get back",
+        "ts": "1507083067.000013"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Kewl - enjoy dinner",
+        "ts": "1507083077.000106"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "FYI, brought up a new DRP endpoint on Packet; transferred content packs, did `drpcli bootenvs uploadiso [discovery,ubuntu-16.04-install,centos-7.3.1611-install]`, all of the bootenvs uploaded were :white_check_mark:, but when I checked Stages, the stages depending on those bootenvs were still :x:",
+        "ts": "1507086938.000017"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Had to HUP dr-provision to get them to go :white_check_mark:",
+        "ts": "1507086960.000124"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": ":slightly_smiling_face: yep - stages has a small bug; the state of the bootenv\/tasks\/etc. they rely on do not get re-evaluated correctly ... so you have to HUP, or remove content\/re-install content after installing the stages - known issue, and on the radar to get fixed ASAP",
+        "ts": "1507089506.000053"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I believe <@U02DGQYK1> is on this one too",
+        "ts": "1507089513.000131"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U416T0AAX> - just checked with our feature plans; and it looks like we have inventory parameter feedback on the roadmap for pushing inventory items back during discover or similar stage.  If there are specific elements you are looking for that would be useful, please share them in an enhancement ticket so we can consider capturing those as enhancements for 3.2 or 3.3",
+        "ts": "1507089674.000082"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Will do",
+        "ts": "1507089912.000119"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Replicated <@U02DHRR2L>’s Workflow vid using my Packet account, pretty damn cool…",
+        "ts": "1507089972.000054",
+        "reactions": [
+            {
+                "name": "sunglasses",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yep - packet is nifty",
+        "ts": "1507089985.000090"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Jealous of their bare metal speeds :flushed:",
+        "ts": "1507090021.000117"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yeah, they have some really nice SSD hardware in them - I know the type2's are running the Samsung PRO models - super fast",
+        "ts": "1507090075.000062"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I will open an enhancement issue on GH for the inventory parameter stuff - was thinking CPU type \/ family, RAM amount, NIC speed, GPU presence",
+        "ts": "1507090186.000078"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": " Nic speed is a little tricky.  Usually a range.  Usually list max capable? Similar with GPU because of driver support.  Lspci or lshw can report them.  I’m still thinking ",
+        "ts": "1507090725.000050"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "```[root@5min-drp-ewr1-00 tftpboot]# ethtool enp0s20f0 | grep Speed:\n\tSpeed: 2500Mb\/s```",
+        "ts": "1507090841.000177"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "`ethtool` will almost always reliably return the actual link speed, along with other things like supported speeds",
+        "ts": "1507090877.000057"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I’ve found that isn’t always good because it relies on phy state ",
+        "ts": "1507090913.000050"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Better than nothing ",
+        "ts": "1507090929.000035"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "true - but ...",
+        "ts": "1507090933.000052"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "exactly what I was going to say",
+        "ts": "1507090937.000057"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "In dr we had a ruby wrapper on some ioctls that got the max bits from the driver.  It was fine until we got 40gb adapters and blew our code up.  Moving targets and all that ",
+        "ts": "1507091049.000158"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "...and it looks like <http:\/\/packet.net|packet.net> is doing something interesting with BW on the NIC on the switch side to set it at 2.5 Gbps",
+        "ts": "1507091117.000154"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "maybe a single 10 GBps NIC shared via 4 nodes ?   something goofy with the Atom hardware",
+        "ts": "1507091145.000074"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(type0)",
+        "ts": "1507091157.000078"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah. Shared nic backplane? ",
+        "ts": "1507091195.000112"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "something like that",
+        "ts": "1507091210.000028"
+    }
+]

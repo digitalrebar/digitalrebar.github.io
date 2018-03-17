@@ -1,0 +1,48 @@
+[
+    {
+        "text": "@lion_kg_twitter Windows support is complex (especially in v2) and we're pulling it out of community resources because it's not something that can be community supported at this time.  RackN does provide support for Windows on DRP for customers where we can work 1x1 with people around their specific environments.  ",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1504031380.000196"
+    },
+    {
+        "text": "@lion_kg_twitter reading your question another way... are you just asking about DRP file upload?  You should be able to use the CLI files upload and then see the file and then see the file in the CLI files list",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1504031556.000202"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "<@U02DHRR2L> I think there should maybe be a note, or upgrade task really, for migrating content from `\/var\/lib\/dr-provision\/` to `\/var\/lib\/dr-provision\/digitalrebar`",
+        "ts": "1504040126.000404"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The old path should have worked still with the old options.",
+        "ts": "1504040725.000597"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "hmm - sigh.  I’ll check",
+        "ts": "1504040734.000218"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "Is it intentional for `bootenvs install` to install all templates in the templates directory, despite the bootenv being installed not referencing them?",
+        "ts": "1504058815.000203"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yes. Templates can ref templates and we don't do on demand loading ",
+        "ts": "1504059630.000089"
+    }
+]

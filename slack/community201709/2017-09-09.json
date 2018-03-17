@@ -1,0 +1,74 @@
+[
+    {
+        "type": "message",
+        "user": "U40CEEFPS",
+        "text": "I've connected *1 new room* _digitalrebar\/core_ on Gitter. See <https:\/\/sameroom.io\/maps\/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1MDUwNjY0MDAsInJvb21faWQiOjI1ODYyNjksImlkZW50aXR5X2lkIjoxOTU3NzJ9.Y9bMe0x7GdDlOCuHRTyRY9Vk_afqqB2YLLyxrYtWWmw|map>",
+        "bot_id": "B41PS9J94",
+        "ts": "1504982501.000067"
+    },
+    {
+        "text": "testing new Eng user from Gitter",
+        "username": "rackneng (rackneng)",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1504982559.000001"
+    },
+    {
+        "text": "seems to go to both <#C02L9P26Q|community> and <#C70HFEW04|community1>",
+        "username": "Shane Gibson (shane), RackN",
+        "icons": {
+            "image_48": "https:\/\/s3-us-west-2.amazonaws.com\/slack-files2\/bot_icons\/2017-09-09\/238840532021_48.png"
+        },
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1504982578.000089"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "working on it",
+        "ts": "1504982594.000107"
+    },
+    {
+        "text": "I've got the connection from Gitter to Slack working",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1504983273.000116"
+    },
+    {
+        "text": "checking from alias",
+        "username": "rackneng",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1504983295.000069"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "woot!",
+        "ts": "1504983309.000021"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "Slack to IRC is not working yet...",
+        "ts": "1504983320.000014"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "boo",
+        "ts": "1504983329.000096"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "mostly because I messed up the auth... soon",
+        "ts": "1504983341.000152"
+    }
+]

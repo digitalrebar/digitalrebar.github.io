@@ -1,0 +1,590 @@
+[
+    {
+        "text": "Hello team, I hang on : \"TASK [Get Docker Compose] ******************************************************\nfatal: [10.241.236.92]: FAILED! =&gt; {\"changed\": false, \"dest\": \"\/usr\/local\/bin\/docker-compose\", \"failed\": true, \"msg\": \"Request failed\", \"response\": \"An unknown error occurred: coercing to Unicode: need string or buffer, NoneType found\", \"state\": \"absent\", \"status_code\": -1, \"url\": \"https:\/\/github.com\/docker\/compose\/releases\/download\/1.7.1\/docker-compose-Linux-x86_64\"}\n\"",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495194239.064098"
+    },
+    {
+        "text": "fixed: after install docker-compose must create a link \"ln -s \/usr\/bin\/docker-compose \/usr\/local\/bin\/docker-compose\"",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495195024.251302"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "did you get docker-compose from the internet and then link it?",
+        "ts": "1495197289.860656"
+    },
+    {
+        "text": "no, installed via pip",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495197317.868728"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "ok",
+        "ts": "1495197330.872362"
+    },
+    {
+        "text": "I am getting the below error, when I try installing digital-rebar, Could you please help me on the same..\nTASK [Pull compose images [SLOW]] *************************************************************************************************************************************************************************\nfatal: [10.138.161.217]: FAILED! =&gt; {\"changed\": true, \"cmd\": \"DR_TAG=master \/usr\/local\/bin\/docker-compose pull\", \"delta\": \"0:00:05.711742\", \"end\": \"2017-05-19 18:32:50.227777\", \"failed\": true, \"rc\": 1, \"start\": \"2017-05-19 18:32:44.516035\", \"stderr\": \"Pulling postgres (digitalrebar\/dr_postgres:master)...\\nGet https:\/\/registry-1.docker.io\/v2\/: dial tcp 34.205.194.204:443: getsockopt: no route to host\", \"stderr_lines\": [\"Pulling postgres (digitalrebar\/dr_postgres:master)...\", \"Get https:\/\/registry-1.docker.io\/v2\/: dial tcp 34.205.194.204:443: getsockopt: no route to host\"], \"stdout\": \"\", \"stdout_lines\": []}\n\tto retry, use: --limit @\/home\/I324148\/digitalrebar\/deploy\/digitalrebar.retry\n\nPLAY RECAP ************************************************************************************************************************************************************************************************\n10.138.161.217             : ok=46   changed=19   unreachable=0    failed=1",
+        "username": "deepuashokan85",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495199727.673112"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "@deepuashokan85 - do you have internet access to docker hub?",
+        "ts": "1495200544.991666"
+    },
+    {
+        "text": "<@U02DHRR2L|zehicle>  that's where I struck, system unable to contact docker hug, however git and yum repos able to talk to internet",
+        "username": "deepuashokan85",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495200775.088396"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Are you through a proxy?",
+        "ts": "1495200829.110421"
+    },
+    {
+        "text": "yes.. I am through proxy",
+        "username": "deepuashokan85",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495200840.115174"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "hmm - okay - it should have setup docker to use the proxy, but maybe not.  You should check that.",
+        "ts": "1495200861.123786"
+    },
+    {
+        "text": "when I do wget , getting below message: \n[I324148@inll50904062a digitalrebar]$ wget https:\/\/registry-1.docker.io\/v2\/\n--2017-05-19 19:05:20--  https:\/\/registry-1.docker.io\/v2\/\nResolving proxy (proxy)... 172.28.64.41\nConnecting to proxy (proxy)|172.28.64.41|:8080... connected.\nProxy request sent, awaiting response... 401 Unauthorized\nAuthorization failed.\n[I324148@inll50904062a digitalrebar]$",
+        "username": "deepuashokan85",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495200957.163363"
+    },
+    {
+        "text": "Is there alternate way to have the docker hub local in my system?",
+        "username": "deepuashokan85",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495200997.179982"
+    },
+    {
+        "text": "<@U02DHRR2L|zehicle> ^^ ??",
+        "username": "deepuashokan85",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495201162.248033"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I'm working on it.",
+        "ts": "1495201222.273496"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "@deepuashokan85 and @theta_my are in similar problems.  We are working on an offline install.",
+        "ts": "1495201246.283439"
+    },
+    {
+        "text": "Great <@U02DHRR2L|zehicle>, let me know once you have it ready.. ",
+        "username": "deepuashokan85",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495201369.335632"
+    },
+    {
+        "text": "next stop :worried:  \"TASK [Pull compose images [SLOW]] **********************************************\nfatal: [10.241.236.92]: FAILED! =&gt; {\"changed\": true, \"cmd\": \"DR_TAG=master \/usr\/local\/bin\/docker-compose pull\", \"delta\": \"0:01:31.028292\", \"end\": \"2017-05-19 16:02:13.261874\", \"failed\": true, \"rc\": 1, \"start\": \"2017-05-19 16:00:42.233582\", \"stderr\": \"Pulling postgres (digitalrebar\/dr_postgres:master)...\\nNetwork timed out while trying to connect to https:\/\/index.docker.io\/v1\/repositories\/digitalrebar\/dr_postgres\/images. You may want to check your internet connection or if you are behind a proxy.\", \"stdout\": \"Trying to pull repository registry.access.redhat.com\/digitalrebar\/dr_postgres ... \\nTrying to pull repository docker.io\/digitalrebar\/dr_postgres ... \\nPulling repository docker.io\/digitalrebar\/dr_postgres\", \"stdout_lines\": [\"Trying to pull repository registry.access.redhat.com\/digitalrebar\/dr_postgres ... \", \"Trying to pull repository docker.io\/digitalrebar\/dr_postgres ... \", \"Pulling repository docker.io\/digitalrebar\/dr_postgres\"], \"warnings\": []}\"",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495202627.897878"
+    },
+    {
+        "text": "a wget to https:\/\/index.docker.io\/v1\/repositories\/digitalrebar\/dr_postgres\/images runs with no error",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495202661.913459"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "This will fail completely.",
+        "ts": "1495202852.000138"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You have to have an internet connection for that step.",
+        "ts": "1495202862.004313"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I keep saying your use case is not really supported directly.",
+        "ts": "1495202903.023319"
+    },
+    {
+        "text": "yes, i have a proxy configuration which runs fine (the wget would also failed...)",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495202911.026865"
+    },
+    {
+        "text": "(after some discussion, a internet connection via proxy is allowed yet) :)",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495202993.063975"
+    },
+    {
+        "text": "<@U02DHRR2L|zehicle> @theta-my , the problem is from office network I am unable to talk to docker hug, however from home network it works for me..",
+        "username": "deepuashokan85",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495203194.155207"
+    },
+    {
+        "text": "I can not check this directly, https:\/\/index.docker.io\/v1\/repositories\/digitalrebar\/dr_postgres\/ request a user name and password...",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495203284.195383"
+    },
+    {
+        "text": "Can some one verify if the requested files available?",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495204107.578790"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "it is there and not password protected",
+        "ts": "1495204645.836164"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "do you have password based proxy?",
+        "ts": "1495204660.843345"
+    },
+    {
+        "text": "no, the password request comes if i try to use the link in a browser",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495204686.855751"
+    },
+    {
+        "text": "if i use wget, no problem",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495204707.865552"
+    },
+    {
+        "text": "can you send my the complete file path?",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495204726.874314"
+    },
+    {
+        "text": "i will try wget to this",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495204736.879047"
+    },
+    {
+        "text": "only for check",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495204748.884471"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "it isn't a file.",
+        "ts": "1495204750.885341"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "well - it is , but it is a separate protocol that docker uses to get content.",
+        "ts": "1495204783.901421"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "My guess is that docker is misconfigured",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1495204793.000000"
+        },
+        "ts": "1495204791.904947"
+    },
+    {
+        "text": "ahhh, separate protokoll...",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495204817.917354"
+    },
+    {
+        "text": "not 80 or 443 ...",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495204826.921894"
+    },
+    {
+        "text": "(http\/ https)",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495204844.930065"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "it is those ports and those protos, but it turns into more requests",
+        "ts": "1495204876.945720"
+    },
+    {
+        "text": "??? than I'm lost yet, I have set a system proxy for http and https, tryed to configure the docker proxy in \/etc\/systemd\/system\/docker.service.d\/http-proxy.conf ",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495205012.008479"
+    },
+    {
+        "text": "but nothing helps",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495205026.014651"
+    },
+    {
+        "text": "something missing?",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495205037.019633"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "can you run this:",
+        "ts": "1495205148.072315"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "docker run hello-world",
+        "ts": "1495205148.072615"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It should output Hello from Docker!",
+        "ts": "1495205176.085914"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That means that you have docker configured correctly for your firewall environment.",
+        "ts": "1495205191.093626"
+    },
+    {
+        "text": "trying",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495205192.094025"
+    },
+    {
+        "text": "failed",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495205315.152957"
+    },
+    {
+        "text": "network time out",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495205323.156616"
+    },
+    {
+        "text": "ok, docker proxy rechecked, new configured, service restartd -&gt; runs fine with \"docker run hello-world\"",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495207399.175442"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "retry the docker pull",
+        "ts": "1495207905.417719"
+    },
+    {
+        "text": "working on it, runs in a storage failure, sounds like not enough storage available at the chosen path...",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495208043.483817"
+    },
+    {
+        "text": ":( was not the failure",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495211533.041705"
+    },
+    {
+        "text": "TASK [Pull compose images [SLOW]] **********************************************\nfatal: [10.241.236.92]: FAILED! =&gt; {\"changed\": true, \"cmd\": \"DR_TAG=master \/usr\/local\/bin\/docker-compose pull\", \"delta\": \"0:01:19.428383\", \"end\": \"2017-05-19 18:30:10.865906\", \"failed\": true, \"rc\": 1, \"start\": \"2017-05-19 18:28:51.437523\", \"stderr\": \"Pulling postgres (digitalrebar\/dr_postgres:master)...\\nPulling rule-engine (digitalrebar\/rule-engine:master)...\\nPulling consul (gliderlabs\/consul:latest)...\\nPulling forwarder (digitalrebar\/dr_forwarder:master)...\\nPulling goiardi (digitalrebar\/dr_goiardi:master)...\\nPulling trust_me (digitalrebar\/dr_trust_me:master)...\\nPulling logging (digitalrebar\/logging:master)...\\nPulling dns (digitalrebar\/dr_dns:master)...\\nPulling provisioner (digitalrebar\/dr_provisioner:master)...\\nPulling revproxy (digitalrebar\/dr_rev_proxy:master)...\\nPulling cloudwrap (digitalrebar\/cloudwrap:master)...\\nPulling rebar_api (digitalrebar\/dr_rebar_api:master)...\\nfailed to register layer: devmapper: Thin Pool has 827 free data blocks which is less than minimum required 851 free data blocks. Create more free space in thin pool or use dm.min_free_space option to change behavior\", \"stdout\": \"Trying to pull repository registry.access.redhat.com\/digitalrebar\/dr_postgres ... \\nTrying to pull repository docker.io\/digitalrebar\/dr_postgres ... \\nmaster: Pulling from docker.io\/digitalrebar\/dr_postgres\\nDigest: sha256:d94959f8c3294b3da4c8bb0ecb0e786e8cb386998b59a25e2afb50aa51a8bf2a\\nTrying to pull repository registry.access.redhat.com\/digitalrebar\/rule-engine ... \\nTrying to pull repository docker.io\/digitalrebar\/rule-engine ... \\nmaster: Pulling from docker.io\/digitalrebar\/rule-engine\\nDigest: sha256:2d42fdf62c74ffecdbc9d4afc2591243179bd13f3a7225cfece0758689ee2f4b\\nTrying to pull repository registry.access.redhat.com\/gliderlabs\/consul ... \\nTrying to pull repository docker.io\/gliderlabs\/consul ... \\nlatest: Pulling from docker.io\/gliderlabs\/consul\\nDigest: sha256:927a560389df16092364a4c26c976cd9b845800c8b96b4e687451c398f4187c1\\nTrying to pull repository registry.access.redhat.com\/digitalrebar\/dr_forwarder ... \\nTrying to pull repository docker.io\/digitalrebar\/dr_forwarder ... \\nmaster: Pulling from docker.io\/digitalrebar\/dr_forwarder\\nDigest: sha256:9febe88b6f8ff9b028fbeb10560cdec752d35985aaf5165629f6dd7824e0f129\\nTrying to pull repository registry.access.redhat.com\/digitalrebar\/dr_goiardi ... \\nTrying to pull repository docker.io\/digitalrebar\/dr_goiardi ... \\nmaster: Pulling from docker.io\/digitalrebar\/dr_goiardi\\nDigest: sha256:db620bbb4994d1074d706362996243353ad1d1f0347e7ec4e8706acb0e7195fe\\nTrying to pull repository registry.access.redhat.com\/digitalrebar\/dr_trust_me ... \\nTrying to pull repository docker.io\/digitalrebar\/dr_trust_me ... \\nmaster: Pulling from docker.io\/digitalrebar\/dr_trust_me\\nDigest: sha256:194f71e8edf29644ddcf9477d6764c71cff44dabe3c5de42aed779fd488183be\\nTrying to pull repository registry.access.redhat.com\/digitalrebar\/logging ... \\nTrying to pull repository docker.io\/digitalrebar\/logging ... \\nmaster: Pulling from docker.io\/digitalrebar\/logging\\nDigest: sha256:4eeee9ee94df703bc69ce1ef0af12d36302ac315873361c55089be701d140e9a\\nTrying to pull repository registry.access.redhat.com\/digitalrebar\/dr_dns ... \\nTrying to pull repository docker.io\/digitalrebar\/dr_dns ... \\nmaster: Pulling from docker.io\/digitalrebar\/dr_dns\\nDigest: sha256:46c93057b1bb01d1700d9015ef3f03a483b3204aa03ef808589086eddec8259d\\nTrying to pull repository registry.access.redhat.com\/digitalrebar\/dr_provisioner ... \\nTrying to pull repository docker.io\/digitalrebar\/dr_provisioner ... \\nmaster: Pulling from docker.io\/digitalrebar\/dr_provisioner\\nDigest: sha256:f790122f2d83f8f2a05b1e00d8fa90fbfbf7c093b8d4913faf3055da46b15cc6\\nTrying to pull repository registry.access.redhat.com\/digitalrebar\/dr_rev_proxy ... \\nTrying to pull repository docker.io\/digitalrebar\/dr_rev_proxy ... \\nmaster: Pulling from docker.io\/digitalrebar\/dr_rev_proxy\\nDigest: sha256:",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "is_auto_split": true,
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495211562.053249"
+    },
+    {
+        "text": "ffb8675f7069613ba4c6697bae49f367e7f43946b170dfa0236d2a923d42c24c\\nTrying to pull repository registr",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "is_auto_split": true,
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495211562.053272"
+    },
+    {
+        "text": "I think, this step crashed : failed to register layer: devmapper: Thin Pool has 827 free data blocks which is less than minimum required 851 free data blocks. Create more free space in thin pool or...",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495211667.096603"
+    },
+    {
+        "text": "but : \/dev\/mapper\/datavg-rebar_lv      40G  122M   38G   1% \/var\/lib\/docker  should be enough",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495211751.131420"
+    },
+    {
+        "type": "message",
+        "user": "U5F4N6DV4",
+        "text": "any chance you have a `cURL` command to change the BootEnv handy?",
+        "ts": "1495212571.461103"
+    },
+    {
+        "type": "message",
+        "user": "U5F4N6DV4",
+        "text": "anyone ^^",
+        "ts": "1495212576.462993"
+    },
+    {
+        "text": "curl is installed",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495212683.506937"
+    },
+    {
+        "text": "but what will you do?",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495212790.550395"
+    },
+    {
+        "type": "message",
+        "user": "U5F4N6DV4",
+        "text": "oh, sorry i mean to run a curl command against the API",
+        "ts": "1495213606.894058"
+    },
+    {
+        "type": "message",
+        "user": "U5F4N6DV4",
+        "text": "i useally figure one or two out and copypasta them with differences i need",
+        "ts": "1495213623.900756"
+    },
+    {
+        "type": "message",
+        "user": "U5F4N6DV4",
+        "text": "the “how toget the token” and all",
+        "ts": "1495213631.904177"
+    },
+    {
+        "text": "If you give me the request ;)",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495213632.904376"
+    },
+    {
+        "type": "message",
+        "user": "U5F4N6DV4",
+        "text": "`data='{\"BootEnv\": \"local\"}'`",
+        "ts": "1495213658.914678"
+    },
+    {
+        "type": "message",
+        "user": "U5F4N6DV4",
+        "text": "so leverage the rocketskates token then put against URL\/api\/v3\/machines\/UUID with the data as the payload?",
+        "ts": "1495213721.940326"
+    },
+    {
+        "text": "I'm not so familiar curl , so can you write down the complete command :shy:",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1495213811.976765"
+    },
+    {
+        "type": "message",
+        "user": "U5F4N6DV4",
+        "text": "heh, yeah i’ll play around with it. i think i know what i need to do after :rubberducking: you :slightly_smiling_face:",
+        "ts": "1495213838.987878"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "well - realize that DRP and DR have slightly different provisioner components at the moment.",
+        "ts": "1495217520.525074"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U5F4N6DV4> - drpcli machines bootenv &lt;uuid&gt; &lt;bootenv&gt;",
+        "ts": "1495217561.541955"
+    },
+    {
+        "type": "message",
+        "user": "U5F4N6DV4",
+        "text": "Ah! Yeah the python in the end of the new boot.cfg has an error, I was going to see it was another way <@U02DGQYK1> ",
+        "ts": "1495218048.740761"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "My python is function, but not very good.",
+        "ts": "1495218275.833155"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U5F4N6DV4> did you find the bug and fix?",
+        "ts": "1495219155.195513"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "the python thing may not be a bug.",
+        "ts": "1495220290.657724"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It is a mismatch in supported cert validation.",
+        "ts": "1495220300.661881"
+    },
+    {
+        "type": "message",
+        "user": "U5F4N6DV4",
+        "text": "ah, yeah it just says “there is an error”",
+        "ts": "1495220477.737281"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U5F4N6DV4> - I have fix for the python thing.",
+        "ts": "1495225213.474231"
+    },
+    {
+        "type": "message",
+        "user": "U5F4N6DV4",
+        "text": ":open_mouth:",
+        "ts": "1495225220.476976"
+    },
+    {
+        "type": "message",
+        "user": "U5F4N6DV4",
+        "text": "I’m having a hellva time trying to get ESXi to boot correctly and install to a USB stick, i might just remove the `ks.cfg` completely at this rate",
+        "ts": "1495225308.507609"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "ok",
+        "ts": "1495225337.517296"
+    }
+]
