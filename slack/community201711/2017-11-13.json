@@ -1,0 +1,1823 @@
+[
+    {
+        "user": "U7ZBWDABW",
+        "text": "<@U7ZBWDABW> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1510584168.000660"
+    },
+    {
+        "text": "hello ",
+        "username": "hyusuf01",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1510585414.000337"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "good morning, @hyusuf01 welcome",
+        "ts": "1510585442.000786"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "UX added a feature over the weekend... you can now rename your org and endpoints in your org information.  This is handy if you have multiple endpoints and switch between them",
+        "ts": "1510591543.000356"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "on request, RackN can create orgs that are shared by multiple users.",
+        "ts": "1510591568.000575"
+    },
+    {
+        "type": "message",
+        "user": "U7ZBWDABW",
+        "text": "ok . thank you",
+        "ts": "1510591765.000114"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "Can someone explain what the sledgehammer image is exactly? when I PXE a system with sledgehammer as the bootenv should I expect to see any kind of install screen or any output from BMC console?",
+        "ts": "1510605592.000312"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "hi <@U574XHDJN>",
+        "ts": "1510605610.000201"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "Hey Shane! :slightly_smiling_face:",
+        "ts": "1510605617.000073"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Sledgehammer is a live boot linux distro (based on Centos)",
+        "ts": "1510605625.000062"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it only \"live boots\" - it does NOT install",
+        "ts": "1510605633.000120"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we use it as a helper to perform workflow tasks (prep physical server for install, collect inventory, etc.)",
+        "ts": "1510605654.000446"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it's primary purpose is to help implement an OS install - by \"discovering\" Machine info, and enabling more advanced OS install workflow scenarios",
+        "ts": "1510605682.000608",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U9DAYGSRL"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "does that help understand it a bit more ?",
+        "ts": "1510605692.000312"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "okay cool! and yes it does! I'm probably doing something wrong because I just stood up DRP in \"isolated\" mode, setup my subnet with DHCP reservations and then PXE'd another system. watching the logs DRP got the request, found the reservation and issued the IP... but then nothing else happened.. the system failed out PXE.",
+        "ts": "1510605769.000195"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "that's a \"safety mechanism\"",
+        "ts": "1510605793.000303"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "ohhhhhh",
+        "ts": "1510605798.000272"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we do not do any install unless you tell us to",
+        "ts": "1510605799.000564"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "even for sledgehammer?",
+        "ts": "1510605808.000067"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "that's the default bootenv I setup.",
+        "ts": "1510605814.000496"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yes - can you copy the `drpcli prefs list | grep -v Secret` output here ?",
+        "ts": "1510605875.000527"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "```\n{\n  \"debugBootEnv\": \"0\",\n  \"debugDhcp\": \"0\",\n  \"debugFrontend\": \"1\",\n  \"debugPlugins\": \"0\",\n  \"debugRenderer\": \"0\",\n  \"defaultBootEnv\": \"sledgehammer\",\n  \"defaultStage\": \"discover\",\n  \"knownTokenTimeout\": \"3600\",\n  \"unknownBootEnv\": \"discovery\",\n  \"unknownTokenTimeout\": \"600\"\n}\n```",
+        "ts": "1510605910.000144"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "based on this - and assuming your subnet specification is right (along with required or optional Reservations configs)",
+        "ts": "1510605938.000016"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you should boot in to Sledgehammer OS instance - and then stop",
+        "ts": "1510605946.000296"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "after this - you'd want to manually specify a BootEnv for OS install (eg `ubuntu-16.04-install`)",
+        "ts": "1510605969.000503"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "and reboot the Machine",
+        "ts": "1510605973.000327"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "... or ...",
+        "ts": "1510605975.000505"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "delve in to the world of our Workflow (stages) to automate the process",
+        "ts": "1510605988.000208"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "yeah.. after the DHCP response I saw something about a \"file not found\" or \"couldn't download file\" or something along those lines but then it failed too quickly for me to capture..",
+        "ts": "1510606021.000624"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "rebooting the node now to see if I can screenshot it.",
+        "ts": "1510606029.000174"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "does `drpcli bootenvs show sledgehammer | jq '.Available'` return \"true\" ?",
+        "ts": "1510606129.000364"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "yes",
+        "ts": "1510606195.000316"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "also make sure that you don't have an FW rules blocking ports 67, 69, 8091, and 8092 on the DRP Endpoint",
+        "ts": "1510606207.000292"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "the PXE error I get is \"No boot filename received.\"",
+        "edited": {
+            "user": "U574XHDJN",
+            "ts": "1510606225.000000"
+        },
+        "ts": "1510606209.000511"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "firewall is disabled completely along with SELinux.",
+        "ts": "1510606258.000104"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "are you using the built-in DHCP\/TFTP - or external services ?",
+        "ts": "1510606274.000095"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "internal I assume.. I didn't set anything up external.",
+        "ts": "1510606397.000348"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U574XHDJN> do you have another DHCP server on the network ?",
+        "ts": "1510606911.000196"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "there shouldn't be.. I'm on a private VLAN.",
+        "ts": "1510606936.000090"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "does your DRP Endpoint have multiple NIC interfaces ?",
+        "ts": "1510606946.000384"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "a simple test would be to disable DRP on the host, then reboot your Machine to see if it gets a DHCP response",
+        "ts": "1510606976.000243"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "yes.. it's my \"jumpnode\" into the VLAN.. so it has a routable IP and private IP on separate interfaces.",
+        "ts": "1510606977.000659"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ah - you may need to set the `--static-ip=` option to `dr-provision` to the correct network that you are trying to provision on",
+        "ts": "1510607025.000687"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": ":flushed:",
+        "ts": "1510607055.000484"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "LOL",
+        "ts": "1510607059.000432"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "I was wondering about that when I ran the little \"install\" script.",
+        "ts": "1510607079.000304"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "I used the production IP because I figured that was needed to ensure the GUI was accessible.",
+        "ts": "1510607094.000291"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "I setup the subnet to listen on the private vlan though..",
+        "ts": "1510607109.000051"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "what's the easiest way to point the --static-ip option at the right address?",
+        "ts": "1510607128.000061"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Try not specifying it first.",
+        "ts": "1510607171.000206"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "?? you mean just re-run the script?",
+        "ts": "1510607184.000082"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "When dr-provison ran, did it run wilt a --static-ip option set?",
+        "ts": "1510607231.000507"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "yes.. from the docs I ran this:\n`sudo .\/dr-provision --static-ip=&lt;production_ip&gt; --base-root=\/root\/dr-test\/drp-data --local-content=\"\" --default-content=\"\" &amp;`",
+        "ts": "1510607287.000351"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ok",
+        "ts": "1510607294.000119"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "FYI - the UX never directly talks to the DRP Endpoint (or the other way-round - endpoint never directly talks to UX)",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1510607300.000000"
+        },
+        "ts": "1510607294.000201"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Try deleting the --static-ip option",
+        "ts": "1510607306.000207"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "do I need to stop any services or anything before re-running?",
+        "ts": "1510607392.000036"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Yeah, kill dr-provision first. :slightly_smiling_face:",
+        "ts": "1510607465.000381"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "okay!  it seems to have run.. anyway to check values now?",
+        "ts": "1510607576.000271"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "or should I just try to PXE the machine again?",
+        "ts": "1510607589.000065"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "yes",
+        "ts": "1510607627.000327"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "same behavior:\n```\ndr-provision2017\/11\/13 22:16:43.501114 Received DHCP packet: type Discover xid 0x67cba53e ciaddr 0.0.0.0 yiaddr 0.0.0.0 giaddr 0.0.0.0 chaddr 00:1e:67:cb:a5:3e\ndr-provision2017\/11\/13 22:16:43.501992 Reservation for 10.0.0.3 has a lease, using it.\ndr-provision2017\/11\/13 22:16:43.504871 xid 0x67cba53e: Discovery handing out: 10.0.0.3 to 00:1e:67:cb:a5:3e via 10.0.0.10\n```",
+        "ts": "1510607850.000127"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "but the system says \"No boot filename received\".",
+        "ts": "1510607872.000574"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ok",
+        "ts": "1510607876.000552"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "What is the system?",
+        "ts": "1510607880.000303"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "what do you mean? what is the hardware?",
+        "ts": "1510607898.000308"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "is it hardware , a VM, etc.",
+        "ts": "1510607915.000523"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "oh.. hardware. standard Intel server in a rack.",
+        "ts": "1510607938.000196"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ok, cool.",
+        "ts": "1510607945.000667"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "hm.",
+        "ts": "1510607968.000366"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Do you just have a reservation for that mac address, or is there a subnet definition as well?",
+        "ts": "1510608000.000408"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "I defined a subnet 10.0.0.1\/16 and specified \"Require DHCP Reservation\".",
+        "ts": "1510608030.000150"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "and then a created the reservation using MAC for the sytem.",
+        "ts": "1510608048.000065"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ok cool..",
+        "ts": "1510608072.000367"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "You have drpcli on the system?",
+        "ts": "1510608083.000277"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "yes",
+        "ts": "1510608088.000099"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Just saw that in the backscroll",
+        "ts": "1510608104.000046"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "LOL.. no worries!",
+        "ts": "1510608113.000654"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "What does drpcli subnets list show?",
+        "ts": "1510608119.000512"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "```\n[root@master dr-test]# drpcli subnets list\n[GIN] 2017\/11\/13 - 14:22:05 | 200 |   93.935055ms |       127.0.0.1 | GET      \/api\/v3\/subnets\n[\n  {\n    \"ActiveEnd\": \"10.0.0.5\",\n    \"ActiveLeaseTime\": 60,\n    \"ActiveStart\": \"10.0.0.2\",\n    \"Name\": \"enp4s0f1\",\n    \"NextServer\": \"10.0.0.10\",\n    \"OnlyReservations\": true,\n    \"Options\": [\n      {\n        \"Code\": 1,\n        \"Value\": \"255.255.0.0\"\n      },\n      {\n        \"Code\": 28,\n        \"Value\": \"10.0.255.255\"\n      }\n    ],\n    \"Pickers\": [\n      \"hint\",\n      \"nextFree\",\n      \"mostExpired\"\n    ],\n    \"ReservedLeaseTime\": 7200,\n    \"Strategy\": \"MAC\",\n    \"Subnet\": \"10.0.0.1\/16\"\n  }\n]\n```",
+        "ts": "1510608145.000649"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Well, that would do it. :slightly_smiling_face:",
+        "ts": "1510608179.000183"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "No PXE options there.",
+        "ts": "1510608187.000465"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": ":flushed:",
+        "ts": "1510608193.000645"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "**facepalm**",
+        "ts": "1510608205.000295"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "how do I add that? I'm looking at the \"Edit\" page for the subnet.",
+        "ts": "1510608257.000357"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Add an option, code=67, value=lpxelinux.0",
+        "ts": "1510608301.000610"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Here is what mine liike like for reference:",
+        "ts": "1510608343.000236"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "[\n  {\n    \"ActiveEnd\": \"192.168.124.254\",\n    \"ActiveLeaseTime\": 60,\n    \"ActiveStart\": \"192.168.124.10\",\n    \"Available\": true,\n    \"Enabled\": true,\n    \"Errors\": [],\n    \"Name\": \"docker0\",\n    \"NextServer\": \"192.168.124.11\",\n    \"OnlyReservations\": false,\n    \"Options\": [\n      {\n        \"Code\": 3,\n        \"Value\": \"192.168.124.11\"\n      },\n      {\n        \"Code\": 6,\n        \"Value\": \"192.168.124.11\"\n      },\n      {\n        \"Code\": 15,\n        \"Value\": \"<http:\/\/example.com|example.com>\"\n      },\n      {\n        \"Code\": 67,\n        \"Value\": \"lpxelinux.0\"\n      },\n      {\n        \"Code\": 1,\n        \"Value\": \"255.255.255.0\"\n      },\n      {\n        \"Code\": 28,\n        \"Value\": \"192.168.124.255\"\n      }\n    ],\n    \"Pickers\": [\n      \"hint\",\n      \"nextFree\",\n      \"mostExpired\"\n    ],\n    \"ReadOnly\": false,\n    \"ReservedLeaseTime\": 7200,\n    \"Strategy\": \"MAC\",\n    \"Subnet\": \"<tel:192.168.124.11\/24|192.168.124.11\/24>\",\n    \"Validated\": true\n  }\n]",
+        "ts": "1510608352.000033"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "okay awesome! giving this a try now!",
+        "ts": "1510608400.000207"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "does this support iPXE and UEFI?",
+        "ts": "1510608411.000591"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Not with that ilename, you will need something a little more complicated for that. :slightly_smiling_face:",
+        "ts": "1510608444.000415"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "okay I didn't think so. :slightly_smiling_face: We are using Cobbler right now and I'm evaluating DRP as a replacement.",
+        "ts": "1510608507.000328"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "we were able to get iPXE and UEFI to work in Cobbler with a little \"wizardry\" but it's not may favorite solution.",
+        "ts": "1510608542.000619"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "BINGO! that did it! thank you <@U02DJQSG8>",
+        "ts": "1510608753.000213"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "excellent !",
+        "ts": "1510608767.000158"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U574XHDJN> did you use any of the DRP Docs to get started ?",
+        "ts": "1510608779.000299"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "The neat thing is that the bootfile option is actually a template that can be expanded based on the contents of the DHCP packet.",
+        "ts": "1510608802.000305"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I an trying to find our usual example -- been awhile since I used it.",
+        "edited": {
+            "user": "U02DJQSG8",
+            "ts": "1510608829.000000"
+        },
+        "ts": "1510608824.000014"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "bootfile",
+        "ts": "1510608880.000141"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Of you set option 67 to `{{if (eq (index . 77) “iPXE”) }}default.ipxe{{else if (eq (index . 93) “0\")}}lpxelinux.0{{else}}bootx64.efi{{end}}` it will ise iPXE if that has already been loaded, otherwise it will use lpxelinux.o on BIOS systems and elilo on UEFI systems.",
+        "edited": {
+            "user": "U02DJQSG8",
+            "ts": "1510609184.000000"
+        },
+        "ts": "1510609144.000317"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(thank you <@U02DJQSG8>... for adding back ticks :slightly_smiling_face: )",
+        "ts": "1510609195.000024"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Similarly, `{{if (eq (index . 77) “iPXE”) }}default.ipxe{{else if (eq (index . 93) “0\")}}ipxe.pxe{{else}}ipxe.efi{{end}}` will force the use of ipxe for BIOS and UEFI systems.",
+        "ts": "1510609235.000065"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": ":slightly_smiling_face:",
+        "ts": "1510609245.000475"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "So you can pick and choose what to use based on what has been validated with your gear,.",
+        "ts": "1510609284.000302"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "this looks pretty close to what we are using in Cobbler:\n```\n        if exists user-class and option user-class = \"gPXE\" {\n            filename \"$_system_filename\";\n        } else if exists user-class and option user-class = \"iPXE\" {\n            filename \"$_system_filename\";\n        } else if exists pxe-system-type and option pxe-system-type != 00:00 {\n            filename \"ipxe.efi\";\n        } else {\n            filename \"undionly.kpxe\";\n        }\n```",
+        "ts": "1510609304.000187"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You could add in the gpxe template test as well.",
+        "ts": "1510609336.000124"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Same idea, different mechanism",
+        "ts": "1510609347.000332"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "sure!",
+        "ts": "1510609391.000519"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "I think Cobbler just uses gPXE by default which is why it's there.",
+        "ts": "1510609407.000160"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Until someone embeds a nice scripting language into their DHCP server, template expansion or weird config language hacks are the order of the day for this particular task. :slightly_smiling_face:",
+        "edited": {
+            "user": "U02DJQSG8",
+            "ts": "1510609448.000000"
+        },
+        "ts": "1510609445.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "That little bind config snippet (and variants of it) have been around since before gpxe was forked to make ipxe.",
+        "ts": "1510609504.000348"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "LOL",
+        "ts": "1510609514.000001"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Back a few product generations when we drove bind like that we did the same thing. :slightly_smiling_face:",
+        "edited": {
+            "user": "U02DJQSG8",
+            "ts": "1510609547.000000"
+        },
+        "ts": "1510609538.000379"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "okay so my system booted sledgehammer! yay! is there a way to see the system specs it gathered somewhere?",
+        "ts": "1510609561.000132"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "`drpcli machines list`",
+        "ts": "1510609576.000334"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "yeah I saw that. but it just had basic system info, name, description and UUID... does sledgehammer gather \"Facts\" like ansible? system specs? memory, cpu info etc...",
+        "ts": "1510609630.000358"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "also (if you haven't found it already) - you can append `--format=yaml` to view yaml -vs- json output",
+        "ts": "1510609646.000473"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "oh nice! that's helpful!",
+        "edited": {
+            "user": "U574XHDJN",
+            "ts": "1510609670.000000"
+        },
+        "ts": "1510609667.000025"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "If you are running on tip you should have a Sledgehammer that has gohai",
+        "ts": "1510609746.000503"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "I think I ran with \"stable\": `v3.0.1-tip-20-93fd333f6046a4f49e58720647c31e9b1ed9bf07`",
+        "ts": "1510609824.000042"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "so part of the machine should be a huge blob containing an ever-growing list of what we consider to \"interesting\" hardware and basic config data",
+        "ts": "1510609828.000325"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Um ... we hope not v3.0.1",
+        "ts": "1510609837.000152"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "that's ... ancient ...",
+        "ts": "1510609843.000085"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "That is a rather old stable. :slightly_smiling_face:",
+        "ts": "1510609846.000105"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "LOL",
+        "ts": "1510609846.000314"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(which doesn't have inventory capabilities)",
+        "ts": "1510609859.000201"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "from here: <http:\/\/provision.readthedocs.io\/en\/stable\/doc\/quickstart.html>",
+        "ts": "1510609892.000242"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "I ran `curl -fsSL <https:\/\/raw.githubusercontent.com\/digitalrebar\/provision\/stable\/tools\/install.sh> | bash -s -- --isolated install`",
+        "ts": "1510609900.000219"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "HIGHLY recommend you switch to \"latest\" for the docs",
+        "ts": "1510609909.000337"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "ohhhh.",
+        "ts": "1510609916.000427"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": ":stuck_out_tongue:",
+        "ts": "1510609918.000645"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we're about to revision the doc versions shortly - but it's lagging a bit behind ATM",
+        "ts": "1510609929.000017"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can check your DRP endpoint version with `drpcli info get`",
+        "ts": "1510609954.000543"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "gotcha! I just saw \"stable\" and well.. ya know.. it felt \"safe\"! :stuck_out_tongue_winking_eye:",
+        "ts": "1510609985.000058"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you'd want to chuck an `--upgrade=true` on the end of all of that to do an upgrade (after you kill `dr-provision`)",
+        "ts": "1510610012.000318"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "ha ha.. I just ran `drpcli info get` and it said \"unknown command \"info\"\"",
+        "ts": "1510610013.000557"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "too old for info. :slightly_smiling_face:",
+        "ts": "1510610025.000568"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "LOL",
+        "ts": "1510610029.000024"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "current stable is `v3.2.1-0-2ab654478528d1ee59781f7d53bc8f8b9c6853dd`",
+        "ts": "1510610047.000039"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can also shorten your `curl` a lot ....",
+        "ts": "1510610099.000045"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "`curl -s get.rebar.digital\/stable | bash -s -- install --isolated --upgrade=true`",
+        "ts": "1510610115.000698"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "well I like that! :slightly_smiling_face:",
+        "ts": "1510610133.000135"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "hmm",
+        "ts": "1510610153.000090"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "though ... there are significant changes to \"content\"",
+        "ts": "1510610164.000040"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it's really better if you wipe and restart - since updating the content pieces is a bit arduous process",
+        "ts": "1510610183.000605"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I don't think we've done an in-house 3.0.1 to 3.2.1 direct upgrade - we do have upgrade steps listed in Doc - but ...",
+        "ts": "1510610221.000218"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "no worries!",
+        "ts": "1510610235.000518"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "I did an \"isolated\" install so I'll just wipe the dir and start over.",
+        "ts": "1510610245.000310"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "have you seen the UX for it yet ?",
+        "ts": "1510610271.000247"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "you mean <https:\/\/localhost\/provision-ux> ?",
+        "ts": "1510610297.000156"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "https:\/\/&lt;your_drp_endpoint&gt;:8092\/",
+        "ts": "1510610306.000052"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "yes! I LOVE IT!!!!!",
+        "ts": "1510610312.000450",
+        "reactions": [
+            {
+                "name": "grinning",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "cool - <@U02DHRR2L> will get a warm fuzzy glow hearing that statement ...",
+        "ts": "1510610328.000260"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "yes, I did!",
+        "ts": "1510610347.000347"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "ha ha ha!",
+        "ts": "1510610357.000327"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": ":thumbsup: :thumbsup:",
+        "ts": "1510610363.000157"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "if you are coming from v3.0 then it's a big jump",
+        "ts": "1510610409.000110"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "ohh.. I haven't seen the ux for 3.2",
+        "ts": "1510610431.000266"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "working on the install now.",
+        "ts": "1510610437.000208"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the UX you've seen - is it \"green\" theme - or \"blue\" theme ?",
+        "ts": "1510610498.000573"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "blue theme:",
+        "ts": "1510610521.000340"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ok - that's the new UX :slightly_smiling_face:",
+        "ts": "1510610534.000299"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U574XHDJN> uploaded a file: <https:\/\/rackn.slack.com\/files\/U574XHDJN\/F7ZH894H1\/pasted_image_at_2017_11_13_02_02_pm.png|Pasted image at 2017-11-13, 2:02 PM>",
+        "file": {
+            "id": "F7ZH894H1",
+            "created": 1510610545,
+            "timestamp": 1510610545,
+            "name": "Pasted image at 2017_11_13 02_02 PM.png",
+            "title": "Pasted image at 2017-11-13, 2:02 PM",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U574XHDJN",
+            "editable": false,
+            "size": 36067,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7ZH894H1\/pasted_image_at_2017_11_13_02_02_pm.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7ZH894H1\/download\/pasted_image_at_2017_11_13_02_02_pm.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7ZH894H1-f97d45630c\/pasted_image_at_2017_11_13_02_02_pm_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7ZH894H1-f97d45630c\/pasted_image_at_2017_11_13_02_02_pm_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7ZH894H1-f97d45630c\/pasted_image_at_2017_11_13_02_02_pm_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 59,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7ZH894H1-f97d45630c\/pasted_image_at_2017_11_13_02_02_pm_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 79,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7ZH894H1-f97d45630c\/pasted_image_at_2017_11_13_02_02_pm_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7ZH894H1-f97d45630c\/pasted_image_at_2017_11_13_02_02_pm_720.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 118,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7ZH894H1-f97d45630c\/pasted_image_at_2017_11_13_02_02_pm_800.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 132,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7ZH894H1-f97d45630c\/pasted_image_at_2017_11_13_02_02_pm_960.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 158,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7ZH894H1-f97d45630c\/pasted_image_at_2017_11_13_02_02_pm_1024.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 168,
+            "image_exif_rotation": 1,
+            "original_w": 1916,
+            "original_h": 315,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U574XHDJN\/F7ZH894H1\/pasted_image_at_2017_11_13_02_02_pm.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F7ZH894H1-3946e6038f",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U574XHDJN",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "spencerj",
+        "bot_id": null,
+        "ts": "1510610548.000220"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "oh okay cool!",
+        "ts": "1510610552.000451"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yep",
+        "ts": "1510610552.000457"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": ":slightly_smiling_face:",
+        "ts": "1510610554.000167"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "what's with the URL though? mine shows: <https:\/\/rackn.github.io\/provision-ux\/#\/e\/10.54.4.118:8092\/machines>",
+        "ts": "1510610573.000169"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "is this going outside my network for anything?",
+        "ts": "1510610585.000012"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "your DRP Endpoint never reaches out (nor does the UX reach in to endpoint)",
+        "ts": "1510610598.000676"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "your browser is operating in CORS model - basically a \"go-between\" for the RackN Portal, and connecting to the DRP Endpoint",
+        "ts": "1510610625.000352"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it's a single page React application  you run in your browser",
+        "thread_ts": "1510610638.000413",
+        "reply_count": 1,
+        "replies": [
+            {
+                "user": "U9DAYGSRL",
+                "ts": "1519290819.000008"
+            }
+        ],
+        "unread_count": 1,
+        "ts": "1510610638.000413"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "oh okay!",
+        "ts": "1510610644.000224"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "connection is `endpoint &lt;-- browser --&gt; rackn portal`",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1510610683.000000"
+        },
+        "ts": "1510610654.000697"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "and that <http:\/\/rackn.github.io|rackn.github.io> is just where the app part loads from.",
+        "ts": "1510610680.000302"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(had my arrows bass-ackwards - sorry)",
+        "ts": "1510610697.000216"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "exactly - there are some \"content\" Library pieces that rely on the RackN portal service - so you're browser will call out to our Portal for things like Contents, Plugins, etc...",
+        "ts": "1510610742.000069"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Authentication is two-part - your Auth to your DRP Endpoint (that's the simple Auth w\/ the default \"rocketskates\" username)",
+        "ts": "1510610767.000320"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "ohhh.. okay! :slightly_smiling_face:",
+        "ts": "1510610783.000289"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "and then the RackN (optional) Portal account for storing and managing your endpoint(s) information and managing them - and the contents you use across your infrastructure",
+        "ts": "1510610796.000322"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "again - that's Optional - as Endpoint management will work fine without the RackN Portal account - but you lose access to the advanced workflow management pieces w\/out the Portal account",
+        "ts": "1510610830.000070"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "Are you guys collecting data\/metrics\/telemetry based on access to the Portal (even for non-RackN accounts)? I work for Intel so I gotta ask the \"security\" questions! :stuck_out_tongue:",
+        "edited": {
+            "user": "U574XHDJN",
+            "ts": "1510610899.000000"
+        },
+        "ts": "1510610880.000272"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we have some training slide decks that might be interesting for you:\nFeature Landscape: \t\t<https:\/\/goo.gl\/GYtwNS> \nInstallation: \t\t\t        <https:\/\/goo.gl\/BoQG8J> \nConfiguration:  \t\t\t<https:\/\/goo.gl\/BzJzTP>  \nContent Introduction:  \t\t<https:\/\/goo.gl\/LChN6r>  \nUnderstanding Stages:\t\t<https:\/\/goo.gl\/iUjNNJ>",
+        "attachments": [
+            {
+                "service_name": "Google Docs",
+                "title": "DRPv3 Training: Feature Landscape",
+                "title_link": "https:\/\/goo.gl\/GYtwNS",
+                "text": "Digital Rebar Provision: DRPv3 Feature Landscape Compare and contrast the version 2 product from version 3. Design and architecture overview of DRPv3. 1 ver: 1.0 updated: 2017\/10\/11",
+                "fallback": "Google Docs: DRPv3 Training: Feature Landscape",
+                "image_url": "https:\/\/lh6.googleusercontent.com\/SrrDcMtfYryXoM6a4zuGBaSBmtrX1MD2PA7QA3DANblhwRwhsK4c-ZaVRM5Tpf2tCjVSrw",
+                "image_width": 444,
+                "image_height": 250,
+                "from_url": "https:\/\/goo.gl\/GYtwNS",
+                "image_bytes": 35160,
+                "service_icon": "https:\/\/ssl.gstatic.com\/docs\/presentations\/images\/favicon4.ico",
+                "id": 1
+            },
+            {
+                "service_name": "Google Docs",
+                "title": "DRPv3 Training: Installation",
+                "title_link": "https:\/\/goo.gl\/BoQG8J",
+                "text": "Digital Rebar Provision: Installation An introduction to installation. 1 ver: 1.0 updated: 2017\/10\/09",
+                "fallback": "Google Docs: DRPv3 Training: Installation",
+                "image_url": "https:\/\/lh6.googleusercontent.com\/Rp4oF_28hr-qsjHtfDm_hPW98O5kAhvGzFPWIKIZLcahm8rJumwi2Z_x584G2L_iNTFVyw",
+                "image_width": 444,
+                "image_height": 250,
+                "from_url": "https:\/\/goo.gl\/BoQG8J",
+                "image_bytes": 26635,
+                "service_icon": "https:\/\/ssl.gstatic.com\/docs\/presentations\/images\/favicon4.ico",
+                "id": 2
+            },
+            {
+                "service_name": "Google Docs",
+                "title": "DRP Training: Configuration",
+                "title_link": "https:\/\/goo.gl\/BzJzTP",
+                "text": "Digital Rebar Provision: Configuration Lets customize this bad boy ... 1 ver: 1.0 updated: 2017\/10\/09",
+                "fallback": "Google Docs: DRP Training: Configuration",
+                "image_url": "https:\/\/lh3.googleusercontent.com\/w6f9DQbQbv_9Vi44pdNi8Gswm5kwzLs7aSUoYOQVSHKlonMDOjfAAxqWaiS4pNQnmg6kIQ",
+                "image_width": 444,
+                "image_height": 250,
+                "from_url": "https:\/\/goo.gl\/BzJzTP",
+                "image_bytes": 27318,
+                "service_icon": "https:\/\/ssl.gstatic.com\/docs\/presentations\/images\/favicon4.ico",
+                "id": 3
+            },
+            {
+                "service_name": "Google Docs",
+                "title": "DRP Training: Content Introduction",
+                "title_link": "https:\/\/goo.gl\/LChN6r",
+                "text": "Digital Rebar Provision: Content Introduction An introduction to Digital Rebar Provision content components. 1 ver: 1.0 updated: 2017\/10\/09",
+                "fallback": "Google Docs: DRP Training: Content Introduction",
+                "image_url": "https:\/\/lh4.googleusercontent.com\/8cgkkrfSj9mnm-UD4czSGUIb9WzGRvBmkrMnW9ArR5pUWLrEYAzUWnbo00zzjYU5U5wgag",
+                "image_width": 444,
+                "image_height": 250,
+                "from_url": "https:\/\/goo.gl\/LChN6r",
+                "image_bytes": 30720,
+                "service_icon": "https:\/\/ssl.gstatic.com\/docs\/presentations\/images\/favicon4.ico",
+                "id": 4
+            },
+            {
+                "service_name": "Google Docs",
+                "title": "DRP Training: Understanding Stages",
+                "title_link": "https:\/\/goo.gl\/iUjNNJ",
+                "text": "Digital Rebar Provision: Understanding Stages How to effectively use single machine Workflow ... 1 ver: 1.0 updated: 2017\/11\/06",
+                "fallback": "Google Docs: DRP Training: Understanding Stages",
+                "image_url": "https:\/\/lh5.googleusercontent.com\/pNjhY_U_M8Hb9Xe9F31BN0b4KA11J6_YTyzHIVoJgFyEfzu26rDuS1V3hpPsbjVauPsD_A",
+                "image_width": 444,
+                "image_height": 250,
+                "from_url": "https:\/\/goo.gl\/iUjNNJ",
+                "image_bytes": 31017,
+                "service_icon": "https:\/\/ssl.gstatic.com\/docs\/presentations\/images\/favicon4.ico",
+                "id": 5
+            }
+        ],
+        "ts": "1510610919.000315"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "awesome! I'll look all of this over.",
+        "ts": "1510611139.000082"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U574XHDJN> uploaded a file: <https:\/\/rackn.slack.com\/files\/U574XHDJN\/F80N2SYFR\/pasted_image_at_2017_11_13_02_16_pm.png|Pasted image at 2017-11-13, 2:16 PM>",
+        "file": {
+            "id": "F80N2SYFR",
+            "created": 1510611392,
+            "timestamp": 1510611392,
+            "name": "Pasted image at 2017_11_13 02_16 PM.png",
+            "title": "Pasted image at 2017-11-13, 2:16 PM",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U574XHDJN",
+            "editable": false,
+            "size": 12366,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F80N2SYFR\/pasted_image_at_2017_11_13_02_16_pm.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F80N2SYFR\/download\/pasted_image_at_2017_11_13_02_16_pm.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F80N2SYFR-d3423d9096\/pasted_image_at_2017_11_13_02_16_pm_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F80N2SYFR-d3423d9096\/pasted_image_at_2017_11_13_02_16_pm_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F80N2SYFR-d3423d9096\/pasted_image_at_2017_11_13_02_16_pm_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 178,
+            "thumb_360_h": 360,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F80N2SYFR-d3423d9096\/pasted_image_at_2017_11_13_02_16_pm_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 238,
+            "thumb_480_h": 480,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F80N2SYFR-d3423d9096\/pasted_image_at_2017_11_13_02_16_pm_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "image_exif_rotation": 1,
+            "original_w": 294,
+            "original_h": 593,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U574XHDJN\/F80N2SYFR\/pasted_image_at_2017_11_13_02_16_pm.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F80N2SYFR-648b119d4c",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U574XHDJN",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "spencerj",
+        "bot_id": null,
+        "ts": "1510611394.000004"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "not sure if this is a bug.. I was just trying to update the MAC for the reservation but it wont let me.",
+        "ts": "1510611411.000532"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "also... I ran the new install command:\n`curl -s get.rebar.digital\/stable | bash -s -- install --isolated --upgrade=true`\nbut after drpcli still shows v3.0.1",
+        "ts": "1510611579.000466"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "so - you must have an older version binary that's getting started up from a previous install ?",
+        "ts": "1510612216.000134"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "did you do a \"production\" mode install that put a `dr-provision` binary in `\/usr\/local\/bin` ?",
+        "ts": "1510612246.000082"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(and presumably, you're running `drpcli` on the same node as the `dr-provision` binary - the DRP Endpoint) ?",
+        "ts": "1510612287.000478"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "yes, drpcli is on the same node as dr-provision.. checking \/usr\/local\/bin",
+        "ts": "1510612343.000136"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "in _isolated_ install mode - the`dr-provision` binary should be installed as:\n`bin\/linux\/amd64\/dr-provision`",
+        "ts": "1510612361.000227"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if you run that binary w\/ `--version` flag, what does it spit out ?",
+        "ts": "1510612373.000167"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "```root@demo:~$ bin\/linux\/amd64\/dr-provision --version\ndr-provision2017\/11\/13 22:32:05.195814 Version: v3.2.1-0-2ab654478528d1ee59781f7d53bc8f8b9c6853dd```",
+        "ts": "1510612382.000198"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "whoa... I guess I was on this same system back in May!! LOL.. whoops!",
+        "ts": "1510612384.000170"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "drpcli and dr-provision both in \/usr\/local\/bin.. LOL",
+        "ts": "1510612406.000190"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "I guess I'll delete those and start over.",
+        "ts": "1510612415.000191"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yeah - that would be what we call \"production\" install mode",
+        "ts": "1510612421.000037"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I'd recommend wiping (or at least archiving off - if you were previously using them and worried about preserving) the following:\n```\/usr\/local\/bin\/dr-provision\n\/usr\/local\/bin\/drpcli\n\/var\/lib\/dr-provision\/\n\/var\/lib\/tftpboot\/```",
+        "ts": "1510612484.000049"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "those are the defautl paths that v3.0.1 used - so adjust accordingly if you installed in a different location",
+        "ts": "1510612525.000075"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "okay! all cleaned up!",
+        "ts": "1510612556.000106"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "also - there might be an\n```\/etc\/systemd\/system\/dr-provision```\nstart up script that should be checked",
+        "ts": "1510612573.000217"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(or other appropriate init script)",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1510612592.000000"
+        },
+        "ts": "1510612589.000436"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "okay I think I'm back up! :slightly_smiling_face:",
+        "ts": "1510613112.000030"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "```\n  \"version\": \"v3.2.1-0-2ab654478528d1ee59781f7d53bc8f8b9c6853dd\"\n```",
+        "ts": "1510613144.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Yay!  Welcome to the modern Era !",
+        "ts": "1510613156.000297"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "LOL",
+        "ts": "1510613160.000407"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "lol",
+        "ts": "1510613163.000355"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U574XHDJN> uploaded a file: <https:\/\/rackn.slack.com\/files\/U574XHDJN\/F7Z0X1MUG\/pasted_image_at_2017_11_13_02_48_pm.png|Pasted image at 2017-11-13, 2:48 PM>",
+        "file": {
+            "id": "F7Z0X1MUG",
+            "created": 1510613297,
+            "timestamp": 1510613297,
+            "name": "Pasted image at 2017_11_13 02_48 PM.png",
+            "title": "Pasted image at 2017-11-13, 2:48 PM",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U574XHDJN",
+            "editable": false,
+            "size": 45838,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7Z0X1MUG\/pasted_image_at_2017_11_13_02_48_pm.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7Z0X1MUG\/download\/pasted_image_at_2017_11_13_02_48_pm.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7Z0X1MUG-e1b970c8dc\/pasted_image_at_2017_11_13_02_48_pm_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7Z0X1MUG-e1b970c8dc\/pasted_image_at_2017_11_13_02_48_pm_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7Z0X1MUG-e1b970c8dc\/pasted_image_at_2017_11_13_02_48_pm_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 134,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7Z0X1MUG-e1b970c8dc\/pasted_image_at_2017_11_13_02_48_pm_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 178,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7Z0X1MUG-e1b970c8dc\/pasted_image_at_2017_11_13_02_48_pm_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "image_exif_rotation": 1,
+            "original_w": 581,
+            "original_h": 216,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U574XHDJN\/F7Z0X1MUG\/pasted_image_at_2017_11_13_02_48_pm.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F7Z0X1MUG-b612bac71c",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U574XHDJN",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "spencerj",
+        "bot_id": null,
+        "ts": "1510613299.000219"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "booting to sledgehammer but it looks like it's bombing out.",
+        "ts": "1510613323.000026"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Make sure that your static-ip is not set (and if its not, you may need to specify it).",
+        "ts": "1510613350.000199"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It appears that it is use the static-ip fall back",
+        "ts": "1510613378.000083"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "wasn't your DRP endpoint 10.0.0.10 ?",
+        "ts": "1510613379.000209"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "LOL.. yeah it's not set, or at least I didn't specify one for the initial dr-provision command.",
+        "ts": "1510613386.000328"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "192.168.124.11 is our default thing",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1510613408.000000"
+        },
+        "ts": "1510613404.000174"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "the DRP host has 2 NICs.. one routeable and one private.",
+        "ts": "1510613409.000180"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "`ps -ef | grep dr-provision | grep -v grep` (plz)",
+        "ts": "1510613418.000212"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "I only want to listen on the private interface. but I want to access UX on routable.",
+        "ts": "1510613436.000045"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the DRP Endpoint doesn't need access to public internet\/RackN Portal for UX",
+        "ts": "1510613461.000154"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you just have to be able to reach the DRP Endpoint from your laptop\/desktop\/whatever",
+        "ts": "1510613474.000355"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "```\nroot      15445  13994  3 15:38 pts\/0    00:00:27 .\/dr-provision --base-root=\/root\/dr-test\/drp-data --local-content= --default-content=\n```",
+        "ts": "1510613476.000304"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "so, we try and guess, but somethings we get it wrong.  The `static-ip` is the fallback if we can’t guess the outbound interface.",
+        "ts": "1510613531.000333"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Sooo - `--static-ip=10.0.0.10`",
+        "ts": "1510613546.000400"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "oh okay!",
+        "ts": "1510613546.000410"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "got it!",
+        "ts": "1510613557.000427"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We may want to re-evaluate that code.  It seems like it may not be working correctly.",
+        "ts": "1510613635.000499"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "so to be clear.. the static-ip should be the interface targeted for DHCP\/PXE traffic?",
+        "ts": "1510613657.000299"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yep",
+        "ts": "1510613663.000368"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "okay cool!",
+        "ts": "1510613667.000197"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U574XHDJN> we collect the \"drpcli info get\" information about endpoints that connect to the UX.  That's what we use to determine the features that can be enabled and if there are any version warnings.",
+        "ts": "1510614011.000253"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "oh okay cool!",
+        "ts": "1510614028.000147"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "we don't store any passwords, content or other data about the endpoint.",
+        "ts": "1510614049.000124"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "sweet thanks!",
+        "ts": "1510614064.000240"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "so now that I'm running the latest stuff on 3.2. Is there a way to see the info that sledgehammer collected? does it collect \"facts\" like ansible?",
+        "ts": "1510614108.000119"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "`drpcli machines list`",
+        "ts": "1510614133.000253"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "or, get a list of Machine names:\n`drpcli machines list | jq '.[].Name'`\n`\"snoopy\"`\nand then show a specific machine:\n`drpcli machines show snoopy`",
+        "ts": "1510614193.000240"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the Machines menu entry in the UX also shows the inventory information",
+        "ts": "1510614216.000079"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "to dump *just* the inventory for a given machine:\n`drpcli machines list | jq -r '.[] | \"\\(.Name)  \\(.Uuid)\"'`\n`snoopy  80b86604-be25-4f27-ba0b-f8382db42b96`\nthen use the UUID to get the inventory for the given machine:\n`drpcli machines get 80b86604-be25-4f27-ba0b-f8382db42b96 param gohai-inventory`",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1510614499.000000"
+        },
+        "ts": "1510614478.000056"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U574XHDJN> RE inventory... there are params on the machine AND params from the profiles that are on the machine (including global by default).  So the \"inventory\" per machine merges both together when it expands params in templates",
+        "ts": "1510614595.000028"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "awesome thanks!",
+        "ts": "1510615114.000027"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "now who can tell me about the RAID\/BIOS capabilities? what does this mean? can DRP automate RAID configuration?",
+        "ts": "1510615181.000249"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "specifically I'm asking about HW raid controllers like LSI.",
+        "ts": "1510615218.000257"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yes - we can, however - it's not yet 100% baked - <@U02DJQSG8> has been working on the RAID capabilities - porting the MegaRAID tools (which support LSI controllers) from our older DRv2 product to our current DRPv3",
+        "ts": "1510615317.000120"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "okay awesome!",
+        "ts": "1510615335.000254"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "same story - but I believe the porting is a lot further behind ... for BIOS\/Firmware capabilities",
+        "ts": "1510615351.000150"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "note that RAID\/BIOS stuff are \"premium\" features that are paid content pieces w\/ RackN - not part of the OpenSource provisioning pieces",
+        "ts": "1510615379.000246"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "okay cool! and yeah.. I saw that on the RackN pricing page. so what exactly do we get for the \"$1 per server per month\" ? obviously not the RAID\/BIOS stuff, but what are the main added features with the paid plan?",
+        "ts": "1510615441.000120"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "I think you, or someone mentioned \"Control Workflow\" earlier? is that not included with DRP?",
+        "ts": "1510615490.000013"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "that base is for RackN support of the open source.",
+        "ts": "1510615590.000195"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "the control workflow was moved into the open source for v3.2",
+        "ts": "1510615604.000261"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "OH.. SWEET!",
+        "ts": "1510615676.000049"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "you are right, RAID\/BIOS, metal IPMI, direct to disk imaging, licensed O\/Ses, etc are ala cart pricing",
+        "ts": "1510615734.000200"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "okay cool! thank you!",
+        "ts": "1510615793.000205"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "and thank you to everyone who's chimed in today! SUPER helpful!",
+        "ts": "1510615813.000140"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "no problem !  let us know if you run into any other issues ...",
+        "ts": "1510616478.000087"
+    }
+]

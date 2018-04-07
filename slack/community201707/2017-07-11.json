@@ -1,0 +1,218 @@
+[
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "Is the RackN team know about gns3 <http:\/\/gns3.com> ? what I'm attempting now is to create a network training platform so that the dev and ops team can re-use infrastructure AND the OpenDaylight controller",
+        "ts": "1499805413.395095"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I’m not aware of it.",
+        "ts": "1499805567.474586"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I'm almost thinking I could create components for each of the RackN docker containers and put them into a gns3 appliance template...  the idea would be netops folks would be able to grok dev parts (new docker) while dev folks can better utilize all the cool dr inventory manangement",
+        "ts": "1499805696.542179"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "maybe - not sure.",
+        "ts": "1499805814.603349"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "When I was attempting to educate both dev and ops on why\/how we should clean up the subnets, I started to build up the network model in gns3 so I could let them inspect the network traffic with wireshark.... the newer gns3 server is doing about the same thing (arch wise) as you were doing (making all services in containers)...",
+        "ts": "1499805982.689012"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - I’d need to look at it and see.",
+        "ts": "1499806073.736045"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "anyway... If I get something useable I'll link it here...  I'll attempt it, just when I dug into it's V2.0.x release it fits very well with your containers...",
+        "ts": "1499806139.771503"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I think this is where I get hung up with dr install...  based on:",
+        "ts": "1499809921.491065"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "curl -fsSL <https:\/\/raw.githubusercontent.com\/digitalrebar\/digitalrebar\/master\/deploy\/quickstart.sh> | bash -s -- --con-provisioner --con-dhcp --admin-ip=1.1.2.3\/24",
+        "ts": "1499809925.492694"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "from the github quickstart...",
+        "ts": "1499809938.498002"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "should I first set a static IP on the 'clean' ubuntu that ONLY has the one route to gateway then use that static as the admin-ip ?",
+        "ts": "1499810012.526583"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "in reality I am putting this in a nested vm using vmare with an ubuntu that runs qemu and docker... which I'll attempt later to see if I can package your docker images into that... but for now, I am launching a vmware vm (ubuntu) to just run dr but let the gns3 manage the network (it is running the pfsense router withing a virtual network which can be nat'd out to internet",
+        "ts": "1499810207.602735"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "Just as RackN has a way to bring up qemu pxe clients, gns3 does the same thing but for cisco and other router os's",
+        "ts": "1499810317.645567"
+    },
+    {
+        "text": " OH.. that confused me abit... the 'Rob' bridge echo",
+        "username": "ctrees",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1499810422.686771"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "admin-ip is what DR is going to advertise as itself when nodes try and talk aback to it.",
+        "ts": "1499811870.185911"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Nodes should be able to talk to DR through that IP.",
+        "ts": "1499811883.189818"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "so it's has to hear broadcast traffic....",
+        "ts": "1499811915.200008"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "well - that is the DHCP aspect.  It doesn’t if you have helpers that can direct to that IP.  DHCP is a little different because of its L2 specific nature.",
+        "ts": "1499811948.210299"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "DHCP server will do the “right” thing with regard to picking interfaces and IPs to respond within the DHCP protocol.  The challenge is in the provisioner and beyond and that is controlled by the admin-ip.",
+        "ts": "1499811993.224132"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "which was where I think I got caught before, as I had multiple IP's and I couldn't figure out how it was listening or where in the scripts the route tables were added...",
+        "ts": "1499811994.224490"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "what I should go do is figure out why\/how the forwarder service works... that'll probably explain it ??",
+        "ts": "1499812067.247632"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "ugh - the bane.  We have a pull request that we haven’t finished to remove FORWARDER.  I’m not overly fond of it for general use.",
+        "ts": "1499812105.259473"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "as my guess ?? is the forwarder is how you deal with virtual routes internally... ?",
+        "ts": "1499812111.261584"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "FORWARDER mode was mostly so we could run a system on a system without having to kill dnsmasq.",
+        "ts": "1499812139.270271"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "In general, it causes more pain than good.",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1499812157.000000"
+        },
+        "ts": "1499812152.274310"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "not going to use it, but that sort of 'inception' thing is basically the onlything I get tripped up on...",
+        "ts": "1499812182.283549"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I tend to do HOST for just about everything.  FORWARDER only really works (you make force it) for linux boxes running isolated kvms that are also attached to the docker bridge.",
+        "ts": "1499812210.292485"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Or bridging whole nics onto the docker bridge.",
+        "ts": "1499812229.298637"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I'm hoping to setup 'real router' os simulations that then hook into the newer SDN stuff...",
+        "ts": "1499812231.299396"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "OH... so what's the 'do all' command line for HOST ? just leave off the admin-ip command ?",
+        "ts": "1499812284.315960"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The model I’ve been preferring is that you shouldn’t really think of DR as a collection of services running in docker, but a single system that provides some endpoints.   HOST mode does this view better.",
+        "ts": "1499812354.337207"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": ".... never-mind... I need to just figure it out... and your scripts have it all when I dig... your just way to 'flexable' :wink:",
+        "ts": "1499812356.337820"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "OK... so if I do a VM (clean install of ubuntu) which do-it-all script should I run and how should I bring up test pxe (in quem or other vms)",
+        "ts": "1499812438.362809"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "Oh... the github quick dangerous was hostmode... so I'm good",
+        "ts": "1499812518.387070"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes",
+        "ts": "1499812533.391410"
+    }
+]

@@ -1,0 +1,682 @@
+[
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah it is fixed on load.  As the machines get saved.  They will change over time. ",
+        "ts": "1516976085.000005"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U54E4SD4G> ",
+        "ts": "1516976092.000029"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "kk",
+        "ts": "1516976373.000376"
+    },
+    {
+        "type": "message",
+        "user": "U8YJ0FW9Y",
+        "text": "Hey guys, why machines are indexed by random UUID and not by system UUID (Like the one inside goahi-inventory)?",
+        "edited": {
+            "user": "U8YJ0FW9Y",
+            "ts": "1516985509.000000"
+        },
+        "ts": "1516985506.000398"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "not every operating system or hardware vendor provides a reliable UUID to use",
+        "ts": "1516985558.000634"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we need to insure consistency across all hardware and operating system platforms",
+        "ts": "1516985571.000430"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "gohai inventory is showing you the hardware\/bios generated system UUID",
+        "ts": "1516985607.000816"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the Digital Rebar Provision ID is guaranteed to be unique across all hardware\/OS types we come across",
+        "ts": "1516985628.000075"
+    },
+    {
+        "type": "message",
+        "user": "U8YJ0FW9Y",
+        "text": "I see, thanks for the explanation :+1:",
+        "ts": "1516985665.000116"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "no problem",
+        "ts": "1516985672.000639"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ya, I have seen cases where the system UUID is all zeros, or some crazy stuff like 1234-56-7-8901234, or \"ToBe Filled In by O.E.M\",  among other things.",
+        "ts": "1516986223.000442"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "So for now we just don't rely on it.",
+        "ts": "1516986245.000654"
+    },
+    {
+        "type": "message",
+        "user": "U8YJ0FW9Y",
+        "text": "Guys, don’t hate me but I’m getting a panic error, what information is needed for opening an issue besides the log itself? (It’s inside TFTP server)",
+        "ts": "1516986734.000131"
+    },
+    {
+        "type": "message",
+        "user": "U8YJ0FW9Y",
+        "text": "Mmm, might be fixed by <@U02DJQSG8> here <https:\/\/github.com\/digitalrebar\/provision\/pull\/662>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "Fix up panic reporting for when an item is not renderable by VictorLowther · Pull Request #662 · digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/pull\/662",
+                "text": "Digital Rebar Provision is a simple but powerful Golang executable that provides a complete API-driven DHCP\/PXE\/TFTP provisioning system.",
+                "fallback": "GitHub: Fix up panic reporting for when an item is not renderable by VictorLowther · Pull Request #662 · digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/pull\/662",
+                "thumb_url": "https:\/\/avatars2.githubusercontent.com\/u\/770578?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1516987176.000225"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "No, that will just make the panic contain the information I need to debug it. :grinning:",
+        "client_msg_id": "788e7ed3-749b-4d47-ba22-9cba9122ba2c",
+        "ts": "1516987237.000493"
+    },
+    {
+        "type": "message",
+        "user": "U8YJ0FW9Y",
+        "text": "Ah :slightly_smiling_face:",
+        "ts": "1516987273.000120"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "So if you are getting that panic after updating to the latest tip, pm me the panic message.",
+        "client_msg_id": "469e0f0f-da87-46e8-a703-23df265b3a27",
+        "ts": "1516987302.000225"
+    },
+    {
+        "type": "message",
+        "user": "U8YJ0FW9Y",
+        "text": "Awesome, thanks",
+        "ts": "1516987319.000661"
+    },
+    {
+        "type": "message",
+        "user": "U8YJ0FW9Y",
+        "text": "First I have to check how to update to master",
+        "ts": "1516987326.000511"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U8YJ0FW9Y> we don't cut compiled releases against `master` - we have `tip` which sits _slightly_ behind master - we do release compiled versions for `tip`.   Once we've done basic sanity checking and minimal testing - we set the Build system to point `tip` at a specific commit.",
+        "ts": "1516989179.000592"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "So ... until the Issue 662 is included in `tip` - you can't get binaries from us",
+        "ts": "1516989212.000055"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "...you can... if you are so enterprising enough ... compile your own binaries from `master` yourself",
+        "ts": "1516989236.000340"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "a very brief \"Developer QuickStart\" document exists:\n<http:\/\/provision.readthedocs.io\/en\/latest\/doc\/dev\/dev-server.html#developer-quick-start>",
+        "ts": "1516989289.000025"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(you need to have Go 1.9.0 or newer setup and working first, etc... )",
+        "ts": "1516989319.000704"
+    },
+    {
+        "type": "message",
+        "user": "U8YJ0FW9Y",
+        "text": "Awesome, thanks :+1:",
+        "ts": "1516989327.000791"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Tip should have that PR now, BTW.",
+        "ts": "1516991409.000641"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<@U8YJ0FW9Y> Did that help?",
+        "ts": "1516992075.000218"
+    },
+    {
+        "type": "message",
+        "user": "U8YJ0FW9Y",
+        "text": "Still setting up everything again",
+        "ts": "1516992325.000134"
+    },
+    {
+        "type": "message",
+        "user": "U8YJ0FW9Y",
+        "text": "Ok, it crashed again. Should I reach you over PM?",
+        "ts": "1516992466.000259"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "PM me the stack trace.",
+        "ts": "1516993296.000620"
+    },
+    {
+        "type": "message",
+        "user": "U8NV2GC21",
+        "text": "<@U02DJQSG8> pixiecore works on my hardware, but I'm trying to avoid writing the workflow stuff myself and would rather use dr-provision. I'll work on getting some packet traces together using both dr-provision and pixiecore later today",
+        "ts": "1516993339.000417"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Cool. tcpdump in as much detail as you can, raw DHCP packets if you can get them would be appreciated.",
+        "ts": "1516993393.000244"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "The current tip is known to work on Dell T320 and R720 gear, and one of our customers has reported that recent HP and Supermicro gear works as well.",
+        "ts": "1516993490.000291"
+    },
+    {
+        "text": "Time to feed the :bear:!",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1516993490.000422"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DHRR2L> Having a problem with the UX's \"Org. Name &amp; Endpoints\" screen; trying to remove a duplicate endpoint (I have two that are the same system for some reason) and when I click the Remove button on the one I want deleted, and then click the bottommost Save button, nothing happens...",
+        "ts": "1516997088.000237"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "(i.e. I can't delete the endpoint)",
+        "ts": "1516997104.000184"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Tried with Safari 11.0.3, and Chrome 64.0.3282.x",
+        "ts": "1516997149.000087"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Another UX issue...",
+        "ts": "1516997562.000333"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "When I log into my newly-upgraded DRP 3.6 system, I see the upgrade notif's as so:",
+        "ts": "1516997593.000486"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F8YTDD14Z\/drp_3.6_upgrade-notifs.png|drp_3.6_upgrade-notifs.png>",
+        "file": {
+            "id": "F8YTDD14Z",
+            "created": 1516997607,
+            "timestamp": 1516997607,
+            "name": "drp_3.6_upgrade-notifs.png",
+            "title": "drp_3.6_upgrade-notifs.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 42394,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8YTDD14Z\/drp_3.6_upgrade-notifs.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8YTDD14Z\/download\/drp_3.6_upgrade-notifs.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8YTDD14Z-4b944ea889\/drp_3.6_upgrade-notifs_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8YTDD14Z-4b944ea889\/drp_3.6_upgrade-notifs_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8YTDD14Z-4b944ea889\/drp_3.6_upgrade-notifs_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 350,
+            "thumb_360_h": 313,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8YTDD14Z-4b944ea889\/drp_3.6_upgrade-notifs_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "image_exif_rotation": 1,
+            "original_w": 350,
+            "original_h": 313,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F8YTDD14Z\/drp_3.6_upgrade-notifs.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F8YTDD14Z-893a10ca2e",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1516997608.000058"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "But when I go to \"Content\" to upgrade them, the \"Update\" buttons are not available...",
+        "ts": "1516997642.000205"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F8ZHLM01K\/drp_3.6_content_screen.png|drp_3.6_content_screen.png>",
+        "file": {
+            "id": "F8ZHLM01K",
+            "created": 1516997653,
+            "timestamp": 1516997653,
+            "name": "drp_3.6_content_screen.png",
+            "title": "drp_3.6_content_screen.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 95031,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8ZHLM01K\/drp_3.6_content_screen.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8ZHLM01K\/download\/drp_3.6_content_screen.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8ZHLM01K-7957be417a\/drp_3.6_content_screen_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8ZHLM01K-7957be417a\/drp_3.6_content_screen_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8ZHLM01K-7957be417a\/drp_3.6_content_screen_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 352,
+            "thumb_360_h": 360,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8ZHLM01K-7957be417a\/drp_3.6_content_screen_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 470,
+            "thumb_480_h": 480,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8ZHLM01K-7957be417a\/drp_3.6_content_screen_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8ZHLM01K-7957be417a\/drp_3.6_content_screen_720.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 705,
+            "thumb_720_h": 720,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8ZHLM01K-7957be417a\/drp_3.6_content_screen_800.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 817,
+            "image_exif_rotation": 1,
+            "original_w": 830,
+            "original_h": 848,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F8ZHLM01K\/drp_3.6_content_screen.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F8ZHLM01K-f1f3a77a40",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1516997655.000366"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "Checking.... <@U416T0AAX> ",
+        "client_msg_id": "e1aca435-e396-4e29-9a28-77950afe2aa6",
+        "ts": "1516997758.000522"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U416T0AAX> for the endpoint delete thing... you had a very early account with the old naming convention.  should be fixed now",
+        "ts": "1516998055.000110"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Oh, OK - I was trying to get rid of the 1st one...",
+        "ts": "1516998080.000531"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U6QFVRJNB> What is the new param I can use in a profile to specify a custom preseed template?",
+        "ts": "1516998231.000345"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Not seeing anything when I drop the \"Choose undefined...\" box",
+        "ts": "1516998269.000007"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Check the params in the UX.  I think it is kickseed or something ilke that",
+        "ts": "1516998270.000002"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DGQYK1> Does that come in with the newer `drp-community-content` that I can't seem to be able to update to?",
+        "ts": "1516998356.000085"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes - it is part of the community content update.",
+        "ts": "1516998379.000241"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, that's why...",
+        "ts": "1516998431.000323"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Is there a way to update the content via `drpcli`?",
+        "ts": "1516998457.000322"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Is it `drpcli contents update [id] [json] [flags]`? If so, how to get remote content?",
+        "ts": "1516998563.000373"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U416T0AAX> I've duplicated the content screen issue - looking at the problem",
+        "edited": {
+            "user": "U02DHRR2L",
+            "ts": "1516998859.000000"
+        },
+        "ts": "1516998851.000225"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DHRR2L> Thx",
+        "ts": "1516999560.000074"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "FWIW - this issue exposes that we can detect both minor (intra version) and major (extra version) changes.  In this case, the content page says that no patches (intra) are needed and is overlooking the upgrade.",
+        "ts": "1516999653.000225"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DHRR2L> But in this case, that's wrong, correct? There is a major update...",
+        "ts": "1516999743.000336"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "yes.  working to add buttons for both cases",
+        "ts": "1516999760.000170"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Also, verified that the endpoint save is working - renamed the one endpoint I had left, and it did save. However, no feedback when the \"Save\" button is clicked - could that be added somehow?",
+        "ts": "1516999808.000085"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U416T0AAX> - the Param you're looking for is indeed `kickseed` - it can be used interchangeably for Kickstart definitions or Preseed (hence it's munged name)",
+        "ts": "1516999816.000521"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U6QFVRJNB> thx, can't wait to use it!",
+        "ts": "1516999837.000414"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it's also documented in the FAQ page:\n<http:\/\/provision.readthedocs.io\/en\/latest\/doc\/faq-troubleshooting.html#custom-kickstart-and-preseeds>",
+        "ts": "1516999856.000138"
+    },
+    {
+        "text": "FAQs are here &gt; <http:\/\/provision.readthedocs.io\/en\/latest\/doc\/faq-troubleshooting.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1516999856.000226"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "(Actually, I do have a system to install, so hope I don't have to wait too long :wink: )",
+        "ts": "1516999890.000255"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(and, I know about the spelling error in the note box ... )",
+        "ts": "1516999894.000294"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Nice -- added `jq` usage examples! That's great",
+        "ts": "1516999966.000353"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U6QFVRJNB> one other thing -- I think it is now possible to \"nest\" templates, for instance a disk-partitioning template in the bigger kickseed template... Is that documented somewhere?",
+        "ts": "1517000061.000452"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I think <@U54E4SD4G> pioneered that...",
+        "ts": "1517000078.000093"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "there is a constant stream of updates in the background, to the Latest doc :slightly_smiling_face:",
+        "ts": "1517000130.000660"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I'm not sure if that's added to Doc yet - there were significant changes to the Architecture (data) docs - <@U02DJQSG8> worked up a lot of new info there",
+        "ts": "1517000156.000512"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "all of this stuff got a lot of updates:\n<http:\/\/provision.readthedocs.io\/en\/latest\/doc\/arch.html>",
+        "ts": "1517000183.000287"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U416T0AAX> I think this might be it? \n`{{template \"something.tmpl\" .}}`\nWill call another template named `something.tmpl` and expand it inline",
+        "ts": "1517000464.000665"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "that's the golang template pattern you'd use",
+        "ts": "1517000476.000044"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, cool",
+        "ts": "1517000654.000072"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes - template or .CallTemplate can be nested.",
+        "ts": "1517000851.000321"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I actually see this in the custom seed template I made some time ago:",
+        "ts": "1517001033.000231"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F8YUBF3G9\/partition_scheme_var.go|partition scheme var>",
+        "file": {
+            "id": "F8YUBF3G9",
+            "created": 1517001062,
+            "timestamp": 1517001062,
+            "name": "partition_scheme_var.go",
+            "title": "partition scheme var",
+            "mimetype": "text\/plain",
+            "filetype": "go",
+            "pretty_type": "Go",
+            "user": "U416T0AAX",
+            "editable": true,
+            "size": 248,
+            "mode": "snippet",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8YUBF3G9\/partition_scheme_var.go?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8YUBF3G9\/download\/partition_scheme_var.go?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F8YUBF3G9\/partition_scheme_var.go",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F8YUBF3G9-853195d79b",
+            "edit_link": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F8YUBF3G9\/partition_scheme_var.go\/edit",
+            "preview": "  #Partitioning Scheme\r\n  {{if .ParamExists \"part-scheme\" -}}\r\n  {{$templateName := (printf \"part-seed-%s.tmpl\" (.Param \"part-scheme\")) -}}\r\n  {{.CallTemplate $templateName .}}\r\n  {{else -}}\r",
+            "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>  <span class=\"cm-comment\">#Partitioning Scheme<\/span><\/pre><\/div>\n<div><pre>  {{<span class=\"cm-keyword\">if<\/span> <span class=\"cm-operator\">.<\/span><span class=\"cm-meta\">ParamExists<\/span> <span class=\"cm-string\">&quot;part-scheme&quot;<\/span> <span class=\"cm-operator\">-<\/span>}}<\/pre><\/div>\n<div><pre>  {{<span class=\"cm-variable\">$templateName<\/span> :<span class=\"cm-operator\">=<\/span> (<span class=\"cm-keyword\">printf<\/span> <span class=\"cm-string\">&quot;part-seed-%s.tmpl&quot;<\/span> (<span class=\"cm-operator\">.<\/span><span class=\"cm-meta\">Param<\/span> <span class=\"cm-string\">&quot;part-scheme&quot;<\/span>)) <span class=\"cm-operator\">-<\/span>}}<\/pre><\/div>\n<div><pre>  {{<span class=\"cm-operator\">.<\/span><span class=\"cm-meta\">CallTemplate<\/span> <span class=\"cm-variable\">$templateName<\/span> <span class=\"cm-operator\">.<\/span>}}<\/pre><\/div>\n<div><pre>  {{<span class=\"cm-keyword\">else<\/span> <span class=\"cm-operator\">-<\/span>}}<\/pre><\/div>\n<\/div>\n<\/div>\n",
+            "lines": 7,
+            "lines_more": 2,
+            "preview_is_truncated": false,
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1517001062.000700"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DGQYK1> That's what you are talking about?",
+        "ts": "1517001653.000182"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes",
+        "ts": "1517001757.000251"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "`template` only takes a hard coded string.  golang text template definition.",
+        "ts": "1517001782.000703"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "`.CallTemplate` takes something is a string.  So, it can be a parameter or expression that evaluates into a string.",
+        "ts": "1517001808.000203"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Looks like the param is actually named `select-kickseed` - I can see it in the params list when I \"preview\" the updated Community Content",
+        "attachments": [
+            {
+                "fallback": "[January 26th, 2018 3:50 PM] shane: <@U416T0AAX> - the Param you're looking for is indeed `kickseed` - it can be used interchangeably for Kickstart definitions or Preseed (hence it's munged name)",
+                "ts": "1516999816.000521",
+                "author_id": "U6QFVRJNB",
+                "author_subname": "Shane Gibson",
+                "channel_id": "C02L9P26Q",
+                "channel_name": "community",
+                "is_msg_unfurl": true,
+                "text": "<@U416T0AAX> - the Param you're looking for is indeed `kickseed` - it can be used interchangeably for Kickstart definitions or Preseed (hence it's munged name)",
+                "author_name": "Shane Gibson",
+                "author_link": "https:\/\/rackn.slack.com\/team\/U6QFVRJNB",
+                "author_icon": "https:\/\/avatars.slack-edge.com\/2017-09-18\/243018470675_611b6896ed20358ab1aa_48.jpg",
+                "mrkdwn_in": [
+                    "text"
+                ],
+                "color": "D0D0D0",
+                "from_url": "https:\/\/rackn.slack.com\/archives\/C02L9P26Q\/p1516999816000521",
+                "is_share": true,
+                "footer": "Posted in #community"
+            }
+        ],
+        "ts": "1517020207.000201"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So close, yet so far away...",
+        "ts": "1517020263.000118"
+    }
+]

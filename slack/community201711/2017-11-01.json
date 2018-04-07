@@ -1,0 +1,1113 @@
+[
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "Still getting: \nContent Upload Failed: ValidationError\nNew layer violates key restrictions: keysCannotBeOverridden: runner.tmpl is already in layer 1 keysCannotBeOverridden: access-keys.sh.tmpl is already in layer 1 keysCannotBeOverridden: change-stage.sh.tmpl is already in layer 1",
+        "ts": "1509539956.000148"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "when attempting to add os-discovery Content Package",
+        "ts": "1509540074.000076"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "catmini:CodeOps cat$ .\/dr-provision --version\ndr-provision2017\/11\/01 12:39:56.773713 Version: v3.1.0-tip-191-7fa9a4ded571250028c61003687bd672d386910d",
+        "ts": "1509540077.000081"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<!channel> If anyone is going to (or already at) LISA’17 in San Fran, @ me and let’s meet up",
+        "ts": "1509543015.000516"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Be there this afternoon, leaving Fri AM",
+        "ts": "1509543039.000410"
+    },
+    {
+        "type": "message",
+        "user": "U32PZNCP5",
+        "text": "<@U416T0AAX> <@U6QFVRJNB> I think Shane was going to try and stop by but I think it is doing a 2nd event as well.",
+        "ts": "1509546558.000518"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U54E4SD4G> - let’s work through your remaining issue and button things up.  Something like this local-security-repo true\/false.  If true don’t add the security repo lines.  If false or not present, put the security line in place?",
+        "ts": "1509547098.000671"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "<@U02DGQYK1> I would be if we had that change since all of my other needed changes are in community content now",
+        "ts": "1509549783.000308"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "hm",
+        "ts": "1509549814.000329"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - the question is: is what I described sufficient?",
+        "ts": "1509549821.000735"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "yeah, I think so",
+        "ts": "1509549827.000233"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay pushed something - testing now",
+        "ts": "1509550243.000557"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That worked.",
+        "ts": "1509551403.000411"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U54E4SD4G> - review the last comment when you can.",
+        "ts": "1509551420.000652"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U416T0AAX> <!channel> - I'll be at LISA today - around Noon through the rest of the day if anyone cares to meet and discuss DRP ...etc... :slightly_smiling_face:",
+        "ts": "1509552686.000339"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "<@U02DGQYK1> ah sorry, I think I misunderstood and thought you meant the same way you implemented usage of the `local-repo` variable (because of the `if eq (.Param \"local-repo\") true` line). I want to be able to set `local-security-repo` to a local mirror of a security repository, if possible",
+        "ts": "1509554440.000499"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "I'm still waking up apparently",
+        "ts": "1509554469.000209"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "So a string",
+        "ts": "1509554602.000667"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - I think I get it now.",
+        "ts": "1509554773.000425"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "mhm",
+        "ts": "1509554937.000826"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "like this:\n```\n{{if .ParamExists \"local-security-repo\" -}}\nd-i apt-setup\/security_host string {{.ParseUrl \"host\" (.Param \"local-security-repo\")}}\nd-i apt-setup\/security_path string {{.ParseUrl \"path\" (.Param \"local-security-repo\")}}\n{{else -}}\n{{if (eq \"debian\" .Env.OS.Family) -}}\nd-i apt-setup\/security_host string <http:\/\/security.debian.org|security.debian.org>\n{{else -}}\nd-i apt-setup\/security_host string <http:\/\/archive.ubuntu.com|archive.ubuntu.com>\nd-i apt-setup\/security_path string \/ubuntu\n{{end -}}\n{{end -}}\n```",
+        "ts": "1509554954.000078"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "does security_path error on debian or will it just ignore it?",
+        "ts": "1509555365.000292"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "So does anyone know why I can't load a content package (even when I've log into the rackn beta)",
+        "ts": "1509555660.000265"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "not sure - but can preface it",
+        "ts": "1509555660.000819"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah - sorry - I forgot <@U62R1805P>.",
+        "ts": "1509555676.000181"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Can you send me:",
+        "ts": "1509555682.000441"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "```drpcli contents list | jq .[].Name```",
+        "ts": "1509555692.000406"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U54E4SD4G> ```\n{{if .ParamExists \"local-security-repo\" -}}\n{{if (eq \"debian\" .Env.OS.Family) -}}\nd-i apt-setup\/security_host string {{.ParseUrl \"host\" (.Param \"local-security-repo\")}}\n{{else -}}\nd-i apt-setup\/security_host string {{.ParseUrl \"host\" (.Param \"local-security-repo\")}}\nd-i apt-setup\/security_path string {{.ParseUrl \"path\" (.Param \"local-security-repo\")}}\n{{end -}}\n{{else -}}\n{{if (eq \"debian\" .Env.OS.Family) -}}\nd-i apt-setup\/security_host string <http:\/\/security.debian.org|security.debian.org>\n{{else -}}\nd-i apt-setup\/security_host string <http:\/\/archive.ubuntu.com|archive.ubuntu.com>\nd-i apt-setup\/security_path string \/ubuntu\n{{end -}}\n{{end -}}```",
+        "ts": "1509555723.000536"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "catmini:CodeOps cat$ .\/drpcli contents list | jq .[].Name\nnull\nnull\nnull\ncatmini:CodeOps cat$",
+        "ts": "1509555756.000273"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "oops",
+        "ts": "1509555766.000208"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "```drpcli contents list | jq .[].meta.Name```",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1509555803.000000"
+        },
+        "ts": "1509555787.000484"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "catmini:CodeOps cat$ .\/drpcli contents list | jq .[].meta.Name\n\"BackingStore\"\n\"drp-community-content\"\n\"BasicStore\"\ncatmini:CodeOps cat$",
+        "ts": "1509555823.000353"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U62R1805P> you are trying to update the content with the update button?",
+        "ts": "1509555847.000209"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I did try that...",
+        "ts": "1509555857.000498"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Just wanting to make sure where the error is coming from",
+        "ts": "1509555869.000507"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "<@U02DGQYK1> might want to use the Param as-is for debian, since it supports a string with a path",
+        "ts": "1509555888.000323"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "so no ParseUrl",
+        "ts": "1509555902.000743"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - From the UX while logged in to both saas and DRP <@U62R1805P>",
+        "ts": "1509555919.000110"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "remove the `drp-community-content`",
+        "ts": "1509555936.000243"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "then add it back.",
+        "ts": "1509555957.000303"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "ok..",
+        "ts": "1509555963.000002"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "Ok... removed, Added back, then attempted to add os-discovery and got the Content Upload Failed: ValidationError",
+        "ts": "1509556076.000233"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "Content Upload Failed: ValidationError\nNew layer violates key restrictions: keysCannotBeOverridden: change-stage\/map is already in layer 1 keysCannotBeOverridden: gohai-inventory is already in layer 1 keysCannotBeOverridden: kernel-console is already in layer 1 keysCannotBeOverridden: access-keys is already in layer 1 keysCannotBeOverridden: access-ssh-root-mode is already in layer 1",
+        "ts": "1509556155.000720"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "[GIN] 2017\/11\/01 - 12:08:37 | 200 |      28.719µs |   192.168.1.200 | OPTIONS  \/api\/v3\/contents\n[GIN] 2017\/11\/01 - 12:08:37 | 200 |    1.343583ms |   192.168.1.200 | GET      \/api\/v3\/contents\n[GIN] 2017\/11\/01 - 12:08:48 | 200 |      12.763µs |   192.168.1.200 | OPTIONS  \/api\/v3\/contents?version=tip\n[GIN] 2017\/11\/01 - 12:08:49 | 422 |  173.273486ms |   192.168.1.200 | POST     \/api\/v3\/contents?version=tip",
+        "ts": "1509556231.000350"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "can you send me: ```drpcli stages list | jq .[].Name```",
+        "ts": "1509556392.000182"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U54E4SD4G> - ```{{if .ParamExists \"local-security-repo\" -}}\n{{if (eq \"debian\" .Env.OS.Family) -}}\nd-i apt-setup\/security_host string {{.Param \"local-security-repo\"}}\n{{else -}}\nd-i apt-setup\/security_host string {{.ParseUrl \"host\" (.Param \"local-security-repo\")}}\nd-i apt-setup\/security_path string {{.ParseUrl \"path\" (.Param \"local-security-repo\")}}\n{{end -}}\n{{else -}}\n{{if .ParamExists \"local-repo\" -}}\n{{if eq (.Param \"local-repo\") true -}}\n# Use local-repo and !local-security-repo - no security to specify\n{{else -}}\n{{if (eq \"debian\" .Env.OS.Family) -}}\nd-i apt-setup\/security_host string <http:\/\/security.debian.org|security.debian.org>\n{{else -}}\nd-i apt-setup\/security_host string <http:\/\/archive.ubuntu.com|archive.ubuntu.com>\nd-i apt-setup\/security_path string \/ubuntu\n{{end -}}\n{{end -}}\n{{end -}}\n{{end -}}```",
+        "ts": "1509556434.000640"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U62R1805P> - tip may have leaked out.",
+        "ts": "1509556497.000670"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You may not need os-discovery.",
+        "ts": "1509556507.000768"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U02DGQYK1> - remove the 'local' and that other file ??",
+        "ts": "1509556629.000663"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "not looking at a working drp right now",
+        "ts": "1509556642.000137"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "well - I think our SaaS got a dev update that I’m working on and it is getting in the way.  I suspect travis\/SaaS interaction is a little funky.",
+        "ts": "1509556692.000307"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I’m about to push this all anyway and document a procedure.",
+        "ts": "1509556705.000557"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U62R1805P> may be starting it.",
+        "ts": "1509556711.000808"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "yea I remember you telling wdennis that os-discovery was going into core ?",
+        "ts": "1509556726.000201"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I suspect that <@U62R1805P> doesn’t need os-discovery and os-linux anymore.",
+        "ts": "1509556727.000160"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "me too...",
+        "ts": "1509556736.000637"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "```drpcli stages list | jq .[].Name```",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1509556756.000000"
+        },
+        "ts": "1509556754.000789"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "will probably show lots of stages",
+        "ts": "1509556764.000322"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The next step will be to convert the defaults to from ce-* to *",
+        "ts": "1509556792.000411"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "and check machines stages and bootenvs to make sure they are converted over.",
+        "ts": "1509556806.000233"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "<@U62R1805P> suspects <@U62R1805P> issue is just as the tip and content packages ... should I just wait for <@U02DGQYK1> merge fix'n",
+        "ts": "1509556860.000263"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I'm not really in a rush.... but willing to test things... just let me know... I'll go learn more of the drcli commands",
+        "ts": "1509556968.000040"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "<@U02DGQYK1> lgtm",
+        "ts": "1509556981.000425"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U54E4SD4G> - thanks.  testing the not specified path .",
+        "ts": "1509557035.000200"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U62R1805P> - hopefully a few hours and I’ll make a consistent tip step.",
+        "ts": "1509557052.000469"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "Oh yeah, I just remembered (while cleaning up our content to be fireeye-only) the other part to the `part-scheme` feature I wanted to implement - have the part-scheme templates be usable on both centos\/debian (so checks included for OS family). Is it alright if I push some changes for that? (not urgent since we're not doing any centos installs anytime soon, I don't think)",
+        "ts": "1509557821.000143"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes",
+        "ts": "1509557843.000024"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That sounds good",
+        "ts": "1509557846.000206"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "<@U02DGQYK1> are you working on documentation to build content? or is it possible it's been done already (haven't looked into building drbundle yet)",
+        "ts": "1509567445.000491"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That is on the list but not done or really started.",
+        "ts": "1509567534.000015"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "drbundler allows you to do this:\n```\ngo get -u <http:\/\/github.com\/digitalrebar\/provision\/cmds\/drbundler|github.com\/digitalrebar\/provision\/cmds\/drbundler>\nPATH=$PATH:$GOPATH\/bin\n```",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1509567625.000000"
+        },
+        "ts": "1509567596.000117"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "in a go1.9 build environment",
+        "ts": "1509567609.000008"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "```drbundler &lt;directory&gt; &lt;yaml file&gt;```",
+        "ts": "1509567654.000045"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "the directory is a digitalrebar\/store in directory format.",
+        "ts": "1509567676.000680"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That bundles it up into a digitalrebar\/store file format.",
+        "ts": "1509567696.000057"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The content API uses the file format as the transport form",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1509567714.000000"
+        },
+        "ts": "1509567710.000232"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U54E4SD4G> - that's on my plate - I'm working on documentation updates, but haven't gotten to building custom content yet",
+        "ts": "1509567736.000609"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You can also bundle with drpcli.  You would cd into the directory, run `drpcli contents bundle ..\/file.yaml --format=yaml`.  It will produce the same thing.",
+        "ts": "1509567792.000001"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "it looked like for the `provision-content` repo you had a drp-community-content.yml file but I'm not sure what the contents of that should be",
+        "ts": "1509568411.000179"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "So in tip, there are now two directories.",
+        "ts": "1509568457.000407"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "content and contrib - one for each of the two content bundles.",
+        "ts": "1509568471.000157"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "mhm, realised that",
+        "ts": "1509568476.000268"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "(just reading through package.sh)",
+        "ts": "1509568484.000025"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<!channel> - TIP UPDATE - all components have been update and should be updated as a set (really).",
+        "ts": "1509569302.000262"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "To update to tip, you should do so in the following order.  More specific steps for each will follow.",
+        "ts": "1509569325.000201"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "1. Update DRP to tip\n2. Remove Old Content\n3. Update Add Content\n4. Update plugins\n5. Fix up things",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1509569601.000000"
+        },
+        "ts": "1509569345.000709"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Okay so the first step - updating DRP",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1509569358.000000"
+        },
+        "ts": "1509569354.000025"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "If you are running isolated, I do this: ```curl -fsSL <https:\/\/raw.githubusercontent.com\/digitalrebar\/provision\/tip\/tools\/install.sh> | bash -s -- --isolated install --drp-version=tip --force```",
+        "ts": "1509569383.000267"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "This will force the update of the local binaries to tip.  Make sure you stop drp.",
+        "ts": "1509569407.000361"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You can do this for provision as well.  If you modified your service file, you should check to make sure that it is still valid.",
+        "ts": "1509569429.000216"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Restart drp",
+        "ts": "1509569454.000062"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Don’t forget to copy `drpcli` to where you put to make it always available.  :slightly_smiling_face:",
+        "ts": "1509569480.000048"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Second Step - Remove old content",
+        "ts": "1509569498.000003"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "With the rework of content, you need to remove the following content packages.",
+        "ts": "1509569530.000050"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "os-linux",
+        "ts": "1509569533.000325"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "os-discovery",
+        "ts": "1509569536.000215"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "drp-community-content (if you are really behind, Digital Rebar Community Content).",
+        "ts": "1509569561.000176"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "ipmi",
+        "ts": "1509569605.000037"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "packet",
+        "ts": "1509569605.000664"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "virtualbox",
+        "ts": "1509569610.000136"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Ensure those are gone.",
+        "ts": "1509569629.000641"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Third Step- Put the content back.",
+        "ts": "1509569655.000352"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "drp-community-content - it is a must just get it.",
+        "ts": "1509569669.000445"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "task-library - New RackN library of services for doing interesting things.",
+        "ts": "1509569689.000225"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "drp-community-contrib - this is old or experimental things like centos6 or SL6.",
+        "ts": "1509569720.000065"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Step Four - update the plugins.",
+        "ts": "1509569744.000263"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "If you have any plugins installed, update them now.",
+        "ts": "1509569754.000077"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "To facilitate version tracking, plugins provide their own content as a injected content from the plugin.  When the plugin is added, it will also add a content layer that will show up in the content packages section.",
+        "ts": "1509569823.000034"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Step Five - fix things up.  This is mainly if you were using the ce-* version of things.",
+        "ts": "1509569869.000153"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "AND making sure all the bootenvs are up to date.  This is a task you should always do after updating content.",
+        "ts": "1509569901.000661"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Go to BootEnvs and make sure that discovery, sledgehammer, and your OS install images are still good.  These could have updated and new ISOs need to be downloaded.",
+        "ts": "1509569930.000438"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Fix those.",
+        "ts": "1509569934.000177"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Then go to Info and preferences and make sure your default stage and bootenvs are still valid.",
+        "ts": "1509569963.000361"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "this is where `ce-sledgehammer` become `sledgehammer` and `ce-discovery` becomes `discovery`",
+        "ts": "1509569995.000476"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The same with `ce-ubuntu-16.04-install` becomes `ubuntu-16.04-install`.",
+        "ts": "1509570019.000003"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The same with `ce-centos-7.4.1708-install` becomes `centos-7-install`.",
+        "ts": "1509570039.000776"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I'm up to step 5, so far so good (loading iso now)",
+        "ts": "1509570328.000480"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Cool! One last thing.  Make sure your machine’s stages and bootenvs are valid and update them if not.",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1509570443.000000"
+        },
+        "ts": "1509570417.000122"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "will do... I'm doing before and after screen shots too... in hopes that I don't need them :wink:",
+        "ts": "1509570452.000314"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I was attempting to figure out how to do the content package remove and update via command line... but seems the gui is involved in gen of tokens ... so used GUI",
+        "ts": "1509570545.000420"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "well the GUI (or UX as we call it) has the login access to the SaaS to get the content.  You can use the cli if you have the yaml files locally.  We don’t have a way for you to get this outside of the UX yet.",
+        "ts": "1509570966.000260"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The content flow is:\nSaaS -&gt; UX -&gt; DRP",
+        "ts": "1509570997.000321"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "where the UX acts a bridge between the two systems.",
+        "ts": "1509571016.000473"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U62R1805P> - you can do via CLI - it's just not \"very pretty\" yet, since we don't have the `drpcli` binary baked w\/ the content download pieces yet",
+        "ts": "1509571691.000048"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "```drpcli contents list   # see all contents\ndrpcli contents list | jq -r '.[].meta.Name'  # get raw output of just the content packs\ndrpcli contents destroy &lt;name&gt;   # remove content\n# go to RackN UX - log in, go to Hamburger menu (upper left, 3 horizontal lines)\n# go to Organization - User Profile - copy your UUID for Unique User Identity\nexport RACKN_AUTH=\"?username=&lt;UUID_Unique_User_Identity&gt;\"\nexport CATALOG=\"<https:\/\/qww9e4paf1.execute-api.us-west-2.amazonaws.com\/main\/catalog>\"\ncurl -s $CATALOG\/content\/&lt;content_name&gt;${RACKN_AUTH} -o &lt;content_name&gt;.json\ndrpcli contents create -&lt; &lt;content_name&gt;.json\n\n# same steps for Plugins - but replace \"content_name\" with \"plugin_name\"\n# change \"contents\" commands to \"plugin_provider\"```",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1509571755.000000"
+        },
+        "ts": "1509571701.000080"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can (obviously) chuck the output  of the `contents list` and `jq` filter command in to a loop to vaguely automate destroy\/curl\/create operations",
+        "ts": "1509571829.000508"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "So I was having an issue with sledgehammer coming up as a stage... but I only loaded :\ndrp-community-content(tip) and task-library(tip)",
+        "ts": "1509571877.000442"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "`sledgehammer` should be in `drp-community-content`",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1509571914.000000"
+        },
+        "ts": "1509571902.000200"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "ok... I see it there... so should it show up in the Pref dropdown ?",
+        "ts": "1509572014.000099"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "and in stages, it an X",
+        "ts": "1509572038.000220"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "if it is available.  You have to check the bootenv and the stages.",
+        "ts": "1509572047.000208"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "if you open it, it should tell you what the error is.",
+        "ts": "1509572060.000150"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "it's in bootenv... checking status",
+        "ts": "1509572072.000321"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "iso upload and explode is now async.",
+        "ts": "1509572088.000111"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "So you may need to refresh the screen to see if it finished.",
+        "ts": "1509572101.000043"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "how long should I wait after iso upload for it to explode ?",
+        "ts": "1509572361.000277"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "It's in bootenv, but not in Stages",
+        "ts": "1509572400.000345"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I've logged out and back in... and hit page refresh and Refresh button in Stages",
+        "ts": "1509572472.000289"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Could take awhile, but not too long. 10 minutes at most.  - oh wait.",
+        "ts": "1509572484.000219"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "did you do ```drpcli bootenvs uploadiso sledgehammer```",
+        "ts": "1509572496.000184"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That will do the magjc for you. or most of it.",
+        "ts": "1509572508.000311"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I need to run.  I’ll be on later.",
+        "ts": "1509572518.000350"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "catmini:CodeOps cat$ .\/dr-provision --version\ndr-provision2017\/11\/01 20:54:11.070347 Version: v3.1.0-tip-193-12226aa05308b164a18f164546146eac7c549986\ncatmini:CodeOps cat$ .\/drpcli bootenvs uploadiso sledgehammer\ncatmini:CodeOps cat$ .\/drpcli bootenvs uploadiso centos-7-install\ncatmini:CodeOps cat$ .\/drpcli bootenvs uploadiso ubuntu-16.04-install\ncatmini:CodeOps cat$",
+        "ts": "1509572521.000147"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "```drpcli bootenvs show sledgehammer```",
+        "ts": "1509572617.000084"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That should show what it things the errors are",
+        "ts": "1509572625.000097"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "catmini:CodeOps cat$ .\/drpcli bootenvs show sledgehammer\n{\n  \"Available\": true,\n  \"BootParams\": \"rootflags=loop root=live:\/sledgehammer.iso rootfstype=auto ro liveimg rd_NO_LUKS rd_NO_MD rd_NO_DM provisioner.web={{.ProvisionerURL}} rs.uuid={{.Machine.UUID}} rs.api={{.ApiURL}} -- {{if .ParamExists \\\"kernel-console\\\"}}{{.Param \\\"kernel-console\\\"}}{{end}}\",\n  \"Description\": \"Ram-Only image loaded with tools to allow for discovery and maintenance\",\n  \"Errors\": [],\n  \"Initrds\": [\n    \"stage1.img\"",
+        "ts": "1509572960.000008"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "seems fine...",
+        "ts": "1509572966.000504"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "Boot Environments - sledgehammer (click on it) looks fine...",
+        "ts": "1509573056.000456"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "Stages - discover - Error: Stage discover wants BootEnv sledgehammer, which is not available",
+        "ts": "1509573136.000268"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "So.... reboot of server fixed it",
+        "ts": "1509574213.000182"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "and I THINK I'm getting your overall pattern... saas &lt;file.yml&gt; loads lots of defaults WHICH then drp-data content can 'update'",
+        "ts": "1509574546.000050"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "ohh... pretty new workflow icons",
+        "ts": "1509576283.000337"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "So... I got a VBox to start to boot... then it failed to load stage2.img",
+        "ts": "1509576807.000226"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U62R1805P> uploaded a file: <https:\/\/rackn.slack.com\/files\/U62R1805P\/F7TG0BJPM\/stage2_loadfail.png|stage2_loadfail.png> and commented: VBOX pxe to endpoint 192.168.1.200 from 192.168.33.10 via host vboxnet0 192.168.33.1",
+        "file": {
+            "id": "F7TG0BJPM",
+            "created": 1509576902,
+            "timestamp": 1509576902,
+            "name": "stage2_loadfail.png",
+            "title": "stage2_loadfail.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U62R1805P",
+            "editable": false,
+            "size": 50289,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7TG0BJPM\/stage2_loadfail.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7TG0BJPM\/download\/stage2_loadfail.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7TG0BJPM-9f809d4fa7\/stage2_loadfail_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7TG0BJPM-9f809d4fa7\/stage2_loadfail_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7TG0BJPM-9f809d4fa7\/stage2_loadfail_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 219,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7TG0BJPM-9f809d4fa7\/stage2_loadfail_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 292,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7TG0BJPM-9f809d4fa7\/stage2_loadfail_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7TG0BJPM-9f809d4fa7\/stage2_loadfail_720.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 438,
+            "image_exif_rotation": 1,
+            "original_w": 730,
+            "original_h": 444,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U62R1805P\/F7TG0BJPM\/stage2_loadfail.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F7TG0BJPM-132b20f732",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 1,
+            "initial_comment": {
+                "id": "Fc7TJ9PCQ2",
+                "created": 1509576902,
+                "timestamp": 1509576902,
+                "user": "U62R1805P",
+                "is_intro": true,
+                "comment": "VBOX pxe to endpoint 192.168.1.200 from 192.168.33.10 via host vboxnet0 192.168.33.1"
+            }
+        },
+        "user": "U62R1805P",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "ctrees",
+        "bot_id": null,
+        "ts": "1509576904.000236"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I'm sending broadcast to 192.168.33.1 (vboxnet0) ... route ?",
+        "ts": "1509577153.000222"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U62R1805P> uploaded a file: <https:\/\/rackn.slack.com\/files\/U62R1805P\/F7T34CTU1\/stage2_loadfail_netstat.png|stage2_loadfail_netstat.png> and commented: netstat -nr on mac hosting endpoint",
+        "file": {
+            "id": "F7T34CTU1",
+            "created": 1509577243,
+            "timestamp": 1509577243,
+            "name": "stage2_loadfail_netstat.png",
+            "title": "stage2_loadfail_netstat.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U62R1805P",
+            "editable": false,
+            "size": 60243,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7T34CTU1\/stage2_loadfail_netstat.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7T34CTU1\/download\/stage2_loadfail_netstat.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7T34CTU1-7dd003c271\/stage2_loadfail_netstat_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7T34CTU1-7dd003c271\/stage2_loadfail_netstat_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7T34CTU1-7dd003c271\/stage2_loadfail_netstat_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 199,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7T34CTU1-7dd003c271\/stage2_loadfail_netstat_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 265,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7T34CTU1-7dd003c271\/stage2_loadfail_netstat_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "image_exif_rotation": 1,
+            "original_w": 604,
+            "original_h": 334,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U62R1805P\/F7T34CTU1\/stage2_loadfail_netstat.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F7T34CTU1-b91d039865",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 1,
+            "initial_comment": {
+                "id": "Fc7UEWRVL6",
+                "created": 1509577243,
+                "timestamp": 1509577243,
+                "user": "U62R1805P",
+                "is_intro": true,
+                "comment": "netstat -nr on mac hosting endpoint"
+            }
+        },
+        "user": "U62R1805P",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "ctrees",
+        "bot_id": null,
+        "ts": "1509577244.000218"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I started drp up on the 'fake' vboxnet0 IP 192.168.33.1 and it was able to register... I guess I'll ask in the AM how you guys suggest a dev laptop setup...",
+        "ts": "1509579188.000073"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "```\nNov 02 00:50:43 labs-provision dr-provision[26688]: dr-provision2017\/11\/02 00:50:43.588393 Static FS: Failed to render template for \/machines\/c25b7315-3d50-4134-9074-5cda9abaeee5\/seed: template: :589:5: executing \"net-seed.tmpl\" at &lt;eq (.Param \"local-re...&gt;: error calling eq: incompatible types for comparison\n```\n<@U02DGQYK1> okay so I realised I made a grave assumption of what `local-repo` had meant, didn't realise it was specifically a boolean to configure the installer to use a repo from the exploded ISO until now",
+        "ts": "1509584090.000151"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "gotta go now but basically I have a need to use a locally hosted mirror for debian\/ubuntu\/centos",
+        "ts": "1509584217.000136"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "@lae I was waiting for this.  ",
+        "ts": "1509585194.000010"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U54E4SD4G> we can work on a change.   I’m in favor of it.  We need a better way.  ",
+        "ts": "1509585254.000198"
+    }
+]

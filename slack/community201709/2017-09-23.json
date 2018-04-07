@@ -1,0 +1,26 @@
+[
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "If you've been using the new RackN UX then you've noticed the login buttons - those should be working now.  There are a few changes in progress to save login sessions and allow storing endpoints if you are a registered user.  There is NO COST for registering.  The login is NOT required to use the endpoint admin features; however it will be required to access RackN content in the future.",
+        "ts": "1506199189.000001"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<http:\/\/rackn.github.io|rackn.github.io> down?",
+        "ts": "1506222430.000043"
+    },
+    {
+        "type": "message",
+        "user": "U70FLJLKC",
+        "text": "yes - fix in process.",
+        "ts": "1506228598.000005"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "fix in is place",
+        "ts": "1506228939.000008"
+    }
+]

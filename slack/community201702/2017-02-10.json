@@ -1,0 +1,65 @@
+[
+    {
+        "text": "Hi! I've been watching crowbar for a while, and wondered if the current version would be suitable for running a small (16 node) bare metal lab?  I'm basically looking to replace foreman.  I'd need the ability to pxe boot, install various OSs - including 'odd' ones like CoreOS or fBSD, and have a nice webui for determining which nodes got (re-)installed with what OS",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486769716.000313"
+    },
+    {
+        "text": "@mech422 yes, that's exactly what we're talking about.  CoreOS is an interesting one - totally possible except that that we need to discuss if SSH to it is OK or not.  ",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486773676.000314"
+    },
+    {
+        "text": "here's a video (there are several before this one) that shows the reprovisioning process https:\/\/www.youtube.com\/watch?v=fFsaOUbmb9g&amp;index=10&amp;list=PLXPBeIrpXjfgurJuwVjZkcfmatCoXYM_v",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486773735.000315"
+    },
+    {
+        "text": "<@U02DHRR2L|zehicle> ahh - thanks... fBSD is a big one for us as well.  a lot of our production nodes are running it",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486773999.000316"
+    },
+    {
+        "text": "I'm just trying to slide rebar in the lab to get a lil PR for it :-)",
+        "username": "mech422",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486774020.000317"
+    },
+    {
+        "text": "the current list includes debian-7, debian-8 and scientificlinux-6.8.   I know that @VictorLowther on our team would know the delta for fBSD.",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486774100.000318"
+    },
+    {
+        "text": "generally, linux flavors are manageable ",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486774133.000319"
+    },
+    {
+        "user": "U43DC40BA",
+        "text": "<@U43DC40BA> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1486774506.000320"
+    }
+]

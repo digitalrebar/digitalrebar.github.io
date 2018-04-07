@@ -1,0 +1,97 @@
+[
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Mornin', DR folk!",
+        "ts": "1521123284.000176"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Any ideas on my problem above? ^^^",
+        "ts": "1521123304.000583"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "sorry - had client work I was dealing with didn't get a chance to look at it ... will try and take a peek soon",
+        "ts": "1521123625.000888"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U6QFVRJNB> Thx",
+        "ts": "1521123713.000117"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, I give up... Pretty sure it's not a DRP problem (except for the disk wiping issue not working as above) - dd'd the disks with zeros manually and the Ubuntu preseed still crapping out. Going to try MAAS and see if I have a different experience.",
+        "ts": "1521161983.000272"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "I believe Ubuntu writes the partition tables in a way that is hard to undo.  Greg has had to fix it for other people.  I don't know the details.",
+        "client_msg_id": "e8b4a1d1-6afe-4c72-9a2f-d1237f5ef080",
+        "ts": "1521162253.000045"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DHRR2L> Zeroing the disk should overwrite all of that, yes? I don't believe I ever ran into this problem though using Cobbler to reinstall previously-installed machines, and of course doing a manual install via USB on a previously-used disk work fine...",
+        "ts": "1521162443.000045"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "It's just that I have machines to reinstall, and I can't get DRP to work reliably on used disks...",
+        "ts": "1521162481.000227"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "There is data written in places you can't easily find.   Sorry I don't have the details.  It's a Ubuntu install issue.",
+        "client_msg_id": "31cafb8b-099c-431a-9f45-3366ed247160",
+        "ts": "1521163462.000157"
+    },
+    {
+        "text": "I'm not assuming that I google better than you -&gt; there's something about how the partition table is written.",
+        "type": "message",
+        "subtype": "me_message",
+        "user": "U02DHRR2L",
+        "ts": "1521163992.000145"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "It took Greg a while to fix it before (I remember him describing it as \"blah Ubuntu blah Drive Paritions blah install turds blah\" so I know it's a thing.",
+        "ts": "1521164084.000102"
+    },
+    {
+        "text": "Greg never says turds, that's my color commentary",
+        "edited": {
+            "user": "U02DHRR2L",
+            "ts": "1521164114.000000"
+        },
+        "type": "message",
+        "subtype": "me_message",
+        "user": "U02DHRR2L",
+        "ts": "1521164097.000297"
+    },
+    {
+        "type": "message",
+        "user": "U8BTZ6HPT",
+        "text": "<@U416T0AAX> I am running Ubuntu 16.04 installs (and re-installs) on a set of machines to familiarize myself with the tool. I started with \"discover (start) -&gt; prep-install (reboot) -&gt; ubuntu-16.04-install (reboot) -&gt; finish-install (reboot) -&gt; complete-nowait (success)\" before venturing into custom stages.  To restart the process, I'm executing \"# dd if=\/dev\/zero of=\/dev\/sda bs=1024 count=1\", resetting the DRP Machine entry stage to \"discover\", and rebooting. It appears to re-install successfully.  Have you managed to get a stock life-cycle working? I've noticed it's easy for me to make typos in \"shell + template\" files. I started out with MAAS until I discovered DRP. I prefer DRP.",
+        "ts": "1521166356.000004",
+        "reactions": [
+            {
+                "name": "simple_smile",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    }
+]

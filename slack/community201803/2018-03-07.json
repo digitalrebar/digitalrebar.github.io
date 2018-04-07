@@ -1,0 +1,195 @@
+[
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U9KSXT6CV> - check in the tftpboot directory for that file.  It should be there.",
+        "ts": "1520427002.000316"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<@U9KSXT6CV> What was the error on the ipxe side?",
+        "ts": "1520434766.000382"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Our pxe serving logic for UEFI has been built around \"whatever recent-ish tianocore expects\", and I have no idea if hyperv uses a tianocore based UEFI stack or if it rolls its own.",
+        "ts": "1520434841.000820"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "and that \"User aborted the transfer\" error you are seeing is usually just the firmware or ipxe getting the size if the thing it wants to load next.",
+        "ts": "1520435560.000376"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<!here> - quick poll ... would you like to see Immutable Provisioning demo on the next meetup?  (Immutable = image based deployments).  Please vote on the meetup page:\n<https:\/\/www.meetup.com\/digitalrebar\/polls\/1263248\/>",
+        "attachments": [
+            {
+                "title": "Do you want to see a demo of Immutable Linux and Windows deployments ? -  Digital Rebar (Mountain View, CA)   | Meetup",
+                "title_link": "https:\/\/www.meetup.com\/digitalrebar\/polls\/1263248\/",
+                "text": "Digital Rebar Provision (DRP) is the open source (APLv2) , fast and simple data center provisioning and control scaffolding designed with a cloud native architecture. This Online Meetup group will dis",
+                "fallback": "Do you want to see a demo of Immutable Linux and Windows deployments ? -  Digital Rebar (Mountain View, CA)   | Meetup",
+                "from_url": "https:\/\/www.meetup.com\/digitalrebar\/polls\/1263248\/",
+                "service_icon": "https:\/\/secure.meetupstatic.com\/s\/img\/144395054627769971357\/logo\/swarm\/m_swarm_120x120.png",
+                "service_name": "meetup.com",
+                "id": 1
+            }
+        ],
+        "ts": "1520439378.000486"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "<!here> following up on the DHCP issue I mentioned yesterday (even though I know that you have fixed it in the last tip version). Extending the lease seems to do the trick !",
+        "ts": "1520448444.000321"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Yep - it's a band-aid though ... and not necessarily the right solution for some environments that want short renewal cycles on their leases ... but, glad that works for the moment :slightly_smiling_face:",
+        "ts": "1520448488.000084"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we'll have this fix in a release out soon ... or you can update to `tip` to get it",
+        "ts": "1520448513.000201"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "Im working on something else right now but I will definetely test it :slightly_smiling_face:",
+        "ts": "1520451454.000272"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "<@U02DJQSG8> I think it might be related to this - <http:\/\/git.ipxe.org\/ipxe.git\/commitdiff\/9366578>",
+        "ts": "1520461111.000361"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Possible.  We pull in the latest ipxe.efi whenever we cut a build, so given the patch date that fix should be in there.",
+        "ts": "1520461276.000270"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Doesn't mean that patch hasn't been reverted or broken by something else in the meantime, though. :confused:",
+        "edited": {
+            "user": "U02DJQSG8",
+            "ts": "1520461309.000000"
+        },
+        "ts": "1520461302.000482"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "yea looks like hyper-v is gonna have to remain a virt disk copy as that comment doesn't sound reassuring until I can revisit it",
+        "ts": "1520461421.000379"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "I usually try and start stuff with hyper-v as an edge case cause if it works in hyper-v I can pretty much make it work on anything else",
+        "ts": "1520461503.000274"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "That's kind of like saying \"I hit my self in the face with a shovel before digging a hole, because I like the feeling it gives me ... \"",
+        "ts": "1520461554.000600"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "yeah, I go with something a little more mainstream, like qemu+kvm",
+        "ts": "1520461584.000141"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": ":slightly_smiling_face:",
+        "ts": "1520461586.000326"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "heh it's what you live with when hyper-v is involved. Now I get to finally move on to testing proxmox and vmware. Both of their networking layers are virtualizied. proxmox is openvswitch with vlans dumping into a evpn\/vxlan fabric. vsphere is the same with some nsx involved and dumping into a evpn\/vxlan fabric. All subnet gateways are anycasted gateways(using evpn) on juniper mx routers",
+        "ts": "1520461895.000512"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "This topology works awesome right now with the pxe booting of physical servers but the virt side throws a few extra hops in the way that *should work*",
+        "ts": "1520461954.000263"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U9KSXT6CV> - if you already have DHCP relays working in those environments, then it should work pretty cleanly.",
+        "ts": "1520462123.000217"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "yea it's more making sure ovs or nsx doesn't eat the broadcast",
+        "ts": "1520462146.000319"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U9KSXT6CV> uploaded a file: <https:\/\/rackn.slack.com\/files\/U9KSXT6CV\/F9MBHMQ06\/-.txt|Untitled>",
+        "file": {
+            "id": "F9MBHMQ06",
+            "created": 1520494112,
+            "timestamp": 1520494112,
+            "name": "-.txt",
+            "title": "Untitled",
+            "mimetype": "text\/plain",
+            "filetype": "text",
+            "pretty_type": "Plain Text",
+            "user": "U9KSXT6CV",
+            "editable": true,
+            "size": 1951,
+            "mode": "snippet",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9MBHMQ06\/-.txt?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9MBHMQ06\/download\/-.txt?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "permalink": "https:\/\/rackn.slack.com\/files\/U9KSXT6CV\/F9MBHMQ06\/-.txt",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F9MBHMQ06-aa147a8558",
+            "edit_link": "https:\/\/rackn.slack.com\/files\/U9KSXT6CV\/F9MBHMQ06\/-.txt\/edit",
+            "preview": "[01:21] <Killsudo> Does anyone know if http:\/\/git.ipxe.org\/ipxe.git\/commitdiff\/9366578 or http:\/\/lists.ipxe.org\/pipermail\/ipxe-devel\/2018-January\/005984.html was ever resolved in ipxe to allow a Hyper-V gen2 vm to successfully chainload after ipxe loads?\r\n[01:22] <Killsudo> My assumption is no, and pxe booting on gen2 is a dead end street to no where\r\n[01:22] <Andreas_2Pint> Killsudo: Depends, chainloading with SNP works\r\n[01:22] <Andreas_2Pint> i.e. SNP->Wimboot to WinPE\r\n[01:23] <Andreas_2Pint> But might not be what you are after\r",
+            "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>[01:21] &lt;Killsudo&gt; Does anyone know if http:\/\/git.ipxe.org\/ipxe.git\/commitdiff\/9366578 or http:\/\/lists.ipxe.org\/pipermail\/ipxe-devel\/2018-January\/005984.html was ever resolved in ipxe to allow a Hyper-V gen2 vm to successfully chainload after ipxe loads?<\/pre><\/div>\n<div><pre>[01:22] &lt;Killsudo&gt; My assumption is no, and pxe booting on gen2 is a dead end street to no where<\/pre><\/div>\n<div><pre>[01:22] &lt;Andreas_2Pint&gt; Killsudo: Depends, chainloading with SNP works<\/pre><\/div>\n<div><pre>[01:22] &lt;Andreas_2Pint&gt; i.e. SNP-&gt;Wimboot to WinPE<\/pre><\/div>\n<div><pre>[01:23] &lt;Andreas_2Pint&gt; But might not be what you are after<\/pre><\/div>\n<div><pre><\/pre><\/div>\n<\/div>\n<\/div>\n",
+            "lines": 24,
+            "lines_more": 19,
+            "preview_is_truncated": true,
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U9KSXT6CV",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "killsudo",
+        "bot_id": null,
+        "ts": "1520494113.000032"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "Looks like this *should* be doable on Gen2 hyper-v",
+        "ts": "1520494139.000120"
+    }
+]

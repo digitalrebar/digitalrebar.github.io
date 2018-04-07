@@ -1,0 +1,748 @@
+[
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Hi <@U02DGQYK1> - updated to latest stable this morning (v3.0.5) and I'm experiencing problems with both UI and drpcli ",
+        "ts": "1502383417.127536"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F6MRS9R0E\/image_uploaded_from_ios.jpg|Image uploaded from iOS> and commented: Here is what I see from drpcli:\n",
+        "file": {
+            "id": "F6MRS9R0E",
+            "created": 1502383468,
+            "timestamp": 1502383468,
+            "name": "Image uploaded from iOS.jpg",
+            "title": "Image uploaded from iOS",
+            "mimetype": "image\/jpeg",
+            "filetype": "jpg",
+            "pretty_type": "JPEG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 7137554,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F6MRS9R0E\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F6MRS9R0E\/download\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6MRS9R0E-c8b62a487d\/image_uploaded_from_ios_64.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6MRS9R0E-c8b62a487d\/image_uploaded_from_ios_80.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6MRS9R0E-c8b62a487d\/image_uploaded_from_ios_360.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 270,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6MRS9R0E-c8b62a487d\/image_uploaded_from_ios_480.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 360,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6MRS9R0E-c8b62a487d\/image_uploaded_from_ios_160.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6MRS9R0E-c8b62a487d\/image_uploaded_from_ios_720.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 540,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6MRS9R0E-c8b62a487d\/image_uploaded_from_ios_800.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 600,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6MRS9R0E-c8b62a487d\/image_uploaded_from_ios_960.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 720,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6MRS9R0E-c8b62a487d\/image_uploaded_from_ios_1024.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 768,
+            "image_exif_rotation": 1,
+            "original_w": 4032,
+            "original_h": 3024,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F6MRS9R0E\/image_uploaded_from_ios.jpg",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F6MRS9R0E-2ef20fd3a9",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 1,
+            "initial_comment": {
+                "id": "Fc6LDAUHQ9",
+                "created": 1502383468,
+                "timestamp": 1502383468,
+                "user": "U416T0AAX",
+                "is_intro": true,
+                "comment": "Here is what I see from drpcli:\n"
+            }
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "upload_reply_to": "0985DB15-10E4-4592-9273-E9BE8BC79722",
+        "ts": "1502383474.158792"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "ah",
+        "ts": "1502383482.163469"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "moving assets to a separate repo?",
+        "ts": "1502383489.167146"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "(I had forked it to our local git repo so I could modify assets\/)",
+        "ts": "1502383505.176504"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "UI just doesn't connect in browser...",
+        "ts": "1502383537.194626"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F6MRT411C\/image_uploaded_from_ios.jpg|Image uploaded from iOS>",
+        "file": {
+            "id": "F6MRT411C",
+            "created": 1502383557,
+            "timestamp": 1502383557,
+            "name": "Image uploaded from iOS.jpg",
+            "title": "Image uploaded from iOS",
+            "mimetype": "image\/jpeg",
+            "filetype": "jpg",
+            "pretty_type": "JPEG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 10725985,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F6MRT411C\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F6MRT411C\/download\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6MRT411C-61349d7c4e\/image_uploaded_from_ios_64.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6MRT411C-61349d7c4e\/image_uploaded_from_ios_80.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6MRT411C-61349d7c4e\/image_uploaded_from_ios_360.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 270,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6MRT411C-61349d7c4e\/image_uploaded_from_ios_480.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 360,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6MRT411C-61349d7c4e\/image_uploaded_from_ios_160.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6MRT411C-61349d7c4e\/image_uploaded_from_ios_720.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 540,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6MRT411C-61349d7c4e\/image_uploaded_from_ios_800.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 600,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6MRT411C-61349d7c4e\/image_uploaded_from_ios_960.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 720,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6MRT411C-61349d7c4e\/image_uploaded_from_ios_1024.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 768,
+            "image_exif_rotation": 1,
+            "original_w": 4032,
+            "original_h": 3024,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F6MRT411C\/image_uploaded_from_ios.jpg",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F6MRT411C-7a5d70d365",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "upload_reply_to": "5CEF99E0-B416-4B0B-BDE8-4CC63CBBB6FD",
+        "ts": "1502383569.211841"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "list -&gt; show",
+        "ts": "1502383579.217360"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Aha, that works...",
+        "ts": "1502383630.244641"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U54E4SD4G>  - yeah - we are having a hard time supporting everything and updating everything.  So we are going to split them into separate repos with more version control stuff and layering.",
+        "ts": "1502383632.245640"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Should wrong keyword cause an abort tho?",
+        "ts": "1502383661.261896"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "no",
+        "ts": "1502383670.266687"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": ":slightly_smiling_face:",
+        "ts": "1502383672.268398"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, QA hat on here...",
+        "ts": "1502383698.282579"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "If I type 'drpcli bootenvs bogus ...' I do get a Usage: reply",
+        "ts": "1502383752.310994"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yeah - list may be doing something “strange”.  I have cli test for most of it.",
+        "ts": "1502383792.333138"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "'drpcli bootenvs list ...' causes the panic",
+        "ts": "1502383802.338955"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "drpcli bootenv list",
+        "ts": "1502383828.353652"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "works?",
+        "ts": "1502383830.354619"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I know what is going on.  I’ll fix it and add a test.",
+        "ts": "1502383842.361745"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The list command lets you do index filtering.",
+        "ts": "1502383852.367632"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yes, works",
+        "ts": "1502383857.370873"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "```drpcli bootenvs list Available=true```",
+        "ts": "1502383876.381947"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I don’t test if you don’t send an equals.",
+        "ts": "1502383894.391863"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, so now about the UI...",
+        "ts": "1502383900.395347"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yeah",
+        "ts": "1502383905.398266"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I do see TCP listeners on port 8091 and 8092",
+        "ts": "1502383926.409483"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "https:\/\/&lt;ip&gt;:8092",
+        "ts": "1502383934.413792"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "But if I try that URL, no go...",
+        "ts": "1502383972.435221"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "that one is strange",
+        "ts": "1502384039.472545"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "that address is part of that host?  ```ip a``` shows it?",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1502384091.000000"
+        },
+        "ts": "1502384086.498721"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yes, confirmed using correct IP",
+        "ts": "1502384117.516417"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "cool - okay - firewall rules?",
+        "ts": "1502384138.527980"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F6MRZ4S6A\/image_uploaded_from_ios.jpg|Image uploaded from iOS>",
+        "file": {
+            "id": "F6MRZ4S6A",
+            "created": 1502384165,
+            "timestamp": 1502384165,
+            "name": "Image uploaded from iOS.jpg",
+            "title": "Image uploaded from iOS",
+            "mimetype": "image\/jpeg",
+            "filetype": "jpg",
+            "pretty_type": "JPEG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 7651192,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F6MRZ4S6A\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F6MRZ4S6A\/download\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6MRZ4S6A-be0dbc41a7\/image_uploaded_from_ios_64.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6MRZ4S6A-be0dbc41a7\/image_uploaded_from_ios_80.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6MRZ4S6A-be0dbc41a7\/image_uploaded_from_ios_360.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 270,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6MRZ4S6A-be0dbc41a7\/image_uploaded_from_ios_480.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 360,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6MRZ4S6A-be0dbc41a7\/image_uploaded_from_ios_160.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6MRZ4S6A-be0dbc41a7\/image_uploaded_from_ios_720.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 540,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6MRZ4S6A-be0dbc41a7\/image_uploaded_from_ios_800.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 600,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6MRZ4S6A-be0dbc41a7\/image_uploaded_from_ios_960.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 720,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6MRZ4S6A-be0dbc41a7\/image_uploaded_from_ios_1024.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 768,
+            "image_exif_rotation": 1,
+            "original_w": 4032,
+            "original_h": 3024,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F6MRZ4S6A\/image_uploaded_from_ios.jpg",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F6MRZ4S6A-43187cb069",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "upload_reply_to": "582B6EE7-B0D8-41F6-93BB-2E9D24FA6C62",
+        "ts": "1502384171.546712"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "iptables getting in the way?",
+        "ts": "1502384245.589413"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Maybe that's it - had full DR running on this node prev, Docker uses iptables-- when I did a 'iptables-L' I see 1,000 rules :)",
+        "ts": "1502384329.638457"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F6M3S1PFF\/image_uploaded_from_ios.jpg|Image uploaded from iOS>",
+        "file": {
+            "id": "F6M3S1PFF",
+            "created": 1502384350,
+            "timestamp": 1502384350,
+            "name": "Image uploaded from iOS.jpg",
+            "title": "Image uploaded from iOS",
+            "mimetype": "image\/jpeg",
+            "filetype": "jpg",
+            "pretty_type": "JPEG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 11073084,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F6M3S1PFF\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F6M3S1PFF\/download\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6M3S1PFF-6f908f902a\/image_uploaded_from_ios_64.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6M3S1PFF-6f908f902a\/image_uploaded_from_ios_80.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6M3S1PFF-6f908f902a\/image_uploaded_from_ios_360.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 270,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6M3S1PFF-6f908f902a\/image_uploaded_from_ios_480.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 360,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6M3S1PFF-6f908f902a\/image_uploaded_from_ios_160.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6M3S1PFF-6f908f902a\/image_uploaded_from_ios_720.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 540,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6M3S1PFF-6f908f902a\/image_uploaded_from_ios_800.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 600,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6M3S1PFF-6f908f902a\/image_uploaded_from_ios_960.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 720,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6M3S1PFF-6f908f902a\/image_uploaded_from_ios_1024.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 768,
+            "image_exif_rotation": 1,
+            "original_w": 4032,
+            "original_h": 3024,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F6M3S1PFF\/image_uploaded_from_ios.jpg",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F6M3S1PFF-2607313670",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "upload_reply_to": "C9866BA3-A9B5-40E6-A184-B1FC65535E18",
+        "ts": "1502384357.654452"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "You know the command to del all chains &amp; flush again?",
+        "ts": "1502384399.678987"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I have also removed docker-engine* pkgs now",
+        "ts": "1502384455.713468"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "iptables -F",
+        "ts": "1502384535.759467"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "is what I do",
+        "ts": "1502384538.761497"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I think.",
+        "ts": "1502384544.765170"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "N\/m, sorted it - combo of -F and -X flags",
+        "ts": "1502384627.812006"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "And now I have a UI :)",
+        "ts": "1502384645.821685"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah",
+        "ts": "1502384655.827501"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "(And found a bug)",
+        "ts": "1502384658.828983"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yep - I’ll add it to more list.",
+        "ts": "1502384677.839266"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Oh, tabs on UI now - slick",
+        "ts": "1502384692.847205"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Which one did you get?",
+        "ts": "1502384708.855929"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "it is undergoing a lot changes and will be different.  More on that later.",
+        "ts": "1502384731.868913"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "3.0.5 (stable)",
+        "ts": "1502384736.871497"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yeah, but it my mind that doesn’t help.  :slightly_smiling_face:",
+        "ts": "1502384749.878841"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "from april",
+        "ts": "1502384784.898206"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Well, it's better than \"one long page with everything\" design :)",
+        "ts": "1502384786.898821"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "oh yeah, would ya suggest to run tip",
+        "ts": "1502384833.924608"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I'm actually using it in production so rather be on 'stable'",
+        "ts": "1502384889.955255"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "stable is fine.",
+        "ts": "1502384911.967253"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "tip is usually stable (the unit tests are good for the core pieces).  The templates and such not as much.  Hence, some of the changes coming.",
+        "ts": "1502384944.985730"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Tip is passing unit tests, and has one cavaet on upgrade. subnets can be enabled\/disabled now without deleting them.  The data migration makes it off by default.  :disappointed:",
+        "ts": "1502385001.016871"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "I'm running my own version of the templates - unless you mean handling of the templates has been changed a bit",
+        "ts": "1502385006.019788"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "templates are good - the actual values in templates are the issue.",
+        "ts": "1502385040.039234"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We are working on a content layering system that hopefully will be simple but let you have your own content versions that we can still update.  Almost there.",
+        "ts": "1502385081.061405"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F6M03RTC2\/image_uploaded_from_ios.jpg|Image uploaded from iOS>",
+        "file": {
+            "id": "F6M03RTC2",
+            "created": 1502385306,
+            "timestamp": 1502385306,
+            "name": "Image uploaded from iOS.jpg",
+            "title": "Image uploaded from iOS",
+            "mimetype": "image\/jpeg",
+            "filetype": "jpg",
+            "pretty_type": "JPEG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 5878498,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F6M03RTC2\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F6M03RTC2\/download\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6M03RTC2-877846b197\/image_uploaded_from_ios_64.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6M03RTC2-877846b197\/image_uploaded_from_ios_80.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6M03RTC2-877846b197\/image_uploaded_from_ios_360.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 270,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6M03RTC2-877846b197\/image_uploaded_from_ios_480.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 360,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6M03RTC2-877846b197\/image_uploaded_from_ios_160.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6M03RTC2-877846b197\/image_uploaded_from_ios_720.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 540,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6M03RTC2-877846b197\/image_uploaded_from_ios_800.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 600,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6M03RTC2-877846b197\/image_uploaded_from_ios_960.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 720,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F6M03RTC2-877846b197\/image_uploaded_from_ios_1024.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 768,
+            "image_exif_rotation": 1,
+            "original_w": 4032,
+            "original_h": 3024,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F6M03RTC2\/image_uploaded_from_ios.jpg",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F6M03RTC2-bb6125e7a3",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "upload_reply_to": "8B0796EB-521F-4F55-98B9-90F01CCE4660",
+        "ts": "1502385312.186881"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Still getting this when I click \"API Help\" links in UI tho",
+        "ts": "1502385345.205703"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - bug - that swagger ui isn’t working again.",
+        "ts": "1502385463.270637"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "you'll need to pass in the current IP, <@U416T0AAX>",
+        "ts": "1502385548.316567"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "that's a CORS issue",
+        "ts": "1502385554.319705"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "oh - yeah - the IP in the browser URL and the IP in the form need to be the same.",
+        "ts": "1502385632.362124"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That is the real bug to fix.",
+        "ts": "1502385640.366122"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Ah",
+        "ts": "1502385720.409999"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U416T0AAX> if you can give me a little summary of the iptables fix, I'll make sure it gets into the FAQ",
+        "ts": "1502409187.995121"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "<@U02DGQYK1> curious, what does the ce- prefix stand for on the templates in provision-content?",
+        "ts": "1502412641.691291"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "also I'm not really a fan of the inconsistent syntax within DRP\/provision-content - like strings quoted in sledgehammer.yml but not in other bootenvs, and some variables using hyphens while others use underscores. minor issue, but it makes it confusing to figure out what style to stick to",
+        "ts": "1502413339.818707"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah. I'm on phone. Will need to type longer answer ",
+        "ts": "1502413826.905353"
+    }
+]

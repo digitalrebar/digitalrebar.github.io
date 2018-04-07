@@ -1,0 +1,41 @@
+[
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "we're going to do a short video explaining this - it's a common question and our approach is unique since it's based with an on-prem support mentality with SaaS to support management.",
+        "ts": "1519056732.000346"
+    },
+    {
+        "user": "U9B83A8F5",
+        "text": "<@U9B83A8F5> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1519059941.000396"
+    },
+    {
+        "user": "U9BF5G3L5",
+        "text": "<@U9BF5G3L5> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1519062362.000084"
+    },
+    {
+        "type": "message",
+        "user": "U4GUA0HE0",
+        "text": "Michael, Andrew welcome aboard ",
+        "ts": "1519066599.000159"
+    },
+    {
+        "type": "message",
+        "user": "U8NV2GC21",
+        "text": "Just wanted to say great work on the UEFI support in the latest tip release, I am now able to boot two problematic machines using ipxe.efi that do not boot with the stable release!",
+        "ts": "1519098934.000141"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Awesome! ",
+        "client_msg_id": "6752d613-f0ef-4aeb-b04d-697bb5768169",
+        "ts": "1519098983.000170"
+    }
+]

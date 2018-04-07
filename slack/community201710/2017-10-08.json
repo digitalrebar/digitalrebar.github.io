@@ -1,0 +1,1462 @@
+[
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "I seem to be missing a step in the directions. Did the quickstart but I'm not sure what I need to do in order to get my master node to reply to pxe requests. I get file not found",
+        "ts": "1507499775.000034"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "aha there's no default.ipxe installed in tftpdir",
+        "ts": "1507500054.000121"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "hmm discover-load.sh seems to be gone",
+        "ts": "1507500719.000005"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah - follow the output of install.sh.",
+        "ts": "1507502526.000025"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Also, for pxe requests, make sure you set the defaultUknownBootEnv to discovery or ce-discovery.",
+        "ts": "1507502552.000078"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "This is what servers default.ipxe.",
+        "ts": "1507502560.000012"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U7F67C94M> - forgot to tag at the start.",
+        "ts": "1507502571.000009"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "I figured the part out about not ignoring after I posted the question",
+        "ts": "1507502591.000057"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "I think its doing something, but with packet who knows. I'l messing around with that kernel param",
+        "ts": "1507502610.000050"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We have some doc updates coming.  Just got ahead of ourselves.",
+        "ts": "1507502620.000071"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Ah - okay . A couple of things.",
+        "ts": "1507502635.000061"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Sign up for an RackN account (if yuo haven’t already.)  Then you can get packet content and packet-ipmi.",
+        "ts": "1507502656.000029"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "yep I'm just now going to go play with packet IPMI so I dont have to use packet commands",
+        "ts": "1507502673.000031"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "is it a plugin?",
+        "ts": "1507502687.000019"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Adding these and setting stage workflow will put the right kernel params in place.",
+        "ts": "1507502687.000021"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It is two pieces.",
+        "ts": "1507502692.000078"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "packet content - this adds some tasks and stages.",
+        "ts": "1507502703.000055"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "I have that",
+        "ts": "1507502716.000117"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "packet ipmi plugin - this adds actions to “packet discovered” nodes so that the system can issue reboot and on\/off calls.",
+        "ts": "1507502737.000057"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Okay - so you probably want to use a discover stage as the default stage.",
+        "ts": "1507502754.000086"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "when I click Add pluging its just spinning...",
+        "ts": "1507502758.000090"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "hmm it can take a little bit, but not too long.",
+        "ts": "1507502772.000129"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "default stage = packet-discover",
+        "ts": "1507502792.000101"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "let me check qucik",
+        "ts": "1507502806.000059"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "unknown default = discover",
+        "ts": "1507502810.000063"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "ok I'll give it 2-3 min",
+        "ts": "1507502820.000082"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - packet-discover can not be the initial stage.  I should probably change that.",
+        "ts": "1507502893.000006"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "ok will change, still no joy on loading plugins",
+        "ts": "1507502903.000049"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You need to change discover to packet-discover.",
+        "ts": "1507502904.000044"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "If possible can you check the console of your browser and see if there is an error.",
+        "ts": "1507502925.000096"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "wait do you mean change p-discover to discover?",
+        "ts": "1507502939.000033"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It worked for me, but we keep tweaking the saas interface.",
+        "ts": "1507502942.000050"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yeah",
+        "ts": "1507502947.000052"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Okay - this is what I usually do for playing with packet.",
+        "ts": "1507503012.000020"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "1. unknownbootenv -&gt; discovery",
+        "ts": "1507503061.000003"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "2. knownbootenv -&gt; sledgehammer",
+        "ts": "1507503068.000057"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "I dont see any errors after clicking ad in the console",
+        "ts": "1507503076.000016"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "3. defaultStage -&gt; discover",
+        "ts": "1507503085.000034"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "4. In the workflow pane, I set the following relations on the global profile.",
+        "ts": "1507503105.000120"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "a. discover -&gt; packet-discover:Success",
+        "ts": "1507503116.000029"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "b. packet-discover-&gt;terraform-ready:success",
+        "ts": "1507503127.000071"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "c. centos-7.3.1611-install-&gt;packet-ssh-keys:success",
+        "ts": "1507503142.000005"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "d. packet-ssh-keys-&gt;complete-no-wait:success",
+        "ts": "1507503161.000004"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "let me install terraform too",
+        "ts": "1507503162.000045"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I find terraform-ready to be a nice intermediate wait state.",
+        "ts": "1507503180.000052"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You can “auto” install things by changing the terraform-ready-state to `centos-7.3.1611-install:Reboot`",
+        "ts": "1507503203.000098"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "there's also plugin providers which shows packet IPMI",
+        "ts": "1507503215.000005"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "oh - so it seems to work, but you didn’t get UI confirmation.",
+        "ts": "1507503231.000071"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "clicking Transfer doesnt do anything",
+        "ts": "1507503237.000002"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I also do in workflow.",
+        "ts": "1507503259.000077"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "shoudl I have some logs in my dr-p server?",
+        "ts": "1507503269.000085"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "e. ubuntu-16.05-install -&gt; packet-ssh-keys:success",
+        "ts": "1507503276.000009"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You may have some jobs.",
+        "ts": "1507503285.000106"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "jobs will accrue logs.",
+        "ts": "1507503301.000001"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "If you install drp in production mode, the drp’s log is in systemd\/journalctl",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1507503339.000000"
+        },
+        "ts": "1507503320.000023"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "yeah, I get it in stdout now",
+        "ts": "1507503357.000099"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Now for IPMI packet to work, you will need to enable IPMI packet by creating a plugin.",
+        "ts": "1507503370.000049"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You can click plugins, add button.  It will ask which provider, choose packet-ipmi.",
+        "ts": "1507503390.000019"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "you know logging out and back in loses your Endpoint?",
+        "ts": "1507503397.000025"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That will ask you for your API key.  Set that in the parameter and click add.",
+        "ts": "1507503414.000019"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - good to know.  <@U02DHRR2L> is working on that.",
+        "ts": "1507503437.000015"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "I think I need to work out why I can't add any plugin providers",
+        "ts": "1507503461.000086"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I think it should be getting saved on the org\/user in the “cloud”, but we’ve had some issues.",
+        "ts": "1507503475.000070"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I thought you said you had one.  I’m sorry.",
+        "ts": "1507503485.000118"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "they're available but not installed",
+        "ts": "1507503505.000079"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "wait nm",
+        "ts": "1507503522.000072"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "When all else fails, I hit the cli.",
+        "ts": "1507503535.000056"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U7F67C94M> uploaded a file: <https:\/\/rackn.slack.com\/files\/U7F67C94M\/F7F68T9M0\/screen_shot_2017-10-08_at_4.58.50_pm.png|Screen Shot 2017-10-08 at 4.58.50 PM.png>",
+        "file": {
+            "id": "F7F68T9M0",
+            "created": 1507503545,
+            "timestamp": 1507503545,
+            "name": "Screen Shot 2017-10-08 at 4.58.50 PM.png",
+            "title": "Screen Shot 2017-10-08 at 4.58.50 PM.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U7F67C94M",
+            "editable": false,
+            "size": 180602,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7F68T9M0\/screen_shot_2017-10-08_at_4.58.50_pm.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7F68T9M0\/download\/screen_shot_2017-10-08_at_4.58.50_pm.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7F68T9M0-6a8616864a\/screen_shot_2017-10-08_at_4.58.50_pm_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7F68T9M0-6a8616864a\/screen_shot_2017-10-08_at_4.58.50_pm_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7F68T9M0-6a8616864a\/screen_shot_2017-10-08_at_4.58.50_pm_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 172,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7F68T9M0-6a8616864a\/screen_shot_2017-10-08_at_4.58.50_pm_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 229,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7F68T9M0-6a8616864a\/screen_shot_2017-10-08_at_4.58.50_pm_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7F68T9M0-6a8616864a\/screen_shot_2017-10-08_at_4.58.50_pm_720.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 343,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7F68T9M0-6a8616864a\/screen_shot_2017-10-08_at_4.58.50_pm_800.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 381,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7F68T9M0-6a8616864a\/screen_shot_2017-10-08_at_4.58.50_pm_960.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 457,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7F68T9M0-6a8616864a\/screen_shot_2017-10-08_at_4.58.50_pm_1024.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 488,
+            "image_exif_rotation": 1,
+            "original_w": 2076,
+            "original_h": 989,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U7F67C94M\/F7F68T9M0\/screen_shot_2017-10-08_at_4.58.50_pm.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F7F68T9M0-0f47d66c4c",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U7F67C94M",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "mfischer",
+        "bot_id": null,
+        "ts": "1507503548.000024"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "they're installed I think",
+        "ts": "1507503549.000043"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "unsure what transfer does, clicking it doesnt do much",
+        "ts": "1507503558.000058"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "```drpcli plugin_providers list```",
+        "ts": "1507503559.000050"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "ok - checking on my side.",
+        "ts": "1507503570.000035"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "I did top of tree",
+        "ts": "1507503590.000003"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "list is []",
+        "ts": "1507503609.000011"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "let me redo this w\/o top of tree after a bio break",
+        "ts": "1507503619.000027"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I see what is happening.",
+        "ts": "1507503651.000044"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U02DHRR2L> - it looks like `<http:\/\/rackn.github.io|rackn.github.io>` and ` <https:\/\/qww9e4paf1.execute-api.us-west-2.amazonaws.com\/main\/catalog\/plugins\/>` are having cross-site scripting wars again.",
+        "ts": "1507503720.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U7F67C94M> - here; I’m going to attach it here.  Take the binary and drop it in drp-data\/plugins directory.  ok?",
+        "ts": "1507503756.000073"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "ok or just post a link",
+        "ts": "1507503768.000036"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "and I 'll curl it",
+        "ts": "1507503772.000043"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "wget I mena",
+        "ts": "1507503775.000096"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - let me see.",
+        "ts": "1507503785.000038"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "pasting it works too",
+        "ts": "1507503795.000029"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "linux?",
+        "ts": "1507503820.000066"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "my master node is ubuntu",
+        "ts": "1507503835.000067"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<https:\/\/s3-us-west-2.amazonaws.com\/rebar-catalog\/packet-ipmi\/v0.0.1-tip-56-b3e1d55225f73deb34f85f5f76c1af84d9a50684\/amd64\/linux\/packet-ipmi>",
+        "ts": "1507503843.000010"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "wait",
+        "ts": "1507503848.000022"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "ugh - wrong one.",
+        "ts": "1507503852.000044"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<https:\/\/s3-us-west-2.amazonaws.com\/rebar-catalog\/packet-ipmi\/v1.0.0-0-3c742d9c049e008ad86d3c1cf2b420e44318bc9f\/amd64\/linux\/packet-ipmi>",
+        "ts": "1507503870.000025"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "almost the same, but this is the latest.",
+        "ts": "1507503884.000058"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "lol Fox just started a ticker for our Winter storm warning",
+        "ts": "1507503886.000106"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "where are you?",
+        "ts": "1507503900.000029"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "what does that mean, like 40s?",
+        "ts": "1507503913.000017"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "or is it real.",
+        "ts": "1507503916.000113"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "no 3-6\" of snow and its real, i'm in colorado",
+        "ts": "1507503927.000062"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "beautiful now",
+        "ts": "1507503929.000079"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "wow - nice!",
+        "ts": "1507503938.000045"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Just got home from daughter’s soccer game in the 90s",
+        "ts": "1507503948.000060"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "ok thats installed",
+        "ts": "1507503966.000107"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": ".\/drpcli plugin_providers list --&gt; []",
+        "ts": "1507503992.000056"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "chmod a+x?",
+        "ts": "1507503999.000012"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes",
+        "ts": "1507504002.000087"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "yep that fixed it",
+        "ts": "1507504008.000083"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "the upload path does that for you.",
+        "ts": "1507504011.000024"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay cool",
+        "ts": "1507504018.000001"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "now you can add the plugin",
+        "ts": "1507504021.000047"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "BTW the UX in here said \"Choose undefined\"",
+        "ts": "1507504066.000020"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "in the last field",
+        "ts": "1507504070.000079"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yeah that is okay.",
+        "ts": "1507504088.000070"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It should have a packet-api-key field first.",
+        "ts": "1507504099.000010"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "yep I added it",
+        "ts": "1507504122.000105"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "ok - good . now.  Did you do the workflow changes.",
+        "ts": "1507504142.000073"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "need to go back and finish",
+        "ts": "1507504150.000013"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "ok cool",
+        "ts": "1507504159.000037"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "oh wait I need terraform",
+        "ts": "1507504172.000001"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "where does that come from again?",
+        "ts": "1507504200.000008"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "nm found it",
+        "ts": "1507504217.000110"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "costs me $$$",
+        "ts": "1507504225.000084"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "does it?",
+        "ts": "1507504318.000065"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "well it says $1 but you dont have my CC so ...",
+        "ts": "1507504378.000056"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "but maybe for real users",
+        "ts": "1507504383.000045"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "let me check  - I can’t remember what we decided",
+        "ts": "1507504396.000030"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "os-other costs me $2",
+        "ts": "1507504409.000078"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "I still have a hard time with the machine menu, there's no reboot option for example",
+        "ts": "1507504572.000064"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "you can force and mark it runnable but its not the same",
+        "ts": "1507504591.000013"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah - those are support costs.  Though at the current moment we should talk because I suspect that group licenses and support",
+        "ts": "1507504629.000059"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah you need to get the machine to have packet-uuid.",
+        "ts": "1507504639.000042"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Set the machines stage to discover and manually reboot it.",
+        "ts": "1507504653.000016"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "rob said on the podcast the base costs are $1\/node\/mo",
+        "ts": "1507504656.000073"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "ok",
+        "ts": "1507504659.000057"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "For most parts - we are trying to figure out how to charge this sane.  I think ipmi baremetal support is that way.  We have ala carte prices listed.  Bundling will be the better case most likely.  Also, we’d love to know what your are trying to do .  :slightly_smiling_face:",
+        "ts": "1507504783.000057"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We can also take this to PM if need.",
+        "ts": "1507504798.000050"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "I wanted to try out some of the features beyond basic bare metal mgmt",
+        "ts": "1507504910.000027"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "no specific projects yet",
+        "ts": "1507504945.000040"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U7F67C94M> no CC required - billing is on committed use.  We're not putting a paywall up yet, if you are using it, esp beta, then figure out the license $.  $1\/node\/month is the base for support",
+        "edited": {
+            "user": "U02DHRR2L",
+            "ts": "1507505041.000000"
+        },
+        "ts": "1507505038.000057"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "yeah I didn't figure as much",
+        "ts": "1507505101.000031"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "at this point you'd have to hunt me down anyway since you don't have my CC :wink:",
+        "ts": "1507505111.000053"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U02DGQYK1> I'll look in a minute and figure out.",
+        "ts": "1507505133.000039"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "np - I gave direct link and we are moved beyond.",
+        "ts": "1507505149.000110"
+    },
+    {
+        "text": "is watching the packers\/cowboys game while doing this",
+        "type": "message",
+        "subtype": "me_message",
+        "user": "U7F67C94M",
+        "ts": "1507505163.000019"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah - me too.",
+        "ts": "1507505191.000040"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "I am not a cowboys fan",
+        "ts": "1507505222.000041"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "i am",
+        "ts": "1507505231.000120"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "I figured since you guys are in texas",
+        "ts": "1507505239.000057"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "all support is now cutoff",
+        "ts": "1507505242.000058"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "lol",
+        "ts": "1507505247.000037"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "j\/k",
+        "ts": "1507505248.000016"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "HTTR",
+        "ts": "1507505250.000077"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "well now you can help again :disappointed:",
+        "ts": "1507505267.000050"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "lol - sigh",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1507505276.000000"
+        },
+        "ts": "1507505273.000131"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "<@U02DGQYK1> my node made it to terraform-ready, I need to setup the ubuntu stage you mentioned",
+        "ts": "1507505317.000037"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - so - did you upload the ubuntu iso already",
+        "ts": "1507505333.000105"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "yeah",
+        "ts": "1507505337.000101"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - so os-linux content",
+        "ts": "1507505346.000026"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "needs to be loaded.",
+        "ts": "1507505351.000084"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "I think I loaded it, let me look",
+        "ts": "1507505401.000017"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "check stages",
+        "ts": "1507505410.000090"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "no, not there, let me add",
+        "ts": "1507505428.000064"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "should the WF be 100% connected? it seems like there's a hole",
+        "ts": "1507505486.000061"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "good catch",
+        "ts": "1507505506.000046"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "between terraform and an OS",
+        "ts": "1507505513.000013"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That is dependent upon your choices.",
+        "ts": "1507505514.000082"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "rugby ending",
+        "ts": "1507505560.000005"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah -",
+        "ts": "1507505566.000038"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Right now `terraform-ready` acts as a holding cell.",
+        "ts": "1507505583.000009"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "so, I deleted a stage that was in my WF and now WF won't load",
+        "ts": "1507505604.000099"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You can then set the stage to which os you want and reboot the node.",
+        "ts": "1507505608.000047"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "awesome!  or not.",
+        "ts": "1507505629.000052"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "```drpcli profiles show global```",
+        "ts": "1507505640.000107"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "can I just wipe the global?",
+        "ts": "1507505682.000015"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "destroy",
+        "ts": "1507505685.000043"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "please don’t do that.",
+        "ts": "1507505691.000046"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "done",
+        "ts": "1507505701.000020"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "oops",
+        "ts": "1507505703.000012"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "lol",
+        "ts": "1507505703.000082"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "lol",
+        "ts": "1507505706.000029"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "its fine now",
+        "ts": "1507505714.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "```drpcli profiles create global```",
+        "ts": "1507505716.000078"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "just starting over",
+        "ts": "1507505717.000053"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "its back in the GUI",
+        "ts": "1507505722.000060"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "oh wait no its now",
+        "ts": "1507505731.000013"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "s\/now\/not\/",
+        "ts": "1507505734.000032"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Please put a global profile back.  please.",
+        "ts": "1507505749.000004"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "yep done",
+        "ts": "1507505752.000091"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I need to make that not delete able.",
+        "ts": "1507505762.000078"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "brb",
+        "ts": "1507505782.000016"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "hmmm GUI still wont load the workflow page, let me check console",
+        "ts": "1507505784.000109"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "jQuery.Deferred exception: Cannot read property 'change-stage\/map' of null TypeError: Cannot read property 'change-stage\/map' of null",
+        "ts": "1507505824.000060"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "I has an idea",
+        "ts": "1507505876.000077"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "```drpcli profiles set global param change-stage\/map to '{}'```",
+        "ts": "1507505887.000037"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "I was going to throw in the old JSON values with the offending key removed",
+        "ts": "1507505916.000092"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "that works too",
+        "ts": "1507505925.000049"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "that fixed it ^",
+        "ts": "1507505947.000013"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "okay so last q for a bit",
+        "ts": "1507506064.000053"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "do unknown machines default in to the global work flow?",
+        "ts": "1507506085.000104"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah - so the flow is",
+        "ts": "1507506104.000044"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "unknown machine gets the unknown boot env.",
+        "ts": "1507506111.000037"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "discovery adds the node to the system and when the node is created, it gets the default stage and\/or default known bootenv.   The default stage of discover adds some tasks that start processing the change-map\/stages.  This will drive it through the stage chains which run the tasks.",
+        "ts": "1507506187.000006"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Now, you asked about the “hole” in the flow between `terraform-ready` and `centos-7.3.1611-install`.",
+        "ts": "1507506219.000076"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "This is a starting point to make sure flow is mostly right.",
+        "ts": "1507506229.000011"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You could just as well change `packet-discover-&gt;terraform-ready:success` to `packet-discover-&gt;centos-7.3.1611-install:Reboot` and it will just flow straight through to an installed node.",
+        "ts": "1507506305.000072"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Depends upon what your goal and usage is.",
+        "ts": "1507506325.000038"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "yep",
+        "ts": "1507506333.000078"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "In terraform-ready, the node can be grabbed by the terraform provider and driven through an OS install.",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1507506360.000000"
+        },
+        "ts": "1507506349.000048"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "makes sense",
+        "ts": "1507506358.000051"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The terraform content creates a single “pool” like effect. The drp terraform provider uses API atomic ops to ensure that a single provider gets\/reserves the machine and takes it out of the pool.",
+        "ts": "1507506438.000004"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The model and flow could be extended to have named pools and other things.  future enhancements and the like.",
+        "ts": "1507506461.000022"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "so minor q",
+        "ts": "1507506547.000057"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - :slightly_smiling_face:",
+        "ts": "1507506555.000051"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "above you said Ubuntu:Reboot",
+        "ts": "1507506558.000018"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "doesnt it reboot after an OS install anyway?",
+        "ts": "1507506564.000065"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay so the reboot is the transition from the terraform-ready stage.",
+        "ts": "1507506601.000023"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "ah I see",
+        "ts": "1507506614.000013"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The reboot is to escape the sledgehammer image and go to the os install image.",
+        "ts": "1507506615.000031"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yes, that is why the last stage `complete-no-wait:Success` doesn’t need a reboot.",
+        "ts": "1507506642.000033"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The os install script finish and reboot the node.",
+        "ts": "1507506649.000077"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "If you want post-install actions that run in the newly booted OS, a new task\/stage would need to be added to make sure that that that calls back into DRP would be run.",
+        "ts": "1507506706.000046"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "There are already examples of post-install actions that run in the install environment.  ```packet-ssh-keys``` or ```ssh-access``` are examples of stages without boot environments that can be run in just about any bootenvironment to do their job.",
+        "ts": "1507506794.000078"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "So, you can chain them into the sequence to make sure keys are in place.",
+        "ts": "1507506819.000063"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "There is a lot of “power” in the pieces as you start writing your own tasks and stages.  Or leveraging our growing libraries of tasks\/stages.",
+        "ts": "1507506850.000040"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "that makes sense",
+        "ts": "1507506901.000038"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "IPMI BMC configuration is already a stage\/content that can be added to manage your BMCs on real hardware (setting users, configure ips, setting remote control).",
+        "ts": "1507506905.000039"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Some that are close and should show up soon are inventory, classification, hw raid configuration, bios configuration, and component update.",
+        "ts": "1507506965.000013"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "I need to step away for a bit",
+        "ts": "1507506973.000004"
+    },
+    {
+        "type": "message",
+        "user": "U7F67C94M",
+        "text": "back in 10",
+        "ts": "1507506975.000069"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We are even toying around with image-based installs to skip the kickstart styles as an option.  All things on road map.",
+        "ts": "1507507006.000007"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Cool - I too am wondering off.  I’l be around some.",
+        "ts": "1507507020.000076"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "I've duplicated the plugins issue... working on it",
+        "ts": "1507507453.000054"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<!here> The plugin issue has been resolved - it was a backend issue - no updates required.  I will patch the UX to make to protect in this case.",
+        "ts": "1507507748.000038"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "there is apparently another issue w\/ the system...plugins.   looking at that",
+        "ts": "1507507781.000040"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "I've found the issue w\/ the providers too... will take more time to fix.  Basically, it does not find them if you've already loaded them.",
+        "ts": "1507508094.000081"
+    }
+]

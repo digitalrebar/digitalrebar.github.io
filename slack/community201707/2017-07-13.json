@@ -1,0 +1,98 @@
+[
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "Clean install on Ubuntu VMWare, 2 network (host only and a bridge to internet)",
+        "ts": "1499963722.685781"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "TASK [Update repos (was not working from apt:)] ******************************************************************************************************************\n [WARNING]: Consider using apt module rather than running apt-get\n\nfatal: [172.16.240.2]: FAILED! =&gt;",
+        "ts": "1499963724.686854"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "seemed to be attempting to use root before... so I did:\n<http:\/\/digital-rebar.readthedocs.io\/en\/latest\/deployment\/troubleshooting\/specific-environment\/Run-In-System.html>",
+        "ts": "1499963773.713478"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "Digital Rebar UI <https:\/\/172.16.240.2>\ncat@ubuntu:~\/digitalrebar\/deploy$ sudo .\/run-in-system.sh --deploy-admin=local --access=HOST --admin-ip=172.16.240.2",
+        "ts": "1499963796.726691"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Admin IP needs a CIDR ",
+        "ts": "1499963877.771537"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "sorry... what's CIDR ? ? env thing ?",
+        "ts": "1499963957.814612"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "or is that setup in the startup... I cold just reset... and use quickstart... I didn't realize quickstart need 6GB (had 4GB set)...",
+        "ts": "1499964077.880377"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "but I saw the attempt at root in the past... thinking it's an ssh key \/ ansible thing",
+        "ts": "1499964140.914482"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "<https:\/\/en.wikipedia.org\/wiki\/Classless_Inter-Domain_Routing>",
+        "attachments": [
+            {
+                "title": "Classless Inter-Domain Routing",
+                "title_link": "https:\/\/en.wikipedia.org\/wiki\/Classless_Inter-Domain_Routing",
+                "author_name": "Wikipedia",
+                "author_link": "http:\/\/en.wikipedia.org\/",
+                "text": "Classless Inter-Domain Routing (CIDR,  or ) is a method for allocating IP addresses and IP routing. The Internet Engineering Task Force introduced CIDR in 1993 to replace the previous addressing architecture of classful network design in the Internet. Its goal was to slow the growth of routing tables on routers across the Internet, and to help slow the rapid exhaustion of IPv4 addresses.\nIP addresses are described as consisting of two groups of bits in the address: the most significant bits are the network prefix, which identifies a whole network or subnet, and the least significant set forms the host identifier, which specifies a particular interface of a host on that network. This division is used as the basis of traffic routing between IP networks and for address allocation policies. Classful network design for IPv4 sized the network prefix as one or more 8-bit groups, resulting in the blocks of Class A, B, or C addresses. Classless Inter-Domain Routing allocates address space to Internet service providers and end users on any address bit boundary, instead of on 8-bit segments. In IPv6, however, the interface identifier has a fixed size of 64 bits by convention, and smaller subnets are never allocated to end users.\nCIDR encompasses several concepts. It is based on the variable-length subnet masking (VLSM) technique with effective qualities of specifying arbitrary-length prefixes. CIDR introduced a new method of representation for IP addresses, now commonly known as CIDR notation, in which an address or routing prefix is written with a suffix indicating the number of bits of the prefix, such as 192.168.2.0\/24 for IPv4, and 2001:db8::\/32 for IPv6. CIDR introduced an administrative process of allocating address blocks to organizations based on their actual and short-term projected needs. The aggregation of multiple contiguous prefixes resulted in supernets in the larger Internet, which whenever possible are advertised as aggregates, thus reducing the number of entries in the global routing table.",
+                "fallback": "wikipedia: Classless Inter-Domain Routing",
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/wikipedia.png",
+                "id": 1
+            }
+        ],
+        "ts": "1499964185.938729"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "OK... --admin-ip=172.16.240.2\/24",
+        "ts": "1499964245.972588"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "failure on same step...",
+        "ts": "1499964573.153383"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "cat@ubuntu:~\/digitalrebar\/deploy$ netstat -rn\nKernel IP routing table\nDestination     Gateway         Genmask         Flags   MSS Window  irtt Iface\n0.0.0.0         192.168.9.1     0.0.0.0         UG        0 0          0 ens33\n172.16.240.0    0.0.0.0         255.255.255.0   U         0 0          0 ens38\n192.168.9.0     0.0.0.0         255.255.255.0   U         0 0          0 ens33",
+        "ts": "1499964576.154998"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "cat@ubuntu:~\/digitalrebar\/deploy$ ifconfig\nens33     Link encap:Ethernet  HWaddr 00:0c:29:42:6b:8e  \n          inet addr:192.168.9.62  Bcast:192.168.9.255  Mask:255.255.255.0\n          inet6 addr: fe80::20c:29ff:fe42:6b8e\/64 Scope:Link\n          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1\n          RX packets:6618 errors:0 dropped:0 overruns:0 frame:0\n          TX packets:361 errors:0 dropped:0 overruns:0 carrier:0\n          collisions:0 txqueuelen:1000 \n          RX bytes:2917977 (2.9 MB)  TX bytes:34729 (34.7 KB)\n\nens38     Link encap:Ethernet  HWaddr 00:50:56:39:54:5f  \n          inet addr:172.16.240.2  Bcast:172.16.240.255  Mask:255.255.255.0\n          inet6 addr: fe80::250:56ff:fe39:545f\/64 Scope:Link\n          UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1\n          RX packets:1563 errors:0 dropped:0 overruns:0 frame:0\n          TX packets:1166 errors:0 dropped:0 overruns:0 carrier:0\n          collisions:0 txqueuelen:1000 \n          RX bytes:122905 (122.9 KB)  TX bytes:441659 (441.6 KB)\n\nlo        Link encap:Local Loopback  \n          inet addr:127.0.0.1  Mask:255.0.0.0\n          inet6 addr: ::1\/128 Scope:Host\n          UP LOOPBACK RUNNING  MTU:65536  Metric:1\n          RX packets:301 errors:0 dropped:0 overruns:0 frame:0\n          TX packets:301 errors:0 dropped:0 overruns:0 carrier:0\n          collisions:0 txqueuelen:1 \n          RX bytes:36506 (36.5 KB)  TX bytes:36506 (36.5 KB)",
+        "ts": "1499964631.186232"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes",
+        "ts": "1499974428.579900"
+    }
+]

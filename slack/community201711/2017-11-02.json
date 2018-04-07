@@ -1,0 +1,695 @@
+[
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "<@U02DGQYK1> I'm thinking about this more throughly --\ncentos\/rhel \"primary\" mirror is specified by `url --url`, debian\/ubuntu by `mirror\/http`\ncentos extra repos\/mirrors specified by `repo--name=X --baseurl=X` and debian\/ubuntu by `apt-setup\/local#\/repository $mirror $dists` with optional comment\/deb-src toggle\/URL to key\nI can use profiles to specify mirrors for different stages (so diff for ubuntu\/deb\/cent), so maybe a single `mirrors` array of objects parameter could work here? would it be doable to filter out something like a \"primary\" mirror for all dists and a \"security\" mirror for deb\/ubuntu based on a child parameter?\ne.g.\n```\nmirrors:\n  - name: main\n    url: <http:\/\/packages.local\/debian>\n    dist: stretch main\n    install_mirror: true\n  - name: updates\n    url: <http:\/\/packages.local\/debian>\n    dist: stretch-updates main\n  - name: security\n    url: <http:\/\/packages.local\/debian-security>\n    dist: stretch\/updates main\n    security_mirror: true\n```",
+        "ts": "1509636054.000401"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U54E4SD4G>, I need to think about this a little bit more.  I like where this is going.  You can then do profile specification of secondary.",
+        "ts": "1509638088.000458"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I’d add a type in the field, primary, secondary, security.",
+        "ts": "1509638145.000397"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "maybe - thinking - need to look at a couple of other things first.",
+        "ts": "1509638176.000636"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "nvm - no type",
+        "ts": "1509638286.000769"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "you have it in `install_mirror` and `security_mirror`",
+        "ts": "1509638324.000434"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<@U54E4SD4G> On the mirrors thing -- do you mostly care about the repos used during the OS install process, or the ones used afterwards?",
+        "ts": "1509638360.000264"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "both",
+        "ts": "1509638368.000004"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "because one of the things I have been kicking around is how to reduce the amount of information we need to make a given bootenv work down to just needing the kernel\/initrd pair",
+        "ts": "1509638423.000090"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "while I *could* just configure them with ansible afterwards, we've just been using preseed\/kickstart to configure them for quite a while",
+        "edited": {
+            "user": "U54E4SD4G",
+            "ts": "1509638479.000000"
+        },
+        "ts": "1509638425.000258"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "the mirrors var would be optional, though?",
+        "ts": "1509638443.000976"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I have been reluctant to use distro mirroring schemes",
+        "ts": "1509638531.000718"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "as it makes fully offline deploys much trickier.",
+        "ts": "1509638550.000144"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "what do you mean?",
+        "ts": "1509638571.000519"
+    },
+    {
+        "text": "whe core become private? i have not access on that",
+        "username": "rmros",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1509638587.000594"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "If I want to run DRP in an environment where I do not have Internet access at all, I cannot rely on whatever default lists of mirrors to try for distro ops.",
+        "ts": "1509638669.000490"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "that's...true but that's not my use case",
+        "ts": "1509638720.000477"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "we have local mirrors within our own network",
+        "ts": "1509638732.000049"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ok",
+        "ts": "1509638771.000050"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "What I did for DRv2 was to provide in overarching \"repos to use\" list: <https:\/\/github.com\/digitalrebar\/digitalrebar\/blob\/master\/core\/barclamps\/rebar.yml#L157>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/digitalrebar",
+                "title_link": "https:\/\/github.com\/digitalrebar\/digitalrebar\/blob\/master\/core\/barclamps\/rebar.yml#L157",
+                "text": "digitalrebar - Digital Rebar: Open Hybrid DevOps &amp; SRE Automation Platform",
+                "fallback": "GitHub: digitalrebar\/digitalrebar",
+                "from_url": "https:\/\/github.com\/digitalrebar\/digitalrebar\/blob\/master\/core\/barclamps\/rebar.yml#L157",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 192,
+                "thumb_height": 192,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1509638816.000174"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "and a dedicated role for messing with package sources on a target node: <https:\/\/github.com\/digitalrebar\/digitalrebar\/blob\/master\/core\/script\/roles\/rebar-package-sources\/01-config-packages-sources.sh>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/digitalrebar",
+                "title_link": "https:\/\/github.com\/digitalrebar\/digitalrebar\/blob\/master\/core\/script\/roles\/rebar-package-sources\/01-config-packages-sources.sh",
+                "text": "digitalrebar - Digital Rebar: Open Hybrid DevOps &amp; SRE Automation Platform",
+                "fallback": "GitHub: digitalrebar\/digitalrebar",
+                "from_url": "https:\/\/github.com\/digitalrebar\/digitalrebar\/blob\/master\/core\/script\/roles\/rebar-package-sources\/01-config-packages-sources.sh",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 192,
+                "thumb_height": 192,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1509638882.000446"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Would they meet your needs?",
+        "ts": "1509638912.000814"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "They do not solve the current requirement that DRP needs its own local mirror for OS installation purposes, but that would be a seperate step.",
+        "ts": "1509638976.000441"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "yeah, that wouldn't",
+        "ts": "1509639005.000476"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "I also don't need to introduce DR in our environment, it'll just cause information overload for people on my team without much benefit over our existing infra",
+        "ts": "1509639070.000295"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ok",
+        "ts": "1509639119.000822"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "our environment also doesn't have that large of a pipe to the Internet, so for deployments of 5 nodes installing using Internet-hosted repos takes a pretty long time",
+        "ts": "1509639141.000554"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I was asking of porting those roles over to DRP tasks would be sufficient",
+        "ts": "1509639147.000817"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "and the debian bootenv I don't believe has a fully usable \"local-repo\" as it currently is specified (using the mini iso)",
+        "ts": "1509639173.000807"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "oh",
+        "ts": "1509639180.000195"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ya, the Debian bootenvs were more an exercise in minimalism than anything else.",
+        "ts": "1509639211.000450"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "Yeah, that would probably work then, but I would still need to be able to specify a repo for installation",
+        "ts": "1509639213.000084"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Swalling out the netinstall isos for a more full-featured iso should work with minimal tweaks.",
+        "ts": "1509639265.000321"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "er, swapping",
+        "ts": "1509639273.000640"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Okay - so there are two problems.",
+        "ts": "1509639430.000600"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "1. installation repo specification.  We want to values for that: exploded iso in drp, and user specified URL.",
+        "ts": "1509639462.000703"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "2. Post-install repos - We want those done in post-install (kickstart,preseed) step.",
+        "ts": "1509639494.000429"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Porting DR code as a task\/parameter\/stage would take care of #2.  The specification structure may want to be simplified if possible.  The task should be able to run in both the ks\/seed env and post install, but that is more a goal.",
+        "ts": "1509639573.000069"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "With regard to #1, the current local-repo isn’t sufficient - it only points at the exploded ISOs repos.  A specifier needs to be used.  If it could use the same spec as #1 that would work.",
+        "ts": "1509639655.000315"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ya -- in addition to #1, we would need a codepath for taking care of kernel and initrd handling.",
+        "ts": "1509639835.000457"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "This last one would be for handling not exploding isos at all and just referencing kernel\/initrd images only.",
+        "ts": "1509640263.000389"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "hm... I had forgotten how annyoing the whole security repo vs. non security repo things is for Debianoids",
+        "ts": "1509640630.000201"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ok",
+        "ts": "1509640998.000201"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "so how about this as a strategy",
+        "ts": "1509641027.000497"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "The stuff I currently use for DRv2 is not really suited to the OS installation phase",
+        "ts": "1509641065.000389"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "because it is based around working with file snippets, not raw repo information",
+        "ts": "1509641096.000424"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "So instead, we have a two-part solution.",
+        "ts": "1509641113.000363"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "1: A parameter that defines repo information in as OS agnostic fashion as we can reasonably define",
+        "ts": "1509641165.000148"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "something along the lines of whgat you described upstream, lae",
+        "ts": "1509641187.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "The second part is code baked into DRP that knows how to take repos defined in that parameter and expand them in the context of a target OS",
+        "ts": "1509641268.000463"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "so that we can get repo definitions approprieate for writing to \/etc\/sources.list, etc\/yum.repos.d, preseed lines, or kickstart lines",
+        "ts": "1509641365.000576"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "The goal is to have somehting like this: {{range .ReposFor \"target-os\"}} {{ .Repo \"desired-format\" . }} {{ end }}",
+        "edited": {
+            "user": "U02DJQSG8",
+            "ts": "1509641658.000000"
+        },
+        "ts": "1509641606.000790"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "and have that sequence spit out the repo information for the OS we want and in the format we want.",
+        "ts": "1509641697.000038"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "We already have a defined place in our template rendering functions to plug helpers like this",
+        "ts": "1509642065.000591"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "and getting this into DRP is a matter of porting some code I have aying around in some older versions of DRv2.",
+        "edited": {
+            "user": "U02DJQSG8",
+            "ts": "1509642123.000000"
+        },
+        "ts": "1509642114.000153"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U02DJQSG8> do you already have something that can take an abstract \"this repo info\" and produces all of that apt\/yum\/ks\/seed elements appropriately ?",
+        "ts": "1509642166.000096"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "that's not too hard to do - just an annoying exercise ... :slightly_smiling_face:",
+        "ts": "1509642185.000404"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I have written code to to that in at least 2 languages so far.",
+        "ts": "1509642282.000341"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": ":slightly_smiling_face:",
+        "ts": "1509642291.000241"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "haha",
+        "ts": "1509642765.000806"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "One of which was some gnarly bash.",
+        "ts": "1509643864.000725"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<@U54E4SD4G> That sound like a reasonable path forward?",
+        "ts": "1509644206.000667"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "Yeah, that does",
+        "ts": "1509644331.000128"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "does feel like it's somewhat trespassing boundaries of what DRP the binary should do vs what templates should do, but I don't really have a strong opinion on that",
+        "ts": "1509644422.000040"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Eh, I tend to err on the side of making the templates easier to write and read",
+        "ts": "1509644743.000293"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "and the current solution does not make them easy to read.",
+        "ts": "1509644761.000082"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "and since DRP is the thing doing the template expansion...",
+        "ts": "1509644788.000513"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ok",
+        "ts": "1509644809.000226"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "yeah, I can see this getting out of hand if it was just done through templates only with current DRP",
+        "ts": "1509644846.000390"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ok",
+        "ts": "1509644868.000428"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "the local-repo\/local-security-repo thing took a bit of wrapping my head around",
+        "ts": "1509644879.000121"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I will get started on the DRP side of this path.",
+        "ts": "1509644879.000319"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": ":+1:",
+        "ts": "1509644894.000365"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Should have something to review in a day or so.",
+        "ts": "1509644900.000204"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "is drpcli machines processjobs supposed to exit?",
+        "ts": "1509645011.000354"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "it seems to process through all of the tasks for the debian-9-install stage but...",
+        "ts": "1509645063.000046"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "I tried unsetting change-stage\/map, then creating a new one with debian-9-install → complete though it seems to still get stuck",
+        "ts": "1509645142.000690"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "setting the stage manually to `none` for the machine externally seems to let it proceed fine",
+        "edited": {
+            "user": "U54E4SD4G",
+            "ts": "1509645204.000000"
+        },
+        "ts": "1509645190.000040"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U54E4SD4G> - set it to complete-nowait:Success",
+        "ts": "1509645214.000578"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "ah the nowait one",
+        "ts": "1509645224.000508"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I need to document the use of the stages.",
+        "ts": "1509647170.000422",
+        "reactions": [
+            {
+                "name": "thumbsup_all",
+                "users": [
+                    "U416T0AAX"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "OK, after some more hacking and research, here is what I propose for a package-repositories parameter:",
+        "ts": "1509655974.000422"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "- name: \"centos-7 install\"\n      os: \"centos-7\"\n      # If installSource is true, then the URL points directly\n      # to the location we should use for all OS install purposes\n      # save for fetching kernel\/initrd pairs from (for now, we will\n      # still assume that they will live on the DRP server).\n      # The os field must be an exact match for the bootenv's OS.Name field.\n      installSource: true\n      # For redhat-ish distros, this URL contains distro,\n      # component, and arch components, and as such\n      # they do not need to be further specified\n      url: \"<http:\/\/mirrors.kernel.org\/centos\/7\/os\/x86_64>\"\n    - name: \"centos-7 everything\"\n      # Since installSource is not true here,\n      # we can define several package sources at once by\n      # providing a distribution and a components section,\n      # and having the URL point at the top-level directory\n      # where everything is housed\n      os: centos-7\n      url: \"<http:\/\/mirrors.kernel.org\/centos>\"\n      distribution: \"7\"\n      components:\n        - atomic\n        - centosplus\n        - cloud\n        - configmanagement\n        - cr\n        - dotnet\n        - extras\n        - fasttrack\n        - opstools\n        - os\n        - paas\n        - rt\n        - sclo\n        - storage\n        - updates\n    - name: \"debian-9 install\"\n      os: \"debian-9\"\n      installSource: true\n      # Debian URLs always follow the same rules, no matter\n      # whether the OS install flag is set.  As such,\n      # you must always also specify the distribution and\n      # at least the main component, although you can also\n      # specify other components.\n      url: \"<http:\/\/mirrors.kernel.org\/debian>\"\n      distribution: stretch\n      components:\n        - main\n        - contrib\n        - non-free\n    - name: \"debian-9 backports\"\n      os: \"debian-9\"\n      url: \"<http:\/\/mirrors.kernel.org\/debian>\"\n      distribution: stretch-updates\n      components:\n        - main\n        - contrib\n        - non-free\n    - name: \"debian-9 security updates\"\n      os: \"debian-9\"\n      url: \"<http:\/\/security.debian.org\/debian-security\/>\"\n      securitySource: true\n      distribution: stretch\/updates\n      components:\n        - contrib\n        - main\n        - non-free",
+        "ts": "1509655991.000554"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "(sorry for the spam, but it includes comments!)",
+        "ts": "1509656010.000009"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "oye <@U02DJQSG8>!  use a \"text snippet\" for that length of paste, please :slightly_smiling_face:",
+        "ts": "1509656103.000689"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "As a matter of policy, I only do that when Slack tells me to, :stuck_out_tongue:",
+        "ts": "1509656651.000651"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<@U54E4SD4G> That look sane to you?",
+        "ts": "1509657036.000310"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "well the nice thing about text snippets is it'll also do color context highlighting which makes it a LOT easier to read",
+        "ts": "1509657127.000341"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "^",
+        "ts": "1509658781.000102"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "<@U02DJQSG8> how do you specify arch for centos?",
+        "ts": "1509659012.000444"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Right now I am going to let it autodetect.",
+        "ts": "1509659114.000046"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "through DRP?",
+        "ts": "1509659177.000125"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ya, based on whatever arch the node we are installing is.",
+        "ts": "1509659202.000368"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "For Centos7 this will be pretty easy. :wink:",
+        "ts": "1509659265.000149"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "and for all yum-like repo formats it boils down to just using $basearch in the URL line for the individual repo",
+        "ts": "1509659452.000075"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "The .Repo template function will be responsible for building the urls appropriately for known operating system types.",
+        "ts": "1509659489.000089"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I plan on supporting RPM distros that use yum style .repo files and deb sitros that use apt initally.",
+        "ts": "1509659550.000129"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Weirder stuff can be added on an as-needed basis.",
+        "ts": "1509659581.000287"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "much as I like my arch linux install and pacman for package management, it doesn't exactly have a large marketshare or a decent way of doing unattended installs. :slightly_smiling_face:",
+        "ts": "1509659649.000281"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "ah right forgot about $basearch",
+        "ts": "1509660599.000402"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "also yeah, unattended installs of arch :joy:",
+        "ts": "1509660651.000202"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "```\nStarting Task: change-stage (8af3d3ff-4bc8-4abe-b369-944fe82a16ea)\nRunning Task Template: change-stage.sh.tmpl\nCommand change-stage.sh.tmpl failed to start: fork\/exec .\/script: no such file or directory\nTask Template , change-stage.sh.tmpl, failed\nTask: change-stage failed\n```\nwoops",
+        "ts": "1509667333.000244"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "(no bash on this installer)",
+        "ts": "1509667380.000115"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "(i'm trying a statically compiled bash aaand it turns out the kernel on this is 32 bit woops)",
+        "ts": "1509669275.000029"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I have a pending change scheduled to make change-stage part of the runner.  IT will avoid this problem.  Not there yet though.",
+        "ts": "1509669597.000110"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "ok atm I guess I'm making a smaller task just to run drpcli to change stage to complete-nowait for these particular images",
+        "ts": "1509669700.000124"
+    }
+]

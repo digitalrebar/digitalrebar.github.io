@@ -1,0 +1,504 @@
+[
+    {
+        "text": "Hi, 3 days ago, you said something about Job\/Task provisioning, what did you mean by that?",
+        "username": "hansbogert",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501798756.367276"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The tree and been picking up changes for this the last few days and tip is changing quite a bit for it.",
+        "ts": "1501798858.400930"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Tasks are a collection of templates that can be “run” in a bootenv environment by a runner.  (The runner is built into the cli.)",
+        "ts": "1501798902.415543"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "A job is a run of a task on a machine.  These have dates and logs and status.  They can be retried and sequenced.",
+        "ts": "1501798939.427686"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The idea is that you can use these to do advanced templatized actions on machines during various stages of provisioning.",
+        "ts": "1501798977.439560"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "RackN is going to make content bundles of supported features with this system.",
+        "ts": "1501798997.446313"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "But that is all for now.  More is going on that soon.",
+        "ts": "1501799012.450991"
+    },
+    {
+        "text": "And a different question, is the use-case of _not_ installing an OS  to disk, but simply always start through PXE, supported in your design?",
+        "username": "hansbogert",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501799123.486093"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yes - in fact, we prefer and recommend that machines always PXE so that DRP has better control over the system.",
+        "ts": "1501799161.498089"
+    },
+    {
+        "text": "say I'd want a Ceph OSD image always being run by a node, but running it from mem?",
+        "username": "hansbogert",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501799162.498719"
+    },
+    {
+        "text": "Ah ok",
+        "username": "hansbogert",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501799171.501425"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I have some toy unsupported and unpublished CoreOS templates that are baiscally that.  There is also a linux kit variant in the tree currently that does something similar.",
+        "ts": "1501799226.519183"
+    },
+    {
+        "text": "So in time, DRP would have to be really high-available, since it will be crucial after a calamity, when bringing machines all up",
+        "username": "hansbogert",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501799240.523851"
+    },
+    {
+        "text": "Yeah, I've been wanting to check out Linux kit. As far as you know, does LinuxKit itself assume this same model of always starting afresh?",
+        "username": "hansbogert",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501799354.561094"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "well - kinda.  Depends upon where and what.  In the case, locally installed OS, not as much.  The boot order set to PXE then Harddisk handles that kind of outage.  You can’t provision new, but existing system function.  In the case of immutable RAM boot OS, it is more crucial and an HA form is needed.  now, we have plans for how that would work and strangely enough DRP is pretty close to HA now.  It is not quite there yet.",
+        "ts": "1501799398.575733"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "LinuxKit in general assumes an immutable OS layer with docker running in that layer and containers on top.",
+        "ts": "1501799422.583823"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It is in fact that docker OS immutable layer.",
+        "ts": "1501799447.592130"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It could be installed, but appears to be more targeted at CoreOS style downloadable OS.",
+        "ts": "1501799476.601284"
+    },
+    {
+        "text": "But furthermore, you're telling me to wait  a bit for all the new functionality which is in the pipeline :) ?",
+        "username": "hansbogert",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501799527.617277"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You could, but I think you can do a lot with what is there.",
+        "ts": "1501799564.628790"
+    },
+    {
+        "text": "Ow, and one last thing, something which I couldn't find in the docs, what's the difference between the default and the unknown bootenv?",
+        "username": "hansbogert",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501799620.646290"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "default bootenv is the boot environment that machine gets when it is create without a bootenv specified.",
+        "ts": "1501799706.672872"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "unknown bootenv is the boot environment handed out by the DHCP server for a machine that isn’t know.",
+        "ts": "1501799727.679315"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "unknown bootenv populates the default.ipxe, default elilo, and default lpxelinux file.  It is the fail through it nothing else is specified.",
+        "ts": "1501799770.692046"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It is what is known as an UnknownOnly boot env.  Only unknown machines will boot from it (usually, everything as nuances).",
+        "ts": "1501799822.707276"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Examples of these are ignore and discovery.",
+        "ts": "1501799836.711296"
+    },
+    {
+        "text": "Ok, I get the last one. When would the default one kick in when using the webUI, because if I create a machine manually, I _have_ to choose a bootenv anyway.",
+        "username": "hansbogert",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501799836.711436"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The default bootenv is what the machine’s bootenv becomes whtn the machine is created.",
+        "ts": "1501799884.726075"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "An example of this sledgehammer (or any other non-UnknownOnly bootenv).",
+        "ts": "1501799900.730508"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "If you create a machine and specify a boot env (like ubuntu-16.04-install).  that will be the machines boot env.  If the machine boots, it will get directed to that boot env and ubuntu will be installed.",
+        "ts": "1501799959.748419"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "If you don’t create the machine and don’t specify a bootenv in the object, it will get the default.  We usually set it to sledgehammer so that the machine can continue to be discovered dynamically.",
+        "ts": "1501800181.815290"
+    },
+    {
+        "text": "So: 1. discovery (assuming i had the unknown bootenv set to sledgehammer for example).\n 2. Once discovered it will assign it the default bootenv?",
+        "username": "hansbogert",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501800182.815571"
+    },
+    {
+        "text": "ehh the second 1. should've been 2.",
+        "username": "hansbogert",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501800198.820155"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "unknown is set to discovery.",
+        "ts": "1501800198.820379"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "then it will set the node to sledgehammer (it is a bit pedantic about that).",
+        "ts": "1501800224.827684"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We could have left it blank and let the default take over.",
+        "ts": "1501800253.836101"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Actually, just a second..",
+        "ts": "1501800257.837598"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah - I remembered “rightly”.  the discovery template control.sh creates the machine with sledgehammer.",
+        "ts": "1501800324.857212"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We didn’t want to force install things without user intervention by accident.",
+        "ts": "1501800340.862007"
+    },
+    {
+        "text": "Sorry, but then I still don't understand at which step the default bootenv is set, and\/or used.",
+        "username": "hansbogert",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501800396.878720"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "only when the machine is manually created by the user without a bootenv in the specified JSON.",
+        "ts": "1501800461.897904"
+    },
+    {
+        "text": "Aah, so not through webUI",
+        "username": "hansbogert",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501800504.910400"
+    },
+    {
+        "text": "in the webUI you're forced to choose a env",
+        "username": "hansbogert",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501800517.914551"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "well - the UI knows to put something.",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1501800530.000000"
+        },
+        "ts": "1501800521.915653"
+    },
+    {
+        "text": "THen the super last thing, how much mem does starting sledgehammer take? i'm little constrained mem wise in my small POC setup. I can only give 768M to a test VM which does PXE. Though it crashes with a low-mem warning",
+        "username": "hansbogert",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501800792.991222"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah - that is probably to small.  1.5 G or so.  Sledgehammer is “bloated” with tools and environment pieces to identify components on real servers.  So, it is a little heavier that what you are trying on.",
+        "ts": "1501800857.009681"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Sorry",
+        "ts": "1501800861.010892"
+    },
+    {
+        "text": "That's okay, was just wondering",
+        "username": "hansbogert",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501800877.015510"
+    },
+    {
+        "text": "Thanks, so far again. Bedtime for me now",
+        "username": "hansbogert",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501800890.019463"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Later",
+        "ts": "1501800951.037425"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "listening to your vm",
+        "ts": "1501802157.367490"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "no need to call - thanks for the detailed voice mial",
+        "ts": "1501802330.412799"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "does sledgehammer not have serial console support?",
+        "ts": "1501806050.292713"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "it does, but you need to tell it which one.",
+        "ts": "1501806396.366688"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Or really, it doesn’t, but it will configurable.  It depends upon which version of templates you have.",
+        "ts": "1501806422.372103"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "you need to console=… on the bootparams line.  The problem is that varies depending upon your environment.  Sooo, you need to add it in your bootenvs.",
+        "ts": "1501806467.381755"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "just did a fresh install of 3.0.5 and tried adding console=ttyS1,115200n8 to sledgehammer, but nothing shows up :&lt;",
+        "ts": "1501806474.383139"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "(and bootup stopped showing on tty0)",
+        "ts": "1501806496.387645"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - you may need to add it to discovery as well.",
+        "ts": "1501806496.387910"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "yeah, I made the changes to discovery, too, though once the machine's been discovered it just goes straight to sledgehammer I assume",
+        "ts": "1501806525.394058"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes",
+        "ts": "1501806532.395691"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "unless in packet….",
+        "ts": "1501806540.397205"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "this is on-premise",
+        "ts": "1501806552.399717"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "should be okay then.  is it just sledgehammer console?",
+        "ts": "1501806567.402972"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "the existing debian install on the system I'm testing it on outputs to serial console fine, if that's what you're asking",
+        "ts": "1501806615.413321"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "well - I’ve been playing with it and it is strange.  I haven’t found a set of options that work consistently everywhere.",
+        "ts": "1501806693.430801"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I have a coming change that has this as bootparam in sledgehammer and discovery.",
+        "ts": "1501806741.441010"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "```rootflags=loop root=live:\/sledgehammer.iso rootfstype=auto ro liveimg rd_NO_LUKS rd_NO_MD rd_NO_DM provisioner.web={{.ProvisionerURL}} rs.uuid={{.Machine.UUID}} rs.api={{.ApiURL}} -- {{ if .ParamExists \\\"kernel_console\\\"}}{{.Param \\\"kernel_console\\\" }}{{ end }}```",
+        "ts": "1501806744.441736"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "After the — seems to be required and then console=ttyS1,115200n8 or console=ttyS0,115200n8 seems to work.",
+        "ts": "1501806784.450242"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "now bios settings can mess with this, though if you have an ubuntu install that works.  console line from that should work.",
+        "ts": "1501806817.457215"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "For ubuntu I had to put the console string on both sides of the --",
+        "ts": "1501806845.462741"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "will try in a bit",
+        "ts": "1501806865.467072"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "no cigar",
+        "ts": "1501808811.864578"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "hm",
+        "ts": "1501809162.933817"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "oh, this machine's actually ttyS2 - never mind then, it works. (looks like I was looking at the wrong item in my inventory whose serial-over-LAN console is ttyS1, so I got confused)",
+        "ts": "1501809342.968826"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "whew",
+        "ts": "1501809357.971626"
+    },
+    {
+        "text": "Working on t-shirt design - please feel free to vote https:\/\/99designs.com\/contests\/poll\/j4amxx ",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501817448.413574"
+    }
+]

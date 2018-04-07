@@ -1,0 +1,344 @@
+[
+    {
+        "user": "U5NQS6TFT",
+        "inviter": "U02DHRR2L",
+        "text": "<@U5NQS6TFT> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1501528495.321238"
+    },
+    {
+        "text": "<@U02DHRR2L|zehicle>  you here?",
+        "username": "hansbogert",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501541058.989983"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "Yes ",
+        "ts": "1501541072.994048"
+    },
+    {
+        "text": "The quickstart installation doesn't seem to work after a  reboot of the host holding all the docker-compose containers",
+        "username": "hansbogert",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501541110.004917"
+    },
+    {
+        "text": "I get this in the rev_proxy container:\n2017\/07\/31 22:40:39 Request failed: Get https:\/\/172.17.0.12:3000\/api\/v2\/users\/rebar\/digest: x509: certificate signed by unknown authority (possibly because of \"x509: ECDSA verification failure\" while trying to verify candidate authority certificate \"internal\")",
+        "username": "hansbogert",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501541144.014781"
+    },
+    {
+        "text": "-- when trying to login",
+        "username": "hansbogert",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501541151.016882"
+    },
+    {
+        "text": "when did you get the containers?  ",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501541213.035291"
+    },
+    {
+        "text": "as in when did I run the checkout?",
+        "username": "hansbogert",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501541230.040129"
+    },
+    {
+        "text": "-- or run the quickstart itself?",
+        "username": "hansbogert",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501541241.043775"
+    },
+    {
+        "text": "the first install - I think there was an issue w\/ consul in the containers from about a week ago",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501541262.049927"
+    },
+    {
+        "text": "no this is pretty fresh",
+        "username": "hansbogert",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501541276.054070"
+    },
+    {
+        "text": "ok",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501541280.055358"
+    },
+    {
+        "text": "are you trying to re-run the quickstart or just that the containers don't restart automatically after a reboot?",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501541329.070162"
+    },
+    {
+        "text": "the containers restarted after a reboot",
+        "username": "hansbogert",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501541345.074782"
+    },
+    {
+        "text": "didn't rerun quickstart. I was really relieved that it finally worked, only to fined that the default didn't work. ",
+        "username": "hansbogert",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501541378.084101"
+    },
+    {
+        "text": "default= default credentials",
+        "username": "hansbogert",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501541426.098114"
+    },
+    {
+        "text": "I really want this to work, because I want to see DR work, but I've already spent so much time on this. I've also already filed an issue on Github (bit of a rant, maybe I should edit it).",
+        "username": "hansbogert",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501541561.136648"
+    },
+    {
+        "text": "Is there a good reason that DR is so incredibly resource hungry?",
+        "username": "hansbogert",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501541581.142483"
+    },
+    {
+        "text": "a couple of things...",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501541921.240223"
+    },
+    {
+        "text": "1) sorry about the issues, DR has a lot of moving parts.  the container packaging helps a lot but it's still complex.  that's why we suggest working w\/ us to build much more than a quick start",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501542014.267691"
+    },
+    {
+        "text": "2) DR has a lot of parts including a fully Ruby stack, a postgresql database, chef server and other services.  so there's a lot going on there.   that's why we're actively rewriting it in golang ",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501542077.287139"
+    },
+    {
+        "text": "3) We're suggesting people start with DR Provision as a first stage at this point.   It's much (much) lighter weight and simpler to use.  No docker is required at all and the functions are easier to understand",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501542131.303546"
+    },
+    {
+        "text": "I saw DR provision, but it was the more advanced stuff I was interested in, e.g., deploying Kubernetes and Ceph, and initially provisioning through PXE in a private cluster",
+        "username": "hansbogert",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501542195.322316"
+    },
+    {
+        "text": "4) Inside of DR Provision, we've been building a workflow system that simpler to use for the use cases that we hear about the most.  We're also building new UX that makes it easier to manage multiple sites",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501542210.326461"
+    },
+    {
+        "text": "for those uses cases, we're putting in Ansible &amp; Terraform integrations.  Our Kubernetes work was just Kubespray anyway.   Over the weekend, we added a dynamic inventory generator for Ansible with the plan to document using that as the Kubespray target",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501542298.350865"
+    },
+    {
+        "text": "that approach does not leverage DR's hybrid provider concept.  While we think that function is very important long term, it has been getting in the way of people exactly like you who just want to get started quickly.  For that reason, we're more excited about Provision as a fast and easy win for physical data centers.",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501542427.386012"
+    },
+    {
+        "text": "The new Provision Jobs\/Tasks work (just pulled today by @galthaus ) creates a huge amount of capability to do workflows like burn-in, raid\/bios, discovery &amp; auto-classification.  It's going to take a while to explain how it all works",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501542526.413123"
+    },
+    {
+        "text": "interesting stuff, eager to see how it will work out. I really think you guys are filling a gap at least somewhere in the whole hybrid-or-not cloud provisioning.",
+        "username": "hansbogert",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501542541.417304"
+    },
+    {
+        "text": "TL;DR - we're strong recommending Provision as a starting point",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501542544.418126"
+    },
+    {
+        "text": "That may meet all your needs AND you can hook it into the other DR work later too",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501542570.425141"
+    },
+    {
+        "text": "Will do, but will I succeed at this point with DR Provision with the aim of priviosning\/deploying ceph and kubernetes?",
+        "username": "hansbogert",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501542584.428715"
+    },
+    {
+        "text": "of I course I can fill in small gaps, but is the workflow stuff  ready for it?",
+        "username": "hansbogert",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501542633.441812"
+    },
+    {
+        "text": "We have not integrated K8s to DR P yet.   For Ceph, I'd recommend Rook (https:\/\/blog.rook.io) on top of the cluster",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501543013.541981"
+    },
+    {
+        "text": "the integration will be pretty simple \"put theses profiles on the nodes you want to take on these roles, add params to the profiles to overide the defaults\"",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501543057.553543"
+    },
+    {
+        "text": "ansible run w\/ dynamic inventory.",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501543071.556963"
+    },
+    {
+        "text": "sadly, not as easy as the DR wizard approach; however, it's more inline with the way we see people trying to use Kubespray right now.  ",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501543110.567009"
+    },
+    {
+        "text": "we have some interesting plans to use DR P for joining nodes to the the cluster using the 1.7 node admission workflow.   ",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501543158.578880"
+    },
+    {
+        "text": "I think I like your above approach and will try it this week in a very small cluster ",
+        "username": "hansbogert",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501543211.592282"
+    },
+    {
+        "text": "btw, Rook seems rather inception-y :D, since it's deployed as containers, so that other containers can have  persistent storage",
+        "username": "hansbogert",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501543273.608846"
+    },
+    {
+        "text": "yes.  So far, I've heard good things about it.  Our other recent Ceph work was also containers using Helm via OpenStack.",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501543316.620283"
+    },
+    {
+        "text": "Thanks for your info, it was pretty enlightening",
+        "username": "hansbogert",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501543319.620986"
+    },
+    {
+        "text": "I have to go though. Thanks again!",
+        "username": "hansbogert",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501543342.626779"
+    },
+    {
+        "text": "you're welcome.  We've been working hard to bring up all the DR P key functionality to make it easier to start there.  We got the basics in place and are adding the gee wiz stuff now.",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501543388.638400"
+    }
+]

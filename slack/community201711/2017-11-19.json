@@ -1,0 +1,54 @@
+[
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "3-",
+        "ts": "1511144460.000009"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "7*",
+        "ts": "1511144479.000071"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "21-",
+        "edited": {
+            "user": "U02DHRR2L",
+            "ts": "1511148445.000000"
+        },
+        "ts": "1511148432.000161"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "New math :stuck_out_tongue_winking_eye:",
+        "ts": "1511148658.000150"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Really? <@U02DHRR2L> you had to edit your answer?  :face_with_rolling_eyes:",
+        "ts": "1511149567.000029"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "I'm rusty on my reverse polish",
+        "ts": "1511149595.000110"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "lol",
+        "ts": "1511149603.000066"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "although, my original answer is what would have been the output",
+        "ts": "1511149626.000125"
+    }
+]

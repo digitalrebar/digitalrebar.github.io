@@ -1,0 +1,688 @@
+[
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Good morning… The node did install, but still not picking up my ssh-access param’s…",
+        "ts": "1509022386.000207"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I see these job log outputs from the run:\n```Log for Job: 4353e00c-5ece-4035-a58e-a7ee44a37790\nStarting Content Execution for: change-stage.sh.tmpl\nError: Failed to fetch info info: [GET \/info][403] getInfoForbidden DRP does NOT support 'sane-exit-codes' using old codes ...Machine's current stage: ubuntu-16.04-installChecking for data: ubuntu-16.04-install from ssh-access:SuccessAttempting to test Stage to ssh-access and return 0{  \"Address\": \"192.168.1.143\",  \"Available\": true,  \"BootEnv\": \"ubuntu-16.04-install\",  \"CurrentJob\": \"4353e00c-5ece-4035-a58e-a7ee44a37790\",  \"CurrentTask\": -1,  \"Description\": \"Dell PE 860\",  \"Errors\": [],  \"Name\": \"testnode01\",  \"Profile\": {    \"Available\": false,    \"Errors\": null,    \"Name\": \"\",    \"ReadOnly\": false,    \"Validated\": false  },  \"Profiles\": [    \"necla-default-ubuntu\"  ],  \"ReadOnly\": false,  \"Runnable\": true,  \"Stage\": \"ssh-access\",  \"Tasks\": [    \"ssh-access\",    \"change-stage\"  ],  \"Uuid\": \"5fcbf69d-287e-4c2c-b085-5858665cd442\",  \"Validated\": true}\\nChanged stage successfully: Returning 0Command change-stage.sh.tmpl succeeded\n\nLog for Job: d1e496aa-999f-48ab-9901-b87709656593\nStarting Content Execution for: access-keys.sh.tmpl\nUpdating SSHD default valuesRestarting ssh * Restarting OpenBSD Secure Shell server sshd   ...done.Finished updating access keys successfullyCommand access-keys.sh.tmpl succeeded\n\nLog for Job: e29e9a2f-58d2-4ffa-99a2-d366b949387d\nStarting Content Execution for: change-stage.sh.tmpl\nError: Failed to fetch info info: [GET \/info][403] getInfoForbidden DRP does NOT support 'sane-exit-codes' using old codes ...Machine's current stage: ssh-accessChecking for data: ssh-access from complete-nowait:SuccessAttempting to test Stage to complete-nowait and return 0{  \"Address\": \"192.168.1.143\",  \"Available\": true,  \"BootEnv\": \"local\",  \"CurrentJob\": \"e29e9a2f-58d2-4ffa-99a2-d366b949387d\",  \"CurrentTask\": 0,  \"Description\": \"Dell PE 860\",  \"Errors\": [],  \"Name\": \"testnode01\",  \"Profile\": {    \"Available\": false,    \"Errors\": null,    \"Name\": \"\",    \"ReadOnly\": false,    \"Validated\": false  },  \"Profiles\": [    \"necla-default-ubuntu\"  ],  \"ReadOnly\": false,  \"Runnable\": true,  \"Stage\": \"complete-nowait\",  \"Tasks\": [],  \"Uuid\": \"5fcbf69d-287e-4c2c-b085-5858665cd442\",  \"Validated\": true}\\nChanged stage successfully: Returning 0Command change-stage.sh.tmpl succeeded\n```",
+        "ts": "1509022412.000002"
+    },
+    {
+        "text": "Time to feed the :bear:!",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1509022412.000035"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The log entry before that one is the one we need I think",
+        "ts": "1509023313.000289"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Nvm",
+        "ts": "1509023320.000176"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Ah, I see the problem - I didn’t include the SSH-related params in the recreated profile!",
+        "ts": "1509024176.000323"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "so now then, here’s the new JSON to recreate the profile:\n```[dradmin@dr-admin drp]$ cat necla-default.json\n{\n\t\"Available\": true,\n\t\"Description\": \"NECLA Default Stage-map for Ubuntu installs\",\n\t\"Name\": \"necla-default-ubuntu\",\n\t\"Params\": {\n\t\t\"change-stage\/map\": {\n\t\t\t\"ubuntu-16.04-install\": \"ssh-access:Success\",\n\t\t\t\"ssh-access\": \"complete-nowait:Success\"\n\t\t},\n\t\t\"access-keys\": {\n\t\t\t\"root\": \"ssh-rsa &lt;redacted&gt; will@Wills-MacBook-Air\"\n\t\t},\n\t\t\"access-ssh-root-mode\": \"yes\"\n\t}\n}```",
+        "ts": "1509024246.000166"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "And then…\n```[dradmin@dr-admin drp]$ drpcli profiles destroy necla-default-ubuntu\nDeleted profile necla-default-ubuntu\n[dradmin@dr-admin drp]$ drpcli profiles create - &lt; necla-default.json\n{\n  \"Available\": true,\n  \"Description\": \"NECLA Default Stage-map for Ubuntu installs\",\n  \"Errors\": [],\n  \"Name\": \"necla-default-ubuntu\",\n  \"Params\": {\n    \"access-keys\": {\n      \"root\": \"ssh-rsa &lt;redacted&gt; will@Wills-MacBook-Air\"\n    },\n    \"access-ssh-root-mode\": \"yes\",\n    \"change-stage\/map\": {\n      \"ssh-access\": \"complete-nowait:Success\",\n      \"ubuntu-16.04-install\": \"ssh-access:Success\"\n    }\n  },\n  \"ReadOnly\": false,\n  \"Validated\": true\n}```",
+        "ts": "1509024313.000356"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Applied the updated profile to the test host, let’s PXE and see what I get this time…",
+        "ts": "1509024361.000055"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Well we need to make sure that the machine has ssh keys.  ",
+        "ts": "1509027658.000241"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The stages and tasks ran   ",
+        "ts": "1509027690.000361"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "drpcli machines params uuid —aggregate.",
+        "ts": "1509027734.000194"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You should see an access keys parameter wth the keys you want installed ",
+        "ts": "1509027770.000408"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, install is complete; did the above and this is what I see:\n```[dradmin@dr-admin drp]$ drpcli machines params 5fcbf69d-287e-4c2c-b085-5858665cd442 --aggregate\n{\n  \"access-keys\": {\n    \"root\": \"ssh-rsa &lt;redacted&gt; will@Wills-MacBook-Air\"\n  },\n  \"access-ssh-root-mode\": \"yes\",\n  \"change-stage\/map\": {\n    \"ssh-access\": \"complete-nowait:Success\",\n    \"ubuntu-16.04-install\": \"ssh-access:Success\"\n  }\n}```",
+        "ts": "1509028624.000065"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So I do have the correct access key injected",
+        "ts": "1509028644.000292"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "However… It did not perform the correct action as regards `access-ssh-root-mode`",
+        "ts": "1509028690.000250"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "The `access-ssh-root-mode` param should utilize the `root-remote-access.tmpl` correct?\n```[dradmin@dr-admin drp]$ drpcli templates show root-remote-access.tmpl\n{\n  \"Available\": true,\n  \"Contents\": \"#\\n# This template populates the root's authorized keys file\\n# and makes sure that the sshd config for PermitRootLogin is populated.\\n#\\n# Runs as part of a shell script for kickstart or net-post-install\\n# The template does nothing if proxy-servers is undefined\\n#\\n# Required Parameters: access_keys\\n# Optional Parameters: access_ssh_root_mode\\n#\\n# Parameter YAML format:\\n#\\n# access_keys:\\n#   greg:  ssh-rsa key\\n#   greg2:  ssh-rsa key\\n# access_ssh_root_mode: \\\"without-password|yes|no|forced-commands-only\\\"\\n#\\n# Defaults:\\n# access_keys - empty\\n# access_ssh_root_mode - defaults to \\\"without-password\\\" if unspecified\\n#\\n\\n{{if .ParamExists \\\"access_keys\\\"}}\\nmkdir -p \/root\/.ssh\\ncat \\u003e\/root\/.ssh\/authorized_keys \\u003c\\u003cEOFSSHACCESS\\n### BEGIN GENERATED CONTENT\\n{{ range $key := .Param \\\"access_keys\\\" }}\\n{{$key}}\\n{{ end }}\\n### END GENERATED CONTENT\\nEOFSSHACCESS\\n{{end}}\\n\\nsed --in-place -re '\/^PermitRootLogin\/ s\/prohibit-password\/{{if .ParamExists \\\"access_ssh_root_mode\\\"}}{{.Param \\\"access_ssh_root_mode\\\"}}{{else}}without-password{{end}}\/' \/etc\/ssh\/sshd_config\\n\\necho \\\"AcceptEnv http_proxy https_proxy no_proxy\\\" \\u003e\\u003e \/etc\/ssh\/sshd_config\\n\",\n  \"Errors\": null,\n  \"ID\": \"root-remote-access.tmpl\",\n  \"ReadOnly\": false,\n  \"Validated\": true\n}```",
+        "ts": "1509028872.000825"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Okay.  So the issue is around the root mode.  ",
+        "ts": "1509028876.000272"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We are missing a service restart.  I think. ",
+        "ts": "1509028944.000744"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Trying to test the “sed” in the above, which proposes to replace the `echo \"PermitRootLogin yes\" &gt;&gt; \/etc\/ssh\/sshd_config` in the current RackN version",
+        "edited": {
+            "user": "U416T0AAX",
+            "ts": "1509029054.000000"
+        },
+        "ts": "1509028975.000518"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Something seems amiss;  This is my template: ```#!\/bin\/bash\n\n{{if .ParamExists \"access-keys\"}}\necho \"Putting ssh access keys for root in place\"\nmkdir -p \/root\/.ssh\ncat &gt;&gt;\/root\/.ssh\/authorized_keys &lt;&lt;EOFSSHACCESS\n### BEGIN Access Keys GENERATED CONTENT\n{{range $key := .Param \"access-keys\"}}\n{{$key}}\n{{end}}\n### END Access Keys GENERATED CONTENT\nEOFSSHACCESS\nchmod 600 \/root\/.ssh\/authorized_keys\n{{end}}\n\necho \"Updating SSHD default values\"\necho \"PermitRootLogin {{if .ParamExists \"access-ssh-root-mode\"}}{{.Param \"access-ssh-root-mode\"}}{{else}}without-password{{end}}\" &gt;&gt; \/etc\/ssh\/sshd_config\necho \"AcceptEnv http_proxy https_proxy no_proxy\" &gt;&gt; \/etc\/ssh\/sshd_config\n\n# Restart sshd but os badness.\n. \/etc\/os-release\n# Ignore error because we may run in a place that doesn't have ssh installed\nif [[ \"$ID\" == \"ubuntu\" || \"$ID\" == \"debian\" ]] ; then\n    echo \"Restarting ssh\"\n    service ssh restart || true\nelse\n    echo \"Restarting sshd\"\n    service sshd restart || true\nfi\n\necho \"Finished updating access keys successfully\"\nexit 0\n```",
+        "ts": "1509029691.000495"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It has the busted echo injection.  Needs the sed replacement.",
+        "ts": "1509029718.000401"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So I’m missing the sshd restart bit?",
+        "ts": "1509030985.000159"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes",
+        "ts": "1509031218.000427"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So, I made my own custom community content (cloned the `provision-content` repo, make changes, built per your instructions), and copied this file over to my DRP installation and put it in place…",
+        "ts": "1509031620.000160"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7QBKKQFM\/drp-community-content.yaml|drp-community-content.yaml> and commented: custom community content",
+        "file": {
+            "id": "F7QBKKQFM",
+            "created": 1509031645,
+            "timestamp": 1509031645,
+            "name": "drp-community-content.yaml",
+            "title": "drp-community-content.yaml",
+            "mimetype": "text\/plain",
+            "filetype": "yaml",
+            "pretty_type": "YAML",
+            "user": "U416T0AAX",
+            "editable": true,
+            "size": 28790,
+            "mode": "snippet",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7QBKKQFM\/drp-community-content.yaml?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7QBKKQFM\/download\/drp-community-content.yaml?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7QBKKQFM\/drp-community-content.yaml",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F7QBKKQFM-3ba9803306",
+            "edit_link": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7QBKKQFM\/drp-community-content.yaml\/edit",
+            "preview": "meta:\n  Description: Digital Rebar Provision Community Content\n  Name: drp-community-content\n  Source: https:\/\/github.com\/digitalrebar\/provision-content\n  Version: v1.0.0-tip-dradmin-dev-10-5dc611603bba0352c887efed813e62ec8451f32f",
+            "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre><span class=\"cm-atom\">meta<\/span><span class=\"cm-meta\">:<\/span><\/pre><\/div>\n<div><pre><span class=\"cm-atom\">  Description<\/span><span class=\"cm-meta\">: <\/span>Digital Rebar Provision Community Content<\/pre><\/div>\n<div><pre><span class=\"cm-atom\">  Name<\/span><span class=\"cm-meta\">: <\/span>drp-community-content<\/pre><\/div>\n<div><pre><span class=\"cm-atom\">  Source<\/span><span class=\"cm-meta\">: <\/span>https<span class=\"cm-meta\">:<\/span>\/\/github.com\/digitalrebar\/provision-content<\/pre><\/div>\n<div><pre><span class=\"cm-atom\">  Version<\/span><span class=\"cm-meta\">: <\/span>v1.0.0-tip-dradmin-dev-10-5dc611603bba0352c887efed813e62ec8451f32f<\/pre><\/div>\n<\/div>\n<\/div>\n",
+            "lines": 739,
+            "lines_more": 734,
+            "preview_is_truncated": true,
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 1,
+            "initial_comment": {
+                "id": "Fc7PU0QGSV",
+                "created": 1509031645,
+                "timestamp": 1509031645,
+                "user": "U416T0AAX",
+                "is_intro": true,
+                "comment": "custom community content"
+            }
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1509031647.000198"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The community template different than the RackN template.",
+        "ts": "1509031742.000222"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "That’s how I got my changed `root-remote-access.tmpl` (it seems to be the same as the `ce-root-remote-access.tmpl` in what I built)",
+        "ts": "1509031745.000517"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "sigh - I’m trying to fix this.",
+        "ts": "1509031747.000162"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "“sigh” too…",
+        "ts": "1509031767.000103"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Okay - so here is what is coming hopefully in the next day or two.",
+        "ts": "1509031790.000673"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Lay it on me",
+        "ts": "1509031799.000307"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "To address this issue.",
+        "ts": "1509031805.000419"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "1. Pull in <@U54E4SD4G>’s patches to community content.",
+        "ts": "1509031824.000109"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "2. Rework community content and rackn content to provide stage\/task based system that will work without a change-map (similar to exisitng functions).",
+        "ts": "1509031887.000101"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Community content will be in two parts core and contrib.  We will put a basic set of things in core and contrib will be where we put things that are less supported from the community.",
+        "ts": "1509031939.000768"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "^^^ sounds reasonable",
+        "ts": "1509031962.000049"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "RackN content will loose the os-linux and os-discovery.  They will be come core.",
+        "ts": "1509031963.000675"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Some of the os-linux items will move into contrib or os-other.  Depending upon support requirements.",
+        "ts": "1509031990.000520"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "There will be task library content pack that will be RackN content that will have additional stages and tasks that do special functions.  Like post-post-install runners and other thigns.",
+        "ts": "1509032034.000039"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Content packs associated with plugins will move into the plugins to allow for proper version tracking and consistency (this change just went in).",
+        "ts": "1509032078.000032"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So, this all in 3.2?",
+        "ts": "1509032095.000434"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Oh - I stopped numbering my bad.",
+        "ts": "1509032095.000604"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Well - into tip in steps and completed for v3.2",
+        "ts": "1509032120.000328"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, that’s what I meant",
+        "ts": "1509032131.000192"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "feature flags are going to be used to mark feature breaking things.",
+        "ts": "1509032133.000016"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "as we go.",
+        "ts": "1509032147.000296"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Sounds like a reinstall rather than upgrade from v3.1 to v3.2… a lot of architectural changes coming down the pike…",
+        "ts": "1509032198.000451"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "actually, You don’t have to reinstall, but you do have to tweak a couple of things around your read-only content.",
+        "ts": "1509032238.000107"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Let me do that real quick: <!channel> - updating to tip requires a couple of changes.  And should follow this sequence.",
+        "ts": "1509032271.000418"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "1. Update drp to tip and restart.  Previous plugins will work.",
+        "ts": "1509032292.000015"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "2. Remove plugin-providers using UX.",
+        "ts": "1509032306.000349"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "3. Remove `packet`, `virtualbox`, and `ipmi` content bundles if installed.",
+        "ts": "1509032330.000486"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "4. Re-add latest tip plugins as needed.  This will add the previously removed content packs back.  None of the object have been changed.",
+        "ts": "1509032368.000446"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "5. Optionally update other content packs to latest tip.",
+        "ts": "1509032408.000852"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "6. IMPORTANT: Always check `stages`, `bootenvs` to make sure that your used objects are available.  A likely change will be a new sledgehammer update.  Update this by using the ISO upload feature in the UX or `drpcli bootenvs uploadiso sledgehammer`",
+        "ts": "1509032502.000184"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The goal of these coming changes is to allow for stage-based operations to be the default everywhere for everyone to reduce confusion.",
+        "ts": "1509032575.000418"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U54E4SD4G> - I’m pulling your changes but I’m not going to move tip on that tree until I get so of the other changes stablized.",
+        "ts": "1509032911.000280"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So <@U02DGQYK1> - with all the changes to UX, etc - should I do the upgrade to ‘tip’? (Is it stable enough for day-to-day work?)",
+        "ts": "1509033526.000078"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I’m not getting usable installs with what I have now…",
+        "ts": "1509033543.000438"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I think so.  I’d like to go through a few more installs.",
+        "ts": "1509033608.000438"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I would like that ssh sed line to test though.  Can I pull that in",
+        "ts": "1509033622.000514"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Was trying to test it first, but that’s not been successful… Let me go ahead and send the pull request I have started for it",
+        "ts": "1509033666.000054"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "done",
+        "ts": "1509033844.000690"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "cool thanks.  I’ll lift into the merged pieces.",
+        "ts": "1509033859.000138"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "It’ll have to be ported over to the “official” RackN `root-remote-access.tmpl` as well",
+        "ts": "1509033922.000799"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yeah - I’m merging those as we speak.",
+        "ts": "1509033963.000319"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, think I dug the hole I’m in a bit deeper…",
+        "ts": "1509063984.000094"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Updated Content to latest, now I get this on the ubuntu-16.04-install bootenv…",
+        "ts": "1509064146.000213"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7QNNT326\/broken-bootenv.tiff|broken-bootenv.tiff>",
+        "file": {
+            "id": "F7QNNT326",
+            "created": 1509064165,
+            "timestamp": 1509064165,
+            "name": "broken-bootenv.tiff",
+            "title": "broken-bootenv.tiff",
+            "mimetype": "image\/tiff",
+            "filetype": "tiff",
+            "pretty_type": "TIFF",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 85832,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7QNNT326\/broken-bootenv.tiff?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7QNNT326\/download\/broken-bootenv.tiff?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7QNNT326-732610b808\/broken-bootenv_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7QNNT326-732610b808\/broken-bootenv_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7QNNT326-732610b808\/broken-bootenv_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 247,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7QNNT326-732610b808\/broken-bootenv_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 329,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7QNNT326-732610b808\/broken-bootenv_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7QNNT326-732610b808\/broken-bootenv_720.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 494,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7QNNT326-732610b808\/broken-bootenv_800.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 549,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7QNNT326-732610b808\/broken-bootenv_960.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 659,
+            "image_exif_rotation": 1,
+            "original_w": 975,
+            "original_h": 669,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7QNNT326\/broken-bootenv.tiff",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F7QNNT326-9d1ff7733c",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1509064168.000123"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U416T0AAX> do you have the RackN \"os-linux\" content pack installed ?? those are all artifacts from that content pack",
+        "ts": "1509065603.000087"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Have v1.0.0.-tip-39-…",
+        "ts": "1509065685.000201"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Running on DRP v3.1.0 (stable) - that may be the issue…",
+        "ts": "1509065713.000148"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So much has changed since then…",
+        "ts": "1509065727.000070"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yeah - you can't mix tip content and stable right now",
+        "ts": "1509065731.000120"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": ":slightly_smiling_face:  yes - thanks to feedback and input from our community and users",
+        "ts": "1509065746.000035"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I think I need to update to tip…",
+        "ts": "1509065768.000010"
+    },
+    {
+        "text": "We're working on UX patch that will allow you to pick content versions.... hopefully in review tonight",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1509065809.000096"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Updated DRP to ‘tip’ (hopefully) - can anyone <!here> confirm this is latest tip version?\n```[dradmin@dr-admin drp]$ .\/dr-provision --version\ndr-provision2017\/10\/26 21:22:07.330924 Version: v3.1.0-0-b70cf8ee1f61844a6d64070a8b272c2bec512204```",
+        "ts": "1509068408.000161"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "um ... well ... if you wait 10 mins, it'll probably be out of date ... :slightly_smiling_face:  `tip` is moving really fast right now",
+        "ts": "1509068510.000030"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, think that’s still 3.1 stable… Looks like the tip install didn’t work",
+        "ts": "1509068792.000101"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Let me create a new directory (“drp-tip”) and install into there…",
+        "ts": "1509068821.000155"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "did you install with `... install --drp-version=tip --isolated` ??",
+        "ts": "1509068997.000131"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "yes",
+        "ts": "1509069004.000087"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Doesn’t look like it overwrites existing binaries",
+        "ts": "1509069036.000128"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "only if  you force it to",
+        "ts": "1509069045.000095"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "by default it tries to \"be safe\"",
+        "ts": "1509069052.000024"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can `curl` the `install.sh` script by itself without passing it through pipe to `bash` - then run `bash .\/install.sh --help` to get help info",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1509069094.000000"
+        },
+        "ts": "1509069090.000013"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Running `bash .\/install.sh --upgrade=true --isolated install --drp-version=tip` in my prior DRP stable isolated top-level directory, wish me luck…",
+        "ts": "1509071876.000132"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Well, once that got done installing, tried to start up, and got this:\n```[dradmin@dr-admin drp]$ sudo .\/dr-provision --static-ip=192.168.1.148 --base-root=\/home\/dradmin\/drp\/drp-data --local-content=\"\" --default-content=\"\" --disable-dhcp\n[sudo] password for dradmin:\ndr-provision2017\/10\/26 22:22:45.919405 Version: v3.1.0-tip-173-92a761a0c2f910dc8dda1459345b525962d3c2af\ndr-provision2017\/10\/26 22:22:45.919515 Extracting Default Assets\ndr-provision2017\/10\/26 22:22:46.908363 Unable to create DataStack: fixBasic: cannot replace bootenvs:local: item in writable store not equal to static version\nmap[Description: OptionalParams:&lt;nil&gt; Errors:&lt;nil&gt; OnlyUnknown:false Name:local Templates:[map[Path:pxelinux.cfg\/{{.Machine.HexAddress}} ID:local-pxelinux.tmpl Contents: Name:pxelinux] map[Name:elilo Path:{{.Machine.HexAddress}}.conf ID:local-elilo.tmpl Contents:] map[Name:ipxe Path:{{.Machine.Address}}.ipxe ID:local-ipxe.tmpl Contents:]] Kernel: Initrds:&lt;nil&gt; BootParams: RequiredParams:&lt;nil&gt; Available:true OS:map[Codename: Version: IsoFile: IsoSha256: IsoUrl: Name:local Family:]]\nmap[Name:local Initrds:[] RequiredParams:[] Available:false OptionalParams:[] Validated:false ReadOnly:false Meta:map[] OS:map[Family: Codename: Version: IsoFile: IsoSha256: IsoUrl: Name:local] Templates:[map[Name:pxelinux Path:pxelinux.cfg\/{{.Machine.HexAddress}} ID: Contents:DEFAULT local\nPROMPT 0\nTIMEOUT 10\nLABEL local\nlocalboot 0\n] map[ID: Contents:exit Name:elilo Path:{{.Machine.HexAddress}}.conf] map[Name:ipxe Path:{{.Machine.Address}}.ipxe ID: Contents:#!ipxe\nexit\n]] Kernel: Errors:[] Description:The boot environment you should use to have known machines boot off their local hard drive BootParams: OnlyUnknown:false]```",
+        "ts": "1509072054.000089"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Okay we tried to be cool ",
+        "ts": "1509076821.000236"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "`cd drp-data\/digitalrebar\/bootenvs`",
+        "ts": "1509076897.000141"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "`sudo rm local.json ignore.json`",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1509076969.000000"
+        },
+        "ts": "1509076911.000154"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We moved the required bootenvs into DRP itself as a content layer, but try to do a safety check.  We think something has changed so we don’t allow it.    I suspect you haven’t changed local and ignore bootenvs.",
+        "ts": "1509077017.000182"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "then try to restart.",
+        "ts": "1509077044.000144"
+    }
+]

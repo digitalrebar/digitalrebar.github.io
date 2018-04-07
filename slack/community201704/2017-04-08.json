@@ -1,0 +1,18 @@
+[
+    {
+        "text": "I'm trying to make a nice VM for dainty little rebar, but I'm having trouble routing out from the VM.  HALP, my head is getting bloody from banging:  http:\/\/stackoverflow.com\/questions\/43294216\/bridged-libvirt-vms-cannot-route-out",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491655340.885908"
+    },
+    {
+        "text": "Nevermind - seems like I do need the NAT.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491661276.277387"
+    }
+]

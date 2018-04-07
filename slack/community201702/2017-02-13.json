@@ -1,0 +1,26 @@
+[
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So, a couple of questions to ruminate on...",
+        "ts": "1487046224.000321"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "1) How to add new nodes (or reinstall existing rebar-managed nodes) to an existing deployment?",
+        "ts": "1487046273.000322"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "2) If you want to install a node with a given OS (let’s say Ubuntu 16.04) but the only thing you want to change is the disk partitioning, what’s the best way to handle that? Separate bootenv’s with different templates, or the same bootenv with different templates?",
+        "ts": "1487046401.000323"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "3) Is there a way to compose templates where for instance you want to use the same basic overall master template, but insert sections inside that template which themselves could be templates? Again like for maintaining different standard disk partitioning layouts, multi-disk setups, default root passwords, etc.?",
+        "ts": "1487047046.000324"
+    }
+]

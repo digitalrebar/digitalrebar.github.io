@@ -1,0 +1,168 @@
+[
+    {
+        "type": "message",
+        "user": "U8A2N44HH",
+        "text": "has anyone used DRP for ONIE based installs ?",
+        "ts": "1516826538.000058"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U8A2N44HH> - umm - hmm - kinda.  We’ve talked about it in the past with some switch vendors.  Started to show a path on with DRv2.  DRP should be similar to setup for it.  Just haven’t tried.  You interested?  Anything in particular you trying to boot\/install with ONIE?",
+        "ts": "1516827139.000836"
+    },
+    {
+        "type": "message",
+        "user": "U8A2N44HH",
+        "text": "ONL",
+        "ts": "1516827348.000002"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<https:\/\/opennetlinux.org\/>",
+        "ts": "1516827512.000017"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "In general, it has never been much different than sledgehammer.",
+        "ts": "1516827591.000365"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U8A2N44HH> - okay - so - in first quick glance, you could have the ONIE device DHCP.  Drp would provide an address and options.",
+        "ts": "1516828141.000217"
+    },
+    {
+        "type": "message",
+        "user": "U8A2N44HH",
+        "text": "Yup already getting ips from DRP",
+        "ts": "1516828329.000741"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The DRP config need to set option 114 (default-url) to “<http:\/\/DRP_IP:8091\/files\/NOS_image>”",
+        "ts": "1516828367.000002"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "then put `NOS_image` in the files directory of DRP.",
+        "ts": "1516828395.000487"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "```drpcli files upload NOS_image as NOS_image```",
+        "ts": "1516828417.000266"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "if you already have a webserver , you can point it at that instead.",
+        "ts": "1516828445.000082"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "From this: <https:\/\/opencomputeproject.github.io\/onie\/user-guide\/index.html>",
+        "ts": "1516828524.000382"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You should be able to check leases to find your switch and ssh into.",
+        "ts": "1516828596.000333"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "There is a lot of advanced config stuff that our DHCP server can do (kinda like ISC’s) to push it.",
+        "ts": "1516828624.000006"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "THe option could be set on the subnet and would like be ignored by all things except switches.",
+        "ts": "1516828656.000675"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Or create a reservation for that specific switch with option 114 for its need.",
+        "ts": "1516828680.000467"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "An advanced config option would be to put vendor string decomposition into the option 114 and select the right file for the right vendor type, but that is pretty hardcore.",
+        "ts": "1516828736.000338"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U8A2N44HH> - make sense?",
+        "ts": "1516828744.000460"
+    },
+    {
+        "type": "message",
+        "user": "U8A2N44HH",
+        "text": "@greg totally",
+        "ts": "1516828866.000107"
+    },
+    {
+        "type": "message",
+        "user": "U8A2N44HH",
+        "text": "Will try it in a bit",
+        "ts": "1516828874.000322"
+    },
+    {
+        "type": "message",
+        "user": "U8A2N44HH",
+        "text": "Already statically reserves but prefer the whole subnet approach",
+        "ts": "1516828902.000529"
+    },
+    {
+        "type": "message",
+        "user": "U8A2N44HH",
+        "text": "Next question will be around gohai inventory :-) but that will wait for tomorrow",
+        "ts": "1516828934.000104"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "on the switch?",
+        "ts": "1516829006.000087"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Though, it might work for just doing TFTP\/http waterfall process as well.",
+        "ts": "1516829116.000009"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U8A2N44HH> - also - we can support this as well.  <https:\/\/opencomputeproject.github.io\/onie\/design-spec\/x86_recovery.html#pxe-network-install>",
+        "ts": "1516829327.000678"
+    },
+    {
+        "type": "message",
+        "user": "U8A2N44HH",
+        "text": "No gohai for existing servers",
+        "ts": "1516834855.000594"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "w\/ the new v1.6 DRPCLI gohai command - you may be able to run it that way.  would that work?",
+        "edited": {
+            "user": "U02DHRR2L",
+            "ts": "1516837860.000000"
+        },
+        "ts": "1516837750.000019"
+    }
+]

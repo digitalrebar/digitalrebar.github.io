@@ -1,0 +1,401 @@
+[
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "ssh keys are for root.",
+        "ts": "1497360117.658544"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "rocketskates\/RocketSkates",
+        "ts": "1497360125.661002"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "should be the login user.",
+        "ts": "1497360130.662742"
+    },
+    {
+        "text": "I'll update the docs to clarify and see about putting it an faq also",
+        "username": "zehicle_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497362063.358263"
+    },
+    {
+        "text": "Hi <@U02DHRR2L|zehicle> I started reading about\/trying out digital rebar yesterday so I'm noobish in this area as my team is interested in using that for cloud deployment.  I believe we(SUSE) have a meeting with you on Thursday to go over digital rebar, but I wanted to give it a try before going into the meeting.  I was able to get  it to run on a vagrant VM yesterday just following section 1.1.2.  I could try again just getting it to run via the compose approach, but is there a way to use local VMs as nodes?",
+        "username": "jack-likes-to-code",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497375600.709600"
+    },
+    {
+        "text": "ls",
+        "username": "jack-likes-to-code",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497375775.774152"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Sure, as long as the VMs are attached to thee same bridge that the admin node is serving DHCP on, and there are no conflicting DHCP servers.",
+        "ts": "1497377855.565777"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "If you are running on a Linux box, digitalrebar\/core\/tools\/docker-admin will bring up the DR admin containers, and digitalrebar\/core\/tools\/kvm-slave will spin up QEMU instances that attach to the docker0 bridge and PXE boot by default.",
+        "ts": "1497377967.606914"
+    },
+    {
+        "text": "oh!  I'll have to look into that...  installing Ubuntu 16.04 on another box right now.  Will give this a try.  Thx!",
+        "username": "jack-likes-to-code",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497378031.631185"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Those are the tools I use in my daily development.",
+        "ts": "1497378062.642408"
+    },
+    {
+        "text": "has not teested them on opensuse in a while, tho.",
+        "type": "message",
+        "subtype": "me_message",
+        "user": "U02DJQSG8",
+        "ts": "1497378151.675723"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Arch Linux is my daily driver.",
+        "ts": "1497378160.679088"
+    },
+    {
+        "text": "Currently using Ubuntu for now...  ",
+        "username": "jack-likes-to-code",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497378182.687521"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I won't tell anyone else. :slightly_smiling_face:",
+        "ts": "1497378293.728760"
+    },
+    {
+        "text": "lol, I'm a transplant from HPE that was acquired by SUSE 3 months ago...  Luckily, SUSE is pretty open about these things.  :)\n",
+        "username": "jack-likes-to-code",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497378496.806275"
+    },
+    {
+        "text": "@jack-likes-to-code there's a video in the training sessions where we show how to do the docker-admin &amp; kvm-slave path",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497384349.887961"
+    },
+    {
+        "text": "<@U02DHRR2L|zehicle> I was just going to ask you about this",
+        "username": "jack-likes-to-code",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497384364.892950"
+    },
+    {
+        "text": "can you point me to that?",
+        "username": "jack-likes-to-code",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497384369.894672"
+    },
+    {
+        "text": "you should also make sure to try DR Provision - it's the newer model deployment",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497384383.899770"
+    },
+    {
+        "text": "I got to the point of bringing up digital-rebar, but I went ahead and ran the kvm-slave to bring up a node and it sits there with:\n2017-06-13 13:01:21 -0700: 26660 - PXE booting node (0)\n",
+        "username": "jack-likes-to-code",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497384433.917136"
+    },
+    {
+        "text": "should i have run the docker-admin script first?",
+        "username": "jack-likes-to-code",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497384445.921729"
+    },
+    {
+        "text": "Not familiar with DR Provision.  Can you point me to that documentation?",
+        "username": "jack-likes-to-code",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497384515.944673"
+    },
+    {
+        "text": "https:\/\/youtu.be\/OBK1Gkv0YH8?list=PLXPBeIrpXjfh2lXdXkNnzAuc7_SUtYJR-&amp;t=243",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497384545.956542"
+    },
+    {
+        "text": "For DRP http:\/\/provision.readthedocs.io\/en\/latest\/",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497384558.961132"
+    },
+    {
+        "text": "thanks, I'll take a look",
+        "username": "jack-likes-to-code",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497384575.966761"
+    },
+    {
+        "text": "@jack-likes-to-code the challenge w\/ the kvm-slave script is that is assumes your using docker0 as the bridge.  you'll need to adjust the script to use another bridge if you used Vagrant to bring up the admin now",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497384606.977483"
+    },
+    {
+        "text": "not using vagrant anymore.  Just installed ubuntu on a box and ran the quickstart script on it",
+        "username": "jack-likes-to-code",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497384647.991075"
+    },
+    {
+        "text": "that brought up digital rebar and I can see the UI",
+        "username": "jack-likes-to-code",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497384667.997831"
+    },
+    {
+        "text": "you can change the bridge by setting the \"OCB_BRIDGE\"  environment variable",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497384669.998204"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "jack-likes-to-code: Yes, you need to run docker-admin and wait for Digital Rebar to come up before running kvm-slave",
+        "ts": "1497384686.004006"
+    },
+    {
+        "text": "I think kvm-slave should work in that case",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497384706.010573"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Otherwise the VM will not be able to PXE boot and just sit there forever.",
+        "ts": "1497384711.012373"
+    },
+    {
+        "text": "ok",
+        "username": "jack-likes-to-code",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497384732.019524"
+    },
+    {
+        "text": "BTW &gt; Victor is using our Slack bridge, which impersonates by Gitter account.  So there are really two people :)",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497384735.020409"
+    },
+    {
+        "text": "I was wondering why victor comes up in all your msgs",
+        "username": "jack-likes-to-code",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497384757.028467"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "this is how my (Rob's comments) show up by typing from Slack",
+        "ts": "1497384797.041826"
+    },
+    {
+        "text": "For people who prefer Slack, we're happy to provide invites to that channel.  either way, the comments are mirrored",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497384851.059939"
+    },
+    {
+        "text": "<@U02DHRR2L|zehicle> running docker-admin gives me the following error:\nERROR: for forwarder  driver failed programming external connectivity on endpoint compose_forwarder_1 (b3cc8cd5024e4c714ec3c14c70fe65d8f745ca7d55943a82cc1df5e9c0916151): Bind for 0.0.0.0:3000 failed: port is already allocated\nTraceback (most recent call last):\n  File \"&lt;string&gt;\", line 3, in &lt;module&gt;\n  File \"compose\/cli\/main.py\", line 63, in main\nAttributeError: 'ProjectError' object has no attribute 'msg'\ndocker-compose returned -1\nBringing containers up.  Exiting the shell will kill and remove the containers\n\nIt looks like docker-proxy is already listening on port 3000",
+        "username": "jack-likes-to-code",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497384999.109929"
+    },
+    {
+        "text": "is it because I'm already running digital rebar?  Perhaps I should bring that down first before running docker-admin?",
+        "username": "jack-likes-to-code",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497385045.125454"
+    },
+    {
+        "text": "yes.  from digitalrebar\/deploy\/compose, use docker-compose stop  then docker-compose rm -f",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497386112.490911"
+    },
+    {
+        "text": "<@U02DHRR2L|zehicle> done.  I kicked off docker-admin.  Looks like ntp service has been sitting around:\n```dev@Z640-extra:~\/digitalrebar\/deploy\/compose$ docker ps\nCONTAINER ID        IMAGE                                COMMAND                  CREATED             STATUS              PORTS                                          NAMES\n5699fd40e04f        digitalrebar\/dr_rebar_api:master     \"\/sbin\/docker-entr...\"   3 minutes ago       Up 3 minutes                                                       compose_rebar_api_1\ncb604b7ea9c0        digitalrebar\/dr_goiardi:master       \"\/sbin\/docker-entr...\"   3 minutes ago       Up 3 minutes                                                       compose_goiardi_1\nc4e400eddb06        digitalrebar\/cloudwrap:master        \"\/sbin\/docker-entr...\"   3 minutes ago       Up 3 minutes                                                       compose_cloudwrap_1\n87050fbf06bf        digitalrebar\/dr_trust_me:master      \"\/sbin\/docker-entr...\"   3 minutes ago       Up 3 minutes                                                       compose_trust_me_1\n1557912d03d7        digitalrebar\/dr_webproxy:master      \"\/sbin\/docker-entr...\"   3 minutes ago       Up 3 minutes                                                       compose_webproxy_1\nfaf9eaaa8484        digitalrebar\/dr_rev_proxy:master     \"\/sbin\/docker-entr...\"   3 minutes ago       Up 3 minutes                                                       compose_revproxy_1\nd8853af62a83        digitalrebar\/dr_rebar_dhcp:master    \"\/sbin\/docker-entr...\"   3 minutes ago       Up 3 minutes                                                       compose_dhcp_1\nc3b1b4323d2c        digitalrebar\/dr_provisioner:master   \"\/sbin\/docker-entr...\"   3 minutes ago       Up 3 minutes                                                       compose_provisioner_1\nfaf2f86e6631        digitalrebar\/logging:master          \"\/sbin\/docker-entr...\"   3 minutes ago       Up 3 minutes                                                       compose_logging_1\n6f7e5d0761e9        digitalrebar\/dr_dns:master           \"\/sbin\/docker-entr...\"   3 minutes ago       Up 3 minutes                                                       compose_dns_1\nd7880c396047        digitalrebar\/dr_forwarder:master     \"\/sbin\/docker-entr...\"   3 minutes ago       Up 3 minutes        0.0.0.0:443-&gt;443\/tcp, 0.0.0.0:3000-&gt;3000\/tcp   compose_forwarder_1\n555d43930ce9        digitalrebar\/dr_postgres:master      \"\/docker-entrypoin...\"   3 minutes ago       Up 3 minutes                                                       compose_postgres_1\n9696410fe96d        digitalrebar\/rule-engine:master      \"\/sbin\/docker-entr...\"   3 minutes ago       Up 31 seconds                                                      compose_rule-engine_1\n7a49fbda0ce0        gliderlabs\/consul                    \"\/bin\/consul agent...\"   3 minutes ago       Up 3 minutes                                                       compose_consul_1\nde8cea4fbee6        digitalrebar\/dr_ntp:master           \"\/sbin\/docker-entr...\"   About an hour ago   Up About an hour    0.0.0.0:123-&gt;123\/tcp, 0.0.0.0:123-&gt;123\/udp     compose_ntp_1\n",
+        "username": "jack-likes-to-code",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497386664.678459"
+    },
+    {
+        "text": "can't seem to figure out preformat\nrebar\/rebar1 creds no longer work.  What are the new creds when running docker-admin?",
+        "username": "jack-likes-to-code",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497386870.750262"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "it takes a little while before the user is created",
+        "ts": "1497386991.791132"
+    },
+    {
+        "text": "thx.  i guess i was too impatient",
+        "username": "jack-likes-to-code",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497387038.807044"
+    },
+    {
+        "text": "still no cigar with kvm-slave.  i am able to login to the UI, but kvm-slave still gets stuck at PXE booting node (0).  You mentioned that docker0 is the assumed bridge.  How do I determine that?  \n`dev@Z640-extra:~\/digitalrebar\/deploy\/compose$ docker network ls\nNETWORK ID          NAME                DRIVER              SCOPE\n1a30c0576175        bridge              bridge              local\n918aa569f74b        host                host                local\n902721abd2e5        none                null                local\n",
+        "username": "jack-likes-to-code",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497387422.936423"
+    },
+    {
+        "text": "Trying this again:\n```\ndev@Z640-extra:~\/digitalrebar\/deploy\/compose$ docker network ls\nNETWORK ID          NAME                DRIVER              SCOPE\n1a30c0576175        bridge              bridge              local\n918aa569f74b        host                host                local\n902721abd2e5        none                null                local\n```",
+        "username": "jack-likes-to-code",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497387637.010315"
+    },
+    {
+        "text": "It seems everything is up on docker0:\n```\ndev@Z640-extra:~\/digitalrebar\/deploy\/compose$ brctl show\nbridge name     bridge id               STP enabled     interfaces\ndocker0         8000.0242b3fb13c2       no              veth1c3107d\n                                                        veth3ad8868\n                                                        veth3d311d6\n                                                        veth42dbc38\n                                                        veth5268663\n                                                        veth73ba994\n                                                        veth74f95ac\n                                                        veth91e9b8a\n                                                        vethc2366ce\n                                                        vethe6c4c02\n                                                        vethf3a9141\n                                                        vm-88964-0\n                                                        vm-88964-1\n                                                        vm-88964-2\nvirbr0          8000.000000000000       yes\n```",
+        "username": "jack-likes-to-code",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497387806.069617"
+    },
+    {
+        "text": "there's a IP bridge that you need... forgot to mention!",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497387887.095694"
+    },
+    {
+        "text": "sudo ip a add 192.168.124.4\/24 dev docker0",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497387897.099045"
+    },
+    {
+        "text": "http:\/\/digital-rebar.readthedocs.io\/en\/latest\/development\/dev_env\/kvm-slaves.html?highlight=kvm-slave",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497387928.109320"
+    },
+    {
+        "text": "then restart the VMs",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497387986.127807"
+    },
+    {
+        "text": "Thanks!  That worked!  More reading!",
+        "username": "jack-likes-to-code",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497389838.675500"
+    },
+    {
+        "text": ":)",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497389905.693375"
+    }
+]

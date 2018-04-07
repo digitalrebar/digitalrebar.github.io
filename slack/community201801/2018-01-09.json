@@ -1,0 +1,42 @@
+[
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "Hello <@U8PBLGRDX> !  good to see you",
+        "ts": "1515513469.000656"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "welcome <@U8PBLGRDX>",
+        "ts": "1515515791.000582"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<!here> - last minute notice - but I'm presenting basics about Digital Rebar Provision on the Boise Idaho meetup group - anyone interested is welcome to join via Zoom conference, at: \n<https:\/\/zoom.us\/j\/4084048118>",
+        "attachments": [
+            {
+                "service_name": "Zoom Video",
+                "title": "Join our Cloud HD Video Meeting now",
+                "title_link": "https:\/\/zoom.us\/j\/4084048118",
+                "text": "Zoom is the leader in modern enterprise video communications, with an easy, reliable cloud platform for video and audio conferencing, chat, and webinars across mobile, desktop, and room systems. Zoom Rooms is the original software-based conference room solution used around the world in board, conference, huddle, and training rooms, as well as executive offices and classrooms. Founded in 2011, Zoom helps businesses and organizations bring their teams together in a frictionless environment to get more done. Zoom is a private company headquartered in San Jose, CA.",
+                "fallback": "Zoom Video: Join our Cloud HD Video Meeting now",
+                "image_url": "https:\/\/d24cgw3uvb9a9h.cloudfront.net\/static\/90524\/image\/thumb.png",
+                "from_url": "https:\/\/zoom.us\/j\/4084048118",
+                "image_width": 250,
+                "image_height": 250,
+                "image_bytes": 12961,
+                "service_icon": "https:\/\/d24cgw3uvb9a9h.cloudfront.net\/zoom.ico",
+                "id": 1
+            }
+        ],
+        "ts": "1515546978.000039"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "starts at 5:30 pm PST",
+        "ts": "1515546987.000317"
+    }
+]

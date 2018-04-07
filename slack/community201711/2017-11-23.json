@@ -1,0 +1,723 @@
+[
+    {
+        "text": "im beginning to wonder just how much work is ahead of me... wanting to A: spin up an XenServer VM ..... instal lan OS on it...  Then run an ansible playbook against it to configure it all...",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1511424831.000291"
+    },
+    {
+        "text": "i see no \"XenServer\" provider even",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1511424918.000137"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "@outbackdingo - please see <@U02DGQYK1>'s comment on how to inject an SSH key to the server config:",
+        "ts": "1511465486.000053"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "",
+        "attachments": [
+            {
+                "fallback": "[November 22nd, 2017 1:55 PM] greg: 1. ssh keys for access before and after install.",
+                "ts": "1511387746.000211",
+                "author_id": "U02DGQYK1",
+                "author_subname": "Greg Althaus",
+                "channel_id": "C02L9P26Q",
+                "channel_name": "community",
+                "is_msg_unfurl": true,
+                "text": "1. ssh keys for access before and after install.",
+                "author_name": "Greg Althaus",
+                "author_link": "https:\/\/rackn.slack.com\/team\/U02DGQYK1",
+                "author_icon": "https:\/\/avatars.slack-edge.com\/2014-07-14\/2459866780_48.jpg",
+                "mrkdwn_in": [
+                    "text"
+                ],
+                "color": "D0D0D0",
+                "from_url": "https:\/\/rackn.slack.com\/archives\/C02L9P26Q\/p1511387746000211",
+                "is_share": true,
+                "footer": "Posted in #community"
+            }
+        ],
+        "ts": "1511465504.000218"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "",
+        "attachments": [
+            {
+                "fallback": "[November 22nd, 2017 1:56 PM] greg: from the cli do this: ```drpcli profiles set global param access-keys to '{ \"galthaus\": \"ssh-rsa bigkeyhere galthaus@Gregs-MacBook-Pro.local\" }'```",
+                "ts": "1511387760.000181",
+                "author_id": "U02DGQYK1",
+                "author_subname": "Greg Althaus",
+                "channel_id": "C02L9P26Q",
+                "channel_name": "community",
+                "is_msg_unfurl": true,
+                "text": "from the cli do this: ```drpcli profiles set global param access-keys to '{ \"galthaus\": \"ssh-rsa bigkeyhere galthaus@Gregs-MacBook-Pro.local\" }'```",
+                "author_name": "Greg Althaus",
+                "author_link": "https:\/\/rackn.slack.com\/team\/U02DGQYK1",
+                "author_icon": "https:\/\/avatars.slack-edge.com\/2014-07-14\/2459866780_48.jpg",
+                "mrkdwn_in": [
+                    "text"
+                ],
+                "color": "D0D0D0",
+                "from_url": "https:\/\/rackn.slack.com\/archives\/C02L9P26Q\/p1511387760000181",
+                "is_share": true,
+                "footer": "Posted in #community"
+            }
+        ],
+        "ts": "1511465521.000023"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "",
+        "attachments": [
+            {
+                "fallback": "[November 22nd, 2017 1:56 PM] greg: `galthaus` is just a string to identify the key.  The second part is the part that will go in the `authorized_keys` file.",
+                "ts": "1511387797.000396",
+                "author_id": "U02DGQYK1",
+                "author_subname": "Greg Althaus",
+                "channel_id": "C02L9P26Q",
+                "channel_name": "community",
+                "is_msg_unfurl": true,
+                "text": "`galthaus` is just a string to identify the key.  The second part is the part that will go in the `authorized_keys` file.",
+                "author_name": "Greg Althaus",
+                "author_link": "https:\/\/rackn.slack.com\/team\/U02DGQYK1",
+                "author_icon": "https:\/\/avatars.slack-edge.com\/2014-07-14\/2459866780_48.jpg",
+                "mrkdwn_in": [
+                    "text"
+                ],
+                "color": "D0D0D0",
+                "from_url": "https:\/\/rackn.slack.com\/archives\/C02L9P26Q\/p1511387797000396",
+                "is_share": true,
+                "footer": "Posted in #community"
+            }
+        ],
+        "ts": "1511465537.000130"
+    },
+    {
+        "text": "<@U6QFVRJNB> funny thing is i did that",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1511465654.000107"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "can you please provide the output of (before pasting it - please obscure your SSH public key piece):  \n`drpcli profiles show global`",
+        "ts": "1511465768.000031"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "also - the SSH public key will only be injected on provisioning - AFTER you install an OS (bootenv) - just adding the ssh key to the global profile will not effect\/change any existing already provisioned machines",
+        "ts": "1511465811.000055"
+    },
+    {
+        "text": "<@U6QFVRJNB> https:\/\/pastebin.com\/6EjmjvuS",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1511466099.000144"
+    },
+    {
+        "text": "<@U6QFVRJNB> hrmmm i think i see the issue",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1511466624.000027"
+    },
+    {
+        "text": "\"access-keys\": {\n      \"dingo\": \"ssh-rsa ssh-rsa xxxxxxxxxxxxxxxxxxxxxxxxxxxxxzsx",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1511466648.000081"
+    },
+    {
+        "text": "ssh-rsa X 2",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1511466663.000191"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yep - that'd def. cause an issue ... :slightly_smiling_face:",
+        "ts": "1511466984.000113"
+    },
+    {
+        "text": "<@U6QFVRJNB> ok trying again... question though why do i have to change something..... is there no way to say boot VM -&gt; discover -&gt; install",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1511467056.000151"
+    },
+    {
+        "text": "discover\nStart\nsledgehammer-wait\nReboot (remove step)\ncentos-7-install\nReboot (remove step)\ncomplete-nowait\nSuccess (remove step)",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1511467091.000024"
+    },
+    {
+        "text": "where i have to run .\/drpcli machines stage 1fb9e96b-2627-4f6b-a684-0eeac1657217 centos-7-install and reboot the vm",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1511467128.000190"
+    },
+    {
+        "text": "ok that VM successfully installed and i can ssh into it",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1511467305.000198"
+    },
+    {
+        "text": "now to deal with this Workflow",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1511467327.000208"
+    },
+    {
+        "text": "suggestions wlecome",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1511467341.000053"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah.  So what do you want?  I suggest to pause tonkeep from wiping out systems.  But not you flow.   All good.  ",
+        "ts": "1511469019.000069"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Okay - so not that I’m at a computer and not fighting the phone.",
+        "ts": "1511469088.000141"
+    },
+    {
+        "text": "<@U02DGQYK1> id prefer to be able to just go through booting the VM to install to complete-nowait without having do anything",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1511469109.000029"
+    },
+    {
+        "text": "no rush",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1511469111.000136"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "@outbackdingo - if you want to just have machines go straight to install, you will want to do something like this:",
+        "ts": "1511469123.000116"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Actually, a couple of questions?  Do you wish to inventory the system?",
+        "ts": "1511469167.000175"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "and do you want to choose the OS?",
+        "ts": "1511469237.000024"
+    },
+    {
+        "text": "well initially the game plan is to get to wanting to A: spin up an XenServer VM ..... B: install an OS on that vm... C: Then run an ansible playbook against it to configure it all",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1511469246.000121"
+    },
+    {
+        "text": "right now id be happy to be able to choose the os and do the install",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1511469259.000099"
+    },
+    {
+        "text": "withoutt intervention",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1511469266.000057"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Are the disks “clean” on the VM spin up?",
+        "ts": "1511469285.000118"
+    },
+    {
+        "text": "always",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1511469291.000145"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - then … you can do this.",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1511469302.000000"
+        },
+        "ts": "1511469299.000124"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "In the UI, set the default stage to the OS install you want to install at the moment.",
+        "ts": "1511469329.000065"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "In the workflow, make sure you have whatever stage you selected in default stage step that goes from it to complete-nowait.",
+        "ts": "1511469363.000042"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "with success.",
+        "ts": "1511469369.000002"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Done",
+        "ts": "1511469373.000117"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Ugh - I really want that to work, but it won’t.",
+        "ts": "1511469430.000102"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Sorry, still have to create a machine.",
+        "ts": "1511469436.000131"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Turkey on the brain - just a second.",
+        "ts": "1511469447.000114"
+    },
+    {
+        "text": "so just have a workflow like centos-7-install\nStart\ncomplete-nowait\nSuccess (remove step)",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1511469455.000003"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You will need that for an OS you want to install.",
+        "ts": "1511469482.000165"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "To auto install, you will want the following workflow steps:",
+        "ts": "1511469497.000066"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "discover -&gt; centos-7-install : Reboot",
+        "ts": "1511469508.000096"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "centos-7-install -&gt; complete-nowait : Success",
+        "ts": "1511469534.000115"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Keep adding OSes by repeating the last one.",
+        "ts": "1511469545.000049"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "When you want to change the OS globally, remove the discover step and change it to discover -&gt; OS of choice : Reboot",
+        "ts": "1511469571.000005"
+    },
+    {
+        "text": "ok, but i can create multiple workflows correct ?",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1511469606.000022"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "This should have the machines start, boot into sledgehammer, create a machine entry, and then reboot to install the os, then reboot into the final OS with no changes.",
+        "ts": "1511469607.000076"
+    },
+    {
+        "text": "ok",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1511469615.000120"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The problem is how to choose the OS you want when you want.",
+        "ts": "1511469619.000100"
+    },
+    {
+        "text": "right",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1511469625.000016"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "usually, that requires a step to either change the stage or add a parameter\/change stage.",
+        "ts": "1511469656.000120"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Do you use terraform?",
+        "ts": "1511469686.000198"
+    },
+    {
+        "text": "<@U02DGQYK1> i think its going to be needed if i plan to create xenserver VMs -&gt; then boot them and install an OS",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1511469726.000032"
+    },
+    {
+        "text": "i dont see any providers in rebar for xenserver",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1511469741.000054"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Can you describe your XenServer environment?  Single node or multi-node XenServer?",
+        "ts": "1511469742.000181"
+    },
+    {
+        "text": "lab is single node... deployed is multinode",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1511469770.000034"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We don’t have providers anymore for anything that creates the machine.  We could but don’t.  Wasn’t our direct business.",
+        "ts": "1511469776.000015"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Okay - do you have an API that can create and wait for servers?",
+        "ts": "1511469792.000110"
+    },
+    {
+        "text": "yes",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1511469807.000110"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "hmm - okay - thinking about this.",
+        "ts": "1511469816.000178"
+    },
+    {
+        "text": "does terraform work with rebar ?",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1511469957.000057"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We have a provider that plugs into terraform that can drive DRP and choose stage.",
+        "ts": "1511469982.000003"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U6QFVRJNB> has the start of mixing packet and DRP to do what you are trying to do.  I think he is close.",
+        "ts": "1511470011.000048"
+    },
+    {
+        "text": "essentially... i have two targets the create boot xenserver vm, install os, run ansible against vm....  second create a group of xenserver vms, install kubernetes cluster",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1511470025.000138"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We have some cases for that.  Or close on most.",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1511470068.000000"
+        },
+        "ts": "1511470061.000087"
+    },
+    {
+        "text": "i did also see the kubernetes stuff... but i am thinking it requires an installed OS in the VM first",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1511470072.000004"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "well - it does today.  I’m trying a Live OS k8s cluster, but that is for another day.",
+        "ts": "1511470099.000175"
+    },
+    {
+        "text": "so if i have say 3 vms installed with centos ? i can deploy kubernetes onto it now ?",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1511470141.000174"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Well , you can use kubespray ansible playbook and DRP ansible inventory generator to do it.  I think <@U02DHRR2L> posted a video with this.",
+        "ts": "1511470180.000011"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You get three machines OS installed through the workflow, then add then into a profile and that can then be used with an ansible inventory generator to build those machines.",
+        "ts": "1511470215.000153"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Checking our youtube channel.",
+        "ts": "1511470271.000030"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "@outbackdingo - <https:\/\/www.youtube.com\/playlist?list=PLXPBeIrpXjfj5_8Joyehwq1nnaYSPCnmw>",
+        "ts": "1511470439.000200"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Videos #1 - <https:\/\/www.youtube.com\/watch?v=6MLyUVgnVo4&amp;index=1&amp;list=PLXPBeIrpXjfj5_8Joyehwq1nnaYSPCnmw> - terraform usage",
+        "attachments": [
+            {
+                "service_name": "YouTube",
+                "service_url": "https:\/\/www.youtube.com\/",
+                "title": "Terraform Bare Metal Provisioning with Digital Rebar Provision v3 2 Demo",
+                "title_link": "https:\/\/www.youtube.com\/watch?v=6MLyUVgnVo4&amp;index=1",
+                "author_name": "RackN & Digital Rebar",
+                "author_link": "https:\/\/www.youtube.com\/channel\/UCr3bBtP-pMsDQ5c0IDjt_LQ",
+                "thumb_url": "https:\/\/i.ytimg.com\/vi\/6MLyUVgnVo4\/hqdefault.jpg",
+                "thumb_width": 480,
+                "thumb_height": 360,
+                "fallback": "YouTube Video: Terraform Bare Metal Provisioning with Digital Rebar Provision v3 2 Demo",
+                "video_html": "<iframe width=\"400\" height=\"225\" src=\"https:\/\/www.youtube.com\/embed\/6MLyUVgnVo4?feature=oembed&autoplay=1&iv_load_policy=3\" frameborder=\"0\" gesture=\"media\" allowfullscreen><\/iframe>",
+                "video_html_width": 400,
+                "video_html_height": 225,
+                "from_url": "https:\/\/www.youtube.com\/watch?v=6MLyUVgnVo4&amp;index=1",
+                "service_icon": "https:\/\/a.slack-edge.com\/2089\/img\/unfurl_icons\/youtube.png",
+                "id": 1
+            }
+        ],
+        "ts": "1511470565.000207"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Video #5 - <https:\/\/www.youtube.com\/watch?v=b5himGQ1Zew&amp;index=5&amp;list=PLXPBeIrpXjfj5_8Joyehwq1nnaYSPCnmw> - ansible generator for k8s.",
+        "attachments": [
+            {
+                "service_name": "YouTube",
+                "service_url": "https:\/\/www.youtube.com\/",
+                "title": "Kubernetes via Ansible Kubespray on Digital Rebar",
+                "title_link": "https:\/\/www.youtube.com\/watch?v=b5himGQ1Zew&amp;index=5",
+                "author_name": "RackN & Digital Rebar",
+                "author_link": "https:\/\/www.youtube.com\/channel\/UCr3bBtP-pMsDQ5c0IDjt_LQ",
+                "thumb_url": "https:\/\/i.ytimg.com\/vi\/b5himGQ1Zew\/hqdefault.jpg",
+                "thumb_width": 480,
+                "thumb_height": 360,
+                "fallback": "YouTube Video: Kubernetes via Ansible Kubespray on Digital Rebar",
+                "video_html": "<iframe width=\"400\" height=\"225\" src=\"https:\/\/www.youtube.com\/embed\/b5himGQ1Zew?feature=oembed&autoplay=1&iv_load_policy=3\" frameborder=\"0\" gesture=\"media\" allowfullscreen><\/iframe>",
+                "video_html_width": 400,
+                "video_html_height": 225,
+                "from_url": "https:\/\/www.youtube.com\/watch?v=b5himGQ1Zew&amp;index=5",
+                "service_icon": "https:\/\/a.slack-edge.com\/2089\/img\/unfurl_icons\/youtube.png",
+                "id": 1
+            }
+        ],
+        "ts": "1511470595.000165"
+    },
+    {
+        "text": "cool... ill watch this tonight and again tomorrow morning and see where i get to with it",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1511470858.000123"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "  Skedgehammer works for testing kubespray too",
+        "ts": "1511470908.000086"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<https:\/\/github.com\/digitalrebar\/provision\/blob\/master\/doc\/integrations\/ansible.rst>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/blob\/master\/doc\/integrations\/ansible.rst",
+                "text": "provision - The Provisioner for DigitalRebar as a Stand Alone Golang Utility",
+                "fallback": "GitHub: digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/blob\/master\/doc\/integrations\/ansible.rst",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 192,
+                "thumb_height": 192,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1511470948.000131"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - I’m back to thanksgiving partying.",
+        "ts": "1511471775.000071"
+    },
+    {
+        "text": "<@U02DGQYK1> enjoy it.... im heading to sleep 10PM where i am in Italy",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1511471828.000052"
+    },
+    {
+        "text": "<@U02DHRR2L> ill look at it also",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1511471865.000161"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "It's the written version of the video",
+        "ts": "1511472868.000196"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "We can also get you a slack account ",
+        "ts": "1511472881.000042"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "There is a form for it on RackN. com",
+        "ts": "1511472903.000091"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "From the ux",
+        "ts": "1511472909.000066"
+    },
+    {
+        "text": "<@U02DHRR2L> ok slack accoun requested, working o roll this up today and get it done",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1511508102.000051"
+    }
+]

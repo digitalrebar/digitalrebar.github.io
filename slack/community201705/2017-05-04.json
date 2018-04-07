@@ -1,0 +1,60 @@
+[
+    {
+        "text": "<@U02DHRR2L|zehicle> haha, was working late night, guess i will try with Packet.net in that case",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493916297.259385"
+    },
+    {
+        "text": "thansks for the update though, have a great day!!",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493916317.268971"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "in a few minutes, RackN is going to be posting (twitter, linkedin, facebook, web) a lot about DRP.  If you've been having good time with it, please help us get the word out about it!  Thanks.",
+        "ts": "1493916527.363043"
+    },
+    {
+        "text": "sure thing, will spread it in UT Dallas and Ericsson",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493916555.375854"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": ":+1:",
+        "ts": "1493916558.376974"
+    },
+    {
+        "text": "hey <@U02DHRR2L|zehicle>  I tried all the permutations and combinations of the k8's version on AWS and Packet, the issues is still the same, it gets stuck at the very last step of Openstack-Deployment, with an error depictin issue in \"helm lint nova\", Please let me know if there is a fix as Ericsson shall be really interested in implementing this for expedited OPenstack deployment :smile: ",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493948504.610416"
+    },
+    {
+        "text": "clarification for k8s version 1.6.1 it goes all the way to last step, for all other versions 1.51, 1.5.3, 1.5.7 it fails at K8 DNS",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493948552.616470"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay -",
+        "ts": "1493953752.202103"
+    }
+]

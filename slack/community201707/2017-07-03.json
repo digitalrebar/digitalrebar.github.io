@@ -1,0 +1,54 @@
+[
+    {
+        "user": "U63ACQT8A",
+        "text": "<@U63ACQT8A> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1499111559.690052"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Published v3.0.5 of DRP - It has doc updates and some UI updates.",
+        "ts": "1499119647.398463"
+    },
+    {
+        "text": "@ctrees I think you've cross into the \"let's get on the phone\" type of questions",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1499120263.497276"
+    },
+    {
+        "text": "I'm good with skype ?  ",
+        "username": "ctrees",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1499121698.710869"
+    },
+    {
+        "text": "sorry to delay you... needs to hold off for the holiday.  want to work 1x1 to find times for Wednesday?",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1499121742.717276"
+    },
+    {
+        "text": "oh I'm in no big hurry... plus it's motivating me to dig into the docs (I just finished a read through)... ",
+        "username": "ctrees",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1499121970.749051"
+    },
+    {
+        "user": "U62R1805P",
+        "text": "<@U62R1805P> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1499124638.113654"
+    }
+]

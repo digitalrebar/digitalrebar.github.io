@@ -1,0 +1,360 @@
+[
+    {
+        "type": "message",
+        "user": "U9P2ARWSE",
+        "text": ":smile:",
+        "ts": "1521034567.000222"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "Good morning <@U9P2ARWSE>",
+        "ts": "1521039139.000249"
+    },
+    {
+        "type": "message",
+        "user": "U9NPS1B6U",
+        "text": "Hello and thanks to all. i'm very glad to be here",
+        "ts": "1521040420.000811"
+    },
+    {
+        "type": "message",
+        "user": "U8BTZ6HPT",
+        "text": "Hello, all. I've managed to navigate the documentation well enough to create a bundle, upload it, and successfully provision machines. It works beautifully and I appreciate everyone's hard work. I have two questions about the process: 1) I'd like to customize the ubuntu preseed \"late_command\" but cannot find references to it in the documentation. Nor could I find references to it in the standard collection of parameters (I used \"select-kickseed\" to customize other parts of the installation which worked perfectly). What is the preferred way to override \"late_command\"? 2) I have a \"discover -&gt; prep-install -&gt; ubuntu-16.04-install -&gt; finish-install -&gt; complete-nowait\" workflow to accomplish this. Is this reasonable? Apologies if I should open these questions as Github issues. I know it's always a challenge to document every possible use case. I'd like to help out any way I can so I'd be happy to post these questions as Github issues so they can be organized\/triaged.",
+        "ts": "1521043689.000512",
+        "reactions": [
+            {
+                "name": "tada",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "hi <@U8BTZ6HPT> - glad to hear you've gotten things rolling !",
+        "ts": "1521043757.000729"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "taking a look at your late_command question",
+        "ts": "1521043954.000302"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "currently - there are two paths for you:\n 1. with `select-kickseed` - you can define you're own post install script - either replacing the `post-install.sh` call, or adding a second line after it ... \n 2. you can clone the ubuntu-16.04-install BootEnv, and make the `template` call changes in that - using your cloned BootEnv",
+        "ts": "1521044243.000704"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "However, if you clone the BootEnv, when we make DRP Community Content updates, you won't get those changes for that cloned BootEnv - but the original ubuntu-16.04-install BootEnv will be updated",
+        "ts": "1521044275.000238"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it looks like we actually call \"post-install.sh\" twice (erroneously) - we call it once in the BootEnv definition in the `templates` section, then again in the `net-seed.tmpl`",
+        "ts": "1521044401.000638"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "since you are already using `select-kickseed`, the `net-seed.tmpl` that you (presumably) originally cloned can be modified to point to a different `post-install.sh`; and our `post-install.sh` will still run, as it's defined by the BootEnv definition to run last - and you don't want to disturb the `reset-workflow` and `runner` template calls in that, otherwise you'll get bad behavior with the Workflow\/Stages and jobs.",
+        "ts": "1521044726.000513"
+    },
+    {
+        "type": "message",
+        "user": "U8BTZ6HPT",
+        "text": "Thank you for the clarification, <@U6QFVRJNB>. I'll give that a try!",
+        "ts": "1521044923.000171"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Also - if  you are unsure exactly what a template is going to do - you can render it to see the final product - not everything can be rendered in it's final state, since the context in which it was called matters in some cases",
+        "ts": "1521044974.000913"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "but there is a $faq on test rendering templates",
+        "ts": "1521044985.000906"
+    },
+    {
+        "text": "FAQs are here &gt; <http:\/\/provision.readthedocs.io\/en\/latest\/doc\/faq-troubleshooting.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1521044986.000091"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the rendering works for other things too, any template defined in a BootEnv can be rendered against the \"machines\" url, example:\n<http:\/\/drp.domain.com:8091\/machines\/817cbf29-30be-4807-b5a0-1234567890\/post-install.sh>",
+        "ts": "1521045107.000887"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the trick is ... the machine must be in the Stage that the templates are defined in - so the `ubuntu-16.04-install` Stage - defines templates, put a \"phantom\" machine in to that bootenv, and then render away",
+        "ts": "1521045158.000385"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "this is true for other stages too - I use a phantom machine to render stuff all the time",
+        "ts": "1521045173.000313"
+    },
+    {
+        "type": "message",
+        "user": "U8BTZ6HPT",
+        "text": "I was able to get that far. I wanted to work within DRP preferred conventions and ensure I didn't customize too far afield of the tool's best-practices. Would my custom post-install.sh script need to follow the BootEnv post-install script's configuration of the chroot environment i.e. using a here-doc and executing in \/target?",
+        "ts": "1521045477.000568"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I'd suggest cloning the existing `net-post-install.sh.tmpl`, and work with in the same conventions - just modify in the HereDoc what you want to actually perform - and change the name of the written out file from `update_system2.sh` to something like `update_norms_secret_post_install.sh` - otherwise keeping everything else intact around the HereDoc",
+        "ts": "1521045681.000108"
+    },
+    {
+        "type": "message",
+        "user": "U8BTZ6HPT",
+        "text": ":+1: will give that a try!",
+        "ts": "1521045710.000540"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U8BTZ6HPT> - additionally you could add a new Stage, with a Task `norms-post-install`, which calls the new `post-install` script - you'd then insert that in your work flow between `ubuntu-16.04-install` and `finish-install`",
+        "ts": "1521048915.000298"
+    },
+    {
+        "type": "message",
+        "user": "U8BTZ6HPT",
+        "text": "<@U6QFVRJNB> I like your suggestion better. It's more discoverable and self-documenting. Thanks!",
+        "ts": "1521056174.000574",
+        "reactions": [
+            {
+                "name": "muscle",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "The Stage\/Task\/Template solution?",
+        "ts": "1521056208.000492"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "^^^ was <@U02DGQYK1> and <@U02DJQSG8> reminding me that is the better path to follow ... :slightly_smiling_face:",
+        "ts": "1521056328.000207"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U6QFVRJNB> Speaking of stages and tasks, I'm having a problem with a custom Stage\/Task as follows...",
+        "ts": "1521075327.000115"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I made a custom stage based on `prep-install` named `necla-prep-install` which is as follows:",
+        "ts": "1521075388.000210"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F9Q60RWN6\/necla-prep-install.txt|necla-prep-install>",
+        "file": {
+            "id": "F9Q60RWN6",
+            "created": 1521075418,
+            "timestamp": 1521075418,
+            "name": "necla-prep-install.txt",
+            "title": "necla-prep-install",
+            "mimetype": "text\/plain",
+            "filetype": "text",
+            "pretty_type": "Plain Text",
+            "user": "U416T0AAX",
+            "editable": true,
+            "size": 567,
+            "mode": "snippet",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9Q60RWN6\/necla-prep-install.txt?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9Q60RWN6\/download\/necla-prep-install.txt?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F9Q60RWN6\/necla-prep-install.txt",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F9Q60RWN6-00c4caea33",
+            "edit_link": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F9Q60RWN6\/necla-prep-install.txt\/edit",
+            "preview": "[dradmin@dr-admin ~]$ drpcli stages show necla-prep-install\r\n{\r\n  \"Available\": true,\r\n  \"BootEnv\": \"sledgehammer\",\r\n  \"Description\": \"Completely zeroes out \/dev\/sda in prep for new OS install.\",\r",
+            "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>[dradmin@dr-admin ~]$ drpcli stages show necla-prep-install<\/pre><\/div>\n<div><pre>{<\/pre><\/div>\n<div><pre>  &quot;Available&quot;: true,<\/pre><\/div>\n<div><pre>  &quot;BootEnv&quot;: &quot;sledgehammer&quot;,<\/pre><\/div>\n<div><pre>  &quot;Description&quot;: &quot;Completely zeroes out \/dev\/sda in prep for new OS install.&quot;,<\/pre><\/div>\n<div><pre><\/pre><\/div>\n<\/div>\n<\/div>\n",
+            "lines": 24,
+            "lines_more": 19,
+            "preview_is_truncated": false,
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1521075419.000126"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "This uses the Task I named `totally-erase-sda` which is as follows:",
+        "ts": "1521075460.000068"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F9R1HV37G\/totally-erase-sda.txt|totally-erase-sda>",
+        "file": {
+            "id": "F9R1HV37G",
+            "created": 1521075483,
+            "timestamp": 1521075483,
+            "name": "totally-erase-sda.txt",
+            "title": "totally-erase-sda",
+            "mimetype": "text\/plain",
+            "filetype": "text",
+            "pretty_type": "Plain Text",
+            "user": "U416T0AAX",
+            "editable": true,
+            "size": 663,
+            "mode": "snippet",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9R1HV37G\/totally-erase-sda.txt?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9R1HV37G\/download\/totally-erase-sda.txt?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F9R1HV37G\/totally-erase-sda.txt",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F9R1HV37G-bc866faad5",
+            "edit_link": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F9R1HV37G\/totally-erase-sda.txt\/edit",
+            "preview": "[dradmin@dr-admin ~]$ drpcli tasks show totally-erase-sda\r\n{\r\n  \"Available\": true,\r\n  \"Description\": \"Zeros out the sda hard disk.\",\r\n  \"Documentation\": \"\",\r",
+            "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>[dradmin@dr-admin ~]$ drpcli tasks show totally-erase-sda<\/pre><\/div>\n<div><pre>{<\/pre><\/div>\n<div><pre>  &quot;Available&quot;: true,<\/pre><\/div>\n<div><pre>  &quot;Description&quot;: &quot;Zeros out the sda hard disk.&quot;,<\/pre><\/div>\n<div><pre>  &quot;Documentation&quot;: &quot;&quot;,<\/pre><\/div>\n<div><pre><\/pre><\/div>\n<\/div>\n<\/div>\n",
+            "lines": 26,
+            "lines_more": 21,
+            "preview_is_truncated": false,
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1521075483.000156"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I wired the stage up in a stage-map in my profile as follows:",
+        "ts": "1521075510.000323"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F9Q56J8J0\/stage-map.txt|stage-map>",
+        "file": {
+            "id": "F9Q56J8J0",
+            "created": 1521075550,
+            "timestamp": 1521075550,
+            "name": "stage-map.txt",
+            "title": "stage-map",
+            "mimetype": "text\/plain",
+            "filetype": "text",
+            "pretty_type": "Plain Text",
+            "user": "U416T0AAX",
+            "editable": true,
+            "size": 188,
+            "mode": "snippet",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9Q56J8J0\/stage-map.txt?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9Q56J8J0\/download\/stage-map.txt?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F9Q56J8J0\/stage-map.txt",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F9Q56J8J0-d351c2e37a",
+            "edit_link": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F9Q56J8J0\/stage-map.txt\/edit",
+            "preview": "\"change-stage\/map\": {\r\n      \"discover\": \"necla-prep-install:Success\",\r\n      \"necla-prep-install\": \"ubuntu-16.04-install:Reboot\",\r\n      \"ubuntu-16.04-install\": \"complete-nowait:Stop\"\r\n }",
+            "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>&quot;change-stage\/map&quot;: {<\/pre><\/div>\n<div><pre>      &quot;discover&quot;: &quot;necla-prep-install:Success&quot;,<\/pre><\/div>\n<div><pre>      &quot;necla-prep-install&quot;: &quot;ubuntu-16.04-install:Reboot&quot;,<\/pre><\/div>\n<div><pre>      &quot;ubuntu-16.04-install&quot;: &quot;complete-nowait:Stop&quot;<\/pre><\/div>\n<div><pre> }<\/pre><\/div>\n<\/div>\n<\/div>\n",
+            "lines": 5,
+            "lines_more": 0,
+            "preview_is_truncated": false,
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1521075551.000089"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So, as I understand it, this will boot SH, then execute the template script in the task called by the `necla-prep-install` stage, which should do the `dd` command which will zero out \/dev\/sda. After this completes, the system will reboot, and go into the Ubuntu 16.04 install.",
+        "ts": "1521075697.000204"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "The systems calling the profile with the stage map are booting SH, but then nothing is executing (no `dd` is happening.) Why might this be?",
+        "ts": "1521075749.000317"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I should also mention that `necla-prep-install` is a modified clone of `prep-install`, and `totally-erase-sda` is a modified clone of `erase-hard-disks-for-os-install`",
+        "ts": "1521076001.000138"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "The prior stage map was calling the `prep-install` Stage, which was successfully executing the template in `erase-hard-disks-for-os-install`, but the disk wipe was not sufficient, and the Ubuntu install thereafter was failing.",
+        "ts": "1521076119.000225"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I have found that if I do a `dd if=\/dev\/zero of=\/dev\/sda bs=512` then all goes smoothly with the resulting install",
+        "ts": "1521076197.000254"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "not sure off the top of my head, I'm out at dinner right now - will look at this a little bit later",
+        "ts": "1521080583.000078"
+    }
+]

@@ -1,0 +1,28 @@
+[
+    {
+        "user": "U991XQ7T2",
+        "text": "<@U991XQ7T2> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1518707666.000580"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U991XQ7T2> $welcome",
+        "ts": "1518710667.000065"
+    },
+    {
+        "text": "Digital Rebar community welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1518710667.000185"
+    },
+    {
+        "type": "message",
+        "user": "U991XQ7T2",
+        "text": "Thank you <@U6QFVRJNB> I can't wait to start automating baremetal builds.. looking to integrate it with Terraform and Ansible for configuration management",
+        "ts": "1518745604.000161"
+    }
+]

@@ -1,0 +1,696 @@
+[
+    {
+        "user": "U9FDQCT5G",
+        "text": "<@U9FDQCT5G> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1519729732.000303"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U6QFVRJNB> or anyone else - what is correct cmd line to upgrade from `v3.6.0-tip` to 3.7 stable?",
+        "ts": "1519747965.000512"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<http:\/\/provision.readthedocs.io\/en\/latest\/doc\/upgrade.html>",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1519748161.000000"
+        },
+        "ts": "1519748001.000539"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(sorry I pasted `tip` doc - use the `latest`)",
+        "ts": "1519748174.000038"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we put version to version upgrade notes there",
+        "ts": "1519748179.000527"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if there is nothing, then you should assume there are no special requirements for  your upgrade path",
+        "ts": "1519748193.000904"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "for your case ... \"it depends\" ... on what version of `3.6.0-tip` you were at",
+        "ts": "1519748252.000857"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "but the 3.6.0 to 3.7.0 notes will give you good results - eg update your plugins",
+        "ts": "1519748274.000622"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Seeing this right after upgrade and start - but before upgrading plugins:\n```dr-provision2018\/02\/27 11:56:01.273119 Version: v3.7.1-0-b441dd1450c98be5317025c89668f85985eb65d8\ndr-provision2018\/02\/27 11:56:01.273263 Extracting Default Assets\ndr-provision2018\/02\/27 11:56:02.246097 [0:1]frontend [ info]: \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/frontend\/frontend.go:512\n[0:1]Running Local UI from \/home\/dradmin\/drp\/drp-data\/ux\ndr-provision2018\/02\/27 11:56:02.430453 [0:2]plugin [error]: \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/midlayer\/controller.go:523\n[0:2]Unpack for ipmi failed: exit status 1\ndr-provision2018\/02\/27 11:56:02.430578 [0:3]plugin [error]: \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/midlayer\/controller.go:524\n[0:3]Error: unknown command \"unpack\" for \"ipmi\"\nRun 'ipmi --help' for usage.\ndr-provision2018\/02\/27 11:56:03.448196 Starting TFTP server\ndr-provision2018\/02\/27 11:56:03.449430 Starting static file server\ndr-provision2018\/02\/27 11:56:03.449786 Starting API server```",
+        "ts": "1519748352.000411"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "The `ipmi` failure is due to old plugin?",
+        "ts": "1519748377.000511"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yep - you had plugins v1",
+        "ts": "1519748381.000631"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you'll need to follow the 3.6.0 to 3.7.0 notes on updating your plugins to the new v2 goodness",
+        "ts": "1519748400.000722"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "No, just came from v2 plugins w\/ 2.6.0-tip actually",
+        "ts": "1519748401.000843"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "2-&gt;3",
+        "ts": "1519748410.000617"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(yep)",
+        "ts": "1519748417.000786"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, did ipmi plugin upgrade, let's restest start...",
+        "ts": "1519748490.000742"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yup, clean start now",
+        "ts": "1519748514.000782"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Need new sledgehammer, correct?",
+        "ts": "1519748552.000489"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yes",
+        "ts": "1519748562.000946"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "not sure if you noticed - but you can use the version inspector with colorized (pretty-print) and Diff capability in the UX",
+        "ts": "1519748669.000839"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can see exactly what's going to be changed before performing an upgrade of Content",
+        "ts": "1519748690.000653"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Is there an example in docs for downloading boot isos?",
+        "ts": "1519748756.000455"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "$quickstart has it",
+        "ts": "1519748790.000052"
+    },
+    {
+        "text": "QuickStart doc is here &gt; <http:\/\/provision.readthedocs.io\/en\/latest\/doc\/quickstart.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1519748790.000115"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "cool, thx",
+        "ts": "1519748830.000629"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "no prob",
+        "ts": "1519748849.000040"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I believe ... but may be lying to you ... that you can now do it through the \"Boot ISOs\" menu in the UX - I haven't tried that path yet",
+        "ts": "1519748888.000008"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "It downloads ISO to host running UX",
+        "ts": "1519748908.000927"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ah",
+        "ts": "1519748914.000344"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "actually - I think the Upload action pushes ISO from your UX hosted management workstation",
+        "ts": "1519748954.000754"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "The `drpcli bootenvs uploadiso` does the explode etc right?",
+        "ts": "1519748963.000752"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "so if you have the ISO local - then you can push it to your endpoint from workstation",
+        "ts": "1519748970.000031"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yep",
+        "ts": "1519748973.000524"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK",
+        "ts": "1519748973.000821"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "From the Boot Environments menu - you can select a BootEnv, which will have the source of the ISO\/tarball - and download to your workstation - then use the Boot ISOs Upload command",
+        "ts": "1519749042.000579"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "or - as you are doing - use the CLI uploadiso helper",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1519749056.000000"
+        },
+        "ts": "1519749052.000858"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yep - the 2-step UX procedure works too",
+        "ts": "1519749155.000788"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, everything looks good...",
+        "ts": "1519749166.000810"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "excellent !",
+        "ts": "1519749176.000756"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Trying a 5-node reinstall, let's see what happens",
+        "ts": "1519749184.000182"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it'll magically work !",
+        "ts": "1519749195.000631"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "(bye-bye old KRIB cluster :cry:)",
+        "ts": "1519749212.000429"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "there's some new feedback stuff in the new KRIB update ... which gives you visual change cues",
+        "ts": "1519749242.000417"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U02DHRR2L> is excited about it - I'm going to give it a try and see how it looks today",
+        "ts": "1519749263.000166"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yeah, have to install a test Rancher cluster today, but then want to go back to stock k8s",
+        "ts": "1519749294.000274"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "did you get rancher working via DRP ?",
+        "ts": "1519749315.000214"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "No, not RancherOS - just Rancher-controlled infra nodes",
+        "ts": "1519749337.000656"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ah",
+        "ts": "1519749341.000335"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Kicking tires on their k8s installer",
+        "ts": "1519749348.000283"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<!channel> we hope to see you all in a short bit (11 am PST) for our v012 meetup.  Meetup link: \n<https:\/\/www.meetup.com\/digitalrebar\/events\/247773442\/>",
+        "attachments": [
+            {
+                "service_name": "Meetup",
+                "title": "v012: v3.7 releases, UX mini demo, Terraform Plugin demo, BootEnv install demo",
+                "title_link": "https:\/\/www.meetup.com\/digitalrebar\/events\/247773442\/",
+                "text": "Tue, Feb 27, 2018, 11:00 AM: Start Time is 11:00 am PST (12:00 pm MST, 1:00 pm CST, 2:00 pm EST ... )Welcome to the Digital Rebar online meetup. Please note we'll be using <http:\/\/Zoom.us|Zoom.us> for our meeting; so",
+                "fallback": "Meetup: v012: v3.7 releases, UX mini demo, Terraform Plugin demo, BootEnv install demo",
+                "image_url": "https:\/\/secure.meetupstatic.com\/photos\/event\/d\/1\/b\/1\/600_467453681.jpeg",
+                "fields": [
+                    {
+                        "title": "Where",
+                        "value": "Online <https:\/\/zoom.us\/j\/3403934274> Mountain View, CA",
+                        "short": true
+                    },
+                    {
+                        "title": "When",
+                        "value": "Tue, Feb 27, 2018, 11:00 AM",
+                        "short": true
+                    }
+                ],
+                "from_url": "https:\/\/www.meetup.com\/digitalrebar\/events\/247773442\/",
+                "image_width": 472,
+                "image_height": 250,
+                "image_bytes": 69998,
+                "service_icon": "https:\/\/www.meetup.com\/mu_static\/en-US\/5a55b7f35a300adf7c619ca2aadb8057.png",
+                "id": 1
+            }
+        ],
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1519753030.000000"
+        },
+        "ts": "1519753002.000298"
+    },
+    {
+        "type": "message",
+        "user": "U8YJ0FW9Y",
+        "text": "Hey guys, anyone had to use full disk encryption on Ubuntu setting the encryption key in preseed? Anyway to automate random key generation with DigitalRebar or interact with Vault for it?",
+        "ts": "1519754924.000091"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "hi <@U8YJ0FW9Y> - we haven't specifically done any FDE w\/ DRP - nor specific Vault integration ... however, it should be pretty easy to author\/change content to use the Vault command line to interact with your Vault store",
+        "ts": "1519755005.000603"
+    },
+    {
+        "type": "message",
+        "user": "U8YJ0FW9Y",
+        "text": "Yeah, I think I will go that route",
+        "ts": "1519755054.000104"
+    },
+    {
+        "type": "message",
+        "user": "U8YJ0FW9Y",
+        "text": "Thanks!",
+        "ts": "1519755058.000601"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "also `openssl` is installed by default in the Sledgehammer image - so you can use `openssl rand ...` to generate a number, which can be used also in a Stage",
+        "ts": "1519755169.000492"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(eg `openssl rand -hex 100` to generate a 100 character random string)",
+        "ts": "1519755225.000142"
+    },
+    {
+        "type": "message",
+        "user": "U8YJ0FW9Y",
+        "text": "Great thank you!",
+        "ts": "1519755255.000599"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can also use `drpcli` to store a Param on the machine w\/ the randomly generated number, which can subsequently be used in your Stage(s) for the seed value",
+        "ts": "1519755331.000656"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Did anybody ever figure out what bizarre thing Vagrant is doing that doesn't play nice with dr-provision?  I know <@U02DHRR2L> said something about having tried it with limited success.",
+        "ts": "1519757998.000003"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I gave up on it but would still love to get it working.  It'd be ideal for me to be able to pass a kind of playground around for people to get familiar with.",
+        "ts": "1519758037.000416"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "virtualbox had issues with lpxelinux.",
+        "ts": "1519758252.000205"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "that has been fixed in 3.7.1",
+        "ts": "1519758258.000315"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I don’t remember the other issues in vagrant.",
+        "ts": "1519758281.000436"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U9BU09D51> we were going to discuss that in the meetup that is starting RIGHT NOW",
+        "ts": "1519758306.000341"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Oh, I thought that was hours ago.  Time zones are hard.  Either way I can't jump on right now.  :disappointed:",
+        "ts": "1519758661.000743"
+    },
+    {
+        "type": "message",
+        "user": "U32PZNCP5",
+        "text": "We record the meetups, will be online in an a few hours from  now",
+        "ts": "1519759274.000781"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Oh cool.",
+        "ts": "1519761662.000013"
+    },
+    {
+        "type": "message",
+        "user": "U32PZNCP5",
+        "text": "<@U9BU09D51> <http:\/\/bit.ly\/2BSVRsq> -&gt; almost done processing on YouTubve",
+        "attachments": [
+            {
+                "service_name": "YouTube",
+                "title": "Digital Rebar Meetup #12",
+                "title_link": "http:\/\/bit.ly\/2BSVRsq",
+                "text": "This video comes from the Digital Rebar open source community online meetup on February 27, 2018. For more information on Digital Rebar go to <http:\/\/rebar.di>...",
+                "fallback": "YouTube: Digital Rebar Meetup #12",
+                "from_url": "http:\/\/bit.ly\/2BSVRsq",
+                "service_icon": "https:\/\/s.ytimg.com\/yts\/img\/favicon-vfl8qSV2F.ico",
+                "id": 1
+            }
+        ],
+        "ts": "1519764529.000415"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": ":thumbsup:",
+        "ts": "1519765637.000433"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "<!here> does sledgehammer support python3.x ? If not is this something on the roadmap ?",
+        "edited": {
+            "user": "U8FAN7PLK",
+            "ts": "1519767750.000000"
+        },
+        "ts": "1519767703.000027"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Hi team - what would a stage-map look like that has `prep-install` as an step before an OS install?",
+        "ts": "1519767724.000425"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "(hoping that `prep-install` fixes install prob's with pre-existing disks that were used for LVM)",
+        "ts": "1519767799.000021"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<@U8FAN7PLK> Not out of the box -- 2.7 is present, IIRC -- it is the default for centos7 still.",
+        "ts": "1519767804.000612"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "thanks <@U02DJQSG8>",
+        "ts": "1519767828.000311"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<@U416T0AAX> discover -&gt; prep-install -&gt; foo-install -&gt; local",
+        "ts": "1519767873.000283"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DJQSG8> There will be a reboot after `prep-install` I reckon?",
+        "ts": "1519768000.000105"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "nope.",
+        "ts": "1519768032.000563"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "that is, the task won't reboot the system.",
+        "ts": "1519768051.000264"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "and the runner will automatically reboot into the right bootenv for the next stage.",
+        "ts": "1519768120.000427"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So, this should work?\n```\n\"change-stage\/map\": {\n        \"discover\": \"prep-install:Success\",\n        \"prep-install\": \"ubuntu-16.04-install:Success\",\n        \"ssh-access\": \"complete-nowait:Reboot\",\n        \"ubuntu-16.04-install\": \"ssh-access:Success\"\n      },\n```",
+        "ts": "1519768187.000647"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "```\n\"change-stage\/map\": {\n        \"discover\": \"prep-install:Success\",\n        \"prep-install\": \"ubuntu-16.04-install:Reboot\",\n        \"ssh-access\": \"complete-nowait:Stop\",\n        \"ubuntu-16.04-install\": \"ssh-access:Success\"\n      },\n```",
+        "ts": "1519768267.000516"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Reboot after changing to the install stage.",
+        "ts": "1519768280.000182"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "ah",
+        "ts": "1519768281.000541"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Stop the task process when the post-install stages are done.",
+        "ts": "1519768295.000383"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, got it...\n```\n\"change-stage\/map\": {\n        \"discover\": \"prep-install:Success\",\n        \"prep-install\": \"ubuntu-16.04-install:Reboot\",\n        \"ssh-access\": \"complete-nowait:Stop\",\n        \"ubuntu-16.04-install\": \"ssh-access:Success\"\n      }\n```",
+        "ts": "1519768452.000416"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "also you don’t need the ssh-access steps.  It is a built-in task to the ubuntu-16.04-install",
+        "ts": "1519768561.000319"
+    },
+    {
+        "user": "U9FREEKRS",
+        "text": "<@U9FREEKRS> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1519768906.000560"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Hmmm, prep-install not blanking the install disk - still getting this when trying to reuse prior-installed disks:",
+        "ts": "1519769721.000303"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I can see from the jobs log that the tasks ran before the Ubuntu install task...",
+        "ts": "1519769791.000220"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F9F73FA0G\/image_uploaded_from_ios.jpg|Image uploaded from iOS>",
+        "file": {
+            "id": "F9F73FA0G",
+            "created": 1519769798,
+            "timestamp": 1519769798,
+            "name": "Image uploaded from iOS.jpg",
+            "title": "Image uploaded from iOS",
+            "mimetype": "image\/jpeg",
+            "filetype": "jpg",
+            "pretty_type": "JPEG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 4391738,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9F73FA0G\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9F73FA0G\/download\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9F73FA0G-f334302e8c\/image_uploaded_from_ios_64.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9F73FA0G-f334302e8c\/image_uploaded_from_ios_80.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9F73FA0G-f334302e8c\/image_uploaded_from_ios_360.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 270,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9F73FA0G-f334302e8c\/image_uploaded_from_ios_480.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 360,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9F73FA0G-f334302e8c\/image_uploaded_from_ios_160.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9F73FA0G-f334302e8c\/image_uploaded_from_ios_720.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 540,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9F73FA0G-f334302e8c\/image_uploaded_from_ios_800.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 600,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9F73FA0G-f334302e8c\/image_uploaded_from_ios_960.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 720,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9F73FA0G-f334302e8c\/image_uploaded_from_ios_1024.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 768,
+            "image_exif_rotation": 1,
+            "original_w": 4032,
+            "original_h": 3024,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F9F73FA0G\/image_uploaded_from_ios.jpg",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F9F73FA0G-4546d94315",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "upload_reply_to": "BF6E08CE-7068-4631-B72B-CC358ED345AB",
+        "ts": "1519769806.000220"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "This is sample job output...\n```Log for Job: 36f0b70e-055a-40c8-a288-0a224eb94343\nStarting task erase-hard-disks-for-os-install on bc00245d-48e8-487a-9b5c-e59eb2b62f8d\nStarting command .\/erase-hard-disks-for-os-install-erase-disks\n\n\nCommand running\n  PARTIAL MODE. Incomplete logical volumes will be processed.\n  Reading all physical volumes.  This may take a while...\n  Found volume group \"testnode01\" using metadata type lvm2\n  Logical volume testnode01\/root contains a filesystem in use.\n  PV \/dev\/sda3   VG testnode01      lvm2 [1.82 TiB \/ 0    free]\n  Total: 1 [1.82 TiB] \/ in use: 1 [1.82 TiB] \/ in no VG: 0 [0   ]\n  PV \/dev\/sda3 belongs to Volume Group testnode01 so please use vgreduce first.\n  (If you are certain you need pvremove, then confirm by using --force twice.)\nmdadm: Unrecognised md component device - \/dev\/sda3\n2048+0 records in\n2048+0 records out\n1048576 bytes (1.0 MB, 1.0 MiB) copied, 0.0144598 s, 72.5 MB\/s\n2048+0 records in\n2048+0 records out\n1048576 bytes (1.0 MB, 1.0 MiB) copied, 0.0566154 s, 18.5 MB\/s\nmdadm: Unrecognised md component device - \/dev\/sda2\n2048+0 records in\n2048+0 records out\n1048576 bytes (1.0 MB, 1.0 MiB) copied, 0.0237597 s, 44.1 MB\/s\n2048+0 records in\n2048+0 records out\n1048576 bytes (1.0 MB, 1.0 MiB) copied, 0.0618786 s, 16.9 MB\/s\nmdadm: Unrecognised md component device - \/dev\/sda1\n1024+0 records in\n1024+0 records out\n524288 bytes (524 kB, 512 KiB) copied, 0.0163394 s, 32.1 MB\/s\nmdadm: Unrecognised md component device - \/dev\/sda\n2048+0 records in\n2048+0 records out\n1048576 bytes (1.0 MB, 1.0 MiB) copied, 0.0104949 s, 99.9 MB\/s\n2048+0 records in\n2048+0 records out\n1048576 bytes (1.0 MB, 1.0 MiB) copied, 0.0346949 s, 30.2 MB\/s\nmdadm: Couldn't open \/dev\/sr0 for write - not zeroing\ndd: failed to open '\/dev\/sr0': No medium found\ndd: failed to open '\/dev\/sr0': No medium found\nCommand exited with status 0\nAction erase-disks finished\nTask erase-hard-disks-for-os-install finished\nUpdated job 36f0b70e-055a-40c8-a288-0a224eb94343 to finished\n```",
+        "ts": "1519769890.000457"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Guess we need the --force --force --really-i-mean-it flag. :confused:",
+        "ts": "1519770528.000037"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "--run --go --get-to-the-choppa",
+        "ts": "1519771420.000274"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "hello <@U9FREEKRS> $welcome",
+        "ts": "1519774332.000330"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1519774332.000388"
+    },
+    {
+        "type": "message",
+        "user": "U9FREEKRS",
+        "text": "Thanks!",
+        "ts": "1519774358.000006"
+    }
+]

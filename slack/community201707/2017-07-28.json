@@ -1,0 +1,118 @@
+[
+    {
+        "text": "Hmm Ill debug this further",
+        "username": "hansbogert",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501241319.467039"
+    },
+    {
+        "text": "I'm trying to bring up a vagrant node and join an existing vagrant base box to test with and am having difficulty running the join_rebar.sh.",
+        "username": "hornjason",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501268686.606517"
+    },
+    {
+        "text": "when running the curl commands from the script i'm unable to connect to admin node port 3000",
+        "username": "hornjason",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501268737.630175"
+    },
+    {
+        "text": "I'm able to access the gui for digital rebar  with out any issues... just need to join an existing node",
+        "username": "hornjason",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501268796.656500"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yeah - that script is old.  It wasn’t updated when we unified all API accesses through the auth proxy.  I would say, you just have to modify the script to not use port 3000, but I don’t think that is all that needs to be run.  Which join_rebar.sh script are you using?",
+        "ts": "1501269026.762696"
+    },
+    {
+        "text": "Yea i changed to point to https:\/\/admin.node.ip.  and all works except for anything with a PUT",
+        "username": "hornjason",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501269079.786824"
+    },
+    {
+        "text": "so I can't register the node ",
+        "username": "hornjason",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501269091.791959"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "unless you have a long term plan for Vagrant, I'd suggest just using VMs to test.  Vagrant does not handle the PXE boot",
+        "ts": "1501269094.793223"
+    },
+    {
+        "text": "gotcha I was just going to run some local deployments non baremetal if possible.  ",
+        "username": "hornjason",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501269151.818584"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "I understand, I was hoping the Vagrant path would allow faster testing cycles when we did that work by avoiding PXE cycles.  Turned out that it was faster to just work against cloud VMs for that use case",
+        "ts": "1501269208.844007"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "(we added the provider at that point)",
+        "ts": "1501269220.849445"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "what are you trying to validate?  it's possible that Provision may be sufficient (and simpler)",
+        "ts": "1501269293.882484"
+    },
+    {
+        "text": "yes,  I just didn't have a public cloud available to test with,  was trying to validate on a laptop as I've been using kismatic to deploy k8s locally in hopes testing a pipeline before moving to a cloud",
+        "username": "hornjason",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501269348.906825"
+    },
+    {
+        "text": "just trying to see if this is something I can bring to our company I'm in the beg. stages of building a new datacenter",
+        "username": "hornjason",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501269396.928967"
+    },
+    {
+        "text": "and so far its exactly what I'm looking for",
+        "username": "hornjason",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1501269415.937421"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": ":slightly_smiling_face:",
+        "ts": "1501269421.939760"
+    }
+]

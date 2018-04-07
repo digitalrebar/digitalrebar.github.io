@@ -1,0 +1,104 @@
+[
+    {
+        "text": "\"interesting\" as in, omg, encapsulation. :)",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491509126.145005"
+    },
+    {
+        "text": "Is this no longer kosher?  How to get more detailed debug info?\n\nrebar --debug nodes create '{\"name\"; \"os1.newgoliath.com\", \"bootenv\": \"local\"}'\n2017\/04\/06 22:36:01 Talking to Rebar with https:\/\/127.0.0.1 (rebar:reebaar)\n2017\/04\/06 22:36:01 Unable to create new node: Expected status in the 200 range, got 400 Bad Request",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491532714.784849"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Rebar nodes update name json",
+        "ts": "1491532927.813780"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Assuming os1 exists",
+        "ts": "1491532968.819539"
+    },
+    {
+        "text": "fresh install. no nodes",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491533029.827704"
+    },
+    {
+        "text": "rebar whoami\n2017\/04\/06 22:37:44 Cannot determine what node this is: Expected status in the 200 range, got 404 Not Found",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491533057.831351"
+    },
+    {
+        "text": "just he phantom",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491533118.839330"
+    },
+    {
+        "text": "hostname -f\nos1.newgoliath.com",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491533215.852673"
+    },
+    {
+        "text": "duh, I see it.   semicolon",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491533295.862916"
+    },
+    {
+        "text": "Thank you, Greg!",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491533473.887331"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": ":slightly_smiling_face: no problem, Judd!",
+        "ts": "1491533556.898376"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Glad to see you back hanging around",
+        "ts": "1491533563.899229"
+    },
+    {
+        "text": "I've gotta do SOMETHING with all this gear I have laying around.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491533593.903071"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": ":slightly_smiling_face:",
+        "ts": "1491533597.903613"
+    }
+]

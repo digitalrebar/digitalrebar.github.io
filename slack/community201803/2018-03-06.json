@@ -1,0 +1,2116 @@
+[
+    {
+        "user": "U9K6ZQG7M",
+        "text": "<@U9K6ZQG7M> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1520346363.000235"
+    },
+    {
+        "type": "message",
+        "user": "U9K6ZQG7M",
+        "text": "Hi all, I'm a complete noob with this lot! I'm wondering if anyone can point me in the direction of setting up Rebar to PXE boot Rock64s. I am trying to boot ayufan linux builds... Thanks in advance!",
+        "ts": "1520346776.000120"
+    },
+    {
+        "type": "message",
+        "user": "U32PZNCP5",
+        "text": "hello <@U9K6ZQG7M> $welcome",
+        "ts": "1520347022.000529"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1520347022.000680"
+    },
+    {
+        "type": "message",
+        "user": "U9K6ZQG7M",
+        "text": "I have a Rebar server set up and running. I am building Self Hosted Kubernetes clusters with it. It is awesome!!!! I am going to provide the modified krib template when I have it thoroughly tested. I have a 20xRock64 cluster that I'm now looking at installing it onto!",
+        "ts": "1520347202.000052"
+    },
+    {
+        "type": "message",
+        "user": "U32PZNCP5",
+        "text": "Sounds great - the Engineering folks are driving in to work right now and will be online shortly to provide a response",
+        "ts": "1520347521.000296"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U9K6ZQG7M> - welcome - is this what you're referring to?  \n<http:\/\/wiki.pine64.org\/index.php\/ROCK64_Main_Page>",
+        "ts": "1520347548.000622"
+    },
+    {
+        "type": "message",
+        "user": "U9K6ZQG7M",
+        "text": "...yes that's the fellow! I have 20 of them in a box! 4Gb memory makes it all possible!",
+        "ts": "1520347604.000426"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Are you planning to run Digital Rebar Provision (DRP) on one of these, too - or are you just planning to install to them ?",
+        "ts": "1520347746.000755"
+    },
+    {
+        "type": "message",
+        "user": "U9K6ZQG7M",
+        "text": "...I thought of that but you need 6Gb minimum!?",
+        "ts": "1520347776.000065"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "nah - I run DRP on 768 MB VMs regularly ...",
+        "ts": "1520347791.000725"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it's possible the old Digital Rebar ver2 had a 6GB memory footprint requirement, but the current DRP ver3 does NOT",
+        "ts": "1520347885.000423"
+    },
+    {
+        "type": "message",
+        "user": "U9K6ZQG7M",
+        "text": "...I think I tried it tentatively but stopped when I got a message saying min 6Gb. I *may* have a project that could use that though...",
+        "ts": "1520347900.000136"
+    },
+    {
+        "type": "message",
+        "user": "U9K6ZQG7M",
+        "text": "my first issue is installing ayufans linux on them over PXE. Once I get that cracked I'm in business!",
+        "ts": "1520347978.000593"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we do build DRP (ver3) for ARM64 architecture, but it does not receive heavy testing - in general - we're a single Golang binary (only 30 MB in size), with very very few external dependencies (currently only 7zip, bsdtar, and unzip)",
+        "ts": "1520348038.000144"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we do not have any patterns for you on PXE booting ARM64 architecture, we are certainly available to help here on the <#C02L9P26Q|community> channel as questions or issues arise ... but right now, we haven't been PXE booting ARM64 hardware",
+        "ts": "1520348093.000690"
+    },
+    {
+        "type": "message",
+        "user": "U9K6ZQG7M",
+        "text": "Ok, thanks. I'll keep on looking.",
+        "ts": "1520348148.000325"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we def. should be able to PXE boot ARM64, just not a lot of patterns for  you to follow",
+        "ts": "1520348214.000317"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "<!here> hi there! Do you guys can explain to me why after some time on sledgehammer-wait stage I am loosing the connectivity to my servers ? They seems to lose their IP even though the DHCP lease is still valid. I tried to renew it using the dhclient ethx command, they get their IP back but still impossible to ping... The only solution I have found so far is to reboot the server...",
+        "ts": "1520348311.000557"
+    },
+    {
+        "type": "message",
+        "user": "U9K6ZQG7M",
+        "text": "...I have not been able to find any! I've got as far as the DHCP server returning 'a' filename for the Vendor Class, I just don't know what it should be, or where to get it!!!!!",
+        "ts": "1520348367.000534"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "post your details here - we have some guys that are really good with hardware - may be able to sort out what needs to be served for ARM64",
+        "ts": "1520348401.000331"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U8FAN7PLK> - are the machines in Sledgehammer when they lose their lease, or in a provisioned OS instance ?",
+        "ts": "1520348525.000393"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "<@U6QFVRJNB> they are on sledgehammer",
+        "edited": {
+            "user": "U8FAN7PLK",
+            "ts": "1520348550.000000"
+        },
+        "ts": "1520348537.000525"
+    },
+    {
+        "type": "message",
+        "user": "U9K6ZQG7M",
+        "text": "What I have so far is the rom loaded with ayufan's u-boot loader. This, in theory, allows the Rock64 to PXE boot. I have a MS$ DHCP server configured to send 'a' boot file name when the Vendor Class = 'U-Boot.armv8'.... but that's as far as I have got.",
+        "ts": "1520348635.000225"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "there are a couple of things that may be at play:\n* increase the Preferences setting for DHCP Lease time\n* `dhclient` may not be running persistently inside the sledgehammer image (I'll hav to check this)\n* we use Tokens to authenticate the Machine to DRP - those Tokens have a timeout as well (but theoretically, that shouldn't effect the DHCP lease)",
+        "ts": "1520348641.000151"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "I'll try to extend the active lease time\/reservation lease time and see if there is a difference :slightly_smiling_face:",
+        "ts": "1520348746.000210"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "looking at my sledgehammer, it's not running `dhclient` so it's probably a single `dhclient` lease request, which would explain the issue",
+        "ts": "1520348797.000046"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "nothing is trying to renew the lease",
+        "ts": "1520348803.000545"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "extending the Lease on the DRP side will work as long as you make it really long - but this isn't necessarily the best solution - looking in to it",
+        "ts": "1520348915.000642"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "thanks !",
+        "ts": "1520348938.000418"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "on a recently rebooted machines (less than 30min) I can see the dhclient is running:\n```&lt;sledgehammer&gt; [root@E16968917902274 ~]# ps aux | grep dhclient\nroot      3238  0.0  0.0 113372 13140 ?        Ss   15:04   0:00 dhclient eth0```",
+        "ts": "1520349011.000288"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "on a non recently rebboted machine the dhclient isn't running:\n```&lt;sledgehammer&gt; [root@localhost ~]# ps aux | grep dhclient\nroot      6865  0.0  0.0 112660   972 tty1    R+   16:22   0:00 grep --color=auto dhclient```",
+        "ts": "1520349129.000746"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Is drpcli still running? ",
+        "client_msg_id": "24B9B2DE-A7C6-4866-8485-AAB49F22E35E",
+        "ts": "1520349171.000165"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Dhcliebt may exit when drpcli exits out of the sledgehammer service ",
+        "client_msg_id": "9927E489-6265-48A0-95A4-4209C5280887",
+        "ts": "1520349198.000153"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "no it isn't",
+        "ts": "1520349230.000864"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "on the other machine, it is:\n```&lt;sledgehammer&gt; [root@E16968917902274 ~]# ps aux | grep drpcli\nroot      3342  0.1  0.0 731576 17120 ?        Sl   15:04   0:00 drpcli machines processjobs f8466cb9-acba-43a5-b0e8-1bcc5954b86e\n```",
+        "ts": "1520349243.000041"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "that's weird because I have no job running on any machine at the time though...",
+        "ts": "1520349270.000628"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "`f8466cb9-acba-43a5-b0e8-1bcc5954b86e` is the UUID of the last job that was executed 10min ago",
+        "ts": "1520349300.000205"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "`drpcli` may continue to run, depending on your stage actions when the last stage runs",
+        "ts": "1520349443.000745"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "interesting when I try to run a drpcli command on the machine without IP, I got this error:\n```Error creating sessions: CLIENT_ERROR: Get <https:\/\/127.0.0.1:8092\/api\/v3\/users\/rocketskates\/token>: dial tcp 127.0.0.1:8092: getsockopt: connection refused```",
+        "ts": "1520349484.000476"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "the IP is wrong here...",
+        "ts": "1520349491.000137"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if the machine has no IP - then it can't reach back out to the DRP endpoint",
+        "ts": "1520349507.000176"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we provide the DRP Endpoint IP addr to the `drpcli` dynamically (if `--static-ip` is not set on the DRP side)",
+        "ts": "1520349533.000144"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "Got it.",
+        "ts": "1520349541.000634"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "makes sense :slightly_smiling_face:",
+        "ts": "1520349548.000096"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "So - the lesson is ... Sledgehammer brings up `dhclient` - and if the Runner (`drpcli`) isn't running, then the DHCP Lease times out ... there is also the Token expiry that the Runner (`drpcli`) is operating with, which can also time out",
+        "ts": "1520349590.000283"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "these things need to be managed for long living Sledgehammer runs",
+        "ts": "1520349599.000191"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "most of the use case patterns with Sledehammer are quick use - and move in to installed OS ... but in the case of \"ready state\" infrastructure - we need to harden Sledgehammer to be longer lived with it's management of Runner token and (subsequently) DHCP client lease renewal",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1520349714.000000"
+        },
+        "ts": "1520349641.000354"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "Yep :slightly_smiling_face:",
+        "ts": "1520349656.000639"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "some of the can be effected with the Preferences settings by simply extending the times to really long lease lengths",
+        "ts": "1520349667.000379"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<@U9K6ZQG7M> What type of firmware and network booting situation does those rock64 boards have?",
+        "ts": "1520349674.000701"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "Anyway this is not a big issue for our testing purposes, but it could be in production as we might need to have a \"ready state\" for our servers.",
+        "ts": "1520349708.000401"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "Im gonna try to extend the lease to see if that changes anything",
+        "ts": "1520349732.000106"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<@U8FAN7PLK> I think it is some legacy code left over from some DHCP shennanigans we had to pull for DRv2.",
+        "ts": "1520349750.000262"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "If so, unwinding that behaviour should be a simple thing to do.",
+        "ts": "1520349793.000649"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "<@U02DJQSG8> cool! Waiting for the fix then :slightly_smiling_face:",
+        "ts": "1520349911.000327"
+    },
+    {
+        "type": "message",
+        "user": "U9K6ZQG7M",
+        "text": "<@U02DJQSG8> ...they have nothing installed by default. You flash them with <https:\/\/github.com\/ayufan-rock64\/linux-build\/releases\/download\/0.6.25\/u-boot-flash-spi-rock64.img.xz> to get network booting going. This all seems to work nicely.... i.e. I see the required BOOTP messages using WireShark.",
+        "ts": "1520350545.000662"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U9K6ZQG7M> - if you are using DRP as the dhcp server, it would be really useful for use to see a debug trace of the DHCP packet stream.  This can be done by turning the DHCP Debug up to debug and catching the output of DRP.",
+        "ts": "1520350924.000319"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "FYI - seeing this on my Ubuntu 16.04 installs - just hangs here on this screen for a while near the end of the install...",
+        "client_msg_id": "DAD2D231-2810-4557-9031-ADCC1FF3B3BC",
+        "ts": "1520352114.000773"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F9JN6UBG8\/image_uploaded_from_ios.jpg|Ubuntu install hang>",
+        "file": {
+            "id": "F9JN6UBG8",
+            "created": 1520352131,
+            "timestamp": 1520352131,
+            "name": "Image uploaded from iOS.jpg",
+            "title": "Ubuntu install hang",
+            "mimetype": "image\/jpeg",
+            "filetype": "jpg",
+            "pretty_type": "JPEG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 3046354,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9JN6UBG8\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9JN6UBG8\/download\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9JN6UBG8-00a11eb334\/image_uploaded_from_ios_64.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9JN6UBG8-00a11eb334\/image_uploaded_from_ios_80.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9JN6UBG8-00a11eb334\/image_uploaded_from_ios_360.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 270,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9JN6UBG8-00a11eb334\/image_uploaded_from_ios_480.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 360,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9JN6UBG8-00a11eb334\/image_uploaded_from_ios_160.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9JN6UBG8-00a11eb334\/image_uploaded_from_ios_720.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 540,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9JN6UBG8-00a11eb334\/image_uploaded_from_ios_800.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 600,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9JN6UBG8-00a11eb334\/image_uploaded_from_ios_960.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 720,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9JN6UBG8-00a11eb334\/image_uploaded_from_ios_1024.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 768,
+            "image_exif_rotation": 1,
+            "original_w": 4032,
+            "original_h": 3024,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F9JN6UBG8\/image_uploaded_from_ios.jpg",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F9JN6UBG8-c4c59279c4",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "upload_reply_to": "CE0B5347-19DE-4598-9FD5-53FFB861D0DA",
+        "ts": "1520352131.000764"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Ctl-Alt-F4 to see console messages",
+        "ts": "1520352191.000690"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it's hanging in the preseed somewhere - should be a clue on screen 4",
+        "ts": "1520352204.000479"
+    },
+    {
+        "type": "message",
+        "user": "U9K6ZQG7M",
+        "text": "<@U02DGQYK1>...I'm not using the DRP as the DHCP server in this case. I have to use MS$. I am using WireShark however. What filter would you like on that? How do I get the reslting file to you?",
+        "ts": "1520352247.000256"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "just dhcp messages. <@U9K6ZQG7M>",
+        "ts": "1520352270.000815"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "There is a bigger issue.   We don’t have an arm-based sledgehammer yet.",
+        "ts": "1520352297.000756"
+    },
+    {
+        "type": "message",
+        "user": "U9K6ZQG7M",
+        "text": "...that will slow things down!",
+        "ts": "1520352320.000166"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U6QFVRJNB> Interesting- Ctrl\/Alt\/F4 not working to bring up terminal...",
+        "client_msg_id": "BBB2B9FA-3CCE-4696-8AF8-EB0925D0695B",
+        "ts": "1520352325.000348"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "sometimes try ALT-F4",
+        "ts": "1520352344.000050"
+    },
+    {
+        "type": "message",
+        "user": "U9K6ZQG7M",
+        "text": "<@U02DGQYK1> is that something that is currently being worked on in V3?",
+        "ts": "1520352389.000754"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Ok <@U02DGQYK1> that worked",
+        "client_msg_id": "B1B6829F-6C1D-419F-8046-4AC049CB8C32",
+        "ts": "1520352397.000462"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F9KFPQ2PP\/image_uploaded_from_ios.jpg|Image uploaded from iOS>",
+        "file": {
+            "id": "F9KFPQ2PP",
+            "created": 1520352464,
+            "timestamp": 1520352464,
+            "name": "Image uploaded from iOS.jpg",
+            "title": "Image uploaded from iOS",
+            "mimetype": "image\/jpeg",
+            "filetype": "jpg",
+            "pretty_type": "JPEG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 9472931,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9KFPQ2PP\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9KFPQ2PP\/download\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9KFPQ2PP-3b9b97c269\/image_uploaded_from_ios_64.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9KFPQ2PP-3b9b97c269\/image_uploaded_from_ios_80.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9KFPQ2PP-3b9b97c269\/image_uploaded_from_ios_360.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 270,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9KFPQ2PP-3b9b97c269\/image_uploaded_from_ios_480.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 360,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9KFPQ2PP-3b9b97c269\/image_uploaded_from_ios_160.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9KFPQ2PP-3b9b97c269\/image_uploaded_from_ios_720.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 540,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9KFPQ2PP-3b9b97c269\/image_uploaded_from_ios_800.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 600,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9KFPQ2PP-3b9b97c269\/image_uploaded_from_ios_960.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 720,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9KFPQ2PP-3b9b97c269\/image_uploaded_from_ios_1024.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 768,
+            "image_exif_rotation": 1,
+            "original_w": 4032,
+            "original_h": 3024,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F9KFPQ2PP\/image_uploaded_from_ios.jpg",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F9KFPQ2PP-49f39ceb65",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "upload_reply_to": "9C346147-FF75-44B9-9506-EB673E8676B5",
+        "ts": "1520352473.000794"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "(Sorry for the screen reflection...) looks like it’s hauling down net-post-install.sh &amp; running it",
+        "client_msg_id": "4B8698DD-871E-49A6-B360-BDC8E0ACA201",
+        "ts": "1520352543.000232"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It has been a lower priority.  We don’t have one today.  <@U9K6ZQG7M> We don’t have hardware to play with it and we haven’t had customer interest to drive it.",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1520352702.000000"
+        },
+        "ts": "1520352694.000018"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<@U9K6ZQG7M> It is sorta driven by customer demand and\/or comunity involvement.",
+        "ts": "1520352729.000142"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "and ww mostly want to target ARM64 stuff that is running a UEFI firmware",
+        "ts": "1520352768.000305"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "rather than other, less well documented network boot protocols.",
+        "ts": "1520352797.000653"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "We are working on a new job runner that may affect existing workloads, so I am looking for feedback on the design and implementation before we replace the current implementation with it.",
+        "ts": "1520357751.000044"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<https:\/\/github.com\/digitalrebar\/provision\/blob\/add-auto-reconnection-and-make-an-FSM-machine-agent\/api\/agent.go> &lt;-- the code for the new job runner.  <@U416T0AAX> and other interested parties should take a look at the comments in that code and give me feedback as to how it will affect your current workflows.",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/blob\/add-auto-reconnection-and-make-an-FSM-machine-agent\/api\/agent.go",
+                "text": "Digital Rebar Provision is a simple but powerful Golang executable that provides a complete API-driven DHCP\/PXE\/TFTP provisioning system.",
+                "fallback": "GitHub: digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/blob\/add-auto-reconnection-and-make-an-FSM-machine-agent\/api\/agent.go",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1520357824.000334"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DJQSG8> What are motivations for change? (simplification?)",
+        "client_msg_id": "34566C42-02A0-48CE-BC89-0EE966C68A03",
+        "ts": "1520358083.000320"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Easier maintenance and simplification.",
+        "ts": "1520358117.000685"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "To not have to remember the dang STOP all the time.",
+        "ts": "1520358122.000765"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": ":slightly_smiling_face:",
+        "ts": "1520358125.000484"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "With this runner will do what I consider to be the Right Thing by waiting by default when there is nothing to do, rebooting whenever the bootenvs change (unless it shoudl exit instead to let an OS install finish)",
+        "ts": "1520358220.000721"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I do not believe it will affect anything I’m currently doing; I only have a simple workflow (not default, which in my implementation is empty, but tied to a custom profile) and the KRIB one",
+        "client_msg_id": "0E139BC5-1B7D-4C29-B35B-1D79F22DBD21",
+        "ts": "1520358242.000321"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "This is my custom profile workflow:\n```\n\"change-stage\/map\": {\n      \"discover\": \"prep-install:Success\",\n      \"prep-install\": \"ubuntu-16.04-install:Reboot\",\n      \"ubuntu-16.04-install\": \"complete-nowait:Success\"\n    }\n```",
+        "ts": "1520358454.000199"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "And my KRIB one:\n```\n\"change-stage\/map\": {\n      \"docker-install\": \"krib-install:Success\",\n      \"finish-install\": \"docker-install:Success\",\n      \"krib-install\": \"complete:Success\",\n      \"runner-service\": \"finish-install:Stop\",\n      \"ssh-access\": \"runner-service:Success\",\n      \"ubuntu-16.04-install\": \"ssh-access:Success\"\n    }\n```",
+        "ts": "1520358551.000625"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Thank you, <@U416T0AAX> - you answered a question for me.",
+        "ts": "1520358724.000121"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<@U8FAN7PLK> <https:\/\/github.com\/digitalrebar\/provision-content\/pull\/68> &lt;-- should be in tip soonish.",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "Make sure dhclient survives when the sledgehammer service finishes by VictorLowther · Pull Request #68 · digitalrebar\/provision-content",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision-content\/pull\/68",
+                "fallback": "GitHub: Make sure dhclient survives when the sledgehammer service finishes by VictorLowther · Pull Request #68 · digitalrebar\/provision-content",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision-content\/pull\/68",
+                "thumb_url": "https:\/\/avatars2.githubusercontent.com\/u\/770578?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1520363056.000084"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "<@U02DJQSG8> w00t !",
+        "ts": "1520363089.000195"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So <@U02DGQYK1> is the ‘curtin’ thing something you guys invented?",
+        "client_msg_id": "BC267CEF-E606-4C62-BA6D-D992593C490A",
+        "ts": "1520369891.000710"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "No.  It is a tool in ubuntu\/maas.  MaaS wraps a lot of crap around it.",
+        "ts": "1520370364.000375"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We drive it for now.  It was quick and expedient.  I want to eventually replace it.",
+        "ts": "1520370400.000221"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I’ve been looking at ignition from CoreOs ne Redhat, but it has issues too.",
+        "ts": "1520370420.000489"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I’ve tinkered with changing ignition and have some stuff lying around to switch to it, but it has more work to do.",
+        "ts": "1520370463.000363"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I like ignition better because it is go-based and easier to work with but it doesn’t have the pieces to handle setting up bootloaders like curtin does.",
+        "ts": "1520370497.000041"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Anyway, it is the way it is for right now.",
+        "ts": "1520370508.000304"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U416T0AAX>",
+        "ts": "1520370511.000350"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "The idea is very cool, congrats on shipping something :+1::skin-tone-2:",
+        "client_msg_id": "F0827903-7ADF-4750-AC85-97835881561D",
+        "ts": "1520370584.000019"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "In other news, all my Ubuntu installs (which are the only kind I do ;) are hanging on the net-post-install.sh phase...",
+        "client_msg_id": "C31117BF-C583-4847-B30E-142A8B86252A",
+        "ts": "1520370739.000296"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F9KFKGWAF\/image_uploaded_from_ios.jpg|What is it doing??>",
+        "file": {
+            "id": "F9KFKGWAF",
+            "created": 1520370756,
+            "timestamp": 1520370756,
+            "name": "Image uploaded from iOS.jpg",
+            "title": "What is it doing??",
+            "mimetype": "image\/jpeg",
+            "filetype": "jpg",
+            "pretty_type": "JPEG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 3751646,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9KFKGWAF\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9KFKGWAF\/download\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9KFKGWAF-488524fbd1\/image_uploaded_from_ios_64.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9KFKGWAF-488524fbd1\/image_uploaded_from_ios_80.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9KFKGWAF-488524fbd1\/image_uploaded_from_ios_360.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 270,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9KFKGWAF-488524fbd1\/image_uploaded_from_ios_480.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 360,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9KFKGWAF-488524fbd1\/image_uploaded_from_ios_160.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9KFKGWAF-488524fbd1\/image_uploaded_from_ios_720.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 540,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9KFKGWAF-488524fbd1\/image_uploaded_from_ios_800.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 600,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9KFKGWAF-488524fbd1\/image_uploaded_from_ios_960.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 720,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9KFKGWAF-488524fbd1\/image_uploaded_from_ios_1024.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 768,
+            "image_exif_rotation": 1,
+            "original_w": 4032,
+            "original_h": 3024,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F9KFKGWAF\/image_uploaded_from_ios.jpg",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F9KFKGWAF-29a27aa03a",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "upload_reply_to": "AD084858-89E4-490E-BA13-F2972658CF33",
+        "ts": "1520370756.000173"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yeah _ I saw.  I tried it and it passed for me.",
+        "ts": "1520370775.000131"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "This wasn’t happening to me pre-3.7",
+        "client_msg_id": "347F9C8D-EDE8-4765-9B2F-0778EB90F1AE",
+        "ts": "1520370796.000006"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "hmm",
+        "ts": "1520370806.000611"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "can you `alt-f2`",
+        "ts": "1520370814.000374"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "ps -ef | grep drpcli",
+        "ts": "1520370818.000358"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "“Works on my machine” ;)",
+        "client_msg_id": "5670F319-7159-44B2-8D9B-09A58543A1B3",
+        "ts": "1520370823.000556"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Trying to think about changes that could change your path.",
+        "ts": "1520370868.000468"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "From this work flow:  ```\"change-stage\/map\": {\n      \"discover\": \"prep-install:Success\",\n      \"prep-install\": \"ubuntu-16.04-install:Reboot\",\n      \"ubuntu-16.04-install\": \"complete-nowait:Success\"\n    }```",
+        "ts": "1520370887.000358"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F9LE1675L\/image_uploaded_from_ios.jpg|ps output>",
+        "file": {
+            "id": "F9LE1675L",
+            "created": 1520370904,
+            "timestamp": 1520370904,
+            "name": "Image uploaded from iOS.jpg",
+            "title": "ps output",
+            "mimetype": "image\/jpeg",
+            "filetype": "jpg",
+            "pretty_type": "JPEG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 6143418,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9LE1675L\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9LE1675L\/download\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9LE1675L-cc7d01d480\/image_uploaded_from_ios_64.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9LE1675L-cc7d01d480\/image_uploaded_from_ios_80.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9LE1675L-cc7d01d480\/image_uploaded_from_ios_360.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 270,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9LE1675L-cc7d01d480\/image_uploaded_from_ios_480.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 360,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9LE1675L-cc7d01d480\/image_uploaded_from_ios_160.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9LE1675L-cc7d01d480\/image_uploaded_from_ios_720.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 540,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9LE1675L-cc7d01d480\/image_uploaded_from_ios_800.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 600,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9LE1675L-cc7d01d480\/image_uploaded_from_ios_960.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 720,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9LE1675L-cc7d01d480\/image_uploaded_from_ios_1024.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 768,
+            "image_exif_rotation": 1,
+            "original_w": 4032,
+            "original_h": 3024,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F9LE1675L\/image_uploaded_from_ios.jpg",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F9LE1675L-408e474db1",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "upload_reply_to": "56F8D5B8-A306-4A46-84C8-D2F3110865A0",
+        "ts": "1520370904.000688"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I prefer to do `complete-nowait:Stop`.",
+        "ts": "1520370916.000510"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We thought what you have show have worked, but we might have been sneaky and changed something.",
+        "ts": "1520370936.000618"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I’ll change it as you prefer, and see what I get",
+        "client_msg_id": "D4E0511D-EFC9-42A6-9E06-2498DFF43160",
+        "ts": "1520370989.000025"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U416T0AAX> - what version are you running?",
+        "ts": "1520371228.000516"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Did your machine make it to complete-nowait while it was hung?  in the UX.",
+        "ts": "1520371626.000298"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I think I see the change that might have changed the behavior.  STOP should fix it.",
+        "ts": "1520371787.000339"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U02DJQSG8>’s new stuff will also fix the problem.",
+        "ts": "1520371816.000300"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The new stuff will fix it in two ways.",
+        "ts": "1520371869.000060"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DGQYK1> Yes, it shows as `complete-nowait` in the UX",
+        "ts": "1520372436.000589"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I just reboot the nodes, and they're fine",
+        "ts": "1520372468.000135"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Also, running v3.7.1 right now - I'll upgrade soon(tm)",
+        "ts": "1520372542.000267"
+    },
+    {
+        "user": "U9KSXT6CV",
+        "text": "<@U9KSXT6CV> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1520396932.000042"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "When does the \/var\/lib\/dr-provision\/tftpboot\/machines\/$UUID folder get created and the kickstart file stuck in it?",
+        "ts": "1520397075.000170"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U9KSXT6CV> $welcome",
+        "ts": "1520397097.000238"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1520397098.000018"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Kickstarts and all templated files are never rendered to disk - they're rendered on the fly by DRP",
+        "ts": "1520397120.000038"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "and served from the in-memory virtual filesystem",
+        "ts": "1520397128.000216"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "I've got my DR-Provision setup and working with some test vm's. I can get an ip via dhcp from rebar and see it load ipxe then sledgehammer",
+        "ts": "1520397133.000121"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "but after the machine is registred and I change it's bootenv to centos7 and set the ks template to \tcentos-7.ks.tmpl and reboot the test vm centos7 never installs",
+        "ts": "1520397203.000003"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U6QFVRJNB> uploaded a file: <https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/F9KNPLMTN\/view_kickstart_or_preseed.m|view kickstart or preseed>",
+        "file": {
+            "id": "F9KNPLMTN",
+            "created": 1520397236,
+            "timestamp": 1520397236,
+            "name": "view_kickstart_or_preseed.m",
+            "title": "view kickstart or preseed",
+            "mimetype": "text\/plain",
+            "filetype": "objc",
+            "pretty_type": "Objective-C",
+            "user": "U6QFVRJNB",
+            "editable": true,
+            "size": 483,
+            "mode": "snippet",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9KNPLMTN\/view_kickstart_or_preseed.m?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9KNPLMTN\/download\/view_kickstart_or_preseed.m?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "permalink": "https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/F9KNPLMTN\/view_kickstart_or_preseed.m",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F9KNPLMTN-1173195dbc",
+            "edit_link": "https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/F9KNPLMTN\/view_kickstart_or_preseed.m\/edit",
+            "preview": "When a machine is in provisioning status, you can view the dynamically generated preseed or kickstart from the TFTP server (or via the HTTP gateway).  \r\n\r\nGet the Machine ID, then use the following constructed URL:\r\n\r\nMID=\"7f65279a-7e5c-4e69-af40-dd01af4c5667\"\r",
+            "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre><span class=\"cm-variable\">When<\/span> <span class=\"cm-variable\">a<\/span> <span class=\"cm-variable\">machine<\/span> <span class=\"cm-variable\">is<\/span> <span class=\"cm-keyword\">in<\/span> <span class=\"cm-variable\">provisioning<\/span> <span class=\"cm-variable\">status<\/span>, <span class=\"cm-variable\">you<\/span> <span class=\"cm-variable\">can<\/span> <span class=\"cm-variable\">view<\/span> <span class=\"cm-variable\">the<\/span> <span class=\"cm-variable\">dynamically<\/span> <span class=\"cm-variable\">generated<\/span> <span class=\"cm-variable\">preseed<\/span> <span class=\"cm-variable\">or<\/span> <span class=\"cm-variable\">kickstart<\/span> <span class=\"cm-variable\">from<\/span> <span class=\"cm-variable\">the<\/span> <span class=\"cm-variable\">TFTP<\/span> <span class=\"cm-variable\">server<\/span> (<span class=\"cm-variable\">or<\/span> <span class=\"cm-variable\">via<\/span> <span class=\"cm-variable\">the<\/span> <span class=\"cm-variable\">HTTP<\/span> <span class=\"cm-variable\">gateway<\/span>).  <\/pre><\/div>\n<div><pre>&#8203;<\/pre><\/div>\n<div><pre><span class=\"cm-variable\">Get<\/span> <span class=\"cm-variable\">the<\/span> <span class=\"cm-variable\">Machine<\/span> <span class=\"cm-variable\">ID<\/span>, <span class=\"cm-variable\">then<\/span> <span class=\"cm-variable\">use<\/span> <span class=\"cm-variable\">the<\/span> <span class=\"cm-variable\">following<\/span> <span class=\"cm-variable\">constructed<\/span> <span class=\"cm-variable\">URL<\/span>:<\/pre><\/div>\n<div><pre>&#8203;<\/pre><\/div>\n<div><pre><span class=\"cm-variable\">MID<\/span><span class=\"cm-operator\">=<\/span><span class=\"cm-string\">&quot;7f65279a-7e5c-4e69-af40-dd01af4c5667&quot;<\/span><\/pre><\/div>\n<\/div>\n<\/div>\n",
+            "lines": 14,
+            "lines_more": 9,
+            "preview_is_truncated": false,
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U6QFVRJNB",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "shane",
+        "bot_id": null,
+        "ts": "1520397236.000240"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "are you familiar with the `drpcli` command ?",
+        "ts": "1520397268.000138"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "interesting.. this very much like VMwares AutoDeploy for vCenter for automating ESXi",
+        "ts": "1520397282.000228"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "yea i've been playing drpcli and getting comfortable with it",
+        "ts": "1520397302.000092"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(except MUCH MUCH better ....) :slightly_smiling_face:",
+        "ts": "1520397314.000006"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "My end goal is to wrap up the drp API for StackStorm",
+        "ts": "1520397320.000036"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "can you  please provide `drpcli prefs list` output",
+        "ts": "1520397327.000011"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U9KSXT6CV> uploaded a file: <https:\/\/rackn.slack.com\/files\/U9KSXT6CV\/F9K76CKG9\/-.txt|Untitled>",
+        "file": {
+            "id": "F9K76CKG9",
+            "created": 1520397384,
+            "timestamp": 1520397384,
+            "name": "-.txt",
+            "title": "Untitled",
+            "mimetype": "text\/plain",
+            "filetype": "text",
+            "pretty_type": "Plain Text",
+            "user": "U9KSXT6CV",
+            "editable": true,
+            "size": 486,
+            "mode": "snippet",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9K76CKG9\/-.txt?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9K76CKG9\/download\/-.txt?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "permalink": "https:\/\/rackn.slack.com\/files\/U9KSXT6CV\/F9K76CKG9\/-.txt",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F9K76CKG9-7f76f10fae",
+            "edit_link": "https:\/\/rackn.slack.com\/files\/U9KSXT6CV\/F9K76CKG9\/-.txt\/edit",
+            "preview": "[root@provision machines]# drpcli prefs list\r\n{\r\n  \"baseTokenSecret\": \"GP5byoLaCrvLVSIwbaL5kgCxNeLDQB-j\",\r\n  \"debugBootEnv\": \"warn\",\r\n  \"debugDhcp\": \"warn\",\r",
+            "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>[root@provision machines]# drpcli prefs list<\/pre><\/div>\n<div><pre>{<\/pre><\/div>\n<div><pre>  &quot;baseTokenSecret&quot;: &quot;GP5byoLaCrvLVSIwbaL5kgCxNeLDQB-j&quot;,<\/pre><\/div>\n<div><pre>  &quot;debugBootEnv&quot;: &quot;warn&quot;,<\/pre><\/div>\n<div><pre>  &quot;debugDhcp&quot;: &quot;warn&quot;,<\/pre><\/div>\n<div><pre><\/pre><\/div>\n<\/div>\n<\/div>\n",
+            "lines": 16,
+            "lines_more": 11,
+            "preview_is_truncated": false,
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U9KSXT6CV",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "killsudo",
+        "bot_id": null,
+        "ts": "1520397385.000105"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if you have the defaultStage setting set - then you need to manipulate what machines are going to be installed with via the use of Stages (workflow), and not BootEnvs",
+        "ts": "1520397401.000109"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "hmm yea I clicked that wizard button and was just trying to find better doc's on how to use that workflow tool",
+        "ts": "1520397430.000157"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "since you have defaultStage set, you need to set a Stage on the machine, which contains a BootEnv definition - do not manipulate the Machine via BootEnv settings",
+        "ts": "1520397438.000016"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we don't have the workflow fully documented yet",
+        "ts": "1520397457.000041"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "ok so Im not crazy, my research ended up at <http:\/\/provision.readthedocs.io\/en\/stable\/doc\/workflows.html>",
+        "ts": "1520397516.000101"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "for Docs  - please switch to `tip` version - they are MUCH MUCH more updated",
+        "ts": "1520397536.000165"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "which while nice, doesn't help that much if you are already very familiar with dhcp\/pxe\/autodeploy etc",
+        "ts": "1520397539.000056"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(use the lower right floating version selector)",
+        "ts": "1520397546.000044"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "so I guess workflows are optional then?",
+        "ts": "1520397617.000089"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "my use case might be slightly different then a normal user",
+        "ts": "1520397628.000120"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "\"technically\" workflow (stages) can be optional, but we have found everyone adopts them once they understand them",
+        "ts": "1520397662.000128"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "`defaultBootEnv` should be sledgehammer to be consistent.",
+        "ts": "1520397733.000024"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "I don't want\/need a TheForeman\/Cobbler etc experience with lifecycle management. When I start a provisioning run I have already acquired all of my varibles from different inventories etc so I mostly need a nice API driven way to define a machine and when it boots just pull down the os with a firstboot script etc. Once I get into the OS to pre-stage some stuff I have to back out of the OS cleanly and hand off the machine to a third party",
+        "ts": "1520397777.000238"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "so no leaving keys etc and zero need to be able to come back to it in the future",
+        "ts": "1520397798.000096"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "fire and forget style setups",
+        "ts": "1520397804.000197"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "ideally if I can tie a 'machine' to a dhcp option 82 string, then assign a bootenv to get the SO on disk then the better",
+        "ts": "1520397864.000270"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "then I don't even need to futz with subnets or mac's",
+        "ts": "1520397882.000070"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I think you'll still find that Stages and workflow is useful for you.   Particularly if you're \"first boot script\" needs to vary between machines.",
+        "ts": "1520397962.000205"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "considering your request, the stages\/runner would do exactly what you are asking for post provision.  No keys, no ssh, no return access",
+        "ts": "1520397999.000222"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "You can build the workflow to do common boot things, select the OS, then do the post-provisioning twiddly bits.  Our install method is good because our agent disolves by default after provisioning - and you don't need to leave artifacts behind",
+        "ts": "1520398017.000107"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "I already have my OS's 100% handled in Ansible beautifully including backing myself out gracefully. So mostly just need winrm with https on windows and ssh on linux\/esxi so stackstorm can launch my ansible\/powershell plays",
+        "ts": "1520398051.000150"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "so this is sounding good",
+        "ts": "1520398061.000080"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "so Default BootEnv in global properties is now sledgehammer, thanks <@U02DGQYK1>",
+        "ts": "1520398200.000093"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "ok so cleared out my workflows",
+        "ts": "1520398231.000079"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "so should I still use the wizard or start by building a simple single line flow",
+        "ts": "1520398246.000055"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "the wizard builds a basic one",
+        "ts": "1520398564.000130"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U9KSXT6CV> - let’s be clear on what you are trying to do.",
+        "ts": "1520398568.000146"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You already have inventoried, IPMI managed, Raid configured, Bios adjusted system that you control from another system or systems.",
+        "ts": "1520398613.000175"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "+1 - <http:\/\/provision.readthedocs.io\/en\/tip\/doc\/arch\/provision.html>  tip has much better write up and starting to make some sense",
+        "ts": "1520398618.000186"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "<@U02DGQYK1> yup lets assume that",
+        "ts": "1520398632.000079"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You want the to PXE boot these machines (triggered externally) and the result of some intervening process is a booted OS (of some type) with an ssh key (on winrm enablement).",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1520398726.000000"
+        },
+        "ts": "1520398687.000091"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I assume you also probably want some notification that this is done.",
+        "ts": "1520398700.000029"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "notification would be a nice extra",
+        "ts": "1520398737.000039"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "I can listen for or poll events (stackstorm uses OpenStack Mistral under the hood for workflows)",
+        "ts": "1520398782.000231"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "How do you expect to inform the black box of the OS selection and ssh key to use?",
+        "ts": "1520398821.000101"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I assume the ssh key will be consistent and constant to your secondary provisioner.",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1520398841.000000"
+        },
+        "ts": "1520398832.000122"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "depends on the logic once I start manipulating it",
+        "ts": "1520398876.000028"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "but yea the key could be static to start with and just a simple edit to the kickstart",
+        "ts": "1520398910.000192"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "not hard for me to have the OS call my stackstorm hook to notify it that it's alive and send along some info",
+        "ts": "1520398935.000035"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "I plan to put the mistral workflow into pause state while I wait around for the boot\/dhcp\/pxe\/os load part",
+        "ts": "1520398970.000077"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "then I can resume when I see the incoming call",
+        "ts": "1520398981.000173"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - now we are getting some where.  A `task` that calls home when ready.",
+        "ts": "1520398999.000043"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "How do you want to install the OS?",
+        "ts": "1520399008.000110"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "you mean from where or do I want to use disk images?",
+        "ts": "1520399026.000179"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "well - kickstarts\/preseeds, raw images, rootfs images?",
+        "ts": "1520399052.000177"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "immutable in-memory CoreOS\/Rancher?",
+        "ts": "1520399063.000058"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "probably more then one, I have access to the mac addresses and know the OS before talking to drp",
+        "ts": "1520399105.000220"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "ips?",
+        "ts": "1520399122.000148"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "yup I can also know that",
+        "ts": "1520399130.000216"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "or I can just use my option-82 string that my dhcp relays are injecting",
+        "ts": "1520399150.000230"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "and map that to an OS",
+        "ts": "1520399158.000206"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yep - both are options.  Requiring different paths.",
+        "ts": "1520399176.000197"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "yea that's where I am stuck is trying to understand all of my options",
+        "ts": "1520399193.000120"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Are you using DRP as a DHCP server?",
+        "ts": "1520399279.000081"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "I do have a working dhcp\/pxe system now, it's just old school centos\/isc-dhcp\/pxe with some bash and ansible automating it",
+        "ts": "1520399280.000253"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "I can if that's best",
+        "ts": "1520399289.000093"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "but no issue using relays and next-boot \/ next-server options in regular dhcp",
+        "ts": "1520399303.000204"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Do the machines have sane IPXE clients?",
+        "ts": "1520399330.000184"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "does that exist?",
+        "ts": "1520399342.000051"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": ":slightly_smiling_face: fair enough.",
+        "ts": "1520399354.000085"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "http bzimage support",
+        "ts": "1520399361.000050"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "yup, all of my current systems chainload ipxe",
+        "ts": "1520399378.000213"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "or they can if that's what your getting at",
+        "ts": "1520399400.000051"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "it's all enterprise kit",
+        "ts": "1520399404.000006"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yeah.",
+        "ts": "1520399407.000100"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "more concerned about uefi stuff (argh)",
+        "ts": "1520399417.000085"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "well there is uefi ipxe bootloader",
+        "ts": "1520399439.000079"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "if it works",
+        "ts": "1520399459.000169"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "I know Hyper-v Gen2 vm's will be a pain with uefi being enforced",
+        "ts": "1520399472.000169"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "VM’s uefi suck",
+        "ts": "1520399488.000139"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "I think my first test run with drp, those failed to even reach ipxe",
+        "ts": "1520399495.000121"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "my other test machines seemed happy with the defaults",
+        "ts": "1520399510.000037"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "They all seem to assume a disk",
+        "ts": "1520399513.000200"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "To reduce your initial learning space, you may want to use your existing DHCP services to chain load into sledgehammer\/discovery.",
+        "ts": "1520399611.000003"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "well I have my test lab already successfully working with DRP dhcp service",
+        "ts": "1520399676.000199"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Okay - well - I was more thinking for your IP management system that you already have, but either way.",
+        "ts": "1520399701.000158"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I’d let the machines get discovered.  Default to the `discover` stage.",
+        "ts": "1520399733.000237"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Transition that to a new stage with a new task that acts as an in-line classifier.",
+        "ts": "1520399759.000096"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "what is an 'in-line classifier'? The template system?",
+        "ts": "1520399886.000086"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "parse your option 82 and convert to an install stage.  (centos-7-install or whatever).  Transition that install stage to a stage that installs your post reboot hook and reboot the machine.",
+        "ts": "1520399947.000149"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "`in-line classifier` == stage with a task represented by a template that would parse the option 82 out of the dhcp lease file and convert it to an install stage.",
+        "ts": "1520400000.000035"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "lets start simpler so I can build up to that. I need to get my head wrapped around the basic 1.2.3 operations. otherwise my questions are not gonna be as helpful or concise",
+        "ts": "1520400058.000092"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "dhcp &gt; pxe &gt; discovery &gt; centos7",
+        "ts": "1520400086.000152"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "whats the workflow way to just discover every machine that network boots against drp and install centos7 automatically with the default ks",
+        "ts": "1520400123.000068"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "set the default stage to centos-7-install",
+        "ts": "1520400148.000150"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "what about if I want to hit 'discover' first then centos7?",
+        "ts": "1520400188.000117"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "that is where you will need a workflow",
+        "ts": "1520400200.000076"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "ok so on that page and loaded up the default global workflow with the wizard",
+        "ts": "1520400228.000120"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Read about workflows and `ssh-access`.",
+        "ts": "1520400235.000102"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You aren’t using virtualbox",
+        "ts": "1520400353.000143"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Will want this:",
+        "ts": "1520400381.000168"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "discover-&gt;centos-7-install:Reboot",
+        "ts": "1520400405.000229"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "centos-7-install-&gt;finish-install:Stop",
+        "ts": "1520400428.000168"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "ok so seeing that",
+        "ts": "1520400541.000097"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "would 'discover-&gt;sledgehammer:reboot|centos7-install:reboot-&gt;finish-install:Stop' also be acceptable?",
+        "ts": "1520400590.000183"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "we don’t have a sledgehammer stage.",
+        "ts": "1520400624.000019"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "*sledgehammer-wait*",
+        "ts": "1520400651.000018"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "sledeghammer-wait is just a holding stage.  It is meant as near-line waiting system.",
+        "ts": "1520400702.000067"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "ok, so that's more of a live environment I could break into and do actions on the box before proceeding with the OS install",
+        "ts": "1520400732.000150"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "like updating firmware or something if I was to write that task up",
+        "ts": "1520400747.000213"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "or heaven forbid automate them.  :slightly_smiling_face:",
+        "ts": "1520400754.000044"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "as Stages !",
+        "ts": "1520400763.000077"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "RackN has stages that do that and more.",
+        "ts": "1520400781.000080"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Sledgehammer is pretty rich so you could use stackstorm to trigger things there if you wanted.",
+        "ts": "1520400850.000127"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "yea your previous statement cleared it up, I was confused as to what the actual difference between discovery and sledgehammer was",
+        "ts": "1520400897.000032"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Discover will put ssh keys in place if you define enough parameters.",
+        "ts": "1520400902.000267"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "I was thinking sledgehammer was like the autodeploy boot env that loads and send the ipxe details back to vcenter and must be booted the first time thru on an unknown machine",
+        "ts": "1520400932.000178"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "it can be used that way, but not required.",
+        "ts": "1520400977.000011"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You could direct create machines and just jump to centos install",
+        "ts": "1520400996.000155"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That was another path",
+        "ts": "1520401012.000195"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "well if guys like the workflows I'll give them a chance",
+        "ts": "1520401039.000211"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "most people want a lifecycle around their machines.  Workflows really help with that.",
+        "ts": "1520401146.000215"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "hmm still no go, still failed to fetch ks",
+        "ts": "1520401482.000006"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "and $url:8091\/machines\/8bc9b109-0034-42d6-847b-91d716d65333\/seed just 404's",
+        "ts": "1520401502.000039"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Kickstart is rendered as `compute.ks` (not seed)",
+        "ts": "1520401532.000182"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "for centos-7-install ... for an ubuntu-16.04-install you'll get `seed`",
+        "ts": "1520401562.000052"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "there we go",
+        "ts": "1520401562.000258"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "so it did generated the ks, and this time my vm went thru discovery then auto-rebooted and pxe booted into centos7",
+        "ts": "1520401613.000029"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "so progress",
+        "ts": "1520401614.000237"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "the machine details also show it inheriting the centos7 bootenv from the workflow",
+        "ts": "1520401629.000119"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "weird.. 'curl: (23) Failed writing body (8520 != 16384)'",
+        "ts": "1520401699.000027"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Depending on file and timing, it can change.",
+        "ts": "1520401739.000033"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the kickstart\/preseed is only available to be rendered during a provisioning activity",
+        "ts": "1520401764.000198"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I actually create a \"phantom\" machine I can place in to various BootEnvs to render templates against to test template rendering",
+        "ts": "1520401790.000141"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "that curl was from dracut inside the testvm when it tried to locate ks",
+        "ts": "1520401861.000219"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "apparently 1gb of ram isn't enough with the fs",
+        "ts": "1520401872.000200"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "nope",
+        "ts": "1520401877.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Correct",
+        "ts": "1520401880.000077"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "not for CentOS 7 - you need 1.5 GB",
+        "ts": "1520401883.000239"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(that's what I use on my test VMs)",
+        "ts": "1520401897.000123"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "sledgehammer is rich",
+        "ts": "1520401900.000106"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Ubuntu is ok w\/ 1 GB",
+        "ts": "1520401902.000144"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "yup you guys are on it, set 4gb and now centos7 is running KS",
+        "ts": "1520401912.000134"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I usually use 2GB.  It is designed for real servers.",
+        "ts": "1520401918.000084"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "yea not an issue, I can change those values on vm's before and after the install",
+        "ts": "1520401952.000188"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "I assume windows and esxi are supported well enough if your willing to put in the grunt work?",
+        "ts": "1520402047.000229"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "both are RackN commercial components ...",
+        "ts": "1520402066.000238"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "looked like the explode script knew how to handle those isos",
+        "ts": "1520402068.000093"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "what does that mean? it'll never work without some addon?",
+        "ts": "1520402085.000016"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we support Windows via Image based deployment (eg Immutable Infrastructure)",
+        "ts": "1520402087.000001"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "there are no community based Open Source pieces to do ESXi or Windows",
+        "ts": "1520402143.000037"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "but I can someone implement the details themselves if they want to?",
+        "ts": "1520402177.000032"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "if all you want is to get pxe to launch the winpe stuff and image the disk?",
+        "ts": "1520402199.000026"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it should be possible with the right effort",
+        "ts": "1520402234.000106"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "I'll look into the RackN stuff, I assume questions regarding esxi\/windows isn't really for this <#C02L9P26Q|community> channel then?",
+        "ts": "1520402270.000131"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "is it only windows that has a commercial piece?",
+        "ts": "1520402290.000167"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Both Windows and ESXi - both have required a lot of engineering work to get working repeatable and at scale.",
+        "ts": "1520402505.000152"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "yea I bet, both gave me a headache on my current pxe system",
+        "ts": "1520402607.000094"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "heyo, first box is online. not to bad now that Im grasping the steps",
+        "ts": "1520402933.000224",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U6QFVRJNB"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "odd one with this Hyper-V Gen2 vm.. I can see that DRP serves it up the proper efi boot file via option 67 and then ipxe loads but after ipxe tries to fetch '<tftp:\/\/ip.ip.ip.ip\/ipxe.efi....ok>' it bombs out",
+        "ts": "1520407854.000249"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "dr-provision2018\/03\/07 07:24:38.728050 [3271:665]static [error]: \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/midlayer\/tftp.go:82",
+        "ts": "1520407870.000099"
+    },
+    {
+        "type": "message",
+        "user": "U9KSXT6CV",
+        "text": "dr-provision[3877]: [3271:665]TFTP: ipxe.efi: transfer error: sending block 0: code=8, error: User aborted the transfer",
+        "ts": "1520407881.000352"
+    }
+]

@@ -1,0 +1,302 @@
+[
+    {
+        "text": "hi all, i have a problem with a error message. from my point of view, the problem isn't a failure, it's a warning, may be. can anybody explain if i'm wrong or the message not fits? thanks!",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1505916020.000297"
+    },
+    {
+        "text": "TASK [wait for admin convergence [1 upto 20 minutes]] **************************\nfatal: [10.241.236.92]: FAILED! =&gt; {\"changed\": true, \"cmd\": [\"\/root\/digitalrebar\/deploy\/scripts\/wait_for_rebar.sh\"], \"delta\": \"0:20:09.411997\", \"end\": \"2017-09-20 16:06:32.287249\", \"failed\": true, \"rc\": 1, \"start\": \"2017-09-20 15:46:22.875252\", \"stderr\": \"Took too long for system deployment to appear\", \"stdout\": \"Loaded plugins: product-id, rhnplugin, search-disabled-repos, subscription-\\n              : manager\\nThis system is receiving updates from RHN Classic or Red Hat Satellite.\\nPackage epel-release-7-7.noarch already installed and latest version\\nNothing to do\\nLoaded plugins: product-id, rhnplugin, search-disabled-repos, subscription-\\n              : manager\\nThis system is receiving updates from RHN Classic or Red Hat Satellite.\\nMetadata Cache Created\\nLoaded plugins: product-id, rhnplugin, search-disabled-repos, subscription-\\n              : manager\\nThis system is receiving updates from RHN Classic or Red Hat Satellite.\\nPackage jq-1.5-1.el7.x86_64 already installed and latest version\\nPackage curl-7.29.0-35.el7.x86_64 already installed and latest version\\nNothing to do\\nWaiting on system deployment\", \"stdout_lines\": [\"Loaded plugins: product-id, rhnplugin, search-disabled-repos, subscription-\", \"              : manager\", \"This system is receiving updates from RHN Classic or Red Hat Satellite.\", \"Package epel-release-7-7.noarch already installed and latest version\", \"Nothing to do\", \"Loaded plugins: product-id, rhnplugin, search-disabled-repos, subscription-\", \"              : manager\", \"This system is receiving updates from RHN Classic or Red Hat Satellite.\", \"Metadata Cache Created\", \"Loaded plugins: product-id, rhnplugin, search-disabled-repos, subscription-\", \"              : manager\", \"This system is receiving updates from RHN Classic or Red Hat Satellite.\", \"Package jq-1.5-1.el7.x86_64 already installed and latest version\", \"Package curl-7.29.0-35.el7.x86_64 already installed and latest version\", \"Nothing to do\", \"Waiting on system deployment\"], \"warnings\": []}\n\tto retry, use: --limit @digitalrebar.retry\n",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1505916027.000370"
+    },
+    {
+        "text": "i see no reason for a fatal failure and a script brake.",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1505916068.000683"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The V3.1.0 release is out.  Use the STABLE link to get the images.",
+        "ts": "1505937660.000167"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "the v3.1.0 link doesn’t have the correct version in the string.  I has the right code, I think.",
+        "ts": "1505937684.000094"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<!channel> - FYI ^^",
+        "ts": "1505937695.000114"
+    },
+    {
+        "text": "i have sync my local git today and copy the code to the target server. i think this must be the actual version.",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1505937799.000333"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "@theta-my - you are using DRv2.  My post was about DRP (Digital Rebar Provision).  Sorry, I wasn’t clear.",
+        "ts": "1505937843.000252"
+    },
+    {
+        "text": "ok, ",
+        "username": "theta-my",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1505937899.000068"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U02DHRR2L> uploaded a file: <https:\/\/rackn.slack.com\/files\/U02DHRR2L\/F775N9WNA\/v3_1_release_feature_list.md|v3.1 Release Feature List> and commented: we're working to setup the community processes so that this becomes a community document",
+        "file": {
+            "id": "F775N9WNA",
+            "created": 1505937910,
+            "timestamp": 1505937910,
+            "name": "v3_1_Release_Feature_List.md",
+            "title": "v3.1 Release Feature List",
+            "mimetype": "text\/plain",
+            "filetype": "markdown",
+            "pretty_type": "Markdown (raw)",
+            "user": "U02DHRR2L",
+            "editable": true,
+            "size": 2136,
+            "mode": "snippet",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F775N9WNA\/v3_1_release_feature_list.md?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F775N9WNA\/download\/v3_1_release_feature_list.md?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "permalink": "https:\/\/rackn.slack.com\/files\/U02DHRR2L\/F775N9WNA\/v3_1_release_feature_list.md",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F775N9WNA-51c8c1bdc9",
+            "edit_link": "https:\/\/rackn.slack.com\/files\/U02DHRR2L\/F775N9WNA\/v3_1_release_feature_list.md\/edit",
+            "preview": "So what’s in the release?  The v3.0 release focused on getting core Provision infrastructure APIs, process and patterns working as a stand alone service. The v3.1 release targeted major architectural needs to streamline content management, provide event notification and add out-of-band actions.  These move DRP from a simple service into something that’s ready for deep integration into infrastructure \r\n\r\nKey v3.1 Features\r\n=================\r\n\r",
+            "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>So what’s in the release?  The v3.0 release focused on getting core Provision infrastructure APIs, process and patterns working as a stand alone service. The v3.1 release targeted major architectural needs to streamline content management, provide event notification and add out-of-band actions.  These move DRP from a simple service into something that’s ready for deep integration into infrastructure <\/pre><\/div>\n<div><pre>&#8203;<\/pre><\/div>\n<div><pre>Key v3.1 Features<\/pre><\/div>\n<div><pre><span class=\"cm-header cm-header-1\">=================<\/span><\/pre><\/div>\n<div><pre>&#8203;<\/pre><\/div>\n<\/div>\n<\/div>\n",
+            "lines": 18,
+            "lines_more": 13,
+            "preview_is_truncated": true,
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 1,
+            "initial_comment": {
+                "id": "Fc76D2EVHT",
+                "created": 1505937910,
+                "timestamp": 1505937910,
+                "user": "U02DHRR2L",
+                "is_intro": true,
+                "comment": "we're working to setup the community processes so that this becomes a community document"
+            }
+        },
+        "user": "U02DHRR2L",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "zehicle",
+        "bot_id": null,
+        "ts": "1505937911.000322"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": ":+1:",
+        "ts": "1505938095.000343"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "we could use some stickers :joy:",
+        "ts": "1505938132.000250"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U54E4SD4G> - direct message me your address and I’ll see what I can do.",
+        "ts": "1505938192.000016"
+    },
+    {
+        "text": "how do i download iso's again? example debian 8",
+        "username": "smartekb_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1505939104.000093"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Which release?",
+        "ts": "1505939168.000177"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "in DRP v3.1.0 - ```drpcli bootenvs uploadiso &lt;bootenv name&gt;```",
+        "ts": "1505939216.000346"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "in either DRP v3.1.0 or v3.0.5\n```drpcli bootenvs install bootenvs\/debian.8... ```",
+        "ts": "1505939262.000059"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "<@U02DGQYK1> is incrementer useful for an end user?",
+        "ts": "1505954128.000007"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "anyway, pushed an update for 3.1.0 to the aur package for drpcli",
+        "ts": "1505955281.000227"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "so I ran into a little bit of a snag using `uploadiso` (I think this command should give some feedback indicating success and not just return), but that's because I removed `IsoSha256` from my bootenv, but updating the bootenv didn't remove that key and so it kept the old one\/couldn't verify the new tarball",
+        "ts": "1505955658.000165"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "just leaving `IsoSha256` empty in the bootenv file worked though",
+        "edited": {
+            "user": "U54E4SD4G",
+            "ts": "1505955701.000000"
+        },
+        "ts": "1505955689.000053"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Congrats RackN team on another release! Will have to update and play with it tomorrow...",
+        "ts": "1505957499.000119"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "How does hosted UI work - <http:\/\/xxx.rackn.com|xxx.rackn.com> URL?",
+        "ts": "1505957584.000210"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "If you hit port 8082 on your 3.1 endpoint, you'll be redirected to the hosted endpoint ",
+        "ts": "1505957973.000084"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Via https ",
+        "ts": "1505958007.000106"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "that's pretty spiffy",
+        "ts": "1505959037.000006"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U54E4SD4G>  it should not get filled in if empty.  Legacy  bootenvs are missing it.  Once I can update sledgehammer the base bootenvs will have Shas ",
+        "ts": "1505959077.000233"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "nah this was a custom bootenv I built for our appliance operating systems",
+        "ts": "1505959114.000085"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Okay 310 doesn't fill it anymore ",
+        "ts": "1505959135.000083"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "I had added `IsoSha256` while troubleshooting why the bootenv wasn't updating - then got rid of it when I realised how to use uploadiso",
+        "ts": "1505959144.000016"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "but the previous value was stuck until I had added `IsoSha256` to the yaml but left it empty (which then removed it from the installed bootenv)",
+        "ts": "1505959196.000020"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "anyway, good job on the UI, it's looking a lot better (I can actually add profiles for those bootenvs with requiredparams now :smile: )",
+        "ts": "1505959287.000201"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "input's kind of cut off here though (and maybe other similar dialogs) <https:\/\/up.lae.is\/i\/1505959595-ecc06.png>",
+        "attachments": [
+            {
+                "fallback": "1920x1035px image",
+                "image_url": "https:\/\/up.lae.is\/i\/1505959595-ecc06.png",
+                "image_width": 1920,
+                "image_height": 1035,
+                "image_bytes": 126287,
+                "from_url": "https:\/\/up.lae.is\/i\/1505959595-ecc06.png",
+                "id": 1
+            }
+        ],
+        "ts": "1505959652.000179"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "It's a reference example",
+        "attachments": [
+            {
+                "fallback": "[September 20th, 2017 7:35 PM] lae: <@U02DGQYK1> is incrementer useful for an end user?",
+                "ts": "1505954128.000007",
+                "author_id": "U54E4SD4G",
+                "author_subname": "Musee Ullah",
+                "channel_id": "C02L9P26Q",
+                "channel_name": "community",
+                "is_msg_unfurl": true,
+                "text": "<@U02DGQYK1> is incrementer useful for an end user?",
+                "author_name": "Musee Ullah",
+                "author_link": "https:\/\/rackn.slack.com\/team\/U54E4SD4G",
+                "author_icon": "https:\/\/avatars.slack-edge.com\/2017-04-27\/174886859120_4480c3cd7bfcd6450097_48.jpg",
+                "mrkdwn_in": [
+                    "text"
+                ],
+                "color": "D0D0D0",
+                "from_url": "https:\/\/rackn.slack.com\/archives\/C02L9P26Q\/p1505954128000007",
+                "is_share": true,
+                "footer": "Posted in #community"
+            }
+        ],
+        "ts": "1505960643.000021"
+    }
+]

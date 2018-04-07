@@ -1,0 +1,1781 @@
+[
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "Hey all... so I've got 2 requests: 1 - GUI testing (time contribution) 2 - Hindsight logging (thinking community package ?)",
+        "ts": "1522687782.000455"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I started the GUI testing thing several months ago, and about to drop into more testing for my day-job...  If ya'll think it may be useful in the CI chain I can do that.",
+        "ts": "1522687991.000311"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "Hindsight is Moz : <https:\/\/github.com\/mozilla-services\/hindsight>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "mozilla-services\/hindsight",
+                "title_link": "https:\/\/github.com\/mozilla-services\/hindsight",
+                "text": "hindsight - Hindsight - light weight data processing skeleton",
+                "fallback": "GitHub: mozilla-services\/hindsight",
+                "from_url": "https:\/\/github.com\/mozilla-services\/hindsight",
+                "thumb_url": "https:\/\/avatars3.githubusercontent.com\/u\/1066228?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1522688069.000057"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "After talking with Trink, we decided I should do a syslog native aggregation and make sure it can be utilized by provision",
+        "ts": "1522688260.000177"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "This was the GUI CI attempt: <http:\/\/drpfeature.readthedocs.io\/en\/latest\/features.html>",
+        "ts": "1522688407.000766"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I haven't tried without `set filename` I don't think.  I'll try that and see.",
+        "ts": "1522704734.000023"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "In the meantime, I'm now having a new error trying to install on a Dell R430 using the Ubuntu-16.04-install bootenv.  I get errors at the start of the install about \/dev\/sda not being able to be mounted.  \"no media found\".",
+        "ts": "1522704834.000209"
+    },
+    {
+        "text": "Time to feed the :bear:!",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1522704834.000291"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "The install then fails at partitioning",
+        "ts": "1522704846.000576"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "But the standard Ubuntu installer finds \/dev\/sda just fine.",
+        "ts": "1522704859.000358"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "in the installer stage, are you sure Ubuntu iterates as SDA?  maybe only after reboot does it show as SDA  ?",
+        "ts": "1522704892.000149"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Not sure what you mean.",
+        "ts": "1522704923.000010"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "neither do I ...",
+        "ts": "1522705051.000069"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": ":slightly_smiling_face:  what I meant was ... during the installar boot\/install process, sometimes devices are identified differently than when they boot in to the installed OS instance ... but if you see it as \/dev\/sda *during* the Ubuntu installer (in the working example) ... than that's likely not the case",
+        "ts": "1522705114.000024"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we are using Ubuntu's own ISO media image to PXE boot the machine - so they should be equivalent to what you are doing (in the working scenario)",
+        "ts": "1522705138.000293"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Ok.  Well let me boot the vanilla installer again and double check the drive names.",
+        "ts": "1522705209.000341"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "what version of Ubuntu are you using (that works) ?",
+        "ts": "1522705962.000292"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if you are using the results of the `drpcli bootenvs isoupload ubuntu-16.04-install` command (or equivalent) to install from DRP - that is the official Ubuntu 16.04.4 ISO image",
+        "ts": "1522706013.000185"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we don't have a \"customized\" version of Ubuntu we try and install",
+        "ts": "1522706028.000196"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it's possible our Boot Flags are slightly different which might be not unlocking some of the Installer options",
+        "ts": "1522706053.000338"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "can you capture the boot flags to the kernel on the default installer ?",
+        "ts": "1522706065.000075"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Ok.  Still trying to verify the vanilla installer sees the disks as sda etc.  It's slow going.",
+        "ts": "1522707976.000382"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "indeed ... :disappointed:",
+        "ts": "1522708000.000222"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I don't recall if the Ubuntu installer will capture the boot flags somewhere - if so that may help - because the only real difference is going to be the kernel options\/flags we pass - which are defined in the BootEnv",
+        "ts": "1522708037.000259"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Building a server several thousand miles away with an ISO over the internet is pretty much exactly why I want to get dr-prov working.",
+        "ts": "1522708049.000278"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "have you overridden the install device in the past ?  we do parameterize the Preseed to let you override the install device ...",
+        "ts": "1522708082.000038"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "just want to make sure there isn't any left over cruft from a previous install that might have specified a different install device  ?",
+        "ts": "1522708103.000278"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Yes I've had to do it for kvm guests.",
+        "ts": "1522708111.000028"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "for example Xen VMs require different devs",
+        "ts": "1522708114.000129"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "likely setting to \/dev\/vda ?",
+        "ts": "1522708124.000362"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Yup",
+        "ts": "1522708139.000217"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "hopefully you didn't set that on the Global Profile ?",
+        "ts": "1522708165.000120"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "No",
+        "ts": "1522708195.000011"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "So when I booted off the vanilla installer, I got those same errors about being unable to mount \/dev\/sda and such.  But the partitioner in the installer definitely sees the disks as sda sdb sdc and sdd",
+        "ts": "1522708276.000274"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Let me see if I can do partitioning.  There are partitions on here as if the partitioning part of the install worked.",
+        "ts": "1522708296.000229"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if you have a real (or fake) machine set to the ubuntu-16.04-install BootEnv, you can render the Preseed that would be served to it - see:\n<http:\/\/provision.readthedocs.io\/en\/tip\/doc\/faq-troubleshooting.html#render-a-kickstart-or-preseed>",
+        "ts": "1522708299.000063"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Ok",
+        "ts": "1522708393.000124"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Well partitioning worked with the vanilla installer.",
+        "ts": "1522708473.000385"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "The preseed is definitely trying to use \/dev\/sda",
+        "ts": "1522708823.000345"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I've tried the default net-preseed and a custom one I built specifically for this type of server, to set up software raid.",
+        "ts": "1522708925.000247"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "It really looks like the partitioning works.",
+        "ts": "1522708930.000377"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Because there are partitions everywhere on these disks now.  :slightly_smiling_face:",
+        "ts": "1522708943.000336"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "So I'm not sure what's failing now.  I guess let me try another install and see what exactly the error is.  I know it was something about being unable to mount the root filesystem.",
+        "ts": "1522708976.000368"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Hrm.  The error is \"No root file system is defined\"",
+        "ts": "1522709405.000150"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "this might be related to partitioning scheme in the Preseed",
+        "ts": "1522709437.000301"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U9BU09D51> uploaded a file: <https:\/\/rackn.slack.com\/files\/U9BU09D51\/FA12BLE6T\/-.txt|Untitled>",
+        "file": {
+            "id": "FA12BLE6T",
+            "created": 1522709484,
+            "timestamp": 1522709484,
+            "name": "-.txt",
+            "title": "Untitled",
+            "mimetype": "text\/plain",
+            "filetype": "text",
+            "pretty_type": "Plain Text",
+            "user": "U9BU09D51",
+            "editable": true,
+            "size": 1538,
+            "mode": "snippet",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FA12BLE6T\/-.txt?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FA12BLE6T\/download\/-.txt?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "permalink": "https:\/\/rackn.slack.com\/files\/U9BU09D51\/FA12BLE6T\/-.txt",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FA12BLE6T-723d8b1e61",
+            "edit_link": "https:\/\/rackn.slack.com\/files\/U9BU09D51\/FA12BLE6T\/-.txt\/edit",
+            "preview": "# Partitioner Label Default (GPT)\r\nd-i partman\/choose_label string gpt\r\nd-i partman-basicfilesystems\/choose_label string gpt\r\nd-i partman-partitioning\/choose_label string gpt\r\nd-i partman\/default_label string gpt\r",
+            "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre># Partitioner Label Default (GPT)<\/pre><\/div>\n<div><pre>d-i partman\/choose_label string gpt<\/pre><\/div>\n<div><pre>d-i partman-basicfilesystems\/choose_label string gpt<\/pre><\/div>\n<div><pre>d-i partman-partitioning\/choose_label string gpt<\/pre><\/div>\n<div><pre>d-i partman\/default_label string gpt<\/pre><\/div>\n<div><pre><\/pre><\/div>\n<\/div>\n<\/div>\n",
+            "lines": 35,
+            "lines_more": 30,
+            "preview_is_truncated": true,
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U9BU09D51",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "dave.parker",
+        "bot_id": null,
+        "ts": "1522709484.000361"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "That's the partitioning section of the rendered preseed",
+        "ts": "1522709495.000092"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the one that fails for you, right ?",
+        "ts": "1522709506.000121"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Yes.",
+        "ts": "1522709544.000324"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "That's the one I just tried.",
+        "ts": "1522709549.000360"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "are you really running IPv6 in that environment ?",
+        "ts": "1522709553.000417"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(line 35)",
+        "ts": "1522709561.000412"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Huh.",
+        "ts": "1522709578.000117"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Yes, but I'm not sure it's getting a v6 IP from DHCP...",
+        "ts": "1522709589.000310"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Why is it defaulting to that?",
+        "ts": "1522709607.000106"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "And the dr-prov machine does not have a v6 address defined.",
+        "ts": "1522709685.000057"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "So that seems unlikely to work.",
+        "edited": {
+            "user": "U9BU09D51",
+            "ts": "1522709697.000000"
+        },
+        "ts": "1522709693.000050"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "'tis odd indeed",
+        "ts": "1522709699.000269"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it'd be failing to pull down the filesystem.squqshfs with that",
+        "ts": "1522709714.000126"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "do you have Routers broadcasting IPv6 on that segment ?",
+        "ts": "1522709727.000363"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I would say that's likely.  But I'm not sure honestly.",
+        "ts": "1522709762.000119"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Can I force it to use v4 somehow?",
+        "ts": "1522709770.000065"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "well - you can force your underlying Linux OS to be v4 only - varies from distro-to-distro a little bit",
+        "ts": "1522709810.000349"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Looks like that's set from InstallURL",
+        "ts": "1522709815.000236"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "within DRP - we query your NICs to pick up clues on how to handle replying back to Machines",
+        "ts": "1522709860.000127"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we dynamically build tables on how to return to the Machine based on port info - and that propagates up in to the Templates",
+        "ts": "1522709896.000014"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "So there's no way to override that?",
+        "ts": "1522710085.000150"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Cloning your net-seed.tmpl and customizing it to not dynamically inject the DRP endpoint address in that template field ...",
+        "ts": "1522710143.000276"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Disabling IPv6 completely in the Base OS that DRP is running on should also do it",
+        "ts": "1522710159.000048"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you'd probably need to restart DRP after disabling IPv6 on the DRP endpoint host",
+        "ts": "1522710176.000024"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Ok.",
+        "ts": "1522710178.000229"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I'll try just changing the template first.",
+        "ts": "1522710188.000254"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we'd need <@U02DJQSG8> to weigh in on any other secret sauce that I'm not aware of ....",
+        "ts": "1522710201.000284"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "but in the end - we pick up that address from the NICs and building our own internal tables of what address to set the `{{.Env.InstallUrl}}` Parameter to",
+        "ts": "1522710300.000349"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "that's line 123 in the stable (v3.7.3) Ubuntu `net-seed.tmpl`",
+        "ts": "1522710314.000292"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Huh, the only scenario that we would hand back an ipv6 address is if that system talked to us via ipv6 first.",
+        "client_msg_id": "a1400937-2957-4c34-be64-f2057d45d22e",
+        "ts": "1522710365.000200"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I get that `[::1}` just doing a curl from the dr-prov machine using localhost:8091",
+        "ts": "1522711041.000346"
+    },
+    {
+        "user": "U9ZA1PLHW",
+        "text": "<@U9ZA1PLHW> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1522711077.000223"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U9ZA1PLHW> $welcome :slightly_smiling_face:",
+        "ts": "1522711089.000288"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1522711089.000328"
+    },
+    {
+        "type": "message",
+        "user": "U9ZA1PLHW",
+        "text": "Thanks Shane",
+        "ts": "1522711096.000121"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U9BU09D51> yep - which is what led me down the ipv6 route .. :slightly_smiling_face:",
+        "ts": "1522711105.000285"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "<@U9BU09D51> i didn’t read everything, did you get your sda issue sorted?",
+        "ts": "1522711121.000255"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Sort of.",
+        "ts": "1522711129.000242"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Sorting that out has lead us down this ipv6 path.",
+        "ts": "1522711139.000263"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "whats wrong with v6? no worky?",
+        "ts": "1522711161.000322"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I'm just going to hardcode the URL in the template and see if that works.",
+        "ts": "1522711164.000275"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Summary is - DRP believes we need to reply back to the Machine being provisioned via IPv6 \"localhost\" route - which is wrong",
+        "ts": "1522711165.000251"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it should fix that specific failure",
+        "ts": "1522711195.000108"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "but we still have the IPv6 mystery we'd like to sort out",
+        "ts": "1522711207.000058"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I added in a v6 address for the DRP server and rebooted\/restarted DRP and it still wants to give out that bogus URL.",
+        "ts": "1522711207.000172"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "wanna try disabling v6?",
+        "ts": "1522711433.000013"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "'twas my suggestion ...",
+        "ts": "1522711451.000044"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "if so i’ve changed the following in \/etc\/sysctl.conf ```net.ipv6.conf.all.disable_ipv6 = 1\nnet.ipv6.conf.default.disable_ipv6 = 1\nnet.ipv6.conf.lo.disable_ipv6 = 1```",
+        "ts": "1522711452.000140"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "i think there is another way which is by modifying the \/etc\/gai.conf file so it asks for an A record instead of a AAAA record.",
+        "ts": "1522711486.000032"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "i haven’t done that, but i’d suspect it would work",
+        "ts": "1522711501.000274"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "my guess is the dns resolver you’re using returns both A and AAAA records, and the network stack prefers AAAA in ubuntu.",
+        "ts": "1522711536.000310"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "you can change that though :wink:",
+        "ts": "1522711547.000207"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "We can try that.",
+        "ts": "1522711568.000295"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": ":thumbsup:",
+        "edited": {
+            "user": "U9RL0EJH3",
+            "ts": "1522711577.000000"
+        },
+        "ts": "1522711572.000249"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Editing the template is a pain.",
+        "ts": "1522711577.000157"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "yea i’d assume you’ll get V6 working one day.",
+        "ts": "1522711597.000063"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I don't think the \/etc\/gai.conf will work",
+        "ts": "1522711597.000271"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "no?",
+        "ts": "1522711601.000289"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we parse the packets we get and build our own tables to determine how to reply back to the Machine being provisioned",
+        "ts": "1522711625.000326"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "but can’t the client request just an A record?",
+        "ts": "1522711646.000328"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "saying… I only want to know the A record not ANY record",
+        "ts": "1522711655.000286"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we dynamically build the various Template pieces we need based on this info on the fly as the Template is served when requested",
+        "ts": "1522711658.000204"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the client request gets the traffic *from* the Machine (client) to the DRP Endpoint (server) ... but on the DRP Endpoint side we do our own processing to determine _which_ information (IP address) to serve inside the Templates",
+        "ts": "1522711717.000012"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "ah",
+        "ts": "1522711735.000027"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "ok",
+        "ts": "1522711735.000209"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "because we deal with many complex network scenarios where the DRP Endpoint is multi-homed and we need to calculate how to build the Templates for any given inbound request from different places",
+        "ts": "1522711757.000169"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Now I get this: `d-i live-installer\/net-image string <http:\/\/127.0.0.1:8091\/ubuntu-16.04\/install\/install\/filesystem.squashfs>`",
+        "ts": "1522711869.000220"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Which doesn't seem like it's gonna work either.  Why is it using localhost?",
+        "ts": "1522711885.000104"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "DRP is calculating that based on the client connection - but I agree with you, that sounds very wrong",
+        "ts": "1522711906.000214"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ironically - that does correlate with the IPv6 address we calculated",
+        "ts": "1522711923.000243"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Yeah, sure does.",
+        "ts": "1522711934.000292"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "what version of DRP are you running?  (`drpcli info get | jq '.Version'`)",
+        "ts": "1522711940.000223"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(or Info &amp; Prefs in Portal)",
+        "ts": "1522711964.000330"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I get... null",
+        "ts": "1522711978.000110"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "That seems wrong too!",
+        "ts": "1522711982.000035"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Versions: DR v3.7.3 &amp; UX v1.0.2",
+        "ts": "1522711994.000173"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Is what I see in the gui",
+        "ts": "1522711998.000083"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "sorry - lowercase 'v' in version",
+        "ts": "1522712026.000195"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "`\"v3.7.3-0-5b1774b63a9abce5c7ae43d5dbd901b7b1439c68\"`",
+        "ts": "1522712040.000202"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "can you pull your `ps` listing for `dr-provision` on that endpoint ?",
+        "ts": "1522712060.000301"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "```$ ps -ef | grep dr-provision\nroot      1030   941  0 23:29 pts\/3    00:00:00 sudo .\/dr-provision --base-root=\/home\/ubuntu\/dr-prov\/drp-data --local-content= --default-content=\nroot      1031  1030  0 23:29 pts\/3    00:00:01 .\/dr-provision --base-root=\/home\/ubuntu\/dr-prov\/drp-data --local-content= --default-content=```",
+        "ts": "1522712086.000043"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we need to verify if the `--base-root=...` is pointing to the correct location",
+        "ts": "1522712087.000034"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Looks right to me.",
+        "ts": "1522712112.000356"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "is `\/home\/ubuntu\/dr-prov\/drp-data` the correct installed location ?",
+        "ts": "1522712115.000223"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "```$ pwd; ls\n\/home\/ubuntu\/dr-prov\/drp-data\ndigitalrebar  job-logs  plugins  replace  saas-content  tftpboot  ux```",
+        "ts": "1522712140.000041"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I'm gonna get some dinner, be back in a few.",
+        "ts": "1522712192.000290"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "when was the last time you restarted DRP ?",
+        "ts": "1522712217.000043"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "can you please run:\n` drpcli interfaces list`",
+        "ts": "1522712301.000304"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(hopefully before you bounce the service)",
+        "ts": "1522712311.000086"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "```$ .\/drpcli interfaces list\n[\n  {\n    \"ActiveAddress\": \"100.84.10.7\/26\",\n    \"Addresses\": [\n      \"100.84.10.7\/26\"\n    ],\n    \"DnsDomain\": \"<http:\/\/dyndns.com|dyndns.com>\",\n    \"DnsServers\": [\n      \"100.111.250.10\",\n      \"100.111.252.10\"\n    ],\n    \"Gateway\": \"100.84.10.1\",\n    \"Index\": 3,\n    \"Meta\": null,\n    \"Name\": \"v2000-0-0044\",\n    \"ReadOnly\": true\n  }\n]```",
+        "ts": "1522712469.000058"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Ok, I got food and I'm back.",
+        "ts": "1522712575.000087"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ok - talk in a bit",
+        "ts": "1522712609.000030"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I restarted drp just recently.",
+        "ts": "1522712609.000053"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "When I rebooted to disable ipv6",
+        "ts": "1522712615.000037"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I'm going to work on hardcoding the info into the template just so I have a workaround for this.",
+        "ts": "1522712651.000058"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "You should be able to just clone the template, change that one Template reference",
+        "ts": "1522712676.000206"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I'll continue to help troubleshoot the base mystery though since i'm curious and don't like the hack of the clone.",
+        "ts": "1522712689.000191"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "but you also have to clone Stage -&gt; BootEnv -&gt; Template - be able to point at a new template",
+        "ts": "1522712692.000171"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "That `{{.Env.InstallUrl}}` is referenced a bunch of times in the template",
+        "ts": "1522712762.000183"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yes - each of those references",
+        "ts": "1522712788.000089"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Sorry, making dinner. @\n<@U9BU09D51> if localhost resolves to an ipv6 address we will talk back on ipv6, and generate ipv6 urls.",
+        "client_msg_id": "c1bd1757-01c1-4ba7-8b98-7fcb2aba6b23",
+        "ts": "1522712954.000192"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "What matters is if the hosts are talking to us over ipv6, and if your environment handles that properly.",
+        "client_msg_id": "155290cb-c7a6-484d-8fcd-68f2f1ba51bc",
+        "ts": "1522713007.000026"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "We do not use dns at all to figure that out, we look at the remote address and interface info the kernel gives us for the socket.",
+        "client_msg_id": "fcfb33a1-278a-4129-bf68-e6aac8cf808a",
+        "ts": "1522713285.000086"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": ":thumbsup:",
+        "ts": "1522713305.000254"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "So should I try to rediscover the machine or something?",
+        "ts": "1522713371.000315"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Are we handling DHCP?",
+        "client_msg_id": "0f4bd89d-e19a-4d9e-8242-a6336d54c68d",
+        "ts": "1522713468.000146"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Sorry, I don't know enough about the specific environment.",
+        "client_msg_id": "5b39cd28-3ca7-4d82-845d-07e85c5cd163",
+        "ts": "1522713527.000089"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "In unrelated news, I just cut a pack of hot dogs open with a hatchet.",
+        "client_msg_id": "e9572f38-391c-4ee7-bbf9-05af32bc542e",
+        "ts": "1522713859.000368"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "skill ^",
+        "ts": "1522713876.000041"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "It is grilling weather in Austin.",
+        "client_msg_id": "047f667d-a1cf-4a76-9391-59c8b579d3e3",
+        "ts": "1522713910.000155"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "No, DHCP is being handled by another server.",
+        "ts": "1522713953.000070"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Ok. If you crank general and render logging up to debug the drp logs will have everything that gets rendered, and the log will also contain address cache entries as they are created and used.",
+        "client_msg_id": "065c3518-9ec9-4990-84f6-0645e3d8177f",
+        "ts": "1522714074.000109"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "i now want a hot dog. and austin weather.",
+        "ts": "1522714099.000260"
+    },
+    {
+        "text": "Who let the dogs out?  :dog: :dog: :dog:",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1522714099.000288"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "The steaks are for the adults.",
+        "client_msg_id": "cede8415-8519-4d34-b8a4-3797bf64fe6f",
+        "ts": "1522714129.000271"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "No thanks on the Austin weather.  I hear it's miserable in the summer.",
+        "ts": "1522714148.000125"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "My kids don't like fresh seared cow for some reason.",
+        "client_msg_id": "f2929c9f-dacf-4a35-be05-f1a0efe23afe",
+        "ts": "1522714153.000017"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "i eat all the things, and i love heat.",
+        "ts": "1522714162.000166"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Do you love humidity?",
+        "ts": "1522714185.000168"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "i’m ok with it.",
+        "ts": "1522714193.000186"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "prefer it then the cold.",
+        "ts": "1522714198.000133"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "How do I set the logging level?",
+        "ts": "1522714215.000080"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Im trying the edited template right now.",
+        "ts": "1522714223.000050"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Well, the edited template didn't work either.",
+        "ts": "1522714280.000159"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Well...",
+        "ts": "1522714305.000294"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "That's because something's wrong, since the wrong template is still being used.  So I gotta fix that...",
+        "ts": "1522714324.000062"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I the us look under info and preferences.",
+        "client_msg_id": "54b48351-132d-4988-a407-67c88c3e38d1",
+        "ts": "1522714598.000030"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "In the cli, use drpcli prefs.",
+        "client_msg_id": "1c67834a-dd2d-4ef2-b554-19e0e42b8471",
+        "ts": "1522714630.000091"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U9BU09D51> see: <http:\/\/provision.readthedocs.io\/en\/tip\/doc\/faq-troubleshooting.html#custom-kickstart-and-preseeds>\non using a custom cloned Preseed",
+        "ts": "1522714754.000098"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "basically - just set a Param on the Machine (or a profile attached to the Machine) named `select-kickseed` to the name of the cloned template (net-seed.tmpl)",
+        "ts": "1522714805.000189"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Yeah, I set the select-kickseed on the machine to my template, but it didn't work.  Then I tried cutting out select-kickseed entirely and set the presseed in my custom bootenv to my template.  But I still get the wrong info when I do the render check.",
+        "ts": "1522714857.000463"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "What precisely is wrong?",
+        "client_msg_id": "854efe4c-afa8-4377-9856-a54c7c9f82bf",
+        "ts": "1522714895.000203"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "still get 127.0.0.1 for `{{.Env.InstallUrl}}`",
+        "ts": "1522714917.000332"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "From somewhere besides the machine dr-provision is running?",
+        "client_msg_id": "74f5e9a3-40a0-4f31-b7ef-263dc819621e",
+        "ts": "1522714952.000284"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Yeah.  I cut out .Env.InstallUrl entirely from my custom preseed template and just hard coded the URL.",
+        "ts": "1522714971.000278"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U9BU09D51> - \"where\" is your Machine located relative to DRP ?",
+        "ts": "1522714978.000039"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "But I still see 127.0.0.1 in the rendered information when I query for it.",
+        "ts": "1522714986.000134"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Getting a loopback IP is expected when querying it from localhost.",
+        "client_msg_id": "65a066b9-ffdc-4995-bdde-2416c67ff508",
+        "ts": "1522715021.000289"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Oh ok.",
+        "ts": "1522715028.000205"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Well no, it shouldn't show up at all now.",
+        "ts": "1522715046.000092"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Because I'm not using that variable, I'm hard coding it.",
+        "ts": "1522715055.000087"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "We generate that IP based on the other side of that specific tcp connection.",
+        "client_msg_id": "81646bb5-9805-4e59-88fb-02e81d139398",
+        "ts": "1522715076.000015"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "And the other side of localhost is llocalhost.",
+        "client_msg_id": "95fb2b3a-ec39-42a7-beec-a012564d008a",
+        "ts": "1522715105.000268"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "The line in the default preseed is `d-i live-installer\/net-image string {{.Env.InstallUrl}}\/install\/filesystem.squashfs`  I changed that to `d-i live-installer\/net-image string <http:\/\/100.84.10.7:8091\/install\/filesystem.squashfs>` in my template",
+        "ts": "1522715187.000196"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "So shouldn't I get that second URL no matter what now when I do `curl <http:\/\/localhost:8091\/machines\/e5243261-ed78-4c2a-a841-5f7340da7bd9\/seed>`",
+        "ts": "1522715224.000314"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "What I am saying is that you are probably chasing a wild goose.",
+        "client_msg_id": "63c74184-0573-4636-9bd7-6708d3003bd3",
+        "ts": "1522715256.000268"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Yeah... I mean that could be the case.",
+        "ts": "1522715289.000158"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "So, let me back up.",
+        "ts": "1522715297.000030"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I'm going to change everything back to default.",
+        "ts": "1522715312.000019"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "And try to get more verbose logs.",
+        "ts": "1522715325.000300"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Maybe that will tell me something.",
+        "ts": "1522715330.000302"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Do I have to restart after I change the log levels?",
+        "ts": "1522715640.000296"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "See",
+        "client_msg_id": "5242b286-9e6b-413b-9eeb-a96bdb5a270d",
+        "ts": "1522715659.000284"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Probably best to.  Less clutter that way.",
+        "client_msg_id": "fd496e6d-4231-482c-8c57-c8a8843fa7d2",
+        "ts": "1522715684.000152"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Ok",
+        "ts": "1522715689.000091"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Well that did nothing.  No info at all in the logs.",
+        "ts": "1522715976.000011"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Ok. Have you also rebooted wahtever system is having the problem?",
+        "client_msg_id": "f234facc-9adf-4675-b74a-352d57750c4b",
+        "ts": "1522716037.000045"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Yes.",
+        "ts": "1522716062.000090"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I'm going to just set everything to debug.",
+        "ts": "1522716069.000014"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Fair enough.",
+        "client_msg_id": "d4d12de8-12bf-494e-9e4c-80bb2a89b6e6",
+        "ts": "1522716274.000125"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "fair warning ... don't leave everything at debug for too long ... you will grind your DRP instance to a halt eventually",
+        "ts": "1522716319.000077"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "lol ok",
+        "ts": "1522716329.000179"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "`trace` level lets that happen even faster :slightly_smiling_face:",
+        "ts": "1522716344.000220"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U9BU09D51> uploaded a file: <https:\/\/rackn.slack.com\/files\/U9BU09D51\/FA021N84S\/log_output.txt|Log output>",
+        "file": {
+            "id": "FA021N84S",
+            "created": 1522716576,
+            "timestamp": 1522716576,
+            "name": "Log_output.txt",
+            "title": "Log output",
+            "mimetype": "text\/plain",
+            "filetype": "text",
+            "pretty_type": "Plain Text",
+            "user": "U9BU09D51",
+            "editable": true,
+            "size": 4548,
+            "mode": "snippet",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FA021N84S\/log_output.txt?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FA021N84S\/download\/log_output.txt?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "permalink": "https:\/\/rackn.slack.com\/files\/U9BU09D51\/FA021N84S\/log_output.txt",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FA021N84S-e8eebcf8d6",
+            "edit_link": "https:\/\/rackn.slack.com\/files\/U9BU09D51\/FA021N84S\/log_output.txt\/edit",
+            "preview": "dr-provision2018\/04\/03 00:46:24.790252 [0:11]bootenv [debug]: \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/backend\/renderData.go:153\r\n[0:11]Content:\r\n#!ipxe\r\nkernel http:\/\/100.84.10.7:8091\/install\/install\/hwe-netboot\/ubuntu-installer\/amd64\/linux initrd=initrd.gz debian-installer\/locale=en_US.utf8 console-setup\/layoutcode=us keyboard-configuration\/layoutcode=us netcfg\/dhcp_timeout=120 netcfg\/choose_interface=auto url=http:\/\/100.84.10.7:8091\/machines\/e5243261-ed78-4c2a-a841-5f7340da7bd9\/seed netcfg\/get_hostname=dell-nlams2 root=\/dev\/ram rw quiet  --  BOOTIF=01-${netX\/mac:hexhyp}\r\n\r",
+            "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>dr-provision2018\/04\/03 00:46:24.790252 [0:11]bootenv [debug]: \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/backend\/renderData.go:153<\/pre><\/div>\n<div><pre>[0:11]Content:<\/pre><\/div>\n<div><pre>#!ipxe<\/pre><\/div>\n<div><pre>kernel http:\/\/100.84.10.7:8091\/install\/install\/hwe-netboot\/ubuntu-installer\/amd64\/linux initrd=initrd.gz debian-installer\/locale=en_US.utf8 console-setup\/layoutcode=us keyboard-configuration\/layoutcode=us netcfg\/dhcp_timeout=120 netcfg\/choose_interface=auto url=http:\/\/100.84.10.7:8091\/machines\/e5243261-ed78-4c2a-a841-5f7340da7bd9\/seed netcfg\/get_hostname=dell-nlams2 root=\/dev\/ram rw quiet  --  BOOTIF=01-${netX\/mac:hexhyp}<\/pre><\/div>\n<div><pre><\/pre><\/div>\n<div><pre><\/pre><\/div>\n<\/div>\n<\/div>\n",
+            "lines": 100,
+            "lines_more": 95,
+            "preview_is_truncated": true,
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U9BU09D51",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "dave.parker",
+        "bot_id": null,
+        "ts": "1522716577.000080"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Well, that's all I get.",
+        "ts": "1522716580.000209"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Plus side is, the URL is correct...",
+        "ts": "1522716593.000295"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "So unfortunately that was a wild goose chase.",
+        "ts": "1522716659.000142"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "That looks saneish at first glance.",
+        "client_msg_id": "8ebe3114-fcfd-4c2a-b09b-eb2785e49d8b",
+        "ts": "1522716673.000083"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Now I'm back to trying to figure out why I get \"No root file system is defined.  Please correct this from the partitioning menu.\"",
+        "ts": "1522716684.000059"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Ah. Partitioning in preseeds.",
+        "client_msg_id": "63cb73a2-067f-470e-bd11-1389df787590",
+        "ts": "1522716706.000232"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Many people hate it with a burning passion.",
+        "client_msg_id": "bb68a159-f19c-462f-9aae-a9689405d5e2",
+        "ts": "1522716721.000262"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "If I walk through a vanilla Ubuntu 16.04 install I can select the default \"whole disk plus lvm\" method and it works fine.",
+        "ts": "1522716724.000350"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I am one of those.",
+        "client_msg_id": "015b9cd0-7ff3-4034-b94a-1bacce258318",
+        "ts": "1522716729.000086"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Yeah I'm not super fond of it either.  It never seems to work right.  Unfortunately I have to do it because we have our special snowflake way of setting up the root disks.  But this is the default net-seed and it's not working either.  :disappointed:",
+        "ts": "1522716800.000299"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Is sda correct?",
+        "client_msg_id": "de2a95ff-eea7-4fb8-bdcf-b1d67f221917",
+        "ts": "1522716835.000228"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Yes, as far as I know.  That's how it shows up in the vanilla installer anyway.",
+        "ts": "1522716861.000193"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Because I could go on about how much it sucks that disknordering in Linux is only usually stable.",
+        "client_msg_id": "e68165c4-57d8-4b47-b966-60815fc46dd5",
+        "ts": "1522716906.000129"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I know it's doing some partitioning because when I run the vanilla installer and get into the manual partitioning I see the partition scheme there.",
+        "ts": "1522716917.000089"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "You might want to switch to another vt and look at the install logs.",
+        "client_msg_id": "ddb72c0b-45be-4b62-b3d8-ae8d0c1d1f25",
+        "ts": "1522716968.000124"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Wherever they wind up on Debian installs.",
+        "client_msg_id": "e0ab09fe-825f-4231-b5f2-b60e06e19cc7",
+        "ts": "1522717016.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "It has been awhile for me.",
+        "client_msg_id": "d796743b-3df3-47de-9df7-44dbeb518f8d",
+        "ts": "1522717024.000246"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "believe tty4 ... maybe ...",
+        "ts": "1522717055.000192"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Ah ha.  Trying to figure out how to do that with the Dell virtual console.",
+        "ts": "1522717118.000160"
+    },
+    {
+        "text": "Time to feed the :bear:!",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1522717118.000207"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Wish they would do what centos does, and have all that in tmux for a text install.",
+        "client_msg_id": "be9f48e3-48a5-48e7-bb0d-1082cc26bcd7",
+        "ts": "1522717122.000171"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "So there is working backscroll.",
+        "client_msg_id": "983b6385-d104-4579-89b4-a8f530aa37de",
+        "ts": "1522717136.000204"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Ugh yes.",
+        "ts": "1522717145.000204"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Ok found the logs, and there's no useful scrollback.  And all that I'm seeing is it finding a whole bunch of logical volumes and mounting them.",
+        "ts": "1522717187.000078"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "But some of them look bogus.",
+        "ts": "1522717191.000017"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I'm going to try booting the discovery image and running the disk nuke thing.",
+        "ts": "1522717205.000461"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Yeah, Debian.",
+        "client_msg_id": "5199d38a-636e-478c-8cb1-ed9a67449c5c",
+        "ts": "1522717224.000131"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "If you find the magic partman config thingies that mean \"no really ignore whatever you might find on the disks\", I would love a pull request.",
+        "client_msg_id": "167f2166-b37d-4a86-ab28-baecac2f9fd8",
+        "ts": "1522717330.000321"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Yeah that'd be great.",
+        "ts": "1522717356.000222"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I have tried quite a few different ones over the years. And none of them seem to catch everything.",
+        "client_msg_id": "030ce99f-1433-4729-bb26-4c8cd6e19d2e",
+        "ts": "1522717372.000223"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I know in some of our old cobbler snippets we start off with a brute force \"erase everything on every disk\" type thing, much like the task in drp",
+        "ts": "1522717388.000271"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Sometimes the whole drive dd is the only way.",
+        "client_msg_id": "b176f33f-aa1f-49d3-a966-416004d503f3",
+        "ts": "1522717395.000053"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "I believe there's a stage for that",
+        "ts": "1522717422.000024"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "And our erase everything task can fail if the Debian. Installer lays down a different disknlayout than the one we erase.",
+        "client_msg_id": "1d0cc6a4-c71d-474d-aeaf-f7bcd519f5d3",
+        "ts": "1522717458.000064"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Because it doesn't recognize that if it had to create a new partitioning label it should just ignore anything else it finds.",
+        "client_msg_id": "68c429e1-337e-465d-bb5f-5a8b70248a5a",
+        "ts": "1522717515.000148"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "But no, it looks every time.",
+        "client_msg_id": "667337ad-e0b3-40bf-b643-f012b6a35920",
+        "ts": "1522717607.000009"
+    },
+    {
+        "text": "sighs.",
+        "type": "message",
+        "subtype": "me_message",
+        "user": "U02DJQSG8",
+        "ts": "1522717618.000234"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Is there a login that works for the sledgehammer image?",
+        "ts": "1522717811.000226"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "This doesn't look super promising:\n```Log for Job: 4603e4b5-72f4-406e-86d7-d28a61b65bd9\nStarting task erase-hard-disks-for-os-install on e5243261-ed78-4c2a-a841-5f7340da7bd9\nStarting command .\/erase-hard-disks-for-os-install-erase-disks\n\n\nCommand running\nError: Error opening \/dev\/sde: No medium found\n  PARTIAL MODE. Incomplete logical volumes will be processed.\n  Reading volume groups from cache.\n  Found volume group \"tester01-vg\" using metadata type lvm2\n  Logical volume \"root\" successfully removed\n  semid 32768: semop failed for cookie 0xd4d3489: incorrect semaphore state\n  Could not signal waiting process using notification semaphore identified by cookie value 223163529 (0xd4d3489)\n  Logical volume \"swap_1\" successfully removed\n  Volume group \"tester01-vg\" successfully removed\n  semid 32768: semop failed for cookie 0xd4d3489: incorrect semaphore state\n  Failed to set a proper state for notification semaphore identified by cookie value 223163529 (0xd4d3489) to initialize waiting for incoming notifications.\n  PV \/dev\/sda5                      lvm2 [744.73 GiB]\n  Total: 1 [744.73 GiB] \/ in use: 0 [0   ] \/ in no VG: 1 [744.73 GiB]\n  Labels on physical volume \"\/dev\/sda5\" successfully wiped.\nmdadm: Unrecognised md component device - \/dev\/sdb3\n2048+0 records in\n2048+0 records out```",
+        "ts": "1522717840.000070"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I'd like to just get in and nuke it all by hand.",
+        "ts": "1522717848.000228"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "root\/rebar1",
+        "edited": {
+            "user": "U02DHRR2L",
+            "ts": "1522717854.000000"
+        },
+        "ts": "1522717850.000324"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "How long do you think it'll take to write 800GB of zeros?",
+        "ts": "1522717960.000174"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": ":troll:",
+        "ts": "1522717966.000073"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "If only.",
+        "client_msg_id": "1875f46e-104e-4eef-b773-d43c2dcf2751",
+        "ts": "1522717997.000117"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I fear multi terabyte spinning rust.",
+        "client_msg_id": "b4dd3140-967b-4a9e-9b27-3613ba870930",
+        "ts": "1522718031.000048"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Kick it off in the morning, come back tomorrow afternoon .",
+        "client_msg_id": "1aa48c14-72b2-47b6-8eaf-7354de7e9195",
+        "ts": "1522718063.000059"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Not to mention what a horrible idea it is for ssds.",
+        "client_msg_id": "7b36f35a-6560-45c6-bf28-5a65d7680b2b",
+        "ts": "1522718130.000310"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Yeah.",
+        "ts": "1522718142.000174"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Well fdisk doesn't show any partitions on these disks anymore.",
+        "ts": "1522718165.000278"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "So... maybe?",
+        "ts": "1522718170.000027"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Then again, fstrim is usually fine for them.",
+        "client_msg_id": "106fad87-a8d1-4c22-b95d-9987caf8184b",
+        "ts": "1522718174.000041"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "One way to find out.",
+        "client_msg_id": "cddae6e0-d56d-42b6-80ce-17b27c1379fd",
+        "ts": "1522718197.000057"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Ok let's see how this goes.",
+        "ts": "1522718253.000123"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I'm going to watch the text console now that I've figured out how to get to it.",
+        "ts": "1522718298.000164"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Well, that didn't work.",
+        "ts": "1522718785.000015"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Weirdly the last thing in the log is `partman: Reading all physical volumes. This make take a while...`",
+        "ts": "1522718814.000030"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "But it's already errored out.",
+        "ts": "1522718822.000052"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Oh well.  I'm done for tonight.  I'll pick it up again tomorrow.",
+        "ts": "1522718846.000028"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Thanks for your help everyone.",
+        "ts": "1522718850.000206"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Yeah, time to put the kids to bed.",
+        "client_msg_id": "ea2633fd-53d2-44b5-9258-d7a392afc5fe",
+        "ts": "1522718997.000015"
+    }
+]

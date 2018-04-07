@@ -2,3 +2,6 @@ _sources
 _build
 _static
 .doctrees/
+slack/json/
+slack/users.json
+slack/integration_logs.json

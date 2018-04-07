@@ -1,0 +1,49 @@
+[
+    {
+        "text": "<@U02DHRR2L|zehicle> , I am getting below messages from the command : docker-compose logs -f provisioner\n[root@mo-dc2df9e2a compose]# docker-compose logs -f provisioner\nWARNING: The DR_TAG variable is not set. Defaulting to a blank string.\nAttaching to compose_provisioner_1\nprovisioner_1  | Calling cmd: \/usr\/local\/entrypoint.d\/00-wait-for-ip.sh\nprovisioner_1  | Waiting for 192.168.124.11\/24\nprovisioner_1  | Calling cmd: \/usr\/local\/entrypoint.d\/05-start-samba.sh\nprovisioner_1  | Calling cmd: \/usr\/local\/entrypoint.d\/10-wait-for-consul.sh\nprovisioner_1  |   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\nprovisioner_1  |                                  Dload  Upload   Total   Spent    Left  Speed\n100    19  100    19    0     0   3472      0 --:--:-- --:--:-- --:--:--  3800\nprovisioner_1  | Calling cmd: \/usr\/local\/entrypoint.d\/15-get-sledgehammer.sh\nprovisioner_1  |   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\nprovisioner_1  |                                  Dload  Upload   Total   Spent    Left  Speed\n  0     0    0     0    0     0      0      0 --:--:--  0:02:06 --:--:--     0curl: (7) Failed to connect to opencrowbar.s3-website-us-east-1.amazonaws.com port 80: Connection timed out\nprovisioner_1  | Calling cmd: \/usr\/local\/entrypoint.d\/00-wait-for-ip.sh\nprovisioner_1  | Calling cmd: \/usr\/local\/entrypoint.d\/05-start-samba.sh\nprovisioner_1  | Calling cmd: \/usr\/local\/entrypoint.d\/10-wait-for-consul.sh\nprovisioner_1  |   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\nprovisioner_1  |                                  Dload  Upload   Total   Spent    Left  Speed\n100    19  100    19    0     0   3314      0 --:--:-- --:--:-- --:--:--  3800\nprovisioner_1  | Calling cmd: \/usr\/local\/entrypoint.d\/15-get-sledgehammer.sh\nprovisioner_1  |   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\nprovisioner_1  |                                  Dload  Upload   Total   Spent    Left  Speed\n  0     0    0     0    0     0      0      0 --:--:--  0:02:06 --:--:--     0curl: (7) Failed to connect to opencrowbar.s3-website-us-east-1.amazonaws.com port 80: Connection timed out\nprovisioner_1  | Calling cmd: \/usr\/local\/entrypoint.d\/00-wait-for-ip.sh\nprovisioner_1  | Calling cmd: \/usr\/local\/entrypoint.d\/05-start-samba.sh\nprovisioner_1  | Calling cmd: \/usr\/local\/entrypoint.d\/10-wait-for-consul.sh\nprovisioner_1  |   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\nprovisioner_1  |                                  Dload  Upload   Total   Spent    Left  Speed\n100    19  100    19    0     0   1100      0 --:--:-- --:--:-- --:--:--  1117\nprovisioner_1  | Calling cmd: \/usr\/local\/entrypoint.d\/15-get-sledgehammer.sh\nprovisioner_1  |   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\nprovisioner_1  |                                  Dload  Upload   Total   Spent    Left  Speed\n  0     0    0     0    0     0      0      0 --:--:--  0:02:06 --:--:--     0curl: (7) Failed to connect to opencrowbar.s3-website-us-east-1.amazonaws.com port 80: Connection timed out\nprovisioner_1  | Calling cmd: \/usr\/local\/entrypoint.d\/00-wait-for-ip.sh\nprovisioner_1  | Calling cmd: \/usr\/local\/entrypoint.d\/05-start-samba.sh\nprovisioner_1  | Calling cmd: \/usr\/local\/entrypoint.d\/10-wait-for-consul.sh",
+        "username": "deepuashokan85",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1496137124.939148"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Does your admin node have access to amazon s3?",
+        "ts": "1496151186.385062"
+    },
+    {
+        "user": "U5KDJ7B97",
+        "text": "<@U5KDJ7B97> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1496168892.330123"
+    },
+    {
+        "text": "<@U02DHRR2L|zehicle> , No admin node do not have access to amazon s3. \n[root@mo-dc2df9e2a compose]# telnet opencrowbar.s3-website-us-east-1.amazonaws.com 80\n\nTrying 52.216.82.18...\n\n",
+        "username": "deepuashokan85",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1496170241.808105"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "well - that is the problem.",
+        "ts": "1496170514.904961"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "currently install requires that the admin node has a path out to the internet.",
+        "ts": "1496170535.912921"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "for initial setup",
+        "ts": "1496170540.914535"
+    }
+]

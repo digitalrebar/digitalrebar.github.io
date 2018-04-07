@@ -1,0 +1,601 @@
+[
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<@U8NV2GC21> Which machines are they?  Got any more problematic ones?",
+        "ts": "1519146472.000271"
+    },
+    {
+        "type": "message",
+        "user": "U8NV2GC21",
+        "text": "<@U02DJQSG8> A liva x mini-pc and an asus sabertooth x79 system where the ones that were giving me problems before. I have others that may be problematic, but they are also arm64, so I haven't started tackling that yet :slightly_smiling_face:",
+        "ts": "1519146575.000166"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Well, arm64 will be fun in more ways than one. :slightly_smiling_face:",
+        "ts": "1519148371.000330"
+    },
+    {
+        "user": "U9BU09D51",
+        "text": "<@U9BU09D51> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1519155069.000518"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Hi folks.  I have a few questions. I'm following the quick start, and using virtualbox guests for both the server and first client.  I can boot sledgehammer and discover just fine, but when I try to switch bootenvs to install I get this error: \n```Error: ValidationError: machines\/0d31f21f-ab03-4fbb-9b19-ba3f445edadb: Can not change bootenv while in a stage unless forced. old: sledgehammer new ubuntu-16-04-install```",
+        "ts": "1519155240.000041"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "No amount of forcing from the command line fixes this.  If I go into the gui and edit the machine and select the Force checkbox, I can then change the bootenv from the command line, though.",
+        "ts": "1519155272.000057"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "However, on the next boot, the machine boots sledgehammer and repeats discovery instead of doing the install as expected.  It registers with a new UUID, which I assume is why it comes up as a brand new machine.",
+        "ts": "1519155305.000680"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "How is the UUID determined?",
+        "ts": "1519155312.000518"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U9BU09D51> what DRP Endpoint version are you using?  (`drpcli info get | grep version`)",
+        "ts": "1519155595.000330"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "\"version\": \"v3.6.0-0-0e5ccf678a3e5b5fdb10f86261247cd28c858ac0\"",
+        "ts": "1519155672.000108"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "also - make sure you set the Stage with the Install bootenv you'd like to install - do not switch the BootEnv itself directly ... if you are using Stages, you can not change the bootenv - as the Stage references an existing BootEnv",
+        "ts": "1519155685.000511"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we have a LOT of fixes and enhancements in our current `tip` release - which is about to be released in the next 1 or 2 days at v3.7.0 - if this is a non-production scenario - I highly recommend upgrading to the `tip` release",
+        "ts": "1519155735.000446"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "So I shouldn't be trying to change the bootenv directly?",
+        "ts": "1519155744.000271"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "not if you are using Stages, no",
+        "ts": "1519155751.000542"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Is the quickstart out of date then?",
+        "ts": "1519155755.000284"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Ok, I can upgrade to tip.",
+        "ts": "1519155774.000068"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "which version of QuickStart are you using?  (`latest`, `stable`, etc) ?",
+        "ts": "1519155780.000140"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "This one: <http:\/\/provision.readthedocs.io\/en\/stable\/doc\/quickstart.html>",
+        "ts": "1519155833.000073"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "So, stable.",
+        "ts": "1519155839.000327"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(upgrade to tip:  `curl -s get.rebar.digital\/tip | bash -s -- install --isolated --version=tip --upgrade --force` &lt;-- assumes you are using \"isolated\" install mode, not production)",
+        "ts": "1519155865.000708"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yes - please switch Doc to the `latest` version",
+        "ts": "1519155876.000372"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can use lower right floating selector for that",
+        "ts": "1519155886.000706"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Gotcha",
+        "ts": "1519155896.000315"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "latest still has the same bootenvs command though.  Hrm.",
+        "ts": "1519155964.000408"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Anyway, upgrading.",
+        "ts": "1519155970.000409"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I'll run through the quickstart and validate - it probably needs to be updated to say Stages",
+        "ts": "1519156060.000491"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": ":thumbsup:",
+        "ts": "1519156250.000254"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U9BU09D51> - yes, change the `drpcli machines bootenv ...` command to `drpcli machines stage ... `  - it is otherwise identical ... long story short ... with the `defaultStage` preference set, this means a machine will use the Stage system.  Therefor, you have to use Stages to change Machine between bootenvs ... If you leave the `defaultStage` set to `none`, then the Stages won't be enabled (effectively) - and the use of `bootenv` is correct.  I'll clean up the QuickStart documents around that this afternoon.",
+        "ts": "1519157466.000581"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Ahh ok",
+        "ts": "1519157587.000091"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Thank you!",
+        "ts": "1519157588.000752"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I will give that a try once I'm done reloading install ISOs",
+        "ts": "1519157608.000162"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Ok, so now I have a machine discovered, and I was able to set the stage to the ubuntu install, and everything looks good.  But when I reboot the system and it tries to PXE boot, dr-provision crashes:",
+        "ts": "1519158464.000001"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "```Tried to access unlocked resource tasks\npanic: Tried to access unlocked resource tasks\n\ngoroutine 103 [running]:\nlog.Panicf(0xe121f9, 0x24, 0xc423ffccf8, 0x1, 0x1)\n\t\/home\/travis\/.gimme\/versions\/go1.9.linux.amd64\/src\/log\/log.go:337 +0xda\n<http:\/\/github.com\/digitalrebar\/provision\/backend.(*DataTracker).lockEnts.func1(0xdf96b1|github.com\/digitalrebar\/provision\/backend.(*DataTracker).lockEnts.func1(0xdf96b1>, 0x5, 0xc423ee3b30)\n\t\/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/backend\/dataTracker.go:574 +0x143\n<http:\/\/github.com\/digitalrebar\/provision\/backend.(*RequestTracker).stores(0xc4240b43c0|github.com\/digitalrebar\/provision\/backend.(*RequestTracker).stores(0xc4240b43c0>, 0xdf96b1, 0x5, 0xc423f4aa58)\n\t\/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/backend\/requestTracker.go:128 +0x3e\n<http:\/\/github.com\/digitalrebar\/provision\/backend.(*RequestTracker).(github.com\/digitalrebar\/provision\/backend.stores)-fm(0xdf96b1|github.com\/digitalrebar\/provision\/backend.(*RequestTracker).(github.com\/digitalrebar\/provision\/backend.stores)-fm(0xdf96b1>, 0x5, 0x0)\n\t\/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/backend\/machines.go:421 +0x3e\n<http:\/\/github.com\/digitalrebar\/provision\/backend.(*Machine).Validate(0xc4240707e0)|github.com\/digitalrebar\/provision\/backend.(*Machine).Validate(0xc4240707e0)>\n\t\/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/backend\/machines.go:422 +0x321\n<http:\/\/github.com\/digitalrebar\/provision\/backend.(*Machine).BeforeSave(0xc4240707e0|github.com\/digitalrebar\/provision\/backend.(*Machine).BeforeSave(0xc4240707e0>, 0x12e11c0, 0xc4240707e0)\n\t\/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/backend\/machines.go:534 +0xb4\n<http:\/\/github.com\/digitalrebar\/provision\/vendor\/github.com\/digitalrebar\/store.save(0x12e78e0|github.com\/digitalrebar\/provision\/vendor\/github.com\/digitalrebar\/store.save(0x12e78e0>, 0xc423e46d80, 0x12e11c0, 0xc4240707e0, 0x823d4b, 0xc420248b68, 0x1ad71e8)\n\t\/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/vendor\/github.com\/digitalrebar\/store\/keySaver.go:166 +0x1a4\n<http:\/\/github.com\/digitalrebar\/provision\/vendor\/github.com\/digitalrebar\/store.Save(0x12e78e0|github.com\/digitalrebar\/provision\/vendor\/github.com\/digitalrebar\/store.Save(0x12e78e0>, 0xc423e46d80, 0x12e11c0, 0xc4240707e0, 0xc4240707e0, 0x1, 0xc424006510)\n\t\/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/vendor\/github.com\/digitalrebar\/store\/keySaver.go:188 +0x49\n<http:\/\/github.com\/digitalrebar\/provision\/backend.(*RequestTracker).Save(0xc4240b43c0|github.com\/digitalrebar\/provision\/backend.(*RequestTracker).Save(0xc4240b43c0>, 0x12df2c0, 0xc4240707e0, 0xc424047b60, 0x3, 0x3)\n\t\/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/backend\/requestTracker.go:324 +0x1c4\n<http:\/\/github.com\/digitalrebar\/provision\/midlayer.(*DhcpRequest).coalesceOptions.func1(0xc4240387a0)|github.com\/digitalrebar\/provision\/midlayer.(*DhcpRequest).coalesceOptions.func1(0xc4240387a0)>\n\t\/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/midlayer\/dhcp.go:330 +0xb98\n<http:\/\/github.com\/digitalrebar\/provision\/backend.(*RequestTracker).Do(0xc4240b43c0|github.com\/digitalrebar\/provision\/backend.(*RequestTracker).Do(0xc4240b43c0>, 0xc423ffd6c8)\n\t\/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/backend\/requestTracker.go:111 +0xd9\n<http:\/\/github.com\/digitalrebar\/provision\/midlayer.(*DhcpRequest).coalesceOptions(0xc4238140c0|github.com\/digitalrebar\/provision\/midlayer.(*DhcpRequest).coalesceOptions(0xc4238140c0>, 0xc42405e300, 0xc42409fd10, 0x0)\n\t\/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/midlayer\/dhcp.go:274 +0xd6d\n<http:\/\/github.com\/digitalrebar\/provision\/midlayer.(*DhcpRequest).buildDhcpOptions(0xc4238140c0|github.com\/digitalrebar\/provision\/midlayer.(*DhcpRequest).buildDhcpOptions(0xc4238140c0>, 0xc42405e300, 0xc42409fd10, 0x0, 0xc4240627fc, 0x4, 0x4)\n\t\/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/midlayer\/dhcp.go:441 +0x98\n<http:\/\/github.com\/digitalrebar\/provision\/midlayer.(*DhcpRequest).ServeDHCP(0xc4238140c0|github.com\/digitalrebar\/provision\/midlayer.(*DhcpRequest).ServeDHCP(0xc4238140c0>, 0xc42409e701, 0x4, 0xc42407e148, 0x1)\n\t\/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/midlayer\/dhcp.go:779 +0xcb7\n<http:\/\/github.com\/digitalrebar\/provision\/midlayer.(*DhcpRequest).Process(0xc4238140c0|github.com\/digitalrebar\/provision\/midlayer.(*DhcpRequest).Process(0xc4238140c0>, 0x0, 0x0, 0xffffffffffffffff)\n\t\/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/midlayer\/dhcp.go:836 +0x85f\n<http:\/\/github.com\/digitalrebar\/provision\/midlayer.(*DhcpRequest).Run(0xc4238140c0)|github.com\/digitalrebar\/provision\/midlayer.(*DhcpRequest).Run(0xc4238140c0)>\n\t\/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/midlayer\/dhcp.go:864 +0x2b\ncreated by <http:\/\/github.com\/digitalrebar\/provision\/midlayer.(*DhcpHandler).Serve|github.com\/digitalrebar\/provision\/midlayer.(*DhcpHandler).Serve>\n\t\/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/midlayer\/dhcp.go:920 +0x2e5```",
+        "ts": "1519158468.000018"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I must have missed something.",
+        "ts": "1519158520.000033"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U02DGQYK1> and or <@U02DJQSG8> will have to take a look... I'm in a mtg right now.... ",
+        "client_msg_id": "b4bd1ed4-1545-4f2d-a7db-179077b003e1",
+        "ts": "1519158547.000561"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "looking at it.",
+        "ts": "1519159277.000035"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<@U9BU09D51> What version of dr-provision is this?",
+        "ts": "1519159299.000516"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "\"version\": \"v3.6.0-tip-186-ed32fbb1e324a3e033a55d131d9b067f7442f4d5\"",
+        "ts": "1519159321.000108"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I deleted the machine, rediscovered, and then reset the stage to ubuntu-install, and now it's installing the OS as expected.  Not sure what the problem was before...",
+        "ts": "1519159368.000295"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "hm.",
+        "ts": "1519159433.000521"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "that is in the codepath where the DHCP system wants to update the machine IP address",
+        "ts": "1519159454.000501"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Does this machine have multiple nics it can boot off of connected to the same physical network?",
+        "ts": "1519159484.000513"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Nope.",
+        "ts": "1519159522.000105"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ok",
+        "ts": "1519159630.000260"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I will have a fix out for that issue shortly.",
+        "ts": "1519160072.000616"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Excellent",
+        "ts": "1519160285.000031"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<https:\/\/github.com\/digitalrebar\/provision\/pull\/736>, of you are intersted.",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "Grab all needed locks when we might need to update a machine IP address by VictorLowther · Pull Request #736 · digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/pull\/736",
+                "text": "Also crank up the logging tt make it a Warnf if we decide that DHCP should change the IP address of a machine.",
+                "fallback": "GitHub: Grab all needed locks when we might need to update a machine IP address by VictorLowther · Pull Request #736 · digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/pull\/736",
+                "thumb_url": "https:\/\/avatars2.githubusercontent.com\/u\/770578?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1519160375.000469"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I have another weird problem.  When I do get the install to work, I can't log in.  The params `provisioner-default-user` and `provisioner-default-password-hash` default to rocketskates\/r0cketsk8ts correct?",
+        "ts": "1519161066.000233"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I tried overriding those in the global profile with my own values (with a hash I generated via mkpasswd) but that doesn't work either.",
+        "ts": "1519161128.000376"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I can boot the system off a regular ubuntu iso and go into rescue mode, get a shell, and see the username I trired to add is there, along with the hash in \/etc\/shadow.  If I reset the password there I can then log in after rebooting it.",
+        "ts": "1519161557.000251"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I guess I'll try just grabbing this hash and putting it in the param",
+        "ts": "1519161582.000462"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Grr, stuck on that DHCP bug again.  When that pull request gets approved and merged will I be able to grab the fix by reinstalling tip?",
+        "ts": "1519162679.000568"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U9BU09D51> yes",
+        "ts": "1519162923.000466"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Victor’s fix should be in tip in about 30 minutes",
+        "ts": "1519162954.000447"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Awesome, thank you.",
+        "ts": "1519162968.000213"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Oh hey, manually changing the IP of the machine to the one dhcp is trying to give it fixes the issue and it boots into the install now.  Sweet.",
+        "ts": "1519163266.000266"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "hmmm...  manually changing it whwere?",
+        "ts": "1519163326.000030"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "In the GUI I went to machines, and then clicked on the machine name, edited it, and put in the IP that was under the \"leases\" tab for this machine.  Which was different than the one already there.",
+        "ts": "1519163384.000628"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "That seemed to have fixed it? I think I also cleared out all the leases first though.",
+        "ts": "1519163412.000531"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ok",
+        "ts": "1519163487.000480"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Yeah, I cleared out all the leases, tried to boot the machine again, and it failed again, but a new lease had popped up in the GUI.  So that's the one I grabbed.",
+        "ts": "1519163555.000339"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ok",
+        "ts": "1519163565.000609"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I'm old school, I basically kept trying bigger hammers until one of them \"fixed\" it...",
+        "ts": "1519163578.000633"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I generally don't recommend clearing out all the leases",
+        "ts": "1519163583.000234"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "not unless you are going to whack all the machine records as well.",
+        "ts": "1519163609.000588"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Ah ok.",
+        "ts": "1519163629.000163"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Good to know.",
+        "ts": "1519163632.000064"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I will not use that particular hammer again if I can help it.  :smile:",
+        "ts": "1519163645.000410"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ya, it is just like dropping the lease database from any other DHCP server.",
+        "ts": "1519163690.000110"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "We keep the option around for troubleshooting purposes",
+        "ts": "1519163836.000207"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "basically, the Address field on a machine is the one we expect it to PXE from",
+        "ts": "1519163944.000344"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Ok",
+        "ts": "1519163973.000460"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "FYI, the hash I pulled from the shadow file after manually changing the password (then threw back in the `provisioner-default-password-hash` param) worked fine.  Not sure what was wrong with the hash provided as a default or the one I generated with mkpasswd.",
+        "ts": "1519164123.000270"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U9BU09D51> you can convert a Lease to a Reservation if you want the machine to retain a given IP addr over time",
+        "ts": "1519164151.000099"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Ok",
+        "ts": "1519164193.000662"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we currently don't have a `drpcli` command to do this, but I wrote a dirty bash script which does - see:  <https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/F9AR6H56G\/lease2res_sh_-_Lease_to_Reservation_conversion_script.sh>",
+        "ts": "1519164297.000277"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Cool",
+        "ts": "1519165277.000261"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "You can change a Reservation ... well ... not really ... but you can convert the Lease to a new IP address Reservation from the DHCP assigned",
+        "ts": "1519165367.000183"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "however, that script doesn't add that ability - and it's not exactly a \"supported\" feature at the moment - there are some side effects of the Machine Object not getting updated correctly - I've filed a bug fo this internally (<https:\/\/github.com\/digitalrebar\/provision\/issues\/737>)",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "Changing a Reservation for Machine - Machine object does not update correctly · Issue #737 · digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/issues\/737",
+                "text": "machine boots, gets lease convert lease to Reservation Machine Object has machine IP address (eg 192.168.8.100) Delete the Reservation Create new reservation w\/ new address (since there's no \"Edit\"...",
+                "fallback": "GitHub: Changing a Reservation for Machine - Machine object does not update correctly · Issue #737 · digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/issues\/737",
+                "thumb_url": "https:\/\/avatars2.githubusercontent.com\/u\/5308433?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1519165471.000391"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "right now, you'd have to delete the Reservation, and re-create the reservation with a new IP address ... since the IP Address field is the index for the Reservation object",
+        "ts": "1519165513.000554"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "If the HardwareAddrs field on the Machine is populated with the MAC addresses of the nics on the machine, then things shoudl work as you expect them to.",
+        "ts": "1519167576.000504"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "deleting the Reservation and creating a new one w\/ the MAC addr and new IP addr works",
+        "ts": "1519167611.000499"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "but the issue is the Machine Object \"Address\" field doesn't get updated - it reflects the original Lease address",
+        "ts": "1519167640.000421"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I just pulled the latest version of tip since I saw that pr got merged.",
+        "ts": "1519167642.000242"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<@U6QFVRJNB> that is becaise machine.Address is initially populated by Sledgehammer when the machine is created, and the codepath in the DHCP subsystem that would update it if HardwareAddrs on the machine was populated was broken until 30 mins ago.",
+        "ts": "1519167743.000381"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "or so. :slightly_smiling_face:",
+        "ts": "1519167789.000294"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "The fix works for me.",
+        "ts": "1519169228.000246"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "```dr-provision2018\/02\/20 23:26:06.870664 [34:14]dhcp [ warn]: \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/midlayer\/dhcp.go:328\n[34:14]bcc675dc-e333-49cd-8c86-eb17419a783b: Updating machine 10.10.10.28 address from 10.10.10.21 to %!s(MISSING)```",
+        "ts": "1519169234.000249"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Although that message looks wrong.  It updated the machine from .28 to .21, not from .21 to `%!s(MISSING)`",
+        "ts": "1519169292.000029"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": ":smile:",
+        "ts": "1519169297.000279"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Anyway, it booted and is reinstalling which is what I expect to see.",
+        "ts": "1519169307.000381"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Thanks for your help today.  I appreciate it.",
+        "ts": "1519169320.000379",
+        "reactions": [
+            {
+                "name": "nerd_face",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "bah, format string typos. :slightly_smiling_face:",
+        "ts": "1519169758.000336"
+    }
+]

@@ -1,0 +1,176 @@
+[
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "new v3.1 content API allows for multiple items to be bundled together (and also makes them read only so they can be upgraded)",
+        "ts": "1504103462.000316"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U54E4SD4G>  - do you think this would be reasonable for a change to install.sh to address the production directory change?\n```\n                 if [[ ! -e \/var\/lib\/dr-provision\/digitalrebar &amp;&amp; -e \/var\/lib\/dr-provision ]] ; then\n                     sudo mkdir -p \/var\/lib\/dr-provision\/digitalrebar\n                     sudo mv \/var\/lib\/dr-provision\/* \/var\/lib\/dr-provision\/digitalrebar\n                 fi      \n\n```",
+        "ts": "1504125787.000129"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "I suppose - although I'm using an Ansible role myself for deploying DRP",
+        "ts": "1504128099.000380"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "I'm probably the only one, though",
+        "ts": "1504128114.000285"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "that `mv` command will try to move `digitalrebar` into itself, which I believe errors out",
+        "ts": "1504128162.000434"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "```\n[musee@birdy tmp]$ mv hello\/ hello\/\nmv: 'hello\/' を自分自身のサブディレクトリ 'hello\/hello' に移動できません\n[musee@birdy tmp]$ echo $?\n1\n```",
+        "ts": "1504128185.000324"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "yeah",
+        "ts": "1504128188.000505"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "you could rename the existing directory (`mktemp`), then recreate `\/var\/lib\/dr-provision\/`, then move the renamed directory into the newly created directory as `digitalrebar`",
+        "ts": "1504128314.000108"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U54E4SD4G> - you are pulling the zip and doing it all yourself?",
+        "ts": "1504128362.000424"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "<https:\/\/gist.github.com\/lae\/94e81329f1ee98ff02a59f03fa28f00f>",
+        "ts": "1504128450.000476"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "effectively",
+        "ts": "1504128453.000226"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "does an install and some configuration afterwards, like removing the default user (if specified) and creating our own admin user",
+        "ts": "1504128565.000142"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "nice!",
+        "ts": "1504129158.000189"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "sweet.",
+        "ts": "1504129406.000294"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "if wanted I can clean this up a bit and publish it but",
+        "ts": "1504129760.000288"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "I'd like to not use `get_url` and `unarchive` to get around making downloading\/extracting the DRP release appear idempotent to ansible (there's a bug with regards to using `unzip` in the `unarchive` module)",
+        "ts": "1504129900.000022"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "might've been this bug <https:\/\/github.com\/ansible\/ansible\/issues\/22254>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "Unarchive modules always reports 'changed' with non-default permissions on items in zip files.  (breaks idempotence) · Issue #22254 · ansible\/ansible",
+                "title_link": "https:\/\/github.com\/ansible\/ansible\/issues\/22254",
+                "text": "ISSUE TYPE Bug Report COMPONENT NAME unarchive module ANSIBLE VERSION ansible 2.2.1.0 config file = \/etc\/ansible\/ansible.cfg configured module search path = Default w\/o overrides CONFIGURA...",
+                "fallback": "GitHub: Unarchive modules always reports 'changed' with non-default permissions on items in zip files.  (breaks idempotence) · Issue #22254 · ansible\/ansible",
+                "from_url": "https:\/\/github.com\/ansible\/ansible\/issues\/22254",
+                "thumb_url": "https:\/\/avatars2.githubusercontent.com\/u\/11828048?v=4&s=400",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1504130066.000062"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "ah nah it was this that I had read previously <https:\/\/github.com\/ansible\/ansible\/pull\/24580#issuecomment-302592533>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "Fix idempotency for Unix permissions in zip files. by chriskarel · Pull Request #24580 · ansible\/ansible",
+                "title_link": "https:\/\/github.com\/ansible\/ansible\/pull\/24580#issuecomment-302592533",
+                "text": "This fix prevents the unarchive module from reporting 'changed' when a zipfile contains items with Unix permissions that differ from the system default. SUMMARY Fixes #22254 Currently, unarchive w...",
+                "fallback": "GitHub: Fix idempotency for Unix permissions in zip files. by chriskarel · Pull Request #24580 · ansible\/ansible",
+                "from_url": "https:\/\/github.com\/ansible\/ansible\/pull\/24580#issuecomment-302592533",
+                "thumb_url": "https:\/\/avatars2.githubusercontent.com\/u\/11828048?v=4&s=400",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1504130176.000018"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "(so preferably I'd want releases to be tarballs)",
+        "ts": "1504130195.000331"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "that is why we use bsdtar.  It process zips and does the right thing, usually.",
+        "ts": "1504130660.000195"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U54E4SD4G> would you be interested in contibuting this to the project?",
+        "ts": "1504132963.000232"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "I have already :sweat_smile:",
+        "ts": "1504133193.000341"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "(just a PR to provision-content so far)",
+        "ts": "1504133224.000026"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "you're a rock star! thanks",
+        "ts": "1504133298.000134"
+    }
+]

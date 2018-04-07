@@ -1,0 +1,64 @@
+[
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": " Thanks, <@U02DHRR2L> - just want to be able to answer questions correctly :)",
+        "ts": "1508596154.000063"
+    },
+    {
+        "text": "Hey so when I say run `sudo .\/dr-provision --static-ip=10.9.8.2 --file-root=\/Users\/gremlin\/drb\/drp-data\/tftpboot --data-root=drp-data\/digitalrebar`",
+        "username": "hadees",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1508638351.000032"
+    },
+    {
+        "text": "what are the docker commands happening?",
+        "username": "hadees",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1508638359.000015"
+    },
+    {
+        "text": "i'm wanting to run digitalrebar on http:\/\/rancher.com\/rancher-os\/",
+        "username": "hadees",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1508638513.000009"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Hi @hadees, DRPv3 does not use\/require docker.  You can run\/deploy the dr-provision binary in a container if you want, but not required.  ",
+        "ts": "1508638742.000028"
+    },
+    {
+        "text": "I thought it was running docker under the hood",
+        "username": "hadees",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1508638791.000022"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "If you insure the required supporting packages are installed, the dr-provision binary should run no problem, but we haven't tested it on RancherOS yet.   64 bit Linux is all that is needed for the binary. ",
+        "ts": "1508638848.000031"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Pkgs required are 7zip, unzip, and bsdtar. ",
+        "ts": "1508638878.000005"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "DRv2 used to, version 3 is a complete rewrite ",
+        "ts": "1508638910.000005"
+    }
+]

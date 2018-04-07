@@ -1,0 +1,1485 @@
+[
+    {
+        "text": "grabbing and installing",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493818968.900102"
+    },
+    {
+        "text": "dr-provision2017\/05\/03 13:49:00.327087 Received option: OptionClientIdentifier: ��K�",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493819357.071158"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yeah - some things send CID that aren't printable.",
+        "ts": "1493819512.140250"
+    },
+    {
+        "text": "interesting drp is responding dhcp on both my interfaces.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493820015.374672"
+    },
+    {
+        "text": "sledge keeps requesting, over and over.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493820025.379891"
+    },
+    {
+        "text": "every 30ish seconds",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493820087.410711"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yes - that is right.  The lease time is 60 seconds.  so renew time 30 seconds.",
+        "ts": "1493820172.451297"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You can change that in the subnet definition.",
+        "ts": "1493820183.456635"
+    },
+    {
+        "text": "nmap says up, but all ports closed.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493820193.461843"
+    },
+    {
+        "text": "I see your       {{ template \"root-remote-access.tmpl\" . }} in the sledge.yaml",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493820218.473546"
+    },
+    {
+        "text": "Did bootenvs need to be reloaded, to re-run templates?",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493820231.479857"
+    },
+    {
+        "text": "no serial console ouput (but it's at least connecting)",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493820323.524039"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yes - templates needs to be reloaded.",
+        "ts": "1493820474.597301"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "So do bootenvs.",
+        "ts": "1493820482.601172"
+    },
+    {
+        "text": "okdee doke.. thanks Greg!",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493820499.608931"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Templates are easy.  I have a bug I'm still working on to update bootenvs.",
+        "ts": "1493820504.611141"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It may be easiest to:",
+        "ts": "1493820512.614771"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "stop dr-provision",
+        "ts": "1493820514.615663"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "rm  -f drp-data\/digitalrebar\/bootenvs",
+        "ts": "1493820526.621386"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "rm -f drp-data\/digitalrebar\/templates",
+        "ts": "1493820532.624165"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Then rerun the tools\/discovery-load",
+        "ts": "1493820546.631048"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "and all the otehr bootenvs install commands from before.",
+        "ts": "1493820557.635926"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The bootenvs update is a real issue.",
+        "ts": "1493820567.640528"
+    },
+    {
+        "text": "roger.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493820659.683611"
+    },
+    {
+        "text": "should I bootenvs destroy before bootenvs install?",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493820740.721815"
+    },
+    {
+        "text": "chicken-egg problem with dr-provision and discovery-load ----- after the rm -f commands.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493821299.987489"
+    },
+    {
+        "text": ":(",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493821303.989151"
+    },
+    {
+        "text": "I guess gotta clear out the configs for the default boot envs.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493821328.001250"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "ugh - sorry. yeah prefs. will get in the way.",
+        "ts": "1493823557.120663"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I should know better.  Get fix the bugs instead of cludging around them .",
+        "ts": "1493823582.133451"
+    },
+    {
+        "text": "I can't find out to force start without the discovery",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493823745.220916"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "rm -rf drp-data\/digitalrebar\/preferences\/*",
+        "ts": "1493823888.297394"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "then reset them in the UI once all is loaded.  Sorry.",
+        "ts": "1493823915.311881"
+    },
+    {
+        "text": "OH!  DUH! there they are.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493823943.326203"
+    },
+    {
+        "text": "Did you miss updating the version string in the executable?",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493826390.565796"
+    },
+    {
+        "text": "dr-provision2017\/05\/03 15:45:03.939046 Version: v3.0.1-tip-38-10d0a97fe90d2104bf9c2e7720529496fac4c033",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493826396.568855"
+    },
+    {
+        "text": "or did I not delete all the rigth stuff?",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493826406.573160"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It should have automatically been updated ",
+        "ts": "1493826623.683341"
+    },
+    {
+        "text": "nevermind.. I didn't pull the versioned one.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493826637.690404"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The next tip build will be relative to 3.0.2",
+        "ts": "1493826665.704901"
+    },
+    {
+        "text": "the client gets sledge and the first script is run, but it seems control.sh never happens.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493829005.822674"
+    },
+    {
+        "text": "does it go out to the Internet?  Because I've got no NAT running on my private IP address range that I'm using for DHCP.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493829229.924475"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "it should not need internet, I think.",
+        "ts": "1493829367.986933"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "can you get on sledgehammer?",
+        "ts": "1493829385.994781"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "what does journalctl -u sledgehammer show",
+        "ts": "1493829394.998412"
+    },
+    {
+        "text": "no route to host.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493829443.020595"
+    },
+    {
+        "text": "it gets an IP address and shuts up.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493829451.023821"
+    },
+    {
+        "text": "no more dhcp requests.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493829459.027153"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "hmm - what IP did you use for the static-ip on the dr-provision line.  It should probably be the internal IP of your admin system.",
+        "ts": "1493829545.065646"
+    },
+    {
+        "text": "yup, i have em1 (public IP) em2 (192.168.1.1)",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493829579.080346"
+    },
+    {
+        "text": ".\/dr-provision --static-ip=192.168.1.1 --file-root=\/root\/drp\/dr-provision-install\/drp-data\/tftpboot --data-root=drp-data\/digitalrebar --debug-bootenv=2 --debug-dhcp=2 --debug-renderer=2 --dhcp-ifs=em2",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493829632.104181"
+    },
+    {
+        "text": "it pxes to tftp and gets the sledge bits.  then the logs dump out a script.  then nothing.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493829756.157920"
+    },
+    {
+        "text": "I can reset with IPMI.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493829771.165000"
+    },
+    {
+        "text": "dr-provision2017\/05\/03 16:29:51.742235 Rendering start-up.sh for All booting discovery\ndr-provision2017\/05\/03 16:29:51.742465 Content:\n#!\/bin\/bash\n\nexport PS4='${BASH_SOURCE}@${LINENO}(${FUNCNAME[0]}): '\nset -x\nset -e",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493829872.208599"
+    },
+    {
+        "text": "then I never see anything again.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493829882.212590"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Do you get a machine object?",
+        "ts": "1493829886.214826"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "wow.",
+        "ts": "1493829910.225695"
+    },
+    {
+        "text": "nope.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493829914.227518"
+    },
+    {
+        "text": "it dumps out the whole script.. up to the echo \"Did not get control.sh...\"",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493829941.239281"
+    },
+    {
+        "text": "the script was not dumped to console, it's in logs.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493829963.249218"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - whew  - I was worried.",
+        "ts": "1493829972.253465"
+    },
+    {
+        "text": "Should I ping the subnet to see if anything sprung to life?",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493830010.270088"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yeah - see if the node is reachable, but doesn't seem likely.",
+        "ts": "1493830027.277697"
+    },
+    {
+        "text": "because the IP that it got DHCP is truly down.  nmap says so.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493830042.284204"
+    },
+    {
+        "text": "? (192.168.1.52) at &lt;incomplete&gt; on em2",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493830066.294803"
+    },
+    {
+        "text": "^ arp -a",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493830103.311884"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yeah",
+        "ts": "1493830138.327703"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "it is like your boot dev isn't set.",
+        "ts": "1493830237.372317"
+    },
+    {
+        "text": "hmm.. interesting.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493830290.395322"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "the pxelinux.cfg\/default should have IPAPPEND 2 on it.",
+        "ts": "1493830333.415218"
+    },
+    {
+        "text": "ls .\/drp-data\/tftpboot\/pxelinux.cfg\/  &lt;- empty",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493830518.498493"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "curl <http:\/\/ip:8091\/pxelinux.cfg\/default>",
+        "ts": "1493830546.510749"
+    },
+    {
+        "text": "curl http:\/\/192.168.1.1:8091\/pxelinux.cfg\/default\nDEFAULT discovery\nPROMPT 0\nTIMEOUT 10\nLABEL discovery\n  KERNEL sledgehammer\/708de8b878e3818b1c1bb598a56de968939f9d4b\/vmlinuz0\n  INITRD sledgehammer\/708de8b878e3818b1c1bb598a56de968939f9d4b\/stage1.img\n  APPEND rootflags=loop root=live:\/sledgehammer.iso rootfstype=auto ro liveimg rd_NO_LUKS rd_NO_MD rd_NO_DM provisioner.web=http:\/\/192.168.1.1:8091 rs.api=https:\/\/192.168.1.1:8092\n  IPAPPEND 2",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493830907.681576"
+    },
+    {
+        "text": "OK... trying from remote host.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493830914.684507"
+    },
+    {
+        "text": "same",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493830926.690458"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "looks good",
+        "ts": "1493830929.692348"
+    },
+    {
+        "text": "and the swagger API is accessible",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493831012.730434"
+    },
+    {
+        "text": "curl -fsSLk https:\/\/192.168.1.1:8092\/",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493831023.735415"
+    },
+    {
+        "text": "OK",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493831027.736651"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "drpcli profiles show global",
+        "ts": "1493831061.753201"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "anything in those?",
+        "ts": "1493831066.755030"
+    },
+    {
+        "text": "just the name.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493831087.764471"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "ok",
+        "ts": "1493831100.770751"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "hmmm - maybe me.",
+        "ts": "1493831111.775772"
+    },
+    {
+        "text": "I see your greg key in access_keys",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493831131.784665"
+    },
+    {
+        "text": "but whatever, the machine isn't even online.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493831139.788484"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "well , if the script breaks it could do that.",
+        "ts": "1493831153.793789"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "profiles has something in it? or the examples profiles have something in it.",
+        "ts": "1493831168.799954"
+    },
+    {
+        "text": "drpcli profiles show global\n{\n  \"Name\": \"global\"\n}",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493831184.807951"
+    },
+    {
+        "text": "drpcli profiles list\n[\n  {\n    \"Name\": \"global\"\n  }\n]",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493831210.820261"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "ok",
+        "ts": "1493831256.840883"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Let me test something - i forgot",
+        "ts": "1493831329.873274"
+    },
+    {
+        "text": "I'm fine to kill and rm -rf the whole thing.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493831472.937201"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Try that and restart with new.  Make sure all the templates are aligned.",
+        "ts": "1493831568.979405"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I'm concerned I didn't test sledgehammer\/discovery without access_keys.",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1493831584.000000"
+        },
+        "ts": "1493831578.983721"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "testing now - may have found something.",
+        "ts": "1493832441.372809"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "nope - my bad.  on the virtualbox setup.",
+        "ts": "1493832922.596156"
+    },
+    {
+        "text": "script ran, asking for DHCP again - good progress.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493833496.859584"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Just published v3.0.3 - it has a fix for bootenv updating.  It is a cli change only.",
+        "ts": "1493833604.908274"
+    },
+    {
+        "text": "Goodness gracious, there a machine!",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493833728.966945"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": ":slightly_smiling_face:",
+        "ts": "1493833734.969727"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "If you add the access_keys parameter to the global profile like in the example, you should be able to ssh into sledgehammer (after a reboot).",
+        "ts": "1493833793.997015"
+    },
+    {
+        "text": "assets\/profiles\/root-access.yaml being the example?",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493834089.137152"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DGQYK1> &lt;offtopic&gt;Here in olde Austin-towne… Anyplace I should try to go and eat at tonight?",
+        "ts": "1493835557.835285"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Location and transportation info needed. BBQ?",
+        "ts": "1493835784.940808"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Loc: downtown (Hampton Inn Univ.) transportation: RideAustin or other. Food: Tx-Mex, Mex or BBQ - don’t care as long as it’s tasty!",
+        "ts": "1493835895.992490"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Thinking",
+        "ts": "1493835991.037672"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "soo - Victor and I were discussing -",
+        "ts": "1493836798.417136"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U416T0AAX> \nBBQ - Salt Lick (North in Round Rock), Iron Works (1st and RedRiver just off IH-35 (downtown)), Stubb's 8th\/RedRiver (sometimes has live music)",
+        "ts": "1493836998.510260"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "MEX - is harder - Manuel's - Not my normal.",
+        "ts": "1493837031.526097"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DGQYK1> Thx, looking to get my noms on while here :yum:",
+        "ts": "1493837096.557732"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Tex-Mex - Chuy's and\/or Trudy's - Chuy's is good food (chain, but started here).  One on North Lamar is not to far from you.  The one on riverside is neat because you can walk to Zilker park or other venues.",
+        "ts": "1493837118.568396"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Stubb's is neat because it is near sixth street for music and bars.  If that is your thing.",
+        "ts": "1493837143.580394"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Iron works is similar location wise just.",
+        "ts": "1493837172.594542"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Music yes, bars not anymore :wink:",
+        "ts": "1493837189.602533"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "(Except if they have music)",
+        "ts": "1493837368.688330"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "most bars have some music especially downtown.",
+        "ts": "1493837390.698703"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Loving being back in my home state (born in Houston, lived in El Paso for my early years)",
+        "ts": "1493837573.786440"
+    },
+    {
+        "text": "Hi rebars",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493837629.812676"
+    },
+    {
+        "text": "Just need a quick help here",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493837640.818535"
+    },
+    {
+        "text": "I am trying to deply openstack workload on DR",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493837654.825329"
+    },
+    {
+        "text": "But it fails at the last step on openstak-deploy",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493837678.836527"
+    },
+    {
+        "text": "with error Downloading common from repo http:\/\/localhost:8879\/charts\nhelm lint nova\n==&gt; Linting nova\n[INFO] Chart.yaml: icon is recommended\n[ERROR] templates\/: render error in \"nova\/templates\/daemonset-libvirt.yaml\": template: nova\/templates\/daemonset-libvirt.yaml:14:62: executing \"nova\/templates\/daemonset-libvirt.yaml\" at &lt;include \"hash\"&gt;: error calling include: template: nova\/charts\/common\/templates\/_funcs.tpl:22:4: executing \"hash\" at &lt;include $wtf $contex...&gt;: error calling include: template: nova\/templates\/configmap-etc.yaml:9:56: executing \"nova\/templates\/configmap-etc.yaml\" at &lt;include \"template\"&gt;: error calling include: template: nova\/charts\/common\/templates\/_funcs.tpl:12:3: executing \"template\" at &lt;include $wtf $contex...&gt;: error calling include: template: no template \"nova\/templates\/etc\/_ceph.client.cinder.keyring.yaml.tpl\" associated with template \"gotpl\"\n\nError: 1 chart(s) linted, 1 chart(s) failed\nMakefile:51: recipe for target 'build-nova' failed",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493837690.842701"
+    },
+    {
+        "text": "any help will be highyl appreciated",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493837703.848999"
+    },
+    {
+        "text": "its for a school project :)",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493837710.852140"
+    },
+    {
+        "text": "and while we are on it, try Tres-Leches from Chuy's",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493837744.868558"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "@ayush37 :+1:",
+        "ts": "1493837774.883799"
+    },
+    {
+        "text": "<@U02DHRR2L|zehicle>  is there any assistance regarding the error I am facing, if fixed I owe you a Tres-Leches",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493837828.909930"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "@ayush37 - not sure.  I haven't tried it 3 mos or so.  The upstream may have moved.",
+        "ts": "1493837837.914460"
+    },
+    {
+        "text": "<@U02DHRR2L|zehicle> Thanks, shall try fixing it by some means ",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493837885.937654"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I'm refreshing my memory.",
+        "ts": "1493837912.950427"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "This is Greg, it is confusing.",
+        "ts": "1493837921.955017"
+    },
+    {
+        "text": "yeah it is ",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493837951.969605"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "My current guess is that the upstream has moved on.  We do a git clone:",
+        "ts": "1493837970.979129"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "8 git clone <https:\/\/github.com\/galthaus\/openstack-helm.git>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "galthaus\/openstack-helm",
+                "title_link": "https:\/\/github.com\/galthaus\/openstack-helm.git",
+                "text": "openstack-helm - A collection of community-provided Kubernetes\/Helm charts, for the deployment and continued development lifecycle of containerized Openstack services on Kubernetes.",
+                "fallback": "GitHub: galthaus\/openstack-helm",
+                "from_url": "https:\/\/github.com\/galthaus\/openstack-helm.git",
+                "thumb_url": "https:\/\/avatars3.githubusercontent.com\/u\/724965?v=3&s=400",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1493837971.979361"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "but that is my repo.  So - maybe not.  Still could have atrophied.",
+        "ts": "1493837992.990096"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "What school project?",
+        "ts": "1493838000.993307"
+    },
+    {
+        "text": "I am a masters student at UT Dallas, its a research project",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493838018.003473"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Hmm - also could be 1.6.1 update.",
+        "ts": "1493838019.003871"
+    },
+    {
+        "text": "where my professir wants me to try out Digital Rebar",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493838031.009650"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "nice - okay",
+        "ts": "1493838040.013812"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Interesting - would like to know what for?  You may want to stick to more supported things.  :slightly_smiling_face:",
+        "ts": "1493838062.024074"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "What version of k8s did you install?",
+        "ts": "1493838078.032534"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "1.6.1 or 1.5.3 - it will depend upon when you started using DR.",
+        "ts": "1493838096.040966"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It is possible that you are using a too new k8s for the openstack stuff.",
+        "ts": "1493838106.045883"
+    },
+    {
+        "text": "actually, we are woryeah maybe",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493838111.048529"
+    },
+    {
+        "text": "yeah maybe",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493838115.050171"
+    },
+    {
+        "text": "let me check the k8 installation",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493838122.053052"
+    },
+    {
+        "text": "regaring the project, we are working with Ericsson for some POC ",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493838140.059755"
+    },
+    {
+        "text": "which involves the use of digital Rebar",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493838151.064802"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "One option is to \"redeploy\" after changing the version 1.5.3.",
+        "ts": "1493838152.065839"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "For OpenStack or general machine management?",
+        "ts": "1493838167.074098"
+    },
+    {
+        "text": "for OpenStack only",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493838176.078830"
+    },
+    {
+        "text": "I tried to deploy the openstack workload from GUI ",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493838202.090968"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Okay-  so you are looking for a quick openstack and DR might help with that.",
+        "ts": "1493838205.092611"
+    },
+    {
+        "text": "of the rebar",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493838206.093032"
+    },
+    {
+        "text": "exactly",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493838214.097088"
+    },
+    {
+        "text": "let me try with the older version of K8",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493838240.109277"
+    },
+    {
+        "text": "thanks a lot ",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493838296.135389"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah - so , you can change the options - reset things - then don't have the workload autocommit. Go into the deployment and find hte k8s-config role\/service (right corner of deployment).  Edit k8s version to 1.5.3.  Then commit the deployment.",
+        "ts": "1493838305.139891"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Also, you have DR working?  Without talking to us?  How?",
+        "ts": "1493838317.145279"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": ":slightly_smiling_face:",
+        "ts": "1493838331.151954"
+    },
+    {
+        "text": "hahaha, it was pretty self-explanatory the website",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493838338.155349"
+    },
+    {
+        "text": "its really kind of you guys to make it so lucid",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493838353.161784"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You must think like I do, which is rare.  I'm sorry for you.",
+        "ts": "1493838363.166973"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "or Victor.  Still sorry for you.",
+        "ts": "1493838381.175344"
+    },
+    {
+        "text": "if this works, I may get a \"A\" grade in my subject",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493838402.185006"
+    },
+    {
+        "text": "CLoud COmputing",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493838405.186408"
+    },
+    {
+        "text": ":D",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493838407.187073"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "ok - keep me posted.  I'm interested.",
+        "ts": "1493838425.195656"
+    },
+    {
+        "text": "with a Tres-Leches cake from myside to the DR team",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493838449.206958"
+    },
+    {
+        "text": "sure i wll ",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493838453.208075"
+    },
+    {
+        "text": "I started the deployment with 1.5.3",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493838636.291359"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - so it was already a t 1.5.3",
+        "ts": "1493838779.355012"
+    },
+    {
+        "text": "it was at 1.6.1",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493838804.366310"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "so - restarted. - let's see what happens.",
+        "ts": "1493838820.372395"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "WIth regard to Tres-Leches, I never make that far.  Between the Queso, chips, and meal, I'm usually ready to explode.  :slightly_smiling_face:",
+        "ts": "1493838847.385140"
+    },
+    {
+        "text": "yeah !! exactly, so I always ask the server to make the cake as togo",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493838905.410785"
+    },
+    {
+        "text": "once I am home, there no one stopping me",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493838916.415656"
+    },
+    {
+        "text": "from pounding on it",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493838924.418971"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": ":slightly_smiling_face: planning and gluttony - it is a beautiful thing",
+        "ts": "1493838948.429490"
+    },
+    {
+        "text": "its like on of the sevens sins, executed perfectly",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493838973.440742"
+    },
+    {
+        "text": "getting back to DR fiasco: its running well and currently perfroming the etcs-install",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493839195.537990"
+    },
+    {
+        "text": "etcd*",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493839198.538887"
+    },
+    {
+        "text": "Unofrtunately failed at k8s-dns",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493841029.333073"
+    },
+    {
+        "text": "\nErr:  [WARNING]: Consider using yum, dnf or zypper module rather than running rpm\n\nBacktrace:\n\/opt\/digitalrebar\/core\/rails\/app\/models\/jig.rb:52:in `die'\n\/opt\/digitalrebar\/core\/rails\/app\/models\/barclamp_rebar\/ansible_playbook_jig.rb:290:in `run'\n\/opt\/digitalrebar\/core\/rails\/app\/models\/run.rb:79:in `run'\n\/var\/cache\/rebar\/gems\/ruby\/2.1.0\/gems\/que-0.11.2\/lib\/que\/job.rb:15:in `_run'\n\/var\/cache\/rebar\/gems\/ruby\/2.1.0\/gems\/que-0.11.2\/lib\/que\/job.rb:100:in `block in work'\n\/var\/cache\/rebar\/gems\/ruby\/2.1.0\/gems\/que-0.11.2\/lib\/que\/adapters\/active_record.rb:5:in `block in checkout'\n\/var\/cache\/rebar\/gems\/ruby\/2.1.0\/gems\/activerecord-4.2.5\/lib\/active_record\/connection_adapters\/abstract\/connection_pool.rb:292:in `with_connection'\n\/var\/cache\/rebar\/gems\/ruby\/2.1.0\/gems\/que-0.11.2\/lib\/que\/adapters\/active_record.rb:48:in `checkout_activerecord_adapter'\n\/var\/cache\/rebar\/gems\/ruby\/2.1.0\/gems\/que-0.11.2\/lib\/que\/adapters\/active_record.rb:5:in `checkout'\n\/var\/cache\/rebar\/gems\/ruby\/2.1.0\/gems\/que-0.11.2\/lib\/que\/job.rb:83:in `work'\n\/var\/cache\/rebar\/gems\/ruby\/2.1.0\/gems\/que-0.11.2\/lib\/que\/worker.rb:78:in `block in work_loop'\n\/var\/cache\/rebar\/gems\/ruby\/2.1.0\/gems\/que-0.11.2\/lib\/que\/worker.rb:73:in `loop'\n\/var\/cache\/rebar\/gems\/ruby\/2.1.0\/gems\/que-0.11.2\/lib\/que\/worker.rb:73:in `work_loop'\n\/var\/cache\/rebar\/gems\/ruby\/2.1.0\/gems\/que-0.11.2\/lib\/que\/worker.rb:17:in `block in initialize'",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493841031.333637"
+    },
+    {
+        "text": "<@U02DHRR2L|zehicle> Now i am trying as Ubuntu 16.04 as OS, prev deployment was on Centos 7.2",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493841104.366694"
+    },
+    {
+        "text": "unfortunately failed at same step with k8s version 1.5.3",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493842971.184839"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "hmm - okay - I'll add it to my queue to retry it myself.",
+        "ts": "1493843033.211136"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Can you describe your environment so I can get close to it?",
+        "ts": "1493843043.215494"
+    },
+    {
+        "text": "yes it is on AWS Ubuntu 16.04 LTS as Rebar server",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493843068.226450"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "What nodes?",
+        "ts": "1493843096.238318"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "AWS instances?",
+        "ts": "1493843102.241126"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "from the aws provider?",
+        "ts": "1493843112.245275"
+    },
+    {
+        "text": "t2.xlarge",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493843121.249031"
+    },
+    {
+        "text": "So if I try with K8s version 1.5.3 it fails at k8s dns step, and if the version is 1.6.1 it fails at last step OPenstack-deployment",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493843174.271125"
+    },
+    {
+        "text": "thanks a lot <@U02DHRR2L|zehicle>  for you consideration, highly appreciated",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493843210.286881"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yeah - I need to see what is failing . \"Something\" has changed.  I may not get to this until tomorrow.",
+        "ts": "1493843225.293185"
+    },
+    {
+        "text": "yes I understand, thanks again for your effortm, I shall also try debugging it, if I find a fix shall post you",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493843272.313445"
+    },
+    {
+        "text": "till then, may the force be with you",
+        "username": "Ayush37",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493843306.328761"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": ":slightly_smiling_face:",
+        "ts": "1493843513.419181"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "I'd suggest <http:\/\/Packet.net|Packet.net> over AWS for Openstack tests. ",
+        "ts": "1493845646.321442"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "there's a rackn code iirc",
+        "ts": "1493846024.465846"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "Yes, RACKN100 - I think it gets $25 credit or so",
+        "ts": "1493852169.300199"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "I think it may actually have been $100?",
+        "ts": "1493853018.492300"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "it was originally...",
+        "ts": "1493853219.533261"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "about a year ago.  early adopter benefits :slightly_smiling_face:",
+        "ts": "1493853251.540636"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "Ah.",
+        "ts": "1493853359.563700"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "Guess I got in early enough, haha.",
+        "ts": "1493853373.566499"
+    }
+]

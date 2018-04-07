@@ -1,0 +1,519 @@
+[
+    {
+        "text": "@gregoryo2008_twitter yes, there's an email list https:\/\/groups.google.com\/forum\/#!forum\/digitalrebar  ",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486327434.000007"
+    },
+    {
+        "text": "we could also add you to the community slack channel (this channel is now cross linked to that one)",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486327463.000008"
+    },
+    {
+        "text": "<@U02DHRR2L|zehicle> Okay I've joined the forum (crickets!). If I stick with Rebar after this week, I'll talk to you about the Slack channel.",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486341815.000009"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "@gregoryo2008_twitter: What is going to make your decision?",
+        "ts": "1486341867.000010"
+    },
+    {
+        "text": "Whoa, actual live chat! Good question - we've been working with Fuel and I'm casting about to see how other systems work. I'm entirely new to OpenStack so I'm not sure if I know enough yet to know what is going to make the decision!",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486342555.000011"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "our openstack is pretty raw, but making progress.",
+        "ts": "1486342589.000012"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Where are you?",
+        "ts": "1486342593.000013"
+    },
+    {
+        "text": "Conceptually though, I'm interested to know how we'll end up managing and upgrading our nodes once we have a system in place. Getting it going initially seems like the basic functionality of a deployment system, but those other tasks are going to become quite important, especially since OpenStack has a quick and almost-enforced upgrade cycle.",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486342652.000014"
+    },
+    {
+        "text": "I'm in Western Australia.",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486342666.000015"
+    },
+    {
+        "text": "Puppet is our CMDB of choice, so we're hoping that whatever tool we use can cope with that either being integrated some how, or bolted on afterward.",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486342706.000016"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah - those are good questions, that I'm not sure anyone has answered.  I think we have a workable story, but we need people to start.",
+        "ts": "1486342714.000017"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We have worked with that in the past.  We can drive it or call out to puppet post provisioining.  Either works.",
+        "ts": "1486342753.000018"
+    },
+    {
+        "text": "Hey have you got any recommendations for a good way to get up and running? I'm working through a Linux Academy training course, and it's built on Icehouse ): Clearly working with it is going to be ultimately the main method, but some cohesive guidance would be good too.",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486342805.000019"
+    },
+    {
+        "text": "Okay, good to hear that Puppet isn't going to be a square peg. Devil in the details, of course.",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486342832.000020"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "hmm - next to think about it.  We may want to let you see our stuff.  It will get the basics up, but still needs a little work around actual compute and neutron side.",
+        "ts": "1486342969.000021"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It gets you k8s along the way.  :slightly_smiling_face: or :disappointed: depending upon your perspective.",
+        "ts": "1486342987.000022"
+    },
+    {
+        "text": "k8s?",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486342999.000023"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "kuberenetes - most openstack deployment mechanisms are moving to it to manage the deployment of Openstack.",
+        "ts": "1486343024.000024"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You run the openstack components as containers managed by k8s.",
+        "ts": "1486343045.000025"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Some have the goal of seamless container and vm interactions.",
+        "ts": "1486343057.000026"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We'll see if that comes about.",
+        "ts": "1486343066.000027"
+    },
+    {
+        "text": "Oh goody, another thing to learn. We've been looking at k8s from afar wondering if we'd need to work out what it actually is.",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486343071.000028"
+    },
+    {
+        "text": "Is there a performance\/manageability tradeoff at every turn with these decisions?",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486343107.000029"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "manageability.",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1486343151.000000"
+        },
+        "ts": "1486343144.000030"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "performance shouldn't be hurt.  Containers appear to be a good trade-off in that area.  These are mostly long running containers, so perf isn't really a problem.",
+        "ts": "1486343184.000032"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The manageability comes from the fact that k8s can help with availability and upgrades.",
+        "ts": "1486343216.000033"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "k8s works on manifests and you can change a manifest and the system will \"automagically\" move the containers to new versions.  We'll see how well it goes in practice, but ...",
+        "ts": "1486343251.000034"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "So, you get some upgrade in there.",
+        "ts": "1486343263.000035"
+    },
+    {
+        "text": "Very promising in theory. Without knowing how the guts work it really is just magic to me for now.",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486343330.000036"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "To add fear, the openstack we are playing with is opensource stuff with AT*T .  They use helm which is a manifest manager for k8s.  It will hopefully get to where the helm charts will have upgrade actions like roll out next version.  db upgrades, container updates, and .....",
+        "ts": "1486343342.000037"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Our system will do it all - deploy k8s, helm, ceph, and then openstack.",
+        "ts": "1486343397.000038"
+    },
+    {
+        "text": "Haven't heard of helm - just found your vid on YouTube about it, will have a watch.",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486343516.000039"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": ":slightly_smiling_face: be kind",
+        "ts": "1486343524.000040"
+    },
+    {
+        "text": "Portal 2 icon peeking through from the desktop is a nice touch (:",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486343629.000041"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "All coding makes Greg a sad boy.",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1486343709.000000"
+        },
+        "ts": "1486343703.000042"
+    },
+    {
+        "text": "So I have tried to grok the relationship between Crowbar, OpenCrowbar and Digital Rebar... Crowbar is v1 and looked after by SUSE, OpenCrowbar (v2) became DigitalRebar (v3) - right?",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486343883.000044"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yep",
+        "ts": "1486343895.000045"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "V2 was started at Dell but died internal.  2.5 years ago Dell said they were done. Rob  left Dell and I joined him  again and started DigitalRebar from that base.  Victor joined us soon after.",
+        "ts": "1486343995.000046"
+    },
+    {
+        "text": "Time to feed the :bear:!",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1486343996.000047"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I left Dell as 2.0 was being designed.  I didn't want to deal with the transition to private company.",
+        "ts": "1486344055.000048"
+    },
+    {
+        "text": "Time to feed the :bear:!",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1486344055.000049"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I created Crowbar with Rob.  Victor was one of the first to join the team.  We've been doing this awhile.",
+        "ts": "1486344103.000050"
+    },
+    {
+        "text": "Okay, all makes sense. Okay straight up: Watching a couple of videos I'm hearing terms like 'proof of concept' and wondering about maturity and readiness. We're looking to build a production cluster in the next few months (at least some of the team knows heaps more about OpenStack than me). Should we be considering Rebar now?",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486344176.000051"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We've learned lots and learn more all the time.  The crowbar and some of 2.0 design have issues.  We've been amazed that Suse continues to drive on, but they don't really change Crowbar and live with warts, but are going to have issues trying to add additional workloads and support for newer systems.",
+        "ts": "1486344178.000052"
+    },
+    {
+        "text": "Yeah it's those warts that I don't have a clue about yet.",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486344197.000053"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You can't debug an issue easily in CB1.0 and 2.0.  DR has more atomic and segregated items.",
+        "ts": "1486344247.000054"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Well, we are brutally honest at times about our state.  We have people starting to use us for production with some pretty intense integrations.  Should be able to talk about that more soon.",
+        "ts": "1486344305.000055"
+    },
+    {
+        "text": "It all sounds pretty good, so I'll keep hacking and see how it goes. Gotta go fight with the hardware networking config on my test box now, so I can hopefully browse to my newly installed DR.",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486344375.000056"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I think your problem isn't going to be DR, but the stability of the systems you want to deploy.  We can help with that.",
+        "ts": "1486344403.000057"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "networking always fun",
+        "ts": "1486344411.000058"
+    },
+    {
+        "text": "Do you have a sense of Fuel's community, software (design, operation etc) and direction?",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486344451.000059"
+    },
+    {
+        "text": "Someone told me that Mirantis are pulling out of Fuel.",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486344471.000060"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "In some regard, I think they are influx.  They aren't sure what they want to do there.",
+        "ts": "1486344521.000061"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I've never completely bought into fuel.  To merged together and not separable.  We deployed fuel to deploy openstack once.  Very silly POC&gt;",
+        "ts": "1486344597.000062"
+    },
+    {
+        "text": "Well that's exactly what we've been doing - last week a colleague created a few dozen VMs as a test - all on OpenStack deployed with Fuel. Seems to be going okay.",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486345319.000063"
+    },
+    {
+        "text": "But ongoing manageability is a question - looks like they use mcollective to kick locally installed Puppet manifests.",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486345371.000064"
+    },
+    {
+        "text": "Anyway, it's been excellent to talk to you, thanks for your time. Time for me to go and learn more.",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486345394.000065"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": ":slightly_smiling_face: have fun.",
+        "ts": "1486345482.000066"
+    },
+    {
+        "text": "Hey @galthaus can I get an invite to community Slack? (If that's a better comms channel than this...)",
+        "username": "wdennis",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486347247.000067"
+    },
+    {
+        "text": "@gregoryo2008_twitter to my knowledge, old FUEL is not being maintained (it's really just cobbler + puppet).  New FUEL is completely different w\/o an upgrade based on salt (and MaaS?).    Also, it's OpenStack focused.  We've been careful to be general purpose.  That adds some complexity but makes us more robust too.   That's why we've got ansible, puppet and chef all running together.",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486347917.000068"
+    },
+    {
+        "user": "U416T0AAX",
+        "text": "<@U416T0AAX> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1486348048.000069"
+    },
+    {
+        "text": "@gregoryo2008_twitter we're betting that kubernetes is the better underlay and have been working to support the OpenStack-Helm efforts.    It's not all there yes (Greg said the same thing earlier) but could get there pretty fast.",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486348105.000070"
+    },
+    {
+        "text": "https:\/\/www.youtube.com\/watch?v=wZ0vMrdx4a4&amp;index=2&amp;list=PLXPBeIrpXjfjabMbwYyDULOX3kZmlxEXK",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486348106.000071"
+    },
+    {
+        "text": "What's this talk of 'old' Fuel and 'new' Fuel? There's https:\/\/www.mirantis.com\/software\/openstack\/fuel\/ and https:\/\/fuel-infra.org - is that what you mean?",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486349989.000072"
+    },
+    {
+        "text": "I don't think so.  fuel-infra looks like the \"big tent\" version of old fuel.  I think the new one is Fuel-Ccp https:\/\/github.com\/openstack\/fuel-ccp",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486350116.000073"
+    },
+    {
+        "text": "Ah, something else again. Not sure what you mean by big tent - open source community version is how I've heard it described, versus Mirantis' version. Anyway, thank you, this adds more grist for the mill.",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486351386.000074"
+    },
+    {
+        "text": "like most of OpenStack, it's a long story.  Are you looking for DYI or a distro?",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486354289.000075"
+    },
+    {
+        "text": "We're looking to be able to deploy OpenStack using some sort of deployment tool that is both easy to get started, and customisable. We want to be able to upgrade it without massive effort every six months. We want to be able to automate as much as possible in ways that we can control - we have Puppet expertise and in-house usage already.",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486355816.000076"
+    },
+    {
+        "text": "I suspect we will want to be able to customise both the deployment platform's settings _and_ the OpenStack that it is deploying and managing. If we can do both with something like Puppet, all the better.",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486355900.000077"
+    },
+    {
+        "text": "I'd be happy to set up a 1x1 to see if there's a fit.",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486356310.000078"
+    },
+    {
+        "text": "IMHO, what you are describing is not just about OpenStack but broader ops.  That's our approach.  The point of the K8s underlay for Openstack is to help w\/ upgrades of OpenStack but it can be used more broadly too.",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486356399.000079"
+    },
+    {
+        "text": "What do you mean a 1x1?",
+        "username": "gregoryo2008_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1486356863.000080"
+    }
+]

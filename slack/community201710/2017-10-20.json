@@ -1,0 +1,362 @@
+[
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "Morning all, sifting through the 'stuff' out there about Kubernetes (k8), Docker, mesosphere, cloudstack and openstack...  In all the things i am seeing, what would be the leanest first run to show how DRP works in allowing people to create what they need... today on the front page of docker is they are putting k8 with their service...",
+        "ts": "1508502337.000257"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "the other question i have is what tool could i use that give a dashboard of available resources and deploy a kvm \/ vm on top of ubuntu16?",
+        "ts": "1508503026.000054"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U7J7U5DA9> you could try the Kibernetes integration we've done - via Kubespray:\n<http:\/\/provision.readthedocs.io\/en\/tip\/doc\/integrations\/ansible.html> \nBut in general - we don't do a lot of \"Application Stack\" integrations - simply because that isn't what the DRP solution is about -  it's about building Bare Metal for YOUR environment, and you can put YOUR workloads on the metal",
+        "ts": "1508505316.000416"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the Kubernetes stuff we have is a demonstration for that reason",
+        "ts": "1508505332.000210"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "what is your use case for KVM ?   there are a LOT of \"UI\/Dashboard\" based KVM controller solutions available out there ...",
+        "ts": "1508505361.000372"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "<@U6QFVRJNB> - this needs to show the dashboard can have a users with quotas and then show what is available to 'spin up' a vm \/ kvm or container",
+        "ts": "1508506539.000303"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "whether that is handled all under kubernetes and openstack or docker or virtual box or vagrant",
+        "ts": "1508506586.000014"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "well - Digital Rebar is not really a provider for that sort of thing ... but Virtualization and Containerization management solutions are typically separate tools \/ things",
+        "ts": "1508506629.000141"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "leveraging kubernetes is something that is a part of DR - so then what do most of the community \/ customers use when deploying DR with 'k8' ?",
+        "ts": "1508506702.000190"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "<@U6QFVRJNB> have you tried this? <https:\/\/kubernetes.io\/docs\/getting-started-guides\/ubuntu\/local\/>",
+        "attachments": [
+            {
+                "service_name": "Kubernetes",
+                "title": "Local Kubernetes development with LXD",
+                "title_link": "https:\/\/kubernetes.io\/docs\/getting-started-guides\/ubuntu\/local\/",
+                "text": "Production-Grade Container Orchestration",
+                "fallback": "Kubernetes: Local Kubernetes development with LXD",
+                "from_url": "https:\/\/kubernetes.io\/docs\/getting-started-guides\/ubuntu\/local\/",
+                "service_icon": "https:\/\/kubernetes.io\/images\/favicon.png",
+                "id": 1
+            }
+        ],
+        "ts": "1508507369.000486"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "nope",
+        "ts": "1508507381.000550"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "from what i am reading about it I would use DR and deploy my ubuntu nodes and then run this kubernetes tool.",
+        "ts": "1508507556.000346"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "<@U6QFVRJNB> one other question, what is the most 'graceful' method to stopping DR on the server?",
+        "ts": "1508507887.000270"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Just kill (not -9) of the dr-provision service is fine",
+        "ts": "1508511148.000341"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "<@U6QFVRJNB> thats a very good housekeeping note!",
+        "ts": "1508514063.000272"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U02DHRR2L> uploaded a file: <https:\/\/rackn.slack.com\/files\/U02DHRR2L\/F7NKC925C\/digital_rebar_runner_workflow.png|Digital Rebar Runner Workflow.png> and commented: sharing some early draft of stages\/jobs\/tasks graphics",
+        "file": {
+            "id": "F7NKC925C",
+            "created": 1508546019,
+            "timestamp": 1508546019,
+            "name": "Digital Rebar Runner Workflow.png",
+            "title": "Digital Rebar Runner Workflow.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U02DHRR2L",
+            "editable": false,
+            "size": 78939,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7NKC925C\/digital_rebar_runner_workflow.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7NKC925C\/download\/digital_rebar_runner_workflow.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7NKC925C-3e92b7cc2a\/digital_rebar_runner_workflow_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7NKC925C-3e92b7cc2a\/digital_rebar_runner_workflow_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7NKC925C-3e92b7cc2a\/digital_rebar_runner_workflow_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 276,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7NKC925C-3e92b7cc2a\/digital_rebar_runner_workflow_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 369,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7NKC925C-3e92b7cc2a\/digital_rebar_runner_workflow_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7NKC925C-3e92b7cc2a\/digital_rebar_runner_workflow_720.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 553,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7NKC925C-3e92b7cc2a\/digital_rebar_runner_workflow_800.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 614,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7NKC925C-3e92b7cc2a\/digital_rebar_runner_workflow_960.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 737,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7NKC925C-3e92b7cc2a\/digital_rebar_runner_workflow_1024.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 786,
+            "image_exif_rotation": 1,
+            "original_w": 1155,
+            "original_h": 887,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U02DHRR2L\/F7NKC925C\/digital_rebar_runner_workflow.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F7NKC925C-1477d394bd",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 1,
+            "initial_comment": {
+                "id": "Fc7MLHBE4B",
+                "created": 1508546019,
+                "timestamp": 1508546019,
+                "user": "U02DHRR2L",
+                "is_intro": true,
+                "comment": "sharing some early draft of stages\/jobs\/tasks graphics"
+            }
+        },
+        "user": "U02DHRR2L",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "zehicle",
+        "bot_id": null,
+        "ts": "1508546023.000021"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Love it - moar docu!!! (Please and thanks)",
+        "ts": "1508551959.000024"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Again (to clarify) - DRP runner mode is just for RackN-registered logins, right?",
+        "ts": "1508552238.000064"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Correct - \"stages\" and \"tasks\" are advanced content ",
+        "ts": "1508552334.000052"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So, stages, their tasks and jobs need the runner mode to process them, correct?",
+        "ts": "1508552400.000021"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "You got it.  Runner is in the RackN BootEnvs.... ",
+        "ts": "1508552459.000013"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Ok, got it.\nThen, CE (i.e. open-source bits) just has BootEnvs without the runner invocation at the end?",
+        "ts": "1508552546.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Correct, there is no task flow, so no need for CE content to have runner ",
+        "ts": "1508552632.000029"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Now, RackN registration (login) is free, and stages\/tasks\/runners are all free functionality with registration, right? Or is it in the plans to charge for registration at some point?",
+        "ts": "1508552792.000033"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Or is it that just some of the RackN-authored stages\/other functionality (like plugins) that will be for-charge?",
+        "ts": "1508552927.000001"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "2 levels of RackN content, registered free, and registered pay.  Stages\/tasks\/workflow are enabled in the free reg content (\"os-linux\" content pack for example ), and should remain free ",
+        "ts": "1508553175.000018"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7NKVTUTY\/image_uploaded_from_ios.jpg|The things one thinks about while sitting around a nice campfire :)>",
+        "file": {
+            "id": "F7NKVTUTY",
+            "created": 1508553181,
+            "timestamp": 1508553181,
+            "name": "Image uploaded from iOS.jpg",
+            "title": "The things one thinks about while sitting around a nice campfire :)",
+            "mimetype": "image\/jpeg",
+            "filetype": "jpg",
+            "pretty_type": "JPEG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 9098450,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7NKVTUTY\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7NKVTUTY\/download\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7NKVTUTY-c5722d6266\/image_uploaded_from_ios_64.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7NKVTUTY-c5722d6266\/image_uploaded_from_ios_80.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7NKVTUTY-c5722d6266\/image_uploaded_from_ios_360.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 270,
+            "thumb_360_h": 360,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7NKVTUTY-c5722d6266\/image_uploaded_from_ios_480.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 360,
+            "thumb_480_h": 480,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7NKVTUTY-c5722d6266\/image_uploaded_from_ios_160.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7NKVTUTY-c5722d6266\/image_uploaded_from_ios_720.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 540,
+            "thumb_720_h": 720,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7NKVTUTY-c5722d6266\/image_uploaded_from_ios_800.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 1067,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7NKVTUTY-c5722d6266\/image_uploaded_from_ios_960.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 720,
+            "thumb_960_h": 960,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7NKVTUTY-c5722d6266\/image_uploaded_from_ios_1024.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 768,
+            "thumb_1024_h": 1024,
+            "image_exif_rotation": 1,
+            "original_w": 3024,
+            "original_h": 4032,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7NKVTUTY\/image_uploaded_from_ios.jpg",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F7NKVTUTY-ba06bbfd06",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "upload_reply_to": "401D9125-3617-4735-8CEE-39858ECAB306",
+        "ts": "1508553181.000035"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Ok, cool, that was my understanding too... ",
+        "ts": "1508553225.000020"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Just wondering if I was right or not...",
+        "ts": "1508553259.000063"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Goes without saying, these three levels (CE, RackN free, RackN paid) should be made very explicit on the website \/ mktg stuff \/ docu...",
+        "ts": "1508553396.000001"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "(Guess I just did say it!)",
+        "ts": "1508553425.000076"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "This just broke my brain: <https:\/\/rackn.slack.com\/archives\/C02L9P26Q\/p1508507369000486>",
+        "attachments": [
+            {
+                "from_url": "https:\/\/rackn.slack.com\/archives\/C02L9P26Q\/p1508507369000486",
+                "fallback": "[October 20th, 2017 6:49 AM] johnsutten: <@U6QFVRJNB> have you tried this? <https:\/\/kubernetes.io\/docs\/getting-started-guides\/ubuntu\/local\/>",
+                "ts": "1508507369.000486",
+                "author_id": "U7J7U5DA9",
+                "author_subname": "JohnS",
+                "channel_id": "C02L9P26Q",
+                "channel_name": "community",
+                "is_msg_unfurl": true,
+                "text": "<@U6QFVRJNB> have you tried this? <https:\/\/kubernetes.io\/docs\/getting-started-guides\/ubuntu\/local\/>",
+                "author_name": "JohnS",
+                "author_link": "https:\/\/rackn.slack.com\/team\/U7J7U5DA9",
+                "author_icon": "https:\/\/avatars.slack-edge.com\/2017-10-13\/256271954148_da84c7b3cef0ae8f3c29_48.png",
+                "mrkdwn_in": [
+                    "text"
+                ],
+                "id": 1,
+                "footer": "Posted in #community"
+            }
+        ],
+        "ts": "1508553955.000044"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Running a container orchestration system on containers so you can run some containers on your containers",
+        "ts": "1508554015.000011"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U416T0AAX> I'm confirming Shane's statement that our expectation is that we are not planning to require payment (registration is free) for templates that use stages\/runner.  We expect that more advanced features will require payment.",
+        "ts": "1508554512.000031"
+    }
+]

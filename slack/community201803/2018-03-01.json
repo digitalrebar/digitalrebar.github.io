@@ -1,0 +1,86 @@
+[
+    {
+        "type": "message",
+        "user": "U9DAYGSRL",
+        "text": "virtualbox VM is not PXE booting from DRP (bootenv: sledgehammer). after tftp'ing lpxelinux.0. VM network logs (wireshark) show following error: \n477\t0.378296662\t10.10.20.76\t10.10.31.96\tTFTP\t159\tError Code, Code: File not found, Message: open \/var\/lib\/dr-provision\/tftpboot\/pxelinux.cfg\/16089a59-9abd-48c2-850a-2ac3bc134935: no such file or directory",
+        "ts": "1519892812.000025"
+    },
+    {
+        "type": "message",
+        "user": "U9DAYGSRL",
+        "text": "I see that there is no such file in dr-provision file area",
+        "ts": "1519892826.000371"
+    },
+    {
+        "type": "message",
+        "user": "U9DAYGSRL",
+        "text": "what can be possible bug. I might have done something.",
+        "ts": "1519892852.000061"
+    },
+    {
+        "type": "message",
+        "user": "U9DAYGSRL",
+        "text": "Thanks",
+        "ts": "1519892855.000063"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "That is expected behavior for lpxelinux.0. see <http:\/\/www.syslinux.org\/wiki\/index.php?title=PXELINUX#Configuration>",
+        "client_msg_id": "14877cb4-da7d-4d17-a7e1-9f31176122a3",
+        "thread_ts": "1519910364.000361",
+        "reply_count": 1,
+        "replies": [
+            {
+                "user": "U9DAYGSRL",
+                "ts": "1519994846.000141"
+            }
+        ],
+        "unread_count": 1,
+        "ts": "1519910364.000361"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Specifically, lpxelinux tries to fetch config files in a specific order.  The first one os the DHCP client ID, which we don't use because (for servers or anything else that network boots) the client ID is a much worse unique identifier than the MAC address of the interface or the IP address the interface was assigned.",
+        "ts": "1519915973.000193"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U416T0AAX> - tip community content has a fix for ubuntu install.",
+        "ts": "1519919630.000643"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You can use the current content tip with stable drp.",
+        "ts": "1519919643.000059"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I also have PR in community content that moves all the partman options into the schema file.  I know this will break community and haven’t pulled it in.",
+        "ts": "1519919716.000684"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I also want to spend more time on it to reorg it a little more.",
+        "ts": "1519919730.000911"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Thx <@U02DGQYK1>",
+        "client_msg_id": "5BF34FF1-5747-4026-97A2-724B3C28CA3D",
+        "ts": "1519921711.000598"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I do think consolidating all partman directives into a single template is the sanest option... But do recognize the need to get current users on board with that change.",
+        "client_msg_id": "E2E5D3EA-7391-4AB7-A3C1-AA262840F0B5",
+        "ts": "1519921827.000205"
+    }
+]

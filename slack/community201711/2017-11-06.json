@@ -1,0 +1,184 @@
+[
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<!channel> - v3.2.1 is out for DRP.  Check out release notes here: for v3.2.1 and v3.2.0\n<https:\/\/github.com\/digitalrebar\/provision\/releases\/tag\/v3.2.1>\n<https:\/\/github.com\/digitalrebar\/provision\/releases\/tag\/v3.2.0>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/releases\/tag\/v3.2.1",
+                "text": "provision - The Provisioner for DigitalRebar as a Stand Alone Golang Utility",
+                "fallback": "GitHub: digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/releases\/tag\/v3.2.1",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 192,
+                "thumb_height": 192,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1510003733.000387"
+    },
+    {
+        "type": "message",
+        "user": "U32PZNCP5",
+        "text": "Congrats",
+        "ts": "1510003748.000286"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": ":+1:",
+        "ts": "1510003800.000413"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DGQYK1> Is it doable to upgrade from v3.2.0-tip-3-00bcb20b04826393bd426478ee260c553225e463 to v3.2.1 ??",
+        "ts": "1510006512.000126"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yes ",
+        "ts": "1510006531.000220"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "3.2.0 to 3.2.1 should be easy",
+        "ts": "1510006537.000089"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "just the dr-provision binary needs to be replaced",
+        "ts": "1510006553.000066"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<!channel> tomorrows meetup details are posted ... we look forward to seeing you if you can make it ... :\n<https:\/\/www.meetup.com\/digitalrebar\/events\/243490141\/>",
+        "attachments": [
+            {
+                "service_name": "Meetup",
+                "title": "Digital Rebar",
+                "title_link": "https:\/\/www.meetup.com\/digitalrebar\/events\/243490141\/",
+                "text": "<https:\/\/zoom.us\/j\/3403934274> Welcome to the fourth (v004) Digital Rebar online meetup!  In today's meetup we'll discuss the status of Digital Rebar Provisi",
+                "fallback": "Meetup: Digital Rebar",
+                "thumb_url": "https:\/\/secure.meetupstatic.com\/photos\/event\/c\/a\/0\/0\/highres_464511712.jpeg",
+                "from_url": "https:\/\/www.meetup.com\/digitalrebar\/events\/243490141\/",
+                "thumb_width": 188,
+                "thumb_height": 186,
+                "service_icon": "https:\/\/secure.meetupstatic.com\/s\/img\/144395054627769971357\/logo\/swarm\/m_swarm_120x120.png",
+                "id": 1
+            }
+        ],
+        "ts": "1510011454.000287"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U6QFVRJNB> can I curl\/wget the v3.2.1 dr-provision binary from somewhere?",
+        "ts": "1510016330.000109"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "not just the binary - but you can get the zip file and just extract the binary - if you check the installer script (<https:\/\/get.rebar.digital\/stable>), you'll see:\n```echo \"Installing Version $DRP_VERSION of Digital Rebar Provision\ncurl -sfL -o dr-provision.zip <https:\/\/github.com\/digitalrebar\/provision\/releases\/download\/$DRP_VERSION\/dr-provision.zip>\ncurl -sfL -o dr-provision.sha256 <https:\/\/github.com\/digitalrebar\/provision\/releases\/download\/$DRP_VERSION\/dr-provision.sha256>```",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1510016637.000000"
+        },
+        "ts": "1510016531.000093"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "so substitute the DRP_VERSION (eg \"stable\") for the variable - and you can wget \/ curl it directly",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1510016561.000000"
+        },
+        "ts": "1510016553.000115"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, done, thx",
+        "ts": "1510017124.000162"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Is there any reason that in UX’s “Machines”, when you edit a node, you cannot change the “Name” of the node?",
+        "ts": "1510017667.000247"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I can see making the UUID immutable, but not the Name…",
+        "ts": "1510017730.000059"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Name should be Changable.  Fqdn is required ",
+        "ts": "1510017876.000028"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "FQDN? I’ve always just used a shortname for “Name”",
+        "ts": "1510017921.000079"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "I think in the UI it's not changeable",
+        "ts": "1510018018.000164"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "yeah, I can't edit it from the UI",
+        "ts": "1510018034.000031"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "or at least, it's not obvious how",
+        "ts": "1510018039.000145"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I don’t know why, I can change it thru drpcli",
+        "ts": "1510018044.000276"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "I would expect that to be a UI bug",
+        "ts": "1510018065.000006"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "that is a UX feature which hasn't been implemented yet ... please feel free to submit an enhancement request ...",
+        "ts": "1510018195.000126"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, done - #537",
+        "ts": "1510018483.000198"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "thx!",
+        "ts": "1510018503.000008"
+    }
+]

@@ -1,0 +1,650 @@
+[
+    {
+        "text": "@rackneng ok back to this.... any info anywhere in this KRIB install?",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1515163749.000186"
+    },
+    {
+        "text": "anyone... someone... bueller ...",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1515163769.000309"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "complete documentation is done",
+        "ts": "1515163773.000425"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<http:\/\/provision.readthedocs.io\/en\/latest\/doc\/integrations\/krib.html>",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1515163791.000000"
+        },
+        "ts": "1515163784.000391"
+    },
+    {
+        "text": "@rackneng  i can do this on VMs right ?",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1515163839.000311"
+    },
+    {
+        "text": "as a test bed?",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1515163844.000433"
+    },
+    {
+        "text": "another thing id love to see rebar support is bare metal XENServer and Triton installs",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1515164237.000319"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we already support XENServer - you only need add appropriate packages to install it on top of an existing BootEnv - that's a minor Stage change to add the workflow",
+        "ts": "1515164314.000283"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can use VMs - but managing the power actions of VMs only natively works in DRP via VirtualBox - other hypervisors will work - but you may need to manage the Power (on\/off\/reboot) and PXE (next boot) options yourself",
+        "ts": "1515164367.000416"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "@outbackdingo can you give some more details about what type of support you are looking for?  Is this installing XENserver?  power mgmt of vms?  detecting vms?",
+        "ts": "1515166311.000097"
+    },
+    {
+        "text": "@rackneng well  basically, we have both XenServer and Triton nodes deployed, and OpenStack ..... so in a way im workin to integrate into a more reasonable way of deploying things KRIBs on bare metal is just another path.... and thats just for my infrastruture, i wount even begin to think about how my clients can utilie this like most server resellers provide",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1515170956.000361"
+    },
+    {
+        "text": "and sorry some of my million mile keyboard keys seems to have gone on holiday again",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1515170993.000424"
+    },
+    {
+        "text": "my vision was to use rebar to do provisioning for clients through a web based system like all other server resellers",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1515171125.000302"
+    },
+    {
+        "text": "but dont see that as short term feasible",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1515171136.000195"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "@outbackdingo are you PXE booting the VMs on those platforms?  the KRIB process relies on the CLI\/API, not on PXE.  It would be possible to use it from VM images if your images started the CLI and registered the node.   It's a reasonable use case that would require some tweaks to facilitate.",
+        "ts": "1515172256.000153"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "The running VMs with DRP is something we are trying to understand better and would happily have a 1x1 design discussion about.",
+        "ts": "1515172256.000582"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "(that goes for anyone in the community)",
+        "ts": "1515172268.000278"
+    },
+    {
+        "text": " well right  now i use XOA to create a PXE vm let itt boot rebar sees it then provisions it then i use XOA to reboot it, then rebar gets it and installs X on it and done",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1515172587.000101"
+    },
+    {
+        "text": "so thats been the process for me for VMs still using 2 tools... XOA and rebar......",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1515172621.000342"
+    },
+    {
+        "text": "i dont care how it needs to be done now... i dont mind some pain.... however in the future i really think rebar could shine if it had a multi-tenent ui",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1515172682.000302"
+    },
+    {
+        "text": "as for KRIBs itself... yes i would like to spin up a 5 VM system to kick the tires I already have Triton SDc deployed so id like to compare them",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1515172745.000477"
+    },
+    {
+        "text": "and well SDC itself is problematic now since it also uses PXE to install new bare metal nodes... :) YAY",
+        "username": "outbackdingo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1515172776.000185"
+    },
+    {
+        "user": "U8NV2GC21",
+        "text": "<@U8NV2GC21> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1515180619.000533"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "welcome <@U8NV2GC21>!",
+        "ts": "1515183170.000025"
+    },
+    {
+        "type": "message",
+        "user": "U8NV2GC21",
+        "text": "<@U02DHRR2L> thanks! I'm looking forward to kicking the tires with dr-provision",
+        "ts": "1515183254.000652"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U8NV2GC21> let us know if you have any questions ... and welcome",
+        "ts": "1515183318.000547"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "when you get far enough - we've got 2 k8s strategies w\/ dynamic Ansible for Kubespray and the KRIB runner for Kubeadm.",
+        "ts": "1515183615.000032"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U8NV2GC21> RE: non-amd64 hosts.  we don't have default images or a sledgehammer for them.  it IS possible to detect arch and provide the right boot if we had the images.  (adding <@U75QJVA3Y> who has interest in ARM)",
+        "ts": "1515183901.000378"
+    },
+    {
+        "user": "U8NQDK0E7",
+        "text": "<@U8NQDK0E7> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1515187460.000007"
+    },
+    {
+        "type": "message",
+        "user": "U32PZNCP5",
+        "text": "Welcome <@U8NQDK0E7>",
+        "ts": "1515189638.000099"
+    },
+    {
+        "type": "message",
+        "user": "U8NQDK0E7",
+        "text": "<@U32PZNCP5> Thanks! Can't wait to get it fired up and start building.  Best place to look for any existing Saltstack integrations?",
+        "ts": "1515189984.000282"
+    },
+    {
+        "type": "message",
+        "user": "U32PZNCP5",
+        "text": "I will let the experts give you any info they have. <@U6QFVRJNB> is the most likely to know",
+        "ts": "1515190054.000354"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U8NQDK0E7> we don't have any existing saltstack integrations at the moment - it's something on my personal bucket list to get done",
+        "ts": "1515190089.000227"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "however - if you wanted to tackle it - you could look at the `Ansible Reference` content as an example",
+        "ts": "1515190131.000353"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "coupled with how we handle secrets management in the `Kubernetes` (formerly named `krib`) content",
+        "ts": "1515190154.000031"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the `Kubernetes` stuff shows how we handle tokens (in Saltstack's case it'd be pub\/priv keys)",
+        "ts": "1515190184.000318"
+    },
+    {
+        "type": "message",
+        "user": "U8NQDK0E7",
+        "text": "Cool..thanks I will check it out.",
+        "ts": "1515190244.000292"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U6QFVRJNB> you around?",
+        "ts": "1515207339.000066"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Trying to add my krib profile to a new node I want to add to the cluster, getting a UX fail...",
+        "ts": "1515207369.000068"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Nope  :wink: ",
+        "ts": "1515207380.000069"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F8N9WA4GG\/profile-set-fail.png|profile-set-fail.png>",
+        "file": {
+            "id": "F8N9WA4GG",
+            "created": 1515207386,
+            "timestamp": 1515207386,
+            "name": "profile-set-fail.png",
+            "title": "profile-set-fail.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 100848,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8N9WA4GG\/profile-set-fail.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8N9WA4GG\/download\/profile-set-fail.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8N9WA4GG-ceefbfb7b0\/profile-set-fail_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8N9WA4GG-ceefbfb7b0\/profile-set-fail_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8N9WA4GG-ceefbfb7b0\/profile-set-fail_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 264,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8N9WA4GG-ceefbfb7b0\/profile-set-fail_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 352,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8N9WA4GG-ceefbfb7b0\/profile-set-fail_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8N9WA4GG-ceefbfb7b0\/profile-set-fail_720.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 528,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8N9WA4GG-ceefbfb7b0\/profile-set-fail_800.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 586,
+            "image_exif_rotation": 1,
+            "original_w": 928,
+            "original_h": 680,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F8N9WA4GG\/profile-set-fail.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F8N9WA4GG-781b20368d",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1515207388.000001"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "What does \"Profile (at 0) does not exist\" mean?",
+        "ts": "1515207421.000057"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "The `k8s-cluster1` profile absolutely does exist...",
+        "ts": "1515207572.000103"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "The UX is doing strange things to my data... It's putting quotes around the IPMI strings",
+        "ts": "1515208735.000029"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "As seen in UX:```ipmi\/address: \"idrac-796MQW1\"\nipmi\/password: ### obfuscated text ###\nipmi\/username: \"root\"```",
+        "ts": "1515208757.000030"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Via CLI:\n```\"Params\": {\n      \"ipmi\/address\": \"\\\"idrac-796MQW1\\\"\",\n      \"ipmi\/password\": \"xxxxxx\",\n      \"ipmi\/username\": \"\\\"root\\\"\"\n    }```",
+        "edited": {
+            "user": "U416T0AAX",
+            "ts": "1515208830.000000"
+        },
+        "ts": "1515208792.000060"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Why is that happening?",
+        "ts": "1515208864.000077"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "It's screwing up IPMI (actions fail)",
+        "ts": "1515208885.000023"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": ":frustrated:",
+        "ts": "1515208998.000056"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "looking back through UX changes to see if something might have triggered that",
+        "ts": "1515209959.000010"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "how did you create the profile ?",
+        "ts": "1515209963.000045"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Thru the UX back a week ago; have successfully deployed 4 machines (a K8s cluster) with it...",
+        "ts": "1515210008.000073"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you running v3.5.0 on endpoint - any updates to endpoint or content in the last week ?",
+        "ts": "1515210045.000032"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "yes, and no updates",
+        "ts": "1515210114.000109"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "My KRIB profile:\n```\n{\n  \"Available\": true,\n  \"Description\": \"\",\n  \"Errors\": [],\n  \"Meta\": {\n    \"color\": \"\",\n    \"icon\": \"\",\n    \"title\": \"\"\n  },\n  \"Name\": \"k8s-cluster1\",\n  \"Params\": {\n    \"access-keys\": {\n      \"root\": \"ssh-rsa xxxxxx will@Wills-MacBook-Air\"\n    },\n    \"access-ssh-root-mode\": \"yes\",\n    \"change-stage\/map\": {\n      \"docker-install\": \"krib-install:Success\",\n      \"finish-install\": \"docker-install:Success\",\n      \"krib-install\": \"complete:Success\",\n      \"runner-service\": \"finish-install:Stop\",\n      \"ssh-access\": \"runner-service:Success\",\n      \"ubuntu-16.04-install\": \"ssh-access:Success\"\n    },\n    \"krib\/cluster-admin-conf\": {\n      \"apiVersion\": \"v1\",\n      \"clusters\": [\n        {\n          \"cluster\": {\n            \"certificate-authority-data\": \"xxxxxx\",\n            \"server\": \"<https:\/\/192.168.1.114:6443>\"\n          },\n          \"name\": \"kubernetes\"\n        }\n      ],\n      \"contexts\": [\n        {\n          \"context\": {\n            \"cluster\": \"kubernetes\",\n            \"user\": \"kubernetes-admin\"\n          },\n          \"name\": \"kubernetes-admin@kubernetes\"\n        }\n      ],\n      \"current-context\": \"kubernetes-admin@kubernetes\",\n      \"kind\": \"Config\",\n      \"preferences\": {},\n      \"users\": [\n        {\n          \"name\": \"kubernetes-admin\",\n          \"user\": {\n            \"client-certificate-data\": \"xxxxxx\",\n            \"client-key-data\": \"xxxxxx\"\n          }\n        }\n      ]\n    },\n    \"krib\/cluster-join-command\": \"kubeadm join --token 7dff02.8b4d92135c936919 192.168.1.114:6443 --discovery-token-ca-cert-hash sha256:xxxxxx\",\n    \"krib\/cluster-master\": \"1bcd8472-6c20-47b3-b9ff-f32731905bf1\",\n    \"krib\/cluster-profile\": \"k8s-cluster1\",\n    \"local-repo\": false,\n    \"operating-system-disk\": \"sda\",\n    \"provisioner-default-fullname\": \"xxxxxx\",\n    \"provisioner-default-password-hash\": \"xxxxxx\",\n    \"provisioner-default-user\": \"xxxxxx\"\n  },\n  \"ReadOnly\": false,\n  \"Validated\": true\n}\n```",
+        "ts": "1515210241.000097"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "(w\/ obvious redactions)",
+        "ts": "1515210259.000007"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Trying to IPMI powercycle the node, doing this:\n`$ drpcli -E <https:\/\/192.168.1.148:8092> machines action 174c3987-22a4-43d4-9eb9-0247162e8628 powercycle`",
+        "ts": "1515210486.000010"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Getting a response returned, but no powercycle happening...",
+        "ts": "1515210509.000104"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "This is the output from that command:\n```{\n  \"Command\": \"powercycle\",\n  \"OptionalParams\": [],\n  \"Provider\": \"ipmi\",\n  \"RequiredParams\": [\n    \"ipmi\/username\",\n    \"ipmi\/password\",\n    \"ipmi\/address\"\n  ]\n}```\nAlsoe the return code is '0':\n```AirDennis:~ will$ echo $?\n0```",
+        "edited": {
+            "user": "U416T0AAX",
+            "ts": "1515210702.000000"
+        },
+        "ts": "1515210636.000010"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, confused now - looks like one of the powercycles did run; it did run thru the stage-map for this node, and is on krib-install now; however, it is trying to do the join, and I'm seeing many entries like this at the end of the (running) job log:\n```\n[discovery] Trying to connect to API Server \"192.168.1.114:6443\"\n[discovery] Created cluster-info discovery client, requesting info from \"<https:\/\/192.168.1.114:6443>\"\n[discovery] Failed to connect to API Server \"192.168.1.114:6443\": there is no JWS signed token in the cluster-info ConfigMap. This token id \"7dff02\" is invalid for this cluster, can't connect\n[discovery] Trying to connect to API Server \"192.168.1.114:6443\"\n[discovery] Created cluster-info discovery client, requesting info from \"<https:\/\/192.168.1.114:6443>\"\n[discovery] Failed to connect to API Server \"192.168.1.114:6443\": there is no JWS signed token in the cluster-info ConfigMap. This token id \"7dff02\" is invalid for this cluster, can't connect\n```",
+        "ts": "1515211386.000045"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "hmm - that is backend auth stuff with the Amazon Cognito pieces, I believe",
+        "ts": "1515211438.000046"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "oh wait",
+        "ts": "1515211481.000069"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "how long has this cluster been sitting ?",
+        "ts": "1515211486.000081"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "It's a k8s thing",
+        "ts": "1515211490.000087"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "It looks like the token is invalid as it's probably expired",
+        "ts": "1515211497.000079"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "to join the cluster",
+        "ts": "1515211501.000075"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "It's been up and running since 12\/25",
+        "ts": "1515211507.000016"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Ah, I see...",
+        "ts": "1515211530.000025"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "is 192.168.1.114 your endpoint  ? and you set the API port to 6443 ?",
+        "ts": "1515211534.000045"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "It's the k8s master node",
+        "ts": "1515211544.000005"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "got it",
+        "ts": "1515211550.000057"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So it's the k8s join token that's expired",
+        "ts": "1515211580.000037"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So the join token stored in my profile is now invalid, I'm guessing...",
+        "ts": "1515211688.000071"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yes",
+        "ts": "1515211689.000012"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "any way to refresh that?",
+        "ts": "1515211715.000028"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I don't think we do anything with re-authing the tokens on our side - so that's going to be a k8s related issues",
+        "ts": "1515211717.000071"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "kubeadm has it's rough edges",
+        "ts": "1515211740.000016"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I'm at a friends birthday party - so need to drop off - we can pursue this a bit further tmw",
+        "ts": "1515211773.000059"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, have fun &amp; thanks",
+        "ts": "1515211798.000046"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "so <@U416T0AAX> was that \" stuff just when you pulled things up in the UI editor ?",
+        "ts": "1515213048.000051"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "... I'm slowly learning react and re-learning what I forgot with selenium \/ webdriver in an attempt to UI test (and preform mechanical rob\/shane tricks)",
+        "ts": "1515213192.000028"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "No, it was in the actual data (see above for CLI output)",
+        "ts": "1515213832.000064"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "God bless you <@U62R1805P> for taking a stab at UX testing ",
+        "ts": "1515213934.000019"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "yea, I saw that... though you inverted the header.... as the screen shot had the escapes...",
+        "ts": "1515213941.000016"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I have almost bailed on using the UX so many times due to bugs creeping in from constant dev",
+        "ts": "1515214154.000019"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "But it’s too pretty :dancer::skin-tone-3::joy:",
+        "ts": "1515214246.000030"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I got login working then I had to re-write ... and I've got motivation from work...",
+        "ts": "1515214262.000023"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U416T0AAX> - the kubeadm join token is valid for 24 hours by default, I think.  So, if you can only grow your cluster for a day.  It is lame.  I think we could add a parameter to the master config to change that.  It may be that a token can be reissued as well by running kubeadm.  these would be good future enhancements.",
+        "ts": "1515217571.000036"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "The SSL certificate used to load resources from <https:\/\/qww9e4paf1.execute-api.us-west-2.amazonaws.com> will be distrusted in M70. Once distrusted, users will be prevented from loading these resources. See <https:\/\/g.co\/chrome\/symantecpkicerts> for more information.",
+        "attachments": [
+            {
+                "service_name": "Google Online Security Blog",
+                "title": "Chrome’s Plan to Distrust Symantec Certificates",
+                "title_link": "https:\/\/g.co\/chrome\/symantecpkicerts",
+                "text": "Posted by Devon O’Brien, Ryan Sleevi, Andrew Whalley, Chrome Security This post is a broader announcement of plans already finalized on t...",
+                "fallback": "Google Online Security Blog: Chrome’s Plan to Distrust Symantec Certificates",
+                "thumb_url": "http:\/\/2.bp.blogspot.com\/-7bZ5EziliZQ\/VynIS9F7OAI\/AAAAAAAASQ0\/BJFntXCAntstZe6hQuo5KTrhi5Dyz9yHgCK4B\/s1600\/googlelogo_color_200x200.png",
+                "from_url": "https:\/\/g.co\/chrome\/symantecpkicerts",
+                "thumb_width": 200,
+                "thumb_height": 200,
+                "service_icon": "https:\/\/security.googleblog.com\/favicon.ico",
+                "id": 1
+            }
+        ],
+        "ts": "1515217740.000031"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "that came through the chrome browser dev console... as a warning....",
+        "ts": "1515217856.000007"
+    }
+]

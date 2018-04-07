@@ -1,0 +1,89 @@
+[
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "the event log on the DRP web UI seems to be overflowing below the browser",
+        "ts": "1507289458.000144"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U54E4SD4G> uploaded a file: <https:\/\/rackn.slack.com\/files\/U54E4SD4G\/F7EJBKK45\/image.png|image.png>",
+        "file": {
+            "id": "F7EJBKK45",
+            "created": 1507289497,
+            "timestamp": 1507289497,
+            "name": "image.png",
+            "title": "image.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U54E4SD4G",
+            "editable": false,
+            "size": 74323,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7EJBKK45\/image.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7EJBKK45\/download\/image.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7EJBKK45-37db19c3f6\/image_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7EJBKK45-37db19c3f6\/image_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7EJBKK45-37db19c3f6\/image_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 196,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7EJBKK45-37db19c3f6\/image_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 261,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7EJBKK45-37db19c3f6\/image_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "image_exif_rotation": 1,
+            "original_w": 649,
+            "original_h": 353,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U54E4SD4G\/F7EJBKK45\/image.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F7EJBKK45-c4e40a358a",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U54E4SD4G",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "lae",
+        "bot_id": null,
+        "ts": "1507289498.000155"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I’ll add an issue for it. Thanks!",
+        "ts": "1507296129.000123"
+    },
+    {
+        "type": "message",
+        "user": "U75QJVA3Y",
+        "text": "New day, new problems. I can't seem to get the default CentOS 7 install to work. Machine downloads the kernel and initrd and then seems to reboot",
+        "ts": "1507310005.000081"
+    },
+    {
+        "type": "message",
+        "user": "U75QJVA3Y",
+        "text": "The default Ubuntu install seems to work",
+        "ts": "1507310018.000326"
+    },
+    {
+        "type": "message",
+        "user": "U75QJVA3Y",
+        "text": "Nevermind - seems to be one particular machine just doesn't like me.",
+        "ts": "1507310253.000567"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ok ... we aren't minding!  :slightly_smiling_face: let us know if you need any help with anything",
+        "ts": "1507311703.000057"
+    }
+]

@@ -1,0 +1,1668 @@
+[
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Need to know how to terminate a running job (the `krib-install` stage)",
+        "ts": "1515248815.000061"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Since it'll never succeed in finishing...",
+        "ts": "1515248854.000041"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "krib keep the runner running.... can't you just put a stop or ?? into the que and the runner picks it up ?",
+        "ts": "1515248961.000008"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I have set \"Runnable\" to false on the node, but the drpcli process is still running  `kubeadm` on the node",
+        "ts": "1515248963.000031"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U62R1805P> That's what I don't know...",
+        "ts": "1515249008.000044"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I'm just guessing as you've been playing with it way more than I... it's all just 'in theory' in my head...",
+        "ts": "1515249020.000017"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I could -TERM kubeadm on the node, but not sure that's the right way to do it...",
+        "ts": "1515249046.000062"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "so in the krib demo... did he leave the runner going after kubeadm was installed ?",
+        "ts": "1515249122.000010"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "at the time, I was thinking OH this avoids ALL touches other than sledgehammer, but I was not sure how or if the runner migrated off sledgehammer",
+        "ts": "1515249189.000059"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "in my mind... there is a drp process ON the node IN sledgehammer that KNOWS it's a particular NODE, then there is the drp process that IS and knows it IS an endpoint and has runner que info for the node",
+        "ts": "1515249539.000066"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yes, the runner (drpcli \"service\") continues to run on the nodes",
+        "ts": "1515249555.000087"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "The \"runner\" is not tied to SH",
+        "ts": "1515249584.000091"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "It's a service that runs on SH",
+        "ts": "1515249624.000060"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "But you can also install\/keep it running on any other install",
+        "ts": "1515249645.000055"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "That's the difference (AFAIK) between the `complete` (keeps runner running) and `complete-nowait` (terminates runner) stages",
+        "ts": "1515249711.000012"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "ah...",
+        "ts": "1515249728.000063"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "The KRIB stage-map ends with the `complete` stage",
+        "ts": "1515249742.000105"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "but the endpoint is the 'que repo' for the runner and the runner can dynamically update ?? right ??",
+        "ts": "1515249770.000047"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Here’s my new node’s process tree:\n```\nroot@k8s-ingress:~# pstree\nsystemd─┬─accounts-daemon─┬─{gdbus}\n        │                 └─{gmain}\n        ├─acpid\n        ├─2*[agetty]\n        ├─atd\n        ├─cron\n        ├─dbus-daemon\n        ├─dhclient\n        ├─dockerd─┬─containerd───10*[{containerd}]\n        │         └─10*[{dockerd}]\n        ├─drpcli─┬─bash───kubeadm───10*[{kubeadm}]\n        │        └─11*[{drpcli}]\n        ├─irqbalance\n        ├─2*[iscsid]\n        ├─lvmetad\n        ├─lxcfs───3*[{lxcfs}]\n        ├─mdadm\n        ├─polkitd─┬─{gdbus}\n        │         └─{gmain}\n        ├─rsyslogd─┬─{in:imklog}\n        │          ├─{in:imuxsock}\n        │          └─{rs:main Q:Reg}\n        ├─snapd───9*[{snapd}]\n        ├─sshd───sshd───bash───pstree\n        ├─systemd───(sd-pam)\n        ├─systemd-journal\n        ├─systemd-logind\n        ├─systemd-timesyn───{sd-resolve}\n        └─systemd-udevd\n```",
+        "ts": "1515249795.000068"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "See the `drpcli` process? That’s the “runner”",
+        "ts": "1515249815.000022"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yes, AFAIK, you can put more jobs into the “hopper” for the node on the DRP server-side, and the node’s runner will dutifully pick them up and start executing them",
+        "ts": "1515249901.000055"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I need to tell the runner somehow to terminate the `kubeadm` process… It’s just looping endlessly with:",
+        "ts": "1515249976.000093"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "so back to your issue, you can't tell the state of the \"hopper\" on the node side, but you should be able to see the \"hopper que\" on the endpoint side...",
+        "ts": "1515249983.000049"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "```[discovery] Trying to connect to API Server \"192.168.1.114:6443\"\n[discovery] Created cluster-info discovery client, requesting info from \"<https:\/\/192.168.1.114:6443>\"\n[discovery] Failed to connect to API Server \"192.168.1.114:6443\": there is no JWS signed token in the cluster-info ConfigMap. This token id \"7dff02\" is invalid for this cluster, can't connect```",
+        "ts": "1515250015.000045"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "```AirDennis:~ will$ drpcli jobs log 463014d6-60ef-43be-848c-406296037716 -E <https:\/\/192.168.1.148:8092> | strings | grep Failed | wc -l\n    7858```",
+        "ts": "1515250051.000051"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": ":joy: actually :cry:",
+        "ts": "1515250087.000093"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "well... it's less than the newly discovered prime number :wink:",
+        "ts": "1515250375.000065"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "LOL",
+        "ts": "1515250435.000029"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "At least yet...",
+        "ts": "1515250445.000001"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "Oh... krib vs kubespray ? opinion ?  I was liking the idea of handing off to ansible",
+        "ts": "1515250471.000059"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "but I sort of see the krib motivation too...",
+        "ts": "1515250515.000036"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "From what I gather from <@U02DHRR2L> and what I've been reading about k8s so far, `kubeadm` is supposed to be the blessed k8s orchestration tool",
+        "ts": "1515250538.000055"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "It does not handle HA controllers yet, as `kubespray` does, but I don't need that for what I'm doing (PoC cluster)",
+        "ts": "1515250585.000029"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "yea... but spray can install kubeadm unless I'm not following... I was wondering if security (no ssh) is an issue",
+        "ts": "1515250650.000085"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So I went with KRIB as it's a DRP one-pass solution",
+        "ts": "1515250657.000001"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "And the \"new hotness\" :stuck_out_tongue_winking_eye:",
+        "ts": "1515250690.000110"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I get that... and 'look ma, no-ssh'",
+        "ts": "1515250771.000074"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "And faster, AFAIK - Ansible is slow many times",
+        "ts": "1515250799.000027"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Oh well, here goes nothing...",
+        "ts": "1515250930.000009"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "trying the hard boot option ?",
+        "ts": "1515250953.000059"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "```root@k8s-ingress:~# ps auxww | grep kubeadm\nroot      4046  0.0  0.3 107164 59104 ?        Sl   03:37   0:14 kubeadm join --token 7dff02.8b4d92135c936919 192.168.1.114:6443 --discovery-token-ca-cert-hash sha256:af6edbddbffb904491599a03362d8deebeee68ffa170d20daffa2c6a70acb9b2\nroot     12163  0.0  0.0  14224  1092 pts\/0    S+   15:01   0:00 grep --color=auto kubeadm\nroot@k8s-ingress:~# kill -TERM 4046\nroot@k8s-ingress:~# ps auxww | grep kubeadm\nroot     12217  0.0  0.0  14224   932 pts\/0    S+   15:02   0:00 grep --color=auto kubeadm```",
+        "ts": "1515250970.000113"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Now to see the job state...",
+        "ts": "1515251002.000028"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yup, \"failed\":\n```AirDennis:~ will$ drpcli jobs show 463014d6-60ef-43be-848c-406296037716 -E <https:\/\/192.168.1.148:8092>\n{\n  \"Archived\": false,\n  \"Available\": true,\n  \"Current\": true,\n  \"EndTime\": \"2018-01-06T05:45:16.709533598-05:00\",\n  \"Errors\": [],\n  \"ExitState\": \"failed\",\n  \"Machine\": \"174c3987-22a4-43d4-9eb9-0247162e8628\",\n  \"Meta\": {},\n  \"Previous\": \"82f2c4cc-2df2-45ea-a33f-a4cc1a0769a5\",\n  \"ReadOnly\": false,\n  \"Stage\": \"krib-install\",\n  \"StartTime\": \"2018-01-05T18:20:06.89678544-05:00\",\n  \"State\": \"failed\",\n  \"Task\": \"krib-install\",\n  \"Uuid\": \"463014d6-60ef-43be-848c-406296037716\",\n  \"Validated\": true\n}```",
+        "ts": "1515251200.000005"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "looks as if the runner reported back in",
+        "ts": "1515251335.000012"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "do you know what \"Previous\" is ?",
+        "ts": "1515251356.000085"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "... I sure learn a lot when your in pain...",
+        "ts": "1515251451.000044"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I think \"the job before this one\"",
+        "ts": "1515251458.000010"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "OH... that makes sense...",
+        "ts": "1515251476.000004"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Oh good, glad I can help :stuck_out_tongue_winking_eye:",
+        "ts": "1515251485.000084"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "It is the way of OpenSource(tm)",
+        "ts": "1515251515.000030"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "... and people with disorders...",
+        "ts": "1515251539.000011"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "anyway... did the runner take a new job ?",
+        "ts": "1515251568.000076"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Nope, on a fail it terminates the job queue",
+        "ts": "1515251584.000100"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "OH...",
+        "ts": "1515251592.000044"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "There was only one more stage, which was `complete` anyways",
+        "ts": "1515251604.000081"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "The runner service (drpcli) is still running on the node",
+        "ts": "1515251630.000014"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So that's where `complete` would leave it anyhow",
+        "ts": "1515251648.000006"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "Oh... that was my question, can you give the runner a new que task ?  or is the only way to 're-cycle' is a hard boot... and do you know if the node joined the cluster (I assume not... ? right ?)",
+        "ts": "1515251750.000094"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "a) Yes, it think I could give the runner new jobs (not sure how that would work on the DRP server-side)",
+        "ts": "1515251796.000053"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "aka... I like this problem as it answers a lot of 'process questions' in my head... mostly DR (disaster recovery)",
+        "ts": "1515251810.000021"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "b) The node did not join b\/c kubeadm could not auth to the k8s API server with the expired token",
+        "ts": "1515251830.000041"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "to me... DRP -&gt; Disaster Recovery Protocal :wink:",
+        "ts": "1515251834.000023"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "KRIB (per <@U02DGQYK1>’s message to me above) only gets a 24h join token, and once it expires, there's currently no way for the DRP system to renew it and store the new one in the profile",
+        "ts": "1515251912.000080"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Sadly, I did not know that before I started...",
+        "ts": "1515251931.000009"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "... yea... expiring and auto rotating tokens is the new hottness ya know...",
+        "ts": "1515251985.000034"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Although it did prep my node for k8s... So that's cool",
+        "ts": "1515252004.000123"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "token rotation = a good idea",
+        "ts": "1515252037.000049"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "but if the runner failed on that node, the only option to do anything is hard reboot ?? right ??",
+        "ts": "1515252084.000047"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "then I get krib more... as the only way in is drp and\/or kubeadm",
+        "ts": "1515252150.000070"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Not the runner that fails, but the job",
+        "ts": "1515252155.000057"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "Yup, got that (in your debug instance)...",
+        "ts": "1515252232.000026"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I'm not sure if they set up a `systemd` service for drpcli where it will auto-start it on boot...",
+        "edited": {
+            "user": "U416T0AAX",
+            "ts": "1515252283.000000"
+        },
+        "ts": "1515252249.000020"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yes, they do:\n```root@k8s-ingress:~# systemctl list-unit-files --type=service | grep drpcli\ndrpcli-init.service                        enabled\ndrpcli.service                             enabled```",
+        "ts": "1515252400.000014"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "... that's what I THOUGHT was going on... but they do that in the install dynamically via SH",
+        "ts": "1515252457.000076"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yeah, I think in the post-install shell script",
+        "ts": "1515252483.000060"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "cool stuff and all because your ssl expired :wink:",
+        "ts": "1515252507.000060"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "“No pain, no gain” I guess",
+        "ts": "1515252537.000070"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "... the UX testing has now 'distracted' me (in a good way) for 2 weeks...",
+        "ts": "1515252556.000068"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I got it taking pretty pictures AND comparing those pictures to base image... (visual diff)",
+        "ts": "1515252747.000082"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I was thinking that the way to test the UX would be to programatically “work” the UX and see what resulting REST command gets sent to the DRP server",
+        "ts": "1515252870.000086"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "But I’m not a web dev guy so what do I know…",
+        "ts": "1515252926.000036"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "yup... THAT's exactly what I want to do",
+        "ts": "1515253003.000017"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "that and have issue drpcli and see the results in UI",
+        "ts": "1515253066.000022"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "should be able to test the rest api the same way... end up with 5-6 language mappings",
+        "ts": "1515253111.000099"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "lang meaning: ddrpcli, drp-golang, drp-api, drp-css, drp-bdd, drp-feature",
+        "ts": "1515253254.000064"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "The real way would be to (IMHO) to TDD as a UX dev style",
+        "ts": "1515253335.000036"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Write a test case, ensure it fails, devel the feature, ensure the test passes",
+        "ts": "1515253365.000016"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "they've got unit in golan and rest-api test I hope to use that as UX basis...",
+        "ts": "1515253388.000072"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "yea TDD, BDD all great ideas... but if you think about it... ansible is basically that for cli (and cli is what.... 40 years old)....",
+        "ts": "1515253503.000035"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "anyway... my 'GOAL' is to make a UX test script setup that you can use to file bugs and\/or 'capture' demos... realistically the UI is really just good documentation for the cli :wink:",
+        "ts": "1515253646.000019"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "<http:\/\/drpfeature.readthedocs.io\/en\/latest\/feature-githubSearch.html>",
+        "ts": "1515253783.000039"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "that was my first attempt.... have 3 others (playing with other tools \/ structures) most are investigations for 'real work' but using drp as proving grounds...",
+        "ts": "1515253892.000063"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Okay jobs and stuff.",
+        "ts": "1515253892.000124"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "kubeadm hung in a loop causing the task to run forever.",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1515253937.000000"
+        },
+        "ts": "1515253920.000096"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "This is a task design issue and kubeadm issue.",
+        "ts": "1515253947.000069"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "regardless, the runner doesn’t not have a watchdog control to kill or stop tasks.  That is an interesting idea to think about.",
+        "ts": "1515253983.000013"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "is the expire token thing aws ? or ?",
+        "ts": "1515254020.000035"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Regardless, when <@U416T0AAX> killed the kubeadm, the runnner saw it as failure, mark the node as not runnable (runnable == false) and went to sleep waiting for runnable to become true.",
+        "ts": "1515254049.000078"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Or (it seems) a admin way to direct the runner to terminate the current job and move on (not sure that’s always a good idea, but the admin can make that call I guess)",
+        "ts": "1515254078.000042"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The job for that task in the machine’s task list was marked failed and the task list index was left where it is at.",
+        "ts": "1515254101.000084"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The purpose for this is that remediation can occur and then machine marked runnabled and the task processing will start where it left off.",
+        "ts": "1515254132.000047"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yes, b\/c I went into the node and manually killed the process that drpcli had spawned",
+        "ts": "1515254139.000129"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I did (via UX) tell the machine to stop the runner (Runnable = false) but that did not seem to work",
+        "ts": "1515254189.000112"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "kubeadm is running the hard loop inside itself apparently.  We don’t run the kubeadm calls in a loop.",
+        "ts": "1515254215.000074"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Oh sure, I get that",
+        "ts": "1515254228.000091"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That is only checked when drpcli gets a chance.",
+        "ts": "1515254234.000033"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Remember, DRP doesn’t touch machines.  Machines touch DRP.",
+        "ts": "1515254253.000077"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I thought it may “systemctl stop drpcli.service” or something",
+        "ts": "1515254257.000046"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Pull, not push",
+        "ts": "1515254276.000050"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yes",
+        "ts": "1515254279.000045"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "But there should be a way to centrally control the runner on the machines, right?",
+        "ts": "1515254308.000024"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes and no.",
+        "ts": "1515254329.000081"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "“it depends” :stuck_out_tongue_winking_eye:",
+        "ts": "1515254341.000059"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yes - mark the machine runnable and it will eventually stop baring badness.",
+        "ts": "1515254360.000067"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "No - DRP has no way to force the stop if something hangs.",
+        "ts": "1515254376.000145"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, not following that…",
+        "ts": "1515254379.000015"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Well - who knew that kubeadm would loop forever on a bad token.",
+        "ts": "1515254398.000144"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That is unknown badness.",
+        "ts": "1515254404.000092"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "“mark the machine runnable and it will eventually stop” seems backwords to me…",
+        "ts": "1515254404.000154"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "sorry - not runnable",
+        "ts": "1515254412.000057"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "DRPe - Endpoint, DRPn - Node (I though the runner is the same golang bin but knows it's on a node ? correct ?)",
+        "ts": "1515254414.000149"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Phew :slightly_smiling_face:",
+        "ts": "1515254420.000094"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yes, got you - once the runner kicks of a child process, it’s hard to know what that process is actually doing…",
+        "ts": "1515254457.000033"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "... cool <@U416T0AAX> file a kubeadm bug !",
+        "ts": "1515254464.000156"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Except when you get a return code to the parent",
+        "ts": "1515254472.000049"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U62R1805P> - DRPn is drpcli running `machines processjobs &lt;uuid&gt;`",
+        "ts": "1515254632.000039"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yes - <@U416T0AAX>",
+        "ts": "1515254664.000015"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "What would happen if the runner service was stopped in the middle of it processing a job queue?",
+        "ts": "1515254766.000080"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "now, with some of the new websocket stuff, we can have the drpcli create event stream watching the job and the machine.  If the machine becomes not runnable or the job gets marked stopped, we could kill the process and close out things.  There are some perils with this because of timing, but it could be made to work and itsn’t a bad idea.  Should note it as a feature to deal with.",
+        "ts": "1515254773.000125"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It would leave the job running in DRP.",
+        "ts": "1515254797.000014"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "i.e. you have this going on: `drpcli─┬─bash───kubeadm───10*[{kubeadm}]` and then you do a `systemctl stop drpcli.service` on the node",
+        "ts": "1515254825.000024"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Once the runner was restarted and asked for job (assuming the machine was runnable), DRP would mark the “open” job as failed, create new job instance of the current task, and try again.",
+        "ts": "1515254852.000061"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Ah, so that wouldn’t work",
+        "ts": "1515254876.000056"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "well - it works fine for `node got powercycled accidentally` case.  But in this case, no.",
+        "ts": "1515254913.000020"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yup, see that",
+        "ts": "1515254925.000120"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "give me a minute to look up something.",
+        "ts": "1515254946.000002"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So there’s no way of administratively telling the DRP system “hey, stop processing the current job, mark it as “admin terminated”, and move ahead with the next job”",
+        "ts": "1515255011.000027"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "(would take coordination with the node’s `drpcli` to restart it or something)",
+        "ts": "1515255079.000043"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "well.",
+        "ts": "1515255220.000010"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Again, not sure that’s a great idea, but if the admin knows the current job which for whatever reason is not proceeding as planned (like I saw from job log output), and that in their estimation could be safely skipped and move on proceeding with the next job in the queue, why shouldn’t they have the power to do that?",
+        "ts": "1515255222.000049"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You could do this, but not as a single action from DRP UX or CLI.",
+        "ts": "1515255238.000004"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "1. mark machine not runnable.",
+        "ts": "1515255243.000120"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "2. kill hung task \/ restart runner",
+        "ts": "1515255260.000017"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "3. Set currentTask to currentTask + 1 on the machine (I think this still works).",
+        "ts": "1515255281.000026"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "4. make machine runnable.",
+        "ts": "1515255285.000086"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That would do you “administrative” stop and move on to the next task.",
+        "ts": "1515255318.000070"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Couldn’t that be orchestrated?",
+        "ts": "1515255336.000109"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "#2 is not implemented today.",
+        "ts": "1515255351.000089"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "but yes eventually.",
+        "ts": "1515255360.000144"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I did do 1); I did 1st half of 2)",
+        "ts": "1515255369.000021"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Okay remediating the expired token in krib.",
+        "ts": "1515255385.000080"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Do you have your k8s admin node running still?",
+        "ts": "1515255401.000031"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yup",
+        "ts": "1515255405.000062"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Can you do this for me from there? `kubeadm token list`",
+        "ts": "1515255425.000017"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "yup hold on --",
+        "ts": "1515255490.000083"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "ok",
+        "ts": "1515255499.000039"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "seems to me - you should be able to regenerate the token on Master - and manually inject that back in to the Profile, and then machines could join after that was completed",
+        "ts": "1515255526.000081"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(regenerate token on k8s master)",
+        "ts": "1515255540.000062"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yep - that is what I’m walking <@U416T0AAX> through.  Just collecting the commands.",
+        "ts": "1515255553.000018"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "```root@testnode03:~# kubeadm token list\nTOKEN     TTL       EXPIRES   USAGES    DESCRIPTION   EXTRA GROUPS\nroot@testnode03:~#```",
+        "ts": "1515255559.000074"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U416T0AAX> - `kubeadm token create`",
+        "ts": "1515255580.000121"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "```root@testnode03:~# kubeadm token create\n866bc1.51f5919fd2dfd63e\nroot@testnode03:~#```",
+        "ts": "1515255612.000051"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "On the DRP endpoint,",
+        "ts": "1515255629.000047"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "you can do this:",
+        "ts": "1515255633.000055"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "`drpcli profiles show &lt;k8s cluster profile&gt;`",
+        "ts": "1515255645.000041"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yes?",
+        "ts": "1515255676.000063"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I need to see the join command in the `krib\/cluster-join-command`",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1515255709.000000"
+        },
+        "ts": "1515255687.000056"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "```\"krib\/cluster-join-command\": \"kubeadm join --token 7dff02.8b4d92135c936919 192.168.1.114:6443 --discovery-token-ca-cert-hash sha256:af6edbddbffb904491599a03362d8deebeee68ffa170d20daffa2c6a70acb9b2\",```",
+        "ts": "1515255706.000058"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I believe you can do this now:",
+        "ts": "1515255738.000001"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "```drpcli profiles set &lt;k8s-cluster-profile&gt; param krib\/cluster-join-command to \"kubeadm join --token 866bc1.51f5919fd2dfd63e 192.168.1.114:6443 --discovery-token-ca-cert-hash sha256:af6edbddbffb904491599a03362d8deebeee68ffa170d20daffa2c6a70acb9b2\"```",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1515255785.000000"
+        },
+        "ts": "1515255776.000076"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Not I replaced the old token (7dff02.8b4d92135c936919) with a new token (866bc1.51f5919fd2dfd63e)",
+        "ts": "1515255813.000097"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You should hten be able to mark the stopped node as Runnable and it should install and join.",
+        "ts": "1515255837.000061"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Also, can you run a `kubeadm token list` again.  I want to see the reported info.",
+        "ts": "1515255866.000031"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "```root@testnode03:~# kubeadm token list\nTOKEN                     TTL       EXPIRES                USAGES                   DESCRIPTION   EXTRA GROUPS\n866bc1.51f5919fd2dfd63e   23h       2018-01-07T16:19:56Z   authentication,signing   &lt;none&gt;        system:bootstrappers:kubeadm:default-node-token\nroot@testnode03:~#```",
+        "ts": "1515255991.000089"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I do not need to update the `--discovery-token-ca-cert-hash` right?",
+        "ts": "1515256047.000116"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "no the CA Cert Hash should be the same",
+        "ts": "1515256071.000015"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Cool",
+        "ts": "1515256075.000017"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "unless the Cert has expired, too ... :slightly_smiling_face:",
+        "ts": "1515256082.000027"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "LOL",
+        "ts": "1515256086.000047"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "but in future when you create a token you should be able to set a longer expiry time with `--token-ttl` (if I'm reading the docs right)",
+        "ts": "1515256111.000021"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "```AirDennis:~ will$ drpcli profiles set k8s-cluster1 param krib\/cluster-join-command to \"kubeadm join --token 866bc1.51f5919fd2dfd63e 192.168.1.114:6443 --discovery-token-ca-cert-hash sha256:af6edbddbffb904491599a03362d8deebeee68ffa170d20daffa2c6a70acb9b2\" -E <https:\/\/192.168.1.148:8092>\n\"kubeadm join --token 866bc1.51f5919fd2dfd63e 192.168.1.114:6443 --discovery-token-ca-cert-hash sha256:af6edbddbffb904491599a03362d8deebeee68ffa170d20daffa2c6a70acb9b2\"```",
+        "ts": "1515256202.000010"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Let's give it a go then!",
+        "ts": "1515256242.000081"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "How to use drpcli to set the machine runnable?",
+        "ts": "1515256266.000023"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "(Sorry, not trusting the UX right now…)",
+        "ts": "1515256296.000053"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "n\/m, got it",
+        "ts": "1515256520.000168"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "`drpcli machines update &lt;uuid&gt; '{ \"Runnable\": true }'`",
+        "ts": "1515256530.000133"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "```Running: kubeadm join --token 866bc1.51f5919fd2dfd63e 192.168.1.114:6443 --discovery-token-ca-cert-hash sha256:af6edbddbffb904491599a03362d8deebeee68ffa170d20daffa2c6a70acb9b2\n[preflight] Running pre-flight checks.\n\t[WARNING FileExisting-crictl]: crictl not found in system path\n[discovery] Trying to connect to API Server \"192.168.1.114:6443\"\n[discovery] Created cluster-info discovery client, requesting info from \"<https:\/\/192.168.1.114:6443>\"\n[discovery] Requesting info from \"<https:\/\/192.168.1.114:6443>\" again to validate TLS against the pinned public key\n[discovery] Cluster info signature and contents are valid and TLS certificate validates against pinned roots, will use API Server \"192.168.1.114:6443\"\n[discovery] Successfully established connection with API Server \"192.168.1.114:6443\"\n\nThis node has joined the cluster:\n* Certificate signing request was sent to master and a response\n  was received.\n* The Kubelet was informed of the new secure connection details.\n\nRun 'kubectl get nodes' on the master to see this node join the cluster.\nFinished successfully\nCommand exited with status 0\nAction krib-install.sh.tmpl finished\nTask krib-install finished\nUpdated job 9d7d2564-26b4-439e-a049-c5b959b6da32 to finished```",
+        "ts": "1515256537.000007"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "or: `drpcli machines set bff5513f-7f63-43c6-b744-5eefaa9716be param Runnable to true`",
+        "ts": "1515256544.000069"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "GOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOAL!",
+        "ts": "1515256552.000094",
+        "reactions": [
+            {
+                "name": "tada",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "```root@testnode03:~# kubectl get nodes\nNAME          STATUS    ROLES     AGE       VERSION\nk8s-ingress   Ready     &lt;none&gt;    1m        v1.9.1\ntestnode01    Ready     &lt;none&gt;    11d       v1.9.0\ntestnode02    Ready     &lt;none&gt;    11d       v1.9.0\ntestnode03    Ready     master    12d       v1.9.0\ntestnode04    Ready     &lt;none&gt;    11d       v1.9.0```",
+        "ts": "1515256584.000003"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Thanks fellas :slightly_smiling_face:",
+        "ts": "1515256635.000055"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(scratch that method I posted - not right)",
+        "ts": "1515256755.000060"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U416T0AAX> - cool",
+        "ts": "1515257320.000067"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Learned a lot, so all good... “all’s well that ends.”",
+        "ts": "1515257824.000083"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Would it\/could it be a thing that krib-install checks for join token validity and re-gens &amp; stores new if no longer valid?",
+        "ts": "1515257982.000068"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Well - this would be an example of a maintence operation workflow.",
+        "ts": "1515258123.000022"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "A stage\/task that would regen the token and update the profile from the k8s master.  You would set the k8s-master machine to that stage, it would update the token and go back to wait.",
+        "ts": "1515258165.000057"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I was thinking check token, and if invalid (missing) then regen &amp; update",
+        "ts": "1515258423.000005"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "But yes, separate task I suppose ",
+        "ts": "1515258444.000016"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "there are lots of OPS related ways to do this ... which isn't our business model ... certainly need to consider if\/how we want to approach the Day 2 side of things - but ... for each Operations task we bake in to DRP ... the more people will want to bake in - then it becomes rigid in how it works - which is the problem with DRv2 - we specified too tightly how operations should be handled by how things were built",
+        "ts": "1515258582.000040"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Put that in front of krib-install and “Bob’s your uncle” (for at least my failure case)",
+        "edited": {
+            "user": "U416T0AAX",
+            "ts": "1515258622.000000"
+        },
+        "ts": "1515258587.000051"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "KRIB is a demonstration workload - not our business model",
+        "ts": "1515258589.000121"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "similarly - you could ask us to fix HA control plane in kubeadm - so that KRIB can bake an HA cluster ...  but we're not going to touch that with a 100 foot pole",
+        "ts": "1515258659.000087"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Ok, not going that far...",
+        "ts": "1515258679.000043"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "my point is: it's a slippery slope to start going down ... each tiny iterative change \"seems like a good idea\" at the time ... :slightly_smiling_face:",
+        "ts": "1515258707.000067"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "And sometimes to be honest it does seem to me like DRP is a k8s deployment system...",
+        "ts": "1515258734.000044"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I do agree that we might consider how to make cluster join with the token after expiry easier",
+        "ts": "1515258741.000116"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I get where you guys are coming from...",
+        "ts": "1515258761.000008"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "but NOT for KRIB's sake - for the sake of a generic model for any cluster management tooling going forward - a pattern that makes sense for the larger ecosystem",
+        "ts": "1515258769.000045"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we could simply change the KRIB content to generate a non-expiring token",
+        "ts": "1515258792.000027"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "viola ... job finished",
+        "ts": "1515258797.000004"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "There you go...",
+        "ts": "1515258815.000138"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "KRIB to me is an opinionated k8s cluster deployer ",
+        "ts": "1515258861.000065"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "that is exactly the rub ... that I'm getting at",
+        "ts": "1515258891.000046"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we don't want to be in the business of \"opinionated installers\"",
+        "ts": "1515258902.000001"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "our business is helping you get your installation path up and running",
+        "ts": "1515258911.000074"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "but realistically - we have to demonstrate how the system works - for others to understand and take it up",
+        "ts": "1515258924.000037"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So for a guy like me just learning about k8s and wanting my own bare-metal cluster, I was trying to leverage your installer",
+        "ts": "1515258941.000082"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "and eventually extend it for their own operational models",
+        "ts": "1515258942.000076"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Granted I’m ignorant at this point on kubeadm as well as many other k8s things...",
+        "ts": "1515258973.000122"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So maybe more caveats from the RackN side (“just an example installer, not for production use” etc) may be warranted...",
+        "ts": "1515259081.000027"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it is a good learning experience - for you - and for us - as we learn how to operate ... Operational things within DRP - we find areas to extend, fix, enhance, and make better",
+        "ts": "1515259084.000090"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Agreed",
+        "ts": "1515259091.000070"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "that caveat exists for `kubeadm` itself ... :slightly_smiling_face:",
+        "ts": "1515259102.000077"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yeah, I’m learning that...",
+        "ts": "1515259114.000083"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "+1 \"generic model for any cluster management tooling\" &lt; KRIB helps find patterns for immutable deploys that DRP should facilitate.   I would love to see a collaborative approach where Kubeadm \/ Kubespray did things that leverages DRP node ready state and cluster\/profile metadata to make the install &amp; Day 2 easier",
+        "ts": "1515265909.000084"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "RE: Kubespray vs KRIB - it would be great to let Kubespray to setup the control plane and then use Kubeadm join to attach the nodes.   That pattern would work for hybrid cloud managed control too.",
+        "ts": "1515266015.000007"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Nice ... someone forgot to sign the CentOS Repo pkgs for kubernetes 1.9.1 ???\n```Package efde37cfcd34c8232daafb0337b8ba5fda70100ab6988fca71ba30ce929311dd-kubelet-1.9.1-0.x86_64.rpm is not signed```",
+        "ts": "1515269434.000045"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah - I noticed that too.  I turned off the checking, but it is wrong.",
+        "ts": "1515276333.000037"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "since your on... I've got screen size check params... default check mobile (aka small screen)",
+        "ts": "1515276892.000021"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "what's the min screen width before you tell someone to get a real monitor :wink:",
+        "ts": "1515276917.000085"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "4k ultra HD",
+        "ts": "1515277087.000104"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "yea... cool... can you get rob to send me one for testing ?",
+        "ts": "1515277110.000027"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Actually, I don’t if we’ve set one.  There is known issues betwen <@U02DHRR2L> and I because he  tests with the firefox debugger open on the right side, while I don’t have it open until I need it.",
+        "ts": "1515277142.000022"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I'm sure they are on sale at Fry's",
+        "ts": "1515277143.000032"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I’d have to get one first.",
+        "ts": "1515277156.000036"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "wait... that's a trick... you don't EVER need one open...",
+        "ts": "1515277203.000031"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "viewports: [{ width: 1024, height: 768 }],",
+        "ts": "1515277215.000009"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "My guess would be something like 800x600, but 1024 would be better.",
+        "ts": "1515277225.000006"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "just going with the one... it's easy for 'some-one-who-cares-more' to run more ...",
+        "ts": "1515277248.000064"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I, in general, can operate the system without need the debugger window or cli.",
+        "ts": "1515277267.000060"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "for sure this thing will be albe to auto-gen screen-shot-UX steps :wink:",
+        "ts": "1515277292.000024"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "cool",
+        "ts": "1515277300.000044"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "sorry for the spew... but...",
+        "ts": "1515277533.000072"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "catmini:drpfeature msops$ yarn run test:po\nyarn run v1.3.2\n$ yarn run wdio wdio.PageObjectTest.conf.js\n$ \/Users\/msops\/Code\/drpfeature\/node_modules\/.bin\/wdio wdio.PageObjectTest.conf.js\n------------------------------------------------------------------\n[chrome #0-0] Session ID: ca8bb510bc5543bba0d6fe9a6a5fbf5e\n[chrome #0-0] Spec: \/Users\/msops\/Code\/drpfeature\/src\/pospecs\/login.spec.js\n[chrome #0-0] Running: chrome\n[chrome #0-0]\n[chrome #0-0] drp-ux auth form\n[chrome #0-0]   - should deny access with wrong creds\n[chrome #0-0]   ✓ should allow access with correct creds\n[chrome #0-0]\n[chrome #0-0]\n[chrome #0-0] 1 passing (9s)\n[chrome #0-0] 1 pending\n[chrome #0-0]\n\n:sparkles:  Done in 13.29s.\ncatmini:drpfeature msops$ yarn run test:po\nyarn run v1.3.2\n$ yarn run wdio wdio.PageObjectTest.conf.js\n$ \/Users\/msops\/Code\/drpfeature\/node_modules\/.bin\/wdio wdio.PageObjectTest.conf.js\n------------------------------------------------------------------\n[chrome #0-0] Session ID: 6ef9a9164beef7c5670bb61db1c6dca5\n[chrome #0-0] Spec: \/Users\/msops\/Code\/drpfeature\/src\/pospecs\/login.spec.js\n[chrome #0-0] Running: chrome\n[chrome #0-0]\n[chrome #0-0] drp-ux auth form\n[chrome #0-0]   - should deny access with wrong creds\n[chrome #0-0]   1) should allow access with correct creds\n[chrome #0-0]\n[chrome #0-0]\n[chrome #0-0] 1 pending (10s)\n[chrome #0-0] 1 failing\n[chrome #0-0]\n[chrome #0-0] 1) drp-ux auth form should allow access with correct creds:\n[chrome #0-0] visCheck: System Management Check Fail: expected false to equal true\n[chrome #0-0] AssertionError: visCheck: System Management Check Fail: expected false to equal true\n[chrome #0-0]     at \/Users\/msops\/Code\/drpfeature\/src\/pageobjects\/page.js:13:53\n[chrome #0-0]     at Array.forEach (&lt;anonymous&gt;)\n[chrome #0-0]     at Page.visCheck (\/Users\/msops\/Code\/drpfeature\/src\/pageobjects\/page.js:12:13)\n[chrome #0-0]     at Context.&lt;anonymous&gt; (\/Users\/msops\/Code\/drpfeature\/src\/pospecs\/login.spec.js:52:20)\n[chrome #0-0]     at new Promise (&lt;anonymous&gt;)\n[chrome #0-0]     at new F (\/Users\/msops\/Code\/drpfeature\/node_modules\/core-js\/library\/modules\/_export.js:35:28)\n[chrome #0-0]\n\nerror Command failed with exit code 1.\ninfo Visit <https:\/\/yarnpkg.com\/en\/docs\/cli\/run> for documentation about this command.\nerror Command failed with exit code 1.\ninfo Visit <https:\/\/yarnpkg.com\/en\/docs\/cli\/run> for documentation about this command.\ncatmini:drpfeature msops$",
+        "attachments": [
+            {
+                "title": "Yarn",
+                "title_link": "https:\/\/yarnpkg.com\/en\/docs\/cli\/run",
+                "text": "Fast, reliable, and secure dependency management.",
+                "fallback": "Yarn",
+                "image_url": "https:\/\/yarnpkg.com\/assets\/og_image.png",
+                "from_url": "https:\/\/yarnpkg.com\/en\/docs\/cli\/run",
+                "image_width": 477,
+                "image_height": 250,
+                "image_bytes": 65979,
+                "service_icon": "https:\/\/yarnpkg.com\/favicon.ico",
+                "service_name": "yarnpkg.com",
+                "id": 1
+            }
+        ],
+        "ts": "1515277535.000003"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U62R1805P> uploaded a file: <https:\/\/rackn.slack.com\/files\/U62R1805P\/F8P1XTHDH\/should_allow_access_with_correct_creds_document_chrome_v63_1024x768.png|should allow access with correct creds_document_Chrome_v63_1024x768.png> and commented: The visCheck notice icon jitter",
+        "file": {
+            "id": "F8P1XTHDH",
+            "created": 1515277612,
+            "timestamp": 1515277612,
+            "name": "should allow access with correct creds_document_Chrome_v63_1024x768.png",
+            "title": "should allow access with correct creds_document_Chrome_v63_1024x768.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U62R1805P",
+            "editable": false,
+            "size": 51562,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8P1XTHDH\/should_allow_access_with_correct_creds_document_chrome_v63_1024x768.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8P1XTHDH\/download\/should_allow_access_with_correct_creds_document_chrome_v63_1024x768.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8P1XTHDH-5c8730c6a4\/should_allow_access_with_correct_creds_document_chrome_v63_1024x768_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8P1XTHDH-5c8730c6a4\/should_allow_access_with_correct_creds_document_chrome_v63_1024x768_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8P1XTHDH-5c8730c6a4\/should_allow_access_with_correct_creds_document_chrome_v63_1024x768_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 270,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8P1XTHDH-5c8730c6a4\/should_allow_access_with_correct_creds_document_chrome_v63_1024x768_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 360,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8P1XTHDH-5c8730c6a4\/should_allow_access_with_correct_creds_document_chrome_v63_1024x768_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8P1XTHDH-5c8730c6a4\/should_allow_access_with_correct_creds_document_chrome_v63_1024x768_720.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 540,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8P1XTHDH-5c8730c6a4\/should_allow_access_with_correct_creds_document_chrome_v63_1024x768_800.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 600,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8P1XTHDH-5c8730c6a4\/should_allow_access_with_correct_creds_document_chrome_v63_1024x768_960.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 720,
+            "image_exif_rotation": 1,
+            "original_w": 1024,
+            "original_h": 768,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U62R1805P\/F8P1XTHDH\/should_allow_access_with_correct_creds_document_chrome_v63_1024x768.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F8P1XTHDH-1e821de8cd",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 1,
+            "initial_comment": {
+                "id": "Fc8P1XTMTM",
+                "created": 1515277612,
+                "timestamp": 1515277612,
+                "user": "U62R1805P",
+                "is_intro": true,
+                "comment": "The visCheck notice icon jitter"
+            }
+        },
+        "user": "U62R1805P",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "ctrees",
+        "bot_id": null,
+        "ts": "1515277615.000045"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "purple is the css animation drift :wink:... but because I turned sensitivity up to '11' (spinal tap reference)",
+        "ts": "1515277691.000095"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "so... if you PAY for the aws 'stuff' esp the login... didn't they provide testing hooks ?.... there is something funny differnet about that darn pile of amazoncognito caca... I can't get focus now (or did someone change something)",
+        "ts": "1515295146.000014"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "Oh... hidden elements named the same but only rendered react .... I think... we need to talk a css style guide or 'something'...",
+        "ts": "1515296479.000008"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U62R1805P> uploaded a file: <https:\/\/rackn.slack.com\/files\/U62R1805P\/F8Q0ZTM2A\/screen_shot_2018-01-06_at_9.41.51_pm.png|Screen Shot 2018-01-06 at 9.41.51 PM.png> and commented: ... hacking around 4 now by guessing at the element #...",
+        "file": {
+            "id": "F8Q0ZTM2A",
+            "created": 1515296604,
+            "timestamp": 1515296604,
+            "name": "Screen Shot 2018-01-06 at 9.41.51 PM.png",
+            "title": "Screen Shot 2018-01-06 at 9.41.51 PM.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U62R1805P",
+            "editable": false,
+            "size": 114884,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8Q0ZTM2A\/screen_shot_2018-01-06_at_9.41.51_pm.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8Q0ZTM2A\/download\/screen_shot_2018-01-06_at_9.41.51_pm.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8Q0ZTM2A-1f7985562a\/screen_shot_2018-01-06_at_9.41.51_pm_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8Q0ZTM2A-1f7985562a\/screen_shot_2018-01-06_at_9.41.51_pm_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8Q0ZTM2A-1f7985562a\/screen_shot_2018-01-06_at_9.41.51_pm_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 78,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8Q0ZTM2A-1f7985562a\/screen_shot_2018-01-06_at_9.41.51_pm_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 104,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8Q0ZTM2A-1f7985562a\/screen_shot_2018-01-06_at_9.41.51_pm_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8Q0ZTM2A-1f7985562a\/screen_shot_2018-01-06_at_9.41.51_pm_720.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 156,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F8Q0ZTM2A-1f7985562a\/screen_shot_2018-01-06_at_9.41.51_pm_800.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 173,
+            "image_exif_rotation": 1,
+            "original_w": 934,
+            "original_h": 202,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U62R1805P\/F8Q0ZTM2A\/screen_shot_2018-01-06_at_9.41.51_pm.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F8Q0ZTM2A-7b537ae57f",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 1,
+            "initial_comment": {
+                "id": "Fc8Q6Z0L15",
+                "created": 1515296604,
+                "timestamp": 1515296604,
+                "user": "U62R1805P",
+                "is_intro": true,
+                "comment": "... hacking around 4 now by guessing at the element #..."
+            }
+        },
+        "user": "U62R1805P",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "ctrees",
+        "bot_id": null,
+        "ts": "1515296606.000039"
+    }
+]

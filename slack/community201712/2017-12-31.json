@@ -1,0 +1,23 @@
+[
+    {
+        "type": "message",
+        "user": "U7U02J6LX",
+        "text": "Happy New Year @community :v: :wine_glass: Thanks to the DR-staff for your help and always fast response..",
+        "ts": "1514758707.000055",
+        "reactions": [
+            {
+                "name": "grinning",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "Same and thanks!",
+        "ts": "1514773004.000021"
+    }
+]

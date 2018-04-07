@@ -1,0 +1,158 @@
+[
+    {
+        "type": "message",
+        "user": "U9RB70BJ7",
+        "text": "does the <https:\/\/hub.docker.com\/r\/digitalrebar\/provision\/> docker image include the portal software?",
+        "edited": {
+            "user": "U9RB70BJ7",
+            "ts": "1521484623.000000"
+        },
+        "ts": "1521484616.000208"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U9RB70BJ7> - no it does not",
+        "ts": "1521484654.000301"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Hmm - not sure how to answer that.  The container has dr-provision that starts and redirects to the portal.",
+        "ts": "1521484663.000605"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the Portal is a RackN commercial for hosted on-premise",
+        "ts": "1521484665.000208"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Rackn maintains a version of the Portal for Open use in it's current form (eg <https:\/\/portal.rackn.io\/> )",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1521484709.000000"
+        },
+        "ts": "1521484702.000590"
+    },
+    {
+        "type": "message",
+        "user": "U9RB70BJ7",
+        "text": "thanks",
+        "ts": "1521484710.000487"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U9RB70BJ7> it's also worth noting that the UX runs from your browser.  Your browser is the bridge,  the endpoint does not send data to the saas.",
+        "client_msg_id": "043d3a1e-6c13-4359-9456-3676d8fe7999",
+        "ts": "1521488329.000023"
+    },
+    {
+        "type": "message",
+        "user": "U9RB70BJ7",
+        "text": "ah ok, I think I understand.  so unless we're running the \"on-prem\" mode,  the browser loads the UX bits from <http:\/\/portal.rackn.io|portal.rackn.io>, then proceeds to manage the endpoint host it was originally redirected from.?",
+        "edited": {
+            "user": "U9RB70BJ7",
+            "ts": "1521492270.000000"
+        },
+        "ts": "1521492245.000154"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "correct",
+        "ts": "1521492271.000121"
+    },
+    {
+        "type": "message",
+        "user": "U9RB70BJ7",
+        "text": "thanks again",
+        "ts": "1521492287.000157"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "your browser then continues to act as a \"bridge\" between the Endpoint and the Portal",
+        "ts": "1521492290.000135"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "for any subsequent calls\/actions (eg installing Content from the RackN Library, etc)",
+        "ts": "1521492306.000044"
+    },
+    {
+        "type": "message",
+        "user": "U9RB70BJ7",
+        "text": "that makes sense.  interesting approach.",
+        "ts": "1521492379.000439"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "basic network requirements are as follows:\nadmin browser outbound port 443 for HTTPS to <http:\/\/portal.rackn.io|portal.rackn.io>\nadmin browser outbound to port 8092 (by default) for HTTPS API access to Endpoint",
+        "ts": "1521492381.000404"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it allows the DRP Endpoint to operate in an air-gapped environment with an \"enabled VPN access\" to that Management network",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1521492420.000000"
+        },
+        "ts": "1521492406.000211"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "which allows UX use of the hosted Portal \nfor true on-prem only air-gapping - no VPN or Internet access - then RackN commercial Portal can be installed onsite",
+        "ts": "1521492453.000405"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "for reference, it's a cross origin resource sharing (CORS) approach where the UX contacts multiple host servers   <https:\/\/en.wikipedia.org\/wiki\/Cross-origin_resource_sharing>",
+        "attachments": [
+            {
+                "title": "Cross-origin resource sharing",
+                "title_link": "https:\/\/en.wikipedia.org\/wiki\/Cross-origin_resource_sharing",
+                "author_name": "Wikipedia",
+                "author_link": "https:\/\/en.wikipedia.org\/",
+                "text": "Cross-origin resource sharing (CORS) is a mechanism that allows restricted resources (e.g. fonts) on a web page to be requested from another domain outside the domain from which the first resource was served. A web page may freely embed cross-origin images, stylesheets, scripts, iframes, and videos. Certain \"cross-domain\" requests, notably Ajax requests, are forbidden by default by the same-origin security policy.\nCORS defines a way in which a browser and server can interact to determine whether or not it is safe to allow the cross-origin request. It allows for more freedom and functionality than purely same-origin requests, but is more secure than simply allowing all cross-origin requests. The specification for CORS was originally published as a W3C Recommendation but that document is obsolete. The current actively-maintained specification that defines CORS is the Fetch Living Standard.",
+                "fallback": "wikipedia: Cross-origin resource sharing",
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/wikipedia.png",
+                "id": 1
+            }
+        ],
+        "edited": {
+            "user": "U02DHRR2L",
+            "ts": "1521493884.000000"
+        },
+        "ts": "1521493578.000121"
+    },
+    {
+        "type": "message",
+        "user": "U9R87AWKE",
+        "text": "This may be somewhere I can't find but where are the logins for sledgehammer",
+        "ts": "1521504694.000063"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "root\/rebar1",
+        "ts": "1521504850.000166",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U9R87AWKE"
+                ],
+                "count": 1
+            }
+        ]
+    }
+]

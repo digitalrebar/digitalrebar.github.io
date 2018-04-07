@@ -1,0 +1,396 @@
+[
+    {
+        "text": "@galthaus Our reinstall (ll41) is \"stuck\" in the provisioner-os-install mode where it keeps repeating the output:\n2017\/04\/28 19:44:15 Could not connect to Rebar: Head https:\/\/127.0.0.1:3000\/api\/v2\/digest: dial tcp 127.0.0.1:3000: getsockopt: connection refused\n\/\/tmp\/scriptjig-Dkrnn4\/provisioner-os-install\/01-install-os.sh@51(): sleep 1\n\/\/tmp\/scriptjig-Dkrnn4\/provisioner-os-install\/01-install-os.sh@50(): rebar nodes get d71485f0-5c26-4438-8b9c-9648c8b2b4b5 attrib provisioner-active-bootstate\n\/\/tmp\/scriptjig-Dkrnn4\/provisioner-os-install\/01-install-os.sh@50(): grep -q -- -install\n",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493409530.245186"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "rebar nodes update d71485f0-5c26-4438-8b9c-9648c8b2b4b5 '{ \"bootenv\": \"local\" }'",
+        "ts": "1493409703.315134"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "rebar nodes update d71485f0-5c26-4438-8b9c-9648c8b2b4b5 '{ \"bootenv\": \"rhel-7.3-server-install\" }'",
+        "ts": "1493409718.320968"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "See if that clears it.",
+        "ts": "1493409726.324162"
+    },
+    {
+        "text": "@galthaus Nope, gets stuck in same loop",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493409886.385915"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "hmm - bigger hammer",
+        "ts": "1493409916.397326"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "rebar nodes redeploy d71485f0-5c26-4438-8b9c-9648c8b2b4b5",
+        "ts": "1493409933.403911"
+    },
+    {
+        "text": "@galthaus Nope, is is still stuck in that loop. Got a biggerer hammer?",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493410157.487964"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The redeploy should have rebooted the node.  If it didn't then try and reboot the node.",
+        "ts": "1493410193.500642"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "rebar nodes power d71485f0-5c26-4438-8b9c-9648c8b2b4b5 reboot",
+        "ts": "1493410209.506594"
+    },
+    {
+        "text": "@galthaus That forced the reboot",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493410283.533568"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "what is the node's bootenv?",
+        "ts": "1493410407.578249"
+    },
+    {
+        "text": "sledgehammer",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493410656.665454"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay that is good.  Let's see what happens.  It should  redo the whole process.",
+        "ts": "1493410675.672479"
+    },
+    {
+        "text": "I will let you know if it works. Going to put all the missing drives into the hardware to add another 24 nodes.",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493410752.699709"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "cool",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1493410854.000000"
+        },
+        "ts": "1493410849.733836"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "note: edits do NOT make it into the gitter channel...",
+        "ts": "1493411441.945083"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes - I know.  Teach them to join slack.  :slightly_smiling_face:",
+        "ts": "1493411462.952436"
+    },
+    {
+        "text": "Probably a silly question, but I'm brand new to rebar and trying to setup a bare metal environment. I've run the  \"run-in-system\" script with provisioner and dhcp containers and then I found out that I need to get the RAID and BIOS tools :-P So I did that but I'm not totally sure how to re-run just raid-tools-install role.",
+        "username": "spencerwjensen",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493414578.974365"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "There is a retry button in the ux.  The annealer view top right spiral looking icon.",
+        "ts": "1493414734.019667"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Select that.",
+        "ts": "1493414738.020662"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The errors will be at the top.  On the right, there should be a retry all button.",
+        "ts": "1493414751.024491"
+    },
+    {
+        "text": "hmmm.. no errors listed.",
+        "username": "spencerwjensen",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493414784.033801"
+    },
+    {
+        "text": "here is what I have done so far:\n- pulled digital rebar\n- ran sudo .\/run-in-system.sh --deploy-admin=local --access=host --con-provisioner --con-dhcp --admin-ip=&lt;ip\/subnet&gt;\n- downloaded and copied RAID and bios tools into ~\/.cache\/...\/files\/raid\n",
+        "username": "spencerwjensen",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493415207.152976"
+    },
+    {
+        "text": "but when I login to the UX, I don't see the \"Provisioner\" tab.",
+        "username": "spencerwjensen",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493415218.155900"
+    },
+    {
+        "text": "Hi guys, with the quickstart deploy, I try to add drpcli bootenvs install bootenvs\/centos-7... and it fails to explode.  Where can I look for errors?  The error message in the logs just ends with \/sbin\/selinunxenabled",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493416881.581292"
+    },
+    {
+        "text": "error code 255",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493416895.584533"
+    },
+    {
+        "text": "the bootenv should have some error messages",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493416927.592699"
+    },
+    {
+        "text": "Nothing actionable, seemingly: Explode ISO: explode_iso.sh failed for centos-7.3.1611-install: exit status 255\",\n    \"Command output:\\nExplode iso centos-7.3.1611 \/root\/drp-data\/tftpboot \/root\/drp-data\/tftpboot\/isos\/CentOS-7-x86_64-Minimal-1611.iso \/root\/drp-data\/tftpboot\/centos-7.3.1611\/install\\nExtracting \/root\/drp-d\nata\/tftpboot\/isos\/CentOS-7-x86_64-Minimal-1611.iso for centos-7.3.1611\\n\/sbin\/selinuxenabled\\n",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493416963.601569"
+    },
+    {
+        "text": "the install combines several actions, you may need to try them one at a time.  Also, I think there's a --debug flag for the CLI",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493416965.602018"
+    },
+    {
+        "text": "Not OK to run as root?",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493416969.603160"
+    },
+    {
+        "text": "DRP must run w\/ root privs",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493416999.610523"
+    },
+    {
+        "text": "but the CLI does not requiire it",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493417060.624683"
+    },
+    {
+        "text": "disk space?",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493417071.627223"
+    },
+    {
+        "text": "Plenty free.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493417091.631781"
+    },
+    {
+        "text": "also, drpcli bootenvs list doesn't show the ID of a bootenv, so you can't know the ID to use with drpcli bootenvs destroy &lt;ID&gt;",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493417194.655640"
+    },
+    {
+        "text": "Unless it's \"name'",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493417210.659136"
+    },
+    {
+        "text": "I'm not much help on this score, soryr",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493417276.674068"
+    },
+    {
+        "text": "Ok, so name == ID",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493417300.679368"
+    },
+    {
+        "text": "bootenvs destroy and create again put it in available: true",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493417380.696728"
+    },
+    {
+        "text": "Timing issue, mayhaps.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493417392.699377"
+    },
+    {
+        "text": "Now I'm getting malformed basic auth strings:",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493418157.860235"
+    },
+    {
+        "text": "dr-provision2017\/04\/28 22:21:15.241830 Malformed basic auth string: dG9vbHMvZGlzY292ZXJ5LWxvYWQuc2g=\n[GIN] 2017\/04\/28 - 18:21:15 | 401 |      55.948µs | 192.168.1.1 |   GET     \/api\/v3\/bootenvs\ndr-provision2017\/04\/28 22:21:20.085661 Bad auth header: Basic\n[GIN] 2017\/04\/28 - 18:21:20 | 401 |      42.698µs | 192.168.1.1 |   GET     \/api\/v3\/bootenvs",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493418158.860430"
+    },
+    {
+        "text": "Can't login anymore.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493418164.861895"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Huh?",
+        "ts": "1493431540.490867"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U02DMB5J3> - selinux could keep explode iso from doing its explode work in the local directory or \/var\/lib\/tftpboot",
+        "ts": "1493431593.494618"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I haven't tried on a system selinux enabled.",
+        "ts": "1493431602.495180"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "With regard to auth, the RS_KEY should be username:password or -U and -P should be used.",
+        "ts": "1493431660.499600"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Make sure RS_TOKEN is not set.",
+        "ts": "1493431677.500815"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "@spencerwjensen - missing the provisioner tab means that the containers didn't come up correctly.",
+        "ts": "1493431737.504928"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "cd digitalrebar\/deploy\/compose",
+        "ts": "1493431750.505820"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "docker-compose ps",
+        "ts": "1493431754.506066"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "wait - start over - host should be HOST.  You may get a in wonky mode that way.",
+        "ts": "1493431796.508948"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Rerun the run-in-system command.",
+        "ts": "1493431812.509965"
+    },
+    {
+        "text": "Wow! Thanks @galthaus! I will give that a shot! ",
+        "username": "spencerwjensen",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493444345.229149"
+    }
+]

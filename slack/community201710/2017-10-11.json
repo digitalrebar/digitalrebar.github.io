@@ -1,0 +1,1687 @@
+[
+    {
+        "text": "hi there! can i ask some question as user, not dev?\nI try to use rebar in the 'home lab' and something wrong with arp tables",
+        "username": "kolomnitcki",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507725888.000160"
+    },
+    {
+        "text": "https:\/\/pastebin.com\/HWfinPLW",
+        "username": "kolomnitcki",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507725897.000229"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "@kolomnitcki - you are definitely welcome to ask questions here as an operator - DRP is FOR operators.  :slightly_smiling_face:    What specifically is the issue  you are seeing ?",
+        "ts": "1507727854.000036"
+    },
+    {
+        "text": "@rackneng  well, i'm using a router as DHCP server with settings  `next-server=192.168.10.14` where 192.168.10.14 is rebar vm ip address and `boot-file-name=lpxelinux.0` ",
+        "username": "kolomnitcki",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507728252.000136"
+    },
+    {
+        "text": "in `drpcli leases list` you can see two IP on one MAC `\"00:0c:29:a4:f2:e1\"`",
+        "username": "kolomnitcki",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507728331.000380"
+    },
+    {
+        "text": "```\n\"Addr\": \"192.168.10.10\",\n\"Token\": \"00:0c:29:a4:f2:e1\",\n...\n\"Addr\": \"192.168.10.11\",\n\"Token\": \"00:0c:29:a4:f2:e1\",\n```",
+        "username": "kolomnitcki",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507728411.000062"
+    },
+    {
+        "text": "but in fact `00:0c:29:a4:f2:e1` has `192.168.10.16` IP",
+        "username": "kolomnitcki",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507728503.000111"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Can you please provide the start up options for \"dr-provision\", and output of \"drpcli subnets list\" ",
+        "ts": "1507728613.000449"
+    },
+    {
+        "text": "`drpcli subnets list` -  https:\/\/pastebin.com\/JrSJbjMh (its ok what i'm using pastebin?) ",
+        "username": "kolomnitcki",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507728883.000653"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "sure no problem",
+        "ts": "1507728913.000206"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "and also \"ps -ef | grep dr-provision\", please",
+        "ts": "1507728983.000629"
+    },
+    {
+        "text": "```\n[root<@U1HL5R43Z> ~]# ps -ef | grep dr-provision\nroot       1279      1  0 Oct10 ?        00:01:16 \/usr\/local\/bin\/dr-provision\n```\ni'm using dr-provision.service",
+        "username": "kolomnitcki",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507729056.000205"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Ah - so you have not disabled the DHCP service within `dr-provision` - so you have 2 DHCP servers handing out leases - that will cause lots of grief",
+        "ts": "1507729198.000260"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you need to disable the DHCP service within `dr-provision` - please add `--disable-dhcp` to your service start",
+        "ts": "1507729311.000572"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(that should be in `\/etc\/systemd\/services\/dr-provision.service`",
+        "ts": "1507729343.000651"
+    },
+    {
+        "text": "@rackneng  thanks",
+        "username": "kolomnitcki",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507729651.000037"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "presumably that's sorting out the issues for you ?  :slightly_smiling_face:",
+        "ts": "1507729710.000356"
+    },
+    {
+        "text": "i'm turning off dhcp via rackn UI for now",
+        "username": "kolomnitcki",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507730119.000080"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "presumably you're doing that through disabling the Subnet ...",
+        "ts": "1507730332.000034"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "So, I signed up for <http:\/\/packet.net|packet.net> and got flagged (maybe because I used my google account as phone ?)... anyway... I was wondering how to get some test credit AND I've attempted to take Rob's demo (where he's using packet for the k8s)",
+        "ts": "1507732209.000432"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I had done this in the past (standing up DR and just provision) a few months ago so went back to a CentOS7 vm on VBOX ran into some cert issues...",
+        "ts": "1507732361.000045"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "My 'long term' is to create an OpenAFS 'community' package that can be used at some of the local universities... were a deploy to packet OR to a 'pile of old stuff' is the same for the prof",
+        "ts": "1507732524.000300"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U62R1805P> - yeah, I got flagged by packet when I signed up w\/ a rackn account, too ... so ... they aren't just singling you out :slightly_smiling_face:",
+        "ts": "1507732538.000055"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "not sure what their heuristics are .... but a bit overly aggressive, is my guess",
+        "ts": "1507732553.000106"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "possibly if you've used packet previously, they're trying to reduce duplicate accounts ?   I had been a previous packet user at another company",
+        "ts": "1507732582.000329"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "Oh I sort of figured that... I think is that they just want a human in the loop when they take a CC",
+        "ts": "1507732582.000728"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "OK.. so went through Shane new video (Thanks, very helpful 4me).",
+        "ts": "1507735714.000426"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "for reference - that's the new Community Content video, at:\n<http:\/\/bit.ly\/2z029lo>",
+        "attachments": [
+            {
+                "service_name": "YouTube",
+                "title": "Digital Rebar Provision - Community Content",
+                "title_link": "http:\/\/bit.ly\/2z029lo",
+                "text": "In this video, Shane Gibson demonstrates the freely available and open source community content available for Digital Rebar Provision v3.1.",
+                "fallback": "YouTube: Digital Rebar Provision - Community Content",
+                "thumb_url": "https:\/\/i.ytimg.com\/vi\/0wrLoM-kWcU\/maxresdefault.jpg",
+                "from_url": "http:\/\/bit.ly\/2z029lo",
+                "thumb_width": 1280,
+                "thumb_height": 720,
+                "service_icon": "https:\/\/s.ytimg.com\/yts\/img\/favicon-vfl8qSV2F.ico",
+                "id": 1
+            }
+        ],
+        "ts": "1507735760.000413"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "A few questions:\n1. - Ansible vs 'Local Shell Scripts'.  So the package is more about local scripts template expansion ?\n2. - Duplicating 'packet ipxe setup locally' Seems like a good idea esp for a test lab  is to duplicate how DR-P works within packet (pattern wise).. ?? agree ??",
+        "ts": "1507736199.000144"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I know DR-P works well with ansible \/ kubespray via Rob's demo, just wondering when is using template expansion on shell scripts becomes a preferred method.",
+        "ts": "1507736307.000516"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U62R1805P> we believe firmly that you should use whatever Cfg Mgmt\/DevOps tooling you prefer - ansible, saltstack, chef, puppet ... etc.  so we are not pushing\/using either technology for basic provisioning",
+        "ts": "1507736446.000632"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the Demo that <@U02DHRR2L> has is related to enabling applications placement on top of DRP - more as a demo of utilizing a DRP provisioned cluster",
+        "ts": "1507736476.000191"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it just happens he chose Ansible Kubespray as the deployment mechanism",
+        "ts": "1507736488.000484"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we also have  Virtualbox plugin for interoperating a little better with VB for a local lab setup on your own laptop",
+        "ts": "1507736520.000139"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "though - to be honest, I haven't yet played with it much - I do use VirtualBox on my Mac - without the plugin, and it works fine - you just have to \"work around\" the VirtualBox peculiarities of trying desperately to own DHCP all the time",
+        "ts": "1507736562.000174"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I'm going to put together a video on Virtualbox as a lab setup here shortly - as a few of us at rackn use it too",
+        "ts": "1507736585.000605"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "Oh... wow... that's just what I was doing (setting up a VirtualBox again)",
+        "ts": "1507736672.000115"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I was running into https algo issues:\n[root@provision ~]# curl <https:\/\/192.168.88.9:8092>\ncurl: (35) Cannot communicate securely with peer: no common encryption algorithm(s).\n[root@provision ~]# curl <http:\/\/192.168.88.9:8091>\n&lt;pre&gt;\n&lt;a href=\"ALL-LICENSE\"&gt;ALL-LICENSE&lt;\/a&gt;",
+        "ts": "1507736721.000210"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "yea... Vbox vnet has always been ?? iffy ?? combined with MACOSX can really make you want to force feed Debian to everyone :wink:",
+        "ts": "1507736842.000427"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I do run mac myself basically because 'best popular' setup... I like to tell the mac people with issues \"well OBVIOUSLY your HOLDING IT WRONG\" when they have issues...",
+        "ts": "1507736969.000091"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "exactly",
+        "ts": "1507737003.000720"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "curl --insecure ...",
+        "ts": "1507737019.000201"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "OH... thanks... how do I get the webbrowser to poke through ?",
+        "ts": "1507737057.000146"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U6QFVRJNB> uploaded a file: <https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/F7G3T3ADN\/-.yaml|Untitled>",
+        "file": {
+            "id": "F7G3T3ADN",
+            "created": 1507737068,
+            "timestamp": 1507737068,
+            "name": "-.yaml",
+            "title": "Untitled",
+            "mimetype": "text\/plain",
+            "filetype": "yaml",
+            "pretty_type": "YAML",
+            "user": "U6QFVRJNB",
+            "editable": true,
+            "size": 566,
+            "mode": "snippet",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7G3T3ADN\/-.yaml?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7G3T3ADN\/download\/-.yaml?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "permalink": "https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/F7G3T3ADN\/-.yaml",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F7G3T3ADN-3aa11e2118",
+            "edit_link": "https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/F7G3T3ADN\/-.yaml\/edit",
+            "preview": "# obtain API key from authenticated login request\r\nAPI_KEY='cm9ja2V0c2thdGVzOnIwY2tldHNrOHRz'\r\nJSON='{ \"defaultBootEnv\": \"ce-sledgehammer\", \"defaultStage\": \"\", \"unknownBootEnv\": \"ce-discovery\" }'\r\n\r\ncurl --silent --insecure --request POST        \\\r",
+            "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre><span class=\"cm-comment\"># obtain API key from authenticated login request<\/span><\/pre><\/div>\n<div><pre>API_KEY=<span class=\"cm-string\">'cm9ja2V0c2thdGVzOnIwY2tldHNrOHRz'<\/span><\/pre><\/div>\n<div><pre><span class=\"cm-atom\">JSON='{ &quot;defaultBootEnv&quot;<\/span><span class=\"cm-meta\">: <\/span><span class=\"cm-string\">&quot;ce-sledgehammer&quot;<\/span>, <span class=\"cm-string\">&quot;defaultStage&quot;<\/span><span class=\"cm-meta\">: <\/span><span class=\"cm-string\">&quot;&quot;<\/span>, <span class=\"cm-string\">&quot;unknownBootEnv&quot;<\/span><span class=\"cm-meta\">: <\/span><span class=\"cm-string\">&quot;ce-discovery&quot;<\/span> <span class=\"cm-meta\">}<\/span><span class=\"cm-string\">'<\/span><\/pre><\/div>\n<div><pre>&#8203;<\/pre><\/div>\n<div><pre>curl --silent --insecure --request POST        \\<\/pre><\/div>\n<\/div>\n<\/div>\n",
+            "lines": 13,
+            "lines_more": 8,
+            "preview_is_truncated": false,
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U6QFVRJNB",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "shane",
+        "bot_id": null,
+        "ts": "1507737069.000152"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "example API usage to set Preferences",
+        "ts": "1507737081.000540"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "note the \"--insecure\" in the curl output",
+        "ts": "1507737093.000428"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "not sure what you mean by \"poke through\" ?",
+        "ts": "1507737104.000141"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I was hitting the UI on the IP with a browser (like Rob did in his setup demo)",
+        "ts": "1507737153.000509"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I couldnt' tell where it was getting blocked.... I 'suspect' maybe FW or SE... was just digging into it... but when Rob used a 'new machine' from packet... I figured.... well heck, I should just login to a new packet machine and figure out the starting env... then got to thinking... heck, this should be captured in a ks or ce-digital-rebar-baseline ??",
+        "ts": "1507737324.000092"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "need DR-P to setup a machine for DR-P :wink:",
+        "ts": "1507737392.000013"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "quick get your 'spinning inception top'",
+        "ts": "1507737419.000452"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": ":slightly_smiling_face:",
+        "ts": "1507737429.000039"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the web browser is a CORS application (cross origin resource sharing - <https:\/\/en.wikipedia.org\/wiki\/Cross-origin_resource_sharing> ) - so from your browser, you need outbound HTTPS to <http:\/\/rackn.github.io|rackn.github.io> (Portal), and then port 8092 access from your browser to your DRP Endpoint",
+        "attachments": [
+            {
+                "title": "Cross-origin resource sharing",
+                "title_link": "https:\/\/en.wikipedia.org\/wiki\/Cross-origin_resource_sharing",
+                "author_name": "Wikipedia",
+                "author_link": "http:\/\/en.wikipedia.org\/",
+                "text": "Cross-origin resource sharing (CORS) is a mechanism that allows restricted resources (e.g. fonts) on a web page to be requested from another domain outside the domain from which the first resource was served. A web page may freely embed cross-origin images, stylesheets, scripts, iframes, and videos. Certain \"cross-domain\" requests, notably Ajax requests, however, are forbidden by default by the same-origin security policy.\nCORS defines a way in which a browser and server can interact to determine whether or not it is safe to allow the cross-origin request. It allows for more freedom and functionality than purely same-origin requests, but is more secure than simply allowing all cross-origin requests. The specification for CORS was originally published as a W3C Recommendation but that document is obsolete. The current actively-maintained specification that defines CORS is the Fetch Living Standard.",
+                "fallback": "wikipedia: Cross-origin resource sharing",
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/wikipedia.png",
+                "id": 1
+            }
+        ],
+        "ts": "1507737469.000424"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "actually ... I used the 5min-drp demo setup to spin up 10 <http:\/\/Packet.net|Packet.net> centos nodes - which I used to deploy DRP on one of them for the Community Content video .... :slightly_smiling_face:",
+        "ts": "1507737516.000636"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<https:\/\/github.com\/digitalrebar\/provision\/tree\/master\/examples\/5min-drp>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/tree\/master\/examples\/5min-drp",
+                "text": "provision - The Provisioner for DigitalRebar as a Stand Alone Golang Utility",
+                "fallback": "GitHub: digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/tree\/master\/examples\/5min-drp",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?v=4&s=400",
+                "thumb_width": 192,
+                "thumb_height": 192,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1507737540.000682"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I _believe_ the terraform-provider-packet plugin necessary is NOW available with the \"always_pxe\" option - and doesn't require additional compile to build it from the Beta release (i.e. it JUST released yesterday afternoon)",
+        "ts": "1507737605.000489"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "that demo requires the RackN registered (free) content be downloaded\/available for the demo to work, since it uses some of the advanced Packet plugins and content to operate correctly",
+        "ts": "1507737649.000044"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "yea... I had stuff working months ago but the outbound to the portal is new, so that may be it... I was attempting to figure out just the servers were up (eliminate the UI thing)...  which basically made me want to drop into an ansible script and do some register checks so I can 'knowledge transfer' abit easier..",
+        "ts": "1507738395.000525"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "which is why I like the idea of capturing the packet pattern in ansible as I should be able to produce vagrantfile that mucks it all into a 'laptop test-lab' setup (basically use the kubesray structure)  I started to put a pfsense vm into the mix so I could use all vnet 'local only' and capture the SDN in ansible also...",
+        "ts": "1507738806.000526"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "needed one other switch for curl",
+        "ts": "1507740759.000600"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "[root@provision ~]# curl --ciphers ecdhe_ecdsa_aes_256_sha --insecure <https:\/\/127.0.0.1:8092\/ui>\n&lt;a href=\"https:\/\/rackn.github.io\/provision-ux\/#\/e\/127.0.0.1:8092\"&gt;Moved Permanently&lt;\/a&gt;.\n\n[root@provision ~]# curl --ciphers ecdhe_ecdsa_aes_256_sha --insecure <https:\/\/192.168.88.9:8092\/ui>\n&lt;a href=\"https:\/\/rackn.github.io\/provision-ux\/#\/e\/192.168.88.9:8092\"&gt;Moved Permanently&lt;\/a&gt;.",
+        "ts": "1507740761.000661"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "hmm - ok - your curl version must be .... odd ....",
+        "ts": "1507740800.000274"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "yea, which was why I was attempting to figure out what exactly is that 'base line' code 'ya-all' install on",
+        "ts": "1507740844.000268"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "\"all y'alls\"",
+        "ts": "1507740866.000116"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "but this is 'refreshing' my memory of the networking which I need",
+        "ts": "1507740881.000400"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(though I'm in California ... so .... )",
+        "ts": "1507740886.000195"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "mt.view or ?",
+        "ts": "1507740915.000530"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yep",
+        "ts": "1507740921.000652"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "hence meetup address",
+        "ts": "1507740931.000120"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "pretty shinny ceiling... so I doubt your in any old buildings I worked in...",
+        "ts": "1507740991.000615"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(shhh ... I work from home ... )",
+        "ts": "1507741768.000204"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "oh is that a bad word now in silly valley (post yahoo)",
+        "ts": "1507741832.000306"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "so... if you were to guess... my web problems probably I don't have updated crypto on my vm.... so... 'yum update'... woops... apt-get update ? or ya think I have a more fundamental config issues ?",
+        "ts": "1507741972.000254"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "... I had this working but MONTHS ago...",
+        "ts": "1507741998.000588"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I'm good with blowing everything away... but if that's the case, I'd like to know what to pull in as a baseline... I did attempt to follow: \n<http:\/\/packet.rebar.digital\/default.ipxe>\n\nto figure out that ks setup...",
+        "ts": "1507742111.000421"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "are you looking to do all of this in packet ?",
+        "ts": "1507742181.000041"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "or could wait for packet to get back to me... or wait till you do vagrant ... either way",
+        "ts": "1507742192.000567"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "what is the user\/account you registered under?  I know the packet guys, and I can get them to fix that for you asap",
+        "ts": "1507742223.000189"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "ultimately it'll be setup as a CI for normal dev-ops... so laptop -&gt; test -&gt; pre-pro -&gt; pro",
+        "ts": "1507742246.000680"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I'd suggest restarting w\/ the 5min-drp demo stuff in Packet - from scratch",
+        "ts": "1507742267.000300"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "but for sure I want to give them the option of 'well... just go test with packet'",
+        "ts": "1507742277.000197"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "ok... that's what I'll do...",
+        "ts": "1507742290.000236"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the virtualbox stuff is a bit fragile ... mostly because of virtualbox itself",
+        "ts": "1507742316.000018"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "just a sec, let me check email... maybe they've gotten to me... it's <mailto:ctrees@mailserviceslc.com|ctrees@mailserviceslc.com>",
+        "ts": "1507742320.000002"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we need more time to polish those pieces up",
+        "ts": "1507742326.000221"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I agree with vbox... and I've got lots of 'work-arounds' as the timer slips cause havoc with OpenAFS (kerbos) you shouldn't have as much issues with that... but for sure the vnet crap is a pita...",
+        "ts": "1507742406.000104"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I'm also working on some Vagrant based solutions - but again, I'm using VirtualBox as provider for vagrant .... so ....",
+        "ts": "1507742461.000429"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "but I for sure would use kubespray as a model... those guys have 'lots of eyes and hands'...",
+        "ts": "1507742462.000050"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U6QFVRJNB> What is the generated URL for a kickstart? (as opposed to a preseed)  `{{.Machine.Url}}`\/???",
+        "ts": "1507742658.000033"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "^^^ or <@U02DGQYK1> - like to be able to take a look at it while my install is happening here",
+        "ts": "1507743672.000127"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U416T0AAX> not sure off hand - checking",
+        "ts": "1507744158.000132"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U416T0AAX> I'm guessing it's something like:  curl --insecure <http:\/\/127.0.0.1:8091\/machines\/&lt;MACHINE_UUID&gt;\/ks.cfg>",
+        "ts": "1507745458.000670"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "but only because \"ks.cfg\" is the defacto standard for kickstart filename - not confirmed yet",
+        "ts": "1507745476.000738"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "also - once a job has been run fully, the file appears to be removed from the tftpboot tree (which is where this is served from)",
+        "thread_ts": "1507745499.000213",
+        "reply_count": 1,
+        "replies": [
+            {
+                "user": "U416T0AAX",
+                "ts": "1507747721.000407"
+            }
+        ],
+        "unread_count": 1,
+        "ts": "1507745499.000213"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "so - you can't grab a successfully finished\/installed version to review - it would only be during machine build (or potentially failed to build) stage you can grab it",
+        "ts": "1507745525.000361"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "<@U62R1805P> that reminds me :sweat_smile: <https:\/\/twitter.com\/sleepingkyoto\/status\/779571104431996928>",
+        "attachments": [
+            {
+                "fallback": "<https:\/\/twitter.com\/sleepingkyoto|@sleepingkyoto>: &gt;We're sorry, but your account has been flagged for manual review by a Packet team member.\nwhy does this happen every time i'm no terrorist",
+                "ts": 1474699209,
+                "author_name": "Mufasa is Back",
+                "author_link": "https:\/\/twitter.com\/sleepingkyoto\/status\/779571104431996928",
+                "author_icon": "https:\/\/pbs.twimg.com\/profile_images\/839265954022379520\/las0IkHL_normal.jpg",
+                "author_subname": "@sleepingkyoto",
+                "text": "&gt;We're sorry, but your account has been flagged for manual review by a Packet team member.\nwhy does this happen every time i'm no terrorist",
+                "service_name": "twitter",
+                "service_url": "https:\/\/twitter.com\/",
+                "from_url": "https:\/\/twitter.com\/sleepingkyoto\/status\/779571104431996928",
+                "id": 1,
+                "footer": "Twitter",
+                "footer_icon": "https:\/\/a.slack-edge.com\/6e067\/img\/services\/twitter_pixel_snapped_32.png"
+            }
+        ],
+        "ts": "1507746163.000570",
+        "reactions": [
+            {
+                "name": "frowning",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "<@U416T0AAX> `drpcli bootenvs show $BOOTENVNAME | jq '.Templates'` should show you the templates for a bootenv, and you can probably derive the correct Path from it. \n\n`ce-centos-7.3.1611-install` has `Path: \"{{.Machine.Path}}\/compute.ks\"` (<https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/bootenvs\/ce-centos-7.3.1611.yml#L27>)\nwhich should turn into something like `<http:\/\/drp.local:8091\/machines\/&lt;MACHINE_UUID&gt;\/compute.ks>`",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision-content",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/bootenvs\/ce-centos-7.3.1611.yml#L27",
+                "text": "provision-content - DigitalRebar Provision Content",
+                "fallback": "GitHub: digitalrebar\/provision-content",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/bootenvs\/ce-centos-7.3.1611.yml#L27",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?v=4&s=400",
+                "thumb_width": 192,
+                "thumb_height": 192,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1507746691.000314"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yes, I knew you could only see it while the bootenv is set to the -install and before it gets changed back to ‘local’",
+        "thread_ts": "1507745499.000213",
+        "parent_user_id": "U6QFVRJNB",
+        "ts": "1507747721.000407"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U54E4SD4G> is correct",
+        "ts": "1507748476.000411"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U54E4SD4G> <@U02DGQYK1> <@U6QFVRJNB> Thanks",
+        "ts": "1507748543.000059"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DGQYK1> No `post-install.sh` used (needed) on the RHEL\/CentOS install (b\/c have `%post` in kickstart, right?)",
+        "ts": "1507748898.000363"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "centos has all in kickstart - ubuntu uses both preseed and post-install.sh",
+        "ts": "1507748932.000652"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, what I figured",
+        "ts": "1507748951.000068"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Does os-discovery Package `v1.0.0-tip-30` require a new sledgehammer ISO to be downloaded?",
+        "ts": "1507751162.000703"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "All my *discovery and *sledgehammer Bootenvs are “X” now having updated to that…",
+        "ts": "1507751220.000648"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "your current sledgehammer\/discovery image you want can be listed as:\n```[root@5min-drp-ewr1-00 ~]# .\/drpcli contents show os-discovery | jq '.sections.bootenvs.discovery.OS.IsoFile'\n\"sledgehammer-b689ed6b5e0dd74677acc3ffe9b8cafc5b7c8357.tar\"```",
+        "ts": "1507751336.000215"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "kind of a long JSON parameter to get - you could just `| grep IsoFile`",
+        "ts": "1507751359.000072"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "compare the sledgehammer SHA sum to the one you have",
+        "ts": "1507751378.000013"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Another q - is the “assets” subdir in isolated DRP still a thing? Or is everything that’s used living in “drp-data” now?",
+        "ts": "1507751538.000268"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "everything is in drp-data\/ in isolated mode",
+        "ts": "1507751600.000434"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "production pushes to \/var\/lib\/dr-provision as a base with \"digitalrebar\" and \"tftpboot\" being subdirs in both cases",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1507751625.000000"
+        },
+        "ts": "1507751619.000030"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So the ISOs in use live in `drp-data\/tftpboot\/isos\/` then?",
+        "ts": "1507751673.000064"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yes - that's where the drpcli command will push them to",
+        "ts": "1507751697.000026"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "and where the 'explode' function finds them to explode them out in to your tftpboot\/ directory appropriately",
+        "ts": "1507751713.000043"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can technically just copy the ISO to that directory - and just 'kill -HUP' the dr-provision service",
+        "ts": "1507751733.000335"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK",
+        "ts": "1507751738.000216"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it'll see the new ISO and explode it out",
+        "ts": "1507751741.000217"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Then this is my discovery problem:\n```[dradmin@dr-admin drp]$ tree drp-data\/tftpboot\/isos\/\ndrp-data\/tftpboot\/isos\/\n├── CentOS-7-x86_64-Minimal-1611.iso\n├── sledgehammer-80d6b866edba30a81fce1783b9f745ce9a003e13.tar\n├── sledgehammer-b689ed6b5e0dd74677acc3ffe9b8cafc5b7c8357.tar\n├── ubuntu-16.04.2-server-amd64.iso\n└── ubuntu-16.04.3-server-amd64.iso\n\n0 directories, 5 files\n[dradmin@dr-admin drp]$ .\/drpcli contents show os-discovery | jq '.sections.bootenvs.discovery.OS.IsoFile'\n\"sledgehammer-f5ffd3ed10ba403ffff40c3621f1e31ada0c7e15.tar\"```",
+        "edited": {
+            "user": "U416T0AAX",
+            "ts": "1507751777.000000"
+        },
+        "ts": "1507751763.000630"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if your DRP endpoint has internet access you can just run 'drpcli bootenvs uploadiso FOO' (iso name) and it'll download based on the bootenv specified HTTP location; stage it in to the isos directory, and tickle the explode function to do it's thing",
+        "ts": "1507751823.000019"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yup, doing that now",
+        "ts": "1507751838.000142"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we definitely need to do a little more around (at least) notifying on content update that a new ISO image version is required",
+        "ts": "1507751858.000040"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Request: when Content Packs are updatable, warn end user if dependencies will need to be updated as well (like the ISOs)",
+        "ts": "1507751908.000237"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Ah, beat me to it :slightly_smiling_face:",
+        "ts": "1507751928.000137"
+    },
+    {
+        "text": "hello all - i need a little bit of clarification.. when running the curl command that should be executed as root or as a sudo user?",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507752177.000058"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "hi @iamjes - Shane here w\/ RackN, pleased to meet you",
+        "ts": "1507752208.000373"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the curl command does not need to be run as root",
+        "ts": "1507752240.000610"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the DRP endpoint needs access to bind to port 67 and 69 for DHCP and TFTP if you are not using your own services",
+        "ts": "1507752289.000197"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can either run DRP as root, or you can use the setcap capabilities to allow dr-provision binary to bind to those low ports as a non-root user - keeping it completely contained to an unprivileged user account",
+        "ts": "1507752327.000303"
+    },
+    {
+        "text": "I have a machine with two nic's and the isolated install is the best way to run and then configure the dhcp and pxe after network interfaces have been updated with the internal ip address?",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507752349.000288"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it's probably easier to run in isolated mode - there is very little difference; other than where the local installed content gets put",
+        "ts": "1507752403.000053"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if you do - all content will be located in `~\/drp-data` of the user account you install as",
+        "ts": "1507752438.000654"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "and, yes - you can add \"Subnets\" to your DRP endpoint after install - once you enable the subnet, that will turn on the DHCP services for that Subnet",
+        "ts": "1507752590.000280"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "so you can exclude (by NOT configuring) a subnet - and no DHCP services will run there",
+        "ts": "1507752605.000384"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "@IAMJES If it helps plan, I am running in isolated mode, here’s the disk usage &amp; directory structure:\n```[dradmin@dr-admin drp]$ du -h -d 2 .\n99M\t.\/bin\/linux\n98M\t.\/bin\/darwin\n99M\t.\/bin\/windows\n295M\t.\/bin\n20K\t.\/tools\n5.6G\t.\/drp-data\/tftpboot\n212K\t.\/drp-data\/digitalrebar\n100K\t.\/drp-data\/saas-content\n0\t.\/drp-data\/plugins\n0\t.\/drp-data\/job-logs\n5.6G\t.\/drp-data\n7.7G\t.```",
+        "ts": "1507752640.000436"
+    },
+    {
+        "text": "ok thanks",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507752699.000616"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "That’s with CentOS 7, Ubuntu 16.04 and discovery ISO images",
+        "ts": "1507752732.000039"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "@iamjes - you can also specify that you require \"Reservations\" for DHCP leases; and you can be very prescriptive about which systems in a given subnet will receive a DHCP lease, and subsequently provision against the DRP endpoint",
+        "ts": "1507752739.000262"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you have the option of specify Reservations are required or optional",
+        "ts": "1507752754.000118"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if optional; then any system that PXE boots and requests DHCP will be answered; if required, only systems with a Reservation will be responded to",
+        "ts": "1507752783.000088"
+    },
+    {
+        "text": "thats nice - this is for a small network and i guess once they are provisioned in 'sledgehammer' then id like them to move into a permanent ip address allocation",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507752907.000190"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can do that by specifying via a Reservation; in which case, the Reservation assigned IP address would become the final IP address of the host",
+        "ts": "1507753175.000396"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the alternative method is to add a post-provisioning `task` that re-IPs the host after initial provisioning activity is complete",
+        "ts": "1507753200.000371"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "or have that task convert the lease to a reservation (maybe that is what you meant as well).",
+        "ts": "1507753255.000420"
+    },
+    {
+        "text": "or that :)",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507753265.000592"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "both are doable.",
+        "ts": "1507753287.000026"
+    },
+    {
+        "text": "how long does it take for the API server to start?",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507753356.000517"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if you have no content in the system - just a few seconds",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1507753393.000000"
+        },
+        "ts": "1507753389.000372"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7GU3ADNE\/pxe_install_os_options.pdf|PXE install OS options.pdf> and commented: <@U6QFVRJNB> <@U02DGQYK1> Another longer-term question — take a look at the attached file; my question is what options does DRP support today, which may it support in future, which are unsupported (possibly b\/c underlying install answer file format does not have the capability…)",
+        "file": {
+            "id": "F7GU3ADNE",
+            "created": 1507753421,
+            "timestamp": 1507753421,
+            "name": "PXE install OS options.pdf",
+            "title": "PXE install OS options.pdf",
+            "mimetype": "application\/pdf",
+            "filetype": "pdf",
+            "pretty_type": "PDF",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 76515,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7GU3ADNE\/pxe_install_os_options.pdf?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7GU3ADNE\/download\/pxe_install_os_options.pdf?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_pdf": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7GU3ADNE-e5552ffb22\/pxe_install_os_options_thumb_pdf.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_pdf_w": 935,
+            "thumb_pdf_h": 1210,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7GU3ADNE\/pxe_install_os_options.pdf",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F7GU3ADNE-0d43285574",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 1,
+            "initial_comment": {
+                "id": "Fc7H0ADB1S",
+                "created": 1507753421,
+                "timestamp": 1507753421,
+                "user": "U416T0AAX",
+                "is_intro": true,
+                "comment": "<@U6QFVRJNB> <@U02DGQYK1> Another longer-term question — take a look at the attached file; my question is what options does DRP support today, which may it support in future, which are unsupported (possibly b\/c underlying install answer file format does not have the capability…)"
+            }
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1507753422.000452"
+    },
+    {
+        "text": "and i can install apache2 and put in my ssl before running the install",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507753616.000382"
+    },
+    {
+        "text": "looks like it accepted just fine ",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507754580.000468"
+    },
+    {
+        "text": "while i am waiting for the last of it to come which page should i use first?",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507755241.000354"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "@IAMJES - not sure which page you mean?  Which UI page to start with?",
+        "ts": "1507755778.000325"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "https:\/\/&lt;IP&gt;:8092\/",
+        "ts": "1507755791.000137"
+    },
+    {
+        "text": "thanks",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507755794.000689"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "accept the self-signed cert (or your own) and then look for info\/proferences",
+        "ts": "1507755828.000080"
+    },
+    {
+        "text": "i have my own cert so if you go to https:\/\/rebar.010101.info it comes up with the apache test page and good lock - now it isnt and im redirected to rackn",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507756044.000236"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "cool",
+        "ts": "1507756066.000227"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "hmm",
+        "ts": "1507756097.000338"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "need to think about that for a moment.",
+        "ts": "1507756103.000374"
+    },
+    {
+        "text": "https:\/\/rackn.github.io\/provision-ux\/#\/e\/rebar.010101.info:8092\/system",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507756122.000291"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "oh cool - does that work?",
+        "ts": "1507756133.000412"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I guess it does.",
+        "ts": "1507756138.000025"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Probably will.",
+        "ts": "1507756145.000267"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yeah should.  Nice.",
+        "ts": "1507756151.000301"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You can also alter the port if you want.",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1507756188.000000"
+        },
+        "ts": "1507756187.000058"
+    },
+    {
+        "text": "i dont care about the port - just wondering why i was redirected",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507756481.000092"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The UI is served from cloud resources.",
+        "ts": "1507756524.000319"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It then attaches to the API endpoint you started with.",
+        "ts": "1507756550.000047"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That lets the UI update faster and more responsively than DRP",
+        "ts": "1507756564.000008"
+    },
+    {
+        "text": "will that redirect ever go away?",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507756579.000131"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The intent is no.  DRP may grow the ability to serve the UI locally, but it isn’t currently packaged that way.",
+        "ts": "1507756617.000463"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "What is the concern?",
+        "ts": "1507756629.000450"
+    },
+    {
+        "text": "how can i make this all secure?",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507756699.000511"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "@iamjes - the DRP Endpoint never reaches out to the RackN Portal, the only way it is \"managed\" is via your web browser, which sits between the DRP Endpoint and the RackN Portal",
+        "ts": "1507756820.000191"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "your DRP Endpoint can be 100% isolated from the outside - and it'll operate fully",
+        "ts": "1507756903.000155"
+    },
+    {
+        "text": "ok",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507756910.000375"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "your web browser acts as an intermediary - techinically via CORS connections (cross origin resource sharing - <https:\/\/en.wikipedia.org\/wiki\/Cross-origin_resource_sharing> ) to connect **from** your browser to your DRP Endpoint - and **from** your browser to the RackN Portal",
+        "attachments": [
+            {
+                "title": "Cross-origin resource sharing",
+                "title_link": "https:\/\/en.wikipedia.org\/wiki\/Cross-origin_resource_sharing",
+                "author_name": "Wikipedia",
+                "author_link": "http:\/\/en.wikipedia.org\/",
+                "text": "Cross-origin resource sharing (CORS) is a mechanism that allows restricted resources (e.g. fonts) on a web page to be requested from another domain outside the domain from which the first resource was served. A web page may freely embed cross-origin images, stylesheets, scripts, iframes, and videos. Certain \"cross-domain\" requests, notably Ajax requests, however, are forbidden by default by the same-origin security policy.\nCORS defines a way in which a browser and server can interact to determine whether or not it is safe to allow the cross-origin request. It allows for more freedom and functionality than purely same-origin requests, but is more secure than simply allowing all cross-origin requests. The specification for CORS was originally published as a W3C Recommendation but that document is obsolete. The current actively-maintained specification that defines CORS is the Fetch Living Standard.",
+                "fallback": "wikipedia: Cross-origin resource sharing",
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/wikipedia.png",
+                "id": 1
+            }
+        ],
+        "ts": "1507757018.000066"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if you do not use\/do that - then there is no UI to manipulate\/manage the DRP Endpoint with - but it's still 100% operable via the Command Line (drpcli) or API access within your local environment",
+        "ts": "1507757059.000049"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can further secure your DRP Endpoint so you do not need to run it as Root; via the `setcap` capabilities",
+        "ts": "1507757130.000160"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U6QFVRJNB> uploaded a file: <https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/F7GSXMDT5\/using__setcap__to_run_as_non-privileged_user.yaml|using `setcap` to run as non-privileged user> and commented: Beginnings of my write up on how to secure the DRP Endpoint (dr-provision daemon).",
+        "file": {
+            "id": "F7GSXMDT5",
+            "created": 1507757231,
+            "timestamp": 1507757231,
+            "name": "using__setcap__to_run_as_non-privileged_user.yaml",
+            "title": "using `setcap` to run as non-privileged user",
+            "mimetype": "text\/plain",
+            "filetype": "yaml",
+            "pretty_type": "YAML",
+            "user": "U6QFVRJNB",
+            "editable": true,
+            "size": 944,
+            "mode": "snippet",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7GSXMDT5\/using__setcap__to_run_as_non-privileged_user.yaml?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7GSXMDT5\/download\/using__setcap__to_run_as_non-privileged_user.yaml?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "permalink": "https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/F7GSXMDT5\/using__setcap__to_run_as_non-privileged_user.yaml",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F7GSXMDT5-00eee19233",
+            "edit_link": "https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/F7GSXMDT5\/using__setcap__to_run_as_non-privileged_user.yaml\/edit",
+            "preview": "if you are using DHCPD and TFTPD services of DRP, you will need to be able to bind to port 67 and 69 (respectively).  Typically *Nix systems require root privileges to do this.  DRP doesn't start as root, and then drop privileges with a fork() to another less privileged user.   \r\n\r\nTo enable DRP endpoint to run as a non-privileged user and insure a higher level of security, it's possible to use the Linux \"setcap\" (Capabilities) system to assign rights for the dr-provision binary to open low numbered (privileged) ports.  The process is relatively simple, but does (clearly\/obviously) require root permissions initially to enable the capabilities for the binary. \r\n\r\nTo enable any non-privileged user to start up the dr-provision binary and bind to privileged ports 67 and 69, do the following:\r",
+            "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>if you are using DHCPD and TFTPD services of DRP, you will need to be able to bind to port 67 and 69 (respectively).  Typically *Nix systems require root privileges to do this.  DRP doesn<span class=\"cm-string\">'t start as root, and then drop privileges with a fork() to another less privileged user.   <\/span><\/pre><\/div>\n<div><pre>&#8203;<\/pre><\/div>\n<div><pre>To enable DRP endpoint to run as a non-privileged user and insure a higher level of security, it<span class=\"cm-string\">'s possible to use the Linux &quot;setcap&quot; (Capabilities) system to assign rights for the dr-provision binary to open low numbered (privileged) ports.  The process is relatively simple, but does (clearly\/obviously) require root permissions initially to enable the capabilities for the binary. <\/span><\/pre><\/div>\n<div><pre>&#8203;<\/pre><\/div>\n<div><pre><span class=\"cm-atom\">To enable any non-privileged user to start up the dr-provision binary and bind to privileged ports 67 and 69, do the following<\/span><span class=\"cm-meta\">:<\/span><\/pre><\/div>\n<\/div>\n<\/div>\n",
+            "lines": 8,
+            "lines_more": 3,
+            "preview_is_truncated": false,
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 1,
+            "initial_comment": {
+                "id": "Fc7H3UK12R",
+                "created": 1507757231,
+                "timestamp": 1507757231,
+                "user": "U6QFVRJNB",
+                "is_intro": true,
+                "comment": "Beginnings of my write up on how to secure the DRP Endpoint (dr-provision daemon)."
+            }
+        },
+        "user": "U6QFVRJNB",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "shane",
+        "bot_id": null,
+        "ts": "1507757232.000006"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "All API (and subsequently CLI) requests are authenticated via either a username\/password pair, or you can create Tokens with limited scope to reduce the permissions and time that a given API call can execute",
+        "ts": "1507757302.000081"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it is advisable to change the default username\/password pair for the DRP Endpoint",
+        "ts": "1507757319.000119"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "and if you are concerned about other people accessing the API endpoint, further secure the API Ports (67, 69, 8091 and 8092) to JUST the hosts being provisioned and your admin access points; via the use of a local Firewall and policies on the DRP Endpoint - or intermediate firewall between the DRP Endpoint and your other networks",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1507757402.000000"
+        },
+        "ts": "1507757380.000265"
+    },
+    {
+        "text": "thats fine, as long as i understand why I am all good",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507757732.000242"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "now, if only I had time to cleanup my ansible role for deploying DRP in that manner",
+        "ts": "1507757927.000081"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "(and publishing it lol)",
+        "ts": "1507757941.000393"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it doesn't count if it isn't published ... !",
+        "ts": "1507757954.000407"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "!",
+        "ts": "1507757958.000347"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "theoretically at best :slightly_smiling_face:",
+        "ts": "1507757973.000352"
+    },
+    {
+        "text": "as long as it gets in there thats ok",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507758076.000027"
+    },
+    {
+        "text": "when signing up for an account on rackn beta it is looking for my name and not my domain name in the family name?",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507758461.000227"
+    },
+    {
+        "text": "nevermind  i got it",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507758568.000259"
+    },
+    {
+        "text": "last  question for the day - when i reboot the server and i want it to execute silently what is the command i should run?",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507760631.000151"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the DRP endpoint ?",
+        "ts": "1507760650.000052"
+    },
+    {
+        "text": "the install on my side",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507760662.000336"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "`.\/dr-provision --base-root=$HOME\/drp-data --local-content= --default-content= &gt; drp-local.log 2&gt;&amp;1 &amp;`",
+        "ts": "1507760757.000203"
+    },
+    {
+        "text": "ok and i can put that into a sh file - thank you",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507760778.000190"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "that will log to file \"drp-local.log\", and send both stdout and stderr to that file, and put dr-provision in the background",
+        "ts": "1507760784.000035"
+    },
+    {
+        "text": "fantastic",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507760794.000002"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you may need the `--static-ip=&lt;IP_ADDRESS&gt;` of your DRP Endpoint",
+        "ts": "1507760816.000180"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "option",
+        "ts": "1507760826.000417"
+    },
+    {
+        "text": "ok",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507760833.000109"
+    },
+    {
+        "text": "i had a small power surge here and when i go back to run i do this and get ... rebar<@U1HL5R43Z>:~$ sudo .\/dr-provision --static-ip=192.168.1.188 --base-root=\/home\/rebar\/drp-data --local-content=\"\" --default-content=\"\" &amp;\n[9] 1488",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507761704.000189"
+    },
+    {
+        "text": "i dont care if it has to all start over",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507761714.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "If you do sudo, don’t add the &amp;.  It is probably asking you for password.  Once started background it",
+        "ts": "1507761782.000134"
+    },
+    {
+        "text": "i thought that was the job of the &amp;",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507761832.000192"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "do this instead:\n```sudo date \nsudo .\/dr-provision --base-root=$HOME\/drp-data --local-content= --default-content= &gt; drp-local.log 2&gt;&amp;1 &amp;```",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1507762188.000000"
+        },
+        "ts": "1507761899.000196"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah but sudo might ask for a password and the backgroundinv by &amp; will cause the sudo to stop all execution",
+        "ts": "1507761903.000064"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "sudo is asking for your password - if you issue \"sudo date\" first, it'll ask for your password, then authenticate you",
+        "ts": "1507761918.000287"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah that ",
+        "ts": "1507761926.000177"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can temporarily run other sudo commands without being challenged for a password",
+        "ts": "1507761930.000229"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the problem is putting dr-provision in the background, doesn't allow you to authenticate your sudo request - your TTY is disconnected from stdin",
+        "ts": "1507761960.000176"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you could also change sudo to allow you to run \"dr-provision\" binary without password challenge",
+        "ts": "1507761983.000205"
+    },
+    {
+        "text": "where do i go to remove everything - now i get this... ",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507762091.000151"
+    },
+    {
+        "text": "rebar<@U1HL5R43Z>:~$ sudo date .\/dr-provision --base-root=$HOME\/drp-data --local-content= --static-ip=192.168.1.188 --default-content= &gt; drp-local.log 2&gt;&amp;1 &amp;\n[17] 1634\n[16]   Exit 1",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507762092.000150"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "`sudo date` should be run by itself first .... *then* run the `sudo .\/dr-provision...` after you've authenticated with `sudo date`",
+        "ts": "1507762162.000253"
+    },
+    {
+        "text": "[13] 1643 is all i get",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507762258.000241"
+    },
+    {
+        "text": "where do i remove everything to start over - or should i just re-image the server",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507762302.000222"
+    },
+    {
+        "text": "i got it",
+        "username": "IAMJES",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1507762690.000171"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": ":slightly_smiling_face:",
+        "ts": "1507763516.000295"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "O noes! A “barclamp” reference in the `burnin` Content pack…",
+        "ts": "1507778344.000047"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "`Automatically generated from the burnin barclamp`",
+        "ts": "1507778354.000070"
+    },
+    {
+        "text": "shudders",
+        "type": "message",
+        "subtype": "me_message",
+        "user": "U416T0AAX",
+        "ts": "1507778371.000094"
+    }
+]

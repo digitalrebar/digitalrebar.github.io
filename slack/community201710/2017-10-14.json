@@ -1,0 +1,116 @@
+[
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "@IAMJES Then two questions:\n1) does the 192.168.1.0\/24 network on eth0 have a router (should be the ‘gateway’ IP device) that does NAT? 192.168.x.x addresses aren’t routable on the Internet \n2) Is the DRP node acting as the router between the nodes network (192.168.0.0\/24 in your example above) and the Internet-connected network (192.168.1.0\/24 in your example above) ?",
+        "ts": "1507992750.000032"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "If the DRP server can curl stuff from the DR repo, then #1 should be a “yes” (i.e. the DRP server has working Internet connectivity and also working DNS (can resolve names into IP addresses)",
+        "ts": "1507993236.000073"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "If the above is *not* working, that’s step one to resolve and get working",
+        "ts": "1507993308.000078"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "If it *is* working, please run the following commands on the DRP server and post the output:\n1) ip route show\n2) sysctl net.ipv4.ip_forward",
+        "ts": "1507994300.000136"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "Say... I see: scientificlinux-6.8-install ... does anybody know if another (probably university IT geek) is working on OpenAFS server infrastructure scripts ?  (That's my goal is to setup testing env for OpenAFS Disaster Recovery)",
+        "ts": "1507998500.000057"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "global 'interest' in OpenAFS has reduced since CERN is trans off... but I'm curious who was motivated to put scientificlinux-6.8-install in",
+        "ts": "1507998739.000099"
+    },
+    {
+        "text": "&gt; *[ctrees]* Say... I see: scientificlinux-6.8-install ... does anybody know if another (probably university IT geek) is working on OpenAFS server infrastructure scripts ?  (That's my goal is to setup testing env for OpenAFS Disaster Recovery)\ni know in https:\/\/en.wikipedia.org\/wiki\/Faculty_of_Biology_(Moscow_State_University) cluster use scintific linux, but they use ``Lustre`` file system",
+        "username": "kolomnitcki",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1508000729.000056"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "<@U416T0AAX> class@class:~$ ip route show\ndefault via 192.168.1.204 dev eth0\n192.168.0.0\/24 dev eth1  proto kernel  scope link  src 192.168.0.1\n192.168.1.0\/24 dev eth0  proto kernel  scope link  src 192.168.1.188",
+        "ts": "1508027880.000020"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "class@class:~$ sudo sysctl net.ipv4.ip_forward\nnet.ipv4.ip_forward = 1",
+        "ts": "1508027891.000030"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": " <@U7J7U5DA9> OK, that looks fine - you have routing between interfaces turned on in the kernel, so the DRP box is acting as a router for the nodes network. ",
+        "ts": "1508029665.000002"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Routing table looks OK as well...",
+        "ts": "1508029685.000094"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Is the upstream router at 192.168.1.204 doing NAT, or something beyond that?",
+        "ts": "1508029824.000001"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Could you do show the output of this command: `traceroute 8.8.8.8`",
+        "ts": "1508029872.000042"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "(from the DRP server)",
+        "ts": "1508029888.000001"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "traceroute 8.8.8.8\ntraceroute to 8.8.8.8 (8.8.8.8), 30 hops max, 60 byte packets\n 1  192.168.1.204 (192.168.1.204)  0.571 ms  0.623 ms  0.735 ms\n 2  47.187.64.1 (47.187.64.1)  6.802 ms  6.818 ms  6.829 ms\n 3  172.102.49.250 (172.102.49.250)  6.876 ms  6.839 ms  6.942 ms\n 4  <http:\/\/ae7---0.scr01.dlls.tx.frontiernet.net|ae7---0.scr01.dlls.tx.frontiernet.net> (74.40.3.17)  6.939 ms <http:\/\/ae8---0.scr02.dlls.tx.frontiernet.net|ae8---0.scr02.dlls.tx.frontiernet.net> (74.40.3.25)  6.485 ms  6.646 ms\n 5  <http:\/\/ae1---0.cbr01.dlls.tx.frontiernet.net|ae1---0.cbr01.dlls.tx.frontiernet.net> (74.40.1.82)  6.878 ms  7.765 ms <http:\/\/ae0---0.cbr01.dlls.tx.frontiernet.net|ae0---0.cbr01.dlls.tx.frontiernet.net> (74.40.4.14)  19.332 ms\n 6  74.40.26.234 (74.40.26.234)  8.335 ms  6.543 ms  6.604 ms\n 7  108.170.240.193 (108.170.240.193)  7.265 ms  3.002 ms 108.170.252.129 (108.170.252.129)  4.349 ms\n 8  209.85.248.171 (209.85.248.171)  3.306 ms 108.170.230.145 (108.170.230.145)  3.131 ms 216.239.62.77 <tel:(216.239.62.77|(216.239.62.77>)  4.259 ms\n 9  <http:\/\/google-public-dns-a.google.com|google-public-dns-a.google.com> (8.8.8.8)  4.580 ms  7.319 ms  7.354 ms",
+        "ts": "1508032270.000009"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U7J7U5DA9> OK, assuming that the upstream router at 192.168.1.204 is doing NAT, since you are reaching things on the Internet",
+        "ts": "1508033266.000001"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, now the big question is: Is the upstream router NAT-ing *all* private IPv4 addresses, or just the 192.168.1.0\/24 ones?",
+        "edited": {
+            "user": "U416T0AAX",
+            "ts": "1508033458.000000"
+        },
+        "ts": "1508033316.000007"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Do you have any working nodes on 192.168.0.0\/24 that we can test from? (other than the DRP server of course)",
+        "ts": "1508033389.000026"
+    }
+]

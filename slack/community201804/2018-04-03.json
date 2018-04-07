@@ -1,0 +1,281 @@
+[
+    {
+        "user": "UA055BGUB",
+        "text": "<@UA055BGUB> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1522753700.000414"
+    },
+    {
+        "type": "message",
+        "user": "UA055BGUB",
+        "text": "hello. I'm just trying out digital rebar but struggling to find info about two things: - how to make the machines after install to use static IP addresses (preferably for two interfaces, private, public) like with xcat. - and how can I run a command against all the machines aka xcat's xdsh command? thanks",
+        "ts": "1522758371.000144"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The first would be handled by a custom task to set the interfaces up in the OS of your choice.  We’ve shied away from writing this because it is often a one-off set of tasks and not general.  There are a lot of possible combinations.  Doesn’t mean that we shouldn’t have one, just not right now.  It could be staged into the process post install or post-install reboot time frames.",
+        "ts": "1522758517.000189"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The second is a philosophical one.  DRP doesn’t make remote access a default condition. You can install ssh keys and then use ansible or whatever tool of choice.  In general, we’ve tried to enable additional tools without forcing one.  <@UA055BGUB>",
+        "ts": "1522758585.000466"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "WIth that said, after fighting virtualbox, I’m really tempted to make a dhcp all interfaces task so I can have outbound access to the internet from my VMs.",
+        "ts": "1522758647.000085"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The `xdsh` like functionality could be built \/ scripted around the API, but would require ssh keys to be in place.",
+        "ts": "1522758678.000319"
+    },
+    {
+        "type": "message",
+        "user": "UA055BGUB",
+        "text": "I'm trying to play with bare meal...",
+        "ts": "1522758682.000048"
+    },
+    {
+        "type": "message",
+        "user": "UA055BGUB",
+        "text": "I set the ssh keys on the machines",
+        "ts": "1522758707.000350"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The other thing is that the runner can pull tasks, so a maintenance like workflow could also be used for your methodology.",
+        "ts": "1522758722.000053"
+    },
+    {
+        "type": "message",
+        "user": "UA055BGUB",
+        "text": "post-install would be the perfec one to handle static ips",
+        "ts": "1522758742.000442"
+    },
+    {
+        "type": "message",
+        "user": "UA055BGUB",
+        "text": "first I tried to create a template, then a task to call that template",
+        "ts": "1522758792.000403"
+    },
+    {
+        "type": "message",
+        "user": "UA055BGUB",
+        "text": "but then I was not able to run somehow the task",
+        "ts": "1522758806.000205"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@UA055BGUB> there's a training video about debug in the library.  I'll send the link shortly",
+        "client_msg_id": "2e0098d3-9b98-4ab2-9dd9-d0003660a75a",
+        "ts": "1522760163.000220"
+    },
+    {
+        "type": "message",
+        "user": "UA055BGUB",
+        "text": "thanks",
+        "ts": "1522760177.000280"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@UA055BGUB> instead of the links directly to the video... here's the github w\/ the sample content AND links to the video in the readme <https:\/\/github.com\/digitalrebar\/colordemo>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/colordemo",
+                "title_link": "https:\/\/github.com\/digitalrebar\/colordemo",
+                "text": "colordemo - Training Content",
+                "fallback": "GitHub: digitalrebar\/colordemo",
+                "from_url": "https:\/\/github.com\/digitalrebar\/colordemo",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1522761119.000005"
+    },
+    {
+        "type": "message",
+        "user": "UA055BGUB",
+        "text": "thanks a lot!",
+        "ts": "1522762575.000485"
+    },
+    {
+        "user": "U9ZNU6RJL",
+        "text": "<@U9ZNU6RJL> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1522771457.000240"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "PSA: If you are playing w\/ Workflows in tip, the <http:\/\/test.rackn.io|test.rackn.io> UX now has support the the workflow features.",
+        "ts": "1522783209.000050"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U9ZNU6RJL> $welcome",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1522783232.000000"
+        },
+        "ts": "1522783227.000578"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "$welcome :slightly_smiling_face:",
+        "ts": "1522783238.000093"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1522783238.000141"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U416T0AAX>...hopefully this will make you happier... \n<https:\/\/github.com\/digitalrebar\/provision-content\/pull\/74>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "Update erase disks task to be more thurough. by VictorLowther · Pull Request #74 · digitalrebar\/provision-content",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision-content\/pull\/74",
+                "text": "Deactivate all volume groups before we do anything else. This should make us more robust in the face of potentially in-use or locked logical volumes and volume groups. Erase the first and last 2 m...",
+                "fallback": "GitHub: Update erase disks task to be more thurough. by VictorLowther · Pull Request #74 · digitalrebar\/provision-content",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision-content\/pull\/74",
+                "thumb_url": "https:\/\/avatars2.githubusercontent.com\/u\/770578?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1522797092.000128"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Hey folks.",
+        "ts": "1522801785.000328"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Update on the issue I was troubleshooting last night.",
+        "ts": "1522801796.000230"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Turns out, something on the box shows up as a USB drive, and that gets set up as \/dev\/sda",
+        "ts": "1522801828.000132"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "So that's why nothing would install properly to that disk.",
+        "ts": "1522801835.000218"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Turns out the real first disk in this system is \/dev\/sdb",
+        "ts": "1522801842.000231"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Now it works.",
+        "ts": "1522801846.000106"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "cool",
+        "ts": "1522801848.000197"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "So frustrating.",
+        "ts": "1522801850.000268"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Hopefully you didn't nuke a useful USB ... :slightly_smiling_face:",
+        "ts": "1522801860.000295"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "But turns out, it was hardware, not anything with DRP, I don't think.  Unless you guys mount something as USB during the install.",
+        "ts": "1522801871.000175"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "If I did, that's too bad.  If one of the DC guys left a thumb drive plugged in I'm gonna give him hell tomorrow.  :smile:",
+        "ts": "1522801905.000112"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I worked at a company building Hardware appliances once - and our first installer installed the image direct to the \/dev\/sda device .... which was our source USB thumb drive on the machine ... doh !!   we had to bake in guardrails against that ...",
+        "ts": "1522801915.000241"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Ugh fun",
+        "ts": "1522801931.000333"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "This would all be moot if Linux had predictable and stable device names.",
+        "ts": "1522801947.000063"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yeah - one of the few really annoying things about Linux - happy the problem is resolved though !!  ....and not broken software :face_with_cowboy_hat:",
+        "ts": "1522802009.000055"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Yeah, me too.  Thanks for all your help.  I can move forward now with the rollout of DRP.  :slightly_smiling_face:",
+        "ts": "1522802034.000061"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "en masse ... 10s of Thousands !!  Forward, March !",
+        "ts": "1522802089.000370"
+    },
+    {
+        "user": "UA1L5DEFQ",
+        "text": "<@UA1L5DEFQ> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1522820069.000195"
+    }
+]

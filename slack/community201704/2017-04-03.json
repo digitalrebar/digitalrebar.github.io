@@ -1,0 +1,26 @@
+[
+    {
+        "text": "What would y'all use for a bunch of metal other than OpenStack?",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491241353.354329"
+    },
+    {
+        "text": "Kubernetes",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491266557.439814"
+    },
+    {
+        "text": "Or just Ansible if you had a app already",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1491266582.443866"
+    }
+]

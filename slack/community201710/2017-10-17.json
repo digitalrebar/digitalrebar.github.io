@@ -1,0 +1,478 @@
+[
+    {
+        "text": "cool!",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1508249415.000365"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "repost: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7GU3ADNE\/pxe_install_os_options.pdf>\nI had asked: take a look at the attached file; my question is what options does DRP support today, which may it support in future, which are unsupported (possibly b\/c underlying install answer file format does not have the capability…)\ncc: <@U02DGQYK1>",
+        "ts": "1508259095.000493"
+    },
+    {
+        "type": "message",
+        "subtype": "file_mention",
+        "text": "<@U416T0AAX> mentioned a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7GU3ADNE\/pxe_install_os_options.pdf|PXE install OS options.pdf>.",
+        "file": {
+            "id": "F7GU3ADNE",
+            "created": 1507753421,
+            "timestamp": 1507753421,
+            "name": "PXE install OS options.pdf",
+            "title": "PXE install OS options.pdf",
+            "mimetype": "application\/pdf",
+            "filetype": "pdf",
+            "pretty_type": "PDF",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 76515,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7GU3ADNE\/pxe_install_os_options.pdf?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7GU3ADNE\/download\/pxe_install_os_options.pdf?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_pdf": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7GU3ADNE-e5552ffb22\/pxe_install_os_options_thumb_pdf.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_pdf_w": 935,
+            "thumb_pdf_h": 1210,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7GU3ADNE\/pxe_install_os_options.pdf",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F7GU3ADNE-0d43285574",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 1,
+            "initial_comment": {
+                "id": "Fc7H0ADB1S",
+                "created": 1507753421,
+                "timestamp": 1507753421,
+                "user": "U416T0AAX",
+                "is_intro": true,
+                "comment": "<@U6QFVRJNB> <@U02DGQYK1> Another longer-term question — take a look at the attached file; my question is what options does DRP support today, which may it support in future, which are unsupported (possibly b\/c underlying install answer file format does not have the capability…)"
+            }
+        },
+        "user": "U416T0AAX",
+        "ts": "1508259095.000640"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "NEW SCREEN in UX - we've added a page (RackN registration required) that allows bulk editing of nodes to set profiles, stages, bootenvs and take plugin actions",
+        "ts": "1508260191.000550"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<@U416T0AAX>The only one that is tricky is 1, as that involves DRP being able to inventory the system and report what disks are available, which is not something we support right now (but which is on the roadmap), unless you want to do some %pre magic and its equivalent in Debian seed files.",
+        "thread_ts": "1508261182.000742",
+        "reply_count": 2,
+        "replies": [
+            {
+                "user": "U416T0AAX",
+                "ts": "1508293513.000113"
+            },
+            {
+                "user": "U416T0AAX",
+                "ts": "1508293665.000064"
+            }
+        ],
+        "unread_count": 2,
+        "ts": "1508261182.000742"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "3 is easily refactorable to something involving a package-list parameter, setting that parameter appropriately (in a profile or on a machine directly), and modifying the relavent bootenvs and kickstart\/seed templates to expand that parameter if it is set -- the text.template language we write templates in can handle that task easily.",
+        "ts": "1508261403.000462"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "How 4 and 5 would be handle is different depending on whether you are using tasks",
+        "ts": "1508261487.000157"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "in the community content I would handle them as optionally-included tenmplates to be expanded if accompanying parameters are set",
+        "ts": "1508261526.000093"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "in much the same way the extra templates are expanded in the current centos7 kickstart template: <https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/templates\/ce-centos-7.ks.tmpl>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision-content",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/templates\/ce-centos-7.ks.tmpl",
+                "text": "provision-content - DigitalRebar Provision Content",
+                "fallback": "GitHub: digitalrebar\/provision-content",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/templates\/ce-centos-7.ks.tmpl",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 192,
+                "thumb_height": 192,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "edited": {
+            "user": "U02DJQSG8",
+            "ts": "1508261609.000000"
+        },
+        "ts": "1508261598.000563"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "if you are using rackn licensed content and have access to tasks I would write those as tasks.",
+        "ts": "1508261652.000683"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "and depending on how complex your partitioning requirements are, 2 can also be handled by making a template for each partition scheme you want and then conditionally including the appropriate one based on a parameter",
+        "ts": "1508261837.000199"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "as for when we would update the current content to operate as I have outlined, well, Greg and I only have so much bandwidth. :confused:",
+        "ts": "1508261983.000338"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DJQSG8> understood",
+        "ts": "1508264666.000006"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Of course, of someone from the community were to step in and undertake this work... :slightly_smiling_face:",
+        "edited": {
+            "user": "U02DJQSG8",
+            "ts": "1508264961.000000"
+        },
+        "ts": "1508264951.000281"
+    },
+    {
+        "text": "starts reading The Go Programming Language :stuck_out_tongue_winking_eye:",
+        "type": "message",
+        "subtype": "me_message",
+        "user": "U416T0AAX",
+        "ts": "1508267885.000171"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U416T0AAX> all of that is completely accomplishable via tasks\/templates\/profiles work",
+        "ts": "1508267927.000480"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U6QFVRJNB> Given Time, sounds achievable then... ",
+        "edited": {
+            "user": "U416T0AAX",
+            "ts": "1508268107.000000"
+        },
+        "ts": "1508268085.000339"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "to develop a fully flexible and generically usable set of Seed\/KS files - maybe - but to generate custom configs required for your use case - that's not something that will take very long to do",
+        "ts": "1508268148.000605"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<@U416T0AAX> unless you want to start hacking on the core or the CLI, <https:\/\/godoc.org\/text\/template> is probably the best read.",
+        "attachments": [
+            {
+                "title": "Package template",
+                "title_link": "https:\/\/godoc.org\/text\/template",
+                "text": "Package template implements data-driven templates for generating textual output.",
+                "fallback": "Package template",
+                "from_url": "https:\/\/godoc.org\/text\/template",
+                "service_icon": "https:\/\/godoc.org\/favicon.ico",
+                "service_name": "godoc.org",
+                "id": 1
+            }
+        ],
+        "ts": "1508271372.000226"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U6QFVRJNB> <@U02DJQSG8> cool, let’s see what I can come up with...",
+        "ts": "1508271457.000247"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "Are the resident openstack people on?",
+        "ts": "1508276178.000365"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "expert*",
+        "ts": "1508276185.000497"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<!here>: Question - is it reasonable for those wanting to use TIP content to be required to use a TIP DRP?",
+        "ts": "1508279324.000070"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I’m working through some of the upgrade and update and replace issues.  The features flags we are adding work for tracking content expectations, but I’ve been wanting to prevent trying to avoid bi-directional feature flags between content and DRP.  Content objects include flags which allow content to express their requirements.  I’d like to avoid the other way if possible.  To have content tasks smart enough to know which version of DRP (through feature flags) if possible.",
+        "ts": "1508279460.000252"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Well - in looking around, I can make it work.  Sorry for the noise.",
+        "ts": "1508279648.000136"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U02DGQYK1> In general - I'd expect that a given DRP release version should have a set of tested\/validated Content that relates to that version.  Any updates\/enhancements may have potentially breaking changes - and as such, I'd think that \"Stable\" DRP and \"Stable\" Content should be expected to work - but \"Stable DRP\" and \"TIP Content\" is a \"maybe it works\" ... and \"maybe it doesn't\" ... prospect",
+        "ts": "1508279984.000120"
+    },
+    {
+        "type": "message",
+        "user": "U4GUA0HE0",
+        "text": "added the field",
+        "ts": "1508280232.000349"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U6QFVRJNB> - I’m planning for that to be the default position.  My table is:\nStable DRP + Stable Content = Works!\nStable DRP + TIP Content = Could work if content pays attention to DRP Feature Flags\nTIP DRP + Stable Content = Works (except at major release boundaries, but hopefully then as well)\nTIP DRP + TIP Content = May work depending upon the features flags again.",
+        "ts": "1508280513.000006"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Sounds like a sane strategy to me ... anyone else <!here> have any input on this policy ?",
+        "ts": "1508280568.000147"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "Hi all, thought i had it and then i lost it... where is the default ssh username and pass stored for ubuntu 16.04",
+        "ts": "1508281508.000224"
+    },
+    {
+        "text": "<@U02DGQYK1>\n`work if` == `may work`, so \n_ Stable Content = `work` anyway\n_ TIP Content = `may work` anyway\n`may work` == *do not use it* ",
+        "username": "kolomnitcki",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1508281586.000249"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U7J7U5DA9> - it's defined in net-seed.tmpl (templates)",
+        "ts": "1508281821.000196"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "default username specified if no overridden by parameter is \"rocketskates\"",
+        "ts": "1508281838.000143"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "<@U6QFVRJNB> i went ssh rocketskates@10.0.0.11 and used the same password and it failed - permission denied",
+        "ts": "1508283998.000180"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you have to enable SSH username\/pasword support versus SSH Key based access - as some people consider user\/pass pairs to be security vulnerability\/risk",
+        "ts": "1508284048.000086"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "your talking about the ssh root mode right?",
+        "ts": "1508284122.000183"
+    },
+    {
+        "text": "Looks like when we can select multiple disks, in the preseed case, can do some interesting stuff… See <https:\/\/anonscm.debian.org\/cgit\/d-i\/debian-installer.git\/tree\/doc\/devel\/partman-auto-raid-recipe.txt> for some examples",
+        "thread_ts": "1508261182.000742",
+        "type": "message",
+        "subtype": "thread_broadcast",
+        "user": "U416T0AAX",
+        "root": {
+            "type": "message",
+            "user": "U02DJQSG8",
+            "text": "<@U416T0AAX>The only one that is tricky is 1, as that involves DRP being able to inventory the system and report what disks are available, which is not something we support right now (but which is on the roadmap), unless you want to do some %pre magic and its equivalent in Debian seed files.",
+            "thread_ts": "1508261182.000742",
+            "reply_count": 2,
+            "replies": [
+                {
+                    "user": "U416T0AAX",
+                    "ts": "1508293513.000113"
+                },
+                {
+                    "user": "U416T0AAX",
+                    "ts": "1508293665.000064"
+                }
+            ],
+            "unread_count": 2,
+            "ts": "1508261182.000742"
+        },
+        "ts": "1508293513.000113"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Also cf <https:\/\/anonscm.debian.org\/cgit\/d-i\/debian-installer.git\/tree\/doc\/devel\/partman-auto-recipe.txt> for general partman info",
+        "thread_ts": "1508261182.000742",
+        "parent_user_id": "U02DJQSG8",
+        "ts": "1508293665.000064"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "How to test a change to a forked repo (a template in “provision-content”) before I submit a pull request? The template in question (`ce-root-remote-access.tmpl`) is “locked” in my DRP",
+        "ts": "1508298638.000006"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U416T0AAX> - you can clone that template - then where it's being called from, change the call to use the newly cloned template ... there will likely be a \"chain\" of clones you need to create to make the changes ...",
+        "ts": "1508298715.000205"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "make changes in the clones - which will be r\/w",
+        "ts": "1508298725.000174"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U6QFVRJNB> OK, thx",
+        "ts": "1508298875.000040"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Okay - the way I test it. I used the `tools\/package.sh` from the top directory.  This builds a new yaml file.",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1508299558.000000"
+        },
+        "ts": "1508299500.000165"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "YOu can then use ```drpcli contents update drp-community-content - &lt; drp-community-content.yaml``` to update your local content and test.  YOu can always reimport from the RackN Portal if you need to reset.",
+        "ts": "1508299658.000095"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It depends upon how you like to edit the objects.  The challenge with the clone method is that when you are done, you will need to translate those clones into the repo objects.",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1508299732.000000"
+        },
+        "ts": "1508299724.000076"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Just directly `vi` the relevant .tmpl file and then do the `tools\/package.sh` thing?",
+        "ts": "1508299774.000035"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yeah",
+        "ts": "1508299781.000003"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Cool",
+        "ts": "1508299787.000020"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "it will yaml \/ object validate as part of the build process.",
+        "ts": "1508299808.000056"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Then you update the content.  IT should even generate a special version for you.",
+        "ts": "1508299842.000163"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Especially b\/c the UX “Clone” function of templates does not seem to be working for me…",
+        "ts": "1508299859.000059"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The clone method is the preferred method for building your own content.",
+        "ts": "1508299902.000082"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "though fixing the bugs would be good.",
+        "ts": "1508299910.000084"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I select the stock template, click “Clone”, then change the ID and Contents, but when I click “Add”, it never returns…",
+        "ts": "1508299934.000109"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "If I do a browser refresh, it seems that it had worked, the new template is there with the “unlocked” icon",
+        "ts": "1508299985.000028"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - good to know.",
+        "ts": "1508299998.000067"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Opened issue",
+        "ts": "1508300085.000062"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "#504",
+        "ts": "1508300093.000095"
+    }
+]

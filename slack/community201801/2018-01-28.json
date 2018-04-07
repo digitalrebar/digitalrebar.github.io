@@ -1,0 +1,20 @@
+[
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U416T0AAX> does this FAQ answer your question?  It outlines how to use the CLI to download and apply Content upgrade... \n<http:\/\/provision.readthedocs.io\/en\/latest\/doc\/faq-troubleshooting.html#update-community-content-via-command-line>",
+        "ts": "1517163649.000055"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "Content upgrade by version is being tested internally.  Hopefully available for advanced users tomorrow.",
+        "ts": "1517204482.000023"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "We'll talk about the new RackN UX stages in the community call on Tuesday.  The short version is that we're moving to release stages where we do not roll new UX code into full production in a single step.   <https:\/\/portal.rackn.io> will have the most stable version of the UX.  New features will surface in <https:\/\/latest.rackn.io> for earlier testing.",
+        "ts": "1517204622.000081"
+    }
+]

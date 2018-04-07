@@ -1,0 +1,848 @@
+[
+    {
+        "text": "question, is it possible to provision bare-metal from the ground up (configure RAID, install OS, etc.) with DRB and DRB-Provision? I work at Cisco and (obviously) we use Cisco equipment. I have been playing with DRB and DRBP, so far every thing works fine. Now I'm looking for guidance on how to go from metal-to-running_app using DRB.",
+        "username": "vjcubas",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493123438.183458"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Hi @vjcubas.  It probably is.  We haven't done much with Cisco gear.  We usually have success with discovery and OS install and beyond.  There is sometime some issues with IPMI. Raid will be dependent upon what raid controller is in the gear.  BIOS configuration and setting is unlikely without some additional coding.  It is the most hardware specific thing.  It can be added but it takes some time and direct access to a box.  (vendor tools help as well).",
+        "ts": "1493125405.835808"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "With regard to DRB (DR) vs DRB-Provision (DRP).  Currently, DRP is just about OS installation and discovery.  It is not currently integrated with DR.  So, if you are looking for Orchestration or hw manipulation, then you will want to focus on DR.    If you have DR working, then you are doing well.",
+        "ts": "1493125535.884633"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We may need to have a discussion around what you are trying to do, where you are, and end states.",
+        "ts": "1493125579.900738"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "If you want, we can talk off-line (email me at <mailto:greg@rackn.com|greg@rackn.com>)",
+        "ts": "1493125666.932801"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Also, what do you have running? DRP vs DR or both",
+        "ts": "1493125826.991951"
+    },
+    {
+        "text": "right now I have DRP - and I was wondering if we could run DR and DRP on the same server",
+        "username": "vjcubas",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493140813.122652"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "They will fight currently.  with port contentions.  well - let me think a moment.",
+        "ts": "1493140856.142545"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - you kinda can, but the integration would be pretty light and may not be what you want.",
+        "ts": "1493140904.163874"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Partially, why I asked what your end goal is.",
+        "ts": "1493140920.170957"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You could run DRP with DR on the same system if you turn off the DHCP and Provisioner server in DR.  To hook, DRP to DR you would need to create a script to \"join\" installed nodes into DR after it was done.  The machines would show up (you probably couldn't manage lifecycle directly from DR, but it would be something).",
+        "ts": "1493141040.223919"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Acutally, this is interesting quick integration path for the short term.  Hmmm .. not what I want medium to long term.  Need to think.",
+        "ts": "1493141070.237782"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The intent is DR for more full featured environments (hardware settings, workload orchestration, ...).",
+        "ts": "1493141106.253810"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Back to your end state goals.",
+        "ts": "1493141116.257446"
+    },
+    {
+        "text": "Getting errors on \"logging-client\" complaining about system clock \"INFO: HTTP Request Returned 401 Unauthorized: Authentication failed. Please check your system's clock\". Is there a set to run ntpdate that is missing in deployment?",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493142132.723402"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yes - it should run ntpdate as part of sledgehammer.",
+        "ts": "1493142192.751095"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "As part of common.env, you can set an upstream ntp server.  by default it will make the dr master node the time server.",
+        "ts": "1493142236.771226"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You can check the sledgehammer log by logging into the node in question: root\/rebar1",
+        "ts": "1493142262.782402"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Then: journalctl -u sledgehammer",
+        "ts": "1493142276.789302"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Look for ntp",
+        "ts": "1493142278.790481"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "it may give a hint at what is going on.",
+        "ts": "1493142294.797526"
+    },
+    {
+        "text": "Added 4 hosts to deployment. Only 1 worked. The date on the working system, the time is 10:30 UTC. The date on the provisioner is 3:30 PDT. The command journalctl -u sledgehammer returns \"-- No Entries --\"",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493142377.836138"
+    },
+    {
+        "text": "The contents of \/var\/chef\/cache\/chef-stacktrace.out starts with Net::HTTPServerException: 401 \"Unauthorized\"",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493142589.933587"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I've seen that sometime the ntp server on the node can get out of sync with it self or take a long time to stablize.  I'm not sure what is causing this.  Sometime restarting the ntp container. will \"fix\" it.",
+        "ts": "1493142635.955179"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Is this post OS install or during discovery?",
+        "ts": "1493142651.962581"
+    },
+    {
+        "text": "How do I get in docker to set the date? It is post OS install. I cannot run ntpdate on the provisioner and get an error of \"25 Apr 03:49:47 ntpdate[19206]: the NTP socket is in use, exiting\"",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493142700.985491"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "```ntpq -p``` to check the state of ntp on the admin node",
+        "ts": "1493142748.008459"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The docker container should be using the host's clock",
+        "ts": "1493142764.015823"
+    },
+    {
+        "text": "ntpq -p returns \"localhost: timed out, nothing received\"",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493142798.031486"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - docker ps | grep ntp",
+        "ts": "1493142811.037945"
+    },
+    {
+        "text": "c492475e0902        digitalrebar\/dr_ntp:master           \"\/sbin\/docker-entr...\"   4 days ago          Up 4 days           0.0.0.0:123-&gt;123\/tcp, 0.0.0.0:123-&gt;123\/udp                           compose_ntp_1",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493142851.056136"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "What install mode did you use for DR?",
+        "ts": "1493142947.102779"
+    },
+    {
+        "text": "host",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493142964.110570"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - cool - hmmm",
+        "ts": "1493142999.127898"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "ntpstat",
+        "ts": "1493143002.129365"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Post Install on all 3 of the failing nodes.",
+        "ts": "1493143014.134979"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That service is different.  I think it is rebar",
+        "ts": "1493143028.141196"
+    },
+    {
+        "text": "Yes, but one post install succeeded",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493143030.142412"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yes - if clock was close it would be fine.",
+        "ts": "1493143050.152245"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "chef is very very time sensitive in its cert management.",
+        "ts": "1493143072.163001"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "So - my guess is that the 3 nodes didn't time sync for some reason and didn't join correctly.  The logging-client role is the first chef role encountered.",
+        "ts": "1493143103.177515"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "What os?",
+        "ts": "1493143113.182290"
+    },
+    {
+        "text": "rhel 7, do I need to start ntpd on provisioner or just run ntpdate to set the time correctly for docker ntp?",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493143157.203569"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "is the provisioner time's off?",
+        "ts": "1493143170.210169"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "ntpdate -q on the admin node hsould adjust it on the docker container.  The problem is it might wig out ntp for a bit.",
+        "ts": "1493143198.223788"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "on centos7\/rhel7 systems, you should have a rebar service",
+        "ts": "1493143296.273179"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "systemctl status rebar",
+        "ts": "1493143313.281879"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "journctl -u rebar",
+        "ts": "1493143316.283339"
+    },
+    {
+        "text": "systemctl status rebar\nUnit rebar.service could not be found.",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493143352.301339"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "hmmm - did you use the centos7 ks script?  it should have created:",
+        "ts": "1493143425.335357"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "\/usr\/sbin\/rebar_join",
+        "ts": "1493143443.343311"
+    },
+    {
+        "text": "We worked last friday on the phone and setup rhel-7.3-server",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493143456.349237"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "oh - Darren.",
+        "ts": "1493143470.355983"
+    },
+    {
+        "text": "Yes",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493143488.364512"
+    },
+    {
+        "text": "\/usr\/sbin\/rebar_join\n-bash: \/usr\/sbin\/rebar_join: No such file or directory",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493143537.386570"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - checking files.",
+        "ts": "1493143653.439781"
+    },
+    {
+        "text": "rebar_join on box being install returns\n...\n\/usr\/sbin\/rebar_join@48(): [[ -x \/bin\/rebar ]]\n\/usr\/sbin\/rebar_join@53(): export REBAR_ENDPOINT=https:\/\/192.168.128.10\n\/usr\/sbin\/rebar_join@53(): REBAR_ENDPOINT=https:\/\/192.168.128.10\n\/usr\/sbin\/rebar_join@65(): ntpdate 192.168.128.10\n\/usr\/sbin\/rebar_join@67(): case $1 in\n\/usr\/sbin\/rebar_join@71(): echo 'Unknown action to rebar_join.sh.'\nUnknown action to rebar_join.sh.\n\/usr\/sbin\/rebar_join@72(): exit",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493143769.492495"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "rebar_join start",
+        "ts": "1493143793.503061"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "in fact, that run successfully on machine startup because you got the logging_client error.",
+        "ts": "1493143907.554867"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You could try ntpdate -q and the retry the node role.",
+        "ts": "1493143994.594239"
+    },
+    {
+        "text": "The rebar_join start worked - now they are all finishing the install correctly. Thanks",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493144374.767265"
+    },
+    {
+        "text": "Still had problem with bios-discover step - had to \"retry\" on every system and it then passed that step. The ntp problem is new",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493144454.804301"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "hmm - seems like we still have some networking communication issue.  Things are consistently talking it seems.",
+        "ts": "1493144678.907512"
+    },
+    {
+        "text": "Is this because we are running \"tools\/docker-admin-up --access HOST --no-pull\" instead of \"tools\/docker-admin-up --access HOST\"?",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493145031.073734"
+    },
+    {
+        "text": "I remember now, the --no-pull option just was used to not download images from the Internet, correct?",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493145163.135416"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes",
+        "ts": "1493149548.048340"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "@intendo - yes",
+        "ts": "1493149559.052943"
+    },
+    {
+        "text": "I restarted digital rebar with:",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493153607.759451"
+    },
+    {
+        "text": "cd ~\/digitalrebar\/core; tools\/docker-admin-down ; sleep 10 ; EXTERNAL_IP=192.168.128.10\/24 tools\/docker-admin-up --access HOST --no-pull",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493153611.761176"
+    },
+    {
+        "text": "None of my nodes, templates, etc. are showing up from the rebar api or GUI. What did I forget to do?",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493153650.777108"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "ohh - that is destructive install.  You need to reboot the nodes for them to be rediscovered and await in sledgehammer for an OS to install.",
+        "ts": "1493154624.172360"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "If you are just wanting to restart containers, ```docker-compose restart``` from the deploy\/compose directory will work.",
+        "ts": "1493154656.184316"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "Gitter\/IRC users &gt; we can get you invites directly into this slack channel is you prefer Slack.  They are all synchronized, so there's no need to switch if you are happy where you are",
+        "ts": "1493156555.843835"
+    },
+    {
+        "text": "I have resisted the slack, but... I am in so many slack channels now might as well go slack native.",
+        "username": "Jordan Rinke, irc.freenode.net",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493157976.293691"
+    },
+    {
+        "text": "If you can shoot invites to mike, ben, jordan @supergiant.io",
+        "username": "Jordan Rinke, irc.freenode.net",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493158033.309543"
+    },
+    {
+        "text": "<@U02DHRR2L|zehicle> - how do I get my templates back into digital rebar? \nDo I have to rerun all the commands ?:\nrebar provisioner files upload chef-12.18.31-1.el6.x86_64.rpm to chef\/chef-12.18.31-1.el6.x86_64.rpm\nrebar provisioner templates upload rhel-7.3-server.ks.tmpl as rhel-7.3-server.ks.tmpl\nrebar provisioner bootenvs create - &lt; rhel-7.3-server.json",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493158230.363962"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The chef should still be there in the cache directory if you used the same user.  The other two commands are correct and this is <@U02DGQYK1>.  :slightly_smiling_face:",
+        "ts": "1493158288.379856"
+    },
+    {
+        "text": "@galthaus, Just FYI, everything you type shows up as \"Rob Hirshfeld <@U02DHRR2L|zehicle>\\n [Greg Althaus, RackN]\" and then your message.",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493159492.694258"
+    },
+    {
+        "text": "Yeah - it is the side effect of the slack to gitter integration we are using.  ",
+        "username": "galthaus",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493159520.701487"
+    },
+    {
+        "text": "I use the slack side - all my groups are in there.  It is easier for me to watch that one place.  ",
+        "username": "galthaus",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493159548.708687"
+    },
+    {
+        "text": "Thanks though for pointing it out.  :-)",
+        "username": "galthaus",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493159563.712433"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "@galthaus will pop a notification in gitter for me.  <@U02DGQYK1> will pop up the notification in slack.  Now you all can hound me everywhere.  :slightly_smiling_face:",
+        "ts": "1493159631.729260"
+    },
+    {
+        "text": "<@U02DGQYK1|greg> where is the official slack, or can I get some invites sent?",
+        "username": "Jordan Rinke, irc.freenode.net",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493162478.388387"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "working on it.  Have to remember.  :slightly_smiling_face:",
+        "ts": "1493162499.392865"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "@jordan - done, I think.",
+        "ts": "1493162778.450262"
+    },
+    {
+        "user": "U54FPJ3DY",
+        "text": "<@U54FPJ3DY> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1493162884.472366"
+    },
+    {
+        "type": "message",
+        "user": "U54FPJ3DY",
+        "text": "Thanks",
+        "ts": "1493162902.476458"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": ":slightly_smiling_face:",
+        "ts": "1493162927.481668"
+    },
+    {
+        "type": "message",
+        "user": "U54FPJ3DY",
+        "text": "Mike is going to start working on <http:\/\/packet.net|packet.net> integration for SuperGiant tomorrow, and likely at the same time by extension digital rebar, so you will probably see him around these parts for a while as we work through that.",
+        "ts": "1493163040.506270"
+    },
+    {
+        "type": "message",
+        "user": "U54FPJ3DY",
+        "text": "You know anyone else doing anything like packet? Other than softlayer - sort of - I don't know anywhere else one can pop raw hardware?",
+        "ts": "1493163074.513051"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yeah - not sure either.  We were playing with Nobis\/Ubiquity at one point, but I think they got acquired. Not sure the state of their universe.",
+        "ts": "1493163151.529701"
+    },
+    {
+        "type": "message",
+        "user": "U54FPJ3DY",
+        "text": "Have you worked with softlayers bare metal offerings at all?",
+        "ts": "1493163364.572646"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "nope - haven't looked.  Was\/Is on a One Day provider thing, but not recently",
+        "ts": "1493163435.586862"
+    },
+    {
+        "type": "message",
+        "user": "U54FPJ3DY",
+        "text": "or well, bluemix technically I guess",
+        "ts": "1493163438.587582"
+    },
+    {
+        "text": "@galthaus, I have rerun the provisioner and I am trying to create a workload -&gt; Install O\/S but I can't see a list of the systems. How do I put the systems back in the pool? I am still logged into two of the systems. I turned off 4 systems and then turned them back on but nothing is showing up in the ux.",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493164808.857919"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Nodes once discovered should show up in the system deployment the first time and under the nodes nav tree item.",
+        "ts": "1493164878.872980"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "If the nodes don't show up there, then they haven't been discovered (or discovered successfully).",
+        "ts": "1493164905.878415"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Are your nodes configured to PXE boot by default?",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1493164957.000000"
+        },
+        "ts": "1493164927.882433"
+    },
+    {
+        "text": "@galthaus How do you configure them to PXE boot by default? Is that set in the BIOS? The first time I turned them on, they were visible by the UX. After the install, I did the \"destructive teardown\" and now none of the systems are visible. Did the install change the PXE boot to default to local disk?",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493165395.970670"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Well - if I recall, you told me that the nodes were wiped.  If the disks were wiped, they'd fall back to PXE most likely.",
+        "ts": "1493166075.090718"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You can try the IPMI tool to force a pxe boot.",
+        "ts": "1493166091.093659"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You may have one of the command history with the power status",
+        "ts": "1493166155.104498"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "ipmitool -U &lt;username&gt; -P &lt;password&gt; -H &lt;ip address&gt; chassis bootdev pxe",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1493166287.000000"
+        },
+        "ts": "1493166248.120314"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "In theory, this will make it consistently pxe boot.",
+        "ts": "1493166373.140827"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "```ipmitool -U &lt;username&gt; -P &lt;password&gt; -H &lt;ip address&gt; chassis bootdev pxe options=persistent```",
+        "ts": "1493166392.144116"
+    },
+    {
+        "text": "@galthaus how do I get the IP addresses?",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493166753.206281"
+    },
+    {
+        "text": "I can ssh to the bmc IP address but I get the SMASH console",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493166782.211146"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Well - will need to find them, probably since the nodes are deleted.  You have the bmc network.  The addresses were assigned from there.  They start with the start address.  The networks nav in the UI should get you to the bmc network definition to see the starting address.",
+        "ts": "1493166848.222441"
+    },
+    {
+        "text": "@galthaus here is what I did to get _most_ of them set to bootdev pxe:\n# for ip in 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215; do echo $ip; ipmitool -H 192.168.128.$ip -U root -P rebar1 chassis bootdev pxe options=persistent; done\n200\nError: Unable to establish LAN session\n201\nSet Boot Device to pxe\n202\nSet Boot Device to pxe\n203\nSet Boot Device to pxe\n204\nSet Boot Device to pxe\n205\nSet Boot Device to pxe\n206\nSet Boot Device to pxe\n207\nSet Boot Device to pxe\n208\nSet Boot Device to pxe\n209\nSet Boot Device to pxe\n210\nSet Boot Device to pxe\n211\nSet Boot Device to pxe\n212\nSet Boot Device to pxe\n213\nError: Unable to establish LAN session\n214\nError: Unable to establish LAN session\n215\nError: Unable to establish LAN session",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493168272.458749"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Cool - now reboot them.  You can use the ipmitool chassis power cycle",
+        "ts": "1493168374.475685"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "like above but different. :slightly_smiling_face:",
+        "ts": "1493168384.477198"
+    },
+    {
+        "text": "@galthaus rebooted them but no new nodes showing up in list",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493170240.778205"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "do you see DHCP leases for the nodes in the DHCP nav section.",
+        "ts": "1493170300.787921"
+    },
+    {
+        "text": "@galthaus yes, but only 4 nodes are binding",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493170488.817584"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "hmmm - so nothing in the nodes list.  hmm",
+        "ts": "1493170579.832367"
+    },
+    {
+        "text": "@galthaus there are 4 nodes in the nodes list but there should be 16",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493170627.840037"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "ah - okay.",
+        "ts": "1493170633.840836"
+    },
+    {
+        "text": "or at least 12",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493170642.842345"
+    },
+    {
+        "text": "@galthaus - would this be easier to skype?",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493170669.846539"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "probably - can we try tomorrow morning?",
+        "ts": "1493170796.865696"
+    },
+    {
+        "text": "@galthaus yes, I will try to call you but I have meetings up the wazzu :-)",
+        "username": "intendo",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493170875.878271"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - sorry I'm fading is the problem and I need to finish some doc work I'm doing.",
+        "ts": "1493170895.881627"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "A new release of Digital Rebar Provision is out, v3.0.1 and stable has been updated.\n\n<https:\/\/github.com\/digitalrebar\/provision\/releases\/tag\/v3.0.1>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/releases\/tag\/v3.0.1",
+                "text": "provision - The Provisioner for DigitalRebar as a Stand Alone Golang Utility",
+                "fallback": "GitHub: digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/releases\/tag\/v3.0.1",
+                "thumb_url": "https:\/\/avatars3.githubusercontent.com\/u\/13814120?v=3&s=400",
+                "thumb_width": 192,
+                "thumb_height": 192,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1493183750.647623"
+    }
+]

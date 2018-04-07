@@ -1,0 +1,146 @@
+[
+    {
+        "text": "@jack-likes-to-code FWIW, NTP was in your earlier docker ps.  Very strange that it's not in the docker-compose ps list!",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497533643.998385"
+    },
+    {
+        "text": "we're tracking down a very critical typo in the docs... default password is \"rocketsk8ts\" - it is correct in the source, but not updated in the generated doc pages",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497544169.997993"
+    },
+    {
+        "text": "NOTICE: DOCS ARE UPDATED ",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497544243.025360"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I need to move tip to get latest updated.   We may need to cut a release to update stable. ",
+        "ts": "1497547314.101516"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "I had RTD rebuild and it worked",
+        "ts": "1497547949.323438"
+    },
+    {
+        "text": "<@U02DHRR2L|zehicle> docker-compose ntp up -d resulted in a \"No such command: ntp\".  No ntp in docker-compose.yml either.",
+        "username": "jack-likes-to-code",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497551925.742253"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "@Jack-likes-to-code: did you modify common.env?  That can alter NTP operations.",
+        "ts": "1497558836.007708"
+    },
+    {
+        "text": "<@U02DHRR2L|zehicle> I haven't touched that file.  Don't know what it's used for",
+        "username": "jack-likes-to-code",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497559259.140408"
+    },
+    {
+        "text": "Here's what I have for the NTP section in that file:\n```\n#\n# NTP Parameters\n#\n# Should we run NTP as intermediate or only\n# If EXTERNAL_NTP_SERVERS is not specified,\n# the local time in the container will be used.\n#\nNTP_RUN_PROXY=YES\n\n# This defines the upstream NTP servers\n# If NTP is running, it will forward to these.\n# If NTP is not running, then this is injected set.\n# Comma separated list of ips or names\nEXTERNAL_NTP_SERVERS=\n```",
+        "username": "jack-likes-to-code",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497559338.165593"
+    },
+    {
+        "text": "under digitalrebar\/deploy\/compose look at the init_files.sh script.  That changes that compose.yml.  Something in your system much have tweaked inputs to that file when you restarted.  it could have been an environment variable.",
+        "username": "zehicle",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497561075.704940"
+    },
+    {
+        "text": "i do remember when I first did the quickstart, the ntp container was started.  When I shut it down, it did not stop\/remove the ntp service so i manually did that via docker",
+        "username": "jack-likes-to-code",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497561175.732871"
+    },
+    {
+        "text": "then when I started DR via docker-admin, the ntp service did not come back up",
+        "username": "jack-likes-to-code",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497561198.739359"
+    },
+    {
+        "text": "who kicks off init_files.sh?  Should I kick it off again?",
+        "username": "jack-likes-to-code",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497561242.751315"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "the install script uses it at the end of the ansible run",
+        "ts": "1497564098.484100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "the run-in-system script can be run multiple times",
+        "ts": "1497564122.490022"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "but will tear down the running system",
+        "ts": "1497564134.492795"
+    },
+    {
+        "text": "ok.  I may try that another time, then.",
+        "username": "jack-likes-to-code",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497564146.495722"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "if you want to keep your config, then you need to modify the config files",
+        "ts": "1497564147.495872"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "those are input into the install",
+        "ts": "1497564164.499697"
+    },
+    {
+        "text": "It's fairly easy to setup, so no harm done in resetting it up",
+        "username": "jack-likes-to-code",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497564176.502373"
+    }
+]

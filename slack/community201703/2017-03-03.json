@@ -1,0 +1,24 @@
+[
+    {
+        "text": "Hi",
+        "username": "jhelblingHH",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1488553650.000697"
+    },
+    {
+        "text": "How can we have access to Kubernetes Config? Deployed Kubernetes in Amazon",
+        "username": "jhelblingHH",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1488553687.000698"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You can edit the role attributes on k8s-config (it is in the upper corner of the deployment view).  Changing values and committing the deployment will make the attributes take effect.",
+        "ts": "1488553940.000699"
+    }
+]

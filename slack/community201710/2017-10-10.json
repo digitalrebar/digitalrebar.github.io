@@ -1,0 +1,609 @@
+[
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "aha, figured it out… it’s:\n`http:\/\/&lt;endpoint_ip&gt;:8091\/machines\/&lt;machine_uuid&gt;\/seed`",
+        "ts": "1507638373.000453"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So I think I see the problem here…",
+        "ts": "1507638508.000390"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "`d-i partman-auto\/disk string \/dev\/\/dev\/sda`",
+        "ts": "1507638528.000174"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I have the `operating-system-disk` param in the profile I’m using set to `\/dev\/sda` - maybe should just be `sda` now? Did that change somewhere along the way recently?",
+        "ts": "1507638641.000257"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yes, setting that value to just `sda` corrects the generated `partman-auto\/disk` line",
+        "ts": "1507638757.000235"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yes - sigh - you are finding all the tweaks from 3.0.1 to 3.1.0  - most of those happened from v3.0.1 - &gt; v3.0.3",
+        "ts": "1507645137.000321"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I noticed that we were inconsistently using `operating-system-disk` across the different OSes .  `sda` can work for both ubuntu and centos",
+        "ts": "1507645238.000077"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "@greg beta, baby! Bits in flight ;)",
+        "ts": "1507653537.000274"
+    },
+    {
+        "user": "U7G7579GU",
+        "text": "<@U7G7579GU> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1507655327.000320"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<!here> - meetup is starting now:   <https:\/\/zoom.us\/j\/3403934274>",
+        "attachments": [
+            {
+                "service_name": "Zoom Video",
+                "title": "Join our Cloud HD Video Meeting now",
+                "title_link": "https:\/\/zoom.us\/j\/3403934274",
+                "text": "Zoom makes video and web conferencing frictionless. Founded in 2011, Zoom is the leader in modern enterprise video communications, with a secure, easy platform for video and audio conferencing, messaging, and webinars across mobile, desktop, and room systems. Zoom Rooms is the original software-based conference room solution for conference, huddle, and training rooms, as well as executive offices and classrooms. Zoom helps businesses and organizations around the world bring their teams together to get more done. Zoom is a private company headquartered in San Jose, CA.",
+                "fallback": "Zoom Video: Join our Cloud HD Video Meeting now",
+                "image_url": "https:\/\/d24cgw3uvb9a9h.cloudfront.net\/static\/90353\/image\/thumb.png",
+                "from_url": "https:\/\/zoom.us\/j\/3403934274",
+                "image_width": 250,
+                "image_height": 250,
+                "image_bytes": 12961,
+                "service_icon": "https:\/\/d24cgw3uvb9a9h.cloudfront.net\/zoom.ico",
+                "id": 1
+            }
+        ],
+        "ts": "1507658576.000146"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "btw these are the changes I made in our content regarding debian\/ubuntu, I guess some of this (particularly partitioning templates) might be useful upstream? I can open a PR containing some of these if you want <https:\/\/gist.github.com\/lae\/1da54fd1abd2a56fa51f57fdd27de370>",
+        "edited": {
+            "user": "U54E4SD4G",
+            "ts": "1507680857.000000"
+        },
+        "ts": "1507680754.000127"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "ugh wrong host",
+        "ts": "1507680762.000169"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Hey <@U54E4SD4G> - we'd definitely be interested in incorporating some more capable partitioning template capabilities in to the Community Content - that's awesome - we'll look for the PR and review it with you - thanks !",
+        "ts": "1507680834.000006"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "ok, added gh link",
+        "ts": "1507680861.000208"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(and any other enhancements you have :slightly_smiling_face: )",
+        "ts": "1507680863.000089"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "kk",
+        "ts": "1507680867.000195"
+    },
+    {
+        "text": "This message was deleted.",
+        "edited": {
+            "user": "U02DHRR2L",
+            "ts": "1507689652.000000"
+        },
+        "type": "message",
+        "subtype": "tombstone",
+        "user": "USLACKBOT",
+        "hidden": true,
+        "thread_ts": "1507689054.000043",
+        "reply_count": 10,
+        "replies": [
+            {
+                "user": "U02DHRR2L",
+                "ts": "1507689611.000072"
+            },
+            {
+                "user": "U416T0AAX",
+                "ts": "1507689664.000148"
+            },
+            {
+                "user": "U416T0AAX",
+                "ts": "1507689671.000095"
+            },
+            {
+                "user": "U02DGQYK1",
+                "ts": "1507689718.000129"
+            },
+            {
+                "user": "U02DHRR2L",
+                "ts": "1507689718.000143"
+            },
+            {
+                "user": "U416T0AAX",
+                "ts": "1507689725.000098"
+            },
+            {
+                "user": "U02DGQYK1",
+                "ts": "1507689738.000140"
+            },
+            {
+                "user": "U02DGQYK1",
+                "ts": "1507689744.000106"
+            },
+            {
+                "user": "U02DHRR2L",
+                "ts": "1507689780.000123"
+            },
+            {
+                "user": "U02DGQYK1",
+                "ts": "1507689835.000185"
+            }
+        ],
+        "unread_count": 10,
+        "ts": "1507689054.000043"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "It puts the line `echo \"PermitRootLogin yes\" &gt;&gt; \/etc\/ssh\/sshd_config` in the post-install.sh file",
+        "ts": "1507689106.000034"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "This does not work on Ubuntu (but I think it does on CentOS\/RHEL)",
+        "ts": "1507689138.000146"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "why not on ubuntu ?",
+        "ts": "1507689151.000279"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Ubuntu already has a line `PermitRootLogin without-password` in the distro-provided sshd_config file in",
+        "ts": "1507689220.000120"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ah - that would be an idempotency fail then",
+        "ts": "1507689238.000160"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So you end up with two PermitRootLogin stanzas",
+        "ts": "1507689245.000002"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "It only takes the first",
+        "ts": "1507689253.000211"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Here’s the fix:\n`sed --in-place -r -e '\/PermitRootLogin\/ s\/^#\/\/' -e '\/PermitRootLogin\/ s\/without-password\/yes\/' \/etc\/ssh\/sshd_config`",
+        "ts": "1507689335.000225"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "That line works for both CentOS and Ubuntu",
+        "ts": "1507689360.000106"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "that won't work on Mac; (in place requires backup filename extension) - but something along those lines is exactly what I was just working on for you",
+        "ts": "1507689371.000029"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Apple knows Best(tm)",
+        "ts": "1507689398.000005"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Apple knows BSD ... which ... well ... never mind ...",
+        "ts": "1507689414.000094"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I swear I had Greg change this in v3.0.x …",
+        "ts": "1507689464.000177"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "(ran into the same problem)",
+        "ts": "1507689474.000168"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "in this case, the line would work but needs to be parameterized.  Since those script really on run the linux context, the mac issue is less problematic.",
+        "ts": "1507689510.000028"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "also  fails with two existing PermitRootLogin entries already",
+        "ts": "1507689549.000007"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U416T0AAX> - I think I wanted to, but didn’t get to it.  We should open an issue to make sure it gets in.",
+        "ts": "1507689568.000015"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "or a commented out #PermitRootLogin and a valid entry",
+        "ts": "1507689584.000107"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I think the stock CentOS sshd_config has the line `#PermitRootLogin yes` and Ubuntu has `PermitRootLogin without-password`",
+        "ts": "1507689591.000071"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "```vagrant@drp:\/tmp$ cat foobar\n#PermitRootLogin\nPermitRootLogin without-password\nvagrant@drp:\/tmp$ cat foobar | sed -r -e '\/PermitRootLogin\/ s\/^#\/\/' -e '\/PermitRootLogin\/ s\/without-password\/yes\/'\nPermitRootLogin\nPermitRootLogin yes```",
+        "ts": "1507689598.000141"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yeah - <@U6QFVRJNB> - really need to cut out all PermitRootLogin and put one in place.",
+        "ts": "1507689600.000237"
+    },
+    {
+        "text": "That's not a valid value for that param ",
+        "thread_ts": "1507689054.000043",
+        "type": "message",
+        "subtype": "thread_broadcast",
+        "user": "U02DHRR2L",
+        "root": {
+            "text": "This message was deleted.",
+            "edited": {
+                "user": "U02DHRR2L",
+                "ts": "1507689652.000000"
+            },
+            "type": "message",
+            "subtype": "tombstone",
+            "user": "USLACKBOT",
+            "hidden": true,
+            "thread_ts": "1507689054.000043",
+            "reply_count": 10,
+            "replies": [
+                {
+                    "user": "U02DHRR2L",
+                    "ts": "1507689611.000072"
+                },
+                {
+                    "user": "U416T0AAX",
+                    "ts": "1507689664.000148"
+                },
+                {
+                    "user": "U416T0AAX",
+                    "ts": "1507689671.000095"
+                },
+                {
+                    "user": "U02DGQYK1",
+                    "ts": "1507689718.000129"
+                },
+                {
+                    "user": "U02DHRR2L",
+                    "ts": "1507689718.000143"
+                },
+                {
+                    "user": "U416T0AAX",
+                    "ts": "1507689725.000098"
+                },
+                {
+                    "user": "U02DGQYK1",
+                    "ts": "1507689738.000140"
+                },
+                {
+                    "user": "U02DGQYK1",
+                    "ts": "1507689744.000106"
+                },
+                {
+                    "user": "U02DHRR2L",
+                    "ts": "1507689780.000123"
+                },
+                {
+                    "user": "U02DGQYK1",
+                    "ts": "1507689835.000185"
+                }
+            ],
+            "unread_count": 10,
+            "ts": "1507689054.000043"
+        },
+        "ts": "1507689611.000072"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I have been using that value for a while with v3.0.x",
+        "thread_ts": "1507689054.000043",
+        "parent_user_id": "USLACKBOT",
+        "ts": "1507689664.000148"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "When did it change?",
+        "thread_ts": "1507689054.000043",
+        "parent_user_id": "USLACKBOT",
+        "ts": "1507689671.000095"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yes is a valid value.",
+        "thread_ts": "1507689054.000043",
+        "parent_user_id": "USLACKBOT",
+        "ts": "1507689718.000129"
+    },
+    {
+        "text": "Sorry... listen to Greg and Shane. I didn't have context ",
+        "thread_ts": "1507689054.000043",
+        "type": "message",
+        "subtype": "thread_broadcast",
+        "user": "U02DHRR2L",
+        "root": {
+            "text": "This message was deleted.",
+            "edited": {
+                "user": "U02DHRR2L",
+                "ts": "1507689652.000000"
+            },
+            "type": "message",
+            "subtype": "tombstone",
+            "user": "USLACKBOT",
+            "hidden": true,
+            "thread_ts": "1507689054.000043",
+            "reply_count": 10,
+            "replies": [
+                {
+                    "user": "U02DHRR2L",
+                    "ts": "1507689611.000072"
+                },
+                {
+                    "user": "U416T0AAX",
+                    "ts": "1507689664.000148"
+                },
+                {
+                    "user": "U416T0AAX",
+                    "ts": "1507689671.000095"
+                },
+                {
+                    "user": "U02DGQYK1",
+                    "ts": "1507689718.000129"
+                },
+                {
+                    "user": "U02DHRR2L",
+                    "ts": "1507689718.000143"
+                },
+                {
+                    "user": "U416T0AAX",
+                    "ts": "1507689725.000098"
+                },
+                {
+                    "user": "U02DGQYK1",
+                    "ts": "1507689738.000140"
+                },
+                {
+                    "user": "U02DGQYK1",
+                    "ts": "1507689744.000106"
+                },
+                {
+                    "user": "U02DHRR2L",
+                    "ts": "1507689780.000123"
+                },
+                {
+                    "user": "U02DGQYK1",
+                    "ts": "1507689835.000185"
+                }
+            ],
+            "unread_count": 10,
+            "ts": "1507689054.000043"
+        },
+        "ts": "1507689718.000143"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "n\/p",
+        "thread_ts": "1507689054.000043",
+        "parent_user_id": "USLACKBOT",
+        "ts": "1507689725.000098"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The valid ones are: “without-password|yes|no|forced-commands-only”",
+        "thread_ts": "1507689054.000043",
+        "parent_user_id": "USLACKBOT",
+        "ts": "1507689738.000140"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "just not root",
+        "thread_ts": "1507689054.000043",
+        "parent_user_id": "USLACKBOT",
+        "ts": "1507689744.000106"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "Oh!! The ONE bad choice and that's what I picked.  Sigh.  That's beyond luck",
+        "thread_ts": "1507689054.000043",
+        "parent_user_id": "USLACKBOT",
+        "ts": "1507689780.000123"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "oh god no - not stupid threading in slack ...",
+        "ts": "1507689829.000009"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "lol",
+        "ts": "1507689835.000153"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yeah  :wink:",
+        "thread_ts": "1507689054.000043",
+        "parent_user_id": "USLACKBOT",
+        "ts": "1507689835.000185"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "2 - 2 - 2 conversations in one!",
+        "ts": "1507689854.000070"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I know this was working back in v3.0 for me….",
+        "ts": "1507689898.000079"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I know we’re bad for wanting root logins with passwords in SSH, but… “that’s the way it’s always been”",
+        "ts": "1507689989.000071"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "I uh, actually use this in our post-install.sh template:\n```\ngrep -q '^PasswordAuthentication ' \/etc\/ssh\/sshd_config &amp;&amp;\n    sed -r -i 's\/^(PasswordAuthentication).*\/\\1 no\/' \/etc\/ssh\/sshd_config ||\n    (echo 'PasswordAuthentication no' &gt;&gt; \/etc\/ssh\/sshd_config)\ngrep -q '^PermitEmptyPasswords ' \/etc\/ssh\/sshd_config &amp;&amp;\n    sed -r -i 's\/^(PermitEmptyPasswords).*\/\\1 no\/' \/etc\/ssh\/sshd_config ||\n    (echo 'PermitEmptyPasswords no' &gt;&gt; \/etc\/ssh\/sshd_config)\ngrep -q '^PubkeyAuthentication ' \/etc\/ssh\/sshd_config &amp;&amp;\n    sed -r -i 's\/^(PubkeyAuthentication).*\/\\1 yes\/' \/etc\/ssh\/sshd_config ||\n    (echo 'PubkeyAuthentication yes' &gt;&gt; \/etc\/ssh\/sshd_config)\ngrep -q '^PermitRootLogin ' \/etc\/ssh\/sshd_config &amp;&amp;\n    sed -r -i 's\/^(PermitRootLogin).*\/\\1 no\/' \/etc\/ssh\/sshd_config ||\n    (echo 'PermitRootLogin no' &gt;&gt; \/etc\/ssh\/sshd_config)\n```",
+        "edited": {
+            "user": "U54E4SD4G",
+            "ts": "1507690289.000000"
+        },
+        "ts": "1507690267.000082"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "`sed -i.bak '\/^PermitRootLogin \/{h;s\/ .*\/ yes\/};${x;\/^$\/{s\/\/PermitRootLogin yes\/;H};x}' \/etc\/ssh\/sshd_config`",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1507691101.000000"
+        },
+        "ts": "1507691019.000174"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DGQYK1> I feel stupid opening an issue for this, but… here ya go: <https:\/\/github.com\/digitalrebar\/provision\/issues\/480>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "Setting param access-ssh-root-mode to \"yes\" creates duplicate PermitRootLogin line in Ubuntu sshd_config · Issue #480 · digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/issues\/480",
+                "text": "The generated post-install.sh file for a Ubuntu OS machine using a Profile that sets the access-ssh-root-mode parameter to value \"yes\" has this line in it: echo \"PermitRootLogin yes\" &gt;&gt; \/etc\/ssh\/ss...",
+                "fallback": "GitHub: Setting param access-ssh-root-mode to \"yes\" creates duplicate PermitRootLogin line in Ubuntu sshd_config · Issue #480 · digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/issues\/480",
+                "thumb_url": "https:\/\/avatars0.githubusercontent.com\/u\/5913397?v=4&s=400",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1507691152.000076"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "my sed scriptlet doesn't address duplicate lines - but in sshd_config context - it would be valid to simply chuck a `| sort -u` after the sed runs",
+        "ts": "1507691378.000024"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U416T0AAX> and <@U54E4SD4G> - I'll address fixing\/patching for both of your issues\/suggestions (respectively) tmw morning ... going to have an evening with my family now ... :slightly_smiling_face:",
+        "ts": "1507691451.000131"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I’m out too, nite!",
+        "ts": "1507691468.000206"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "<@U6QFVRJNB> night! however I will mention that a `sort -u`, while probably not an issue in this case, would break any sshd_config files that have `Match` lines",
+        "ts": "1507691597.000062"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah",
+        "ts": "1507691638.000071"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U54E4SD4G> adds some additional parameters for the sshd file.",
+        "ts": "1507691677.000015"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We should also add a fail on the task-based versions if sshd doesn’t start.",
+        "ts": "1507691696.000180"
+    }
+]

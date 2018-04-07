@@ -1,0 +1,34 @@
+[
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<http:\/\/provision.readthedocs.io\/en\/latest\/doc\/faq-troubleshooting.html?highlight=ssh#add-ssh-keys-to-authorized-keys>",
+        "ts": "1516559762.000078"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "and <https:\/\/www.youtube.com\/watch?v=StQql8Xn08c>  (<@U855MAQFL>)",
+        "attachments": [
+            {
+                "service_name": "YouTube",
+                "service_url": "https:\/\/www.youtube.com\/",
+                "title": "DRP Quick Lession: Set SSH Keys",
+                "title_link": "https:\/\/www.youtube.com\/watch?v=StQql8Xn08c",
+                "author_name": "RackN & Digital Rebar",
+                "author_link": "https:\/\/www.youtube.com\/channel\/UCr3bBtP-pMsDQ5c0IDjt_LQ",
+                "thumb_url": "https:\/\/i.ytimg.com\/vi\/StQql8Xn08c\/hqdefault.jpg",
+                "thumb_width": 480,
+                "thumb_height": 360,
+                "fallback": "YouTube Video: DRP Quick Lession: Set SSH Keys",
+                "video_html": "<iframe width=\"400\" height=\"225\" src=\"https:\/\/www.youtube.com\/embed\/StQql8Xn08c?feature=oembed&autoplay=1&iv_load_policy=3\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen><\/iframe>",
+                "video_html_width": 400,
+                "video_html_height": 225,
+                "from_url": "https:\/\/www.youtube.com\/watch?v=StQql8Xn08c",
+                "service_icon": "https:\/\/a.slack-edge.com\/2089\/img\/unfurl_icons\/youtube.png",
+                "id": 1
+            }
+        ],
+        "ts": "1516559924.000058"
+    }
+]

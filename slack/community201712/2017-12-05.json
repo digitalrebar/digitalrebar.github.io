@@ -1,0 +1,407 @@
+[
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U89LVBDM2> - have you PXE booted a machine against the DRP instance?  Where are your machines coming from? Are they physical? Are they virtual?  Where is DRP running?  have you configured a subnet?",
+        "ts": "1512486076.000022"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "<@U02DGQYK1> thank you, just pushed 3.4.1 and it's functioning",
+        "ts": "1512487924.000239"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Cool!  Thanks for testing it.",
+        "ts": "1512487971.000115"
+    },
+    {
+        "text": "<!channel> trying to run digitalrebar latest stable ... for some reason dr_pr&lt;ovisioner:master&gt; keeps restarting",
+        "username": "dabernie, irc.freenode.net",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1512489249.000124"
+    },
+    {
+        "text": "ever seen that ?",
+        "username": "dabernie, irc.freenode.net",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1512489255.000145"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yes - it usually means I didn’t handle some start option.  If possible check the logs and see what it is complaining about.",
+        "ts": "1512489297.000979"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Make sure you are v3.4.1",
+        "ts": "1512489301.000807"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can check for version via `dr-provision --version`",
+        "ts": "1512489320.000118"
+    },
+    {
+        "text": "and where are the logs situated ? dummy question :-)",
+        "username": "dabernie, irc.freenode.net",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1512489580.000562"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "How are you running it?",
+        "ts": "1512489610.000247"
+    },
+    {
+        "text": "under Ubuntu with all the docker containers running",
+        "username": "dabernie, irc.freenode.net",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1512489660.000068"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "That sounds like DRv2",
+        "ts": "1512489685.000216"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "You probably don't want that.",
+        "ts": "1512489694.000231"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Hmmm ... smells like time for an upgrade ... :slightly_smiling_face:",
+        "ts": "1512489704.000165"
+    },
+    {
+        "text": "well I cloned GitHub.com\/digitalrebar",
+        "username": "dabernie, irc.freenode.net",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1512489725.000070"
+    },
+    {
+        "text": "and installed as per documentation .\/run-in-system ... yadi-yadi-yada",
+        "username": "dabernie, irc.freenode.net",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1512489750.000404"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<http:\/\/GitHub.com\/digitalrebar|GitHub.com\/digitalrebar>, or  <http:\/\/GitHub.com\/digitalrebar\/digitalrebar|GitHub.com\/digitalrebar\/digitalrebar>",
+        "ts": "1512489770.000889"
+    },
+    {
+        "text": "Either way, the logs for DRv2 are accessible via docker-compose",
+        "username": "victor_lowther, irc.freenode.net",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1512489848.000777"
+    },
+    {
+        "text": "cd into deploy\/compose and run docker-compose logs -f  dr-provision to see them.",
+        "username": "victor_lowther, irc.freenode.net",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1512489872.000265"
+    },
+    {
+        "text": "However, we are deprecating digitalrebar\/digitalrebar in favor of digitalrebar\/provision.",
+        "username": "victor_lowther, irc.freenode.net",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1512489914.000615"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "...and you are playing with Digital Rebar ver2 - and it's old - the new goodness is Digital Rebar Provision ver3 (DRPv3)",
+        "ts": "1512489934.000099"
+    },
+    {
+        "text": "The usual reason for the dr-provision container to not start involve not being able to grab the ports it needs",
+        "username": "victor_lowther, irc.freenode.net",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1512489950.000596"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if you do choose to upgrade to DRPv3 - see our quickstart quide to get started:  <http:\/\/provision.readthedocs.io\/en\/latest\/doc\/quickstart.html>",
+        "ts": "1512489988.000536"
+    },
+    {
+        "text": "yeah reason I wanted to run digitalrebar was for IPMI management and local ux",
+        "username": "dabernie, irc.freenode.net",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1512490038.000399"
+    },
+    {
+        "text": "if I pull docker file from dockers-hub on provision ... is it DRPv3 or older ?",
+        "username": "dabernie, irc.freenode.net",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1512490175.000513"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Well - DRP has IPMI management in a couple of forms and the UX can be run locally, but you should talk to us about that use case.",
+        "ts": "1512490182.000391"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "DRP is a completely different deployment structure.",
+        "ts": "1512490193.000245"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "DRP is a single go binary.",
+        "ts": "1512490201.000277"
+    },
+    {
+        "text": "They are entirely seperate products",
+        "username": "victor_lowther, irc.freenode.net",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1512490204.000362"
+    },
+    {
+        "text": "ok will try DRPv3 in 2 mins",
+        "username": "dabernie, irc.freenode.net",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1512490267.000175"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "please make sure you do not have any IPtables rules blocking ports 67, 69, 8091, and 8092 - if you re-use the node that you tried to install DRv2 on ...",
+        "ts": "1512490467.000301"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "(yeah the single go binary is my number one reason why I heavily prefer DRP over the previous DRv2 :sweat_smile: )",
+        "ts": "1512490470.000919",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U6QFVRJNB"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U54E4SD4G> - were you using DRv2?",
+        "ts": "1512490491.000453"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "attempting to",
+        "ts": "1512490495.000209"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "lol",
+        "ts": "1512490496.000335"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "shortly before DRP was published?",
+        "ts": "1512490510.000458"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "so I guess my timing was apt",
+        "ts": "1512490526.000593"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "I got DRv2 to work for a bit but I recall having some issues where I couldn't exactly replace my existing setup with Pixiecore and an unmaintained project called Waitron and ultimately gave up",
+        "ts": "1512490583.000151"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "make sense",
+        "ts": "1512490604.000877"
+    },
+    {
+        "text": "up and running",
+        "username": "dabernie, irc.freenode.net",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1512493480.000310"
+    },
+    {
+        "text": "did latest stable install",
+        "username": "dabernie, irc.freenode.net",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1512493506.000789"
+    },
+    {
+        "text": "dr-provision2017\/12\/05 17:04:50.218192 Version: v3.4.1-0-8d49a776c3d7b40d2af07a356e7b33d2e2b99ca2",
+        "username": "dabernie, irc.freenode.net",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1512493508.000187"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Great!",
+        "ts": "1512493566.000371"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "\"up and running\" &lt; that should be the DRP slogan",
+        "ts": "1512498367.000521"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "not very creative tho",
+        "ts": "1512498378.000642"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<!channel> - Digital Rebar meetup v006 starts in just over 10 mins .... hope you can join us, via the Zoom link:\n<https:\/\/zoom.us\/j\/3403934274>",
+        "attachments": [
+            {
+                "service_name": "Zoom Video",
+                "title": "Join our Cloud HD Video Meeting now",
+                "title_link": "https:\/\/zoom.us\/j\/3403934274",
+                "text": "Zoom is the leader in modern enterprise video communications, with an easy, reliable cloud platform for video and audio conferencing, chat, and webinars across mobile, desktop, and room systems. Zoom Rooms is the original software-based conference room solution used around the world in board, conference, huddle, and training rooms, as well as executive offices and classrooms. Founded in 2011, Zoom helps businesses and organizations bring their teams together in a frictionless environment to get more done. Zoom is a private company headquartered in San Jose, CA.",
+                "fallback": "Zoom Video: Join our Cloud HD Video Meeting now",
+                "image_url": "https:\/\/d24cgw3uvb9a9h.cloudfront.net\/static\/90467\/image\/thumb.png",
+                "from_url": "https:\/\/zoom.us\/j\/3403934274",
+                "image_width": 250,
+                "image_height": 250,
+                "image_bytes": 12961,
+                "service_icon": "https:\/\/d24cgw3uvb9a9h.cloudfront.net\/zoom.ico",
+                "id": 1
+            }
+        ],
+        "ts": "1512499792.000209"
+    },
+    {
+        "user": "U8A2N44HH",
+        "text": "<@U8A2N44HH> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1512506088.000291"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<!channel> the v006 meetup video is posted now - if you missed meetup and curious to learn about our Immutable Kubernetes solution ... etc... check it out:\n<https:\/\/youtu.be\/Z4jjN1wCtCM>",
+        "attachments": [
+            {
+                "service_name": "YouTube",
+                "service_url": "https:\/\/www.youtube.com\/",
+                "title": "Digital Rebar Online Meetup #6",
+                "title_link": "https:\/\/youtu.be\/Z4jjN1wCtCM",
+                "author_name": "RackN & Digital Rebar",
+                "author_link": "https:\/\/www.youtube.com\/channel\/UCr3bBtP-pMsDQ5c0IDjt_LQ",
+                "fallback": "YouTube Video: Digital Rebar Online Meetup #6",
+                "video_html": "<iframe width=\"400\" height=\"300\" src=\"https:\/\/www.youtube.com\/embed\/Z4jjN1wCtCM?feature=oembed&autoplay=1&iv_load_policy=3\" frameborder=\"0\" gesture=\"media\" allow=\"encrypted-media\" allowfullscreen><\/iframe>",
+                "video_html_width": 400,
+                "video_html_height": 300,
+                "from_url": "https:\/\/youtu.be\/Z4jjN1wCtCM",
+                "service_icon": "https:\/\/a.slack-edge.com\/2089\/img\/unfurl_icons\/youtube.png",
+                "id": 1
+            }
+        ],
+        "ts": "1512509707.000241"
+    },
+    {
+        "type": "message",
+        "user": "U8A2N44HH",
+        "text": "Hi any reason why I can’t run ..\/drpcli from docker exec ?",
+        "ts": "1512511859.000080"
+    },
+    {
+        "type": "message",
+        "user": "U8A2N44HH",
+        "text": "docker exec -ti hungry_curie “.\/drpcli bootenvs uploadiso sledgehammer”\noci runtime error: exec failed: container_linux.go:265: starting container process caused “exec: \\“.\/drpcli bootenvs uploadiso sledgehammer\\“: stat .\/drpcli bootenvs uploadiso sledgehammer: no such file or directory”",
+        "ts": "1512511861.000161"
+    },
+    {
+        "type": "message",
+        "user": "U8A2N44HH",
+        "text": "forget it",
+        "ts": "1512512025.000081"
+    },
+    {
+        "type": "message",
+        "user": "U8A2N44HH",
+        "text": "works",
+        "ts": "1512512026.000503",
+        "reactions": [
+            {
+                "name": "cake",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "user": "U8ACKLW93",
+        "text": "<@U8ACKLW93> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1512521281.000060"
+    }
+]

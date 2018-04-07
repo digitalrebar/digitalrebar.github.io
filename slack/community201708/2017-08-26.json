@@ -1,0 +1,14 @@
+[
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "note on using VirtualBox - the vmboxnet0 is not created in the system until a machine using it is booted",
+        "ts": "1503766674.000103"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "ALL - we're getting ready for the v3.1 release from master\/tip.   if you have time to test &amp; validate functionality, please take some time to play with it.  Especially if you have v3.0 bootenvs and templates",
+        "ts": "1503769787.000064"
+    }
+]

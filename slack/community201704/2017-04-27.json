@@ -1,0 +1,87 @@
+[
+    {
+        "text": "I've been looking at the DRP docs - trying to add custom ISO image - I'm not clear on the process, does anyone here have suggestions on this topic. I apologize if this is not the proper channel for posting DRP questions - Thanks in advance:)",
+        "username": "vjcubas",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493302925.823644"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I'm working on docs now.  Check operations section about bootenvs.  What are trying to do?",
+        "ts": "1493303989.360212"
+    },
+    {
+        "user": "U55DBUTBM",
+        "text": "<@U55DBUTBM> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1493305064.916642"
+    },
+    {
+        "text": "we have a custom CentOS-7 iso that we'd like to deploy to the targeted hosts - also, once this image has been installed on those hosts, I'd like to be able to reboot them without re-imaging them through the PXE boot - I know changing the boot order in the bios would accomplish this, but perhaps there is a better\/easier way to do so - thanks",
+        "username": "vjcubas",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493305265.029094"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "you'd set bootenv to local as part of %post in your centos kickstart file",
+        "ts": "1493305342.072012"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Thanks, <@U54E4SD4G> !  Exactly.  I'm in the process of documing and templatizing this so that you can include it in any custom kickstart.  something like this:",
+        "ts": "1493306884.883873"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "```\n{{ template \"update-drp-local\" . }}\n```",
+        "ts": "1493306944.915589"
+    },
+    {
+        "text": "thanks, another question: is there a way to install ssh key during the deployment, or to set user\/password - BTW, what is the default user\/pass for the centos-7-3.1611 image after deployment?",
+        "username": "vjcubas",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493316880.690934"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yes and yes.",
+        "ts": "1493321140.643113"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "root\/RocketSkates",
+        "ts": "1493321154.648507"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "@vjcubas - <http:\/\/provision.readthedocs.io\/en\/latest\/doc\/install.html#default-template-identity>",
+        "ts": "1493321245.686794"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<http:\/\/provision.readthedocs.io\/en\/latest\/doc\/arch\/data.html#template> - the parameter section",
+        "ts": "1493321296.707636"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "There are some more docs and examples coming describing just those issues.",
+        "ts": "1493321311.713710"
+    }
+]

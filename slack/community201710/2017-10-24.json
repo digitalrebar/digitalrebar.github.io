@@ -1,0 +1,1288 @@
+[
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Testing ‘tip’ to see if UX functions better…",
+        "ts": "1508847376.000426"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Running:\n```[dradmin@dr-admin drp-tip]$ .\/dr-provision --version\ndr-provision2017\/10\/24 07:59:08.371285 Version: origin\/master.travis.16-tip-strange-02f22e8dddac467f6e46279aa8d39cc5c89731d6```",
+        "ts": "1508847392.000306"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Tried to add param to a new profile I created, got this error:",
+        "ts": "1508847418.000466"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7NTJLCP5\/drp_save_profile_error.png|drp_save_profile_error.png>",
+        "file": {
+            "id": "F7NTJLCP5",
+            "created": 1508847449,
+            "timestamp": 1508847449,
+            "name": "drp_save_profile_error.png",
+            "title": "drp_save_profile_error.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 41741,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7NTJLCP5\/drp_save_profile_error.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7NTJLCP5\/download\/drp_save_profile_error.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7NTJLCP5-6c94f71418\/drp_save_profile_error_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7NTJLCP5-6c94f71418\/drp_save_profile_error_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7NTJLCP5-6c94f71418\/drp_save_profile_error_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 203,
+            "thumb_360_h": 360,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7NTJLCP5-6c94f71418\/drp_save_profile_error_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 270,
+            "thumb_480_h": 480,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7NTJLCP5-6c94f71418\/drp_save_profile_error_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "image_exif_rotation": 1,
+            "original_w": 393,
+            "original_h": 698,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7NTJLCP5\/drp_save_profile_error.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F7NTJLCP5-153c21a415",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1508847450.000492"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "And from the stdout of dr-provision:\n```[GIN] 2017\/10\/24 - 03:56:03 | 200 |      13.657µs | 192.168.100.158 | OPTIONS  \/api\/v3\/profiles\/necla-default-ubuntu\n[GIN] 2017\/10\/24 - 03:56:03 | 406 |    5.922018ms | 192.168.100.158 | PATCH    \/api\/v3\/profiles\/necla-default-ubuntu\n[GIN] 2017\/10\/24 - 03:56:28 | 200 |       6.168µs | 192.168.100.158 | OPTIONS  \/api\/v3\/profiles\/necla-default-ubuntu\n[GIN] 2017\/10\/24 - 03:56:28 | 406 |    5.855957ms | 192.168.100.158 | PATCH    \/api\/v3\/profiles\/necla-default-ubuntu\n[GIN] 2017\/10\/24 - 03:56:29 | 406 |     259.399µs | 192.168.100.158 | PATCH    \/api\/v3\/profiles\/necla-default-ubuntu\n[GIN] 2017\/10\/24 - 03:56:29 | 406 |     268.972µs | 192.168.100.158 | PATCH    \/api\/v3\/profiles\/necla-default-ubuntu\n[GIN] 2017\/10\/24 - 03:57:09 | 200 |       8.079µs | 192.168.100.158 | OPTIONS  \/api\/v3\/profiles\/necla-default-ubuntu\n[GIN] 2017\/10\/24 - 03:57:09 | 406 |     275.049µs | 192.168.100.158 | PATCH    \/api\/v3\/profiles\/necla-default-ubuntu```",
+        "ts": "1508847698.000086"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "<@U416T0AAX> question: This is still your 'quest' for  \"a way to trigger the Ansible run from a DRP stage\" ?",
+        "ts": "1508848948.000413"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "if so... I've got allocated more time on a 'greenfield' project at work and they greenlighted Ansible and 'what-ever' PXE\/KS thing I want...",
+        "ts": "1508849054.000374"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "thinking that I could follow your path to reproduce issues you're seeing (are you joining the meetup today) ?",
+        "ts": "1508849294.000283"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U62R1805P> I should be able to...",
+        "ts": "1508849389.000327"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "seems like most the issues are more UI\/UX talking to API ?? right ??",
+        "ts": "1508849453.000365"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I suppose so... don’t mind using drpcli for the more simple things, but writing then passing it big blobs of JSON to set up stuff isn’t how I want to spend my day...",
+        "ts": "1508849541.000292"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "Oh... for me to 'sell' this path, got to make the 'pretty work'....",
+        "ts": "1508849608.000121"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I was using ‘stable’ for just that reason, but it seems the UX is always ‘tip’.... and now current UX no longer works with v3.1 stable API...",
+        "ts": "1508849631.000196"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Me as well - CLI-only tool no go for my team...",
+        "ts": "1508849678.000239"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "plus I'll need to make the ansible and ce-_putpackagehere_ then explain the guts... BUT the 'pretty' always seals the deal ... aka worth my time debugguing UX for sure...",
+        "ts": "1508849763.000077"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So did you know that ce-* stuff can not use the workflow\/stages subsystem?",
+        "ts": "1508849846.000548"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "(Found that out a few days ago)",
+        "ts": "1508849863.000257"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I've got to do a timed 'DR' (Disaster Recover)... so went I talk DR they sort of 'oh cool'...",
+        "ts": "1508849871.000363"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Only RackN login unlocks that functionality ",
+        "ts": "1508849912.000315"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Which is fine as long as it remains free to use...",
+        "ts": "1508849965.000417"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "Yea, I know and I sort of like that... basically because they know the support boundary...",
+        "ts": "1508849988.000445"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I'm hoping that also gives a version control of the api which you guys were talking about too...",
+        "ts": "1508850121.000319"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "At this early stage I wouldn’t be able to convince folks here to buck up for support... have to show them a fully-functional “wow” demo before that ever could happen...",
+        "ts": "1508850163.000501"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "The API *is* versioned; the UX is not",
+        "ts": "1508850206.000327"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "no, but I think that's possible and what ?? greg ?? is thinking... and I've got the same sort of demo path ahead... the dev side will be making sure they can test everything in the open, but the ops side will need to lock-down customer specific things... which they'll want custom support... so basically I'll need to write 'ce-' packages for dev... so they approve the stack...",
+        "ts": "1508850643.000008"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "The Endpoint\/UX side issue with version and feature skew is being addressed via the use of \"feature tags\".  The endpoint will have a set of \"things it supports and features is can service\", and the UX will behave accordingly.",
+        "ts": "1508851479.000087"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Note that this is ... even newer ... than the UX itself.  As we've mentioned - the UX itself is Beta release, and believe me - we are working as quickly as we can to stabilize it and sort out all of the details between the Endpoint and UX.",
+        "ts": "1508851526.000668"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "We greatly appreciate your frustration in dealing with the fine grained details and issues with this ... and it is very helpful to have your input and feedback on issues.",
+        "ts": "1508851585.000115"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U416T0AAX> - I understand that modifying\/managing a lot of JSON isn't very \"sexy\" - but it is reliable.  :slightly_smiling_face:   One pattern that I use a lot ... and I really like ... the ability to completely rebuild a DRP Endpoint from scratch in almost zero time at all ...",
+        "ts": "1508851641.000297"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "is by dumping the JSON content to disk - and reloading a new DRP endpoint from scratch.  This way - you can spin up an Endpoint extremely quickly ... which is very good practice for a modern CI\/CD like pipeline - or a \"Dev\/Test\/Stage\/Prod\" pipeline, if you will ...",
+        "ts": "1508851698.000415"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if that pattern becomes common practice for you - you can very quickly accelerate making changes by modification to the JSON (or YAML if you prefer) blobs ...",
+        "ts": "1508853625.000205"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "totally understand that the UX is the sales piece for a lot of the other team members and mgmt",
+        "ts": "1508853642.000391"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "...and it's certainly a LOT easier to digest \"things\" in a visual format from text blobs",
+        "ts": "1508853680.000270"
+    },
+    {
+        "user": "U7P8TES5B",
+        "text": "<@U7P8TES5B> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1508860383.000457"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "@shane Understand that stuff is undergoing active dev, but frustrating when a previously-working system breaks, when I’m running “stable”",
+        "ts": "1508863050.000383"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "As well, have had some regressions to things (mainly templates) that were working in v3.0 that are not in v3.1",
+        "ts": "1508863123.000123"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U416T0AAX> totally understand the frustration on the UX side - and we're aware of that and addressing the issues - we amended the meetup agenda for today - to include that very issue",
+        "ts": "1508863181.000128"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U7P8TES5B> - welcome",
+        "ts": "1508863238.000023"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So putting the UX issues aside - can someone assist me in getting my Profiles \/ Workflows issues sorted so that my installs are back to expected functionality?",
+        "ts": "1508863294.000211"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "sure - I'm happy to help with that - I don't have historical context\/experience w\/ the 3.0 stuff, but we should be able to work through it - can we focus on that after meetup?",
+        "ts": "1508863360.000210"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Sure, and thanks :slightly_smiling_face:",
+        "ts": "1508863375.000232"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Remind me when meetup kickoff is again?",
+        "ts": "1508863445.000753"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "11am PST",
+        "ts": "1508863454.000263"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "1 hr 15 mins",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1508863500.000000"
+        },
+        "ts": "1508863458.000752"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, thought so, thanks",
+        "ts": "1508863466.000357"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<!channel> quick reminder ... our 3rd online Digital Rebar meetup starts in a short bit (11 am PST) - we hope you can join us - details:\n<https:\/\/www.meetup.com\/digitalrebar\/>",
+        "attachments": [
+            {
+                "service_name": "Meetup",
+                "title": "Digital Rebar",
+                "title_link": "https:\/\/www.meetup.com\/digitalrebar\/",
+                "text": "Digital Rebar Provision (DRP) is the open source (APLv2) , fast and simple data center provisioning and control scaffolding designed with a cloud native architecture. This Online Meetup group will dis",
+                "fallback": "Meetup: Digital Rebar",
+                "thumb_url": "https:\/\/secure.meetupstatic.com\/photos\/event\/c\/a\/0\/0\/highres_464511712.jpeg",
+                "from_url": "https:\/\/www.meetup.com\/digitalrebar\/",
+                "thumb_width": 188,
+                "thumb_height": 186,
+                "service_icon": "https:\/\/secure.meetupstatic.com\/s\/img\/144395054627769971357\/logo\/swarm\/m_swarm_120x120.png",
+                "id": 1
+            }
+        ],
+        "ts": "1508863586.000187"
+    },
+    {
+        "type": "message",
+        "user": "U7P8TES5B",
+        "text": "HI All. I'm struggling to provision a  kvm guest with a centos 7 system without any luck. Could someone walk me through the necessary steps?",
+        "ts": "1508870629.000372"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "hey <@U7P8TES5B> happy to help out - right now we're running the community meetup",
+        "ts": "1508870657.000045"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "can we touch base in 20 or 30 mins ?",
+        "ts": "1508870664.000055"
+    },
+    {
+        "type": "message",
+        "user": "U7P8TES5B",
+        "text": "No problem. Catch you then.",
+        "ts": "1508870675.000203"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "thx",
+        "ts": "1508870678.000509"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U7P8TES5B> - at the moment - we do not have a \"plugin\" that supports \"machine actions\" with KVM - that means \"rebooting\" a KVM guest instance isn't possible directly in Digital Rebar Provision",
+        "ts": "1508871800.000024"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "so in a KVM environment, you need to do 2 things:",
+        "ts": "1508871806.000633"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "1. manually walk your VM through reboot cycles",
+        "ts": "1508871816.000308"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "2. make sure you advance the Machines \"profile\" through the \"discovery\" and \"OS install\" stages you need",
+        "ts": "1508871867.000698"
+    },
+    {
+        "type": "message",
+        "user": "U7P8TES5B",
+        "text": "Couple of  questions here. First, do I need a global (or other workflow) and what should it look like? What is the process for advancing the machines profile? And can it be done using the cli or just the gui?",
+        "ts": "1508872017.000544"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can change\/advance the profiles either via the UX (GUI) or the CLI (or directly via API if you choose)",
+        "ts": "1508872049.000018"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "that's up to you how you want to do it - easiest way is probably just through the UX - via the \"Machines\" left panel menu item, then \"Edit\" machine",
+        "ts": "1508872085.000021"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can also do it via the \"Bulk Actions\" page",
+        "ts": "1508872125.000252"
+    },
+    {
+        "type": "message",
+        "user": "U7P8TES5B",
+        "text": "I'm guessing that I need to get the KVM into a stage of Boot LocalEnv and the apply the profile?",
+        "ts": "1508872131.000131"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "By default - when a Machine (KVM guest) boots, and it DHCPs against the DRP endpoint - you need a \"Subnet\" definition to enable that DHCP interaction - unless you're using an external DHCP server, and you have the DHCP server in DRP disabled",
+        "ts": "1508872193.000052"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "any \"Unknown\" Machine action will be set based on the \"Info &amp; Preferences\" UX page - for \"Unknonw BootEnv\"",
+        "ts": "1508872230.000175"
+    },
+    {
+        "type": "message",
+        "user": "U7P8TES5B",
+        "text": "I am successfully getting it to boot from pxe and into sledgehammer (I think it's sledgehammer - a centos system of some sort).",
+        "ts": "1508872239.000412"
+    },
+    {
+        "type": "message",
+        "user": "U7P8TES5B",
+        "text": "Final question is there a log than I can access to watch the process?",
+        "ts": "1508872263.000223"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "in this case - you'd want to set it to either \"ce-discovery\" (if you are using only the drp-community-content), or you'd set it to \"discovery\" if you are using the RackN advance content (free but requires registration and login of the RackN account)",
+        "ts": "1508872267.000203"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "in the UX - you can use the \"bullhhorn\" icon in the upper left, next to the \"Endpoint\" - that's the \"Announce\" icon that opens a websocket event stream window",
+        "ts": "1508872305.000523"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you'll see the calls against the DRP endpoint",
+        "ts": "1508872314.000020"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "once you've done \"discovery\" via the Unknown BootEnv - the Default BootEnv becomes the next step in the process",
+        "ts": "1508872348.000030"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "in this case - it sounds like you have it set to \"Sledgehammer\"",
+        "ts": "1508872360.000429"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(or \"ce-sledgehammer\")",
+        "ts": "1508872368.000112"
+    },
+    {
+        "type": "message",
+        "user": "U7P8TES5B",
+        "text": "Yes. And after that I need to apply a profile as you indicated above?",
+        "ts": "1508872383.000579"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "this is what you'd change - switch the profiile of the Machine to either \"ce-centos...\" or \"centos...\" BootEnv - then reboot the VM",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1508872408.000000"
+        },
+        "ts": "1508872404.000565"
+    },
+    {
+        "type": "message",
+        "user": "U7P8TES5B",
+        "text": "Ok, I'll give it a try. Thx!!",
+        "ts": "1508872418.000705"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "exactly !",
+        "ts": "1508872422.000679"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the advanced RackN content (free - requires registration) ... has \"Stages\" and \"Workflow\" that can advance Machines through this process ...",
+        "ts": "1508872447.000219"
+    },
+    {
+        "type": "message",
+        "user": "U7P8TES5B",
+        "text": "I am signed up so I have this.",
+        "ts": "1508872474.000145"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "but as I mentioned - we don't at the moment have a Plugin to support \"Machine Actions\" on the KVM side - we'll have to add that plugin type (it's fairly highly requested, so it'll get there)",
+        "ts": "1508872478.000298"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "right ... but we don't have a plugin for you right now :slightly_smiling_face:",
+        "ts": "1508872488.000344"
+    },
+    {
+        "type": "message",
+        "user": "U7P8TES5B",
+        "text": "Lots of promise here so best of luck!",
+        "ts": "1508872497.000030"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can do some massaging of the actual tasks\/bootenvs flow - so if you __know__ how you want your Machines to advance, you can inject those actions inside of the Tasks themselves",
+        "ts": "1508872528.000219"
+    },
+    {
+        "type": "message",
+        "user": "U7P8TES5B",
+        "text": "One step at a time!",
+        "ts": "1508872542.000178"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "but our design by default is to handle that externally with allowing DRP Endpoint to push a Machine through changes via IPMI or \"IPMI-like\"  (i prefer \"Machine Actions\")  changes",
+        "ts": "1508872568.000672"
+    },
+    {
+        "type": "message",
+        "user": "U7P8TES5B",
+        "text": "Oh, one last question. After I boot from a localenv and then reboot kvm, how does kvm reattach to the end point. I've kinda tried this and get a kvm boot failure with no bootable disk",
+        "ts": "1508872625.000085"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you have to make sure any disks you have set for your VM Guest are set to \"persist\" across restarts of the VM and KVM host",
+        "ts": "1508873379.000285"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "that's a standard \"KVM thingy\"",
+        "ts": "1508873390.000673"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<!here> any idea of what this DRP startup error means?",
+        "ts": "1508879038.000204"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7NLVMQ72\/image_uploaded_from_ios.jpg|Image uploaded from iOS>",
+        "file": {
+            "id": "F7NLVMQ72",
+            "created": 1508879046,
+            "timestamp": 1508879046,
+            "name": "Image uploaded from iOS.jpg",
+            "title": "Image uploaded from iOS",
+            "mimetype": "image\/jpeg",
+            "filetype": "jpg",
+            "pretty_type": "JPEG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 6716790,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7NLVMQ72\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7NLVMQ72\/download\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7NLVMQ72-88848001a7\/image_uploaded_from_ios_64.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7NLVMQ72-88848001a7\/image_uploaded_from_ios_80.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7NLVMQ72-88848001a7\/image_uploaded_from_ios_360.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 270,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7NLVMQ72-88848001a7\/image_uploaded_from_ios_480.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 360,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7NLVMQ72-88848001a7\/image_uploaded_from_ios_160.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7NLVMQ72-88848001a7\/image_uploaded_from_ios_720.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 540,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7NLVMQ72-88848001a7\/image_uploaded_from_ios_800.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 600,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7NLVMQ72-88848001a7\/image_uploaded_from_ios_960.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 720,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7NLVMQ72-88848001a7\/image_uploaded_from_ios_1024.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 768,
+            "image_exif_rotation": 1,
+            "original_w": 4032,
+            "original_h": 3024,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7NLVMQ72\/image_uploaded_from_ios.jpg",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F7NLVMQ72-ba2b41a43c",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "upload_reply_to": "6F18CD77-F02F-4A2E-BEE7-F5A1842F0079",
+        "ts": "1508879052.000596"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "that's awfully blurry and hard to read - but it looks like it was looking for json or yaml and didn't find a validly formed file\/contents",
+        "ts": "1508879094.000685"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ah - blew up the pix - invalid character \"m\"",
+        "ts": "1508879118.000267"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "In what?",
+        "ts": "1508879158.000018"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(jeesh - you've got some dust on that monitor ... :slightly_smiling_face: )",
+        "ts": "1508879165.000144"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "It’s a lab, what can I say...",
+        "ts": "1508879182.000363"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "some file - unfortunately that error isn't giving us the file name that's causing it to barf",
+        "ts": "1508879187.000212"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So that was my prior running DRP “stable”",
+        "ts": "1508879213.000351"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I had stopped it, created another directory, and installed latest ‘tip’ in that",
+        "ts": "1508879249.000360"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Fired that up, hit UX problems (see above) and decided to go back to using my old stable",
+        "ts": "1508879286.000528"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Which now does not start...",
+        "ts": "1508879300.000201"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That is one of the files in drp-data\/saas-content",
+        "ts": "1508879380.000138"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It appears to be invalid yaml.",
+        "ts": "1508879388.000126"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Any cli-based YAML linters out there?",
+        "ts": "1508879482.000230"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yes",
+        "ts": "1508879498.000398"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Don’t know what changed, was running with those files before",
+        "ts": "1508879509.000489"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "More to the point, did you back up your backing store when you moved from stable -&gt; tip?",
+        "ts": "1508879527.000269"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "well - sort of - not really a linter ... but:\n<https:\/\/gist.githubusercontent.com\/earonesty\/1d7cb531bb8fff8c228b7710126bcc33\/raw\/e250f65764c448fe4073a746c4da639d857c9e6c\/yq>",
+        "ts": "1508879547.000414"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it interprets yaml and will barf if it's not right ... so \"sorta linter\"",
+        "ts": "1508879561.000554"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I use it in the \"5min-drp\" example demo stuff I use",
+        "ts": "1508879579.000026"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "as an upgrade from stable to tip can (and does, in this case) change the internal format of some of the backing store objects.",
+        "ts": "1508879580.000295"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Was not an in-place upgrade, installed tip as isolated in another dir ",
+        "ts": "1508879617.000395"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "right - but did you point the \"tip\" version at the \"stable\" version content directory ?",
+        "ts": "1508879643.000427"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "No",
+        "ts": "1508879654.000211"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "good man",
+        "ts": "1508879659.000050"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ok -- can you tar up your  stable content directory and send it to me in a PM?",
+        "ts": "1508879757.000116"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U416T0AAX>...there's a online yaml linter ... :\n<http:\/\/www.yamllint.com\/>",
+        "attachments": [
+            {
+                "title": "YAMLlint - The YAML Validator",
+                "title_link": "http:\/\/www.yamllint.com\/",
+                "text": "Validate and Verify your YAML documents, optimized for Ruby on Rails",
+                "fallback": "YAMLlint - The YAML Validator",
+                "from_url": "http:\/\/www.yamllint.com\/",
+                "service_name": "yamllint.com",
+                "id": 1
+            }
+        ],
+        "ts": "1508879825.000320"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "`sudo dnf install yamllint`\n`sudo apt-get install yamllint`\nfrom: <https:\/\/github.com\/adrienverge\/yamllint>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "adrienverge\/yamllint",
+                "title_link": "https:\/\/github.com\/adrienverge\/yamllint",
+                "text": "yamllint - A linter for YAML files.",
+                "fallback": "GitHub: adrienverge\/yamllint",
+                "from_url": "https:\/\/github.com\/adrienverge\/yamllint",
+                "thumb_url": "https:\/\/avatars3.githubusercontent.com\/u\/5244945?s=400&v=4",
+                "thumb_width": 200,
+                "thumb_height": 200,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1508879916.000085"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U6QFVRJNB> thx, using yamllint - all files check out (excepting pedantic “line too long” and “wrong indentation” errors)",
+        "ts": "1508880211.000267"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7QDH5SFR\/image_uploaded_from_ios.jpg|Image uploaded from iOS>",
+        "file": {
+            "id": "F7QDH5SFR",
+            "created": 1508880259,
+            "timestamp": 1508880259,
+            "name": "Image uploaded from iOS.jpg",
+            "title": "Image uploaded from iOS",
+            "mimetype": "image\/jpeg",
+            "filetype": "jpg",
+            "pretty_type": "JPEG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 7759371,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7QDH5SFR\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7QDH5SFR\/download\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7QDH5SFR-1ed5f5149d\/image_uploaded_from_ios_64.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7QDH5SFR-1ed5f5149d\/image_uploaded_from_ios_80.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7QDH5SFR-1ed5f5149d\/image_uploaded_from_ios_360.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 270,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7QDH5SFR-1ed5f5149d\/image_uploaded_from_ios_480.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 360,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7QDH5SFR-1ed5f5149d\/image_uploaded_from_ios_160.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7QDH5SFR-1ed5f5149d\/image_uploaded_from_ios_720.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 540,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7QDH5SFR-1ed5f5149d\/image_uploaded_from_ios_800.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 600,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7QDH5SFR-1ed5f5149d\/image_uploaded_from_ios_960.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 720,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7QDH5SFR-1ed5f5149d\/image_uploaded_from_ios_1024.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 768,
+            "image_exif_rotation": 1,
+            "original_w": 4032,
+            "original_h": 3024,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7QDH5SFR\/image_uploaded_from_ios.jpg",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F7QDH5SFR-e1ceb93157",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "upload_reply_to": "66409090-C7EC-4C79-80DF-276DB2F8C492",
+        "ts": "1508880266.000061"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Okay - so that may mean that you have tip content with the stable drp.",
+        "ts": "1508880409.000073"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "`ls -al drp-data\/saas-content`",
+        "ts": "1508880421.000443"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "nvm - I see it",
+        "ts": "1508880432.000198"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That might do it too.  tip content.",
+        "ts": "1508880524.000223"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Can you send us those four files, please?",
+        "ts": "1508880581.000263"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Sending to <@U02DJQSG8> now",
+        "ts": "1508880650.000344"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Or should I just bite the bullet and start running with ‘tip’ and rebuild my DRP world?",
+        "ts": "1508880923.000469"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "so the tarball has 6 files",
+        "ts": "1508881023.000171"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "drp-community-content-v1.0.0-tip-dradmin-dev-10-5dc611603bba0352c887efed813e62ec8451f32f.yaml\nkubespray-v1.0.0-tip-36-ce4ecc6205224c8cb6144ff35fc82c59e0301183.yaml\nos-discovery-v1.0.0-tip-30-df57b2959b32fd674ed749dd430b0e823658d4bc.yaml.bak\nos-discovery-v1.0.0-tip-36-ce4ecc6205224c8cb6144ff35fc82c59e0301183.yaml\nos-linux-v1.0.0-tip-travis-dev-33-a5f9ea9af72b14eb8c02e60ee5b1eb11485d7b3e.yaml\nyq",
+        "ts": "1508881032.000044"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Where did the yq and .bak file come from?",
+        "ts": "1508881071.000279"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Either way, the store implementation assumes that anything that isn't .yaml or .yml is JSON",
+        "ts": "1508881168.000417"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "so the presence of extra files in the saas-contents directory will cause load failures.",
+        "ts": "1508881190.000397"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Well - the .bak is a backup of prior os-discovery and yq is a YAML linter that <@U6QFVRJNB> recommended",
+        "ts": "1508881252.000072"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Can delete and retry",
+        "ts": "1508881272.000251"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "please do.",
+        "ts": "1508881283.000185"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Live and learn ",
+        "ts": "1508881345.000158"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So takeaway is only valid DRP yaml or json files in saas-content - :white_check_mark:",
+        "ts": "1508881421.000303"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Yep.",
+        "ts": "1508881432.000302"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Although we will add a check for obviously-bad files.",
+        "ts": "1508881452.000217"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Silly users",
+        "ts": "1508881475.000526"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "breaking my Perfect (TM) code!",
+        "ts": "1508881496.000147"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Now with BugFree(tm) !!!1!",
+        "ts": "1508881527.000535"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Either way, time to head out.",
+        "ts": "1508881591.000554"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Thanks",
+        "ts": "1508881605.000140"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So <@U6QFVRJNB> — can we work on the drpcli way of setting up the workflow I want against my profile?",
+        "ts": "1508881799.000141"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "sure - give me 10 mins",
+        "ts": "1508881816.000478"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Ack",
+        "ts": "1508881823.000053"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ok",
+        "ts": "1508882356.000265"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So, I have a custom profile with the param settings i want for the install templates",
+        "ts": "1508882401.000439"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ok - with existing content - it's pretty easy to dump all the things - and save them out for reload",
+        "ts": "1508882503.000238"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you might want to install a new DRP endpoint just for this testing ?  to shovel content in to - and see how it looks",
+        "ts": "1508882521.000078"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if you don't provision against it - you can disable dhcp\/tftp - and set the API port to an alternate number - and you can then hit it via UX IP:alt_port_number",
+        "ts": "1508882550.000267"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "to both watch it being built, and see that it's \"right\" the way you want it",
+        "ts": "1508882569.000207"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Trying to set up a workflow to install U16.04, then move to ssh-access, then done",
+        "ts": "1508882617.000381"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the whole process is \"codified\" in bash - via the 5min-drp stuff in git:\n<https:\/\/github.com\/digitalrebar\/provision\/tree\/master\/examples\/5min-drp>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/tree\/master\/examples\/5min-drp",
+                "text": "provision - The Provisioner for DigitalRebar as a Stand Alone Golang Utility",
+                "fallback": "GitHub: digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/tree\/master\/examples\/5min-drp",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 192,
+                "thumb_height": 192,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1508882627.000096"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "basically - the \"demo-run.sh\" is a driver to the bin\/control.sh script - which does the main work",
+        "ts": "1508882647.000073"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So I should look at that and see if I can do it?",
+        "ts": "1508882692.000070"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can - it's designed to spin up a <http:\/\/packet.net|packet.net> instance, use terraform, and plumb up a DRP endpoint with the RackN registered content ... then provision nodes in <http:\/\/packet.net|packet.net>",
+        "ts": "1508882723.000059"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "that's a bunch of stuff you don't really need (<http:\/\/packet.net|packet.net> and terraform) (presumably)",
+        "ts": "1508882750.000311"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "so what we want to do more than anything else, is just observe the patterns of how I did that there",
+        "ts": "1508882763.000015"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, fair enough",
+        "ts": "1508882785.000060"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Let me take a look and see what I can get done",
+        "ts": "1508882799.000229"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the drp-install stuff is boring - you're probably pretty good at spinning up an Endpoint, by now :slightly_smiling_face:",
+        "ts": "1508882813.000011"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if you look at the bin\/control.sh usage statement, you get:  \n```USAGE:  $0 [arguments]\nWHERE: arguments are as follows:\n    help | usage           this help statement\n    install-terraform      installs terraform locally\n    install-secrets        installs API and PROJECT secrets for Terraform files\n    ssh-keys               generates new ssh keys, REMOVES existing keys first\n    set-drp-endpoint &lt;ID&gt;  sets the <http:\/\/drp-machines.tf|drp-machines.tf> endpoint information \n                           for Terraform\n    get-drp-local          installs DRP locally\n    get-drp-cc             installs DRP *community* content \n    get-drp-plugins        installs DRP Packet Plugins\n    drp-install &lt;ID&gt;       install DRP and basic content as identified by &lt;ID&gt;\n    remote-content &lt;ID&gt;    do 'get-drp-cc' and 'get-drp-plugins' on remote &lt;ID&gt;\n    drp-setup &lt;ID&gt;         perform content and plugins setup on &lt;ID&gt; endpoint\n    get-drp-id             get the DRP endpoint server ID\n    get-address &lt;ID&gt;       get the IP address of new DRP server identified by &lt;ID&gt;\n    ssh &lt;ID&gt; [COMMANDS]    ssh to the IP address of DRP server identified by &lt;ID&gt;\n    scp &lt;ID&gt; [FILES]       ssh to the IP address of DRP server identified by &lt;ID&gt;\n    cleanup                WARNING WARNING WARNING\n```",
+        "ts": "1508882842.000043"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So what I really need is to set up the workflow (stage maps)",
+        "ts": "1508882916.000121"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the interesting bits for you are the `drp-install` (contents bits), `get-drp-plugins` (may or may not apply depending on what you need), and `drp-setup`",
+        "ts": "1508882930.000167"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "each of those three steps are just case statements in bash - so you can search to them via `drp-install)` (note the closing parenthesis)",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1508882971.000000"
+        },
+        "ts": "1508882964.000182"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "when searching",
+        "ts": "1508882977.000161"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "in each of the steps - I'm being pedantic about deleting any content if it exists first, and then loading it again ...",
+        "ts": "1508882998.000345"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it allows me to re-iterate the process over-and-over against an existing endpoint cleanly, and insuring I wipe content clean and reinstall with new (possibly the same, or possibly updated\/modified content)",
+        "ts": "1508883032.000474"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "that's just a general pattern",
+        "ts": "1508883036.000189"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if you know you start from scratch every time - you can stip the test\/wipe\/upload and just \"upload\" (eg \"create\") steps",
+        "ts": "1508883056.000401"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "does that make sense ?",
+        "ts": "1508883062.000422"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Let’s see :slightly_smiling_face:",
+        "ts": "1508883070.000064"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Gotta run now - but will pick this up later tonight",
+        "ts": "1508883093.000207"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "cool",
+        "ts": "1508883101.000110"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Thx for help, we’ll see what I can figure out…",
+        "ts": "1508883116.000230"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "hmm - skip `drp-install` altogether",
+        "ts": "1508883149.000006"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I restructured it to put everything in `drp-setup` (install just \"installs\"; as the name suggests, now)",
+        "ts": "1508883166.000025"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK",
+        "ts": "1508883177.000069"
+    }
+]

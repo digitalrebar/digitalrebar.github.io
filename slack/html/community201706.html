@@ -1,0 +1,638 @@
+<html><body><style>
+			* {
+				font-family:sans-serif;
+			}
+			body {
+				text-align:center;
+				padding:1em;
+			}
+			.messages {
+				width:100%;
+				max-width:700px;
+				text-align:left;
+				display:inline-block;
+			}
+			.messages img {
+				background-color:rgb(248,244,240);
+				width:36px;
+				height:36px;
+				border-radius:0.2em;
+				display:inline-block;
+				vertical-align:top;
+				margin-right:0.65em;
+			}
+			.messages .time {
+				display:inline-block;
+				color:rgb(200,200,200);
+				margin-left:0.5em;
+			}
+			.messages .username {
+				display:inline-block;
+				font-weight:600;
+				line-height:1;
+			}
+			.messages .message {
+				display:inline-block;
+				vertical-align:top;
+				line-height:1;
+				width:calc(100% - 3em);
+			}
+			.messages .message .msg {
+				line-height:1.5;
+			}
+		</style><div class="messages"><div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-01 07:52</div><div class="msg">hi guys, i have tried to install some times, but no networks coming up or adjustable in the web interface. each time i have tried to add one, i can not configure this to fits to my needs. I need following design:</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-01 07:54</div><div class="msg">!(/home/de1235092/Documents/Projekts/Talanx/rebar/system_layout_V01.png)</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-01 07:54</div><div class="msg">(how can i insert a picture?)</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-01 07:55</div><div class="msg">[<a href="https://files.gitter.im/digitalrebar/core/7KfE/system_layout_V01.png">https://files.gitter.im/digitalrebar/core/7KfE/system_layout_V01.png</a></div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-01 07:56</div><div class="msg">which asses mode i should use? host or forwarder?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-01 12:46</div><div class="msg">HOST - note the capitalize the word on the command line.  Create a network with category admin and group lab for the deploy network.  set conduit to dhcp.  For BMC, create a network with category bmc and group lab for the bmc network.  set conduit to bmc.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-01 12:47</div><div class="msg">DigitalRebar runs on an Admin node.  The admin node can have any amount of networks it needs, but there are two requirements.  That the admin node has routable access to the BMC network and that nodes and the admin node can have bidirectional communication on a admin network.
+
+[11:06] 
+The Admin node will be required to be in the L2 network for all DHCP networks unless DHCP relays/BOOTP forwarders can be configured to relay on its behalf.
+
+[11:07] 
+The DigitalRebar admin node will only serve DHCP from configured networks for networks in the bmc and admin categories (I believe).  You can through the cli/api force the DHCP server to do more, but it will not necessarily be reflected on the node in DigialRebar.
+
+[11:09] 
+DigitalRebar Networks are defined by a category and a group.  The group is an arbitrary string that allows networks of different categories to be applied to nodes in the same group.
+
+[11:09] 
+The category defines what the network is used for.  This is a free form field that has two special values.
+
+[11:10] 
+The first is admin - networks in this category are assumed to be the PXE booting networks for the bare metal system.  These networks when containing a network range "dhcp" will server those addresses to unregistered nodes
+
+[11:11] 
+The DigitalRebar will assign an IP from the host range once the node is discovered and treat that address as a more static address (though it can still be delivered by DHCP).
+
+[11:12] 
+The other reserved category is Bmc.  This is used by  the IPMI roles / management system to direct IPMI configuration.  It too should have a host range that will assign addresses from the pool.  It can also use DHCP to deliver those bound addresses.
+
+[11:15] 
+Other categories are for use of the administrator.  These can be applied to nodes for configuration post installation (or pre, but most useful post) and will assign addresses from the host range to nodes.  The group is used to figure out which sets of categories go together.  For example, if DigitalRebar discovers a node on network admin-rack1 and it is told to configure ipmi, it will look for a bmc-rack1 network to draw its IPMI address from.  Falling back to the first bmc network, I think.  or none.
+
+[11:15] 
+Also, the system attempts to last octet alignment across networks if possible.
+
+[11:15] 
+What interface a network is configured on is determined by the conduit.
+
+[11:16] 
+The conduit is only applicable to managed nodes (not the admin node).
+
+[11:17] 
+For non-bmc networks, the conduit can be dhcp, or [-+?][1,10,100,40][gm][0-100]  (e.g. 10g1 - which means second 10g found on box).
+
+[11:18] 
+dhcp means that what ever the box dhcp on is the interface used.  This is really only useful for the admin network.
+
+[11:18] 
+For bmc networks, the conduit can be dhcp or bmc.  DHCP says use DHCP to get the address for the bmc, other set the bmc statically.
+
+[11:19] 
+conduits can be multiple interfaces separated by a comma.  This will generate a bonded set
+
+[11:20] 
+Vlans can also be added on top.
+
+[11:20] 
+In general, admin and bmc don't use conduits or vlans.
+
+[11:21] 
+When an admin or dhcp network is configured for DHCP correctly, you should be able to see in the DHCP nav section of the UX that configuration and current leases.  You may have to hard refresh the UX page to get the latest data.
+
+[11:21] 
+Networks also define routers.  The pref of the router determines if it becomes the default gateway.  Lower is high priority.
+
+[11:22] 
+Sooo - when the network is configured the available interfaces are consulted and the lowest preference is used to set the default gateway.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-01 12:47</div><div class="msg">Dump from another slack conversation.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2017-06-02 17:38</div><div class="msg">@meshiest the link to the gitter chat on the rebar.digital site is wrong -&gt; points to digitalrebar/digitalrebar but should be digitalrebar/core</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2016-07-12/59121983569_a6a1edc72cf639e00d03_72.png" /><div class="message"><div class="username">meshiest</div><div class="time">2017-06-02 17:38</div><div class="msg">has joined #community201706</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-02 17:48</div><div class="msg">Howdy! I'm using the rebar-provision quickstart on osx 10.12.5, and after tools/discovery-load.sh runs, and a subnet is assigned, boxes are able to pull DHCP, but fail on pulling the next file in sequence: The traffic that comes via tcpdump is: 38 RRQ "lpxelinux.0^A^DM-^?M-^?M-|" octet blksize 1456"</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-02 17:48</div><div class="msg">the failed message on the server console is the same</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-02 17:48</div><div class="msg">*for the same file</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-02 17:49</div><div class="msg">Any thoughts on where to look to see what's going on?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-02 17:54</div><div class="msg">hm</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-02 17:55</div><div class="msg">I don't think the extra control characters should be part of the RRQ request.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-02 17:55</div><div class="msg">What are the boxes?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2017-06-02 17:55</div><div class="msg">thanks @meshiest</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-02 17:56</div><div class="msg">The boxes are a bit older, based on https://www.asus.com/Commercial-Servers-Workstations/KFSN5DIST/specifications/</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-02 17:56</div><div class="msg">provision is running locally on my mac, late 2012, retina, 10.12.5</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-02 17:56</div><div class="msg">I added the route to point directly at said mac goo</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-02 17:56</div><div class="msg">*too</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-02 17:57</div><div class="msg">hm</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-02 17:58</div><div class="msg">Is the firewall on the mac set to allow incoming TFTP to dr-provision?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-02 17:58</div><div class="msg">firewall is off</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-02 17:59</div><div class="msg">tcpdump shows the packets getting there</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-02 18:02</div><div class="msg">ok</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-02 18:03</div><div class="msg">and lpxelinux.0 is present in drp-data/tftpboot ?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-02 18:03</div><div class="msg">(it should have been automatically when the provisioner started up</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-02 18:03</div><div class="msg">yes</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-02 18:04</div><div class="msg">https://gist.github.com/bunchc/c5909f3289481c0cd9cf6002167c11f2</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-02 18:06</div><div class="msg">ok, that looks fine.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-02 18:07</div><div class="msg">Have you created a network in dr-provisioner via the UI?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-02 18:07</div><div class="msg">Yup: https://i.imgur.com/MIUxBlQ.png</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-02 18:08</div><div class="msg">ok</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-02 18:08</div><div class="msg">What interface is en3?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-02 18:09</div><div class="msg">Thunderbolt ethernet</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-02 18:09</div><div class="msg">hooked up to the same switch as the box pxe booting</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-02 18:11</div><div class="msg">ok</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-02 18:11</div><div class="msg">I am seeing if I can duplicate here.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-02 18:12</div><div class="msg">Don't have a Mac handy to test with, but I do have a beefy Linux box.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-02 18:13</div><div class="msg">I can spawn an ubuntu VM if we need, was hoping to avoid that layer tho.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-02 18:19</div><div class="msg">Victor: I need to step away for a few hours. Will be back tho.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-02 18:22</div><div class="msg">hm</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-02 18:22</div><div class="msg">I get 
+13:21:00.186474 IP (tos 0x0, ttl 64, id 1045, offset 0, flags [none], proto UDP (17), length 69)
+    192.168.124.41.13686 &gt; m4723.tftp: [udp sum ok]  41 RRQ "lpxelinux.0" octet blksize 1432 tsize 0</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-02 18:23</div><div class="msg">that is with tcpdump -vvv</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-02 18:45</div><div class="msg">@bunchc.  Make sure the subnet option with pxelinux.0 doesn't have extra content in it</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-02 21:33</div><div class="msg">Greg: re: subnet option, the bit in the UI?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-02 21:42</div><div class="msg">Looks like it's getting the bits from somewhere, started over from the top and am now getting two different sets of control chars</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-02 21:42</div><div class="msg">lpxelinux.0M-^? in addition to what it have before</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-02 21:47</div><div class="msg">The latest with tcpdump -vvv  https://gist.github.com/bunchc/4d9f65cc698bda950f8ae57ebe635c00 looks like it both sends lpxelinux.0 and the one with control charachters</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-02 22:12</div><div class="msg">Looks like it's on the NIC end, am able to boot other boxes mostly fine</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-02 22:13</div><div class="msg">Thanks!</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2017-06-02 23:46</div><div class="msg">cool - I'd be interested to know what made the NIC do that</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-03 03:08</div><div class="msg">I'm not sure /why/ it's sending control charachters, other than it looks to be part of an older tftp spec. I'll dit a little bit once I get it sorted out.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-05 10:06</div><div class="msg">Hello, I've been using cobbler to set up bare metal nodes, and discovered DR as a potential alternative. I am looking through the table of contents in the docs and not finding much reference to bare metal installs. Is there a handy link?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-05 10:36</div><div class="msg">I manager to get it working after watching.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-05 10:37</div><div class="msg">https://youtu.be/LhqbfcCOgwY</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-05 10:38</div><div class="msg">This was also helpful</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-05 10:38</div><div class="msg">https://youtu.be/5YWMlYYuu-s</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-05 13:57</div><div class="msg">Thank you, Simon, I'll take a look!</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-05 20:04</div><div class="msg">@svallebro those videos will bring in the full Rebar infrastructure which does a lot beyond cobbler.  If you want to start simpler with just replacing cobbler, check out the Provision subproject too: https://github.com/digitalrebar/provision</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-05 20:04</div><div class="msg">sorry should have flagged @eegilbert instead of @svallebro !
+</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-06 09:00</div><div class="msg">Thanks, Rob.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-07 05:01</div><div class="msg">I created the support ticket, https://rackn.freshdesk.com/support/tickets/49 . I a awaiting for response from the support. could you please help on the same...</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-07 10:35</div><div class="msg">Hi all, I`m trying to install Digital rebar on clean Ubuntu 16.04 installation (bare metal) and I`m stuck at "wait for admin convergence".  I used "curl -fsSL https://raw.githubusercontent.com/digitalrebar/digitalrebar/master/deploy/quickstart.sh | bash". What am I missing ?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-07 13:46</div><div class="msg">@zdebinski - how big is the machine you running the admin node on?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-07 13:46</div><div class="msg">You need at least 6GB of memory and ideally 4+ virtual CPUs.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-07 13:48</div><div class="msg">It should be enough I have 32GB of ram and eight cores</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-07 13:51</div><div class="msg">I removed apparmor  and managed to launch ui but install process failed timing out and ui was not running properly</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-07 13:52</div><div class="msg">It`a also failing when dnsmasq-base is installed</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-07 13:59</div><div class="msg">Digitalrebar runs things that conflict with dnsmasq and ntp.  The install ansible should kill all of those.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-07 14:02</div><div class="msg">I know I saw it tries to stop the services but still installation is failing if I`dont remove it</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-07 14:27</div><div class="msg">@deepuashokan85 have you registered for RackN support?  I'm not showing you in our system.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-07 14:40</div><div class="msg">@zehicle_twitter  "cmd": "killall dnsmasq", "failed": true, "msg": "[Errno 2] No such file or directory", "rc": 2}" it should be killall5 not killall</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-07 14:41</div><div class="msg">that is why it was failing</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-07 14:41</div><div class="msg">oh - ok - hmm - I bet that varies by OS type.  :neutral_face:</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-07 14:45</div><div class="msg">Ubuntu 16.04 - killall5 belongs to sysvinit-utils</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-07 15:22</div><div class="msg">I`ve managed to finish installation, but adding deployments or adding nodes doesn`t work. </div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-07 15:22</div><div class="msg">evproxy_1     | 2017/06/07 15:20:13 requested  url = /api/v2/deployments
+revproxy_1     | 2017/06/07 15:20:13 translated url = https://rebar-api-service/api/v2/deployments
+rebar_api_1    | 2017-06-07 15:20:13.514 [20207] [ERROR] EXCEPTION: param is missing or the value is empty: name
+rebar_api_1    | 2017-06-07 15:20:13.514 [20207] [ERROR] BACKTRACE:
+rebar_api_1    | /var/cache/rebar/gems/ruby/2.1.0/gems/actionpack-4.2.5/lib/action_controller/metal/strong_parameters.rb:251:in `require'
+rebar_api_1    | /opt/digitalrebar/core/rails/app/controllers/deployments_controller.rb:65:in `block in create'
+rebar_api_1    | /opt/digitalrebar/core/rails/lib/api_helper.rb:118:in `block in retriable_transaction'
+rebar_api_1    | /var/cache/rebar/gems/ruby/2.1.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/database_statements.rb:213:in `block in transaction'
+rebar_api_1    | /var/cache/rebar/gems/ruby/2.1.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/transaction.rb:184:in `within_new_transaction'
+rebar_api_1    | /var/cache/rebar/gems/ruby/2.1.0/gems/activerecord-4.2.5/lib/active_record/connection_adapters/abstract/database_statements.rb:213:in `transaction'
+rebar_api_1    | /var/cache/rebar/gems/ruby/2.1.0/gems/activerecord-4.2.5/lib/active_record/transactions.rb:220:in `transaction'
+rebar_api_1    | /opt/digitalrebar/core/rails/lib/api_helper.rb:116:in `retriable_transaction'
+rebar_api_1    | /opt/digitalrebar/core/rails/app/controllers/deployments_controller.rb:50:in `create'
+rebar_api_1    | /var/cache/rebar/gems/ruby/2.1.0/gems/actionpack-4.2.5/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+rebar_api_1    | /var/cache/rebar/gems/ruby/2.1.0/gems/actionpack-4.2.5/lib/abstract_controller/base.rb:198:in `process_action'
+rebar_api_1    | /var/cache/rebar/gems/ruby/2.1.0/gems/actionpack-4.2.5/lib/action_controller/metal/rendering.rb:10:in `process_action'
+rebar_api_1    | /var/cache/rebar/gems/ruby/2.1.0/gems/actionpack-4.2.5/lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+rebar_api_1    | /var/cache/rebar/gems/ruby/2.1.0/gems/activesupport-4.2.5/lib/active_support/callbacks.rb:117:in `call'
+rebar_api_1    | /var/cache/rebar/gems/ruby/2.1.0/gems/activesupport-4.2.5/lib/active_support/callbacks.rb:117:in `call'
+rebar_api_1    | /var/cache/rebar/gems/ruby/2.1.0/gems/activesupport-4.2.5/lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+rebar_api_1    | /var/cache/rebar/gems/ruby/2.1.0/gems/activesupport-4.2.5/lib/active_support/callbacks.rb:505:in `call'
+rebar_api_1    | /var/cache/rebar/gems/ruby/2.1.0/gems/activesupport-4.2.5/lib/active_support/callbacks.rb:505:in `call'
+rebar_api_1    | /var/cache/rebar/gems/ruby/2.1.0/gems/activesupport-4.2.5/lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+rebar_api_1    | /var/cache/rebar/gems/ruby/2.1.0/gems/activesupport-4.2.5/lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+rebar_api_1    | /var/cache/rebar/gems/ruby/2.1.0/gems/activesupport-4.2.5/lib/active_support/callbacks.rb:81:in `run_callbacks'
+rebar_api_1    | /var/cache/rebar/gems/ruby/2.1.0/gems/actionpack-4.2.5/lib/abstract_controller/callbacks.rb:19:in `process_action'
+rebar_api_1    | /var/cache/rebar/gems/ruby/2.1.0/gems/actionpack-4.2.5/lib/action_controller/metal/rescue.rb:29:in `process_action'
+rebar_api_1    | /var/cache/rebar/gems/ruby/2.1.0/gems/actionpack-4.2.5/lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+rebar_api_1    | /var/cache/rebar/gems/ruby/2.1.0/gems/activesupport-4.2.5/lib/active_support/notifications.rb:164:in `block in instrument'
+rebar_api_1    | /var/cache/rebar/gems/ruby/2.1.0/gems/activesupport-4.2.5/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+rebar_api_1    | /var/cache/rebar/gems/ruby/2.1.0/gems/activesupport-4.2.5/lib/active_support/notifications.rb:164:in `instrument'</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-07 15:22</div><div class="msg">rebar_api_1    | /var/cache/rebar/gems/ruby/2.1.0/gems/actionpack-4.2.5/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+reba</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-07 15:24</div><div class="msg">I dont have time to debug it further, I will switch to kargo</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-07 15:32</div><div class="msg">digitalrebar uses kargo and drives it.  You need to add a provider if you are using it against cloud.  If you are using metal, you have to define networks and OS install images.  Thanks for trying it.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2017-06-07 15:34</div><div class="msg">Your error is that name was not defined in the call</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-07 15:36</div><div class="msg">I know :) but  I provided it :worried: </div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-07 15:36</div><div class="msg">Did you create a provider?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-07 15:37</div><div class="msg">I need to deploy kubernetes on metal </div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-07 15:37</div><div class="msg">Did you have nodes discovered by the system?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-07 15:37</div><div class="msg">When I want to choose provider metal does not show</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-07 15:38</div><div class="msg">I will back to it tommorow, thanks for the help :)</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-07 15:38</div><div class="msg">Yes - installing on baremetal means that you would select use existing nodes that have been discovered by DigitalRebar.  These systems would need to PXE boot our discovery image and get added to DigitalRebar to be then consumed by the deployment wizard for kubernetes.</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/9a3645c0ecc57848e6b0d280ba579ed0.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0024-72.png" /><div class="message"><div class="username">aaron.feng</div><div class="time">2017-06-07 17:13</div><div class="msg">has joined #community201706</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/491bf0ad4368edba43a505c81fc9cf6c.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0005-72.png" /><div class="message"><div class="username">dubie</div><div class="time">2017-06-07 17:45</div><div class="msg">has joined #community201706</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/478023678df00733c7c99037c205db2e.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0015-72.png" /><div class="message"><div class="username">ajones</div><div class="time">2017-06-07 17:48</div><div class="msg">has joined #community201706</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/e3925f164c0c41e438581102136c7326.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0002-72.png" /><div class="message"><div class="username">pdelarosa-riot</div><div class="time">2017-06-07 17:48</div><div class="msg">has joined #community201706</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/4b30c59cad0df5cc58b639b71ce8d6c2.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F3654%2Fimg%2Favatars%2Fava_0023-72.png" /><div class="message"><div class="username">eblack</div><div class="time">2017-06-07 18:01</div><div class="msg">has joined #community201706</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/406644c2489544a41412054fa70e2583.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0012-72.png" /><div class="message"><div class="username">mpainter</div><div class="time">2017-06-07 18:04</div><div class="msg">has joined #community201706</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/4b1a733560d19afc2006d607369b0273.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F3654%2Fimg%2Favatars%2Fava_0018-72.png" /><div class="message"><div class="username">rcameron</div><div class="time">2017-06-07 20:18</div><div class="msg">has joined #community201706</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/47a075c119471fb06770859f5f14e5fe.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0003-72.png" /><div class="message"><div class="username">armagan</div><div class="time">2017-06-07 21:36</div><div class="msg">has joined #community201706</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-08 07:13</div><div class="msg">@zehicle What if I have dedicated servers that can`t be booted with PXE, that have system already installed and have only public IPs ? is it possible to use digital rebar in this case ?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-08 13:31</div><div class="msg">Yes - you would "join" them to DR.  There are join scripts in the digitalrebar/deploy directory that can be used as a starting point for that process.</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/be3621055d2d1d7c385f11918c11bab2.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">rstarmer</div><div class="time">2017-06-08 18:24</div><div class="msg">hey, how do I set DRP to use a local mirror (or rather the install ISO) to provision a node (using ubuntu-16.04, pre-downloaded, and that all seems to work as far as getting the system booted).  I.e., I?m working in a somewhat disconnected environment, and am not sure how to proceed if I need to have a local mirror rather than just using the upstream ones</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/be3621055d2d1d7c385f11918c11bab2.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">rstarmer</div><div class="time">2017-06-08 18:25</div><div class="msg">we can use a proxy, but the upstream connection from the lab is _SLOW_ and so we?d rater use/build a local one if that?s the best approach.</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/be3621055d2d1d7c385f11918c11bab2.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">rstarmer</div><div class="time">2017-06-08 18:26</div><div class="msg">also, how do I add a profile (for ssh keys, for example) to a bootenv?  It seems like the template is there (e.g. ubutntu-16.04 looks like it would use access_keys parameters)</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/aed783788be747ff46d6860e7fbd43b4.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0004-72.png" /><div class="message"><div class="username">jgartrel</div><div class="time">2017-06-08 19:20</div><div class="msg">has joined #community201706</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-08 19:38</div><div class="msg">there is a way to do it, I know we discussed it - I could not find the docs so I'm looking around</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2017-06-08 19:39</div><div class="msg">@vlowther do you remember how to set the repos for DRP to a local source?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-08 19:51</div><div class="msg"><a href="https://github.com/digitalrebar/provision/blob/master/assets/templates/ubuntu-drp-only-repos.tmpl">https://github.com/digitalrebar/provision/blob/master/assets/templates/ubuntu-drp-only-repos.tmpl</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-08 19:51</div><div class="msg">set the local_repo param to true.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-08 19:52</div><div class="msg">that will use just the repos off the expanded Ubuntu ISO.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-08 19:54</div><div class="msg">If you want other repos from somewhere other than the exploded ISO,  I don't think wer have a pre-baked template that does that.</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/be3621055d2d1d7c385f11918c11bab2.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">rstarmer</div><div class="time">2017-06-08 20:07</div><div class="msg">thanks guys, will have a look, and come back with questions.</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/be3621055d2d1d7c385f11918c11bab2.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">rstarmer</div><div class="time">2017-06-08 20:08</div><div class="msg">Ah, yes, ok so that template is a part of my ubuntu bootenv, but how do I set the parameter to be true?</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/be3621055d2d1d7c385f11918c11bab2.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">rstarmer</div><div class="time">2017-06-08 20:09</div><div class="msg">do I update the bootenv with a JSON/yaml blob?</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/be3621055d2d1d7c385f11918c11bab2.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">rstarmer</div><div class="time">2017-06-08 20:14</div><div class="msg">I do need help here, I don?t have a good model for how to pass parameters, for example, do I just update the bootenv with the parameters I?d like added?</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/be3621055d2d1d7c385f11918c11bab2.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">rstarmer</div><div class="time">2017-06-08 20:19</div><div class="msg">So with that template, if I want to add it to my ubuntu template, I can create a new template section, but it?s not clear where it ?lives?.  I.e., what?s the path?</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/be3621055d2d1d7c385f11918c11bab2.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">rstarmer</div><div class="time">2017-06-08 20:24</div><div class="msg">ok, I see where those templates live and how they are ingested into files, but it isn?t clear how I set the local_repo parameter for that bootenv. I?ve tried a YAML object like ```Params:
+  local_repo: true```</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/be3621055d2d1d7c385f11918c11bab2.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">rstarmer</div><div class="time">2017-06-08 20:25</div><div class="msg">but that gets rejected when I do: ``` drpcli bootenvs update bootenvs/ubuntu-16.04.yml local_repo.yaml```</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/be3621055d2d1d7c385f11918c11bab2.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">rstarmer</div><div class="time">2017-06-08 20:25</div><div class="msg">local_repo.yaml is where I put the Params: bit</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-08 20:28</div><div class="msg">yeah, that parameter has to be set on the machine, not the bootenv.</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/be3621055d2d1d7c385f11918c11bab2.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">rstarmer</div><div class="time">2017-06-08 20:29</div><div class="msg">do I set it directly on the machine?  and how might I make that a default (possible?)</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/be3621055d2d1d7c385f11918c11bab2.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">rstarmer</div><div class="time">2017-06-08 20:32</div><div class="msg">I think I got it:  ``` drpcli machines set "{uuid}" params "local_repo" to "true"```</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/be3621055d2d1d7c385f11918c11bab2.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">rstarmer</div><div class="time">2017-06-08 20:49</div><div class="msg">shouldn?t ``` drpcli machines params "{uuid}" params &lt; params.yml``` work?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-08 20:51</div><div class="msg">the first one</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/be3621055d2d1d7c385f11918c11bab2.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">rstarmer</div><div class="time">2017-06-08 20:53</div><div class="msg">but how do I pass a bunch of parameters?</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/be3621055d2d1d7c385f11918c11bab2.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">rstarmer</div><div class="time">2017-06-08 20:53</div><div class="msg">like access keys</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/be3621055d2d1d7c385f11918c11bab2.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">rstarmer</div><div class="time">2017-06-08 20:54</div><div class="msg">do I have to write out a text json blob rather than nice simply yaml?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-08 20:56</div><div class="msg">I often do this: ```drpcli machines set j param rebar-access to "$(cat fred)"```</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/be3621055d2d1d7c385f11918c11bab2.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">rstarmer</div><div class="time">2017-06-08 20:56</div><div class="msg">yeah, but I wanted to set local_repo, and access_keys, and,?.</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/be3621055d2d1d7c385f11918c11bab2.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">rstarmer</div><div class="time">2017-06-08 20:57</div><div class="msg">well, it turns out params does happily read JSON, just not yaml (at least as text via the CLI)</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/be3621055d2d1d7c385f11918c11bab2.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">rstarmer</div><div class="time">2017-06-08 20:57</div><div class="msg">So, the second question is:  how do I set that as a default on the bootenv, I don?t want ot have to do this for every machine after the fact :slightly_smiling_face:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-08 20:58</div><div class="msg">global profile</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-08 20:58</div><div class="msg">drpcli profiles show global</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-08 20:58</div><div class="msg">Path the params there and all nodes gett them.</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/be3621055d2d1d7c385f11918c11bab2.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">rstarmer</div><div class="time">2017-06-08 21:00</div><div class="msg">I?ll give that a shot.</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/be3621055d2d1d7c385f11918c11bab2.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">rstarmer</div><div class="time">2017-06-08 21:01</div><div class="msg">kewl</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/be3621055d2d1d7c385f11918c11bab2.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">rstarmer</div><div class="time">2017-06-09 20:01</div><div class="msg">what?s the best way to change the hostname/ip addresses of discovered servers in DRP?  Do I have to manually register the nodes, or can I update things somehow (my experience seemed to indicate that nodes didn?t like this to be changed and ended up out of sync with the system)</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-09 20:04</div><div class="msg">You can change the name on the machine and reboot into sledgehammer.  The name is what is used as FQDN.</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/be3621055d2d1d7c385f11918c11bab2.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">rstarmer</div><div class="time">2017-06-09 20:04</div><div class="msg">will try. might be that I erased the domain when I tried last time</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/be3621055d2d1d7c385f11918c11bab2.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">rstarmer</div><div class="time">2017-06-09 20:04</div><div class="msg">how about IP address?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-09 20:05</div><div class="msg">IP address comes from lease to mac to machine.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-09 20:05</div><div class="msg">You can reserve an address by creating a resesrvation of mac to IP.</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/be3621055d2d1d7c385f11918c11bab2.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">rstarmer</div><div class="time">2017-06-09 20:06</div><div class="msg">how do I do that?</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/be3621055d2d1d7c385f11918c11bab2.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">rstarmer</div><div class="time">2017-06-09 20:06</div><div class="msg">drpcli?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-09 20:06</div><div class="msg">yes</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/be3621055d2d1d7c385f11918c11bab2.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">rstarmer</div><div class="time">2017-06-09 20:07</div><div class="msg">can I just change the lease and reboot the node?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-09 20:07</div><div class="msg">to get a different IP?</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/be3621055d2d1d7c385f11918c11bab2.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">rstarmer</div><div class="time">2017-06-09 20:08</div><div class="msg">yeah</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-09 20:08</div><div class="msg">Can try it.   Not sure if that will work, haven't tried it.</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/be3621055d2d1d7c385f11918c11bab2.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">rstarmer</div><div class="time">2017-06-09 20:08</div><div class="msg">customer just said he didn?t care, but I like order (sometimes :)</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/be3621055d2d1d7c385f11918c11bab2.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">rstarmer</div><div class="time">2017-06-09 20:08</div><div class="msg">ok, may be moot, but I may try anyway.</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/be3621055d2d1d7c385f11918c11bab2.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">rstarmer</div><div class="time">2017-06-09 20:14</div><div class="msg">and ipmi control is not part of DRP right?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-09 20:15</div><div class="msg">correct - it is not</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/be3621055d2d1d7c385f11918c11bab2.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">rstarmer</div><div class="time">2017-06-09 20:17</div><div class="msg">thn</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/be3621055d2d1d7c385f11918c11bab2.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">rstarmer</div><div class="time">2017-06-09 20:17</div><div class="msg">x</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/be3621055d2d1d7c385f11918c11bab2.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">rstarmer</div><div class="time">2017-06-12 17:30</div><div class="msg">default user for sledgehammer?  Seems it should be root, but RocketSkates doesn't seem to work (we were able to add an ssh key, but wanted to get proper terminal access defined as well)?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 18:30</div><div class="msg">https://www.youtube.com/watch?v=uUWU-4ObGIY
+
+I was following this demo, came to the end with the same results BUT the machine was not discovered.  The last line on the bootme machine on the video is:
+
+Connecting to 192.168.124.11:8091
+
+I get the same, but then...
+wget: can't connect to remote host (192.168.124.11): Operation timed out
+Failed to download stage2.img for 70....
+
+Which actually makes sense as the bootme vm is not on that subnet... so I'm confused... did the demo fail to discover the machine too, (seems like it would have)... or I'm confused...  I dug around abit and figured out that 192.168.124.11 is the default admin node... but I was doing just the provisioner</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2017-06-12 18:31</div><div class="msg">@rstarmer I believe it's rebar</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/be3621055d2d1d7c385f11918c11bab2.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">rstarmer</div><div class="time">2017-06-12 18:36</div><div class="msg">@zehicle thanks</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/be3621055d2d1d7c385f11918c11bab2.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">rstarmer</div><div class="time">2017-06-12 18:36</div><div class="msg">will give that a shot.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2017-06-12 18:41</div><div class="msg">@ctrees, the demo was missing a step that is added in the docs</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2017-06-12 18:41</div><div class="msg"><a href="http://provision.readthedocs.io/en/stable/doc/install.html#rs-install">http://provision.readthedocs.io/en/stable/doc/install.html#rs-install</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2017-06-12 18:41</div><div class="msg">On Darwin, you may have to add a route for broadcast addresses to work. This can be done with the following comand. The 192.168.100.1 is the IP address of the interface that you want to send messages through. The install script will make suggestions for you.
+sudo route add 255.255.255.255 192.168.100.1</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 18:42</div><div class="msg">Thanks I did the route, (as it was hit in demo ;) I'll go check the docs... thanks1</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 18:49</div><div class="msg">@ctrees the demo ends at the same IP request... checking on my end</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 18:50</div><div class="msg">yea I for sure am not tracking... I checked https://127.0.0.1:8091 and it was not live... </div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 18:51</div><div class="msg">that should be the tftp endpoint ?correct?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 18:52</div><div class="msg">try w/o http</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 18:52</div><div class="msg">that's for http static files, would be the same as the tftp root</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 18:52</div><div class="msg">yup... (duh) that worked...</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 18:55</div><div class="msg">the broadcast works but it's the 192.168.124.11 how and why is that even in there... I started to track that down which is why I came here... seems like it should be 127.0.0.1 OR 192.168.56.1 (or whatever was the vmlan network) ?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 18:56</div><div class="msg">I think that's the sledgehammer default - should be overridden from DHCP settings, I'm looking for the doc</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-12 18:58</div><div class="msg">This is DRP, right?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 18:58</div><div class="msg">yes</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 18:58</div><div class="msg">yes</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-12 18:58</div><div class="msg">ok</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-12 18:59</div><div class="msg">What command line did you use to launch drp?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 18:59</div><div class="msg"> sudo ./dr-provision --file-root=`pwd`/drp-data/tftpboot --data-root=drp-data/digitalrebar</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 19:00</div><div class="msg">no background is all...</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-12 19:00</div><div class="msg">ok, that is fine.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-12 19:01</div><div class="msg">Did you add a network to drp via the web UI?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 19:01</div><div class="msg">[<a href="https://files.gitter.im/digitalrebar/core/PS0b/Screen-Shot-2017-06-12-at-2.01.12-PM.png">https://files.gitter.im/digitalrebar/core/PS0b/Screen-Shot-2017-06-12-at-2.01.12-PM.png</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-12 19:03</div><div class="msg">hm</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-12 19:04</div><div class="msg">so sledgehammer should have been making requests back to 192.168.66.1</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 19:04</div><div class="msg">[<a href="https://files.gitter.im/digitalrebar/core/gvca/Screen-Shot-2017-06-12-at-2.02.57-PM.png">https://files.gitter.im/digitalrebar/core/gvca/Screen-Shot-2017-06-12-at-2.02.57-PM.png</a></div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 19:04</div><div class="msg">yea... my thinking too</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-12 19:05</div><div class="msg">assuming that is the actual IP address on vboxnet1</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 19:05</div><div class="msg">but then the same IP came up in the video BUT... it did not wait till the machine got discovered</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 19:05</div><div class="msg">yea... see it in the route table...</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 19:06</div><div class="msg">I kind of assumed that the 124.11 was the sledge default... so I started to hunt where you override that... that's where I got lost in scripts... I was looking for the startup.sh thing ...</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 19:08</div><div class="msg">I went back to the video... figure I messed a config (just like the route)... BTW I love when 'common' mistakes are made and you show how to debug.... of course they make for longer video... but they sure help me more than 'doing it right the first time'... ;-)</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-12 19:09</div><div class="msg">Are you in Sledgehammer right now?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 19:10</div><div class="msg">just a sec... have to find that window... I'll screen it if so</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-12 19:10</div><div class="msg">no need</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-12 19:10</div><div class="msg">jsut paste the contents of /proc/cmdline</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 19:11</div><div class="msg">[<a href="https://files.gitter.im/digitalrebar/core/3rkI/Screen-Shot-2017-06-12-at-2.11.07-PM.png">https://files.gitter.im/digitalrebar/core/3rkI/Screen-Shot-2017-06-12-at-2.11.07-PM.png</a></div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 19:11</div><div class="msg">@ctrees I'll make sure the docs get updated when we resolve this, thanks for your patience</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 19:11</div><div class="msg">I have a heck of a time getting paste from vbox</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-12 19:12</div><div class="msg">ok</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-12 19:12</div><div class="msg">from there, run 
+
+cat /proc/cmdline</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 19:13</div><div class="msg">[<a href="https://files.gitter.im/digitalrebar/core/O126/Screen-Shot-2017-06-12-at-2.13.03-PM.png">https://files.gitter.im/digitalrebar/core/O126/Screen-Shot-2017-06-12-at-2.13.03-PM.png</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-12 19:14</div><div class="msg">hm</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-12 19:17</div><div class="msg">You are running drp on a mac?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 19:17</div><div class="msg">yea... I was going to start to play with how drp passes in configs...  as this gets to the root of what I was attempting to replace... all our pxe/ks and internal IPAM stuff... seems like a great fit..</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-12 19:17</div><div class="msg">Not in a VM?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 19:17</div><div class="msg">yup</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-12 19:17</div><div class="msg">yeah</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 19:17</div><div class="msg">mac mini</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 19:17</div><div class="msg">16GB</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-12 19:18</div><div class="msg">so you will need to run drp with the --static-ip option</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 19:18</div><div class="msg">[<a href="https://files.gitter.im/digitalrebar/core/dIAU/Screen-Shot-2017-06-12-at-2.18.07-PM.png">https://files.gitter.im/digitalrebar/core/dIAU/Screen-Shot-2017-06-12-at-2.18.07-PM.png</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-12 19:19</div><div class="msg">We have code in place that works reliably on Linux to figure out what IP address recieved a given packet so that we can handle running properly in a multi-homed environment.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-12 19:19</div><div class="msg">but that code is less reliable on macs.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 19:20</div><div class="msg">Well... the 'quick fix' 4me is to custom the pxe to put the 192.168.66.1 IP in for default ?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 19:21</div><div class="msg">... wow... your telling me you on the fly ID that stuff in the DNS... that's cool...</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-12 19:21</div><div class="msg">Just pass --static-ip=192.168.66.1 to dr-provision at startup</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-12 19:21</div><div class="msg">no, not DNS</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-12 19:22</div><div class="msg">We inspect the raw IP packets for incoming DHCP and TFTP traffic to determine the IP address that the incoming packet was destined for</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 19:23</div><div class="msg">I about did that... checking now ( --static-ip )</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-12 19:23</div><div class="msg">so we can set the address we live at appropriately in future responses that require it.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-12 19:23</div><div class="msg">On Linux this works reliably.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-12 19:24</div><div class="msg">On macs we sometimes get all zeroes or other nonsensical data, so we have to fall back to whatever --static-ip is set to</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 19:24</div><div class="msg">rebooting bootme now...</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 19:25</div><div class="msg">working</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 19:26</div><div class="msg">looks good</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-12 19:26</div><div class="msg">this allows us to work properly in multihomed scenarios where a system lives on networks A and B but there is no route between A and B</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-12 19:26</div><div class="msg">and it allows us to work without needing a restart when network interfaces come and go.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 19:27</div><div class="msg">yea... I'm pretty jazzed about you approach... working up a demo for my boss/es</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-12 19:28</div><div class="msg">I am also impressed to see a mac mini server still being used in the wild. :slightly_smiling_face:</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 19:28</div><div class="msg">oh heck... THATS my GOOD box... ;-)</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 19:29</div><div class="msg">but I've got 3 piles of HPE C7000 I'm going to 'resurect' for devops</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 19:32</div><div class="msg">If I get the AFS (Andrew, not Apple) setup into a workload... I'll for sure shove that back to you/community as we need to support AFS for more years and CERN is dropping it... </div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-12 19:32</div><div class="msg">I'm updating docs to improve notes on Mac</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 00:11</div><div class="msg">Hello, I'm not sure if this is the right room to ask questions.  But anyways,  I'm seeing if I can try out digital rebar with vagrant.  Following these directions here: http://digital-rebar.readthedocs.io/en/latest/deployment/install/vagrant.html</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 00:12</div><div class="msg">The Vagrantfile points to a bad link, but looking around I found it at https://github.com/digitalrebar/digitalrebar/blob/master/deploy/Vagrantfile</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 00:13</div><div class="msg">The Vagrantfile also references some scripts in there I do not have in this section:
+    #
+    # Admin nodes eat themselves without swap
+    #
+    base.vm.provision "shell", path: "scripts/increase_swap.sh"
+    base.vm.provision "shell", path: "quickstart.sh"</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 00:14</div><div class="msg">Where can I find these files?  Or can I just comment that out?  </div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 00:26</div><div class="msg">The errors I'm seeing when trying to bring it up is:
+#
+$ vagrant up base --provider=libvirt
+===========================================================
+Welcome to Digital Rebar Vagrant
+  Machine types available: 
+        client (run remote DR) 
+        base (DR server) 
+        node1[-20] (node for local test)
+  Documentation:
+        https://github.com/digitalrebar/doc/blob/master/deployment/vagrant.rst
+  export REBAR_ENDPOINT and REBAR_KEY to use existing Digital Rebar Server (default = Vagrant admin)
+  TRIGGERS REQUIRED: vagrant plugin install vagrant-triggers
+        see http://www.rubydoc.info/gems/vagrant-triggers/0.2.1
+  REBAR CLI REQUIRED: rebar cli must be on your path
+        see https://github.com/digitalrebar/doc/tree/master/cli
+  Maintained by RackN, Copyright 2016
+===========================================================
+To monitor &gt; https://192.168.99.100 (Digital Rebar)
+After the system is up, you can start the nodes using `vagrant up /node[1-20]/`
+Bringing machine 'base' up with 'libvirt' provider...
+There are errors in the configuration of this machine. Please fix
+the following errors and try again:
+
+shell provisioner:
+_ `path` for shell provisioner does not exist on the host system: /home/choyj/realdr/scripts/increase_swap.sh
+_ `path` for shell provisioner does not exist on the host system: /home/choyj/realdr/quickstart.sh
+
+Vagrant:
+* Unknown configuration section 'trigger'.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 03:40</div><div class="msg">@jack-likes-to-code it's been a while since we've updated those vagrant scripts.   lately everyone runs docker locally, so they are OK w/ the compose approach on their laptop or the Ansible install from a VM or server</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 03:40</div><div class="msg">I do know that you'll need to install the Vagrant triggers for it to work</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2017-06-13 03:56</div><div class="msg">@rstarmer I found the default user for debian in the docs: "rocketskates"</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/be3621055d2d1d7c385f11918c11bab2.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0007-72.png" /><div class="message"><div class="username">rstarmer</div><div class="time">2017-06-13 04:36</div><div class="msg">?  yeah, I tried the documented ansewrs already, but they don?t appear to work.  I wonder if our addition of an ssh auth token changes the bootstrap code?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-13 13:21</div><div class="msg">ssh keys are for root.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-13 13:22</div><div class="msg">rocketskates/RocketSkates</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-13 13:22</div><div class="msg">should be the login user.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 13:54</div><div class="msg">I'll update the docs to clarify and see about putting it an faq also</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 17:40</div><div class="msg">Hi @zehicle I started reading about/trying out digital rebar yesterday so I'm noobish in this area as my team is interested in using that for cloud deployment.  I believe we(SUSE) have a meeting with you on Thursday to go over digital rebar, but I wanted to give it a try before going into the meeting.  I was able to get  it to run on a vagrant VM yesterday just following section 1.1.2.  I could try again just getting it to run via the compose approach, but is there a way to use local VMs as nodes?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 17:42</div><div class="msg">ls</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-13 18:17</div><div class="msg">Sure, as long as the VMs are attached to thee same bridge that the admin node is serving DHCP on, and there are no conflicting DHCP servers.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-13 18:19</div><div class="msg">If you are running on a Linux box, digitalrebar/core/tools/docker-admin will bring up the DR admin containers, and digitalrebar/core/tools/kvm-slave will spin up QEMU instances that attach to the docker0 bridge and PXE boot by default.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 18:20</div><div class="msg">oh!  I'll have to look into that...  installing Ubuntu 16.04 on another box right now.  Will give this a try.  Thx!</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-13 18:21</div><div class="msg">Those are the tools I use in my daily development.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-13 18:22</div><div class="msg">has not teested them on opensuse in a while, tho.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-13 18:22</div><div class="msg">Arch Linux is my daily driver.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 18:23</div><div class="msg">Currently using Ubuntu for now...  </div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-13 18:24</div><div class="msg">I won't tell anyone else. :slightly_smiling_face:</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 18:28</div><div class="msg">lol, I'm a transplant from HPE that was acquired by SUSE 3 months ago...  Luckily, SUSE is pretty open about these things.  :)
+</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 20:05</div><div class="msg">@jack-likes-to-code there's a video in the training sessions where we show how to do the docker-admin &amp; kvm-slave path</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 20:06</div><div class="msg">@zehicle I was just going to ask you about this</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 20:06</div><div class="msg">can you point me to that?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 20:06</div><div class="msg">you should also make sure to try DR Provision - it's the newer model deployment</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 20:07</div><div class="msg">I got to the point of bringing up digital-rebar, but I went ahead and ran the kvm-slave to bring up a node and it sits there with:
+2017-06-13 13:01:21 -0700: 26660 - PXE booting node (0)
+</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 20:07</div><div class="msg">should i have run the docker-admin script first?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 20:08</div><div class="msg">Not familiar with DR Provision.  Can you point me to that documentation?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 20:09</div><div class="msg">https://youtu.be/OBK1Gkv0YH8?list=PLXPBeIrpXjfh2lXdXkNnzAuc7_SUtYJR-&amp;t=243</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 20:09</div><div class="msg">For DRP http://provision.readthedocs.io/en/latest/</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 20:09</div><div class="msg">thanks, I'll take a look</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 20:10</div><div class="msg">@jack-likes-to-code the challenge w/ the kvm-slave script is that is assumes your using docker0 as the bridge.  you'll need to adjust the script to use another bridge if you used Vagrant to bring up the admin now</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 20:10</div><div class="msg">not using vagrant anymore.  Just installed ubuntu on a box and ran the quickstart script on it</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 20:11</div><div class="msg">that brought up digital rebar and I can see the UI</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 20:11</div><div class="msg">you can change the bridge by setting the "OCB_BRIDGE"  environment variable</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-13 20:11</div><div class="msg">jack-likes-to-code: Yes, you need to run docker-admin and wait for Digital Rebar to come up before running kvm-slave</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 20:11</div><div class="msg">I think kvm-slave should work in that case</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2017-06-13 20:11</div><div class="msg">Otherwise the VM will not be able to PXE boot and just sit there forever.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 20:12</div><div class="msg">ok</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 20:12</div><div class="msg">BTW &gt; Victor is using our Slack bridge, which impersonates by Gitter account.  So there are really two people :)</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 20:12</div><div class="msg">I was wondering why victor comes up in all your msgs</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2017-06-13 20:13</div><div class="msg">this is how my (Rob's comments) show up by typing from Slack</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 20:14</div><div class="msg">For people who prefer Slack, we're happy to provide invites to that channel.  either way, the comments are mirrored</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 20:16</div><div class="msg">@zehicle running docker-admin gives me the following error:
+ERROR: for forwarder  driver failed programming external connectivity on endpoint compose_forwarder_1 (b3cc8cd5024e4c714ec3c14c70fe65d8f745ca7d55943a82cc1df5e9c0916151): Bind for 0.0.0.0:3000 failed: port is already allocated
+Traceback (most recent call last):
+  File "&lt;string&gt;", line 3, in &lt;module&gt;
+  File "compose/cli/main.py", line 63, in main
+AttributeError: 'ProjectError' object has no attribute 'msg'
+docker-compose returned -1
+Bringing containers up.  Exiting the shell will kill and remove the containers
+
+It looks like docker-proxy is already listening on port 3000</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 20:17</div><div class="msg">is it because I'm already running digital rebar?  Perhaps I should bring that down first before running docker-admin?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 20:35</div><div class="msg">yes.  from digitalrebar/deploy/compose, use docker-compose stop  then docker-compose rm -f</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 20:44</div><div class="msg">@zehicle done.  I kicked off docker-admin.  Looks like ntp service has been sitting around:
+```dev@Z640-extra:~/digitalrebar/deploy/compose$ docker ps
+CONTAINER ID        IMAGE                                COMMAND                  CREATED             STATUS              PORTS                                          NAMES
+5699fd40e04f        digitalrebar/dr_rebar_api:master     "/sbin/docker-entr..."   3 minutes ago       Up 3 minutes                                                       compose_rebar_api_1
+cb604b7ea9c0        digitalrebar/dr_goiardi:master       "/sbin/docker-entr..."   3 minutes ago       Up 3 minutes                                                       compose_goiardi_1
+c4e400eddb06        digitalrebar/cloudwrap:master        "/sbin/docker-entr..."   3 minutes ago       Up 3 minutes                                                       compose_cloudwrap_1
+87050fbf06bf        digitalrebar/dr_trust_me:master      "/sbin/docker-entr..."   3 minutes ago       Up 3 minutes                                                       compose_trust_me_1
+1557912d03d7        digitalrebar/dr_webproxy:master      "/sbin/docker-entr..."   3 minutes ago       Up 3 minutes                                                       compose_webproxy_1
+faf9eaaa8484        digitalrebar/dr_rev_proxy:master     "/sbin/docker-entr..."   3 minutes ago       Up 3 minutes                                                       compose_revproxy_1
+d8853af62a83        digitalrebar/dr_rebar_dhcp:master    "/sbin/docker-entr..."   3 minutes ago       Up 3 minutes                                                       compose_dhcp_1
+c3b1b4323d2c        digitalrebar/dr_provisioner:master   "/sbin/docker-entr..."   3 minutes ago       Up 3 minutes                                                       compose_provisioner_1
+faf2f86e6631        digitalrebar/logging:master          "/sbin/docker-entr..."   3 minutes ago       Up 3 minutes                                                       compose_logging_1
+6f7e5d0761e9        digitalrebar/dr_dns:master           "/sbin/docker-entr..."   3 minutes ago       Up 3 minutes                                                       compose_dns_1
+d7880c396047        digitalrebar/dr_forwarder:master     "/sbin/docker-entr..."   3 minutes ago       Up 3 minutes        0.0.0.0:443-&gt;443/tcp, 0.0.0.0:3000-&gt;3000/tcp   compose_forwarder_1
+555d43930ce9        digitalrebar/dr_postgres:master      "/docker-entrypoin..."   3 minutes ago       Up 3 minutes                                                       compose_postgres_1
+9696410fe96d        digitalrebar/rule-engine:master      "/sbin/docker-entr..."   3 minutes ago       Up 31 seconds                                                      compose_rule-engine_1
+7a49fbda0ce0        gliderlabs/consul                    "/bin/consul agent..."   3 minutes ago       Up 3 minutes                                                       compose_consul_1
+de8cea4fbee6        digitalrebar/dr_ntp:master           "/sbin/docker-entr..."   About an hour ago   Up About an hour    0.0.0.0:123-&gt;123/tcp, 0.0.0.0:123-&gt;123/udp     compose_ntp_1
+</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 20:47</div><div class="msg">can't seem to figure out preformat
+rebar/rebar1 creds no longer work.  What are the new creds when running docker-admin?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2017-06-13 20:49</div><div class="msg">it takes a little while before the user is created</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 20:50</div><div class="msg">thx.  i guess i was too impatient</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 20:57</div><div class="msg">still no cigar with kvm-slave.  i am able to login to the UI, but kvm-slave still gets stuck at PXE booting node (0).  You mentioned that docker0 is the assumed bridge.  How do I determine that?  
+`dev@Z640-extra:~/digitalrebar/deploy/compose$ docker network ls
+NETWORK ID          NAME                DRIVER              SCOPE
+1a30c0576175        bridge              bridge              local
+918aa569f74b        host                host                local
+902721abd2e5        none                null                local
+</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 21:00</div><div class="msg">Trying this again:
+```
+dev@Z640-extra:~/digitalrebar/deploy/compose$ docker network ls
+NETWORK ID          NAME                DRIVER              SCOPE
+1a30c0576175        bridge              bridge              local
+918aa569f74b        host                host                local
+902721abd2e5        none                null                local
+```</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 21:03</div><div class="msg">It seems everything is up on docker0:
+```
+dev@Z640-extra:~/digitalrebar/deploy/compose$ brctl show
+bridge name     bridge id               STP enabled     interfaces
+docker0         8000.0242b3fb13c2       no              veth1c3107d
+                                                        veth3ad8868
+                                                        veth3d311d6
+                                                        veth42dbc38
+                                                        veth5268663
+                                                        veth73ba994
+                                                        veth74f95ac
+                                                        veth91e9b8a
+                                                        vethc2366ce
+                                                        vethe6c4c02
+                                                        vethf3a9141
+                                                        vm-88964-0
+                                                        vm-88964-1
+                                                        vm-88964-2
+virbr0          8000.000000000000       yes
+```</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 21:04</div><div class="msg">there's a IP bridge that you need... forgot to mention!</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 21:04</div><div class="msg">sudo ip a add 192.168.124.4/24 dev docker0</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 21:05</div><div class="msg">http://digital-rebar.readthedocs.io/en/latest/development/dev_env/kvm-slaves.html?highlight=kvm-slave</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 21:06</div><div class="msg">then restart the VMs</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 21:37</div><div class="msg">Thanks!  That worked!  More reading!</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-13 21:38</div><div class="msg">:)</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-14 23:22</div><div class="msg">I see my nodes came up with sledgehammer, then I figured I'd try and deploy Ubuntu on there, but it got stuck trying to find an NTP server.  I walked away and eventually the kvm consoles went blank and I couldn't get them out of the blank state.  DR shows the nodes as green.  It doesn't appear the NTP service is running on there when running docker-admin.  How do I bring that up?
+```
+dev@Z640-extra:~/digitalrebar/deploy/compose$ docker-compose ps
+WARNING: The DR_TAG variable is not set. Defaulting to a blank string.
+        Name                       Command               State                      Ports                     
+-------------------------------------------------------------------------------------------------------------
+compose_cloudwrap_1     /sbin/docker-entrypoint.sh       Up                                                   
+compose_consul_1        /bin/consul agent -config- ...   Up                                                   
+compose_dhcp_1          /sbin/docker-entrypoint.sh       Up                                                   
+compose_dns_1           /sbin/docker-entrypoint.sh       Up                                                   
+compose_forwarder_1     /sbin/docker-entrypoint.sh       Up      0.0.0.0:3000-&gt;3000/tcp, 0.0.0.0:443-&gt;443/tcp 
+compose_goiardi_1       /sbin/docker-entrypoint.sh       Up                                                   
+compose_logging_1       /sbin/docker-entrypoint.sh       Up                                                   
+compose_postgres_1      /docker-entrypoint.sh postgres   Up                                                   
+compose_provisioner_1   /sbin/docker-entrypoint.sh       Up                                                   
+compose_rebar_api_1     /sbin/docker-entrypoint.sh       Up                                                   
+compose_revproxy_1      /sbin/docker-entrypoint.sh       Up                                                   
+compose_rule-engine_1   /sbin/docker-entrypoint.sh       Up                                                   
+compose_trust_me_1      /sbin/docker-entrypoint.sh       Up                                                   
+compose_webproxy_1      /sbin/docker-entrypoint.sh       Up               
+```
+</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-15 00:35</div><div class="msg">very strange!  you should be able to docker-compose ntp up -d.  When you install, using --con-ntp should work; however, it should be included in your default set</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-15 00:35</div><div class="msg">check the NTP role in the system deployment</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-15 00:36</div><div class="msg">and see how that is set, but it should have have turned green if the service was missing unless you picked external ntp.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-15 13:34</div><div class="msg">@jack-likes-to-code FWIW, NTP was in your earlier docker ps.  Very strange that it's not in the docker-compose ps list!</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-15 16:29</div><div class="msg">we're tracking down a very critical typo in the docs... default password is "rocketsk8ts" - it is correct in the source, but not updated in the generated doc pages</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-15 16:30</div><div class="msg">NOTICE: DOCS ARE UPDATED </div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-15 17:21</div><div class="msg">I need to move tip to get latest updated.   We may need to cut a release to update stable. </div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2017-06-15 17:32</div><div class="msg">I had RTD rebuild and it worked</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-15 18:38</div><div class="msg">@zehicle docker-compose ntp up -d resulted in a "No such command: ntp".  No ntp in docker-compose.yml either.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-15 20:33</div><div class="msg">@Jack-likes-to-code: did you modify common.env?  That can alter NTP operations.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-15 20:40</div><div class="msg">@zehicle I haven't touched that file.  Don't know what it's used for</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-15 20:42</div><div class="msg">Here's what I have for the NTP section in that file:
+```
+#
+# NTP Parameters
+#
+# Should we run NTP as intermediate or only
+# If EXTERNAL_NTP_SERVERS is not specified,
+# the local time in the container will be used.
+#
+NTP_RUN_PROXY=YES
+
+# This defines the upstream NTP servers
+# If NTP is running, it will forward to these.
+# If NTP is not running, then this is injected set.
+# Comma separated list of ips or names
+EXTERNAL_NTP_SERVERS=
+```</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-15 21:11</div><div class="msg">under digitalrebar/deploy/compose look at the init_files.sh script.  That changes that compose.yml.  Something in your system much have tweaked inputs to that file when you restarted.  it could have been an environment variable.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-15 21:12</div><div class="msg">i do remember when I first did the quickstart, the ntp container was started.  When I shut it down, it did not stop/remove the ntp service so i manually did that via docker</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-15 21:13</div><div class="msg">then when I started DR via docker-admin, the ntp service did not come back up</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-15 21:14</div><div class="msg">who kicks off init_files.sh?  Should I kick it off again?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2017-06-15 22:01</div><div class="msg">the install script uses it at the end of the ansible run</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2017-06-15 22:02</div><div class="msg">the run-in-system script can be run multiple times</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2017-06-15 22:02</div><div class="msg">but will tear down the running system</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-15 22:02</div><div class="msg">ok.  I may try that another time, then.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2017-06-15 22:02</div><div class="msg">if you want to keep your config, then you need to modify the config files</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2017-06-15 22:02</div><div class="msg">those are input into the install</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-15 22:02</div><div class="msg">It's fairly easy to setup, so no harm done in resetting it up</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-19 18:23</div><div class="msg">Hi, It's possible to use CoreOS as OS? Thanks</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-19 19:17</div><div class="msg">For what piece of code?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-19 19:20</div><div class="msg">The master and nodes (I already have an Ubuntu box with docker-compose running)</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-19 19:42</div><div class="msg">okay - so DR as opposed to DRP.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-19 19:43</div><div class="msg">I've been playing with CoreOS and DRP.  It is possible.  DR should be similar</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-19 19:43</div><div class="msg">I created a custom bootenv that served the kernel and initrd and then served an ignition file that start the components I wanted.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-19 19:43</div><div class="msg">It could have installed instead.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-19 19:44</div><div class="msg">I don't have anything checked in.  It was more a play-with-it-to-see if it could be done.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-19 19:44</div><div class="msg">Nothing real.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-19 19:44</div><div class="msg">Right now</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2016-11-15/104181243072_307b971367a7363128bf_72.jpg" /><div class="message"><div class="username">spector</div><div class="time">2017-06-26 15:02</div><div class="msg">has joined #community201706</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2016-11-15/104181243072_307b971367a7363128bf_72.jpg" /><div class="message"><div class="username">spector</div><div class="time">2017-06-26 15:02</div><div class="msg">Spector here</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-27 12:39</div><div class="msg">Hello!  I have been looking at the OpenStack Helm project and ran into digital rebar.. It looks pretty impressive! I noticed however that the quick start guide does not include bare metal provisioning. My goal is to get to this point: <a href="https://www.youtube.com/watch?v=6xuVm9PJ2ck">https://www.youtube.com/watch?v=6xuVm9PJ2ck</a>  Any advice?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2017-06-27 13:41</div><div class="msg">the docs will take you through an physical install and there are videos (<a href="http://digital-rebar.readthedocs.io/en/latest/deployment/README.html">http://digital-rebar.readthedocs.io/en/latest/deployment/README.html</a>).  We (RackN) would be to have a call with you to talk about the environment before you start.  We find that a short call can save a lot of time in networking.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-27 13:50</div><div class="msg">I am much more of a video person (which I am super thankful that y'all have so many!). Do y'all have any videos covering the setup with bare metal?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-27 23:04</div><div class="msg">it's different for each person due to their setup - that's why we suggest a live meeting.  </div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-29 22:32</div><div class="msg">I did the quick config on a 32GB Ubuntu 16.08 clean install:
+curl -fsSL https://raw.githubusercontent.com/digitalrebar/digitalrebar/master/deploy/quickstart.sh | bash -s -- --con-provisioner --con-dhcp --admin-ip=192.168.88.228/24</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-29 22:36</div><div class="msg">Of which the 192.168.88.228 was the DHCP IP handed out on the .88 sub by a mikrotik router....  I'm still waiting for the ansible playbook to end, but I had started to poke around on the web UI... I had earlier installed the provisioner ONLY on another machine on another test network</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-29 22:38</div><div class="msg">Your comments above lead me to believe the provisioner is not installed ? 
+http://provision.readthedocs.io/en/stable/doc/quickstart.html
+</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-29 22:41</div><div class="msg">You are mixing docs.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-29 22:42</div><div class="msg">Your command line is for digitalrebar and not digitalrebar provision (the doc link).  You want the <a href="http://digitalrebar.readthedocs.io/en/stable/doc/quickstart.html">http://digitalrebar.readthedocs.io/en/stable/doc/quickstart.html</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-29 22:42</div><div class="msg">WIth that command line, you should have the provisioner and the dhcp server</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-29 22:47</div><div class="msg">OK... I though so, just was not sure if the other is better to use for metal ?  I noticed you've broke it out into an independent github repo... but you've got such flexibility with all these services it, I have to check the 'spinning top' </div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2017-06-29 23:06</div><div class="msg">Yeah - we are slowly splitting things out for better control and non-monolithic services.  Slowly.</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/18217885f0b37a84424668e09f8702ba.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0020-72.png" /><div class="message"><div class="username">jacob</div><div class="time">2017-06-30 16:14</div><div class="msg">has joined #community201706</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-30 16:29</div><div class="msg">OK... I 'think' I understand my DHCP/PXE problem... see if I can explain as I'm sure it's just me missing something.
+I've got a HPE C7000 that I'm testing with... I pulled all the blades and drives, put in one blade and one new drive, loaded Ubuntu on that and did the quick config mentioned above.   I think my issue is that the fabric switches (Cisco 3020), OnboardAdmin Module, and iLO use the little MikroTik to grab management IP's via DHCP.  I listened to your RackN Digital Rebar Training (006): Configure DHCP and Network, where I extracted the fact that you need to put an IP on the admin DHCP network.  So, I went into the UI, DHCP Subnets, admin-internal where the subnet was 192.168.99.0/24.  Given that network, I added 192.168.99.2 IP to enp3s0 (static) and ifup.  I went out to the mikrotik and disabled it's DHCP.  I then inserted another blade, set it to PXE boot.... thinking this 'should' work.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-30 16:32</div><div class="msg">The new blade is now in a PXE boot-loop, not finding the DHCP/PXE that I 'think' is running on 192.168.99.2 enp5s0</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-30 16:33</div><div class="msg">OR... is the 'ADMIN_IP' need to change from 192.168.88.2 enp3s0 (as installed) to 192.168.99.2 enp5s0</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-30 16:35</div><div class="msg">I'll go through that video again and take another look at the docs... that video does have a lot of deep 'gems'  plus I know it showed how to get to the logs...</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2017-06-30 16:39</div><div class="msg">What I might do is put DR on a machine OUTSIDE of the c7000 and let the DR machine capure all the DHCP...  I may be fighting all the management IP DHCP from the OA, iLO and interconnect switches of the c7000.</div></div></div><br/>
+</div></body></html>

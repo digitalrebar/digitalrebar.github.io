@@ -1,0 +1,214 @@
+[
+    {
+        "text": "are profiles not usable in rebar, yet?",
+        "username": "lae",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493052969.854959"
+    },
+    {
+        "text": "(I don't see any results when I search for \"profile\" in the docs, and the parameters I'm setting in profiles aren't being inserted in the pxelinux configuration files)",
+        "username": "lae",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493053009.873387"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Two different profiles.",
+        "ts": "1493053448.071672"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Profiles described in digitalrebar provision are not in digitalrebar.",
+        "ts": "1493053467.080573"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "There are profiles in digitalrebar, but they are for node\/deployment attribute overrides",
+        "ts": "1493053498.093962"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "They are not available to the provisioner.",
+        "ts": "1493053505.096866"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "This is a disconnect that will be remedied in the coming months.  We are inbetween.",
+        "ts": "1493053532.108692"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "@Iae - Do you need the orchestration\/hardware pieces (IPMI, BIOS, RAID) for what you are doing?  If not, you may want to try digitalrebar provision.  It may be more immediately applicable.",
+        "ts": "1493053578.128632"
+    },
+    {
+        "text": "They're not necessarily needed since I already have tools\/processes for that. So I was attempting to use dr-provision earlier this morning, but it seems I'm having trouble possibly having it integrate with our current Infoblox setup?",
+        "username": "lae",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493054120.359320"
+    },
+    {
+        "text": "I could configure a subnet in dr-provision but it'd then allocate IPs itself, but if I leave subnets out, machines don't seem to boot:\n```\nPXELINUX 6.03 lwIP 2014-10-06 Copyright (C) 1994-2014 H. Peter Anvin et al\nUnable to locate configuration file\n```",
+        "username": "lae",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493054178.384159"
+    },
+    {
+        "text": "```\ndr-provision2017\/04\/24 17:12:26.849155 Recieved DHCP packet: type Discover xid 0x6b6d145f ciaddr 0.0.0.0 yiaddr 0.0.0.0 giaddr 0.0.0.0 chaddr 00:16:3e:07:33:21\ndr-provision2017\/04\/24 17:12:27.829885 Recieved DHCP packet: type Discover xid 0x6b6d145f ciaddr 0.0.0.0 yiaddr 0.0.0.0 giaddr 0.0.0.0 chaddr 00:16:3e:07:33:21\ndr-provision2017\/04\/24 17:12:29.807194 Recieved DHCP packet: type Request xid 0x6b6d145f ciaddr 0.0.0.0 yiaddr 0.0.0.0 giaddr 0.0.0.0 chaddr 00:16:3e:07:33:21\ndr-provision2017\/04\/24 17:12:29.807382 xid 0x6b6d145f: Ignoring request for DHCP server 10.13.2.24\ndr-provision2017\/04\/24 17:12:36.196744 sending block 0: code=0, error: TFTP Aborted\n```",
+        "username": "lae",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493054215.400002"
+    },
+    {
+        "text": "also I guess I should probably repull dr-provision since I see that PR on profiles was just merged",
+        "username": "lae",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493054328.447824"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "well - you can turn off dhcp in dr-provision.",
+        "ts": "1493054715.612122"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - a couple of things.",
+        "ts": "1493054749.626583"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I've updated tip with all the stuff fomr this morning - should be out there in about 10minutes.  You will need to get the tarball from the tip or use --rs-version=tip in the curl bash install command.",
+        "ts": "1493054789.644263"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Second, you can use DR-provision with DHCP off and let infoblox drive IP assignment. You will need to set nextboot server to dr-provision and set a bootfile to lpxelinux.0 (assuming legacy intel bios machines).  If you are going to do discovery, you will need to also set option 15 (domainname to something).",
+        "ts": "1493054865.676870"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "This is documented at: <http:\/\/provision.readthedocs.io\/en\/latest\/doc\/deployment.html>",
+        "ts": "1493054971.723530"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I need to merge configure server and deployment.  They are similar but different.",
+        "ts": "1493054986.729715"
+    },
+    {
+        "text": "my Infoblox as far as I know is configured correctly for both legacy\/uefi systems at the moment (well, the bootfiles are prefixed with discovery\/ still, but I created a symlink in drp-data\/tftpboot)",
+        "username": "lae",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493055150.802695"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "won't work.  The filesystem isn't live like that.  The non-static files are generated on the fly when requested.  This allows for parameters from profiles and other things to be inject as needed and things aren't out of date..",
+        "ts": "1493055226.835461"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I have some docs in about that, but it is still coalescing.",
+        "ts": "1493055277.857683"
+    },
+    {
+        "text": "is that a difference between DR and dr-provision? PXE boot was working correctly on DR with this configuration - I can have it modified but since I don't admin the infoblox instance, I've gotta wait until a change gets implemented before I can test things again",
+        "username": "lae",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493055340.885906"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes",
+        "ts": "1493055345.888171"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We are attempting to handle more dynamic and richer bootenvs\/templates with dr-provision.",
+        "ts": "1493055391.907631"
+    },
+    {
+        "text": "Alright, just to confirm - based on what you said this config should be fine, right?\n```\nsubnet 10.11.110.0 netmask 255.255.255.128 {\n    option domain-name \"eng.fireeye.com\";\n    option domain-name-servers 10.11.10.12, 10.11.10.140;\n    option routers 10.11.110.1;\n    server-name \"10.11.110.50\";\n    next-server 10.11.110.50;\n    filename \"lpxelinux.0\";\n            \n    if (substring(option vendor-class-identifier,0,9)=\"PXEClient:Arch:00006\") {\n        # Option filter \"UEFI-BOOTIA32.efi\"\n        server-name \"10.11.110.50\";\n        next-server 10.11.110.50;\n        filename \"bootia32.efi\";\n    }\n    elsif (substring(option vendor-class-identifier,0,9)=\"PXEClient:Arch:00007\") {\n        # Option filter \"UEFI-BOOTX64.efi\"\n        server-name \"10.11.110.50\";\n        next-server 10.11.110.50;\n        filename \"bootx64.efi\";\n    }\n}\n```",
+        "username": "lae",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493055501.955233"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I think so.  The substring options look okay.",
+        "ts": "1493055756.066307"
+    },
+    {
+        "text": "Alright, sledgehammer booted! :ok_hand: ",
+        "username": "lae",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493071468.292826"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": ":slightly_smiling_face: Cool",
+        "ts": "1493071725.363009"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I'll be on phone but driving.",
+        "ts": "1493071757.371124"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "in 10 minutes.",
+        "ts": "1493071761.372481"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "on phone",
+        "ts": "1493072149.470308"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U02DGQYK1> wrong channel :slightly_smiling_face:",
+        "ts": "1493082949.410143"
+    }
+]

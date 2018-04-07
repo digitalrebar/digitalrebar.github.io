@@ -1,0 +1,66 @@
+[
+    {
+        "text": "Hi, It's possible to use CoreOS as OS? Thanks",
+        "username": "aledbf",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497896592.041235"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "For what piece of code?",
+        "ts": "1497899821.185943"
+    },
+    {
+        "text": "The master and nodes (I already have an Ubuntu box with docker-compose running)",
+        "username": "aledbf",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1497900046.260101"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - so DR as opposed to DRP.",
+        "ts": "1497901369.691680"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I've been playing with CoreOS and DRP.  It is possible.  DR should be similar",
+        "ts": "1497901390.698320"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I created a custom bootenv that served the kernel and initrd and then served an ignition file that start the components I wanted.",
+        "ts": "1497901429.711037"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It could have installed instead.",
+        "ts": "1497901435.712883"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I don't have anything checked in.  It was more a play-with-it-to-see if it could be done.",
+        "ts": "1497901458.720399"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Nothing real.",
+        "ts": "1497901461.721620"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Right now",
+        "ts": "1497901463.722392"
+    }
+]

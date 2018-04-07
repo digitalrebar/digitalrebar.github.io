@@ -1,0 +1,543 @@
+[
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Happy to see screen-sharing is a thing in Slack now — may come in useful for those t’shoot sessions…",
+        "ts": "1508776793.000026"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Q - is there any standard DR built-in user for Ubuntu installs? Doesn’t look like my key injection worked on the last server deploy…",
+        "ts": "1508776915.000276"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Used `ce-ubuntu-16.04-install` if it matters",
+        "ts": "1508777077.000702"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Also, is there such a thing in Slack as user aliases (or groups)? I’d love to be able to ping “@support” and have it alert the relevant RackN folk…",
+        "ts": "1508777209.000649"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<!here> does the trick",
+        "ts": "1508777239.000284"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "rocketskates is the fefault user.",
+        "ts": "1508777241.000300"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "should be the same password as the UX.",
+        "ts": "1508777266.000412"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Injected by default, <@U02DJQSG8>?",
+        "ts": "1508777290.000263"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DHRR2L> Wouldn’t <!here> ping all the non-DR folk too?",
+        "ts": "1508777311.000612"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "ah, yes",
+        "ts": "1508777325.000289"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U416T0AAX> see the net-seed.tmpl for default user injection ",
+        "ts": "1508777355.000578"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "I'm not aware of group alias in Slack.  would be handy feature",
+        "ts": "1508777357.000304"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "yep",
+        "ts": "1508777361.000494"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "The at here only alerts people signed in at the time - at channel sends alert to everyone in the channel regardless if they're logged in or not ",
+        "ts": "1508777426.000057"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I just don’t know if you all monitor Slack on an ongoing basis, or I have to alert folks to take a look",
+        "ts": "1508777480.000272"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Time is sometimes of the essence :slightly_smiling_face:",
+        "ts": "1508777499.000478"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "this is the community channel, so nothing urgent - we do have 1x1 support channels that we monitor where a channel ping would only alert the relevant parties",
+        "ts": "1508777582.000561"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DHRR2L> It’s just that I have limited time to work on the DR stuff during the day, and when I get a half-hour or hour to work on it, if I have questions, I’d need a timely answer or I run out of my window…",
+        "ts": "1508777844.000468"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Most of the time it’s been no problem, but sometimes, I have to leave off before I can get an answer",
+        "ts": "1508777874.000059"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I do understand “best-effort response” is the SLA :slightly_smiling_face:",
+        "ts": "1508777940.000349"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, looks like my custom template did not get executed…",
+        "ts": "1508778111.000125"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Trying to test my changes to `ce-root-remote-access.tmpl`; I used the `ce-ubuntu-16.04-install` bootenv that I believe would use that when `access-ssh-root-mode` has a value set",
+        "ts": "1508778208.000149"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Can anyone <!here> verify that the above would utilize my changed template?",
+        "ts": "1508778253.000395"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yes - ce-ubuntu will pull in the that template.",
+        "ts": "1508778294.000208"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, the changed line didn’t work for some reason then…",
+        "ts": "1508778322.000294"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "<@U416T0AAX> you need to reupload the template",
+        "ts": "1508778361.000004"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "`drpcli templates upload templates\/ce-root-remote-access.tmpl as ce-root-remote-access.tmpl`",
+        "ts": "1508778380.000397"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "if you made the change after you've imported those templates previously (i.e. when importing a bootenv)",
+        "ts": "1508778411.000416"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "(updating a bootenv doesn't reimport templates I think)",
+        "edited": {
+            "user": "U54E4SD4G",
+            "ts": "1508778490.000000"
+        },
+        "ts": "1508778462.000010"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I have set `access-ssh-root-mode` to “yes”; Then replaced the `echo [...] &gt;&gt; \/etc\/ssh\/sshd_config` with my `sed --in-place [...]` that I’m wanting to test in my version of the `ce-root-remote-access.tmpl`",
+        "ts": "1508778546.000720"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U54E4SD4G> I did re-import that, <@U02DGQYK1> gave me instructions on how to do so that the DRP system uses my custom version",
+        "ts": "1508778578.000387"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "ah okay",
+        "ts": "1508778583.000287"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Trying to change the stage map for my Ubuntu install profile, is not updating for some reason (UX)",
+        "ts": "1508779394.000717"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "How to manually edit the profile to delete the stage map? (Or does one just delete the stage map, which updates the profile??)",
+        "ts": "1508779913.000748"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You can delete the parameter from the profile",
+        "ts": "1508780417.000870"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Or set it to {}",
+        "ts": "1508780459.000341"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Thanks <@U02DGQYK1> - don’t know why can’t delete it from UX… I do it (click Edit on profile, click Remove by change-stage\/map(object) param, then click Save at bottom of pane) but when i pull it back up, it’s still there…",
+        "edited": {
+            "user": "U416T0AAX",
+            "ts": "1508781025.000000"
+        },
+        "ts": "1508780998.000488"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So the drpcli command `drpcli profiles set &lt;my-profile-name&gt; param \"change-stage\/map\" to \"{}\"` seemed to work… But now when I try to use the UX Workflow screen to re-set-up the stage map and hit Save, it does not update the profile, or actually save the stage map…",
+        "ts": "1508781587.000042"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "set it to `null`",
+        "ts": "1508781693.000693"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(`null` is a bare value - no quotes around it)",
+        "ts": "1508781722.000149"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I did `drpcli profiles set &lt;my-profile-name&gt; param \"change-stage\/map\" to \"\"` which returned `null` and now the param is gone",
+        "ts": "1508781794.000057"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "cool",
+        "ts": "1508781841.000299"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So now I still cannot reset up the Workflow from the UX… Just doesn’t seem to save it…",
+        "ts": "1508781940.000192"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "hmm - Just did those steps and it seems to work for me.  hard refresh the page to maek sure you are logged in.",
+        "ts": "1508782884.000038"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DGQYK1> - OK. Different browser on other machine, ensured was logged into the endpoint &amp; them DR Beta, went to Workflow, made a new stage map for my profile, saved it, clicked off to another window, clicked back to Workflow and dropped to my Profile, got nuthin.",
+        "edited": {
+            "user": "U416T0AAX",
+            "ts": "1508793021.000000"
+        },
+        "ts": "1508793004.000492"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Hard refreshed at the Workflow window, now I have a “Login” button… Is the DR login working for me?",
+        "ts": "1508793104.000048"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "can you see\/edit the workflow profile from the profile?",
+        "ts": "1508793147.000406"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Clicked the “Login” button, now am at an “Security” page, has my RackN account details, and displays a “Logout” button…",
+        "ts": "1508793160.000263"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "ultimately, that view is used editing that variable.",
+        "ts": "1508793167.000525"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "oh... I think I may know what happened",
+        "ts": "1508793242.000158"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DHRR2L>, you mean edit the Profile, add an undefined param, choosing “change-stage\/map(object)“?",
+        "ts": "1508793257.000109"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "yes",
+        "ts": "1508793274.000279"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yes, I can see\/add it",
+        "ts": "1508793296.000437"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "I think that we updated the UX to rely on a fix to param names that you may not have in your deployed endpoint.",
+        "ts": "1508793313.000366"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "the \/ in the param name is making the API call for the UX unhappy.    The UX does change behavior for endpoints with that bug.",
+        "ts": "1508793379.000297"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "“does”? or “doesn’t”",
+        "ts": "1508793416.000299"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Tried adding the param to the Profile, and even tho I click Save, it does not add…",
+        "ts": "1508793661.000308"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<!here> OK, about ready to give up on this admittedly very pretty UX…",
+        "ts": "1508793855.000308"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "the UX does NOT detect if the API has the \/ defect or not",
+        "ts": "1508793892.000163"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "it would not be hard to add back the old behavior for older API",
+        "ts": "1508793929.000362"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "How to update the API to match the UX?",
+        "ts": "1508793930.000239"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "update the DRP endpoint",
+        "ts": "1508793950.000170"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Are the API \/ UX versioned so they stay matched as to functionality?",
+        "ts": "1508793954.000524"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "the API is. The UX is not versioned but would need to detect API versions.  You've found a version bridging bug",
+        "ts": "1508794019.000206"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "that came in when we switched to using PATCH instead of PUT (which fixed a different set of bugs)",
+        "ts": "1508794063.000393"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So, do I have to go to ‘tip’ to get to working again?",
+        "ts": "1508794074.000331"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "checking w\/ <@U02DGQYK1>",
+        "ts": "1508794084.000217"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I believe my API is latest stable…",
+        "ts": "1508794094.000069"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "```[dradmin@dr-admin drp]$ .\/dr-provision --version\ndr-provision2017\/10\/23 17:12:16.261448 Version: v3.1.0-0-b70cf8ee1f61844a6d64070a8b272c2bec512204```",
+        "ts": "1508794145.000243"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "The \/ patch as 17 days ago - <https:\/\/github.com\/digitalrebar\/provision\/pull\/473>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "Address issues with \/ in parameter names. by galthaus · Pull Request #473 · digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/pull\/473",
+                "text": "First, make sure that all objects return errors when a slash or backslash is used in their names (except params). Second, update the name parsing of parameter api calls to enable a \/ in the name. ...",
+                "fallback": "GitHub: Address issues with \/ in parameter names. by galthaus · Pull Request #473 · digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/pull\/473",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/724965?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1508794366.000224"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "patching API is the fast solution... I can also fix the version detection thing pretty fast too",
+        "ts": "1508794400.000062"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "that issue was in the v3.1 stable code with params that had \/ in the name.",
+        "ts": "1508794457.000047"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "really, anything that had \/ in the name",
+        "ts": "1508794468.000528"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "I will add version detection into UX to address stable vs tip",
+        "ts": "1508795462.000113"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DHRR2L> OK, how to patch the API?",
+        "ts": "1508801030.000179"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "My problem is trying to use this in-dev system as a part of my production workflow…",
+        "ts": "1508801070.000005"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Sorry, frustrated - Haven’t had correct installs since I went to 3.1",
+        "ts": "1508801319.000197"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "workflow is the new hotness - we're working on adding feature flags and other things to protect stable builds as we move forward",
+        "ts": "1508801359.000046"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Sounds like a good plan…",
+        "ts": "1508801381.000078"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "one idea to help w\/ production vs testing.... you can run two versions side by side if you change the API \/ IPXE ports.  Then use API to turn subnets on or off",
+        "edited": {
+            "user": "U02DHRR2L",
+            "ts": "1508801452.000000"
+        },
+        "ts": "1508801448.000073"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "that way you could keep them both running and use the subnet active to direct traffic",
+        "ts": "1508801476.000097"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "they can't share data, but you'd have a fall back",
+        "ts": "1508801513.000154"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "in the mean time, I'm looking at the UX API version thing",
+        "ts": "1508801535.000265"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Interested in patching what I have going now - how to do that?",
+        "ts": "1508803829.000139"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U6QFVRJNB> and <@U54E4SD4G> had tested some upgrade patterns.  I'm not sure what's required between 3.1.0 and tip",
+        "ts": "1508816514.000064"
+    }
+]

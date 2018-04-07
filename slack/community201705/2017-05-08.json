@@ -1,0 +1,262 @@
+[
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U4GUA0HE0> - this is the community",
+        "ts": "1494251917.889188"
+    },
+    {
+        "user": "U4GUA0HE0",
+        "inviter": "U02DGQYK1",
+        "text": "<@U4GUA0HE0> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1494251978.915678"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F59JXQ7BJ\/image_uploaded_from_ios.jpg|Swagger UI problem>",
+        "file": {
+            "id": "F59JXQ7BJ",
+            "created": 1494262455,
+            "timestamp": 1494262455,
+            "name": "Image uploaded from iOS.jpg",
+            "title": "Swagger UI problem",
+            "mimetype": "image\/jpeg",
+            "filetype": "jpg",
+            "pretty_type": "JPEG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 1903660,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F59JXQ7BJ\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F59JXQ7BJ\/download\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F59JXQ7BJ-48dadb6538\/image_uploaded_from_ios_64.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F59JXQ7BJ-48dadb6538\/image_uploaded_from_ios_80.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F59JXQ7BJ-48dadb6538\/image_uploaded_from_ios_360.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 270,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F59JXQ7BJ-48dadb6538\/image_uploaded_from_ios_480.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 360,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F59JXQ7BJ-48dadb6538\/image_uploaded_from_ios_160.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F59JXQ7BJ-48dadb6538\/image_uploaded_from_ios_720.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 540,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F59JXQ7BJ-48dadb6538\/image_uploaded_from_ios_800.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 600,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F59JXQ7BJ-48dadb6538\/image_uploaded_from_ios_960.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 720,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F59JXQ7BJ-48dadb6538\/image_uploaded_from_ios_1024.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 768,
+            "image_exif_rotation": 1,
+            "original_w": 3264,
+            "original_h": 2448,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F59JXQ7BJ\/image_uploaded_from_ios.jpg",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F59JXQ7BJ-a49c17c7ac",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "upload_reply_to": "A23C2B4D-0A23-4EC0-BD84-C284C5B6CA8E",
+        "ts": "1494262472.668309"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DGQYK1> Any idea why I'd be getting this error?",
+        "ts": "1494262510.685003"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yes - change the 127.0.0.1 in the bar to match your ip address in the overall nav bar.",
+        "ts": "1494262708.769959"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U416T0AAX>",
+        "ts": "1494262723.776050"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Why does the Swagger UI assume 127.0.0.1?",
+        "ts": "1494262886.852399"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "well - umm - you see - umm - lazy me.  It has to with the fact it isn't very integrated into our system.",
+        "ts": "1494262923.869951"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Ah",
+        "ts": "1494262961.887035"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Picking your battles eh? :wink:",
+        "ts": "1494262984.897036"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We use the swagger-ui without any changes (except to reference that URL).  I'd have to change it is a little more to make it more dynamic.",
+        "ts": "1494263010.908280"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We also want to switch which one we use.",
+        "ts": "1494263022.912945"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": ":+1::skin-tone-2:",
+        "ts": "1494263084.939782"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DGQYK1> Are the .yaml files in assets\/profiles automatically loaded, or do they have to be loaded via drpcli ??",
+        "ts": "1494264181.395322"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "you have to load them.  They are examples ,because you usually have to change value.s",
+        "ts": "1494264201.403804"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "RE swagger-ui -&gt; there's a new version based on react that we'd switch to also",
+        "ts": "1494269612.758934"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "the rest of the UX is based on react",
+        "ts": "1494269622.762861"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "DRP UX",
+        "ts": "1494269627.765237"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DGQYK1> No helper cmd yet in drpcli to associate profiles with machines?",
+        "ts": "1494286258.284510"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Not yet - soon - maybe tonight.",
+        "ts": "1494286865.402495"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "drpcli machines update &lt;uuid&gt; '{ \"Profiles\": [ \"prof1\", \"prof2\" ] }'",
+        "ts": "1494286898.408346"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "will do it.  WARNING- the UX will eat profiles if you set bootenv.  It is not implemented quite right.",
+        "ts": "1494286925.413628"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "You mean if you change the machine’s bootenv thru the UX?",
+        "ts": "1494287044.435757"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes",
+        "ts": "1494287144.454416"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I noticed that today.",
+        "ts": "1494287151.455691"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Thx for that tip, that was my next move :slightly_smiling_face:",
+        "ts": "1494287197.464283"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "drpcli machines bootenv &lt;uuid&gt; &lt;bootenv&gt;",
+        "ts": "1494287218.468430"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "works though",
+        "ts": "1494287221.468956"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So, do I use “drpcli machines update …” to change the bootenv, or is there a specific drpcli cmd to do that?",
+        "ts": "1494287258.475497"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "n\/m :wink:",
+        "ts": "1494287270.477897"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "you can do them in the same update.",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1494287311.000000"
+        },
+        "ts": "1494287307.484601"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "```drpcli machines update &lt;uuid&gt; '{ \"Profiles\": [ \"prof1\", \"prof2\" ], \"BootEnv\": \"newbootenv\" }' ```",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1494287340.000000"
+        },
+        "ts": "1494287336.490192"
+    }
+]

@@ -1,0 +1,1610 @@
+[
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "So the Endpoint can run on a pie now  :wink:",
+        "ts": "1513346935.000235"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Could for a while.  :slightly_smiling_face:",
+        "ts": "1513347054.000310"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Just in time for the Holiday Season",
+        "ts": "1513347068.000322"
+    },
+    {
+        "user": "U8G8VDLSJ",
+        "text": "<@U8G8VDLSJ> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1513354828.000607"
+    },
+    {
+        "user": "U8FAN7PLK",
+        "text": "<@U8FAN7PLK> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1513355067.000493"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "Hello. I'm just starting to play with DR provision and I have a quick question: I've got everything up and running correctly (easy :thumbsup: ), but now I would simply like to start testing by adding a new bootenv. I can't seem to make that happen. Either through the UX, the CLI or the Swagger UI. I keep getting errors. I'd like to add a simple CoreOS bootenv, but I have a hard time wrapping my head around the Templates section of the bootenv and the relationship between Template in bootenvs and separate Template section.",
+        "ts": "1513355228.000327"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U8G8VDLSJ> and <@U8FAN7PLK> welcome",
+        "ts": "1513355265.000193"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "thanks.",
+        "ts": "1513355274.000667"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "<@U6QFVRJNB> thanks :slightly_smiling_face:",
+        "ts": "1513355286.000202"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "have you used the UX yet ?",
+        "ts": "1513355308.000708"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "yes.",
+        "ts": "1513355313.000102"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it makes \"following\" the flow easier - as you can \"expand\" or \"click through\" to each of the sub-parts",
+        "ts": "1513355328.000226"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "start w\/ BootEnvs - example of centos or ubuntu",
+        "ts": "1513355343.000348"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "But I keep getting an error about Template ID when I clone -&gt; edit a new Bootenv",
+        "ts": "1513355351.000448"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "hmmm ... the UX is still in \"Beta\" - and has some rough edges - but I thought we had ironed out that one recently",
+        "ts": "1513355381.000213"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "```Error\nTemplates[3]: No common template for Template ID``` is what <@U8G8VDLSJ> is talking about",
+        "ts": "1513355407.000514"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "Yes and some others too. A bunch of stuff around the templates.",
+        "ts": "1513355426.000221"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "I have the same issue trying to clone the default discovery bootenv.",
+        "ts": "1513355432.000095"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "(we work together btw)",
+        "ts": "1513355458.000066"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "from the CLI - you can do similar actions:\n```drpcli bootenvs list\ndrpcli bootenvs list | jq '.[].Name'\ndprcli bootenvs show centos-7-install\ndprcli bootenvs show centos-7-install &gt; example-bootenv.json\n# vim example-bootenv.json\ndrpcli bootenvs create - &lt; example-bootenv.json```",
+        "ts": "1513355460.000265"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "I guess more generally there is a bunch of stuff that isn't clear to me about the role of templates in the bootenv vs the other common templates.",
+        "ts": "1513355465.000479"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "+ how the chaining of pxelinux\/elilo\/ipxe is supposed to work",
+        "ts": "1513355486.000543"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "If I look at the standard bootenvs that are shipped, they seem to define templates in them and how is that different from the other \"common\" templates?",
+        "edited": {
+            "user": "U8G8VDLSJ",
+            "ts": "1513355576.000000"
+        },
+        "ts": "1513355573.000452"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "I will try your suggested drpcli flow",
+        "ts": "1513355671.000479"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "does this doc help:  <http:\/\/provision.readthedocs.io\/en\/latest\/doc\/arch\/data.html#rs-data-architecture>",
+        "ts": "1513355700.000188"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "I read through it, yes.",
+        "ts": "1513355754.000069"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "This line is pretty clear: \"The templates can be in-line in the BootEnv object or reference a Template. \"",
+        "ts": "1513355764.000016"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "but I can't get the referencing to work",
+        "ts": "1513355783.000016"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "template must exist first.",
+        "ts": "1513355803.000598"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "it does",
+        "ts": "1513355830.000047"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "ok - just making sure.",
+        "ts": "1513355839.000700"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "Another question: Why do the elilo\/pxelinux\/ipxe templates seem to be required?",
+        "edited": {
+            "user": "U8G8VDLSJ",
+            "ts": "1513355887.000000"
+        },
+        "ts": "1513355878.000061"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "How are they chained to together in the flow.",
+        "ts": "1513355903.000280"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I can describe it.  It will be 30 minutes or so before I can get to it.",
+        "ts": "1513356071.000108"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "ok. NP :slightly_smiling_face:",
+        "ts": "1513356121.000689"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "The elilo\/pxelinux\/ipxe templates are required because we need to be able to render them on a per-machine basis to have machines boot into the \"right\" boot environment with the proper parameters.",
+        "ts": "1513356590.000171"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "The ones we provide should do the right thing in thye majority of cases.",
+        "ts": "1513356620.000011"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "ok. But in the flow what is the actual filename sent by TFTP in the PXE flow: pxelinux?",
+        "ts": "1513356690.000114"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "I'm assuming so",
+        "ts": "1513356697.000083"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "To include a template in-line on a bootenv, leave the ID field blank and provide the template to be expanded inline in the Contents field",
+        "ts": "1513356724.000432"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "To use a shared template, have the ID field be the same as the ID of the shared template, and leave Contents blank",
+        "ts": "1513356760.000222"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "It is an error tp leave both blank or have both filled out -- you will get an explanatory error if you do that.",
+        "ts": "1513356791.000326"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "Why have both possibilities though? Why not just use a reference?",
+        "ts": "1513356826.000280"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "Sorry, I guess it's a little confusing for a first time user :slightly_smiling_face:",
+        "ts": "1513356842.000206"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "But I get it now",
+        "ts": "1513356849.000731"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "No worries.",
+        "ts": "1513356852.000238"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "The actual name that you would fetch the template by over TFTP or HTTP is the Path field",
+        "ts": "1513356901.000373"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "So I managed to successfully create a new bootenv. Time test it !",
+        "ts": "1513356917.000568"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "ok, but which one is the one pointed to by the \"filename\" DHCP option?",
+        "ts": "1513356948.000490"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "and after that, where do ixpe + elilo fit?",
+        "ts": "1513356987.000603"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<http:\/\/provision.readthedocs.io\/en\/latest\/doc\/arch\/data.html#rs-data-architecture> is the best guide for what the various things you can expand in a template are.",
+        "ts": "1513357046.000314"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "That is the fun part.",
+        "ts": "1513357060.000567"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "well, the \"filename\" option by default points at lpxelinux.0",
+        "ts": "1513357167.000327"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "right, so if I recall from that document, lxpelinux.0 or EFI bootx64 is first sent",
+        "ts": "1513357176.000041"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "and pxelinux does the usual tftp waterfall to find a config file",
+        "edited": {
+            "user": "U02DJQSG8",
+            "ts": "1513357211.000000"
+        },
+        "ts": "1513357186.000023"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "And then how do we get to ixpe?",
+        "ts": "1513357198.000336"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "and it finds the config file we wrote for it at pxelinux.cfg\/{{.Machine.HexAddress}}",
+        "ts": "1513357247.000656"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "In the default config, we don't use ipxe",
+        "ts": "1513357281.000266"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "ok, so I'll have figure out how to start using it",
+        "ts": "1513357317.000536"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "(It's not strictly required, but just sort of as an experiment)",
+        "ts": "1513357339.000005"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I ahve encountered systems where ipxe failed due to nic formware bugs\/spanning tree issues\/other networking issues",
+        "ts": "1513357358.000133"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "ok.",
+        "ts": "1513357365.000504"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "Next silly question: How to actually associate my new bootenv to an existing machines that's gone through the discovery process?",
+        "ts": "1513357396.000517"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "At first glance, it seems that I need to create a \"stage\" associated w\/ my bootenv?",
+        "ts": "1513357416.000012"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "that would be the best solution - then you create Workflow to move a machine through the stages to final install point",
+        "ts": "1513357440.000124"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "You can do that",
+        "ts": "1513357448.000261"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "So my ideal workflow would be something like: UnknownMachine-&gt;Discover-&gt;AddtoInventory",
+        "ts": "1513357504.000045"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "Then another would be TakeMachinefromInventory-&gt;DeployOS",
+        "ts": "1513357549.000121"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "Maybe with a burnin step after discovery",
+        "ts": "1513357564.000197"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "can we have multiple workflows or should that all be in one workflow?",
+        "ts": "1513357591.000496"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "You must change stage whenever you want to change boot environment",
+        "ts": "1513357655.000397"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Otherwise, the worflow systems is pretty flexible.",
+        "ts": "1513357724.000331"
+    },
+    {
+        "type": "message",
+        "subtype": "pinned_item",
+        "user": "U02DJQSG8",
+        "item_type": "C",
+        "attachments": [
+            {
+                "fallback": "[November 13th, 2017 1:39 PM] vlowther: Of you set option 67 to `{{if (eq (index . 77) “iPXE”) }}default.ipxe{{else if (eq (index . 93) “0\")}}lpxelinux.0{{else}}bootx64.efi{{end}}` it will ise iPXE if that has already been loaded, otherwise it will use lpxelinux.o on BIOS systems and elilo on UEFI systems.",
+                "ts": "1510609144.000317",
+                "author_id": "U02DJQSG8",
+                "author_subname": "Victor Lowther",
+                "channel_id": "C02L9P26Q",
+                "channel_name": "community",
+                "is_msg_unfurl": true,
+                "text": "Of you set option 67 to `{{if (eq (index . 77) “iPXE”) }}default.ipxe{{else if (eq (index . 93) “0\")}}lpxelinux.0{{else}}bootx64.efi{{end}}` it will ise iPXE if that has already been loaded, otherwise it will use lpxelinux.o on BIOS systems and elilo on UEFI systems.",
+                "author_name": "Victor Lowther",
+                "author_link": "https:\/\/rackn.slack.com\/team\/U02DJQSG8",
+                "author_icon": "https:\/\/avatars.slack-edge.com\/2014-07-15\/2462284870_48.jpg",
+                "mrkdwn_in": [
+                    "text"
+                ]
+            }
+        ],
+        "text": "<@U02DJQSG8> pinned a message to this channel.",
+        "ts": "1513357879.000321"
+    },
+    {
+        "type": "message",
+        "subtype": "pinned_item",
+        "user": "U02DJQSG8",
+        "item_type": "C",
+        "attachments": [
+            {
+                "fallback": "[November 13th, 2017 1:40 PM] vlowther: Similarly, `{{if (eq (index . 77) “iPXE”) }}default.ipxe{{else if (eq (index . 93) “0\")}}ipxe.pxe{{else}}ipxe.efi{{end}}` will force the use of ipxe for BIOS and UEFI systems.",
+                "ts": "1510609235.000065",
+                "author_id": "U02DJQSG8",
+                "author_subname": "Victor Lowther",
+                "channel_id": "C02L9P26Q",
+                "channel_name": "community",
+                "is_msg_unfurl": true,
+                "text": "Similarly, `{{if (eq (index . 77) “iPXE”) }}default.ipxe{{else if (eq (index . 93) “0\")}}ipxe.pxe{{else}}ipxe.efi{{end}}` will force the use of ipxe for BIOS and UEFI systems.",
+                "author_name": "Victor Lowther",
+                "author_link": "https:\/\/rackn.slack.com\/team\/U02DJQSG8",
+                "author_icon": "https:\/\/avatars.slack-edge.com\/2014-07-15\/2462284870_48.jpg",
+                "mrkdwn_in": [
+                    "text"
+                ]
+            }
+        ],
+        "text": "<@U02DJQSG8> pinned a message to this channel.",
+        "ts": "1513357887.000044"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I went ahead and pinned a couple of older messages with examples for DHCP option 67.",
+        "ts": "1513358015.000546"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "you would need to add\/change option 67 in your subnets and\/or reservations to tweak what the DHCP server will serve.",
+        "ts": "1513358089.000684"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "ok, so I can do it per host. cool.",
+        "ts": "1513358135.000458"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Yep",
+        "ts": "1513358156.000283"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Options for reservations and subnets stack based on the relavent IP address",
+        "ts": "1513358187.000461"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "You can even create reservations that are outside a subnet",
+        "ts": "1513358208.000443"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "but you have to provide all the options in that case. :slightly_smiling_face:",
+        "ts": "1513358229.000476"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "ok. So if I understand correctly the profile associated to a machine is the entry point into a given workflow?",
+        "edited": {
+            "user": "U8G8VDLSJ",
+            "ts": "1513358491.000000"
+        },
+        "ts": "1513358481.000669"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "A new unknown machine will always have no profile in which case, the generic \"global\" profile applies?",
+        "ts": "1513358521.000362"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "The stage.",
+        "ts": "1513358525.000590"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "hmm. lost you there.",
+        "ts": "1513358537.000591"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Profiles are bags that hold parameters",
+        "ts": "1513358544.000431"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "ok.",
+        "ts": "1513358551.000053"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "and machines can have any number of them.",
+        "ts": "1513358557.000640"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "But looking at the Workflow page in the UX, it seems to be associated to a profile.",
+        "ts": "1513358585.000067"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "they act as a mechanism to provide parameters that shou78ld be shared across some subset of machines.",
+        "ts": "1513358588.000012"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "ok. So we have a one -&gt; many relation between machines and profiles",
+        "ts": "1513358606.000204"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yes - and the Workflow system uses the `change-stage\/map` Param type to manage the workflow stages",
+        "ts": "1513358687.000336"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "this Param can be contained in a Profile - which is attached to a Machine ...",
+        "ts": "1513358701.000663"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "for example - if you place it in \"Global\" profile, it applies to ALL machines provisioned - without being explicitly referenced",
+        "ts": "1513358726.000518"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "but - if you place it in a \"my-workflow\" profile - you must attach that Profile to a Machine",
+        "ts": "1513358740.000238"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can technically attach the Param to the machine directly - not via a Profile, as well ...",
+        "ts": "1513358777.000265"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "ok. So a machine could have several workflows associated to it?",
+        "ts": "1513358778.000037"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yep",
+        "ts": "1513358782.000046"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can have \"fan-in\" and \"fan-out\" with your workflows",
+        "ts": "1513358792.000570"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "And how would the ordering of workflows be handled?",
+        "ts": "1513358796.000044"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can have several workflow steps",
+        "ts": "1513358798.000332"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "and you might choose to \"orchestrate\" those workflows externally - for example -we have a Terraform provider which does exactly that",
+        "ts": "1513358821.000088"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "fanout is not really solved with the current system. :confused:",
+        "ts": "1513358823.000036"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(on the road map ... :slightly_smiling_face: )",
+        "ts": "1513358832.000534"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "ok, I don't get what you mean by fan-in vs fan-out",
+        "ts": "1513358865.000359"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the example Terraform provider does (basically):\nworkflow 1:  discover --&gt; terraform-ready\nworkflow 2:  centos-7-install --&gt; ssh-keys --&gt; complete\nterraform initiates the change from \"workflow 1\" to \"workflow 2\"",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1513358942.000000"
+        },
+        "ts": "1513358920.000004"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "fan-in means you can have multiple \"stages\" that a Machine might \"find itself\" in - and if it matches one of those stages, then advance in the workflow",
+        "ts": "1513358979.000269"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Ignore fan-in and fan-out for now.",
+        "ts": "1513359025.000278"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": ":slightly_smiling_face:",
+        "ts": "1513359031.000408"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "ok. that's always nice :slightly_smiling_face:",
+        "ts": "1513359039.000297"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "So for the workflow change from 1 to 2 that Terraform can do, technically speaking, how is that achieved: API call to change profile on the machine object?",
+        "ts": "1513359086.000266"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "API call to change stage.",
+        "ts": "1513359104.000519"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "discover, terraform-ready, etc. are all stages",
+        "ts": "1513359152.000323"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "ok. I guess I lost you there. How does a stage change initiate another Workflow?",
+        "ts": "1513359172.000211"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "We basically chain them together.",
+        "ts": "1513359194.000600"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "the change-stage\/map parameter consists of a map of currentStage: nextStage:action",
+        "ts": "1513359273.000519"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "so if we run all the tasks in the current stage successfully, we will update the machine to use the next stage and reboot if the boot environment says so.",
+        "ts": "1513359328.000073"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "At this point, I probably need to get my hands a little dirtier with it to figure things out. Thanks for the help ! I'm sure you'll hear from us again!",
+        "ts": "1513359355.000651"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "(taht is, if the new stage wants a boot environment other than the one we are in)",
+        "ts": "1513359357.000100"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "ok. one last thing: I understand that provision doesn't handle firmware updates, but we could create a stage that does that right?",
+        "ts": "1513359461.000055"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Sure. I ahve been working on one for Dell gear that uses the DSU tool and its associated repos.",
+        "ts": "1513359554.000359"
+    },
+    {
+        "text": "Time to feed the :bear:!",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1513359554.000416"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "and a more generic and finicky one for other systems.",
+        "ts": "1513359583.000011"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "Obviously OOBM server control is something that we might build a higher level wrapper for (we actually want to tie all this in with Digital Ocean's Netbox: <https:\/\/github.com\/digitalocean\/netbox>)",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalocean\/netbox",
+                "title_link": "https:\/\/github.com\/digitalocean\/netbox",
+                "text": "netbox - IP address management (IPAM) and data center infrastructure management (DCIM) tool.",
+                "fallback": "GitHub: digitalocean\/netbox",
+                "from_url": "https:\/\/github.com\/digitalocean\/netbox",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/4650108?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1513359596.000413"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "and I eagerly awaiy the day this stuff comes to a semblance of standardization.",
+        "ts": "1513359629.000430"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "I imagine the full fledged DigitalRebar product is already using \"provision\" ?",
+        "ts": "1513359638.000418"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "provision is a streamlined and simplified version or the older DigitalRebar product.",
+        "ts": "1513359809.000071"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "netbox woo",
+        "ts": "1513359835.000609"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "right but the older product supports things like configuring IPMI + firmwares, but it does not yet leverage provision internally? Or is that something that you have yet to build around provision?",
+        "ts": "1513359878.000545"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "if you're using ansible might I suggest using my ansible role for maintaining netbox? :wink:",
+        "edited": {
+            "user": "U54E4SD4G",
+            "ts": "1513359889.000000"
+        },
+        "ts": "1513359883.000464"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Don't let the device42 guys hear you say that. :slightly_smiling_face: We have a few of them hanging around here.",
+        "ts": "1513359903.000277"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "<@U54E4SD4G> I think we already have something for Netbox, we're already pretty deeply invested in it.",
+        "ts": "1513359935.000245"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "What is device42?",
+        "ts": "1513359947.000069"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "another dcim solution",
+        "ts": "1513359952.000083"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "ok :slightly_smiling_face: I happen to love the elegance and simplicity of Netbox, but other solutions have their advantages too.",
+        "ts": "1513359991.000626"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "and yeah, same here, hence why I have a pretty battle-tested netbox ansible role (that has actually caught a bug in netbox before rolling out to prod hah)",
+        "thread_ts": "1513359994.000269",
+        "reply_count": 1,
+        "replies": [
+            {
+                "user": "U416T0AAX",
+                "ts": "1513392136.000053"
+            }
+        ],
+        "unread_count": 1,
+        "ts": "1513359994.000269"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "My DC team has one big grippe w\/ netbox which is the lack of proper cable plant support (the famous issue #20 <https:\/\/github.com\/digitalocean\/netbox\/issues\/20>) but that will come eventually",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "Add support for tracking physical cable plants · Issue #20 · digitalocean\/netbox",
+                "title_link": "https:\/\/github.com\/digitalocean\/netbox\/issues\/20",
+                "text": "Currently, NetBox does not support any concept of physical cable plant installations. We can connect one interface to another, but there is no way too associate that connection with information abo...",
+                "fallback": "GitHub: Add support for tracking physical cable plants · Issue #20 · digitalocean\/netbox",
+                "from_url": "https:\/\/github.com\/digitalocean\/netbox\/issues\/20",
+                "thumb_url": "https:\/\/avatars2.githubusercontent.com\/u\/13487278?s=400&v=4",
+                "thumb_width": 188,
+                "thumb_height": 188,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1513360055.000633"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U8G8VDLSJ> DRP has content packages and plugins that allow for IPMI configuration and driving today.  We are porting over the Bios\/Raid\/Component update pieces.",
+        "ts": "1513361207.000116"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "For example, there are plugins that allow for IPMI operations for bare metal, <http:\/\/packet.net|packet.net>, and virtualbox.",
+        "ts": "1513361232.000670"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "<@U02DGQYK1> ok, I'll check out those packages.",
+        "ts": "1513361238.000244"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "Nothing for DNS yet?",
+        "ts": "1513361247.000430"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "well - we did in DRv2, but could do it.  We actually have some requests to port that over.  I’m mixed.  Users have lots of different plans for that.",
+        "ts": "1513361284.000354"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I’m going slowly.",
+        "ts": "1513361290.000297"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I could envision a plugin that updates DNS based upon provisioning events.  Do able, but not sure that is an immediate priority.",
+        "ts": "1513361327.000557"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I can see workflow tasks that update DNS from the machines as well.  lots of paths.",
+        "ts": "1513361348.000098"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "ok. I guess it wouldn't be too difficult for us to add a stage for that. I'm thinking of integration into some sort of an API driven DNS.",
+        "edited": {
+            "user": "U8G8VDLSJ",
+            "ts": "1513363288.000000"
+        },
+        "ts": "1513361349.000222"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah - that is the point.  We have a tool rebar-dns that is a go program in DRv2 that could be pulled over that provided a RESTFUL endpoint for updating and controlling DNS.",
+        "ts": "1513361478.000281"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It could manage BIND locally, send messages to PowerDNS, or call nsupdate for “open” updates.",
+        "ts": "1513361496.000273"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "<!here> i'm trying to do a basic centos-7 install using DRP, unfortunately I am hitting an issue here. During the installation, this error is poping:\n`failed to fetch kickstart  from <http:\/\/192.168.1.253:8091\/machines\/&lt;UUID&gt;\/compute.ks>`",
+        "edited": {
+            "user": "U8FAN7PLK",
+            "ts": "1513369615.000000"
+        },
+        "ts": "1513369419.000235"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "I am surely missing something but can't find what.",
+        "ts": "1513369461.000577"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "well...",
+        "ts": "1513369499.000323"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "localhost is definitly not a good sign",
+        "ts": "1513369509.000350"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "that should be an address on DRP",
+        "ts": "1513369528.000556"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "oh it's not localhost, the url is <http:\/\/192.168.1.253:8091\/>",
+        "ts": "1513369582.000200"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "and after that error, the server enters the emergency mode",
+        "ts": "1513369658.000532"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ok",
+        "ts": "1513369676.000411"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "The server you are trying to provision?",
+        "ts": "1513369687.000138"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "yeah",
+        "ts": "1513369708.000133"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ok",
+        "ts": "1513369710.000547"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "my DRP server is 192.168.1.253",
+        "edited": {
+            "user": "U8FAN7PLK",
+            "ts": "1513369741.000000"
+        },
+        "ts": "1513369716.000437"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "the install is fresh and the discovery is working like a charm",
+        "ts": "1513369768.000077"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "does curl -fgL <http:\/\/192.168.1.253:8091\/machines\/&lt;UUID&gt;\/compute.ks> from the machine dr-provision is running on give you anything?",
+        "ts": "1513369778.000204"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "It is displaying the kickstart yes.",
+        "ts": "1513369854.000506"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ok",
+        "ts": "1513369876.000070"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Is the server you are trying to provision on the same subnet as the server running dr-provision?",
+        "ts": "1513369913.000170"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "or are they on different subnets",
+        "ts": "1513370022.000106"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "no they're not",
+        "ts": "1513370136.000296"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "but it works in the dracut shell",
+        "ts": "1513370150.000178"
+    },
+    {
+        "text": "is just looking for what the network layout looks like",
+        "type": "message",
+        "subtype": "me_message",
+        "user": "U02DJQSG8",
+        "ts": "1513370159.000059"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "through the default gateway",
+        "edited": {
+            "user": "U8FAN7PLK",
+            "ts": "1513370171.000000"
+        },
+        "ts": "1513370165.000022"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "hm",
+        "ts": "1513370173.000431"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "so in the dracut shell you could curl\/wget the kickstart?",
+        "ts": "1513370193.000092"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "yeah",
+        "ts": "1513370197.000152"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ok",
+        "ts": "1513370206.000268"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Have you tried bouncing the server to see if the the problem comes back?",
+        "ts": "1513370309.000277"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "yeah",
+        "ts": "1513370327.000398"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "got the error everytime I try :slightly_smiling_face:",
+        "ts": "1513370347.000217"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "That is interesting. :confused:",
+        "ts": "1513370359.000034"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "I'm looking with <@U8G8VDLSJ>, we think we know what it is (possibly vagrant management network)",
+        "ts": "1513370402.000399"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "we testing in a virtual environment",
+        "ts": "1513370422.000047"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I wou8ld be curious to see what (if anything) is in the logs from anaconda",
+        "ts": "1513370442.000212"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "hm hm.",
+        "ts": "1513370448.000190"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "I think we need to tell kickstart what NIC to use.",
+        "ts": "1513370463.000203"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "it looks like ksdevice=bootif is not working.",
+        "ts": "1513370600.000323"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "What does networking look like in your Vagrant env?",
+        "ts": "1513370605.000255"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ok, that is really weird.",
+        "ts": "1513370629.000520"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Competing DHCP servers, perhaps?",
+        "ts": "1513370643.000006"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "it's point to point tunnel through a virtual switch: <https:\/\/github.com\/CumulusNetworks\/topology_converter>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "CumulusNetworks\/topology_converter",
+                "title_link": "https:\/\/github.com\/CumulusNetworks\/topology_converter",
+                "text": "topology_converter - Cumulus VX Topology Converter",
+                "fallback": "GitHub: CumulusNetworks\/topology_converter",
+                "from_url": "https:\/\/github.com\/CumulusNetworks\/topology_converter",
+                "thumb_url": "https:\/\/avatars3.githubusercontent.com\/u\/4306877?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1513370653.000361"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "we're looking at competing DHCP servers.",
+        "ts": "1513370671.000087"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Are you using the DHCP server built in to DRP?",
+        "ts": "1513370682.000010"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "yes",
+        "ts": "1513370688.000209"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "and another one at the same time, it looks like. :confused:",
+        "ts": "1513370719.000565"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "If you turn on DHCP logs via the UX (just set it to a value other than Off)",
+        "ts": "1513370785.000110"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "then the logs for DRP will probably show what DHCP server is conflicting.",
+        "ts": "1513370818.000207"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Or even if the logs are Off.",
+        "ts": "1513370955.000284"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<@U02DGQYK1> We need a wayt to surface subsystem logging in the UX.",
+        "ts": "1513371011.000579"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U02DJQSG8> Agreed.",
+        "ts": "1513371026.000297"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "It really looks like other interface (Vagrant mgmt network) was up, at least temporarily, via DHCP despite the fact that we told KS to explicitely use another interface as BOOTIF",
+        "edited": {
+            "user": "U8FAN7PLK",
+            "ts": "1513371155.000000"
+        },
+        "ts": "1513371144.000318"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "Here's the weird thing: `BOOTIF=01-a0-00-00-00-00-52` . The `01` prefixed at the beginning is not part of the MAC. Where does that come from?",
+        "ts": "1513371221.000240"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "Don't know if that's normal or not",
+        "ts": "1513371249.000429"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "Going to dig a little deeper",
+        "ts": "1513371278.000047"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "01 indicates that it is an Ehternet device, IIRC",
+        "ts": "1513371298.000063"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "It is totally normal.",
+        "ts": "1513371306.000018"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes to ethernet device.  It is normal.",
+        "ts": "1513371315.000398"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Vagrant is tricky, I think.  I use virtualbox without vagrant to avoid the interface problems.",
+        "ts": "1513371380.000120"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "and I use kvm via a couple of wrapper scripts.",
+        "ts": "1513371436.000228"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "We don't have a choice unfortunately. We'll figure this out. The weird thing is that the dracut environment has the vragant interface up temporarily and then by the time everything times out we drop to shell, we only have the correct interface up.",
+        "ts": "1513371493.000157"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Historically, Vagrant has tried to be helpful in ways that are the opposite for testing our provisioning code.",
+        "ts": "1513371496.000058"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "I guess it's normal since we've not even at kickstart yet.",
+        "ts": "1513371524.000179"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "Actually, looking at the Dracut logs, we see that Dracut does the right thing and Vagrant NIC is never brought up",
+        "ts": "1513372675.000473"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "the problem is something else",
+        "ts": "1513372683.000321"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "It looks like the DHCP lease refresh time is really short: 30sec",
+        "ts": "1513372779.000274"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yes - probably.  You can change that in your subnet definition.",
+        "ts": "1513373008.000078"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The active lease time is meant to be short by default, but you can change it.",
+        "ts": "1513373019.000457"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "Lease renewal isn't the issue there. Just tried it. ",
+        "ts": "1513373225.000039"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "Found the problem: No space left on device to save the KS file :slightly_smiling_face:",
+        "ts": "1513373277.000104"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ah, well, then.",
+        "ts": "1513373336.000349"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Not enough memory?",
+        "ts": "1513373345.000022"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "looks like it couldn' t mount a loop device",
+        "ts": "1513373357.000210"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "1GiB of RAM. Enough?",
+        "ts": "1513373366.000149"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I don't actually know what the minimum for a CentOS install is these days.",
+        "ts": "1513373414.000129"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "hmmm",
+        "ts": "1513373432.000352"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Try 1.5 GiB - I think I ran in to that before ",
+        "ts": "1513373476.000266"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "And 1.5 worked ",
+        "ts": "1513373506.000063"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I give my KVM slaves 4 GB each",
+        "ts": "1513373513.000297"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "It's actually complaining about bad superblock, etc.. when trying to mount the loop device",
+        "ts": "1513373609.000296"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "During the OS install, or during Sledgehammer?",
+        "ts": "1513373651.000205"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "OS install in dracut",
+        "ts": "1513373703.000279"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "That sounds like file corruption somewhere along the way.",
+        "ts": "1513373953.000076"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "seems to work w\/ 2GiB",
+        "ts": "1513374011.000457"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "Thanks for the help guys :) ",
+        "ts": "1513374087.000087",
+        "reactions": [
+            {
+                "name": "sunglasses",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": ":slightly_smiling_face: YEAH!",
+        "ts": "1513374651.000158"
+    },
+    {
+        "user": "U8GE6EHSS",
+        "text": "<@U8GE6EHSS> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1513376708.000043"
+    },
+    {
+        "user": "U8FJAH62E",
+        "text": "<@U8FJAH62E> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1513377921.000191"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U8GE6EHSS> and <@U8FJAH62E> welcome ",
+        "ts": "1513379188.000012"
+    },
+    {
+        "type": "message",
+        "user": "U8GE6EHSS",
+        "text": "<@U6QFVRJNB> Thank you!",
+        "ts": "1513379678.000152"
+    },
+    {
+        "user": "U8GEV6USJ",
+        "text": "<@U8GEV6USJ> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1513380939.000107"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U54E4SD4G> on Galaxy?",
+        "thread_ts": "1513359994.000269",
+        "parent_user_id": "U54E4SD4G",
+        "ts": "1513392136.000053"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "<@U416T0AAX> yes -- <https:\/\/galaxy.ansible.com\/lae\/netbox\/>",
+        "attachments": [
+            {
+                "title": "Ansible Galaxy | lae.netbox",
+                "title_link": "https:\/\/galaxy.ansible.com\/lae\/netbox\/",
+                "text": "Role lae.netbox - Installs and configures NetBox, a DCIM suite, in a production setting.",
+                "fallback": "Ansible Galaxy | lae.netbox",
+                "from_url": "https:\/\/galaxy.ansible.com\/lae\/netbox\/",
+                "service_icon": "https:\/\/galaxy.ansible.com\/static\/img\/apple-touch-icon.png",
+                "service_name": "galaxy.ansible.com",
+                "id": 1
+            }
+        ],
+        "ts": "1513406558.000061"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "(stats were reset on accident yesterday so don't mind it :sweat_smile:)",
+        "ts": "1513406615.000033"
+    }
+]

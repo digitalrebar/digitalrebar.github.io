@@ -1,0 +1,1237 @@
+[
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "\nCurrently it's 4.2.6 -- but I'm running a downlevel version of pfSense at this point; perhaps a newer version has a higher ver of ISC dhcpd - I should upgrade in any case",
+        "ts": "1493723163.065148"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Unfortunately on the network I'm running DRP on, I have to provide DHCP from the router...",
+        "ts": "1493723311.096761"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, updated my pfSense router to latest, now I see this option in the DHCP server controls:",
+        "ts": "1493738102.387140"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F5897MKDL\/image_uploaded_from_ios.jpg|New \"Ignore client identifiers\" option>",
+        "file": {
+            "id": "F5897MKDL",
+            "created": 1493738158,
+            "timestamp": 1493738158,
+            "name": "Image uploaded from iOS.jpg",
+            "title": "New \"Ignore client identifiers\" option",
+            "mimetype": "image\/jpeg",
+            "filetype": "jpg",
+            "pretty_type": "JPEG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 3890685,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F5897MKDL\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F5897MKDL\/download\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F5897MKDL-d3d145187b\/image_uploaded_from_ios_64.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F5897MKDL-d3d145187b\/image_uploaded_from_ios_80.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F5897MKDL-d3d145187b\/image_uploaded_from_ios_360.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 270,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F5897MKDL-d3d145187b\/image_uploaded_from_ios_480.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 360,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F5897MKDL-d3d145187b\/image_uploaded_from_ios_160.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F5897MKDL-d3d145187b\/image_uploaded_from_ios_720.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 540,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F5897MKDL-d3d145187b\/image_uploaded_from_ios_800.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 600,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F5897MKDL-d3d145187b\/image_uploaded_from_ios_960.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 720,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F5897MKDL-d3d145187b\/image_uploaded_from_ios_1024.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 768,
+            "image_exif_rotation": 1,
+            "original_w": 3264,
+            "original_h": 2448,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F5897MKDL\/image_uploaded_from_ios.jpg",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F5897MKDL-7078f302de",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "upload_reply_to": "E25454FE-4441-48D6-A625-071872991F2A",
+        "ts": "1493738158.414871"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Checked it, will see what we get now...",
+        "ts": "1493738216.444633"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F57GVSH52\/image_uploaded_from_ios.jpg|Yay>",
+        "file": {
+            "id": "F57GVSH52",
+            "created": 1493739097,
+            "timestamp": 1493739097,
+            "name": "Image uploaded from iOS.jpg",
+            "title": "Yay",
+            "mimetype": "image\/jpeg",
+            "filetype": "jpg",
+            "pretty_type": "JPEG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 2083209,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F57GVSH52\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F57GVSH52\/download\/image_uploaded_from_ios.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F57GVSH52-7a973c8a30\/image_uploaded_from_ios_64.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F57GVSH52-7a973c8a30\/image_uploaded_from_ios_80.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F57GVSH52-7a973c8a30\/image_uploaded_from_ios_360.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 270,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F57GVSH52-7a973c8a30\/image_uploaded_from_ios_480.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 360,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F57GVSH52-7a973c8a30\/image_uploaded_from_ios_160.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F57GVSH52-7a973c8a30\/image_uploaded_from_ios_720.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 540,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F57GVSH52-7a973c8a30\/image_uploaded_from_ios_800.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 600,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F57GVSH52-7a973c8a30\/image_uploaded_from_ios_960.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 720,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F57GVSH52-7a973c8a30\/image_uploaded_from_ios_1024.jpg?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 768,
+            "image_exif_rotation": 1,
+            "original_w": 3264,
+            "original_h": 2448,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F57GVSH52\/image_uploaded_from_ios.jpg",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F57GVSH52-705353a2b5",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "upload_reply_to": "B483BEAE-357B-43CC-8E0A-03C6CDE67CCD",
+        "ts": "1493739105.892440"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "That was it",
+        "ts": "1493739115.897030"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah!!",
+        "ts": "1493739340.009147"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That is a bad part of the spec.  I was in the IETF meetings when DHCP was being defined.  We were more focused on clients getting IPs and not Servers installing.",
+        "ts": "1493739429.053276"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "i just read that the UID was to be used to differentiate between systems that dual-booted OS’s…",
+        "ts": "1493739988.329536"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "That sounds like a post-hoc justification. :slightly_smiling_face:",
+        "ts": "1493740065.367474"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "probably, but we never used DHCP for things other than clients originally.  The craze at the time was clients getting on networks, and diskless \"dumb\" terminals.  Heck we were still installing AIX from floppies at the time.",
+        "ts": "1493740575.622962"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "nobody trusted DHCP for servers that had to have a known good address.",
+        "ts": "1493740623.647330"
+    },
+    {
+        "text": "nods.",
+        "type": "message",
+        "subtype": "me_message",
+        "user": "U02DJQSG8",
+        "ts": "1493740841.760530"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "These days, in the time of massive server farms and teardown\/rebuild instead of fix-in-place, though...",
+        "ts": "1493740896.789831"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yeah - heck the follow-spec that was worked by not done was MobileIP.  It was to be a layer on top of DHCP that allowed the networking stack to have a constant IP while you roamed DHCP subnets.  I started to get that working on AIX (we actually had AIX client laptops at the time), but we stopped when the spec started getting hard to implement and people started making reconnection a priority in clients.  It just wasn't a problem.",
+        "ts": "1493741160.921558"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "Hey <@U02DGQYK1> ! restarting the services seemed to do the trick. now I have the default Network and DHCP subnet. I'm not ready to open the range to my entire lab yet. I wanted to play around a bit more with the provisioner first. is it possible to add individual MACs somewhere?",
+        "ts": "1493743479.970662"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "in Cobbler I could do this through the dhcp files.",
+        "ts": "1493743517.987444"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "hm... you looking at just storing what mac address is associated with a machine, or more looking at making sure the same mac address always gets the same address?",
+        "ts": "1493743741.085783"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "I'm looking at getting rid of the dhcp range temporarily and statically assigning IPs to MACs.. If it works the same as cobbler, the provisioner should ONLY do something if DHCP request comes from a machine with a known MAC.",
+        "ts": "1493743864.140423"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "does that make sense?",
+        "ts": "1493743876.145856"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Yes, :slightly_smiling_face:",
+        "ts": "1493743905.158454"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "The UI does not have support for it yet, but you are looking for DHCP reservations.",
+        "ts": "1493743995.198401"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U574XHDJN> - Remind me, are you using DR or DRP?",
+        "ts": "1493744043.219357"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "different commands for each.",
+        "ts": "1493744070.231609"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "LOL... I think just DR.. I'm not sure the difference though.",
+        "ts": "1493744089.239478"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I think DR as well from what you told me earlier.",
+        "ts": "1493744188.285710"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "okay :slightly_smiling_face: so you have to set the reservations from the CLI?",
+        "ts": "1493744327.346752"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "DR is less like cobbler than that, but ...",
+        "ts": "1493744749.541428"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "oh okay, but are reservations possible?",
+        "ts": "1493745299.780414"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah - thinking about how to do it.",
+        "ts": "1493745462.850928"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "umm - <@U574XHDJN>  - did you ever tell me what your goal is with DR and\/or DRP?",
+        "ts": "1493745526.879602"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "I don't think so! :slightly_smiling_face:",
+        "ts": "1493745577.901501"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "What I mean is - do you just want a cobbler replacement.  Set a mac\/IP map and install os, walk away?  Or do you want workload orchestration, IPMI management, eventing, post install configuration in orchestrated way.",
+        "ts": "1493745577.901835"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "currently we just have the \"Cobbler\" piece were we have a MAC\/IP mapping. known or \"registered\" systems can boot and get the PXE payload to build whatever profile (OS + Kickstarts) we assigned..",
+        "ts": "1493745665.942172"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "then AFTER the cobbler process we are manually kicking off the \"configuration\" stuff (Ansible).",
+        "ts": "1493745698.956269"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "we also have IPMI\/BMC on all of our machines but again.. each of these pieces is sort of separate from one another. we have scripts for IPMI automation... scripts for Cobbler automation, and more scripts for Ansible automation.. but nothing really tying them together very well.",
+        "ts": "1493745840.019755"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "In a past life I was a TeamCity admin so I was starting to look at some options there with a TeamCity\/Jenkins type setup to manage the scheduling\/event side of things.. but then I struck just the right search query into Google and Digital Rebar popped up.",
+        "ts": "1493745923.057056"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "I kid you not, in ALL my past Googling, searching high and low for bare metal provisioning solutions, I never found DR.",
+        "ts": "1493745964.075420"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "we are finally trying to do that better.",
+        "ts": "1493745983.083801"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "oddly enough, it was actually a search string of \"cobbler docker\" that did the trick and I found some blog post that Rob had written! LOL",
+        "ts": "1493745992.087765"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - good to know.  We can do all of that over time.  The challenge is that DR is opinionated on how is should be used.  We are trying to undo that with DRP and slowly in DR.",
+        "ts": "1493746120.144771"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We aren't there yet.",
+        "ts": "1493746125.147036"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "By default DR wants to manage tightly IPs through DHCP.",
+        "ts": "1493746137.152852"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "So the \"Provisioner\" in DR is not the same as DRP?",
+        "ts": "1493746175.169239"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "no - that is a coming change.  DR's provisioner is the basis for DRP, but they are not the same.  They have similar pieces, but DRPs is much more fleshed out, documented, and directly control able.",
+        "ts": "1493746222.191785"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "ohhhhh... okay.. I misread the docs then.... I thought DRP was standalone but was also the \"Provisioning\" piece in DR..",
+        "ts": "1493746347.249316"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "that makes sense now! :slightly_smiling_face:",
+        "edited": {
+            "user": "U574XHDJN",
+            "ts": "1493746365.000000"
+        },
+        "ts": "1493746355.252679"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "So.. based on what I've said so far then.. should I start with DRP?",
+        "ts": "1493746412.278323"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "well - it matches your current model better.",
+        "ts": "1493746559.343871"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "our environment is very \"fungible\".. constantly rebuilding and re-purposing HW... but all of the systems are \"known\", as in we want to control the IP assignment and avoid \"rogue\" systems building.",
+        "ts": "1493746566.346924"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You have IPMI system, Provsion system, other system.",
+        "ts": "1493746579.352956"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "DRP could be the Provision System",
+        "ts": "1493746587.356334"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I'm working to hook it into DR.  To drive events and such.",
+        "ts": "1493746601.362194"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "DRP may be easier to play with it.",
+        "ts": "1493746613.367624"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It has a Reservation system.  You define MAC-&gt;IP reservations.",
+        "ts": "1493746643.380838"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You then create Machines that map IPs-&gt;BootEnvs.",
+        "ts": "1493746654.385578"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "BootEnvs are the OSes you want to install.",
+        "ts": "1493746660.388495"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The BootEnvs are like cobbler kickstart.",
+        "ts": "1493746670.392873"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The machines have parameters and\/or profiles that all you to inject information globally or per node into the kickstarts.",
+        "ts": "1493746694.403820"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "All with CLI or API or UI.",
+        "ts": "1493746707.409347"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The kickstarts are templated so that you can update machine values and chain bootenvs.",
+        "ts": "1493746746.426632"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<http:\/\/provision.readthedocs.io\/en\/latest\/?badge=latest>",
+        "ts": "1493746763.433184"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "does DRP still use sledgehammer for discovery?",
+        "ts": "1493746768.435893"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I've been docing like fiend.",
+        "ts": "1493746769.436237"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes",
+        "ts": "1493746772.437825"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "ha ha ha!",
+        "ts": "1493746778.440197"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<http:\/\/provision.readthedocs.io\/en\/latest\/doc\/operation.html#creating-a-reservation>",
+        "ts": "1493746797.449039"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "okay! and do the BootEnvs allow you to hook in \"post\" OS stuff? like Ansible Roles?",
+        "ts": "1493746818.458439"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "wjat",
+        "ts": "1493746818.458528"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "What you've described is a subnet for base options set to reserved only.",
+        "ts": "1493746841.468508"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "THen a bunch of reservations for your IP&gt;MAC maps.  This could include IPMI if you want to run DHCP bmcs, but ....",
+        "ts": "1493746868.480674"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Then create a machine (or let sledgehammer discover and create).",
+        "ts": "1493746888.489483"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Set the bootenv you want.",
+        "ts": "1493746908.498289"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "okay! and does DRP use PXE or iPXE? or both? is one defaulted?",
+        "ts": "1493747044.558500"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "by default, it serves files of lpxelinux.0, ipxe, and bootefi.*.",
+        "ts": "1493747079.573567"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "oh swet!",
+        "ts": "1493747094.580778"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The image you use, is dependent upon what you want to boot from or some magic.",
+        "ts": "1493747095.581016"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "*sweet!",
+        "ts": "1493747098.582129"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<http:\/\/provision.readthedocs.io\/en\/latest\/doc\/arch\/data.html#subnet>",
+        "ts": "1493747134.598806"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The options in the DHCP server are templated.",
+        "ts": "1493747149.605452"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You can do this insanity: ```{{if (eq (index . 77) \"iPXE\") }}default.ipxe{{else if (eq (index . 93) \"0\")}}lpxelinux.0{{else}}bootx64.efi{{end}}\n```",
+        "ts": "1493747166.613730"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "which says check option 77 for iPXE, use default.ipxe as the bootloader, if option 93 is 0 then use lpxelinux.0 otherwise use bootx64.efi",
+        "ts": "1493747206.631190"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That way we handle ipxe, legacy bios, and uefi",
+        "ts": "1493747215.635637"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Though the default is just: lpxelinux.0",
+        "ts": "1493747227.641015"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "because simple",
+        "ts": "1493747242.647707"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "LOL!",
+        "ts": "1493747266.658370"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "in theory, you could use the same thing to jump to arm or 32bit or whatever.",
+        "ts": "1493747313.679099"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "though I suppose ARM is a bad word for you. :slightly_smiling_face:",
+        "ts": "1493747347.694757"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "ha ha ha!",
+        "ts": "1493747585.804806"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "It's okay. I forgive you for that profanity. :stuck_out_tongue_winking_eye:",
+        "ts": "1493747603.813451"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "once I have the DRP code, how should I run the installer? I'm looking at the install docs for \"install.sh\". Are there only two ways to run? with or without --isolated?",
+        "ts": "1493749841.840870"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U574XHDJN> I used the curl cmd to download the installer bundle, then ran the install.sh myself when I had vetted it. As I’m running a demo of it, I did create a “drp” directory, put the install stuff there, and then ran the installer with “--isolated” which keeps all the things within the dir you ran the installer in.",
+        "edited": {
+            "user": "U416T0AAX",
+            "ts": "1493750470.000000"
+        },
+        "ts": "1493750180.993230"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "okay.. so without the --isolated flag it will do a \"normal\" install?",
+        "ts": "1493750729.240070"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "So I just ran the install.sh script and got this error:\n```\ncp: cannot stat ‘assets\/startup\/dr-provision.service’: No such file or directory\n```",
+        "ts": "1493752591.055488"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "when I `ls` that directory this is what I see:",
+        "ts": "1493752604.060133"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "```\n[infra@master drp-install]$ ls assets\/startup\/\nrocketskates.service  rocketskates.sysv  rocketskates.unit\n```",
+        "ts": "1493752618.066190"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Oops.    ",
+        "ts": "1493752632.072008"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Fixing ",
+        "ts": "1493752635.073233"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "ha ha ha!",
+        "ts": "1493752680.091397"
+    },
+    {
+        "text": "drp in-place updates preserve configs and data?  just delete the sha file?",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493755247.153867"
+    },
+    {
+        "text": "for --isolated",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493755324.187673"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "drp in place creates a drp-data directory and shows the options to run that way.",
+        "ts": "1493755493.259586"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "To have install.sh pull an updated zip file from github, remove the sha file and re-run install.",
+        "ts": "1493755528.275153"
+    },
+    {
+        "text": "groovy.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493755536.278418"
+    },
+    {
+        "text": "that's exactly what I meant. :-)",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493755544.281589"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "oh funny, spencer's story is literally my story (was using cobbler\/ansible\/in house scripts for ipmi and stuff, suddenly found DR and then DRP was made public afterwards)",
+        "ts": "1493756105.512331"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": ":slightly_smiling_face: <@U02DJQSG8> and I are working on a plan to get IPMI\/RAID\/BIOS back into the fray and join DRP machines into DR as nodes.",
+        "ts": "1493756292.589978",
+        "reactions": [
+            {
+                "name": "the_horns",
+                "users": [
+                    "U416T0AAX",
+                    "U02DHRR2L"
+                ],
+                "count": 2
+            }
+        ]
+    },
+    {
+        "text": "I'm confused which should be defaultBootEnv and unknownBootEvn.  unknownBootEnv=discovery and defaultBootEnv=sledge?",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493763523.202815"
+    },
+    {
+        "text": "nevemrind - found it in the Fine Documentation",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493763747.259668"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Fine - as in wine - as in drunken ramblings.",
+        "ts": "1493763783.268721"
+    },
+    {
+        "text": "tftpd not responding... ",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493769626.516917"
+    },
+    {
+        "text": "it's listening on udp:69",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493769648.521294"
+    },
+    {
+        "text": "if the mac is in the server's arp table as associated with an ip already, accisble through a server interface that's not listening tftpd, will it fail to resopnd to tfpd udp?",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493769815.552890"
+    },
+    {
+        "text": "the same mac is showing as known by the other interface that's actually running DRP",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493770001.586656"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Trees falling.  Noisily or not.  Hmm.  I think you are using DR.  Are you in HOST or FORWARDER mode?  If you didn't specify anything then you are in FORWARDER mode.  The implication is that only thinks on docker0 will communicate with DR services.  You could bridge into that network.  If host mode then all interfaces are in play and will respond.  ",
+        "ts": "1493770058.596550"
+    },
+    {
+        "text": "DRP - no docker",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493770086.601650"
+    },
+    {
+        "text": "no bridges",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493770104.604542"
+    },
+    {
+        "text": "wat?  why would ncat say 'no route to host' when ping sees the IP just fine?",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493770349.646480"
+    },
+    {
+        "text": "ah, iptables - no accepto port udp:69",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493770589.686435"
+    },
+    {
+        "text": "et voir la!",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493770668.699182"
+    },
+    {
+        "text": "dr-provision2017\/05\/03 00:24:22.650999 DHCP handler died: write udp4 0.0.0.0:67-&gt;192.168.1.51:68: i\/o timeout",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493771264.795648"
+    },
+    {
+        "text": "drp process died.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493771271.796792"
+    },
+    {
+        "text": "any idea why a dell R410 would ignore and not reboot PXE when this returns OK? ipmitool chassis bootdev pxe; ipmitool chassis power cycle ",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "thread_ts": "1493771448.824716",
+        "reply_count": 1,
+        "replies": [
+            {
+                "user": "U574XHDJN",
+                "ts": "1493779397.855289"
+            }
+        ],
+        "unread_count": 1,
+        "ts": "1493771448.824716"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "latest DRP code cannot fail in that way -- we no longer rely on timeouts to cleanly release the DHCP socket to work around the darwin kernel's lack of ability to clean up UDP sockets belonging to nonexistent processes.",
+        "ts": "1493774236.221103"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "yes, really.",
+        "ts": "1493774239.221660"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "re: r410: because all IPMI firmware sucks.",
+        "ts": "1493774362.238181"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "messing with bootdev order via ipmi is something I basically assume will fail silently until I am happily proven wrong.",
+        "ts": "1493774425.246481"
+    },
+    {
+        "text": "lolz",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493774501.256132"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "tl:dr: never kill -9 processes with open listening UDP ports on a mac, unless you like rebooting.",
+        "ts": "1493774583.266695"
+    },
+    {
+        "text": "jeez.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493774613.270465"
+    },
+    {
+        "text": "Is there any way to remotely set the bootdev?  I see an entry for dell related stuffs in the ipmitool manual.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493774660.276924"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Yes, the IPMI standard has those methods, and some IPMI firmware even implements it properly.",
+        "ts": "1493774722.284832"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I don't know if the idrac on a 410 is one of those --- it has been many years and more ethanol since I tried.\n\\",
+        "ts": "1493774784.292845"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "If you have a copy of racadm compatible with that box, it is probably a better bet than ipmiitool.",
+        "ts": "1493774868.303730"
+    },
+    {
+        "text": "Once DRP finds a box and drops sledgehammer on it, shouldn't it be a \"machine\"?  Or are those only for predefined machines?",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493776108.461961"
+    },
+    {
+        "text": "Because it didn't give me a \"machine\" object to play around with.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493776976.576172"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It should create a machine.",
+        "ts": "1493777456.635043"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "My guess is that your subnet is missing some parameters that sledgehammer needs.  I tried to put this in the subnet config page, I think.",
+        "ts": "1493777488.638944"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You can get the error log byL",
+        "ts": "1493777494.639495"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "logging into sledgehammer - root\/rebar1",
+        "ts": "1493777504.640690"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "journalctl -u sledgehammer",
+        "ts": "1493777512.641761"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That should have a clue as what is missing or busted.",
+        "ts": "1493777535.644287"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The darwin hack sadly makes it better, but occassionally it hits it still.  It is better though.  :neutral_face:",
+        "ts": "1493777564.647859"
+    },
+    {
+        "text": "already rebooted.  my idrac access had annoying keyboard issues.. because mac-&gt;x2go-&gt;xfce-&gt;chrome-&gt;javaws-&gt;console.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493777633.655976"
+    },
+    {
+        "text": "Does sledgehammer open the serial console?  My ssh attempts seemed to require a key.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493777674.660736"
+    },
+    {
+        "text": "d",
+        "username": "ghanima",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493778296.730622"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "d?",
+        "ts": "1493778624.767015"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U02DMB5J3> - it should, I think.  ssh requires a key.  Let me check something.",
+        "ts": "1493778679.773493"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That is a good feature request to put back.",
+        "ts": "1493778756.782301"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "actually, some template in template love should fix this nicely.",
+        "ts": "1493778768.783748"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I cleaned too much.",
+        "ts": "1493778802.787615"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It should have a console, but I can put in the root-remote-access.tmpl and it should work in sledgehammer.",
+        "ts": "1493778825.790105"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "and discovery.",
+        "ts": "1493778832.790917"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "sooo - you can put {{ template \"root-remote-access.tmpl\" . }} in the sledgehammer start-up.sh template and it will enable ssh with keys in the access_keys parameter in the machine profile, profiles assigned to the machine, or the global profile.",
+        "ts": "1493778889.797359"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I'll make that change shortly.",
+        "ts": "1493778896.798190"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I need to cut a release, we've amassed some good changes.",
+        "ts": "1493778911.799956"
+    },
+    {
+        "text": "I'm fading... sleepy...",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493779218.834649"
+    },
+    {
+        "type": "message",
+        "user": "U574XHDJN",
+        "text": "In my experience `chassis power cycle` reboots everything including the BMC so any temp flags are lost. After the `bootdev pxe` command I usually do a `chassis power reset` which seems to be more synonymous with a hard reboot, but BMC stays alive so the pxe flag stays.",
+        "thread_ts": "1493771448.824716",
+        "ts": "1493779397.855289"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "sleep my friend and dream of large women.",
+        "ts": "1493779793.898677"
+    },
+    {
+        "text": "struggling to remember the film you reference.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493779848.904782"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Princess Bride",
+        "ts": "1493779869.907355"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I do not envy you your headache when you wake up.",
+        "ts": "1493779890.909702"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "My brain is a little off right now.",
+        "ts": "1493779900.910798"
+    },
+    {
+        "text": "hee hee.",
+        "username": "newgoliath",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1493779914.912462"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "New release published: <https:\/\/github.com\/digitalrebar\/provision\/releases\/tag\/v3.0.2>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/releases\/tag\/v3.0.2",
+                "text": "provision - The Provisioner for DigitalRebar as a Stand Alone Golang Utility",
+                "fallback": "GitHub: digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/releases\/tag\/v3.0.2",
+                "thumb_url": "https:\/\/avatars3.githubusercontent.com\/u\/13814120?v=3&s=400",
+                "thumb_width": 192,
+                "thumb_height": 192,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1493792266.292082",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U416T0AAX"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Stables updated.",
+        "ts": "1493792273.293085"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Docs: <http:\/\/provision.readthedocs.io\/en\/latest\/>",
+        "ts": "1493792313.298179"
+    }
+]

@@ -1,0 +1,497 @@
+[
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "still working through on issue... i have machines exactly the same and at times they never pick up dhcp when provisioning",
+        "ts": "1508415592.000015"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "Sometimes that means there is another DHCP server on your network. ",
+        "ts": "1508416878.000181"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "nope it is isolated",
+        "ts": "1508416908.000204"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "i give a kudos to who ever optimized the code... my server is idle with DRP on and my load average is 0.0 0.00 and 0.0.5",
+        "ts": "1508417069.000489"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "another item i noticed is when i stop the services and start them up after making changes at times i no longer get the messages of the services starting up anymore",
+        "ts": "1508419059.000210"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DGQYK1> <@U6QFVRJNB> Looks like I have an install loop going on with my latest workflow…",
+        "ts": "1508458787.000176"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Any way to debug on the DRP side?",
+        "ts": "1508458831.000195"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Nice!  Unless you didn’t intend that ",
+        "ts": "1508458835.000133"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Looked at the machine console, and it is indeed in the Ubuntu installer doing things",
+        "ts": "1508458859.000116"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You can jobs to see what is progressing. ",
+        "ts": "1508458865.000273"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I have a stage “TEST-ubuntu-16.04-install” that goes to ssh-access:Success",
+        "ts": "1508458919.000106"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "then ssh-access to complete-nowait:Success",
+        "ts": "1508458938.000060"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Did you machines start in TEST-* stage",
+        "ts": "1508458976.000204"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "yes",
+        "ts": "1508458982.000221"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7LFHJPCG\/jobs.png|Jobs screenshot>",
+        "file": {
+            "id": "F7LFHJPCG",
+            "created": 1508459091,
+            "timestamp": 1508459091,
+            "name": "jobs.png",
+            "title": "Jobs screenshot",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 262487,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7LFHJPCG\/jobs.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7LFHJPCG\/download\/jobs.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7LFHJPCG-0c2879d079\/jobs_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7LFHJPCG-0c2879d079\/jobs_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7LFHJPCG-0c2879d079\/jobs_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 360,
+            "thumb_360_h": 192,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7LFHJPCG-0c2879d079\/jobs_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 480,
+            "thumb_480_h": 256,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7LFHJPCG-0c2879d079\/jobs_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7LFHJPCG-0c2879d079\/jobs_720.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 720,
+            "thumb_720_h": 385,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7LFHJPCG-0c2879d079\/jobs_800.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 800,
+            "thumb_800_h": 427,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7LFHJPCG-0c2879d079\/jobs_960.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_960_w": 960,
+            "thumb_960_h": 513,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7LFHJPCG-0c2879d079\/jobs_1024.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 547,
+            "image_exif_rotation": 1,
+            "original_w": 1234,
+            "original_h": 659,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7LFHJPCG\/jobs.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F7LFHJPCG-53c651d568",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1508459094.000107"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7N1XGF62\/machine.png|Machine in question>",
+        "file": {
+            "id": "F7N1XGF62",
+            "created": 1508459370,
+            "timestamp": 1508459370,
+            "name": "machine.png",
+            "title": "Machine in question",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 51402,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7N1XGF62\/machine.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7N1XGF62\/download\/machine.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7N1XGF62-ba36ece2ea\/machine_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7N1XGF62-ba36ece2ea\/machine_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7N1XGF62-ba36ece2ea\/machine_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 168,
+            "thumb_360_h": 360,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7N1XGF62-ba36ece2ea\/machine_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 223,
+            "thumb_480_h": 480,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7N1XGF62-ba36ece2ea\/machine_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7N1XGF62-ba36ece2ea\/machine_720.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_720_w": 335,
+            "thumb_720_h": 720,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7N1XGF62-ba36ece2ea\/machine_800.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_800_w": 372,
+            "thumb_800_h": 800,
+            "image_exif_rotation": 1,
+            "original_w": 396,
+            "original_h": 851,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7N1XGF62\/machine.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F7N1XGF62-9b0d0b97d9",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1508459372.000079"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DGQYK1> are there logs? I don’t see the workflow stages in jobs…",
+        "ts": "1508459516.000162"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You can look inside the the job at the top of the list to see its output",
+        "ts": "1508459624.000147"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It looks like it had changed stage three times ",
+        "ts": "1508459679.000094"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Not the right machine…",
+        "ts": "1508459745.000130"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I don’t see anything in the Jobs screen for this particular workflow",
+        "ts": "1508459777.000090"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Trying to remember when I kicked it off… may have been this morning",
+        "ts": "1508459827.000191"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Or last night",
+        "ts": "1508459837.000165"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "May need to restart the machine.  If you restarted drp the tokens will be invalid ",
+        "ts": "1508459933.000256"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Or they timeout. ",
+        "ts": "1508459939.000080"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Which machine - the DRP host, or the target install server?",
+        "ts": "1508459969.000012"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "^^ <@U02DGQYK1>",
+        "ts": "1508460201.000018"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The installing host",
+        "ts": "1508460568.000076"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK, guessed thats what you meant, so did so —",
+        "ts": "1508460598.000104"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U416T0AAX> uploaded a file: <https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7N243KGE\/test-ubuntu_stage.png|TEST-ubuntu Stage>",
+        "file": {
+            "id": "F7N243KGE",
+            "created": 1508460808,
+            "timestamp": 1508460808,
+            "name": "TEST-ubuntu_stage.png",
+            "title": "TEST-ubuntu Stage",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U416T0AAX",
+            "editable": false,
+            "size": 35143,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7N243KGE\/test-ubuntu_stage.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F7N243KGE\/download\/test-ubuntu_stage.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7N243KGE-405b7bf25e\/test-ubuntu_stage_64.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7N243KGE-405b7bf25e\/test-ubuntu_stage_80.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7N243KGE-405b7bf25e\/test-ubuntu_stage_360.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_360_w": 153,
+            "thumb_360_h": 360,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7N243KGE-405b7bf25e\/test-ubuntu_stage_480.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "thumb_480_w": 204,
+            "thumb_480_h": 480,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F7N243KGE-405b7bf25e\/test-ubuntu_stage_160.png?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "image_exif_rotation": 1,
+            "original_w": 287,
+            "original_h": 676,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U416T0AAX\/F7N243KGE\/test-ubuntu_stage.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F7N243KGE-b715e2f656",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U416T0AAX",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "wdennis",
+        "bot_id": null,
+        "ts": "1508460810.000016"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Anything look wrong here to you? (Doesn’t to me…)",
+        "ts": "1508460833.000243"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Using the ce-* bootenv in hopes that it will test my updated `ce-root-remote-access.tmpl` template",
+        "ts": "1508461018.000152"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Don’t use the ce-* bootenvs with stages.  They don’t run a runner ",
+        "ts": "1508461144.000106"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "So the stages aren’t run ",
+        "ts": "1508461154.000129"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So I have to use the non-ce?",
+        "ts": "1508461178.000156"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yes.  I thinking of changing this and getting rid of the ce-*.  It is getting to confusing to separate the models.  If you used the ce-* you are not using stages and task and need to let the bootenvs fall through ",
+        "ts": "1508461380.000059"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Did not know that…",
+        "ts": "1508461402.000034"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Are workflows\/stages DR-login only features?",
+        "ts": "1508461449.000054"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yes login and get access to them ",
+        "ts": "1508461815.000153"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<@U02DGQYK1> How can I test the proposed change to a template (cloned from the provision-content repo)",
+        "ts": "1508461971.000110"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "That’s all ce-* stuff, right?",
+        "ts": "1508461988.000101"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Ues. Set the node to *none* stage. And the ce-*-install bootenvs.  Reboot node and watch it install and move to local bootenvs ",
+        "ts": "1508462106.000092"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Hat should test it ",
+        "ts": "1508462113.000043"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "OK",
+        "ts": "1508462154.000146"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You can also put a PR out there and I’ll look at it.  I need to work on <@U54E4SD4G> prs as well",
+        "ts": "1508462181.000106"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Was going to test before submitting the PR :slightly_smiling_face:",
+        "ts": "1508462201.000196"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Wait, there is no `none` stage in the drop list...",
+        "edited": {
+            "user": "U416T0AAX",
+            "ts": "1508462319.000000"
+        },
+        "ts": "1508462306.000005"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "There will be.  ",
+        "ts": "1508462360.000027"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Through drpcli set stage to “”",
+        "ts": "1508462393.000034"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Can you give me the drpcli command syntax?",
+        "ts": "1508462454.000063"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "`drpcli machines stage &lt;uuid&gt; \"\" --force`",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1508462562.000000"
+        },
+        "ts": "1508462506.000137"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "```[dradmin@dr-admin drp]$ drpcli machines stage 5fcbf69d-287e-4c2c-b085-5858665cd442 \"\"\nError: Can not change stages with pending tasks unless forced```",
+        "ts": "1508462554.000051"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "sorry add the the `--force` flag",
+        "ts": "1508462570.000204"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "n\/p, was guessing that a “force” flag was needed",
+        "edited": {
+            "user": "U416T0AAX",
+            "ts": "1508462619.000000"
+        },
+        "ts": "1508462598.000225"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Here we go again…",
+        "ts": "1508462830.000030"
+    }
+]

@@ -1,0 +1,608 @@
+[
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "template expansions follow go templates ? correct ? <https:\/\/golang.org\/pkg\/text\/template\/>",
+        "ts": "1516632430.000307"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U62R1805P> yes",
+        "ts": "1516632448.000542"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "our Data Arch docs has a bit of info on the various golang template pieces",
+        "ts": "1516632506.000179"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<http:\/\/provision.readthedocs.io\/en\/latest\/doc\/arch.html>",
+        "ts": "1516632506.000871"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "and yaml structure is : <http:\/\/yaml.org\/spec\/1.2\/2009-07-21\/spec.html>",
+        "ts": "1516632510.000292"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "presumably, yes - but I'm not certain if our YAML handling follows that exact spec - have to rely on <@U02DGQYK1> or <@U02DJQSG8> to answer that",
+        "ts": "1516632669.000878"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "yea I was reading that and saw reference to the go docs in <http:\/\/provision.readthedocs.io\/en\/latest\/doc\/arch.html>",
+        "ts": "1516632726.000325"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Close enough.",
+        "ts": "1516632732.000224"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We use this go package: <http:\/\/github.com\/ghodss\/yaml|github.com\/ghodss\/yaml>",
+        "ts": "1516632750.000109"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "it seems to keep pretty close to the spec.  I small nit is that if you want yaml pretty printed cleanly.  YOu need to make sure that you don’t have white space at the end of lines.",
+        "ts": "1516632800.000434"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "Oh thanks <@U02DGQYK1> my fri foo-bar was the HP's have that built-in raid h\/w",
+        "ts": "1516632806.000395"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<@U62R1805P>: We only use the bits of YAML that can be represented in JSON.",
+        "ts": "1516632855.000483"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "So no integer map keys and the like.",
+        "ts": "1516632864.000487"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Our YAML support is basically there to allow a more human-firendly alternative to JSON.",
+        "ts": "1516632891.000445"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "oh - yeah that-  I just assume it. :slightly_smiling_face:",
+        "ts": "1516632899.000175"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "... yea I'm sort of sad that yaml seems to have gotten 'accepted' as the default for SDN too... I rather look at JSON bobs and not count white spaces",
+        "ts": "1516632938.000217"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "since YAML has actual support for inlining large chunks of text. which is a thing we use rather alot. :slightly_smiling_face:",
+        "ts": "1516632940.000122"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "There is that, but JSON specifically sucks when you are inlining shell scripts",
+        "ts": "1516632990.000394"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "the \"Contents: |+\" .... was what started my ... ok, what parse stuff quest..",
+        "ts": "1516633058.000441"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I haven't worked with it much - but what I've seen of TOML - I like it - it's a bit like YAML - but doesn't care about spaces\/tabs as much",
+        "ts": "1516633120.000914"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "The |+ thing basically means \"translate all intervening whitespace into a single space\"",
+        "ts": "1516633174.000348"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "yea... but I didn't know if there is a 'stop' to that after... I assume it's until the next same yaml tree level (aka \\n_ws_ws_ws match)",
+        "ts": "1516633291.000539"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "aka yaml rule",
+        "ts": "1516633315.000070"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Yep.",
+        "ts": "1516633826.000595"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "<@U02DJQSG8> is right... that yaml inlining does make it easier to read",
+        "ts": "1516633833.000049"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "when I'm looking at templates with inline scripts - I always use the YAML output formatter (eg `drpcli ... &lt;something&gt; ... --format=yaml`)",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1516633889.000000"
+        },
+        "ts": "1516633880.000855"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Hi All.  v3.6.0 is building and should be out shortly.  Stable has been moved.  Content updates as well.",
+        "ts": "1516655493.000595",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U8RFVLLG1",
+                    "U416T0AAX"
+                ],
+                "count": 2
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<!channel> - thanks!",
+        "ts": "1516655593.000551"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "well done!  :cake:",
+        "ts": "1516655616.000151"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I'll pull and run right after my current round of testing reboots...",
+        "ts": "1516655707.000279"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Okay - wait for my all clear.  The trees are update, but the builds aren’t quite done yet.",
+        "ts": "1516655754.000343"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I just didn’t want people to be caught off guard.",
+        "ts": "1516655762.000772"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "well.. my cycle tends to take over a day still... I'm not at that '5-min' shake-n bake Shane can do :wink:",
+        "ts": "1516655850.000153"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U416T0AAX> the new content update includes the \"kickseed\" capabilities as well",
+        "ts": "1516656031.000523"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": ":tada:woo-hoo!:confetti_ball:",
+        "ts": "1516656142.000053"
+    },
+    {
+        "type": "message",
+        "user": "U855MAQFL",
+        "text": "ok jus noticed another \"anomoly\" where when installing centos VM under XenServer with 120Gb disk rebar only installs a 10GB disk partition",
+        "ts": "1516656181.000509"
+    },
+    {
+        "type": "message",
+        "user": "U855MAQFL",
+        "text": "and yes is also seen as xvda",
+        "ts": "1516656198.000335"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We do this:",
+        "ts": "1516656315.000413"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "```logvol \/ --fstype ext4 --name=lv_root --vgname={{.Machine.ShortName}} --size=1 --grow --maxsize=10240\n```",
+        "ts": "1516656321.000013"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Which may be cpaped at 10GB. …  I think grow gorws it.  Maybe not.",
+        "ts": "1516656363.000430"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<!channel> - builds are done. 3.6.0 is out",
+        "ts": "1516657961.000714"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I'm having an ssh key issue... I set a the access-ssh in global:\naccess-keys: {\n  \"drpops\": \"ssh-rsa AAA...blahblah...U9n31 drpops@drpe.drpfeature.test\"\n}\naccess-ssh-root-mode: \"without-password\"\n\nChecked jobs on the machine... it looks like it ran the template... but it keeps asking for password...",
+        "ts": "1516663386.000333"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "is there a default root login on head so I can go figure out what I did ?",
+        "ts": "1516663460.000153"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "are logging in as root or drpops?",
+        "ts": "1516663465.000036"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It sets the root keys.",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1516663474.000000"
+        },
+        "ts": "1516663469.000124"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "drpops",
+        "ts": "1516663489.000260"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "which brings up another question... in robs demo the key is \"user\" I was debating if I should have that or ?? wasnt sure if the keyname matters ?",
+        "ts": "1516663553.000123"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "the key of the ssh-rsa string...",
+        "ts": "1516663577.000257"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The keyname is just an id for you to recognize the key.",
+        "ts": "1516663580.000063"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "[drpops@drpe drpisolated]$ ssh root@192.168.88.102\n[root@de4-11-5b-d0-83-78 ~]#",
+        "ts": "1516663620.000393"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "that worked... so what triggers 'root' vs 'user'",
+        "ts": "1516663646.000026"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "not sure.  in ubuntu it is rebar.  I think.",
+        "ts": "1516663674.000494"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "There is a parameter that changes it for ubuntu\/debian.",
+        "ts": "1516663687.000287"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "centos only sets rootpw.",
+        "ts": "1516663694.000277"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "wait aminute I’m wrong.",
+        "ts": "1516663708.000479"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It is always root ssh keys.",
+        "ts": "1516663718.000376"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the Ubuntu seed sets a \"Default User\" account - while CentOS only twiddles a \"root\" account",
+        "ts": "1516663720.000013"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "... yea I got you thining too many things..",
+        "ts": "1516663722.000403"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "as part of standard install process",
+        "ts": "1516663724.000232"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I got the 'root' part... thinking now of adding addtional 'users'.... I'll go read docs more...",
+        "ts": "1516663762.000171"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "in the ubuntu seed - you'll see:\n```# Default User Setup\nd-i passwd\/make-user boolean true\nd-i passwd\/user-uid string {{if .ParamExists \"provisioner-default-uid\"}}{{.Param \"provisioner-default-uid\"}}{{else}}1000{{end}}\nd-i passwd\/user-fullname string {{if .ParamExists \"provisioner-default-fullname\"}}{{.Param \"provisioner-default-fullname\"}}{{else if .ParamExists \"provisioner-default-user\"}}{{.Param \"provisioner-default-user\"}}{{else}}Rocket Skates{{end}}\nd-i passwd\/username string {{if .ParamExists \"provisioner-default-user\"}}{{.Param \"provisioner-default-user\"}}{{else}}rocketskates{{end}}\nd-i passwd\/user-password-crypted password {{if .ParamExists \"provisioner-default-password-hash\"}}{{.Param \"provisioner-default-password-hash\"}}{{else}}$6$drprocksdrprocks$upAIK9ynEEdFmaxJ5j0QRvwmIu2ruJa1A1XB7GZjrnYYXXyNr4qF9FttxMda2j.cmh.TSiLgn4B\/7z0iSHkDC1{{end}}\nd-i user-setup\/allow-password-weak boolean true\nd-i user-setup\/encrypt-home boolean false```",
+        "ts": "1516663774.000124"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "this drops in a \"Default User\" with name `rocketskates` - overriding the built-in default of `ubuntu`",
+        "ts": "1516663826.000230"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can change it by setting the Param `provisioner-default-user`",
+        "ts": "1516663838.000243"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "post-provisioning to add more users should be done as a Unique stage to your environment",
+        "ts": "1516663883.000402"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "so access-keys is JUST for root ?",
+        "ts": "1516663884.000438"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "or - we'd suggest other Configuration Management tools as a better approach",
+        "ts": "1516663900.000074"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you shouldn't bake user logic in to your Kickseeds (kickstarts\/preseeds)",
+        "ts": "1516663922.000031"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "ok... I get that...",
+        "ts": "1516663927.000097"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "I just went through both krib and kubespray and sort of wondering ansible passoff OR ... I take it rob is thinking 'kubectl' (no ssh) but... blah blah... slowly getting head around so much flexiblity...",
+        "ts": "1516664055.000306"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if you look at `drpcli templates show access-keys.sh.tmpl --format=yaml` you'll see the `access-ssh-root-mode` does indeed relate to \"root\" user only policy \nand the interesting bit:\n```  {{if .ParamExists \"access-keys\"}}\n  echo \"Putting ssh access keys for root in place\"\n  mkdir -p \/root\/.ssh\n  cat &gt;&gt;\/root\/.ssh\/authorized_keys &lt;&lt;EOFSSHACCESS\n  ### BEGIN Access Keys GENERATED CONTENT\n  {{range $key := .Param \"access-keys\"}}\n  {{$key}}\n  {{end}}\n  ### END Access Keys GENERATED CONTENT\n  EOFSSHACCESS\n  chmod 600 \/root\/.ssh\/authorized_keys\n  {{end}}```",
+        "ts": "1516664106.000418"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "which you see is only hacking the `\/root\/.ssh\/authorized_keys` file",
+        "ts": "1516664126.000313"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it'd be pretty trivial to copy-cat this and apply to the default user specified via the `provisioner-default-user` (or fallback to `rocketskates` username if not defined) to set this user SSH keys",
+        "ts": "1516664173.000494"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "that would be the preferred model on the Ubuntu side since that's their \"security\" model ... never mind that the user has full `sudo` access",
+        "ts": "1516664200.000113"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "but in theory that's a bit more protected since the default `sudo` access does require user password to authenticate `sudo` usage",
+        "ts": "1516664225.000450"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "yea and I notice the use of yaml to create yaml to injest yaml elsewhere... I'm sure you guys all have 'spinning tops' (cheap inception joke)",
+        "ts": "1516664403.000316"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "that threw me till <@U02DJQSG8> explained | vs |+ (I think.... still just theory in my head)",
+        "ts": "1516664481.000297"
+    },
+    {
+        "type": "message",
+        "user": "U855MAQFL",
+        "text": "can we deploy rancheros with rebar ?",
+        "ts": "1516670360.000253"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you surely can!  You'll need to do some work to create a BootEnv to do this - we don't have a stock one",
+        "ts": "1516670597.000053"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "details on how to make PXE boot w\/ RancherOS is available at:\n<http:\/\/rancher.com\/docs\/os\/v1.1\/en\/running-rancheros\/server\/pxe\/>",
+        "attachments": [
+            {
+                "title": "Booting RancherOS with iPXE",
+                "title_link": "http:\/\/rancher.com\/docs\/os\/v1.1\/en\/running-rancheros\/server\/pxe\/",
+                "text": "Documentation for Rancher",
+                "fallback": "Booting RancherOS with iPXE",
+                "from_url": "http:\/\/rancher.com\/docs\/os\/v1.1\/en\/running-rancheros\/server\/pxe\/",
+                "service_name": "rancher.com",
+                "id": 1
+            }
+        ],
+        "ts": "1516670606.000330"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ok <@U855MAQFL> - if you are willing to experiment and hack around a bit - here is a basic RancherOS set of bootenv\/stages that works.  \nWARNING WARNING:  THIS WILL NOT WORK ON YOUR METAL \nthis was tested by \"borrowing\" the <http:\/\/Packet.net|Packet.net> provisioning script - to provision this (successfully) in <http:\/\/Packet.net|Packet.net> environment\nyou WILL HAVE TO MODIFY the `bootenvs\/rancheros.yml` kernel options to get a different config file you define\nyou WILL HAVE TO MODIFY the `rancher-packet-provisioning-script.sh` to work for your metal and environment\nWARNING:  I've never used Rancher before - but I was able to boot this against DRP endpoint in <http:\/\/packet.net|packet.net> without any problems",
+        "ts": "1516677328.000115"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U6QFVRJNB> uploaded a file: <https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/F8WCGP9J5\/rancheros-example.tgz|rancheros example>",
+        "file": {
+            "id": "F8WCGP9J5",
+            "created": 1516677392,
+            "timestamp": 1516677392,
+            "name": "rancheros-example.tgz",
+            "title": "rancheros example",
+            "mimetype": "application\/x-gzip",
+            "filetype": "gzip",
+            "pretty_type": "GZip",
+            "user": "U6QFVRJNB",
+            "editable": false,
+            "size": 2363,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8WCGP9J5\/rancheros-example.tgz?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F8WCGP9J5\/download\/rancheros-example.tgz?t=xoxe-2458848645-331142845857-332542502102-c2a3393bdc66e7bf33d1c6986e4eea64",
+            "permalink": "https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/F8WCGP9J5\/rancheros-example.tgz",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F8WCGP9J5-913ecf8264",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U6QFVRJNB",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "shane",
+        "bot_id": null,
+        "ts": "1516677393.000086"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "_IF_ you had a <http:\/\/packet.net|packet.net> account you could test this and it'd work with the following commands\/notes:\n* for <http:\/\/packet.net|packet.net> need `console=ttyS1,115200n8` parameter applied to machine\n* untar the above TGZ\n* create bootenv: `drpcli bootenvs create -&lt; bootenvs\/rancheros.yml`\n* create stage: `drpcli stages crate -&lt; stages\/rancheros.yml`\n* add ISO image:  `drpcli bootenvs uploadiso rancheros-latest-install`",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1516677536.000000"
+        },
+        "ts": "1516677454.000102"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "sort out the customizations in the provisioning steps you need for your bare metal\nthen set a machine to the `rancheros-latest-install` stage \nand off you go",
+        "ts": "1516677727.000108"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "[drpops@drpe testansible]$ RS_PROFILE=mycluster .\/inventory.py | jq\nTraceback (most recent call last):\n  File \".\/inventory.py\", line 17, in &lt;module&gt;\n    import requests, argparse, json, urllib3, os\nImportError: No module named requests\n[drpops@drpe testansible]$",
+        "ts": "1516680129.000236"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "somehow I'm messing up the dynamic inventory... I noticed rob had a ln to the inventory... is that needed (aka how stand-alone is inventory.py)",
+        "ts": "1516680214.000109"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "[drpops@drpe testansible]$ pip --version\npip 8.1.2 from \/usr\/lib\/python2.7\/site-packages (python 2.7)",
+        "ts": "1516680331.000253"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I think you need to do `pip install requests`",
+        "ts": "1516680411.000266"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "ok thanks..",
+        "ts": "1516680585.000008"
+    },
+    {
+        "type": "message",
+        "user": "U62R1805P",
+        "text": "that did it.. and a pip upgrade to 9... thanks again",
+        "ts": "1516680728.000135"
+    },
+    {
+        "type": "message",
+        "user": "U855MAQFL",
+        "text": "<@U6QFVRJNB> cool thanks ill give it a shot on XenServer",
+        "ts": "1516693157.000057"
+    }
+]

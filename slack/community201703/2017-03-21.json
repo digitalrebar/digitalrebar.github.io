@@ -1,0 +1,1984 @@
+[
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "I've got a patch out there for that --os issue",
+        "edited": {
+            "user": "U02DHRR2L",
+            "ts": "1490101991.000000"
+        },
+        "ts": "1490101976.076430"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I'll attempt to pull it in and rebuild the container.",
+        "ts": "1490102346.207437"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "alex3594 - Containers and code are updated.",
+        "ts": "1490107777.663585"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You can do a git pull in the digitalrebar directory.",
+        "ts": "1490107785.667796"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You will need to do the following commands from the deploy\/compose directory",
+        "ts": "1490107801.675617"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "docker-compose restart rebar-api",
+        "ts": "1490107816.683287"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "docker-compose stop cloudwrap ; docker-compose rm -f cloudwrap ; docker-compose up -d cloudwrap",
+        "ts": "1490107839.695474"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "or just start over.",
+        "ts": "1490107851.701539"
+    },
+    {
+        "text": "Thank you! Will test it now!",
+        "username": "alex3594",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490113410.593264"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "You should watch the cloudwrap log to make sure parameters are right",
+        "ts": "1490115558.656801"
+    },
+    {
+        "text": "hey guys",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490126692.645523"
+    },
+    {
+        "text": "I am trying to setup a digitalrebar admin server",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490126701.649084"
+    },
+    {
+        "text": "and I keep getting an error in this ansible task : TASK [Pull compose images [SLOW]]",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490126732.662216"
+    },
+    {
+        "text": "the output basically says that the images are already up-to-date",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490126789.685688"
+    },
+    {
+        "text": "https:\/\/gist.github.com\/dadicool\/e1ee0ab50bcec157dedf0ac4e3f18a57",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490126849.710122"
+    },
+    {
+        "text": "I tried to rerunning multiple times as suggested here : http:\/\/digital-rebar.readthedocs.io\/en\/latest\/deployment\/troubleshooting\/specific-environment\/Run-In-System.html",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490126872.719404"
+    },
+    {
+        "text": "but I keep hitting the same error ...",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490126879.721867"
+    },
+    {
+        "text": "any suggestions would be welcome!",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490126889.725868"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "it is me.",
+        "ts": "1490127212.857684"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I built a bad cloudwrap again.",
+        "ts": "1490127219.860388"
+    },
+    {
+        "text": ":)",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490127244.870726"
+    },
+    {
+        "text": "any reason why the script tries to pull with DR_TAG=master",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490127258.876620"
+    },
+    {
+        "text": "that feels ... adventurous ",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490127271.881710"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Because your git tree is master.  We only currently have a functioning master.  Our bad probably.",
+        "ts": "1490127289.889034"
+    },
+    {
+        "text": "is there anything I could do at this moment to get me a functional setup?",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490127316.899930"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "no - I need to repush an image.  I'd love for people to yell at docker for changing how docker works on a mac, but ...",
+        "ts": "1490127362.919827"
+    },
+    {
+        "text": "got it",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490127384.928792"
+    },
+    {
+        "text": "is this a matter of minutes, hours, days?",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490127397.933991"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "And I need time to generate a good branch strategy.",
+        "ts": "1490127399.934725"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "hopefully, minutes to 1 hour.",
+        "ts": "1490127409.938789"
+    },
+    {
+        "text": "got it",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490127417.942099"
+    },
+    {
+        "text": "drop a message here when your push is good to go. ",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490127436.950121"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We have the tools ,but haven't spent the time to push cut releases.",
+        "ts": "1490127444.953487"
+    },
+    {
+        "text": "and thanks!",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490127446.954204"
+    },
+    {
+        "text": "is this something we can help with in the open or is this behind the firewall?",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490127471.963640"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "All open.  In theory, you could build your own image.  It is in the containers tree of the source code.",
+        "ts": "1490127502.976166"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": ".\/rebuild-containers --pull  --force cloudwrap",
+        "ts": "1490127527.986565"
+    },
+    {
+        "text": "in which folder is that script?",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490127580.008748"
+    },
+    {
+        "text": "I don't see it in the checkout",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490127587.011413"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "containers",
+        "ts": "1490127588.011848"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "digitalrebar\/containers",
+        "ts": "1490127592.013558"
+    },
+    {
+        "text": "I need a working GO environment for rebuilding the containers? fun times :)",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490127623.026303"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "sorry.",
+        "ts": "1490127632.030288"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "you need a sws command.",
+        "ts": "1490127638.032524"
+    },
+    {
+        "text": "since I don't have my GO env setup on this machine, I will wait for your signal that there is a new cloudwrap image",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490127690.054286"
+    },
+    {
+        "text": "and for reference, I am on ubuntu 16.04LTS with latest docker",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490127721.066910"
+    },
+    {
+        "text": "ubuntu@ip-172-30-0-51:~\/digitalrebar\/containers$ docker --version\nDocker version 17.03.0-ce, build 60ccb22",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490127722.067418"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "ooo - shiny",
+        "ts": "1490127734.071932"
+    },
+    {
+        "text": "thanks a lot for the help - hoping for another drop later tonight (in CET here)",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490127766.085314"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "docker 1.12.5 is what I use on mac.",
+        "ts": "1490127773.088092"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "@dadicool - you should be good now.",
+        "ts": "1490129734.897207"
+    },
+    {
+        "text": "I can confirm the new image looks good - hoping to get my hands on my first digital.rebar environment shortly :)",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490132454.894260"
+    },
+    {
+        "text": "thanks @galthaus ",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490132463.897450"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "awesome! Sorry about the break.  We try to keep master runnable always.",
+        "ts": "1490132494.907684"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "At some point, it would be cool to hear about what you are doing with DR.  publicly or privately.",
+        "ts": "1490132565.931073"
+    },
+    {
+        "text": "I am happy to share why digital.rebar caught my attention",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490133213.140741"
+    },
+    {
+        "text": "basically, we're a startup operating in the healthcare space in europe",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490133229.145741"
+    },
+    {
+        "text": "and there pretty specific regulations that prevent us from hosting on public clouds",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490133242.149734"
+    },
+    {
+        "text": "we want to benefit from the latest innovation in infrastructure automation (looking really closely at K8S)",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490133285.163295"
+    },
+    {
+        "text": "but given that the approved hosting providers for healthcare data are 2-3x more expensive than your standard public cloud, we only want to host our production workloads at the \"fancy\" hosting provider, our dev, qa, etc would be on a public cloud",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490133345.182718"
+    },
+    {
+        "text": "therefore, we want to be able to deploy\/manage K8S on public cloud and a \"sea of VMs\" using the same tools, especially for upgrades and rollouts",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490133415.204793"
+    },
+    {
+        "text": "this is where digital.rebar comes into the picture",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490133427.208622"
+    },
+    {
+        "text": "I really see it as the \"spinnaker of infrastructure\"",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490133447.214934"
+    },
+    {
+        "text": "hopefully, that's how you guys see it too:)",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490133466.220945"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It should be able to do must of that or could be added.",
+        "ts": "1490133469.221945"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "big huge covering sail that drives everything.",
+        "ts": "1490133501.231974"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "nice - not one we've used before.",
+        "ts": "1490133529.240997"
+    },
+    {
+        "text": "now, my first question is how do I join existing nodes (say the VMs that the hosting provider has spun up for me) to DR?",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490133559.250660"
+    },
+    {
+        "text": "the docs are detailed on the baremetal case and the public cloud case",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490133576.255936"
+    },
+    {
+        "text": "I obviously already have an admin DR running",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490133682.291548"
+    },
+    {
+        "text": "on the same subnet",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490133685.292509"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Initially, you will need a script for that.  It mostly exists.  Let me find it.",
+        "ts": "1490133694.295288"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The second way is to create a provider for your cloud host.  I assume they have some kinda of API.",
+        "ts": "1490133712.301193"
+    },
+    {
+        "text": "I have no api available, it's one of those \"managed vmware\" environmnets",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490133735.307957"
+    },
+    {
+        "text": "so that script is probably the way to go",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490133748.312406"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - we lose some managability, but you may not need it.",
+        "ts": "1490133762.316806"
+    },
+    {
+        "text": "can you be more explicit?",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490133773.320476"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "well - we won't necessarily be able to reboot or config bios and other stuff, but that is probably okay.",
+        "ts": "1490133794.326743"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You want post os-install operation most likely.",
+        "ts": "1490133810.332076"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "so , the \"join\" script should be fine.",
+        "ts": "1490133819.334742"
+    },
+    {
+        "text": "in deed",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490133824.336515"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "you seems script aware so here we go.",
+        "ts": "1490133854.345245"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "There are two scripts.",
+        "ts": "1490133858.346827"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "in digitalrebar\/deploy - add-from-ssh.sh  - script assumes you have some ssh path to the node in question.  It will attempt to ssh into the provided IP and then run a couple of script to join the node to rebar so that rebar can ssh into it.",
+        "ts": "1490133966.379105"
+    },
+    {
+        "text": "let try that",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490133989.385998"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "it runs scripts\/ssh-copy-id.sh to attempt to setup keys if your current running user can't access the node.",
+        "ts": "1490133996.388195"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Then it runs scripts\/join_rebar.sh from scripts\/rebar_join.sh",
+        "ts": "1490134028.397130"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "BUT FIRST You need to make an edit that I haven't done yet.  We don't use these often.",
+        "ts": "1490134042.401280"
+    },
+    {
+        "text": "what's the edit and can I submit it as a PR after I verify that it works? :-)",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490134075.411003"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "in all three scripts, find :3000 and remove it.",
+        "ts": "1490134082.413058"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yep - that is annoying, but missed those on the unified frontend change.",
+        "ts": "1490134146.431187"
+    },
+    {
+        "text": "ubuntu@ip-172-30-0-51:~\/digitalrebar\/deploy\/scripts$ grep -r \":3000\" *\nwait_for_rebar.sh:export REBAR_ENDPOINT=${REBAR_ENDPOINT:-https:\/\/127.0.0.1:3000}",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490134172.438482"
+    },
+    {
+        "text": "do I need to change wait_for_rebar.sh?",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490134181.441169"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "checking.  It won't hurt.  :3000 isn't exposed directly, anymore",
+        "ts": "1490134201.446858"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": ".\/add-from-ssh.sh --admin-ip &lt;ADMINIP&gt; &lt;cidr IP of target node&gt;",
+        "ts": "1490134242.458366"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "e.g. .\/add-from-ssh.sh --admin-ip 192.168.124.11 192.168.124.100\/24",
+        "ts": "1490134257.462445"
+    },
+    {
+        "text": ":3000 no mode",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490134261.463486"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "cool",
+        "ts": "1490134268.465290"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "If that completes, you should be able to see the node in the UX.",
+        "ts": "1490134350.488349"
+    },
+    {
+        "text": "what is the argument to that script : init-ident ",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490134850.622487"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "the user to login the first time.",
+        "ts": "1490134921.640902"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "that your system as access to, I think.",
+        "ts": "1490134931.643557"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "if your initial allowed user is fred (and it has sudo access), then use fred.",
+        "ts": "1490134993.659784"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "for example",
+        "ts": "1490134996.660465"
+    },
+    {
+        "text": "understood - I am finding a couple of typos in the scripts, working through them :)",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490135039.672006"
+    },
+    {
+        "text": "this is the first ssh call in the add-from-ssh script",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490135107.689824"
+    },
+    {
+        "text": "ssh -oBatchMode=yes -o StrictHostKeyChecking=no root@$IP date",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490135109.690115"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "we haven't driven them in awhile.   Yeah - it is trying to see if your current user has ssh access as root to the IP in question.",
+        "ts": "1490135139.698664"
+    },
+    {
+        "text": "that clearly assumes that root is a user that is (1) usable for ssh ",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490135142.699484"
+    },
+    {
+        "text": "let me adjust things to use the script params into account",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490135162.704607"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "hmm - yeah.",
+        "ts": "1490135164.705103"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yes - the first one is testing if the current running system\/user combo can log in as root.",
+        "ts": "1490135411.770478"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "If not, then you need to run ssh-copy-id.sh to add root access.  The ssh-copy-id.sh script takes the init-ident parameter to let you use a non-root user to setup root user access.",
+        "ts": "1490135453.781879"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The rest of the script assume root.",
+        "ts": "1490135457.782999"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "In the end, you need the following.",
+        "ts": "1490135466.785485"
+    },
+    {
+        "text": "I am pretty familiar with bash",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490135472.786648"
+    },
+    {
+        "text": "I will get through this and I will try to clean things up and submit it back",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490135484.790293"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - then I'll quit splaining that.",
+        "ts": "1490135488.791542"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "In the end, the goal is that the target node has the following:",
+        "ts": "1490135506.796043"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "the ssh access keys from the rebar attribute that is acquired by curl in the root authorized keys file.",
+        "ts": "1490135538.804358"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "and that a node has been created in DR, with the rebar-joined node role attached, and the node marked alive.",
+        "ts": "1490135578.814804"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That last one is done by the rebar-join script (calls to rebar).",
+        "ts": "1490135599.820780"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "we used this script to add packet nodes that were already existing so it will need to be tailored to your environment.",
+        "ts": "1490135643.832059"
+    },
+    {
+        "text": "The ssh part is work-ish with some hacking, now to the node registration part",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490136065.938108"
+    },
+    {
+        "text": "I am hitting this : curl: (22) The requested URL returned error: 502 Bad Gateway",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490136097.946079"
+    },
+    {
+        "text": "I am trying to figure out why the admin is responding like that when it's clearly running fine",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490136122.951867"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yeah - that is an issue.  Give me  second.",
+        "ts": "1490136147.957884"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "do you have rebar cli in your path?",
+        "ts": "1490136281.990775"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "rebar nodes list",
+        "ts": "1490136284.991655"
+    },
+    {
+        "text": "nope",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490136321.000723"
+    },
+    {
+        "text": "another script typo, it seems :",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490136337.004640"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "no",
+        "ts": "1490136340.005467"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "oh",
+        "ts": "1490136342.005895"
+    },
+    {
+        "text": "ssh root@$IP \/root\/join_rebar.sh $ADMIN_IP",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490136354.009004"
+    },
+    {
+        "text": "when join_rebar.sh expects a second arg",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490136366.011904"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "ok",
+        "ts": "1490136367.012063"
+    },
+    {
+        "text": "ADMIN_IP=$1\nPASSED_IN_IP=$2",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490136391.017883"
+    },
+    {
+        "text": "Let me try to fix this first",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490136400.020130"
+    },
+    {
+        "text": "ok, that didn't help",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490136442.030175"
+    },
+    {
+        "text": "so what about the rebar cli",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490136449.031810"
+    },
+    {
+        "text": "I must have missed the pre step to in the docs",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490136463.035150"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I was looking at wrong curl.  You are farther than I thought",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1490136468.000000"
+        },
+        "ts": "1490136465.035673"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "add nodes curl call",
+        "ts": "1490136492.041932"
+    },
+    {
+        "text": "I am trying to add some echo logging to figure out which curl call in join_rebar is blowing up",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490136529.051226"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Okay the PASSED_IN_IP isn't needed unless you want to explicitly declare the IP to use.  If these aren't multi-homed boxes, it shouldn't matter.",
+        "ts": "1490136558.058218"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The other thing is to log into your system and run the script from there with -x set.",
+        "ts": "1490136583.064380"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "This is dire need of updating.",
+        "ts": "1490136654.081738"
+    },
+    {
+        "text": ":)",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490136669.084907"
+    },
+    {
+        "text": "I logged into the system I am trying to join to rebar",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490136678.087379"
+    },
+    {
+        "text": "and run join_rebar by hand",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490136685.089032"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yeah - I'll probably have to update this.",
+        "ts": "1490136866.130756"
+    },
+    {
+        "text": "This is the curl that's returning a 502 bad gateway",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490136879.134003"
+    },
+    {
+        "text": "exists=$(curl -k -s -o \/dev\/null -w \"%{http_code}\" --digest -u \"$REBAR_KEY\" \\\n      -X GET \"$REBAR_WEB\/api\/v2\/nodes\/$HOSTNAME\")",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490136880.134263"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "hmm what are rebar_key and rebar_web",
+        "ts": "1490136956.151656"
+    },
+    {
+        "text": "export REBAR_KEY=\"$REBAR_USER:$REBAR_PASSWORD\"\nexport REBAR_WEB=\"https:\/\/$ADMIN_IP\"",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490136983.158131"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Have you logged in the UX?",
+        "ts": "1490137015.165721"
+    },
+    {
+        "text": "yes",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490137025.168078"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "good.",
+        "ts": "1490137030.169165"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "just making sure",
+        "ts": "1490137033.169978"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "from the node do this:",
+        "ts": "1490137042.172338"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "curl http:\/\/&lt;admin_ip&gt;:8092\/files\/rebar -o rebar",
+        "ts": "1490137084.182406"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "chmod +x rebar",
+        "ts": "1490137103.186937"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "export REBAR_ENDPOINT=https:\/\/&lt;ADMIN_IP&gt;",
+        "ts": "1490137115.189694"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "export REBAR_KEY=rebar:rebar1",
+        "ts": "1490137119.190597"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": ".\/rebar nodes list",
+        "ts": "1490137124.191704"
+    },
+    {
+        "text": "ubuntu@k8s-node1:~$ curl -v http:\/\/172.30.0.51:8092\/files\/rebar\n_   Trying 172.30.0.51...\n_ Connected to 172.30.0.51 (172.30.0.51) port 8092 (#0)\n&gt; GET \/files\/rebar HTTP\/1.1\n&gt; Host: 172.30.0.51:8092\n&gt; User-Agent: curl\/7.47.0\n&gt; Accept: _\/_\n&gt;\n\n* Connection #0 to host 172.30.0.51 left intact",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490137162.200733"
+    },
+    {
+        "text": "I am getting nothing back",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490137168.202086"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "is the admin node multi-homed?",
+        "ts": "1490137203.210931"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "hmm - that shouldn't matter.",
+        "ts": "1490137225.216781"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "at least not for this.",
+        "ts": "1490137231.218177"
+    },
+    {
+        "text": "it's not",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490137242.220944"
+    },
+    {
+        "text": "and that's the IP that I access the UI at",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490137253.223644"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "on the admin node as the user you run the install script from, ls ~\/.cache\/digitalrebar\/tftpboot\/files",
+        "ts": "1490137271.227887"
+    },
+    {
+        "text": "looking at the various docker containers of the admin, I don't see any port 8092 that is open ...",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490137285.231458"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "oh - sigh.",
+        "ts": "1490137296.233987"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "do you have a provisioner?",
+        "ts": "1490137302.235305"
+    },
+    {
+        "text": "not yet",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490137308.236776"
+    },
+    {
+        "text": "how does that work for nodes that are already existing?",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490137320.239550"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "thinking about it.",
+        "ts": "1490137331.242080"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - should be okay, but you don't have a quick and handy rebar cli to get.",
+        "ts": "1490137365.250303"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Sooo - from the admin node do this:",
+        "ts": "1490137372.252004"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "docker cp compose_rebar_api_1:\/usr\/local\/bin\/rebar rebar",
+        "ts": "1490137383.254416"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "that will get you one to play with",
+        "ts": "1490137401.258654"
+    },
+    {
+        "text": "got it",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490137413.261504"
+    },
+    {
+        "text": "now I want to push this to the node I want to join, right?",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490137423.263907"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "sure.  Let's go for it.",
+        "ts": "1490137439.267772"
+    },
+    {
+        "text": "got it",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490137459.272292"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "that is handy to keep around on the admin node because you can tweak things and get at some things programmatically easier with it.",
+        "ts": "1490137477.276281"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "```chmod +x rebar\nexport REBAR_ENDPOINT=https:\/\/&lt;ADMIN_IP&gt; \nexport REBAR_KEY=rebar:rebar1 \n.\/rebar nodes list```",
+        "ts": "1490137505.282737"
+    },
+    {
+        "text": "ubuntu@k8s-node1:~$ .\/rebar nodes list\n[\n  {\n    \"admin\": false,\n    \"alive\": true,\n    \"allocated\": false,\n    \"arch\": \"x86_64\",\n    \"available\": true,\n    \"bootenv\": \"local\",\n    \"created_at\": \"2017-03-21T21:43:48.650Z\",\n    \"deployment_id\": 1,\n    \"description\": \"\",\n    \"icon\": \"check_circle\",\n    \"id\": 1,\n    \"name\": \"system-phantom.internal.local\",\n    \"node-control-address\": null,\n    \"os_family\": \"linux\",\n    \"profiles\": [],\n    \"provider_id\": 1,\n    \"quirks\": [],\n    \"state\": 0,\n    \"system\": true,\n    \"target_role_id\": null,\n    \"tenant_id\": 1,\n    \"updated_at\": \"2017-03-21T21:43:48.650Z\",\n    \"uuid\": \"557d47bc-4abd-44a9-83e8-58d6176ffe1a\",\n    \"variant\": \"phantom\"\n  }",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490137510.283700"
+    },
+    {
+        "text": "already did",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490137519.285744"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yeah - something",
+        "ts": "1490137519.285757"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "so the node can drive it.",
+        "ts": "1490137529.287969"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The curl commands are wonky.",
+        "ts": "1490137538.289985"
+    },
+    {
+        "text": "is the plan to replace the curls with the rebar cli ?",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490137569.296552"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The curl worked for me on my system here.",
+        "ts": "1490137598.303131"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "So - I was wanting to make sure that something worked.",
+        "ts": "1490137608.305372"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "If you could add set -x to the top of the script and dump the curl command that is executing for me to try would be helpful.",
+        "ts": "1490137635.311129"
+    },
+    {
+        "text": "right away",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490137649.314648"
+    },
+    {
+        "text": "+ curl -k -f -g --digest -u rebar:rebar1 -X POST -d name=k8s-node1.xxxx -d ip=172.30.yyy.zzz\/24 -d provider=metal -d variant=metal -d os_family=linux -d arch=x86_64 https:\/\/172.30.0.51\/api\/v2\/nodes\/",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490137714.328535"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - here you go- change the curl to this:",
+        "ts": "1490137789.344472"
+    },
+    {
+        "text": "I think the curl I mentioned further above was the wrong one",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490137807.348135"
+    },
+    {
+        "text": "This is the one in the script that is blowing up",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490137831.353269"
+    },
+    {
+        "text": "    curl -k -f -g --digest -u \"$REBAR_KEY\" -X POST \\\n      -d \"name=$HOSTNAME\" \\\n      -d \"ip=$IP\" \\\n      -d \"provider=metal\" \\\n      -d \"variant=metal\" \\\n      -d \"os_family=linux\" \\\n      -d \"arch=$(uname -m)\" \\\n      \"$REBAR_WEB\/api\/v2\/nodes\/\" || {",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490137832.353511"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "```\ncurl -k -f -g --digest -u \"$REBAR_KEY\" -X POST \\\n      -d \"{ \\\"name\\\": \\\"$HOSTNAME\\\", \\\n      \\\"ip\\\": \\\"$IP\\\", \\\n      \\\"provider\\\": \\\"metal\\\", \\\n      \\\"variant\\\": \\\"metal\\\", \\\n      \\\"os_family\\\": \\\"linux\\\", \\\n      \\\"arch\\\": \\\"$(uname -m)\\\" }\" \\\n      \"$REBAR_WEB\/api\/v2\/nodes\/\"\n```",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1490138015.000000"
+        },
+        "ts": "1490137954.379427"
+    },
+    {
+        "text": "There is a missing } somewhere",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490137988.386513"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "```curl -k -f -g --digest -u \"$REBAR_KEY\" -X POST \\\n      -d \"{ \\\"name\\\": \\\"$HOSTNAME\\\", \\\n      \\\"ip\\\": \\\"$IP\\\", \\\n      \\\"provider\\\": \\\"metal\\\", \\\n      \\\"variant\\\": \\\"metal\\\", \\\n      \\\"os_family\\\": \\\"linux\\\", \\\n      \\\"arch\\\": \\\"$(uname -m)\\\" }\" \\\n      \"$REBAR_WEB\/api\/v2\/nodes\/\"```",
+        "ts": "1490138026.394659"
+    },
+    {
+        "text": "trying",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490138040.397480"
+    },
+    {
+        "text": "youhou",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490138248.440848"
+    },
+    {
+        "text": "I got my first node in :)",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490138252.441890"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay",
+        "ts": "1490138260.443465"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "did the other curls value or work?",
+        "ts": "1490138266.444766"
+    },
+    {
+        "text": "I just run that curl on the cli and the node appeared",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490138285.448800"
+    },
+    {
+        "text": "let me fix the script and try to run it completelz",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490138293.450248"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "it won't, but it is better.  :slightly_smiling_face:",
+        "ts": "1490138344.460476"
+    },
+    {
+        "text": "I have another one that's blowing up : ",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490138644.522459"
+    },
+    {
+        "text": "curl -k -f -g --digest -u rebar:rebar1 -X POST -d '{\"node\":\"k8s-node1.xxx.zzz\" , \"role\":\"rebar-joined-node\" }' https:\/\/172.30.0.51\/api\/v2\/node_roles\/",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490138669.527560"
+    },
+    {
+        "text": "ok, it's all good",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490138891.572964"
+    },
+    {
+        "text": "a couple of missing things ",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490138898.574484"
+    },
+    {
+        "text": "really need to have : -H \"Content-Type: application\/json\"",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490138903.575502"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes",
+        "ts": "1490138912.577311"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Did it make it through?",
+        "ts": "1490138918.578439"
+    },
+    {
+        "text": "that's what was leading to the 502",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490138918.578520"
+    },
+    {
+        "text": "yeap, full script made it through",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490138927.580255"
+    },
+    {
+        "text": "need to try running it now from the add-from-ssh.sh",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490138940.582718"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "so your node should have start starting to run on it.",
+        "ts": "1490138944.583683"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "stuff that is.",
+        "ts": "1490138953.585334"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I think.",
+        "ts": "1490138957.586202"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You should see it in the system deployment with some node roles",
+        "ts": "1490138974.589709"
+    },
+    {
+        "text": "I see",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490138992.593346"
+    },
+    {
+        "text": "side note : if rebar expect to use root to remote ssh into nodes under management, that's a real problem",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490139055.606568"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "it currently does.",
+        "ts": "1490139072.610140"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We can talk about that at some point.",
+        "ts": "1490139089.613640"
+    },
+    {
+        "text": "hmm",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490139089.613727"
+    },
+    {
+        "text": "ok",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490139093.614445"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I think it will be a \"small\" change for your environment, but has consequences that I think I need to work through.  We should change away from root access.  The problem is that it requires sudo because some of the actions need root abilities.  That isn't always done consistently.",
+        "ts": "1490139188.633742"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "for example, do you have unrestricted sudo access?",
+        "ts": "1490139209.638055"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "or is it command level enablement?",
+        "ts": "1490139220.640238"
+    },
+    {
+        "text": "for the user I would use for rebar, it would be unrestricted",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490139242.644345"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - so, we have this thing called an SSH hammer. It is the underlying component that provides SSH access to the rest of the system.",
+        "ts": "1490139278.651404"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It assumes that the root user has the keys in place.",
+        "ts": "1490139285.652868"
+    },
+    {
+        "text": "I understand that that is a sensible assumption for bare metal environments",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490139312.657989"
+    },
+    {
+        "text": "I am just a little surprised that the same practice carried over to the cloud provisioners for example",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490139340.663737"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "it is and it isn't.  ubuntu makes us do extra gyrations",
+        "ts": "1490139348.665189"
+    },
+    {
+        "text": "(at least, that's my conclusion)",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490139350.665673"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "common shared code",
+        "ts": "1490139353.666190"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "we try to try everything the same after certain points from a normalization perspective.",
+        "ts": "1490139370.669267"
+    },
+    {
+        "text": "classic cross-OS scripting ...",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490139396.674375"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That way same code runs in both places.  Part of the value.  Normalize hardware so the cloud instance looks like the hardware instance and vice versa.",
+        "ts": "1490139403.675864"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah - but in this case it is more at platform boundaries as well.",
+        "ts": "1490139427.680239"
+    },
+    {
+        "text": "is there a way on gitter to send a screen capture?",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490139435.681528"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "not sure.",
+        "ts": "1490139447.684148"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "email:greg@rackn.com if that is easier",
+        "ts": "1490139458.686157"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "For a quick check, can you do this for me from the admin node:",
+        "ts": "1490139515.696894"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "rebar hammers list",
+        "ts": "1490139521.698018"
+    },
+    {
+        "text": "ubuntu@ip-172-30-0-51:~\/digitalrebar\/deploy$ .\/rebar hammers list\n[\n  {\n    \"actions\": {\n      \"power\": [\n        \"reboot\"\n      ],\n      \"run\": [\n        \"run\"\n      ],\n      \"xfer\": [\n        \"copy_from\",\n        \"copy_to\"\n      ]\n    },\n    \"available_hammer_id\": 4,\n    \"endpoint\": null,\n    \"id\": 1,\n    \"name\": \"ssh\",\n    \"node_id\": 2,\n    \"priority\": 0,\n    \"username\": \"root\",\n    \"uuid\": \"c117a7d0-2b89-44bd-8333-82a5b39801ff\"\n  }\n]",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490139583.709888"
+    },
+    {
+        "text": "I think the \"node prep\" isn't starting because the admin doesn't know how to ssh to node",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490139619.717044"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "that is the secure shell hammer (you don't have an IPMI because you aren't hardware)",
+        "ts": "1490139630.719025"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - probably.",
+        "ts": "1490139635.720082"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I suspect that we are missing a parameter on node create.",
+        "ts": "1490139647.722324"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "By the way, to start over. just delete the NODE in the UI and rerun the join script.",
+        "ts": "1490139664.725477"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "let me check real quick",
+        "ts": "1490139670.726564"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The username in hammer could be changed to something else, but a core change is also needed.",
+        "ts": "1490139691.730672"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "no container rebuilds though",
+        "ts": "1490139707.733903"
+    },
+    {
+        "text": "what does this mean : \"but a core change is also needed.\"",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490139739.740144"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "the rails app needs two changes.  We didn't use username correctly in all the places and you need a way to set something other than root.",
+        "ts": "1490139771.745861"
+    },
+    {
+        "text": "yeap - understood",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490139783.748362"
+    },
+    {
+        "text": "ah",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490139855.761812"
+    },
+    {
+        "text": "I took a step back and I rerun add-from-ssh after dropping in the updated join_rebar.sh script and things seem to be moving somehow ",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490139880.766531"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay",
+        "ts": "1490139894.769288"
+    },
+    {
+        "text": "all components are green in the UI ",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490139921.774645"
+    },
+    {
+        "text": "hmm",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490139922.774954"
+    },
+    {
+        "text": "It's getting late here (1am almost)",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490139945.779575"
+    },
+    {
+        "text": "I am gonna fork the repo, push my fixes to my fork, try to cleanup somethings that I hardcoded to ubuntu",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490139974.784821"
+    },
+    {
+        "text": "and try with a second node out of the box tomorrow as I find time.",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490139994.788944"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - I'm missing family dinner time here.  :slightly_smiling_face:  Thanks for playing along and working through.",
+        "ts": "1490139995.789128"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That would be great.  I'll be around tomorrow.",
+        "ts": "1490140001.790332"
+    },
+    {
+        "text": "sounds good",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490140006.791247"
+    },
+    {
+        "text": "thanks for all the help",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490140009.791872"
+    },
+    {
+        "text": "I understand we're a special case but I do believe we're not alone though",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490140028.795253"
+    },
+    {
+        "text": "to be continued",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490140038.797376"
+    },
+    {
+        "text": "cheers",
+        "username": "dadicool",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1490140040.797644"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "no prob.  THis is good for us too.   You are and not.  Later.",
+        "ts": "1490140047.798935"
+    }
+]

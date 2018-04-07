@@ -1,0 +1,248 @@
+[
+    {
+        "text": "<@U02DHRR2L|zehicle> What if I have dedicated servers that can`t be booted with PXE, that have system already installed and have only public IPs ? is it possible to use digital rebar in this case ?",
+        "username": "zdebinski",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1496906009.664959"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yes - you would \"join\" them to DR.  There are join scripts in the digitalrebar\/deploy directory that can be used as a starting point for that process.",
+        "ts": "1496928682.864517"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "hey, how do I set DRP to use a local mirror (or rather the install ISO) to provision a node (using ubuntu-16.04, pre-downloaded, and that all seems to work as far as getting the system booted).  I.e., I’m working in a somewhat disconnected environment, and am not sure how to proceed if I need to have a local mirror rather than just using the upstream ones",
+        "ts": "1496946298.547613"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "we can use a proxy, but the upstream connection from the lab is _SLOW_ and so we’d rater use\/build a local one if that’s the best approach.",
+        "ts": "1496946327.558667"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "also, how do I add a profile (for ssh keys, for example) to a bootenv?  It seems like the template is there (e.g. ubutntu-16.04 looks like it would use access_keys parameters)",
+        "ts": "1496946402.585874"
+    },
+    {
+        "user": "U5RPF6FLP",
+        "text": "<@U5RPF6FLP> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1496949605.717179"
+    },
+    {
+        "text": "there is a way to do it, I know we discussed it - I could not find the docs so I'm looking around",
+        "username": "zehicle_twitter",
+        "bot_id": "B41PS9J94",
+        "type": "message",
+        "subtype": "bot_message",
+        "ts": "1496950707.078525"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U02DJQSG8> do you remember how to set the repos for DRP to a local source?",
+        "ts": "1496950741.089364"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<https:\/\/github.com\/digitalrebar\/provision\/blob\/master\/assets\/templates\/ubuntu-drp-only-repos.tmpl>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/blob\/master\/assets\/templates\/ubuntu-drp-only-repos.tmpl",
+                "text": "provision - The Provisioner for DigitalRebar as a Stand Alone Golang Utility",
+                "fallback": "GitHub: digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/blob\/master\/assets\/templates\/ubuntu-drp-only-repos.tmpl",
+                "thumb_url": "https:\/\/avatars3.githubusercontent.com\/u\/13814120?v=3&s=400",
+                "thumb_width": 192,
+                "thumb_height": 192,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1496951460.323720"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "set the local_repo param to true.",
+        "ts": "1496951484.331699"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "that will use just the repos off the expanded Ubuntu ISO.",
+        "ts": "1496951566.359665"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "If you want other repos from somewhere other than the exploded ISO,  I don't think wer have a pre-baked template that does that.",
+        "ts": "1496951659.390177"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "thanks guys, will have a look, and come back with questions.",
+        "ts": "1496952447.657230"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "Ah, yes, ok so that template is a part of my ubuntu bootenv, but how do I set the parameter to be true?",
+        "ts": "1496952537.685622"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "do I update the bootenv with a JSON\/yaml blob?",
+        "ts": "1496952554.690994"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "I do need help here, I don’t have a good model for how to pass parameters, for example, do I just update the bootenv with the parameters I’d like added?",
+        "ts": "1496952883.796391"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "So with that template, if I want to add it to my ubuntu template, I can create a new template section, but it’s not clear where it “lives”.  I.e., what’s the path?",
+        "ts": "1496953187.896115"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "ok, I see where those templates live and how they are ingested into files, but it isn’t clear how I set the local_repo parameter for that bootenv. I’ve tried a YAML object like ```Params:\n  local_repo: true```",
+        "ts": "1496953493.997331"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "but that gets rejected when I do: ``` drpcli bootenvs update bootenvs\/ubuntu-16.04.yml local_repo.yaml```",
+        "ts": "1496953532.010638"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "local_repo.yaml is where I put the Params: bit",
+        "ts": "1496953542.013741"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "yeah, that parameter has to be set on the machine, not the bootenv.",
+        "ts": "1496953721.071894"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "do I set it directly on the machine?  and how might I make that a default (possible?)",
+        "ts": "1496953749.082164"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "I think I got it:  ``` drpcli machines set \"{uuid}\" params \"local_repo\" to \"true\"```",
+        "ts": "1496953957.153527"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "shouldn’t ``` drpcli machines params \"{uuid}\" params &lt; params.yml``` work?",
+        "edited": {
+            "user": "U43DC40BA",
+            "ts": "1496955000.000000"
+        },
+        "ts": "1496954991.494839"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "the first one",
+        "ts": "1496955089.525751"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "but how do I pass a bunch of parameters?",
+        "ts": "1496955227.571572"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "like access keys",
+        "ts": "1496955233.573671"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "do I have to write out a text json blob rather than nice simply yaml?",
+        "ts": "1496955249.579165"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I often do this: ```drpcli machines set j param rebar-access to \"$(cat fred)\"```",
+        "ts": "1496955386.624122"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "yeah, but I wanted to set local_repo, and access_keys, and,….",
+        "ts": "1496955410.631777"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "well, it turns out params does happily read JSON, just not yaml (at least as text via the CLI)",
+        "ts": "1496955426.637327"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "So, the second question is:  how do I set that as a default on the bootenv, I don’t want ot have to do this for every machine after the fact :slightly_smiling_face:",
+        "ts": "1496955460.648121"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "global profile",
+        "ts": "1496955501.660394"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "drpcli profiles show global",
+        "ts": "1496955511.664122"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Path the params there and all nodes gett them.",
+        "ts": "1496955520.667293"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "I’ll give that a shot.",
+        "ts": "1496955610.696823"
+    },
+    {
+        "type": "message",
+        "user": "U43DC40BA",
+        "text": "kewl",
+        "ts": "1496955715.731788"
+    }
+]
