@@ -1,0 +1,547 @@
+[
+    {
+        "type": "message",
+        "user": "U9R87AWKE",
+        "text": "ok guys what is the default password for centos7?",
+        "ts": "1521644719.000011"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Post install?",
+        "ts": "1521644759.000059"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "RocketSkates",
+        "ts": "1521644763.000403"
+    },
+    {
+        "type": "message",
+        "user": "U9R87AWKE",
+        "text": "yea",
+        "ts": "1521644765.000735"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It is settable by parameter.",
+        "ts": "1521644783.000109"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U9R87AWKE> uploaded a file: <https:\/\/rackn.slack.com\/files\/U9R87AWKE\/F9T13DX6C\/image.png|Finally got an Infrasim test-bed up with DRP>",
+        "file": {
+            "id": "F9T13DX6C",
+            "created": 1521644830,
+            "timestamp": 1521644830,
+            "name": "image.png",
+            "title": "Finally got an Infrasim test-bed up with DRP",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U9R87AWKE",
+            "editable": false,
+            "size": 40379,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9T13DX6C\/image.png?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9T13DX6C\/download\/image.png?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9T13DX6C-75b4e0214e\/image_64.png?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9T13DX6C-75b4e0214e\/image_80.png?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9T13DX6C-75b4e0214e\/image_360.png?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "thumb_360_w": 360,
+            "thumb_360_h": 210,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9T13DX6C-75b4e0214e\/image_480.png?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "thumb_480_w": 480,
+            "thumb_480_h": 280,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9T13DX6C-75b4e0214e\/image_160.png?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9T13DX6C-75b4e0214e\/image_720.png?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "thumb_720_w": 720,
+            "thumb_720_h": 420,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9T13DX6C-75b4e0214e\/image_800.png?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "thumb_800_w": 800,
+            "thumb_800_h": 466,
+            "image_exif_rotation": 1,
+            "original_w": 803,
+            "original_h": 468,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U9R87AWKE\/F9T13DX6C\/image.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F9T13DX6C-088d85d091",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U9R87AWKE",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "gary.berger",
+        "bot_id": null,
+        "ts": "1521644834.000289"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<http:\/\/provision.readthedocs.io\/en\/tip\/doc\/configuring.html?highlight=RocketSkates>",
+        "ts": "1521644847.000151"
+    },
+    {
+        "user": "U9THHSAG3",
+        "text": "<@U9THHSAG3> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1521644901.000985"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<http:\/\/provision.readthedocs.io\/en\/tip\/doc\/arch\/data.html?highlight=RocketSkates#data-architecture> = look for RocketSkates",
+        "ts": "1521644903.000835"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Cool",
+        "ts": "1521644933.000602"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U9THHSAG3> $welcome",
+        "ts": "1521645291.000385"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1521645291.000463"
+    },
+    {
+        "user": "U9TPYH6JE",
+        "text": "<@U9TPYH6JE> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1521653159.000140"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So, seeing what I can do with Canonical’s MAAS… Not too bad, and not unlike DRP…",
+        "ts": "1521667392.000133"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "The curtin installer is pretty slick; and like the way it handles custom config via cloud-init",
+        "ts": "1521667451.000405"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "funny - we have cloud-init capability as well in our image based deploy solution",
+        "ts": "1521667480.000398"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "and it's easy to add a stage to non-image based that installs cloud-init as a step",
+        "ts": "1521667496.000184"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I think the image-based installer you folks are using right now *is* curtin, correct?",
+        "ts": "1521667534.000103"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yes, but ours works.",
+        "ts": "1521667892.000018"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "huh?",
+        "ts": "1521667956.000021"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Most of the people I’ve talked to have issues getting it to work consistently with something that isn’t Ubuntu.",
+        "ts": "1521667985.000005"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "And even ubuntu sometimes.",
+        "ts": "1521667991.000089"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It also is not very customizable and has no transparency.",
+        "ts": "1521668015.000346"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Yes, look like non-Ubuntu OS’s are poorly supported (go figure.)",
+        "ts": "1521668016.000302"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It is also has a challenging time doing discovery and configuration of hardware components.",
+        "ts": "1521668055.000568"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "but maybe it is good for you.",
+        "ts": "1521668136.000217"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "IDK about discovery, seems to do a pretty good job from what I’ve seen… (“Machine output” has as much as gohai as far as I can tell…)",
+        "ts": "1521668223.000118"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Don’t know about config",
+        "edited": {
+            "user": "U416T0AAX",
+            "ts": "1521668271.000000"
+        },
+        "ts": "1521668244.000381"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "more workflow for discovery process (not discovered data).",
+        "ts": "1521668252.000355"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "oh - and support.  I’d wager you’ve talked to more DRP people than MaaS people, but I don’t know for certain.",
+        "ts": "1521668440.000319"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "The reason I am trying it is to test repeated installs on used disk with different disk partitions — seems to handle that OK, whereas I was getting fails on reinstalls with DRP (albeit using preseed installs not curtin…)",
+        "ts": "1521668493.000427"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U416T0AAX> these are topics for the canonical channels.",
+        "client_msg_id": "09c419a1-cc71-4fdc-b75d-1921a7fbe6ac",
+        "ts": "1521668533.000431"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "<!here> Not here to bust on DRP - just reporting findings, that’s all…",
+        "ts": "1521668620.000565"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "DRP is way more flexible from what I’ve already seen",
+        "ts": "1521668667.000393"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "I unfortunately just can’t get it to consistently do what I need it to do (at least not yet, with the OSS bits)",
+        "ts": "1521668765.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Sorry -- MAAS probably uses different preseed options than we do to ignore partition\/lvm\/md signatures than I do.  I have not really looked into it.",
+        "ts": "1521669238.000036"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "It does not help that presed documentation kinda sucks, and that the Debian installer has is too paranoid by default.  Like paranoid enough assume that just because I wiped the partition table that it should stop  when it finds LVM signatures on partitions it just created paranoid.",
+        "edited": {
+            "user": "U02DJQSG8",
+            "ts": "1521669403.000000"
+        },
+        "ts": "1521669367.000233"
+    },
+    {
+        "type": "message",
+        "user": "U9R87AWKE",
+        "text": "Guys I have the IPMI plugin working, we register with the machine but how do I add an IPMI reboot into the workfllow?",
+        "ts": "1521670093.000333"
+    },
+    {
+        "type": "message",
+        "user": "U9NLSJYGZ",
+        "text": "I'm reading the Quickstart and see the suggested RAM is 8GB. Is there recommended resources for a live system? I've read of people using Raspberry Pis but those only have 1GB RAM",
+        "ts": "1521670471.000092"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<@U9R87AWKE> The runner will reboot the system whenever a bootenv change to a Machine has to happen with the new code.",
+        "ts": "1521670548.000275"
+    },
+    {
+        "type": "message",
+        "user": "U9R87AWKE",
+        "text": "<@U02DJQSG8> I am doing discovery-&gt;sledgehammer-wait-&gt;ipmi-configure-centos7-install",
+        "ts": "1521670635.000095"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U9NLSJYGZ> I run DRP in virtual box with just 768 mb memory",
+        "client_msg_id": "46b5b17e-469b-467e-ac84-2e8aad2e3e34",
+        "ts": "1521670653.000214"
+    },
+    {
+        "type": "message",
+        "user": "U9NLSJYGZ",
+        "text": "<@U6QFVRJNB> Is memory the constraint? I'm wondering about CPU and or io.",
+        "ts": "1521670723.000254"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "For your use, single cpu at 2ghz is fine, SSD is better to serve images, but not required",
+        "client_msg_id": "ac43d6e5-0b3d-4d8f-98e8-c1a0a21549dc",
+        "ts": "1521670870.000104"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Size is dependent on how much you need to serve, but 20 GB should be plenty, unless you want to serve windows images, then multiply by 10",
+        "client_msg_id": "5f1958c6-9014-427d-8bf8-2181701e2463",
+        "ts": "1521670940.000375"
+    },
+    {
+        "type": "message",
+        "user": "U9NLSJYGZ",
+        "text": ":thumbsup: :smile:",
+        "ts": "1521670989.000285"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U9NLSJYGZ> which quickstart are you looking at?  I don't see a memory recommendation (there was one in the v2 docs)",
+        "ts": "1521675013.000387"
+    },
+    {
+        "type": "message",
+        "user": "U9NLSJYGZ",
+        "text": "<@U02DHRR2L> <http:\/\/digital-rebar.readthedocs.io\/en\/latest\/deployment\/install\/quick.html> I may need to go from the link in the email. This is what I got from the website",
+        "ts": "1521675704.000318"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ah yes, you'll be led off track rather quickly with that doc",
+        "ts": "1521675724.000288"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "that's the old v2 product version which is effectively dead",
+        "ts": "1521675737.000105"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<http:\/\/provision.readthedocs.io\/en\/tip\/README.html>",
+        "ts": "1521675749.000096"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Provision (Digital Rebar Provision) is the v3 product line",
+        "ts": "1521675768.000042"
+    },
+    {
+        "type": "message",
+        "user": "U9NLSJYGZ",
+        "text": "Got it. In looking at my history, it looks like I had done a google search.",
+        "ts": "1521675793.000333"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yeah, I need to find the source for that repo and mark it appropriately to redirect people",
+        "ts": "1521675816.000309"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U6QFVRJNB> <https:\/\/github.com\/digitalrebar\/doc>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/doc",
+                "title_link": "https:\/\/github.com\/digitalrebar\/doc",
+                "text": "doc - Documentation for Digital Rebar",
+                "fallback": "GitHub: digitalrebar\/doc",
+                "from_url": "https:\/\/github.com\/digitalrebar\/doc",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1521675934.000142"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "DO NOT USE THAT LINK FOR DR PROVISION!!!!",
+        "ts": "1521675951.000080"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "on it",
+        "ts": "1521675967.000303"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U9NLSJYGZ> uploaded a file: <https:\/\/rackn.slack.com\/files\/U9NLSJYGZ\/F9U09EJLC\/screenshot_from_2018-03-21_16-47-13.png|Screenshot from 2018-03-21 16-47-13.png> and commented: It may be out of your control, but these are the top results in Google.",
+        "file": {
+            "id": "F9U09EJLC",
+            "created": 1521676087,
+            "timestamp": 1521676087,
+            "name": "Screenshot from 2018-03-21 16-47-13.png",
+            "title": "Screenshot from 2018-03-21 16-47-13.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U9NLSJYGZ",
+            "editable": false,
+            "size": 204028,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9U09EJLC\/screenshot_from_2018-03-21_16-47-13.png?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9U09EJLC\/download\/screenshot_from_2018-03-21_16-47-13.png?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9U09EJLC-4f3a5cc3f1\/screenshot_from_2018-03-21_16-47-13_64.png?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9U09EJLC-4f3a5cc3f1\/screenshot_from_2018-03-21_16-47-13_80.png?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9U09EJLC-4f3a5cc3f1\/screenshot_from_2018-03-21_16-47-13_360.png?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "thumb_360_w": 360,
+            "thumb_360_h": 287,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9U09EJLC-4f3a5cc3f1\/screenshot_from_2018-03-21_16-47-13_480.png?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "thumb_480_w": 480,
+            "thumb_480_h": 383,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9U09EJLC-4f3a5cc3f1\/screenshot_from_2018-03-21_16-47-13_160.png?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9U09EJLC-4f3a5cc3f1\/screenshot_from_2018-03-21_16-47-13_720.png?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "thumb_720_w": 720,
+            "thumb_720_h": 575,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9U09EJLC-4f3a5cc3f1\/screenshot_from_2018-03-21_16-47-13_800.png?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "thumb_800_w": 800,
+            "thumb_800_h": 639,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9U09EJLC-4f3a5cc3f1\/screenshot_from_2018-03-21_16-47-13_960.png?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "thumb_960_w": 960,
+            "thumb_960_h": 766,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9U09EJLC-4f3a5cc3f1\/screenshot_from_2018-03-21_16-47-13_1024.png?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 817,
+            "image_exif_rotation": 1,
+            "original_w": 1319,
+            "original_h": 1053,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U9NLSJYGZ\/F9U09EJLC\/screenshot_from_2018-03-21_16-47-13.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F9U09EJLC-e293068a10",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 1,
+            "initial_comment": {
+                "id": "Fc9V2RF2HM",
+                "created": 1521676087,
+                "timestamp": 1521676087,
+                "user": "U9NLSJYGZ",
+                "is_intro": true,
+                "comment": "It may be out of your control, but these are the top results in Google."
+            }
+        },
+        "user": "U9NLSJYGZ",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "jpresley",
+        "bot_id": null,
+        "ts": "1521676090.000298"
+    },
+    {
+        "type": "message",
+        "user": "U9NLSJYGZ",
+        "text": "Not sure if any of the top ones are correct.",
+        "ts": "1521676135.000149"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the second result is correct",
+        "ts": "1521676188.000118",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U9NLSJYGZ"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U9NLSJYGZ",
+        "text": "I bookmarked the one you provided.",
+        "ts": "1521676214.000297"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "we should take down the old read the docs.  I think <@U02DGQYK1> is the admin",
+        "ts": "1521677148.000251"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ok ... <@U9NLSJYGZ>... thank you for the prompting - I have updated all 606 DR v2 docs with a deprecated warning",
+        "ts": "1521678217.000238"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I'm not sure when the push out will happen - but soon",
+        "ts": "1521678268.000282"
+    },
+    {
+        "type": "message",
+        "user": "U9NLSJYGZ",
+        "text": "np. Glad I could help. :slightly_smiling_face:",
+        "ts": "1521679737.000139"
+    }
+]

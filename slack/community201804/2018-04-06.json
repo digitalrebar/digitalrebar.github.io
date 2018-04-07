@@ -1,0 +1,49 @@
+[
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "And here's one with Workflows + Terraform!  \n<https:\/\/youtu.be\/RtuZQHKmd9U>",
+        "attachments": [
+            {
+                "service_name": "YouTube",
+                "service_url": "https:\/\/www.youtube.com\/",
+                "title": "Terraform Digital Rebar Provider with Workflows",
+                "title_link": "https:\/\/youtu.be\/RtuZQHKmd9U",
+                "author_name": "RackN & Digital Rebar",
+                "author_link": "https:\/\/www.youtube.com\/channel\/UCr3bBtP-pMsDQ5c0IDjt_LQ",
+                "thumb_url": "https:\/\/i.ytimg.com\/vi\/RtuZQHKmd9U\/hqdefault.jpg",
+                "thumb_width": 480,
+                "thumb_height": 360,
+                "fallback": "YouTube Video: Terraform Digital Rebar Provider with Workflows",
+                "video_html": "<iframe width=\"400\" height=\"225\" src=\"https:\/\/www.youtube.com\/embed\/RtuZQHKmd9U?feature=oembed&autoplay=1&iv_load_policy=3\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen><\/iframe>",
+                "video_html_width": 400,
+                "video_html_height": 225,
+                "from_url": "https:\/\/youtu.be\/RtuZQHKmd9U",
+                "service_icon": "https:\/\/a.slack-edge.com\/2089\/img\/unfurl_icons\/youtube.png",
+                "id": 1
+            }
+        ],
+        "ts": "1523015830.000213"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "COMMUNITY REQUEST &gt; if you are enjoying using Digital Rebar, please consider Tweeting at @digitalrebar and giving the project a github star <https:\/\/github.com\/digitalrebar\/provision>.  Spreading the word about the project helps us continue to expand it.  Thank you!",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision",
+                "text": "Digital Rebar Provision is a simple and powerful Golang executable that provides a complete API-driven DHCP\/PXE\/TFTP provisioning system.",
+                "fallback": "GitHub: digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1523025557.000760"
+    }
+]

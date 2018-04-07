@@ -1,0 +1,35 @@
+[
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UA1L5DEFQ> $welcome",
+        "ts": "1522848994.000670"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1522848995.000039"
+    },
+    {
+        "user": "UA0NU1ZUZ",
+        "text": "<@UA0NU1ZUZ> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1522868333.000676"
+    },
+    {
+        "type": "message",
+        "user": "U32PZNCP5",
+        "text": "<@UA0NU1ZUZ> $welcome",
+        "ts": "1522880560.000430"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1522880561.000026"
+    }
+]

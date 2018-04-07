@@ -1,0 +1,452 @@
+[
+    {
+        "user": "U9SQD988K",
+        "text": "<@U9SQD988K> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1521554982.000729"
+    },
+    {
+        "type": "message",
+        "user": "U32PZNCP5",
+        "text": "<@U9SQD988K> $Welcome",
+        "ts": "1521555478.000227"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1521555478.000322"
+    },
+    {
+        "type": "message",
+        "user": "U9SQD988K",
+        "text": "thanks <@U32PZNCP5>",
+        "ts": "1521555831.000620"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U9R87AWKE> uploaded a file: <https:\/\/rackn.slack.com\/files\/U9R87AWKE\/F9T071AH0\/image.png|image.png> and commented: Guys I am testing dr-provision on an InfraSim node and get this",
+        "file": {
+            "id": "F9T071AH0",
+            "created": 1521560378,
+            "timestamp": 1521560378,
+            "name": "image.png",
+            "title": "image.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U9R87AWKE",
+            "editable": false,
+            "size": 68108,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9T071AH0\/image.png?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9T071AH0\/download\/image.png?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9T071AH0-8d0d164567\/image_64.png?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9T071AH0-8d0d164567\/image_80.png?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9T071AH0-8d0d164567\/image_360.png?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "thumb_360_w": 360,
+            "thumb_360_h": 40,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9T071AH0-8d0d164567\/image_480.png?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "thumb_480_w": 480,
+            "thumb_480_h": 53,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9T071AH0-8d0d164567\/image_160.png?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9T071AH0-8d0d164567\/image_720.png?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "thumb_720_w": 720,
+            "thumb_720_h": 79,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9T071AH0-8d0d164567\/image_800.png?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "thumb_800_w": 800,
+            "thumb_800_h": 88,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9T071AH0-8d0d164567\/image_960.png?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "thumb_960_w": 960,
+            "thumb_960_h": 106,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9T071AH0-8d0d164567\/image_1024.png?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 113,
+            "image_exif_rotation": 1,
+            "original_w": 1427,
+            "original_h": 157,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U9R87AWKE\/F9T071AH0\/image.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F9T071AH0-2ecb1b6b0b",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 1,
+            "initial_comment": {
+                "id": "Fc9T072KAN",
+                "created": 1521560378,
+                "timestamp": 1521560378,
+                "user": "U9R87AWKE",
+                "is_intro": true,
+                "comment": "Guys I am testing dr-provision on an InfraSim node and get this"
+            }
+        },
+        "user": "U9R87AWKE",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "gary.berger",
+        "bot_id": null,
+        "ts": "1521560381.000839"
+    },
+    {
+        "type": "message",
+        "user": "U9R87AWKE",
+        "text": "what options are there for choosing the hostname?",
+        "ts": "1521560405.000865"
+    },
+    {
+        "text": "googles infrasim",
+        "type": "message",
+        "subtype": "me_message",
+        "user": "U6QFVRJNB",
+        "ts": "1521560468.000938"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "apparently hostname restrictions are ... weird ... in infrasim ?",
+        "ts": "1521560517.000388"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "hostname can be anything - but should conform to DNS base spec for a host name",
+        "ts": "1521560532.000145"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "by default we generate that MAC based hostname in the absence of an existing hostname",
+        "ts": "1521560543.000150"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I haven't tested this, but I think you can create a Machine first, Edit it and give it a hostname that your infrasim host likes ... then it'll pick that up instead of generating a default MAC assigned one",
+        "ts": "1521560583.000372"
+    },
+    {
+        "type": "message",
+        "user": "U9R87AWKE",
+        "text": "ok will try that",
+        "ts": "1521560655.000156"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "do you know the Hostname rules for an InfraSim node ?",
+        "ts": "1521560669.000427"
+    },
+    {
+        "type": "message",
+        "user": "U9R87AWKE",
+        "text": "infrasim just spins up a qemu instance.. I am not passing in a hostname",
+        "ts": "1521560936.000311"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Ah .. <@U9R87AWKE> - remove the trailing `.` in your domain name `example.com.`",
+        "ts": "1521561068.000643"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the hostname utility rejects that as invalid ... which is hilarious since it is canonically correct as an FQDN",
+        "ts": "1521561104.000575"
+    },
+    {
+        "type": "message",
+        "user": "U9R87AWKE",
+        "text": "hmm, ok will look into that",
+        "ts": "1521561115.000945"
+    },
+    {
+        "type": "message",
+        "user": "U9R87AWKE",
+        "text": "tks",
+        "ts": "1521561116.000901"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "that's a standard `hostname` utility issue ... not Sledgehammer\/Digital Rebar",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1521561161.000000"
+        },
+        "ts": "1521561155.000177"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "looking at InfraSIM... we're about to add a KVM plugin (in addition to the Virtualbox one) that that may provide similar features.  The new versions will be able to create\/destroy VMs machines too",
+        "ts": "1521561284.000771"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U9R87AWKE> - what DHCP server are you using?  If you are using DRP dhcp, make sure option 6 does NOT have the dot at the end of it in the subnet definition.",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1521561313.000000"
+        },
+        "ts": "1521561293.000151"
+    },
+    {
+        "type": "message",
+        "user": "U9R87AWKE",
+        "text": "its DRP run in a docker-container bridged to infrasim",
+        "ts": "1521561332.000735"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U9R87AWKE> uploaded a file: <https:\/\/rackn.slack.com\/files\/U9R87AWKE\/F9T0MMURY\/image.png|ok i see it>",
+        "file": {
+            "id": "F9T0MMURY",
+            "created": 1521561388,
+            "timestamp": 1521561388,
+            "name": "image.png",
+            "title": "ok i see it",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U9R87AWKE",
+            "editable": false,
+            "size": 4605,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9T0MMURY\/image.png?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-F9T0MMURY\/download\/image.png?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9T0MMURY-adff0f9642\/image_64.png?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9T0MMURY-adff0f9642\/image_80.png?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9T0MMURY-adff0f9642\/image_360.png?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "thumb_360_w": 360,
+            "thumb_360_h": 62,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-F9T0MMURY-adff0f9642\/image_160.png?t=xoxe-2458848645-343586471015-342305248436-7b33f258deefd71ebc0e029ead8a362f",
+            "image_exif_rotation": 1,
+            "original_w": 368,
+            "original_h": 63,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U9R87AWKE\/F9T0MMURY\/image.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-F9T0MMURY-96e357899d",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U9R87AWKE",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "gary.berger",
+        "bot_id": null,
+        "ts": "1521561389.000548"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "oops - 15.",
+        "ts": "1521561402.000612"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": ":slightly_smiling_face:  it seems like the . should be good there, but …….",
+        "ts": "1521561413.000436"
+    },
+    {
+        "type": "message",
+        "user": "U9R87AWKE",
+        "text": "ok, confirmed that works!",
+        "ts": "1521561526.000294",
+        "reactions": [
+            {
+                "name": "sunglasses",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "<!here> hey guys, me again for another quick question. Is there a way to use the parameter `gohai-inventory` in a template?\nRight now I am trying something simple:\n```{{if .ParamExists \"gohai-inventory\" -}}\n    INVENTORY={{.Param \"gohai-inventory\"}}\n    echo $INVENTORY &gt; \/tmp\/inventory.txt\n{{else}}\n    echo \"Param gohai-inventory doesn't exist. Run discovery stage.\"\n    exit 2\n{{end}}\n```\nBut I keep getting a syntax error: `Command running .\/dcim-inventory-dcim-inventory.sh.tmpl: line 30: syntax error near unexpected token `('`\n\nI don't get it... I am using the same syntax for the same kind of test for other parameters without issue. I am missing something ?",
+        "edited": {
+            "user": "U8FAN7PLK",
+            "ts": "1521574857.000000"
+        },
+        "ts": "1521574844.000002"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Make sure that the `gohai-inventory` is listed as an optional parameter in the task.",
+        "ts": "1521575076.000544"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U8FAN7PLK> - hmm - that could be it.  but also the `-}}`",
+        "ts": "1521575128.000377"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Try as just `}}`",
+        "ts": "1521575139.000417"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "<@U02DGQYK1> already did, same result.",
+        "ts": "1521575149.000698"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "just a minute.",
+        "ts": "1521575187.000309"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "I've added the `gohai-inventory` parameter to the stage, but for some reason I am not able to add it to the task. It won't let me save it.",
+        "ts": "1521575228.000512"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I wonder if it is because the schema is not defined.",
+        "ts": "1521575327.000201"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "That was my interrogation too.",
+        "ts": "1521575338.000029"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "this is the only param that doesn't have a type defined.",
+        "ts": "1521575349.000769"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "you could try this.",
+        "ts": "1521575350.000244"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "```\n{{if .ParamExists \"gohai-inventory\" -}}\n    INVENTORY={{.ParamAsJSON \"gohai-inventory\"}}\n    echo $INVENTORY &gt; \/tmp\/inventory.txt\n{{else}}\n    echo \"Param gohai-inventory doesn't exist. Run discovery stage.\"\n    exit 2\n{{end}}\n```",
+        "ts": "1521575412.000074"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That is in tip.",
+        "ts": "1521575421.000151"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "Ok cool.",
+        "ts": "1521575485.000544"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "I'll let you know",
+        "ts": "1521575494.000806"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The redirect stuff is kinda crazy.",
+        "ts": "1521575521.000616"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You may want to do this:",
+        "ts": "1521575527.000607"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "This isn't super important right now since I can run the gohai program from the stage and get the same result, But I found that was a waste to not use the param that was already there :slightly_smiling_face:",
+        "ts": "1521575549.000464"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "```\ncat &gt; \/tmp\/inventory.txt &lt;&lt;EOF\n{{.ParamAsJSON \"gohai-inventory\"}}\nEOF\n```",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1521575567.000000"
+        },
+        "ts": "1521575564.000102"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "The dump in a text file is just a random test, I will use the variable to parse it with jq and fill up our DCIM (netbox)",
+        "ts": "1521575625.000081"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Actually, I’m working on that now.",
+        "ts": "1521575651.000399",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U8FAN7PLK"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "On a plugin for Netbox ?",
+        "ts": "1521575697.000356"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yes - I’m working on getting netbox installed and then a plugin to translate DRP machines into Netbox machines.  A follow-on would be netbox info into DRP info.",
+        "ts": "1521575731.000214"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "Amazing! How can I follow this closely ? :smile:",
+        "ts": "1521575817.000524"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "playing with it for now to see what would be needed on the plugin arch side.",
+        "ts": "1521575877.000599"
+    }
+]

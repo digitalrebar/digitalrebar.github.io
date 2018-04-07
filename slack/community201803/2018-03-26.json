@@ -1,0 +1,371 @@
+[
+    {
+        "user": "U9VHJUN0Z",
+        "text": "<@U9VHJUN0Z> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1522073165.000418"
+    },
+    {
+        "type": "message",
+        "user": "U8YJ0FW9Y",
+        "text": "Thank you <@U02DGQYK1>!",
+        "ts": "1522088969.000714"
+    },
+    {
+        "type": "message",
+        "user": "U8YJ0FW9Y",
+        "text": "I didn’t have time to try it because on a hurry setting up servers",
+        "ts": "1522088995.000332"
+    },
+    {
+        "type": "message",
+        "user": "U8YJ0FW9Y",
+        "text": "BTW, anyone ever had to setup an Ubuntu with Software RAID10 + LVM that might have a copy of preseed to share? :slightly_smiling_face:",
+        "ts": "1522089031.000698"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<!channel> We hope to see you at the regularly scheduled meetup tomorrow.  We'll be talking about _*OMG WORKFLOWS !!*_ and UX Enhancements.  We're super excited to be bringing a sneak peak of the new \"first class citizen\" we've added to the family `workflows` ...  Our in house code studs Greg Althaus and Victor Lowther will be leading the discussion for the day.   Meetup page at the usual coordinates:\n<https:\/\/www.meetup.com\/digitalrebar\/events\/247773451\/>",
+        "attachments": [
+            {
+                "service_name": "Meetup",
+                "title": "v014: OMG WORKFLOWS!!, UX enhancements, community feedback",
+                "title_link": "https:\/\/www.meetup.com\/digitalrebar\/events\/247773451\/",
+                "text": "Tue, Mar 27, 2018, 11:00 AM: Start Time is 11:00 am PST (12:00 pm MST, 1:00 pm CST, 2:00 pm EST ... )Welcome to the Digital Rebar online meetup. Please note we'll be using <http:\/\/Zoom.us|Zoom.us> for our meeting; so",
+                "fallback": "Meetup: v014: OMG WORKFLOWS!!, UX enhancements, community feedback",
+                "image_url": "https:\/\/secure.meetupstatic.com\/photos\/event\/d\/1\/b\/1\/600_467453681.jpeg",
+                "fields": [
+                    {
+                        "title": "Where",
+                        "value": "Online <https:\/\/zoom.us\/j\/3403934274> Mountain View, CA",
+                        "short": true
+                    },
+                    {
+                        "title": "When",
+                        "value": "Tue, Mar 27, 2018, 11:00 AM",
+                        "short": true
+                    }
+                ],
+                "from_url": "https:\/\/www.meetup.com\/digitalrebar\/events\/247773451\/",
+                "image_width": 472,
+                "image_height": 250,
+                "image_bytes": 69998,
+                "service_icon": "https:\/\/www.meetup.com\/mu_static\/en-US\/5a55b7f35a300adf7c619ca2aadb8057.png",
+                "id": 1
+            }
+        ],
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1522102537.000000"
+        },
+        "ts": "1522102512.000287"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "<@U02DGQYK1> shouldn't the stable tag be following minor releases? it's on 3.7.0 instead of 3.7.3",
+        "ts": "1522107386.000079"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U54E4SD4G> are you referring to the docker containers - or just straight `install.sh` installer ?",
+        "ts": "1522107438.000276"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "no, the git repository",
+        "ts": "1522107445.000274"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "hmm - yes - `stable` should be tracking v3.7.3 - probably builds logic busted somewhere there - and `stable` didn't get advanced to v3.7.3",
+        "ts": "1522107522.000393"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U54E4SD4G> - in the meantime (obviously) you can specify `v3.7.3` specifically",
+        "ts": "1522108281.000052"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "yeah, I was just wondering if it 3.7.3 was supposed to be the latest stable or not",
+        "ts": "1522108485.000082"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it is indeed the latest stable",
+        "ts": "1522108498.000238"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "(just got back from vacation so gotta update from 3.6)",
+        "ts": "1522108509.000182"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "definitely prefer v3.7.3 over .2, .1, or the .0 version :slightly_smiling_face:",
+        "ts": "1522108530.000221"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "welcome back - hopefully a nice relaxing break somewhere fun !",
+        "ts": "1522108543.000196"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "mhm, I actually went on a cycling trip from tokyo to kyoto",
+        "ts": "1522108559.000203"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "ended up biking ~830km total",
+        "ts": "1522108568.000341"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "nice !  I'm a cyclist too ... though have admit to spending way more time on the motorcycle lately rather than the bicycles",
+        "ts": "1522108601.000140"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "just realized tokyo and kyoto are anagrams ...",
+        "ts": "1522108619.000182"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "haha yeah",
+        "ts": "1522108646.000259"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the idea of 830km in a saddle right now makes my sit bones ache just thinking about it :slightly_smiling_face:",
+        "ts": "1522108647.000227"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "though in japanese notsomuch 東京→京都",
+        "ts": "1522108664.000302"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "shoot - that looks all the same to me ... :face_with_rolling_eyes:",
+        "ts": "1522108682.000199"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": ":stuck_out_tongue:",
+        "ts": "1522108692.000005"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "are you just a Roadie or do you also Mountainbike?  Or crazier still ... Cyclocross ?",
+        "ts": "1522108797.000033"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I know Cyclocross is relatively popular in Japan",
+        "ts": "1522108808.000066"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "so",
+        "ts": "1522108828.000259"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "I was biking on a fixed gear",
+        "ts": "1522108833.000337"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "oh - geesh - you're one of those crazies !",
+        "ts": "1522108853.000199"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "but yeah road mostly",
+        "ts": "1522108855.000015"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "lmao",
+        "ts": "1522108856.000120"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I used to live in Portland, OR here in US - which has a HUGE cyclocross racing scene - and we had a number of Singlespeed and Fixie divisions ...",
+        "ts": "1522108895.000168"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "I went for a smaller ratio for the trip itself, though it didn't really make that much of a difference on mountainous terrain given the weight of my panniers (so I had to walk)",
+        "ts": "1522109087.000213"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "shoulda kept the same ratio I used daily for that extra boost on flats",
+        "ts": "1522109104.000284"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "also, u-lock is bad",
+        "ts": "1522109122.000213"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "(btw drpcli aur packages are updated)",
+        "ts": "1522109147.000311"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Hmmm ... different ratio gears ... wonder how you could apply that to a bicycle to attain the best of different ratios ..... :sunglasses:",
+        "ts": "1522109149.000130"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "haha",
+        "ts": "1522109170.000127"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "u-lock meaning ... someone nicked your bike ?",
+        "ts": "1522109178.000211"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "I was considering at least using a 10-speed",
+        "ts": "1522109179.000133"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "or just crappy in general ?",
+        "ts": "1522109186.000178"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "no, u-locks are heavy",
+        "ts": "1522109187.000176"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ah yes ... true that",
+        "ts": "1522109193.000112"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "and was totally unnecessary, in japan at least",
+        "ts": "1522109200.000227"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "a cable lock would have sufficed",
+        "ts": "1522109208.000152"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U54E4SD4G> ... you might want to check out our Meetup tomorrow - we'll be talking about our new `workflows` solution which is replacing the old `change-stage\/map` parameter driven method.  Pretty cool stuff.  If you can't make because of TZ differences - we do record the meetups ...",
+        "ts": "1522110268.000042"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "Actually, I flew back into SJC Thursday evening so I should be able to make it",
+        "ts": "1522110492.000264"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "<@U9FDQCT5G> ^^",
+        "ts": "1522110497.000310"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ah sweet !  are you here for SREcon ?",
+        "ts": "1522110508.000109"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "ah nah I work in milpitas lol",
+        "ts": "1522110520.000273"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "I haven't heard of SREcon",
+        "ts": "1522110535.000206"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "(then again I haven't really paid much attention to cons)",
+        "ts": "1522110566.000026"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Maybe they should call it SREpro ... wouldn't be so negative sounding ?",
+        "ts": "1522110686.000196"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U54E4SD4G> and <@U6QFVRJNB> - stable is v3.7.3.  They are the same commit.",
+        "ts": "1522112647.000084"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I didn’t edit the stable release to label it as such.",
+        "ts": "1522112660.000074"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I just edited it to mark stable as 3.73.",
+        "ts": "1522112722.000243"
+    }
+]
