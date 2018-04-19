@@ -25,7 +25,7 @@
             <span>Intro</span>
           </div>
         </div>
-        <div class="link-container" onclick="scrollToElem('resources)">
+        <div class="link-container" onclick="scrollToElem('resources')">
           <div class="link">
             <span>Resources</span>
           </div>
@@ -50,24 +50,11 @@
 
     <img src="rebar.jpg" id="top-img" />
 
-    <div class="typing-container">
-      <div class="typing-font">
-        <span class="terminal-green">./</span><span id="typing"></span><span id="cursor" class="terminal-green">&block;</span>
-      </div>
-    </div>
+    <br><br><br>
 
     <section class="content card" id="_intro" onclick="">
       <a class="anchor" name="intro"></a>
-      <h2>Digital Rebar Community</h2>
-      <h3>Continuous Integration</h3>
-      <div class="ci-cd">
-        <a class="reference external image-reference" href="https://travis-ci.org/digitalrebar/provision" tooltip="Travis"><img alt="Build Status" src="https://travis-ci.org/digitalrebar/provision.svg?branch=master" /></a>
-        <a class="reference external image-reference" href="https://codecov.io/gh/digitalrebar/provision" tooltip="codecov"><img alt="codecov" src="https://codecov.io/gh/digitalrebar/provision/branch/master/graph/badge.svg" /></a>
-        <a class="reference external image-reference" href="https://goreportcard.com/report/github.com/digitalrebar/provision" tooltip="Go Report Card"><img alt="Go Report Card" src="https://goreportcard.com/badge/github.com/digitalrebar/provision" /></a>
-        <a class="reference external image-reference" href="https://godoc.org/github.com/digitalrebar/provision" tooltip="GoDoc"><img alt="GoDoc" src="https://godoc.org/github.com/digitalrebar/provision?status.svg" /></a>
-        <a class="reference external image-reference" href="http://provision.readthedocs.io/en/stable/?badge=stable" tooltip="Documentation Stable Status"><img alt="Documentation Stable Status" src="https://readthedocs.org/projects/provision/badge/?version=stable" /></a>
-        <a class="reference external image-reference" href="http://provision.readthedocs.io/en/latest/?badge=latest" tooltip="Documentation Latest Status"><img alt="Documentation Latest Status" src="https://readthedocs.org/projects/provision/badge/?version=latest" /></a>
-      </div>
+      <h2>Digital Rebar Provision</h2>
       <p>
         Welcome to the Digital Rebar Community, home of the open source <a href="https://github.com/digitalrebar/provision">Digital Rebar Provision</a> (DRP) project. DRP is the data center provisioning and content scaffolding designed with a cloud native architecture replacing Cobblerm Foreman, MaaS or similar technologies. It offers a single golang binary (less than 30MB) with no dependencies capable of installation on a laptop, RPi or switch supporting both bare metal and virtualized infrastructure. 
       </p>
@@ -78,13 +65,24 @@
       <li>API-driven infrastructure-as-code automation</li>
       <li>Event driven actions via Websockets API</li>
       <li>Extensible Plug-in Model for enhancements</li>
-      <li>Supports ALL orchestration tools including Chef, Puppet, Ansible, SaltStack, Bash, Teraform, etc</li>
-      <li>RAID, IPMI, and BIOS Configuration (some are additional plugins)</li>
+      <li>Supports ALL orchestration tools including Chef, Puppet, Ansible, SaltStack, Bosh, Teraform, etc</li>
+      <li>RAID, IPMI, and BIOS Configuration (via commercial plugins)</li>
       </ul> 
       </p>
       <p>
-      The latest release of DRP v3.x.x is available: <a href="https://github.com/digitalrebar/provision/releases">Release Notes & Code on GitHub</a>
+      The latest release of DRP v3 is available: <a href="https://github.com/digitalrebar/provision/releases">Release Notes & Code on GitHub</a>
       </p>
+      <center><table bgcolor="#efefef"><tr><td><center>
+      <h3>Continuous Integration - Status</h3>
+      <div class="ci-cd">
+        &nbsp;&nbsp;<a class="reference external image-reference" href="https://travis-ci.org/digitalrebar/provision" tooltip="Travis"><img alt="Build Status" src="https://travis-ci.org/digitalrebar/provision.svg?branch=master" /></a>
+        <a class="reference external image-reference" href="https://codecov.io/gh/digitalrebar/provision" tooltip="codecov"><img alt="codecov" src="https://codecov.io/gh/digitalrebar/provision/branch/master/graph/badge.svg" /></a>
+        <a class="reference external image-reference" href="https://goreportcard.com/report/github.com/digitalrebar/provision" tooltip="Go Report Card"><img alt="Go Report Card" src="https://goreportcard.com/badge/github.com/digitalrebar/provision" /></a>
+        <a class="reference external image-reference" href="https://godoc.org/github.com/digitalrebar/provision" tooltip="GoDoc"><img alt="GoDoc" src="https://godoc.org/github.com/digitalrebar/provision?status.svg" /></a>
+        <a class="reference external image-reference" href="http://provision.readthedocs.io/en/stable/?badge=stable" tooltip="Documentation Stable Status"><img alt="Documentation Stable Status" src="https://readthedocs.org/projects/provision/badge/?version=stable" /></a>
+        <a class="reference external image-reference" href="http://provision.readthedocs.io/en/latest/?badge=latest" tooltip="Documentation Latest Status"><img alt="Documentation Latest Status" src="https://readthedocs.org/projects/provision/badge/?version=latest" /></a>
+      &nbsp;&nbsp;</div>
+              </center></td></tr></table></center>
     </section>
 <!--    <div style="background: #eee; padding: 2px;" onclick=""> -->
       <section class="content card" id="_resources">
