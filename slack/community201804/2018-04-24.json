@@ -1,0 +1,436 @@
+[
+    {
+        "type": "message",
+        "user": "UA9A8E1Q9",
+        "text": "I got it to do what I want if I put the kexec task right before I changing bootenvs",
+        "thread_ts": "1524532280.000109",
+        "parent_user_id": "U02DJQSG8",
+        "ts": "1524582754.000358"
+    },
+    {
+        "type": "message",
+        "user": "UA9A8E1Q9",
+        "text": "so i found out there is a `reset-workflow.tmpl` template that is included in the default `control.sh` script. that explains my issues yesterday with workflows resetting on reboot",
+        "ts": "1524591261.000301"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ya",
+        "ts": "1524591670.000162"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "That is expected behaviour in SLedgehammer -- it is intended to be an operating environment that we perform inventory and maintennace tasks.",
+        "ts": "1524591767.000261"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "kexec'ing from Sledgehammer straight into another operating environment is not something we really anticipated.",
+        "ts": "1524591893.000201"
+    },
+    {
+        "type": "message",
+        "user": "UA9A8E1Q9",
+        "text": "it makes sense to me. I just was confused as to why it was happening",
+        "ts": "1524592170.000273"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - a couple of things.",
+        "ts": "1524592178.000343"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "the `reset-workflow.tmpl` is to handle the “spurious” reboot and return to a good state.",
+        "ts": "1524592200.000861"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "now, you are trying to subvert that kinda with the kexec case.",
+        "ts": "1524592220.000507"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We thought shutdown, reboot, and continue were enough return codes.",
+        "ts": "1524592234.000224"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "oh well :slightly_smiling_face:",
+        "ts": "1524592242.000142"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Now, you can make this work.",
+        "ts": "1524592262.000015"
+    },
+    {
+        "type": "message",
+        "user": "UA9A8E1Q9",
+        "text": "haha i don't think you guys did anything wrong. i just was trying to understand why it was happening :slightly_smiling_face:",
+        "ts": "1524592274.000125"
+    },
+    {
+        "type": "message",
+        "user": "UA9A8E1Q9",
+        "text": "and figured i would share my findings with everyone",
+        "ts": "1524592283.000760"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You have to realize how the jobs system interacts the runner to make progress and when things are “safe” to do.",
+        "ts": "1524592299.000585"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "In your case, you want to blast an image into a section and then kexec.  Our `image-deploy` plugin does something like this (or could).",
+        "ts": "1524592349.000126"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It handles the disk wiping your dealing with.  In that it can leave the disks alone and focus on one.",
+        "ts": "1524592373.000278"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Anyway, the task in question.  You probably should create a special end task for your “install” part.",
+        "ts": "1524592395.000613"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That task needs to:",
+        "ts": "1524592400.000049"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "1. get the current job id from the machine.",
+        "ts": "1524592407.000620"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "2. Mark the job as “finished”",
+        "ts": "1524592415.000429"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "3. Force the machines stage to local (or workflow of choice).",
+        "ts": "1524592431.000013"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "4. kexec (Make sure you don’t return from the task).",
+        "ts": "1524592445.000112"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "oh - and this is hard core and fraught with peril.  and demons and dragons.",
+        "ts": "1524592506.000141"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Community meetup in 5 mins! <https:\/\/www.meetup.com\/digitalrebar>",
+        "attachments": [
+            {
+                "service_name": "Meetup",
+                "title": "Digital Rebar (Mountain View, CA)",
+                "title_link": "https:\/\/www.meetup.com\/digitalrebar",
+                "text": "Digital Rebar Provision (DRP) is the open source (APLv2) , fast and simple data center provisioning and control scaffolding designed with a cloud native architecture. This Online Meetup group will dis",
+                "fallback": "Meetup: Digital Rebar (Mountain View, CA)",
+                "image_url": "https:\/\/secure.meetupstatic.com\/photos\/event\/d\/1\/b\/1\/600_467453681.jpeg",
+                "from_url": "https:\/\/www.meetup.com\/digitalrebar",
+                "image_width": 472,
+                "image_height": 250,
+                "image_bytes": 69998,
+                "service_icon": "https:\/\/www.meetup.com\/mu_static\/en-US\/4f86abc993eecccc33a115d00b405ced.png",
+                "id": 1,
+                "original_url": "https:\/\/www.meetup.com\/digitalrebar"
+            }
+        ],
+        "ts": "1524592507.000783"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<!here> - meetup in 5 mins - topics include: coming RBAC controls, honeycomb plugin demo, Trial versions of advanced RackN features ... (sigh ... <@U02DJQSG8> beat me to it... :)",
+        "ts": "1524592609.000194"
+    },
+    {
+        "user": "UABRLBT16",
+        "text": "<@UABRLBT16> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1524607922.000243"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UABRLBT16> $welcome",
+        "ts": "1524608474.000176"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1524608474.000270"
+    },
+    {
+        "type": "message",
+        "user": "UABRLBT16",
+        "text": "<@U6QFVRJNB> ty",
+        "ts": "1524608714.000349"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<!here> - video replay from today's meetup is available now:",
+        "ts": "1524608910.000018"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<https:\/\/youtu.be\/K5oOqwk8Oeo>",
+        "attachments": [
+            {
+                "service_name": "YouTube",
+                "service_url": "https:\/\/www.youtube.com\/",
+                "title": "Digital Rebar Meetup #16",
+                "title_link": "https:\/\/youtu.be\/K5oOqwk8Oeo",
+                "author_name": "RackN & Digital Rebar",
+                "author_link": "https:\/\/www.youtube.com\/channel\/UCr3bBtP-pMsDQ5c0IDjt_LQ",
+                "thumb_url": "https:\/\/i.ytimg.com\/vi\/K5oOqwk8Oeo\/hqdefault.jpg",
+                "thumb_width": 480,
+                "thumb_height": 360,
+                "fallback": "YouTube Video: Digital Rebar Meetup #16",
+                "video_html": "<iframe width=\"400\" height=\"225\" src=\"https:\/\/www.youtube.com\/embed\/K5oOqwk8Oeo?feature=oembed&autoplay=1&iv_load_policy=3\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen><\/iframe>",
+                "video_html_width": 400,
+                "video_html_height": 225,
+                "from_url": "https:\/\/youtu.be\/K5oOqwk8Oeo",
+                "service_icon": "https:\/\/a.slack-edge.com\/2089\/img\/unfurl_icons\/youtube.png",
+                "id": 1,
+                "original_url": "https:\/\/youtu.be\/K5oOqwk8Oeo"
+            }
+        ],
+        "ts": "1524608911.000030",
+        "reactions": [
+            {
+                "name": "heart_eyes",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "UA35R3W6L",
+        "text": "great because I missed the live version :slightly_smiling_face:",
+        "ts": "1524608932.000401"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we're an entertaining crew - packed with exciting new info and details ... how on earth could you miss the LIVE SHOW !! :wink:",
+        "ts": "1524608966.000038",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "UA35R3W6L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "UA35R3W6L",
+        "text": "so , i haven't install digitalrebar yet.... quick question though. Is the DHCP server configurable in a way that IP pools can be picked based on the DHCP relay address that sends the request? I have dhcp relay in the top of rack switch and everything else is IP based.",
+        "ts": "1524614247.000294"
+    },
+    {
+        "type": "message",
+        "user": "UA35R3W6L",
+        "text": "each rack has different IP pools assigned to them.",
+        "ts": "1524614291.000032"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "L3 or L2 separation? ",
+        "client_msg_id": "674789E4-728D-41A3-86CE-C1D7B84104DF",
+        "ts": "1524614371.000003"
+    },
+    {
+        "type": "message",
+        "user": "UA35R3W6L",
+        "text": "L3",
+        "ts": "1524614375.000318"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "So each Rackn is a distinct subnet? ",
+        "client_msg_id": "03102737-0E3C-4965-9FB8-43E3E9623E7C",
+        "ts": "1524614392.000176"
+    },
+    {
+        "type": "message",
+        "user": "UA35R3W6L",
+        "text": "not sure what you mean by each rackn.",
+        "ts": "1524614406.000214"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Rack.  Not Rackn ",
+        "client_msg_id": "3ECA4B21-5CBC-4E78-9B2C-3F9F9EDC7A56",
+        "ts": "1524614409.000052"
+    },
+    {
+        "type": "message",
+        "user": "UA35R3W6L",
+        "text": "ok :slightly_smiling_face:",
+        "ts": "1524614415.000237"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "TOR. Phone is not helping. ",
+        "client_msg_id": "867F371A-C34C-4E54-AAE6-74A279196DAE",
+        "ts": "1524614423.000143"
+    },
+    {
+        "type": "message",
+        "user": "UA35R3W6L",
+        "text": "yes each rack has a few \/25",
+        "ts": "1524614428.000383"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Okay they that would be reflect as a unique subnet identified by relay agent. ",
+        "client_msg_id": "0D42B91A-D6C4-4B51-84E0-B0037F6772E6",
+        "ts": "1524614457.000139"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The other would be interesting but strange. ",
+        "client_msg_id": "825BB057-C8B3-4A0E-9C6E-4ACE710447E1",
+        "ts": "1524614474.000281"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "And doable just not today.  ",
+        "client_msg_id": "799E0CD7-9592-4761-9E60-24F24D353EE8",
+        "ts": "1524614503.000041"
+    },
+    {
+        "type": "message",
+        "user": "UA35R3W6L",
+        "text": "so you mean that I can have relays in my TOR switches, and RackN will be able to pick the righ pool based on the relay IP?",
+        "ts": "1524614684.000070"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UA35R3W6L> yes - that should work no problems",
+        "ts": "1524615145.000107"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "one of the nice things about our DHCP service is we give you a really clean easy to use API over the top of your DHCP config, leases, and reservations",
+        "ts": "1524615173.000230"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we can operate as the authority for DHCP, as a DHCP Proxy, or you can use your own DHCP service, and set your nextboot and bootfile DHCP options appropriately and we can support PXE booting in any of those scenarios",
+        "ts": "1524615224.000061"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "our DHCP pools can also be toggled on\/off individually to give you easy control over provisioning (or not) of individual DHCP pools",
+        "ts": "1524615255.000015"
+    },
+    {
+        "type": "message",
+        "user": "UA35R3W6L",
+        "text": "Cool thanks. Since I have you available now, second question.",
+        "ts": "1524615709.000088"
+    },
+    {
+        "type": "message",
+        "user": "UA35R3W6L",
+        "text": "I've see a demo of images being copied to the servers. It's not PXE\/TFP in this case right? Is that similar to for instance just rsyncing a file system?",
+        "ts": "1524615782.000169"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "If you're referring to the Image Deploy vids - then - no not quite the same.",
+        "ts": "1524616183.000208"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "We have an advanced component (RackN commercial piece) that does Image Deployment.  We can take a raw image (dd) or tar.tgz of root filesystem and deploy that image to new machines",
+        "ts": "1524616226.000272"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "this brings you inline with \"immutable provisioning\" practices",
+        "ts": "1524616241.000120"
+    },
+    {
+        "type": "message",
+        "user": "UA35R3W6L",
+        "text": "ok interesting",
+        "ts": "1524616359.000017"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Also very fast",
+        "client_msg_id": "137BF51B-63FE-445F-B7CD-C162FF813875",
+        "ts": "1524616752.000038"
+    },
+    {
+        "type": "message",
+        "user": "UABRLBT16",
+        "text": "do these default images have problems with the virtio drivers or anything?",
+        "ts": "1524621204.000170"
+    },
+    {
+        "type": "message",
+        "user": "UABRLBT16",
+        "text": "weird.. nvm.. restaged the machine from \n`.\/drpcli machines stage &lt;machine-id&gt; centos-7-install`\nto..\n`.\/drpcli machines stage &lt;machine-id&gt; centos-7.4.1708-install`\nseems to be going ok now",
+        "ts": "1524621527.000197"
+    }
+]

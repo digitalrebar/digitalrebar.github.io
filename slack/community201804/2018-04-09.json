@@ -1,0 +1,247 @@
+[
+    {
+        "type": "message",
+        "user": "U9DAYGSRL",
+        "text": "i had been facing slow download speeds from s3 for downloading drp files. aria2c enabled me to download it faster  (40KBPS-&gt;500KBPS) :slightly_smiling_face:\n```\naria2c --enable-rpc=true --rpc-listen-all=true --continue=true --max-concurrent-downloads=10 --max-connection-per-server=16 --max-tries=0 --split=16 --stream-piece-selector=geom --enable-http-pipelining=true <https:\/\/github.com\/digitalrebar\/provision\/releases\/download\/tip\/dr-provision.zip>\n```",
+        "ts": "1523289969.000820"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U9DAYGSRL> nice!  I've used Aria for accelerating Ubuntu based mirror downloads, not for S3 buckets - didn't know it could do that.",
+        "ts": "1523290033.000779"
+    },
+    {
+        "type": "message",
+        "user": "U9DAYGSRL",
+        "text": "yes, its a bit unknown. I had to reinstall drp in my laptop. and it helped me alot! sucks to see slow download speeds :slightly_smiling_face:",
+        "ts": "1523290079.000121"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "....and \"slow speeds w\/ S3\" .... business as usual ... :slightly_smiling_face:",
+        "ts": "1523290086.000701"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I'll take a look to see if we can add that in to our installer shell script - we do try hard to keep the requirements for the installer to bare minimums - so I'll probably wrap the download pieces with a check to see if it's available, and use if is - otherwise stick to the standard method",
+        "ts": "1523290155.000837",
+        "reactions": [
+            {
+                "name": "grinning",
+                "users": [
+                    "U9DAYGSRL"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U9DAYGSRL",
+        "text": "great !",
+        "ts": "1523290165.000447"
+    },
+    {
+        "type": "message",
+        "user": "U9DAYGSRL",
+        "text": "can we do something similar for uploading bootenvs ?",
+        "ts": "1523292129.000657"
+    },
+    {
+        "type": "message",
+        "user": "U9DAYGSRL",
+        "text": "since bootenvs are as well downloaded from s3 as well ?",
+        "ts": "1523292150.000564"
+    },
+    {
+        "type": "message",
+        "user": "U9DAYGSRL",
+        "text": "<@U6QFVRJNB>",
+        "ts": "1523292154.000461"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "that would require a fair bit more change to handle - since that's all done in Golang currently - if there are any parallel Go lang based download libraries - we'd be willing to take a look at that - but as a rule we don't fork\/exec to external processes",
+        "ts": "1523292204.000170"
+    },
+    {
+        "type": "message",
+        "user": "U9DAYGSRL",
+        "text": "speeds are better via golang than it were via plain curl",
+        "ts": "1523292237.000439"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can use Aria to download the BootEnv ISO on to your DRP Endpoint (assuming it has outbound internet access) - and then move the ISO in to the `tftpboot\/isos\/` directory",
+        "ts": "1523292238.000581"
+    },
+    {
+        "type": "message",
+        "user": "U9DAYGSRL",
+        "text": "oh ok",
+        "ts": "1523292261.000212"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "so in essence - you can do use Aria for your ISO bootenv downloads",
+        "ts": "1523292263.000521"
+    },
+    {
+        "type": "message",
+        "user": "U9DAYGSRL",
+        "text": "let me try that",
+        "ts": "1523292264.000332"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you do have to make sure that the ISO filename you move in to place matches the BootEnv expected ISO filename",
+        "ts": "1523292312.000054"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "and (of course) the `sha256sum` needs to match",
+        "ts": "1523292322.000047"
+    },
+    {
+        "type": "message",
+        "user": "U9DAYGSRL",
+        "text": "ok! ll update... downloading",
+        "ts": "1523292345.000501"
+    },
+    {
+        "user": "UA35R3W6L",
+        "text": "<@UA35R3W6L> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1523315065.000142"
+    },
+    {
+        "user": "UA35Z8MJL",
+        "text": "<@UA35Z8MJL> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1523316455.000079"
+    },
+    {
+        "type": "message",
+        "user": "U32PZNCP5",
+        "text": "<@UA35R3W6L> $Welcome",
+        "ts": "1523325224.000152"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1523325224.000181"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UA35Z8MJL>, also $welcome :slightly_smiling_face:",
+        "ts": "1523325257.000265"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1523325257.000296"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<!here> - we hope to see all of you online tomorrow at our V015 Meetup at 11:00 am PST - check out the Meetup pages for more details:\n<https:\/\/www.meetup.com\/digitalrebar\/events\/lchdhpyxgbnb\/>",
+        "attachments": [
+            {
+                "service_name": "Meetup",
+                "title": "v015: new Workflow via Terraform, Plugin VM create\/destroy, community",
+                "title_link": "https:\/\/www.meetup.com\/digitalrebar\/events\/lchdhpyxgbnb\/",
+                "text": "Tue, Apr 10, 2018, 11:00 AM: Start Time is 11:00 am PST (12:00 pm MST, 1:00 pm CST, 2:00 pm EST ... )Welcome to the Digital Rebar online meetup. Welcome to the fifteenth (v015) Digital Rebar online me",
+                "fallback": "Meetup: v015: new Workflow via Terraform, Plugin VM create\/destroy, community",
+                "image_url": "https:\/\/secure.meetupstatic.com\/photos\/event\/d\/1\/b\/1\/600_467453681.jpeg",
+                "fields": [
+                    {
+                        "title": "Where",
+                        "value": "Online <https:\/\/zoom.us\/j\/3403934274> Mountain View, CA",
+                        "short": true
+                    },
+                    {
+                        "title": "When",
+                        "value": "Tue, Apr 10, 2018, 11:00 AM",
+                        "short": true
+                    }
+                ],
+                "from_url": "https:\/\/www.meetup.com\/digitalrebar\/events\/lchdhpyxgbnb\/",
+                "image_width": 472,
+                "image_height": 250,
+                "image_bytes": 69998,
+                "service_icon": "https:\/\/www.meetup.com\/mu_static\/en-US\/4f86abc993eecccc33a115d00b405ced.png",
+                "id": 1
+            }
+        ],
+        "ts": "1523327518.000143"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "welp, I’m back… :wave:",
+        "ts": "1523329326.000145"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "It seems that Canonical’s MAAS is more for driving racks of bare metal as if they were cloud instances (kind of like Packet?)",
+        "ts": "1523329413.000106"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "It assumes continued contact and control over the nodes",
+        "ts": "1523329451.000088"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Isn’t really for “deploy and forget” which is what I’m after",
+        "ts": "1523329507.000021"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "Welcome back Will!",
+        "ts": "1523329610.000015"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "And (surprisingly) it has no support for different partitioning schemes other than what they give you",
+        "ts": "1523329611.000145"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "Thanks Rob :grinning:",
+        "ts": "1523329630.000109"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "So I do like the curtin install speed — that’s much better than a preseed install",
+        "ts": "1523329694.000072"
+    },
+    {
+        "type": "message",
+        "user": "U416T0AAX",
+        "text": "The DRP “immutable image” deploy is based on that, yes?",
+        "ts": "1523329763.000097"
+    }
+]

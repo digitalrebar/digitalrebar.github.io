@@ -1,0 +1,192 @@
+[
+    {
+        "type": "message",
+        "user": "UA055BGUB",
+        "text": "Gents,",
+        "ts": "1524037497.000307"
+    },
+    {
+        "type": "message",
+        "user": "UA055BGUB",
+        "text": "how do I update the global profile from a content?",
+        "ts": "1524037526.000293"
+    },
+    {
+        "type": "message",
+        "user": "UA055BGUB",
+        "text": "Error: ValidationError: New layer violates key restrictions: keysCannotBeOverridden: global is already in layer 0\n        keysCannotOverride: global would be overridden by layer 0",
+        "ts": "1524037538.000234"
+    },
+    {
+        "type": "message",
+        "user": "UA055BGUB",
+        "text": "I tried with -f too but still getting the same error message",
+        "ts": "1524037588.000030"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@UA055BGUB> what version are you using? How are you updating?",
+        "client_msg_id": "1c649c28-d7df-46df-8cba-e2e143f24f4e",
+        "ts": "1524050551.000228"
+    },
+    {
+        "type": "message",
+        "user": "UA055BGUB",
+        "text": "I saved all I had modified from previous version and now trying to import in 3.8.0",
+        "ts": "1524052760.000064"
+    },
+    {
+        "type": "message",
+        "user": "UA055BGUB",
+        "text": "drpcli contents create -f -F yaml slb_drpcontent.yaml",
+        "ts": "1524052788.000211"
+    },
+    {
+        "type": "message",
+        "user": "UA055BGUB",
+        "text": "where slb_drpcontent.yaml is a bundle of everything",
+        "ts": "1524052807.000039"
+    },
+    {
+        "type": "message",
+        "user": "UA055BGUB",
+        "text": "if I renew everywhere global with something else I can create the content but I would like to use is as global",
+        "ts": "1524052838.000108"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "You may have to update global instead of replacing it.  It's a unique profile.  <@U02DGQYK1> may have commentary",
+        "client_msg_id": "ae58007e-a00f-4e90-83f2-cbed743c7eab",
+        "ts": "1524055150.000029"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@UA055BGUB> - global profile is special writable profile that can’t be inject as part of normal content injection.",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1524076071.000000"
+        },
+        "ts": "1524076067.000121"
+    },
+    {
+        "type": "message",
+        "user": "UA055BGUB",
+        "text": "<@U02DGQYK1> why we can't just update with the difference?",
+        "edited": {
+            "user": "UA055BGUB",
+            "ts": "1524088892.000000"
+        },
+        "ts": "1524088835.000466"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "content layers don’t update other layers.",
+        "ts": "1524088912.000302"
+    },
+    {
+        "type": "message",
+        "user": "UA055BGUB",
+        "text": "do I need to delete from yaml file and update manually the changes?",
+        "ts": "1524088950.000423"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "probably would be safer.",
+        "ts": "1524088961.000383"
+    },
+    {
+        "type": "message",
+        "user": "UA055BGUB",
+        "text": "ok. will try that tomorrow",
+        "ts": "1524088984.000477"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You can also unbundle the slb_drpcontent.yaml into the dr-provision digitalrebar directory.",
+        "ts": "1524088991.000211"
+    },
+    {
+        "type": "message",
+        "user": "UA055BGUB",
+        "text": "will that update the global params too?",
+        "ts": "1524089027.000086"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The bigger questions what are you trying to do?",
+        "ts": "1524089135.000161"
+    },
+    {
+        "type": "message",
+        "user": "UA055BGUB",
+        "text": "anyway will check that tomorrow. thanks for the tips",
+        "ts": "1524089143.000025"
+    },
+    {
+        "type": "message",
+        "user": "UA055BGUB",
+        "text": "I saved all the changes I did in previous version in a bundled yaml file. then I reinstalled the server and installed version 3.8.0. now I would like to apply all what I did in previous changes",
+        "ts": "1524089232.000511"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "So, that is a backup and restore",
+        "ts": "1524089258.000161"
+    },
+    {
+        "type": "message",
+        "user": "UA055BGUB",
+        "text": "a kind of",
+        "ts": "1524089272.000124"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "to back-up: `drpcli contents show BackingStore --format=yaml &gt; backup.yaml`",
+        "ts": "1524089315.000181"
+    },
+    {
+        "type": "message",
+        "user": "UA055BGUB",
+        "text": "because I haven't saved anything just what I changed",
+        "ts": "1524089327.000327"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "To restore, change directory to the database directory of drp `\/var\/lib\/dr-provision\/digitalrebar`",
+        "ts": "1524089385.000204"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "`drpcli contents unbundle backup.yaml`",
+        "ts": "1524089396.000102"
+    },
+    {
+        "type": "message",
+        "user": "UA055BGUB",
+        "text": "sounds a good idea. I will try tomorrow, as it is too late now",
+        "ts": "1524089420.000367"
+    },
+    {
+        "type": "message",
+        "user": "UA055BGUB",
+        "text": "thanks a lot for the help",
+        "ts": "1524089448.000147"
+    },
+    {
+        "type": "message",
+        "user": "UA055BGUB",
+        "text": "talk to you soon",
+        "ts": "1524089455.000435"
+    }
+]

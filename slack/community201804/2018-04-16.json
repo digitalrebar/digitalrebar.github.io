@@ -1,0 +1,22 @@
+[
+    {
+        "user": "UA7J657M2",
+        "text": "<@UA7J657M2> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1523915849.000319"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "$welcome <@UA7J657M2>!",
+        "ts": "1523935518.000168"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1523935518.000207"
+    }
+]

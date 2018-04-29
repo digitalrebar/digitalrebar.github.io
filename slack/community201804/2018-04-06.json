@@ -45,5 +45,136 @@
             }
         ],
         "ts": "1523025557.000760"
+    },
+    {
+        "user": "UA29Z3MN0",
+        "text": "<@UA29Z3MN0> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1523029566.000121"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UA29Z3MN0> $welcome !",
+        "ts": "1523030327.000449"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1523030327.000579"
+    },
+    {
+        "type": "message",
+        "user": "UA29Z3MN0",
+        "text": "thanks",
+        "ts": "1523030387.000782"
+    },
+    {
+        "type": "message",
+        "user": "UA29Z3MN0",
+        "text": "great update on Terraform:  <http:\/\/provision.readthedocs.io\/en\/tip\/doc\/integrations\/terraform.html>",
+        "ts": "1523030395.000010"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "NOTE: we've tested the patch on tip that eliminates the extra reboot in the demo above.",
+        "ts": "1523040071.000283"
+    },
+    {
+        "type": "message",
+        "user": "UA02EUXF1",
+        "text": "in a template how can I access a nested field inside the gohai-inventory",
+        "ts": "1523059358.000129"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UA02EUXF1> - \"it depends\" ... what tools (eg Bash, Python, etc...) are you using that you want to parse the JSON ?",
+        "ts": "1523059746.000151"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if it's Bash - likely your best friend is using the `jq` tool",
+        "ts": "1523059762.000079"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we have a couple examples of parsing JSON via `jq` in our $faq pages at the end",
+        "ts": "1523059782.000039"
+    },
+    {
+        "text": "FAQs are here &gt; <http:\/\/provision.readthedocs.io\/en\/tip\/doc\/faq-troubleshooting.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1523059782.000119"
+    },
+    {
+        "type": "message",
+        "user": "UA02EUXF1",
+        "text": "so I have to pass the entire parameter to a variable in my bash script and parse it with jq? I was hoping to access just the field that I need like in ruby ```&lt;%= gohai['bios']['vendor'] %&gt;```",
+        "ts": "1523059985.000143"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Gohai inventory is held as JSON key\/value info on the DRP server-side ... parsing with `jq` is \"sorta\" the same - but not quite ... like you gathered, you have to pass all of gohai inventory to `jq` to pull out the specific keys you want ...",
+        "ts": "1523060085.000156"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "however - your interest is not at all unreasonable - I'll talk to <@U02DGQYK1> and <@U02DJQSG8> about adding Golang Template helpers to parse Gohai Inventory similarly to what you're asking - if it's possible - it'd be something like \n`{{ .Gohai \".bios.vendor\" }}` \ntaking a random stab at how it might look as a Golang template helper",
+        "ts": "1523060170.000106"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "but at the moment - sorry ... doesn't exist",
+        "ts": "1523060181.000114"
+    },
+    {
+        "type": "message",
+        "user": "UA02EUXF1",
+        "text": "ok, we actually tried something similar to that after looking at some examples, thanks for the help",
+        "ts": "1523060230.000148"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if you don't mind filing a feature request - this helps us to prioritize and take action on feature requests like this .... \n<https:\/\/github.com\/digitalrebar\/provision\/issues\/new>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "Build software better, together",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/issues\/new",
+                "text": "GitHub is where people build software. More than 27 million people use GitHub to discover, fork, and contribute to over 80 million projects.",
+                "fallback": "GitHub: Build software better, together",
+                "image_width": 1200,
+                "image_height": 620,
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/issues\/new",
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1523060283.000007"
+    },
+    {
+        "type": "message",
+        "user": "UA02EUXF1",
+        "text": "will do",
+        "ts": "1523060304.000055"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "that way if\/when we implement something - you'll be notified",
+        "ts": "1523060306.000103"
     }
 ]

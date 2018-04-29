@@ -1,0 +1,2503 @@
+[
+    {
+        "type": "message",
+        "user": "U8BTZ6HPT",
+        "text": "Hello, all. Returning to DRP after the 3.8 release. It appears that my Global Profile ssh key no longer works with provisioned machines. I've tried explicitly adding the \"global\" profile to a machine but still no luck. I switched to Workflows from Stage Maps and may be applying Profiles incorrectly.\n\nI've looked at the docs. Note there are several typos so I am trying to read them carefully :slightly_smiling_face:\n\n&gt; The Param access-ssh-root-mode defines the login policy for the root user. The default **vaule** is without-password which means the remote SSH root user **must access must be performed** with SSH keys (see Add SSH Keys to Authorized Keys).\n\n<http:\/\/provision.readthedocs.io\/en\/tip\/doc\/faq-troubleshooting.html?highlight=ssh-access#rs-add-ssh>\n\nI ran an experiment with a KVM VM \n\n<https:\/\/www.cyberciti.biz\/faq\/how-to-reset-forgotten-root-password-for-linux-kvm-qcow2-image-vm\/>\n\nAnd the `\/etc\/shadow` entry for root does not have a password set.\n\nCan I confirm that all I need to do with the Global profile in 3.8+ is set my key and 'without-password' access method for root access? \n\nAlso, I watched the video but was unclear about how Profiles are now applied to machines--are we supposed to use a Workflow step to set Profiles?",
+        "attachments": [
+            {
+                "service_name": "nixCraft",
+                "title": "How to reset forgotten root password for Linux KVM qcow2 image\/vm - nixCraft",
+                "title_link": "https:\/\/www.cyberciti.biz\/faq\/how-to-reset-forgotten-root-password-for-linux-kvm-qcow2-image-vm\/",
+                "text": "Explains how to reset forgotten root password for Linux KVM qcow2 image or vm using guestfish on Linux operating systems.",
+                "fallback": "nixCraft: How to reset forgotten root password for Linux KVM qcow2 image\/vm - nixCraft",
+                "image_url": "https:\/\/www.cyberciti.biz\/media\/new\/faq\/2018\/02\/How-to-reset-forgotten-root-password-for-Linux-KVM-qcow2-image-vm.jpg",
+                "ts": 1518275854,
+                "from_url": "https:\/\/www.cyberciti.biz\/faq\/how-to-reset-forgotten-root-password-for-linux-kvm-qcow2-image-vm\/",
+                "image_width": 469,
+                "image_height": 250,
+                "image_bytes": 47094,
+                "service_icon": "https:\/\/www.cyberciti.biz\/faq\/wp-content\/themes\/cybercity\/assets\/images\/icon\/apple-icon-57x57.png",
+                "id": 1,
+                "original_url": "https:\/\/www.cyberciti.biz\/faq\/how-to-reset-forgotten-root-password-for-linux-kvm-qcow2-image-vm\/"
+            }
+        ],
+        "edited": {
+            "user": "U8BTZ6HPT",
+            "ts": "1524750285.000000"
+        },
+        "ts": "1524750208.000636"
+    },
+    {
+        "type": "message",
+        "user": "U32PZNCP5",
+        "text": "<@U8BTZ6HPT> We are finishing our morning quick team meeting, I will have an engineer take a look for you right after.",
+        "ts": "1524750397.000380"
+    },
+    {
+        "type": "message",
+        "user": "U8BTZ6HPT",
+        "text": "Take your time! Thank you!",
+        "ts": "1524750845.000175"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "good morning, <@U8BTZ6HPT>",
+        "ts": "1524751526.000723"
+    },
+    {
+        "type": "message",
+        "user": "U8BTZ6HPT",
+        "text": "Good morning, <@U6QFVRJNB> !",
+        "ts": "1524751587.000025"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "For SSH based access, yes, set the `without-password` value for `access-ssh-root-mode` Param.  If you want your SSH key to be used for _ALL_ installs - then add the Param `access-keys` to your Global profile.",
+        "ts": "1524751646.000720"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "For CentOS installs - the default behavior is to set up SSH access for `root` user with that key.",
+        "ts": "1524751667.000377"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "The `global` profile applies to all Machines by default - so you do not have to \"add\" the global profile to any machine.",
+        "ts": "1524751692.000568"
+    },
+    {
+        "type": "message",
+        "user": "U8BTZ6HPT",
+        "text": "Excellent--that's still the expected behavior. I may have messed something up during my switch from 3.7 to 3.8. I am using Ubuntu. Are all non-global profiles supposed to be applied in a workflow step?",
+        "ts": "1524751816.000113"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Ubuntu by default sets up the `rocketskates` admin user (you can see that in the `net-seed.tmpl` template) - if you are using Passwords, then that users password is set to `RocketSkates`) - I'm double checking the SSH access in that case right now",
+        "ts": "1524751885.000071"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "By default Ubuntu installs disable root access via ssh",
+        "ts": "1524751904.000404"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "and they do not set a root password, which means the only way to gain root access is via direct key authenticated with SSH or via sudo.",
+        "edited": {
+            "user": "U02DJQSG8",
+            "ts": "1524752336.000000"
+        },
+        "ts": "1524752320.000726"
+    },
+    {
+        "type": "message",
+        "user": "U8BTZ6HPT",
+        "text": "I will investigate. If I'm interpreting <@U02DJQSG8> correctly, my 3.7 setup permitted me to set the Global ssh key and 'without-password' for access to stock Ubuntu machines as root e.g. 'ssh root@host'.",
+        "ts": "1524752844.000358"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Yep.",
+        "ts": "1524752882.000161"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "To do the same with workflows make sure that the ssh-access stage is present sometime after the ubuntu-install stage in your workflow.",
+        "ts": "1524752980.000528"
+    },
+    {
+        "type": "message",
+        "user": "U8BTZ6HPT",
+        "text": "Great! Will give that a try! Thanks!",
+        "ts": "1524753058.000275"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "Hello <@U02DJQSG8>! «I will have to think about that over lunch.» — Have you got any idea about my issue?",
+        "ts": "1524756546.000196"
+    },
+    {
+        "user": "UADRBP4SE",
+        "text": "<@UADRBP4SE> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1524756608.000503"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "The version of Sledgehammer is very old and has a bug that can make it lose leases if the Sledgehammer bringup process takes too long.  You should probably update drp-community-content to the latest version, which uses a Sledgehammer that has that problem fixed.",
+        "ts": "1524756704.000453"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "OK, I will try.",
+        "edited": {
+            "user": "U8K7C542V",
+            "ts": "1524756763.000000"
+        },
+        "ts": "1524756760.000146"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Does the bridged DHCP env try tp PXE boot systems?",
+        "ts": "1524756904.000002"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "If it does not, you can operate the dr-provision DHCP server in ProxyDHCP mode",
+        "ts": "1524756932.000492"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "so you don't need to do the disconnect thing you have been doing.",
+        "ts": "1524756955.000153"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "To do that, set the Proxy flag on the subnet you created.",
+        "ts": "1524757012.000418"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "...",
+        "ts": "1524757018.000898"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "nvm.",
+        "ts": "1524757021.000271"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "that will make drp be the PXE provider for the bridged subnet, which is probably not what you wnat.",
+        "ts": "1524757060.000102"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I don't use virtualbox persopnally, but the setup Greg uses involves having his vms boot on a host-only network and he runs drp on the host directly",
+        "ts": "1524757123.000814"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "which will work fine if you are using a Mac or Linux has the host OS.",
+        "ts": "1524757139.000181"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<@U02DGQYK1> Is there a doc that describes your setup somewhere?",
+        "ts": "1524757183.000548"
+    },
+    {
+        "type": "message",
+        "user": "U32PZNCP5",
+        "text": "<@UADRBP4SE> $Welcome",
+        "ts": "1524757272.000759"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1524757272.000890"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U8K7C542V> - I create a hostonly network (vboxnet0).  Start a machine on it to create the interface.  Stop the machine.  Start DRP locally, configure subnet for that vboxnet0 and set proxy to true and enabled to true.  This will let vbox hand out addresses, but DRP server PXE content.  Add the required broadcast route.  something like this: `sudo route add 255.255.255.255 192.168.100.1`  The `192.168.100.1` address is based upon the host’s address on the network.  `ifconfig -a` can be used to find that.",
+        "ts": "1524757511.000156"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Then you should be able to PXE vms in virtualbox.  Remember to have the machine pxe boot by changing the boot order.",
+        "ts": "1524757546.000218"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I should write this up better, but can’t right now.",
+        "ts": "1524757577.000581"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "«Remember to have the machine pxe boot by changing the boot order» — yes, (F12→«l»…) unfortunately I did not find a way to VirtualBox to force booting from LAN.",
+        "ts": "1524757627.000680"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "From the VM’s settings, select system -&gt; Motherboard -&gt; BootOrder.  Move the Network entry to the top.",
+        "ts": "1524757693.000410",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U8K7C542V"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U8K7C542V> uploaded a file: <https:\/\/rackn.slack.com\/files\/U8K7C542V\/FAETR7MCP\/image.png|image.png>",
+        "file": {
+            "id": "FAETR7MCP",
+            "created": 1524758613,
+            "timestamp": 1524758613,
+            "name": "image.png",
+            "title": "image.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U8K7C542V",
+            "editable": false,
+            "size": 17926,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAETR7MCP\/image.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAETR7MCP\/download\/image.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAETR7MCP-7d6e0bffd7\/image_64.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAETR7MCP-7d6e0bffd7\/image_80.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAETR7MCP-7d6e0bffd7\/image_360.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_360_w": 360,
+            "thumb_360_h": 85,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAETR7MCP-7d6e0bffd7\/image_480.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_480_w": 480,
+            "thumb_480_h": 114,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAETR7MCP-7d6e0bffd7\/image_160.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "image_exif_rotation": 1,
+            "original_w": 502,
+            "original_h": 119,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U8K7C542V\/FAETR7MCP\/image.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FAETR7MCP-ee7de760f4",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U8K7C542V",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "stanislav.fomin",
+        "bot_id": null,
+        "ts": "1524758615.000416"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "Trying to reupload sledgehammer → … what is wrong?",
+        "ts": "1524758651.000713"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You need to update your default content pack.",
+        "ts": "1524758726.000759"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "go to the content packages and update the community content.",
+        "ts": "1524758741.000491"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "The versions of Sledgehammer are tied to the community content pack.",
+        "ts": "1524758781.000249"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "OK, I update \"drpcli contents upload - &lt; \/etc\/digital-rebar\/drp-community-content.yaml\"",
+        "ts": "1524758856.000760"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "fresh version of drp-community-content...",
+        "ts": "1524758877.000211"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "hm, how did you download that file?",
+        "edited": {
+            "user": "U02DJQSG8",
+            "ts": "1524758917.000000"
+        },
+        "ts": "1524758910.000718"
+    },
+    {
+        "type": "message",
+        "user": "U8BTZ6HPT",
+        "text": "<@U6QFVRJNB> <@U02DJQSG8> Embarrassed to admit that when I set up the new environment for 3.8, I did not copy my private key and was unable to ssh into my Ubuntu guests. It's the only part of my build step that I don't automate. The Global profile with ssh works as expected on Ubuntu for ssh access for the root user. Thank you for your help!",
+        "ts": "1524759158.000853"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Also, if anyone is interested in testing RBAC support (with bonus inadequate documentation and sharp edges everywhere!),  <https:\/\/github.com\/digitalrebar\/provision\/pull\/831> is there for y'all to play with.",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "Start adding rbac to dr provision by VictorLowther · Pull Request #831 · digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/pull\/831",
+                "text": "WIP, code is mostly equivalent to what we currently have, except only rocketskates gets to be superuser by default. Much more to come until it is mergeable, including: Tenants Update restrictions...",
+                "fallback": "GitHub: Start adding rbac to dr provision by VictorLowther · Pull Request #831 · digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/pull\/831",
+                "thumb_url": "https:\/\/avatars2.githubusercontent.com\/u\/770578?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/digitalrebar\/provision\/pull\/831"
+            }
+        ],
+        "ts": "1524759192.000338",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U8BTZ6HPT"
+                ],
+                "count": 1
+            },
+            {
+                "name": "tada",
+                "users": [
+                    "UA9A8E1Q9"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "This is currently totally not production ready, but it should be by the 3.9 release.",
+        "ts": "1524759229.000024"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "I  get it from github, now looks OK → <https:\/\/kopy.io\/DSJlF>",
+        "ts": "1524759385.000119"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U8K7C542V> - yes - then do the uploadiso again",
+        "ts": "1524759527.000824"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U8K7C542V> uploaded a file: <https:\/\/rackn.slack.com\/files\/U8K7C542V\/FAE1FFGS1\/image.png|image.png> and commented: Fresh Sledgehammer also cannot download \"control.sh\"",
+        "file": {
+            "id": "FAE1FFGS1",
+            "created": 1524759740,
+            "timestamp": 1524759740,
+            "name": "image.png",
+            "title": "image.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U8K7C542V",
+            "editable": false,
+            "size": 36434,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAE1FFGS1\/image.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAE1FFGS1\/download\/image.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAE1FFGS1-30f9927faf\/image_64.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAE1FFGS1-30f9927faf\/image_80.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAE1FFGS1-30f9927faf\/image_360.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_360_w": 360,
+            "thumb_360_h": 198,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAE1FFGS1-30f9927faf\/image_480.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_480_w": 480,
+            "thumb_480_h": 264,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAE1FFGS1-30f9927faf\/image_160.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAE1FFGS1-30f9927faf\/image_720.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_720_w": 720,
+            "thumb_720_h": 396,
+            "image_exif_rotation": 1,
+            "original_w": 747,
+            "original_h": 411,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U8K7C542V\/FAE1FFGS1\/image.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FAE1FFGS1-5e122104af",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 1,
+            "initial_comment": {
+                "id": "FcADPW80DR",
+                "created": 1524759740,
+                "timestamp": 1524759740,
+                "user": "U8K7C542V",
+                "is_intro": true,
+                "comment": "Fresh Sledgehammer also cannot download \"control.sh\""
+            }
+        },
+        "user": "U8K7C542V",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "stanislav.fomin",
+        "bot_id": null,
+        "ts": "1524759742.000253"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "above that might show why it couldn’t.",
+        "ts": "1524759801.000335"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "After updating content, you should make sure that bootenvs, stages, and prefs are still set correctly.",
+        "ts": "1524759829.000692"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U8K7C542V> uploaded a file: <https:\/\/rackn.slack.com\/files\/U8K7C542V\/FAEUBJU87\/image.png|image.png> and commented: But this Sledgehammer can get IP",
+        "file": {
+            "id": "FAEUBJU87",
+            "created": 1524759927,
+            "timestamp": 1524759927,
+            "name": "image.png",
+            "title": "image.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U8K7C542V",
+            "editable": false,
+            "size": 24122,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAEUBJU87\/image.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAEUBJU87\/download\/image.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAEUBJU87-4a42bda1d0\/image_64.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAEUBJU87-4a42bda1d0\/image_80.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAEUBJU87-4a42bda1d0\/image_360.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_360_w": 360,
+            "thumb_360_h": 185,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAEUBJU87-4a42bda1d0\/image_480.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_480_w": 480,
+            "thumb_480_h": 246,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAEUBJU87-4a42bda1d0\/image_160.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "image_exif_rotation": 1,
+            "original_w": 713,
+            "original_h": 366,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U8K7C542V\/FAEUBJU87\/image.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FAEUBJU87-f395a88791",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 1,
+            "initial_comment": {
+                "id": "FcAE1JBPAR",
+                "created": 1524759927,
+                "timestamp": 1524759927,
+                "user": "U8K7C542V",
+                "is_intro": true,
+                "comment": "But this Sledgehammer can get IP"
+            }
+        },
+        "user": "U8K7C542V",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "stanislav.fomin",
+        "bot_id": null,
+        "ts": "1524759929.000109"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U8K7C542V> uploaded a file: <https:\/\/rackn.slack.com\/files\/U8K7C542V\/FADL737AQ\/image.png|image.png>",
+        "file": {
+            "id": "FADL737AQ",
+            "created": 1524760000,
+            "timestamp": 1524760000,
+            "name": "image.png",
+            "title": "image.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U8K7C542V",
+            "editable": false,
+            "size": 6959,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FADL737AQ\/image.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FADL737AQ\/download\/image.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FADL737AQ-1c09185edb\/image_64.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FADL737AQ-1c09185edb\/image_80.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FADL737AQ-1c09185edb\/image_360.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_360_w": 360,
+            "thumb_360_h": 68,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FADL737AQ-1c09185edb\/image_480.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_480_w": 480,
+            "thumb_480_h": 91,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FADL737AQ-1c09185edb\/image_160.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "image_exif_rotation": 1,
+            "original_w": 589,
+            "original_h": 112,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U8K7C542V\/FADL737AQ\/image.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FADL737AQ-cc401e4635",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U8K7C542V",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "stanislav.fomin",
+        "bot_id": null,
+        "ts": "1524760001.000674"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "And route",
+        "ts": "1524760004.000284"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "OK, so that part is fixed.",
+        "ts": "1524760039.000643"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Is the Sledgehammer bootenv available?",
+        "ts": "1524760058.000345"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "Discovery available … «drpcli bootenvs list» → <https:\/\/kopy.io\/iTa1j>",
+        "ts": "1524760291.000522"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "even from dr-provision box I have\n[root@dr-provision ~]# wget <http:\/\/172.31.1.4:8091\/machines\/30f575a7-2944-462c-b524-48968d1ad06a\/control.sh>\n--2018-04-26 16:32:36--  <http:\/\/172.31.1.4:8091\/machines\/30f575a7-2944-462c-b524-48968d1ad06a\/control.sh>\nConnecting to 172.31.1.4:8091... connected.\nHTTP request sent, awaiting response... 404 Not Found\n2018-04-26 16:32:36 ERROR 404: Not Found.",
+        "ts": "1524760394.000607"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "What stage and bootenv are set for that machine?",
+        "ts": "1524760434.000348"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "I delete this machine from list before experiment, so this machine should start from discovery",
+        "ts": "1524760604.000212"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U8K7C542V> uploaded a file: <https:\/\/rackn.slack.com\/files\/U8K7C542V\/FAE1VRKS9\/image.png|image.png>",
+        "file": {
+            "id": "FAE1VRKS9",
+            "created": 1524760690,
+            "timestamp": 1524760690,
+            "name": "image.png",
+            "title": "image.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U8K7C542V",
+            "editable": false,
+            "size": 42393,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAE1VRKS9\/image.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAE1VRKS9\/download\/image.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAE1VRKS9-9e1431a0aa\/image_64.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAE1VRKS9-9e1431a0aa\/image_80.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAE1VRKS9-9e1431a0aa\/image_360.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_360_w": 360,
+            "thumb_360_h": 185,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAE1VRKS9-9e1431a0aa\/image_480.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_480_w": 480,
+            "thumb_480_h": 247,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAE1VRKS9-9e1431a0aa\/image_160.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAE1VRKS9-9e1431a0aa\/image_720.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_720_w": 720,
+            "thumb_720_h": 371,
+            "image_exif_rotation": 1,
+            "original_w": 748,
+            "original_h": 385,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U8K7C542V\/FAE1VRKS9\/image.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FAE1VRKS9-54133dca6d",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U8K7C542V",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "stanislav.fomin",
+        "bot_id": null,
+        "ts": "1524760692.000398"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U8K7C542V> uploaded a file: <https:\/\/rackn.slack.com\/files\/U8K7C542V\/FAEUPNQMV\/image.png|image.png>",
+        "file": {
+            "id": "FAEUPNQMV",
+            "created": 1524760733,
+            "timestamp": 1524760733,
+            "name": "image.png",
+            "title": "image.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U8K7C542V",
+            "editable": false,
+            "size": 14309,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAEUPNQMV\/image.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAEUPNQMV\/download\/image.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAEUPNQMV-ab8176d870\/image_64.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAEUPNQMV-ab8176d870\/image_80.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAEUPNQMV-ab8176d870\/image_360.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_360_w": 360,
+            "thumb_360_h": 26,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAEUPNQMV-ab8176d870\/image_480.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_480_w": 480,
+            "thumb_480_h": 34,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAEUPNQMV-ab8176d870\/image_160.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAEUPNQMV-ab8176d870\/image_720.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_720_w": 720,
+            "thumb_720_h": 51,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAEUPNQMV-ab8176d870\/image_800.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_800_w": 800,
+            "thumb_800_h": 57,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAEUPNQMV-ab8176d870\/image_960.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_960_w": 960,
+            "thumb_960_h": 68,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAEUPNQMV-ab8176d870\/image_1024.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 73,
+            "image_exif_rotation": 1,
+            "original_w": 1264,
+            "original_h": 90,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U8K7C542V\/FAEUPNQMV\/image.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FAEUPNQMV-43e12c4ce0",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U8K7C542V",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "stanislav.fomin",
+        "bot_id": null,
+        "ts": "1524760735.000418"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "well, the UUID of that machine is not the same as the UUID in the URL you pasted above",
+        "ts": "1524760791.000401"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "and the stage and bootenv are not set to something that would boot to Sledgehammer.",
+        "ts": "1524760834.000616"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "[root@dr-provision ~]# wget <http:\/\/172.31.1.4:8091\/machines\/6614f89e-9db3-4dba-9470-5345afa185d8\/control.sh>\n--2018-04-26 16:41:01--  <http:\/\/172.31.1.4:8091\/machines\/6614f89e-9db3-4dba-9470-5345afa185d8\/control.sh>\nConnecting to 172.31.1.4:8091... connected.\nHTTP request sent, awaiting response... 404 Not Found\n2018-04-26 16:41:01 ERROR 404: Not Found.",
+        "ts": "1524760876.000430"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "right",
+        "ts": "1524760883.000615"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "That file will not exist with the BootEnv set to local.",
+        "ts": "1524760898.000485"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "sorry, same thing this this UUID. (old one was from previous experiment).",
+        "ts": "1524760905.000041"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Did you precreate the machine, or are you letting Sledgehammer create the machine?",
+        "ts": "1524760936.000581"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "I did not use UI or drpcli to create the machine.",
+        "ts": "1524761039.000667"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ok",
+        "ts": "1524761043.000692"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "In info &amp; preferences, what are the default stage and bootenv set to?",
+        "ts": "1524761075.000212"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U8K7C542V> uploaded a file: <https:\/\/rackn.slack.com\/files\/U8K7C542V\/FAD6Y13PS\/image.png|image.png>",
+        "file": {
+            "id": "FAD6Y13PS",
+            "created": 1524761115,
+            "timestamp": 1524761115,
+            "name": "image.png",
+            "title": "image.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U8K7C542V",
+            "editable": false,
+            "size": 147321,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAD6Y13PS\/image.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAD6Y13PS\/download\/image.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAD6Y13PS-4497e4a75a\/image_64.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAD6Y13PS-4497e4a75a\/image_80.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAD6Y13PS-4497e4a75a\/image_360.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_360_w": 360,
+            "thumb_360_h": 252,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAD6Y13PS-4497e4a75a\/image_480.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_480_w": 480,
+            "thumb_480_h": 335,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAD6Y13PS-4497e4a75a\/image_160.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAD6Y13PS-4497e4a75a\/image_720.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_720_w": 720,
+            "thumb_720_h": 503,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAD6Y13PS-4497e4a75a\/image_800.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_800_w": 800,
+            "thumb_800_h": 559,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAD6Y13PS-4497e4a75a\/image_960.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_960_w": 960,
+            "thumb_960_h": 671,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAD6Y13PS-4497e4a75a\/image_1024.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 716,
+            "image_exif_rotation": 1,
+            "original_w": 1378,
+            "original_h": 963,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U8K7C542V\/FAD6Y13PS\/image.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FAD6Y13PS-caf69d0ca4",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U8K7C542V",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "stanislav.fomin",
+        "bot_id": null,
+        "ts": "1524761120.000214"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Try setting the default stage and bootenv to discover and sledgehammer, respectively.",
+        "ts": "1524761174.000169"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "then delete that machine and reboot the VM.",
+        "ts": "1524761198.000008"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U8K7C542V> uploaded a file: <https:\/\/rackn.slack.com\/files\/U8K7C542V\/FADBJGTHP\/image.png|image.png>",
+        "file": {
+            "id": "FADBJGTHP",
+            "created": 1524761489,
+            "timestamp": 1524761489,
+            "name": "image.png",
+            "title": "image.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U8K7C542V",
+            "editable": false,
+            "size": 31148,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FADBJGTHP\/image.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FADBJGTHP\/download\/image.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FADBJGTHP-868446e2cd\/image_64.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FADBJGTHP-868446e2cd\/image_80.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FADBJGTHP-868446e2cd\/image_360.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_360_w": 360,
+            "thumb_360_h": 204,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FADBJGTHP-868446e2cd\/image_480.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_480_w": 480,
+            "thumb_480_h": 272,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FADBJGTHP-868446e2cd\/image_160.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "image_exif_rotation": 1,
+            "original_w": 717,
+            "original_h": 406,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U8K7C542V\/FADBJGTHP\/image.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FADBJGTHP-a53b1a2f96",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U8K7C542V",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "stanislav.fomin",
+        "bot_id": null,
+        "ts": "1524761491.000454"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "Hangs on some other step",
+        "ts": "1524761543.000366"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Is the centos-7-install bootenv available?",
+        "ts": "1524761569.000257"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U8K7C542V> uploaded a file: <https:\/\/rackn.slack.com\/files\/U8K7C542V\/FAEQLBFE2\/image.png|image.png>",
+        "file": {
+            "id": "FAEQLBFE2",
+            "created": 1524761779,
+            "timestamp": 1524761779,
+            "name": "image.png",
+            "title": "image.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U8K7C542V",
+            "editable": false,
+            "size": 67006,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAEQLBFE2\/image.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAEQLBFE2\/download\/image.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAEQLBFE2-79b06621e9\/image_64.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAEQLBFE2-79b06621e9\/image_80.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAEQLBFE2-79b06621e9\/image_360.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_360_w": 360,
+            "thumb_360_h": 281,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAEQLBFE2-79b06621e9\/image_480.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_480_w": 480,
+            "thumb_480_h": 374,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAEQLBFE2-79b06621e9\/image_160.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAEQLBFE2-79b06621e9\/image_720.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_720_w": 720,
+            "thumb_720_h": 562,
+            "image_exif_rotation": 1,
+            "original_w": 727,
+            "original_h": 567,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U8K7C542V\/FAEQLBFE2\/image.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FAEQLBFE2-d8af6de3e0",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U8K7C542V",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "stanislav.fomin",
+        "bot_id": null,
+        "ts": "1524761781.000306"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "Looks like that. Yes.",
+        "ts": "1524761784.000650"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "... and it is not the stale canary issue we encountered yesterday?",
+        "ts": "1524761840.000777"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "What issue?",
+        "ts": "1524761921.000792"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "vlowther [12:08]\nhmmm...\nWhat does `ls -al \/var\/lib\/dr-provision\/tftpboot\/centos-7\/install\/` show?",
+        "ts": "1524762028.000912"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "<https:\/\/kopy.io\/qwdFn>",
+        "ts": "1524762105.000380"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ok",
+        "ts": "1524762291.000865"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "The screenshots show that a few jobs ran.  What was the last job that ran on the machine?  Did it fail, and if so what were the logs?",
+        "ts": "1524762387.000774"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "\"What was the last job that ran on the machine?\" — On dr-provision box?",
+        "ts": "1524764157.000687"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "What \"job\" do you mean?",
+        "ts": "1524764223.000068"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "All that stuff you saw in the screenshots from the sledgehammer logs was the result of the machine agent running jobs created from the tasks assigned to that machine.",
+        "ts": "1524764285.000166"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "If you go to the machine page for that system, you can see where in the list it is.",
+        "ts": "1524764309.000177"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "If you go to thge jobs page, you can see all the jobs that have run, when they ran, how long they ran ofr, etc.",
+        "ts": "1524764344.000549"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U8K7C542V> uploaded a file: <https:\/\/rackn.slack.com\/files\/U8K7C542V\/FADN2407N\/image.png|image.png>",
+        "file": {
+            "id": "FADN2407N",
+            "created": 1524764389,
+            "timestamp": 1524764389,
+            "name": "image.png",
+            "title": "image.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U8K7C542V",
+            "editable": false,
+            "size": 45163,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FADN2407N\/image.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FADN2407N\/download\/image.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FADN2407N-a42e037a22\/image_64.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FADN2407N-a42e037a22\/image_80.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FADN2407N-a42e037a22\/image_360.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_360_w": 204,
+            "thumb_360_h": 360,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FADN2407N-a42e037a22\/image_480.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_480_w": 272,
+            "thumb_480_h": 480,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FADN2407N-a42e037a22\/image_160.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FADN2407N-a42e037a22\/image_720.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_720_w": 408,
+            "thumb_720_h": 720,
+            "image_exif_rotation": 1,
+            "original_w": 452,
+            "original_h": 798,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U8K7C542V\/FADN2407N\/image.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FADN2407N-8330e78011",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U8K7C542V",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "stanislav.fomin",
+        "bot_id": null,
+        "ts": "1524764391.000185"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "You have a workflow assigned to the machine.",
+        "ts": "1524764481.000537"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "All the stuff in change-stage\/map is ignored when that is the case.",
+        "ts": "1524764493.000575"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I would recommend reading <http:\/\/provision.readthedocs.io\/en\/tip\/doc\/arch\/provision.html#workflow> and <http:\/\/provision.readthedocs.io\/en\/tip\/doc\/arch\/workflow.html>",
+        "ts": "1524764622.000338"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "I tried to remove workflow from default setting, but UI do not allow me to select \"No workflow\"",
+        "ts": "1524764734.000763"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "`clear workflow`",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1524764774.000000"
+        },
+        "ts": "1524764756.000342"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "OK, I will try to understand worklow right now (before I want \"just make it work\" before \"learn some new\")",
+        "ts": "1524764814.000714"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "you can fix this from the command line like this:",
+        "ts": "1524764889.000245"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "``` drpcli prefs set defaultWorkflow \"\"```",
+        "ts": "1524764898.000074"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "This is a UX bug about the defaultWorkflow being not able to clear it.",
+        "ts": "1524764919.000714"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "I delete default workflow from UI",
+        "ts": "1524765124.000717"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U8K7C542V> uploaded a file: <https:\/\/rackn.slack.com\/files\/U8K7C542V\/FAD8LLG8G\/image.png|image.png>",
+        "file": {
+            "id": "FAD8LLG8G",
+            "created": 1524765128,
+            "timestamp": 1524765128,
+            "name": "image.png",
+            "title": "image.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U8K7C542V",
+            "editable": false,
+            "size": 30451,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAD8LLG8G\/image.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAD8LLG8G\/download\/image.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAD8LLG8G-50bd694c96\/image_64.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAD8LLG8G-50bd694c96\/image_80.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAD8LLG8G-50bd694c96\/image_360.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_360_w": 360,
+            "thumb_360_h": 202,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAD8LLG8G-50bd694c96\/image_480.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_480_w": 480,
+            "thumb_480_h": 269,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAD8LLG8G-50bd694c96\/image_160.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "image_exif_rotation": 1,
+            "original_w": 665,
+            "original_h": 373,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U8K7C542V\/FAD8LLG8G\/image.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FAD8LLG8G-4229388cfc",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U8K7C542V",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "stanislav.fomin",
+        "bot_id": null,
+        "ts": "1524765130.000067"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U8K7C542V> uploaded a file: <https:\/\/rackn.slack.com\/files\/U8K7C542V\/FAES0US1L\/image.png|image.png>",
+        "file": {
+            "id": "FAES0US1L",
+            "created": 1524765218,
+            "timestamp": 1524765218,
+            "name": "image.png",
+            "title": "image.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U8K7C542V",
+            "editable": false,
+            "size": 34457,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAES0US1L\/image.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAES0US1L\/download\/image.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAES0US1L-c8aef96030\/image_64.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAES0US1L-c8aef96030\/image_80.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAES0US1L-c8aef96030\/image_360.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_360_w": 360,
+            "thumb_360_h": 204,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAES0US1L-c8aef96030\/image_480.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_480_w": 480,
+            "thumb_480_h": 272,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAES0US1L-c8aef96030\/image_160.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAES0US1L-c8aef96030\/image_720.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_720_w": 720,
+            "thumb_720_h": 408,
+            "image_exif_rotation": 1,
+            "original_w": 745,
+            "original_h": 422,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U8K7C542V\/FAES0US1L\/image.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FAES0US1L-d0bf8f9544",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U8K7C542V",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "stanislav.fomin",
+        "bot_id": null,
+        "ts": "1524765220.000129"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U8K7C542V> uploaded a file: <https:\/\/rackn.slack.com\/files\/U8K7C542V\/FADV58H1Q\/image.png|image.png>",
+        "file": {
+            "id": "FADV58H1Q",
+            "created": 1524765221,
+            "timestamp": 1524765221,
+            "name": "image.png",
+            "title": "image.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U8K7C542V",
+            "editable": false,
+            "size": 34457,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FADV58H1Q\/image.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FADV58H1Q\/download\/image.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FADV58H1Q-ad541730bf\/image_64.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FADV58H1Q-ad541730bf\/image_80.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FADV58H1Q-ad541730bf\/image_360.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_360_w": 360,
+            "thumb_360_h": 204,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FADV58H1Q-ad541730bf\/image_480.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_480_w": 480,
+            "thumb_480_h": 272,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FADV58H1Q-ad541730bf\/image_160.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FADV58H1Q-ad541730bf\/image_720.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_720_w": 720,
+            "thumb_720_h": 408,
+            "image_exif_rotation": 1,
+            "original_w": 745,
+            "original_h": 422,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U8K7C542V\/FADV58H1Q\/image.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FADV58H1Q-0c80686b19",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U8K7C542V",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "stanislav.fomin",
+        "bot_id": null,
+        "ts": "1524765223.000062"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "But SL still want default workflow (after deleting machine and rebooting)",
+        "ts": "1524765240.000744"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You need to unset the workflow on the machine by editing the machine.",
+        "ts": "1524765370.000373"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "I deleted the machine...",
+        "ts": "1524765481.000535"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "And now in UI I have no machine (even after SL starts loading).",
+        "ts": "1524765548.000460"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Did you delete the default workflow instead of just setting the defaultWorkflow pref to '' ?",
+        "ts": "1524765826.000018"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "That is what the error message in that log implies happened.",
+        "ts": "1524765838.000358"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "Yes, I delete it.  May be you can look inside? «ssh <mailto:root@demo.modeus.online|root@demo.modeus.online> -p 12022» password=vagrant",
+        "edited": {
+            "user": "U8K7C542V",
+            "ts": "1524766159.000000"
+        },
+        "ts": "1524766145.000103"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Sorry, as a matter of policy we don't SSH into people's machines like that. :disappointed:",
+        "ts": "1524766298.000310"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "It opens us up to too much liability.",
+        "ts": "1524766339.000451"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "Wow.  I hoped that this way will be much efficient... but OK. What else can I publish to debug it?",
+        "ts": "1524766378.000479"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Did you run the ` drpcli prefs set defaultWorkflow \"\"` command Greg posted?",
+        "ts": "1524766396.000136"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "If so, then `drpcli prefs list` show show it as being set to the empty string.",
+        "ts": "1524766589.000520"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Just deleting the workflow doesn't change the preference.",
+        "ts": "1524766635.000362"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U8K7C542V> uploaded a file: <https:\/\/rackn.slack.com\/files\/U8K7C542V\/FAD994CHE\/image.png|image.png>",
+        "file": {
+            "id": "FAD994CHE",
+            "created": 1524766704,
+            "timestamp": 1524766704,
+            "name": "image.png",
+            "title": "image.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U8K7C542V",
+            "editable": false,
+            "size": 50952,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAD994CHE\/image.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAD994CHE\/download\/image.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAD994CHE-6081ec3d6a\/image_64.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAD994CHE-6081ec3d6a\/image_80.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAD994CHE-6081ec3d6a\/image_360.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_360_w": 360,
+            "thumb_360_h": 210,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAD994CHE-6081ec3d6a\/image_160.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "image_exif_rotation": 1,
+            "original_w": 403,
+            "original_h": 235,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U8K7C542V\/FAD994CHE\/image.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FAD994CHE-bf8752d5de",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U8K7C542V",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "stanislav.fomin",
+        "bot_id": null,
+        "ts": "1524766706.000196"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "No before. Because I hope that default resets to \"\" when I delete all workflows and UI makes me think so.",
+        "ts": "1524766710.000477"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "Now Centos starts installing!",
+        "edited": {
+            "user": "U8K7C542V",
+            "ts": "1524766725.000000"
+        },
+        "ts": "1524766721.000150"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Excellent.",
+        "ts": "1524766958.000533"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U8K7C542V> uploaded a file: <https:\/\/rackn.slack.com\/files\/U8K7C542V\/FAE4JBDFX\/image.png|image.png>",
+        "file": {
+            "id": "FAE4JBDFX",
+            "created": 1524767076,
+            "timestamp": 1524767076,
+            "name": "image.png",
+            "title": "image.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U8K7C542V",
+            "editable": false,
+            "size": 164108,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAE4JBDFX\/image.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAE4JBDFX\/download\/image.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAE4JBDFX-c5bd2283b5\/image_64.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAE4JBDFX-c5bd2283b5\/image_80.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAE4JBDFX-c5bd2283b5\/image_360.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_360_w": 360,
+            "thumb_360_h": 267,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAE4JBDFX-c5bd2283b5\/image_480.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_480_w": 480,
+            "thumb_480_h": 355,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAE4JBDFX-c5bd2283b5\/image_160.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAE4JBDFX-c5bd2283b5\/image_720.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_720_w": 720,
+            "thumb_720_h": 533,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAE4JBDFX-c5bd2283b5\/image_800.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_800_w": 800,
+            "thumb_800_h": 592,
+            "image_exif_rotation": 1,
+            "original_w": 813,
+            "original_h": 602,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U8K7C542V\/FAE4JBDFX\/image.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FAE4JBDFX-8accb9f1a3",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U8K7C542V",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "stanislav.fomin",
+        "bot_id": null,
+        "ts": "1524767079.000234"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "To change Centos kickstart I have to edit this block in  drp-community-content.yaml ?",
+        "ts": "1524767096.000398"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "and reupload \"drpcli contents upload - &lt; \/etc\/digital-rebar\/drp-community-content.yaml \" all this staff?",
+        "ts": "1524767148.000323"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Nope.",
+        "ts": "1524767197.000083"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Uplload a templatized version of the kickstart you want to use, and set the 'select-kickseed' parameter on the machine (either directly, or via a profile) to the name of that template.",
+        "ts": "1524767283.000250"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<@U6QFVRJNB> did we ever get docs written up about the select-kickseed parameter?",
+        "ts": "1524767364.000651"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "select-kickseed should point to absolute path of mycentos.ks.tmpl?",
+        "ts": "1524767386.000189"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "No, just the template ID.",
+        "ts": "1524767511.000383"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<http:\/\/provision.readthedocs.io\/en\/tip\/doc\/operation.html#updating-a-template> should give you an idea of what to do.",
+        "ts": "1524767610.000514"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "The template language is <https:\/\/golang.org\/pkg\/text\/template\/>, with some extensions <http:\/\/provision.readthedocs.io\/en\/tip\/doc\/arch\/provision.html#rendering-templates>",
+        "ts": "1524767724.000331"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "Got it! Thank you very much!",
+        "ts": "1524767843.000522"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U8K7C542V> - see the $faq for the select-kickseed stuff, I think",
+        "client_msg_id": "6ac96bd2-c9b1-4960-8c37-a6a13338474a",
+        "ts": "1524769131.000277"
+    },
+    {
+        "text": "FAQs are here &gt; <http:\/\/provision.readthedocs.io\/en\/tip\/doc\/faq-troubleshooting.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1524769131.000424"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Yes - section 22.10",
+        "client_msg_id": "7d7df269-1384-4428-a1ee-cffaf746cd1d",
+        "ts": "1524769169.000035"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "Thank you, but I will try to set global select-kickseed first",
+        "ts": "1524769318.000314"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "for all discovered machines",
+        "edited": {
+            "user": "U8K7C542V",
+            "ts": "1524769335.000000"
+        },
+        "ts": "1524769331.000320"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "With standart centos-7 kickstart from \"community content\" Anaconda installer hangs on postinstall step.",
+        "ts": "1524772269.000178"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U8K7C542V> uploaded a file: <https:\/\/rackn.slack.com\/files\/U8K7C542V\/FADBEH21E\/image.png|image.png>",
+        "file": {
+            "id": "FADBEH21E",
+            "created": 1524772270,
+            "timestamp": 1524772270,
+            "name": "image.png",
+            "title": "image.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U8K7C542V",
+            "editable": false,
+            "size": 32190,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FADBEH21E\/image.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FADBEH21E\/download\/image.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FADBEH21E-4c34214e51\/image_64.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FADBEH21E-4c34214e51\/image_80.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FADBEH21E-4c34214e51\/image_360.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_360_w": 360,
+            "thumb_360_h": 192,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FADBEH21E-4c34214e51\/image_480.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_480_w": 480,
+            "thumb_480_h": 256,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FADBEH21E-4c34214e51\/image_160.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FADBEH21E-4c34214e51\/image_720.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_720_w": 720,
+            "thumb_720_h": 384,
+            "image_exif_rotation": 1,
+            "original_w": 727,
+            "original_h": 388,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U8K7C542V\/FADBEH21E\/image.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FADBEH21E-18fc8d1b38",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U8K7C542V",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "stanislav.fomin",
+        "bot_id": null,
+        "ts": "1524772273.000317"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "May \"{{template \"reset-workflow.tmpl\" .}}\" hangs if no workflow exists?",
+        "ts": "1524772332.000409"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U8K7C542V> uploaded a file: <https:\/\/rackn.slack.com\/files\/U8K7C542V\/FADR7C8CU\/image.png|image.png>",
+        "file": {
+            "id": "FADR7C8CU",
+            "created": 1524772354,
+            "timestamp": 1524772354,
+            "name": "image.png",
+            "title": "image.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U8K7C542V",
+            "editable": false,
+            "size": 26340,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FADR7C8CU\/image.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FADR7C8CU\/download\/image.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FADR7C8CU-2541df4d73\/image_64.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FADR7C8CU-2541df4d73\/image_80.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FADR7C8CU-2541df4d73\/image_360.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_360_w": 360,
+            "thumb_360_h": 171,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FADR7C8CU-2541df4d73\/image_480.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_480_w": 480,
+            "thumb_480_h": 228,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FADR7C8CU-2541df4d73\/image_160.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "image_exif_rotation": 1,
+            "original_w": 497,
+            "original_h": 236,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U8K7C542V\/FADR7C8CU\/image.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FADR7C8CU-69783d6235",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0,
+            "num_stars": 1
+        },
+        "user": "U8K7C542V",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "stanislav.fomin",
+        "bot_id": null,
+        "ts": "1524772356.000663"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "In your change-stage\/map for your workflow, you need to change the last step from `complete-nowait:Success` to `complete-nowait:Stop`",
+        "ts": "1524772526.000420"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U8K7C542V> uploaded a file: <https:\/\/rackn.slack.com\/files\/U8K7C542V\/FAF48R1D5\/image.png|image.png>",
+        "file": {
+            "id": "FAF48R1D5",
+            "created": 1524773102,
+            "timestamp": 1524773102,
+            "name": "image.png",
+            "title": "image.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U8K7C542V",
+            "editable": false,
+            "size": 10909,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAF48R1D5\/image.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAF48R1D5\/download\/image.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAF48R1D5-29f04f60ad\/image_64.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAF48R1D5-29f04f60ad\/image_80.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAF48R1D5-29f04f60ad\/image_360.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_360_w": 360,
+            "thumb_360_h": 31,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAF48R1D5-29f04f60ad\/image_480.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_480_w": 480,
+            "thumb_480_h": 42,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAF48R1D5-29f04f60ad\/image_160.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAF48R1D5-29f04f60ad\/image_720.png?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "thumb_720_w": 720,
+            "thumb_720_h": 63,
+            "image_exif_rotation": 1,
+            "original_w": 737,
+            "original_h": 64,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U8K7C542V\/FAF48R1D5\/image.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FAF48R1D5-423097aaab",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U8K7C542V",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "stanislav.fomin",
+        "bot_id": null,
+        "ts": "1524773104.000544"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "?",
+        "ts": "1524773109.000306"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes",
+        "ts": "1524773223.000431"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "Thanks, worked!",
+        "edited": {
+            "user": "U8K7C542V",
+            "ts": "1524773587.000000"
+        },
+        "ts": "1524773581.000161"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "will this work for all discovered machines?\n   drpcli profiles set global param select-kickseed to \"mycentos-7.ks.tmpl\"",
+        "ts": "1524774440.000195"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "it should apply globally",
+        "ts": "1524774475.000050"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Even when you install ubuntu, so be careful. :slightly_smiling_face:",
+        "ts": "1524774530.000284"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "How to set several access keys\n  drpcli profiles set global param access-keys to '{ \"root\": \"xxxx \\n yyyy\"} \n— will work?",
+        "ts": "1524774711.000103"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Read the $faq",
+        "ts": "1524774761.000644"
+    },
+    {
+        "text": "FAQs are here &gt; <http:\/\/provision.readthedocs.io\/en\/tip\/doc\/faq-troubleshooting.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1524774761.000752"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "22.3",
+        "ts": "1524774776.000233"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "I have read this FAQ. It did not cover my case — several keys for ONE user.",
+        "ts": "1524775483.000294"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U8K7C542V> the index of the hash is for reference, not the account",
+        "ts": "1524775658.000666"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "it just writes the authorized keys table",
+        "ts": "1524775669.000105"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "so you can have \"user1\" and \"user2\" where both are \"user\"",
+        "ts": "1524775687.000643"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "aaaaaaaa",
+        "ts": "1524775696.000024"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "Actually, I am not sure of it. In FAQ user1 and user2 are obviously different",
+        "edited": {
+            "user": "U8K7C542V",
+            "ts": "1524775776.000000"
+        },
+        "ts": "1524775768.000549"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "it always writes the root authorized keys file.",
+        "ts": "1524775847.000321"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "Of course it just .\/ssh\/authorizedkeys but I want to know, will you process \"\\n\" in JSON string or I must do something special",
+        "ts": "1524775852.000084"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The keys in the map are for your reference to keep track of",
+        "ts": "1524775858.000165"
+    },
+    {
+        "type": "message",
+        "user": "U8K7C542V",
+        "text": "A, got it, sorry",
+        "ts": "1524775868.000506"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "TIL you can apparently only have one preseed\/late_command line in a preseed file.",
+        "ts": "1524776624.000123"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I guess now I get why all the net_post_install stuff is jammed on one line like that.",
+        "ts": "1524776675.000492"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yep - that is why it expands into a script that starts a runner that pulls in tasks.",
+        "ts": "1524776719.000382"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I had to add stuff on to the front of that line to do some network driver installs.  Would I be able to piggyback on the net_post_install script?",
+        "ts": "1524776791.000349"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "It looks like it's just a template, but I don't really get what all it's doing.  It creates another script and runs that too?",
+        "ts": "1524776861.000022"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "What I look at what gets left behind on a system it looks like net-post-install.sh is a weird amalgamation of a bunch of other scripts.",
+        "ts": "1524776917.000319"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah, but it is more.",
+        "ts": "1524776931.000406"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Like there are bang-splat lines in the middle of the script?",
+        "ts": "1524776931.000526"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Splat-bang?  I forget what we used to call that.",
+        "ts": "1524776949.000093"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Back in the day when all scripting was shell scripting.",
+        "ts": "1524776958.000362"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": ":smile:",
+        "ts": "1524776959.000290"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Shebang is my favourite.",
+        "ts": "1524776965.000597"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Ah yeah.  That too.",
+        "ts": "1524776973.000035"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Okay- here is how this works.",
+        "ts": "1524776976.000434"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The post-seed script gets chrooted by the ubuntu installer and the script is build from the templates provided.",
+        "ts": "1524777007.000270"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The default expansion leads to something that starts a runner.",
+        "ts": "1524777019.000600"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/content\/templates\/net-post-install.sh.tmpl> &lt;-- the template for the script",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision-content",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/content\/templates\/net-post-install.sh.tmpl",
+                "text": "provision-content - DigitalRebar Provision Content",
+                "fallback": "GitHub: digitalrebar\/provision-content",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/content\/templates\/net-post-install.sh.tmpl",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/content\/templates\/net-post-install.sh.tmpl"
+            }
+        ],
+        "ts": "1524777023.000156"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The runner then pulls tasks which are usually scripts to do additional things.",
+        "ts": "1524777042.000243"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "This allows for templatizing those for reuse as well.",
+        "ts": "1524777061.000110"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The tasks are defined by stages and the stages can be chained together with workflows.",
+        "ts": "1524777089.000064"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "So, an option for your network drivers is to build a bash-script based task that does what you need.  Add it to a stage.  Put the stage in the workflow after the install stage and that will get run during the post-install script.",
+        "ts": "1524777139.000041"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The point of this is that script is small contained and can be validated.",
+        "ts": "1524777158.000379"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Hrm ok.",
+        "ts": "1524777165.000596"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "independent of the install.",
+        "ts": "1524777166.000018"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "That makes sense, I'll try that.",
+        "ts": "1524777173.000277"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Or used in entirely different installs.",
+        "ts": "1524777179.000484"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "It also makes it so I don't have to have a completely different preseed file just for this one task.",
+        "ts": "1524777204.000614"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Yep.",
+        "ts": "1524777213.000542"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "For example, the stage, ssh-access, updates the root authorized_keys file.  It runs in the post-install but can be run also in the centos stage as well.",
+        "ts": "1524777215.000075"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That stage\/task pair is an example of one.",
+        "ts": "1524777266.000088"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "So if I make a stage with my script and stick it in the workflow after the install but before the complete it'll pull that in and run it as part of net-post-install?",
+        "ts": "1524777280.000019"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "`runner-service` stage in `task-library` content pack is another.",
+        "ts": "1524777284.000051"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes",
+        "ts": "1524777293.000523"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The stage should not have a bootenv set.",
+        "ts": "1524777302.000455"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "that will allow it to be reused in all environments.",
+        "ts": "1524777314.000135"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Awesome, I'll give that a go then.  Be nice to get rid of my separate preseed file for just one changed line.",
+        "ts": "1524777324.000577",
+        "reactions": [
+            {
+                "name": "sunglasses",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Ok.",
+        "ts": "1524777326.000529"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Will it run the script in-target?  So my drivers will get installed in the installed system, not randomly in the ramdisk of the installer or something crazy?",
+        "ts": "1524777475.000157"
+    },
+    {
+        "text": "watches David Parker understand why we did these crazy things",
+        "type": "message",
+        "subtype": "me_message",
+        "user": "U02DHRR2L",
+        "ts": "1524777501.000492"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "it is in the in-target part of the script",
+        "ts": "1524777541.000560"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Ok",
+        "ts": "1524777566.000552"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Hrm, what is the template path?",
+        "ts": "1524778037.000557"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "You mean as in <http:\/\/provision.readthedocs.io\/en\/tip\/doc\/arch\/provision.html#templateinfo> ?",
+        "ts": "1524778740.000239"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Yeah.  When you add a template to a task it asks for the template path.",
+        "ts": "1524780496.000329"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I made a stage that added my script as a template and stuck it in my workflow after install but before complete, but it didn't work.  :disappointed:",
+        "ts": "1524780798.000196"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "So I did something wrong.",
+        "ts": "1524780802.000392"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I don't see my script in net-post-install.sh or update_system2.sh on the system.",
+        "ts": "1524780830.000244"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "did the job include any log information?  you should see the console out there",
+        "ts": "1524781770.000332"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "It did not, but I think I figured out what was wrong.  Trying again.",
+        "ts": "1524781862.000082",
+        "reactions": [
+            {
+                "name": "sunglasses",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "You will not see it in the expanded template.",
+        "client_msg_id": "57da5449-5338-4459-bea0-8e86297da855",
+        "ts": "1524786647.000014"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "It is it's own thing.",
+        "client_msg_id": "4eae42cc-d861-40b1-930d-5c3a463ff955",
+        "ts": "1524786661.000059"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "All you see in the expanded template is the code that resets the workflow and starts the agent.",
+        "client_msg_id": "15576466-bdc2-448d-9706-0d8b7cb8f6ae",
+        "ts": "1524786715.000051"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Yeah.  I figured that out.  I realized my first problem was not having a valid template path, but once I set that, it seemed like the runner would just download my script and not execute it.  So I changed the script from a template saved with the rest of the templates to one just defined within the task.  That seems to have worked, but now I'm having other odd problems that I wasn't running into before.",
+        "ts": "1524787694.000357"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "My script downloads and explodes a tarball, then runs an install script inside the tarball.  That script will look for prereq packages and install them if necessary.  It seems to be always hanging on the apt-get install portion of that now, even though it worked fine the way I was doing it before (as part of the late_command string directly)",
+        "ts": "1524793901.000047"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U9BU09D51> did you per-chance add the `local-repo` option to your machines to provision against the exploded ISO ?",
+        "ts": "1524794137.000288"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I did not.",
+        "ts": "1524795012.000249"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "```debconf: unable to initialize frontend: Newt\ndebconf: (Can't locate Debconf\/FrontEnd\/Newt.pm in @INC (you may need to install the Debconf::FrontEnd::Newt module) (@INC contains: \/etc\/perl \/usr\/local\/lib\/perl\/5.18.2 \/usr\/local\/share\/perl\/5.18.2 \/usr\/lib\/perl5 \/usr\/share\/perl5 \/usr\/lib\/perl\/5.18 \/usr\/share\/perl\/5.18 \/usr\/local\/lib\/site_perl .) at (eval 35) line 2, &lt;&gt; line 74.)\ndebconf: falling back to frontend: Noninteractive\n\nExtracting templates from packages: 40%\nExtracting templates from packages: 81%\nExtracting templates from packages: 100%\nPreconfiguring packages ...\n\/tmp\/x11-common.config.slr50F: 44: \/tmp\/x11-common.config.slr50F: 3: Bad file descriptor\ntor```",
+        "ts": "1524795048.000219"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "That's where it fails on me.",
+        "ts": "1524795060.000051"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "sounds like you're in APT non-interactive hell ... if something needs validation\/input to continue on, APT will blow up like that",
+        "ts": "1524795132.000048"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Yeah.",
+        "ts": "1524795157.000081"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Weirdly it works fine the other way.",
+        "ts": "1524795165.000179"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Hrm.",
+        "ts": "1524795167.000261"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I dunno.  I'll figure it out. Or I'll just go back to doing it the old way.",
+        "ts": "1524795181.000111"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "here's what I do in Ubuntu to get around this ... \n```# enable non-interactive installs\nexport DEBIAN_FRONTEND=noninteractive\ncat &gt; \/usr\/sbin\/policy-rc.d &lt;&lt; EOF\n#!\/bin\/sh\necho \"All runlevel operations denied by policy\" &gt;&amp;2\nexit 101\nEOF\nchmod 755 \/usr\/sbin\/policy-rc.d\napt-get update\napt-get -y -o Dpkg::Options::=\"--force-confdef\" -o Dpkg::Options::=\"--force-confold\" PACKAGES\n```",
+        "ts": "1524795205.000144"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "when done with installs, you have to remember to do:\n```rm \/usr\/sbin\/policy-rc.d```",
+        "ts": "1524795227.000017"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "or future installs will give you weird results",
+        "ts": "1524795234.000256"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Ok",
+        "ts": "1524795240.000019"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the apt-get with the confdef\/confold is mostly for `dist-upgrade` but sometimes you have to juggle the Config file default handling options around with new install packages too",
+        "ts": "1524795288.000236"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "what was \"the old way\" ?",
+        "ts": "1524795313.000093"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Doing the wget\/explode\/run installer as part of the preseed\/late_command bit instead of doing it through the runner afterwards.",
+        "ts": "1524795553.000149"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Yeah, in the context of a task, a template having a path means you want to expand a file and put it somewhere.",
+        "ts": "1524800300.000181"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "A template having an empty path means you want to execute it.",
+        "ts": "1524800322.000203"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Ahh ok",
+        "ts": "1524800657.000179"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "For the other objects that have a Templates list, Path is the location in the static file server where the expanded template will appear.",
+        "ts": "1524800914.000046"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "For the `bad file descriptor` stuff, I don't know what causes it other than the environment dpkg uses to run pre- and post- scripts in plays all sorts of weird shennanigans with moving file descriptors around.",
+        "ts": "1524801067.000013"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I have never run into those sorts of issues with yum. :confused:",
+        "ts": "1524801178.000212"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Turns out, there's a `--without-depcheck` option in the installer.  And it further turns out those \"dependencies\" aren't.",
+        "ts": "1524803464.000117"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "So it works again.",
+        "ts": "1524803470.000206",
+        "reactions": [
+            {
+                "name": "cake",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Woot woot!",
+        "client_msg_id": "dc02a615-c3a0-4e8c-96c9-fcd7003d9acc",
+        "ts": "1524803762.000014"
+    }
+]

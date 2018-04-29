@@ -13,6 +13,8 @@ sudo docker run -ti --rm -v ~/digitalrebar/digitalrebar.github.io/slack:/mnt/sla
 
 Update the index2.html file to include the new community diretory
 
+If you are updating an existing month, delete the HTML file for that month!
+
 You'll need to update and replace the slack/html/index.html using slack/index2.html as a template
 
 Also, check permissions/ownership of files!

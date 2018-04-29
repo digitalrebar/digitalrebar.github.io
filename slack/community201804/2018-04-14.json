@@ -1,0 +1,265 @@
+[
+    {
+        "user": "UA6EAHFA5",
+        "text": "<@UA6EAHFA5> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1523769055.000002"
+    },
+    {
+        "type": "message",
+        "user": "UA6EAHFA5",
+        "text": ":slightly_smiling_face:",
+        "client_msg_id": "be134eca-f313-404c-8c59-1db5e7555112",
+        "ts": "1523769071.000023"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "pushed updates to AUR drpcli packages for 3.8 release",
+        "ts": "1523769262.000041"
+    },
+    {
+        "type": "message",
+        "user": "U32PZNCP5",
+        "text": "<@UA6EAHFA5> $welcome",
+        "ts": "1523769290.000018"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1523769290.000021"
+    },
+    {
+        "type": "message",
+        "user": "UA6EAHFA5",
+        "text": "Hi",
+        "client_msg_id": "a495ec16-b9cb-462a-8940-c11ab9546552",
+        "ts": "1523769456.000036"
+    },
+    {
+        "type": "message",
+        "user": "UA6EAHFA5",
+        "text": "May I ask , can I get some doc about  what is sledgehammer ?",
+        "client_msg_id": "294f87af-5b92-4ec2-b64a-402ecf0e274a",
+        "ts": "1523769557.000043"
+    },
+    {
+        "type": "message",
+        "user": "UA6EAHFA5",
+        "text": "or does I need to download default-community content somewhere ?",
+        "client_msg_id": "ca0b0915-0cd8-476c-b7d7-15cbc347ab14",
+        "ts": "1523769631.000069"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Sledgehammer is part of the Community Content. You need to Upload the iso - see $quickstart for example info",
+        "client_msg_id": "1dc70295-2aa3-4dd0-a61b-93194e7c6209",
+        "ts": "1523769865.000061"
+    },
+    {
+        "text": "QuickStart doc is here &gt; <http:\/\/provision.readthedocs.io\/en\/tip\/doc\/quickstart.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1523769865.000070"
+    },
+    {
+        "type": "message",
+        "user": "UA6EAHFA5",
+        "text": "Does the quick install have installed the community content? I'm start from as the doc shows:\n\n.\/dr-provision --base-root=`pwd`\/drp-data --local-content=\"\" --default-content=\"\"\n\nI'm being stopped at this command\n\ndrpcli bootenvs uploadiso sledgehammer\n\n.",
+        "client_msg_id": "2d778865-966b-4da1-895e-da51d5394e14",
+        "ts": "1523770906.000057"
+    },
+    {
+        "type": "message",
+        "user": "UA6EAHFA5",
+        "text": "I think I need to get drp-community-content  some where",
+        "client_msg_id": "a36b93f6-e2af-4158-accd-fc52c4db2cfe",
+        "ts": "1523771208.000023"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Go to the <http:\/\/portal.rackn.io|portal.rackn.io> - contents, and add if it's not there",
+        "client_msg_id": "6156bdf2-b7ab-4cad-9ad2-70a5c6a67ca3",
+        "ts": "1523771492.000035"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "^",
+        "ts": "1523771496.000083"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "technically, go to https:\/\/$DRP_IP:8092 and it'll redirect you to <http:\/\/portal.rackn.io|portal.rackn.io> with the right URL param to hook into your DRP",
+        "ts": "1523771548.000031"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "right?",
+        "ts": "1523771551.000010"
+    },
+    {
+        "type": "message",
+        "user": "UA6EAHFA5",
+        "text": "so can't use in a LAN environment ?",
+        "client_msg_id": "2766904b-a04a-4de7-96ca-30b57b3faec1",
+        "ts": "1523771642.000059"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "by that do you mean offline\/disconnected from the Internet?",
+        "ts": "1523771755.000009"
+    },
+    {
+        "type": "message",
+        "user": "UA6EAHFA5",
+        "text": "Yes",
+        "client_msg_id": "514c1a4a-1892-4fda-a020-655637b5c2e9",
+        "ts": "1523771804.000062"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "You can download community-content releases from <https:\/\/github.com\/digitalrebar\/provision-content\/releases> and use `drpcli contents create - &lt; drp-community-content.yaml` to create\/upload the community content package",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision-content",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision-content\/releases",
+                "text": "provision-content - DigitalRebar Provision Content",
+                "fallback": "GitHub: digitalrebar\/provision-content",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision-content\/releases",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1523771854.000006"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "And then to update, `drpcli contents update drp-community-content &lt; drp-community-content.yaml` (with a new version of the yaml file that is)",
+        "ts": "1523771912.000033"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "I actually haven't tried this, but I do this for our own content package so I believe that should work",
+        "ts": "1523771932.000014"
+    },
+    {
+        "type": "message",
+        "user": "UA6EAHFA5",
+        "text": "wow , thank you.",
+        "client_msg_id": "35267ac9-f335-48f5-80a0-c5adced94108",
+        "ts": "1523771932.000016"
+    },
+    {
+        "type": "message",
+        "user": "UA6EAHFA5",
+        "text": "I'll try it.",
+        "client_msg_id": "79f6346f-2bf4-48a2-a373-2db977b773a9",
+        "ts": "1523771956.000041"
+    },
+    {
+        "type": "message",
+        "user": "UA6EAHFA5",
+        "text": "and thank you Shane, I also have added the content on my test vm by the web:slightly_smiling_face:",
+        "client_msg_id": "a3f17f30-b52d-4726-9831-77db664ef099",
+        "ts": "1523772038.000026"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "you need to run `drpcli bootenvs uploadiso sledgehammer` (and for the other bootenvs as well) from some place that has connection to the internet and your DRP instance",
+        "ts": "1523772064.000017"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "since it'll download from online sources (e.g. <https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/content\/bootenvs\/debian-9.yml#L9>) and then upload to your DRP instance and unpack it there",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision-content",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/content\/bootenvs\/debian-9.yml#L9",
+                "text": "provision-content - DigitalRebar Provision Content",
+                "fallback": "GitHub: digitalrebar\/provision-content",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/content\/bootenvs\/debian-9.yml#L9",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1
+            }
+        ],
+        "ts": "1523772104.000010"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "iirc",
+        "ts": "1523772109.000074"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UA6EAHFA5> the portal can be run in your own environment behind your firewall, but that is a RackN commercial piece",
+        "client_msg_id": "b4982f8e-a50a-49aa-85e9-f700e908296b",
+        "ts": "1523772258.000010"
+    },
+    {
+        "type": "message",
+        "user": "UA6EAHFA5",
+        "text": "OK, I'll reading more. Because it's my first time try it, I haven't build the architecture about it in my mind, so it's a little hard. :slightly_smiling_face:",
+        "client_msg_id": "107f1df1-a812-48a4-b89e-330a6c215f6f",
+        "ts": "1523772371.000037"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "The hosted portal also does not talk to your DRP Endpoint, and your endpoint does not need access to the portal - your browser operates as a bridge or conduit between the portal and endpoint",
+        "client_msg_id": "865367e3-686b-47db-b4c4-340d7b501563",
+        "ts": "1523772412.000008"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "The DRP Endpoint is designed to be able to be 100% air gapped",
+        "client_msg_id": "83f6a233-eae2-464c-80ce-38f353442fcb",
+        "ts": "1523772464.000033"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "As long as your web browser has access to the endpoint on (default) port 8092, and the portal you can manage it via browser, otherwise use API or CLI (drpcli)",
+        "client_msg_id": "69efd039-dac5-4280-a8e0-eb2e5cf1c3d5",
+        "ts": "1523772673.000058"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U54E4SD4G> thx for helping out!",
+        "client_msg_id": "1a5b3af1-c95c-4a70-9425-3878b71e7f49",
+        "ts": "1523772718.000034"
+    },
+    {
+        "type": "message",
+        "user": "UA6EAHFA5",
+        "text": "Yeah, I understand portal is a mgmt tools on the top level.",
+        "client_msg_id": "336340fd-24eb-453e-bc82-562e0f639261",
+        "ts": "1523773058.000023"
+    }
+]

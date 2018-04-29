@@ -1,0 +1,858 @@
+[
+    {
+        "user": "UABJYQG9G",
+        "text": "<@UABJYQG9G> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1524503841.000191"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Hey folks.  I've got some ethernet drivers I need to install on some systems.  It requires exploding a tarball and running a script which then compiles and installs the driver module.  Is there a good way to do this with DRP?",
+        "ts": "1524517620.000026"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "hey <@U9BU09D51> ...",
+        "ts": "1524517671.000015"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "presumably the system has some basic network capability to kick off the provisioning ?",
+        "ts": "1524517694.000622"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "It does, but only because I've modified the initrd for the default installer and manually inserted the dkms",
+        "ts": "1524517807.000613"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "But as soon as it reboots into the installed version it loses networking again.",
+        "ts": "1524517819.000083"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "solarflare?  mellanox?",
+        "ts": "1524517838.000217"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Mellanox",
+        "ts": "1524517844.000196"
+    },
+    {
+        "type": "message",
+        "user": "U32PZNCP5",
+        "text": "<@UAAK8SMCZ> $Welcome",
+        "ts": "1524517876.000025"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1524517876.000104"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "is there some reason you can't compile it once into an RPM or DEB and install that during the provisioning process ?",
+        "ts": "1524517923.000454"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "as opposed to compile each time ?",
+        "ts": "1524517932.000560"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I used to use a RKT container environment to compile to a Package (deb) and then you could inject that as part of the install packages as a stage added after your BootEnv install stage",
+        "ts": "1524517996.000360"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "technically - you can simply build a stage that \"does the stuff you want done\", and add it in to your Workflow as a stage immediately after the BootEnv Install stage - as long as you are using Digital Rebar bootenvs (kickstart\/preseed) - we'll wait for additional stages to run, before finishing up the install and final reboot",
+        "ts": "1524518201.000347"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I'd do that if I could figure out what exactly the mellanox installer does.  It comes with a bunch of .deb files, all of which seem to trigger a build from source whenever I try to install them.  I was only able to grab the correct dkms modules by trial and error from a system that had already run the installer.",
+        "ts": "1524518257.000504"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "hmm - let me see if I can dig up my RKT based container build stuff I did in the past - I did that specifically for Mellanox and Solarflare NIC drivers",
+        "ts": "1524518331.000056"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Cool, thanks.",
+        "ts": "1524518402.000196"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I think I can just wget the tgz and explode it and run the installer during the install.   I guess I'll see if that works.",
+        "ts": "1524518462.000181"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "It seems like a rather brute force approach though.",
+        "ts": "1524518472.000390"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "agreed it does ... but sometimes ... a _sledgehammer_ approach is the right tool ... :slightly_smiling_face:",
+        "ts": "1524518503.000347"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U6QFVRJNB> uploaded a file: <https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/FABGYQ2EQ\/rkt_based_mellanox_builder____.sh|rkt based mellanox builder ...>",
+        "file": {
+            "id": "FABGYQ2EQ",
+            "created": 1524518854,
+            "timestamp": 1524518854,
+            "name": "rkt_based_mellanox_builder____.sh",
+            "title": "rkt based mellanox builder ...",
+            "mimetype": "text\/plain",
+            "filetype": "shell",
+            "pretty_type": "Shell",
+            "user": "U6QFVRJNB",
+            "editable": true,
+            "size": 1565,
+            "mode": "snippet",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FABGYQ2EQ\/rkt_based_mellanox_builder____.sh?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FABGYQ2EQ\/download\/rkt_based_mellanox_builder____.sh?t=xoxe-2458848645-354785035264-354936836801-2d5490756f640cc5c73b7922e1094162",
+            "permalink": "https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/FABGYQ2EQ\/rkt_based_mellanox_builder____.sh",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FABGYQ2EQ-cdfcc383c1",
+            "edit_link": "https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/FABGYQ2EQ\/rkt_based_mellanox_builder____.sh\/edit",
+            "preview": "#!\/bin\/bash\r\nset -exuo pipefail\r\n\r\nfunction dkmsInstallPkgs {\r\n  # If a parameter is supplied it overrides the kernel version to install\r",
+            "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre><span class=\"cm-meta\">#!\/bin\/bash<\/span><\/pre><\/div>\n<div><pre><span class=\"cm-keyword\">set<\/span> <span class=\"cm-attribute\">-exuo<\/span> pipefail<\/pre><\/div>\n<div><pre>&#8203;<\/pre><\/div>\n<div><pre><span class=\"cm-keyword\">function<\/span> dkmsInstallPkgs {<\/pre><\/div>\n<div><pre>  <span class=\"cm-comment\"># If a parameter is supplied it overrides the kernel version to install<\/span><\/pre><\/div>\n<\/div>\n<\/div>\n",
+            "lines": 57,
+            "lines_more": 52,
+            "preview_is_truncated": true,
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U6QFVRJNB",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "shane",
+        "bot_id": null,
+        "ts": "1524518855.000038"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "so - that is a boiled down version of what I did to build DEB pkgs out of  RKT container - I had pretty good luck with the final DEB working ... but YMMV ...",
+        "ts": "1524518887.000028"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Ok thanks",
+        "ts": "1524519194.000531"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "<@U02DGQYK1> I think this is a bug and I'm not sure y'all are aware of it or not (since this behaviour has been present in pretty much every release I think - although I haven't updated to 3.8.0 yet)\nwhen I go to update a package, e.g.\n```sh\ndrpcli contents update fireeye-content - &lt; fireeye-content.json\n```\nI get a bunch of warnings:\n```\n{\n  \"Counts\": {\n    \"bootenvs\": 10,\n    \"params\": 1,\n    \"profiles\": 56,\n    \"stages\": 11,\n    \"tasks\": 6,\n    \"templates\": 16\n  },\n  \"Warnings\": [\n    \"Explode ISO: iso does not exist: \/isos\/sledgehammer-9743e672ff33179cd5218d8fe506c03cf2a31d18.tar\\n\",\n    \"You can download the required ISO from <http:\/\/rackn-sledgehammer.s3-website-us-west-2.amazonaws.com\/sledgehammer\/9743e672ff33179cd5218d8fe506c03cf2a31d18\/sledgehammer-9743e672ff33179cd5218d8fe506c03cf2a31d18.tar>\",\n    \"bootenv: sledgehammer: missing kernel vmlinuz0 (\/sledgehammer\/9743e672ff33179cd5218d8fe506c03cf2a31d18\/vmlinuz0)\",\n    \"bootenv: sledgehammer: missing initrd stage1.img (\/sledgehammer\/9743e672ff33179cd5218d8fe506c03cf2a31d18\/stage1.img)\",\n    \"Explode ISO: iso does not exist: \/isos\/ubuntu-16.04.4-server-amd64.iso\\n\",\n    \"You can download the required ISO from <http:\/\/mirror.math.princeton.edu\/pub\/ubuntu-iso\/16.04\/ubuntu-16.04.4-server-amd64.iso>\",\n   &lt;lines 16 to 208 snipped&gt;\n  ],\n  \"meta\": {\n    \"Description\": \"FireEye Provision Content\",\n    \"Name\": \"fireeye-content\",\n    \"Overwritable\": false,\n    \"Source\": \"https:\/\/&lt;ghe&gt;fireeye-content\",\n    \"Type\": \"dynamic\",\n    \"Version\": \"dev-872507ead6c3d16b094f2e16b3e446bb533ad291\",\n    \"Writable\": false\n  }\n}\n```\n\nThe majority of the warnings are...not accurate. I think it's not actually doing the checks correctly? This is kind of an annoyance and it makes it difficult to figure out what ISOs are actually missing... Then again, the majority of these are also *not* in the fireeye-content package here either, so I actually wouldn't expect to see community-content related messages here, but that's a different issue.\n\nThoughts?",
+        "ts": "1524519646.000285"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": ":slightly_smiling_face:  we are aware of it - and I've complained about that to <@U02DGQYK1> a few times",
+        "ts": "1524519680.000084"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the warnings are stale ... and most of them are \"stale\"",
+        "ts": "1524519700.000208"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(sorry for the unintended redundancy in that last bit ... )",
+        "ts": "1524519735.000329"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "ah is that like",
+        "ts": "1524519754.000124"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it does also exist in v3.8.0",
+        "ts": "1524519757.000241"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "warnings left from older bootenvs",
+        "ts": "1524519760.000191"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yes",
+        "ts": "1524519767.000099"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "i see",
+        "ts": "1524519769.000176"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it's the \"intended behavior\" - but I agree that it's a bit annoying and makes it hard to determine if \"something new\" needs addressed",
+        "ts": "1524519798.000437"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "intended behaviour? It doesn't really make sense for versions of older bootenvs to even be considered anymore",
+        "ts": "1524519849.000027"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "well ... lets say that \"it functions as originally designed\" ... but the side effects are undesirable ... we haven't addressed a fix for that yet",
+        "ts": "1524519896.000455"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we have a bug (sort of) filed related to this issue:  <https:\/\/github.com\/digitalrebar\/provision\/issues\/672>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "Content Update (community) produces erroneous Warnings · Issue #672 · digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/issues\/672",
+                "text": "It appears that on a Community content update, the Warnings field shows old warning messages, or possibly erroneous validation warnings? Community member Will Dennis performed content update as p...",
+                "fallback": "GitHub: Content Update (community) produces erroneous Warnings · Issue #672 · digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/issues\/672",
+                "thumb_url": "https:\/\/avatars2.githubusercontent.com\/u\/5308433?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/digitalrebar\/provision\/issues\/672"
+            }
+        ],
+        "ts": "1524520018.000157"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U54E4SD4G> and <@U6QFVRJNB> -  I think it is fixed in 3.8.0",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1524520115.000000"
+        },
+        "ts": "1524520106.000045"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "in 3.8.0 or tip?",
+        "ts": "1524520118.000039"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "oh",
+        "ts": "1524520119.000300"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "well - more accurately - it should result in less warnings.",
+        "ts": "1524520146.000302"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "I've only updated my client, haven't updated the DRP server yet",
+        "ts": "1524520148.000267"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The valid bootenvs should disappear.  Missing iso that trigger failures will still be listed.",
+        "ts": "1524520173.000056"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That part is “intended”.  We “fixed” the case where the bootenv iso already exists and is valid.",
+        "ts": "1524520205.000025"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "yeah",
+        "ts": "1524520249.000380"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "hm guess there aren't any deployment changes between 3.7 and 3.8",
+        "ts": "1524520403.000260"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "not really.  Workflows show up, but you can ignore them if you want.",
+        "ts": "1524520437.000027"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "This is the commit for the errors thing: 6cdd823853d8747c3aedce74a95fe6707e8441c3",
+        "ts": "1524520444.000080"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "yep, can confirm it's fixed",
+        "ts": "1524520758.000063"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "hm, `drpcli bootenvs uploadiso` should be outputting messages to systemd's journal, right?",
+        "ts": "1524520943.000344"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "hmm - drpcli never sent messages to the systemd.  drp might have.  logging got somewhat reduced in this last pass.",
+        "ts": "1524521052.000115"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "ok",
+        "ts": "1524521062.000030"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "any idea how I can debug this",
+        "ts": "1524521067.000026"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "what are you seeing?",
+        "ts": "1524521100.000218"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "```\nmusee.ullah@labs-provision:~$ drpcli bootenvs uploadiso debian-9-install\n{ \n  \"Path\": \"debian-9-amd64-mini.iso\",\n  \"Size\": 40894464\n}\nmusee.ullah@labs-provision:~$ drpcli bootenvs uploadiso debian-9-install\n{ \n  \"Path\": \"debian-9-amd64-mini.iso\",\n  \"Size\": 40894464\n}\n```\nI can do this over and over and it never actually seems to explode it or something",
+        "ts": "1524521105.000030"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "does the `debian-9-install` directory exist in the `tftpboot` directory.",
+        "ts": "1524521168.000354"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "yes",
+        "ts": "1524521188.000337"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "I just tried removing it",
+        "ts": "1524521192.000274"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "`\/var\/lib\/dr-provision\/tftpboot\/debian-9\/install\/`",
+        "ts": "1524521201.000248"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "once it is exploded, it won’t reexplode it.",
+        "ts": "1524521219.000314"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You can remove the whole directory and restart drp (or rerun uploadiso) to get it to explode",
+        "ts": "1524521247.000039"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We fixed the canary file checking that was to keep it from doing it all the time.",
+        "ts": "1524521260.000335"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "hm",
+        "ts": "1524521348.000335"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "```\nmusee.ullah@labs-provision:~$ sudo systemctl stop dr-provision\nmusee.ullah@labs-provision:~$ sudo rm -rf \/var\/lib\/dr-provision\/tftpboot\/debian-9\nmusee.ullah@labs-provision:~$ sudo rm -rf \/var\/lib\/dr-provision\/tftpboot\/\nALL-LICENSE      bootx64.efi      centos-atomic-7\/ esxi.0           files\/           ipxe.pxe         libcom32.c32     machines\/        sledgehammer\/    wimboot          \nbootia32.efi     centos-7\/        coreos\/          explode_iso.sh   grml\/            isos\/            libutil.c32      pxechn.c32       ubuntu-14.04\/    \nbootia64.efi     centos-7.4.1708\/ debian-8\/        feye\/            ipxe.efi         ldlinux.c32      lpxelinux.0      pxelinux.cfg\/    ubuntu-16.04\/    \nmusee.ullah@labs-provision:~$ sudo rm -rf \/var\/lib\/dr-provision\/tftpboot\/isos\/debian-9-amd64-mini.iso \nmusee.ullah@labs-provision:~$ sudo systemctl start dr-provision\nmusee.ullah@labs-provision:~$ drpcli bootenvs uploadiso debian-9-install\n{\n  \"Path\": \"debian-9-amd64-mini.iso\",\n  \"Size\": 40894464\n}\nmusee.ullah@labs-provision:~$ drpcli bootenvs uploadiso debian-9-install\n{\n  \"Path\": \"debian-9-amd64-mini.iso\",\n  \"Size\": 40894464\n}\n```\nstill no cigar",
+        "ts": "1524521380.000412"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "(the bootenv is showing up as unavailable in DRP)",
+        "ts": "1524521398.000151"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "trying it now",
+        "ts": "1524521452.000391"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "ah",
+        "ts": "1524521490.000314"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "new debian iso it looks like",
+        "ts": "1524521499.000183"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes",
+        "ts": "1524521520.000279"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I get checksum error",
+        "ts": "1524521525.000269"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "```\n  \"Errors\": [\n    \"Exploding ISO: \/isos\/debian-9-amd64-mini.iso\",\n    \"Explode ISO: SHA256 bad. actual: 4e9e4b18db2f3ce73e3ade02ce0cb426f73672b8e4f92638313a7ccdf51226eb expected: dbc682eddefae1bf902948c12798085acf093f083d0e3b386e658d917dfcd52a\"\n  ],\n\n[lae@yuzu ~]$ curl <http:\/\/mirrors.kernel.org\/debian\/dists\/stretch\/main\/installer-amd64\/current\/images\/SHA256SUMS> -s | grep mini.iso\n07462bb12fbfc9a0eb271cc361cd3916fdf12c5f8d15389e1f7e92fe3dc6a5cb  .\/netboot\/gtk\/mini.iso\n4e9e4b18db2f3ce73e3ade02ce0cb426f73672b8e4f92638313a7ccdf51226eb  .\/netboot\/mini.iso\n```",
+        "ts": "1524521527.000292"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "oh i had changed this already in our local debian bootenv",
+        "ts": "1524521589.000375"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "9.4 on March 10th",
+        "ts": "1524521620.000086"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It is updated with tip.",
+        "ts": "1524521839.000069"
+    },
+    {
+        "type": "message",
+        "user": "UA9A8E1Q9",
+        "text": "is there a way to have a node reboot and not have the stage re-execute from the beginning?",
+        "ts": "1524525352.000133"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@UA9A8E1Q9> can you provide some more details?  Is this an existing stage or one you are building?",
+        "ts": "1524526385.000133"
+    },
+    {
+        "type": "message",
+        "user": "UA9A8E1Q9",
+        "text": "one that i'm building",
+        "ts": "1524526395.000209"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "using 3.8 workflow or prior?",
+        "ts": "1524526442.000174"
+    },
+    {
+        "type": "message",
+        "user": "UA9A8E1Q9",
+        "text": "i'm running v3.8.0",
+        "ts": "1524526451.000289"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "the default behavior should be that it picks up where it was in the task list",
+        "ts": "1524526484.000141"
+    },
+    {
+        "type": "message",
+        "user": "UA9A8E1Q9",
+        "text": "that what i thought i remembered too when i tested before",
+        "ts": "1524526505.000067"
+    },
+    {
+        "type": "message",
+        "user": "UA9A8E1Q9",
+        "text": "but i'm not seeing that now. i tried using exit code 64 and 192",
+        "ts": "1524526531.000267"
+    },
+    {
+        "type": "message",
+        "user": "UA9A8E1Q9",
+        "text": "i can share most of what i'm doing if it helps. it's noting too crazy. just running a custom script to clear some disks then rebooting to be safe",
+        "ts": "1524526617.000295"
+    },
+    {
+        "type": "message",
+        "user": "UA9A8E1Q9",
+        "text": "```\n#!\/bin\/bash\nset -e \nJOB_UUID=$(drpcli machines show $RS_UUID | jq '.CurrentJob' | tr -d '\"')\nLAST_JOB_UUID=$(drpcli jobs show $JOB_UUID | jq '.Previous' | tr -d '\"')\nEXIT_STATE=$(drpcli jobs show $LAST_JOB_UUID | jq '.ExitState' | tr -d '\"')\n# no reboot needed if the exit state is reboot\nif [[ \"$EXIT_STATE\" == \"reboot\" ]];then\n  echo \"Last job says it rebooted. No reboot required\"\n  exit 0\nfi\ncurl -O <http:\/\/10.190.111.153:8091\/sledgehammer\/6122f34b46b5b74b668d6779e33f5fcd0f44a8cc\/stage1.img;>\ncurl -O <http:\/\/10.190.111.153:8091\/sledgehammer\/6122f34b46b5b74b668d6779e33f5fcd0f44a8cc\/vmlinuz0;>\nkexec -u\nkexec -l --initrd=stage1.img --reuse-cmdline vmlinuz0\n#exit 128\n#exit 192\nexit 64\n```",
+        "ts": "1524526692.000069"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you should exit with `0` if you do not want the tasks\/jobs rerun",
+        "ts": "1524526739.000108"
+    },
+    {
+        "type": "message",
+        "user": "UA9A8E1Q9",
+        "text": "then how do i trigger the reboot?",
+        "ts": "1524526757.000332"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "also you can drop the `tr` calls after `jq` - if you pass jq the `-r` flag (eg `jq -r '.CurrentJob'`)",
+        "ts": "1524526792.000069",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "UA9A8E1Q9"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@UA9A8E1Q9> - reboot is automatic is the bootenv changes between stages",
+        "ts": "1524526873.000061"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "so have your next stage in the workflow change the bootenv",
+        "ts": "1524526889.000310"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "FWIW - I think there's a clear disks task in the rackn task-library.... looking for it",
+        "ts": "1524526954.000027"
+    },
+    {
+        "type": "message",
+        "user": "UA9A8E1Q9",
+        "text": "there is. but i need more than \"nuke all\" :slightly_smiling_face:",
+        "ts": "1524526969.000068"
+    },
+    {
+        "type": "message",
+        "user": "UA9A8E1Q9",
+        "text": "i can avoid rebooting if i change a few things with how i'm clearing the disks",
+        "ts": "1524527008.000059"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "for reference: \"erase-hard-disks-for-os-instal\" in community content",
+        "ts": "1524527041.000213"
+    },
+    {
+        "type": "message",
+        "user": "UA9A8E1Q9",
+        "text": "which i can do. i was just hoping there was a way i could easily reboot and preserve the state",
+        "edited": {
+            "user": "UA9A8E1Q9",
+            "ts": "1524527055.000000"
+        },
+        "ts": "1524527045.000132"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "beyond \"restart\" or using IPMI actions on the CLI?",
+        "ts": "1524527124.000165"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "BTW - `exit 64` specifies an explicit \"please reboot\" - which is what you mean, I believe ?",
+        "ts": "1524527143.000106"
+    },
+    {
+        "type": "message",
+        "user": "UA9A8E1Q9",
+        "text": "<@U6QFVRJNB> correct",
+        "ts": "1524527164.000234"
+    },
+    {
+        "type": "message",
+        "user": "UA9A8E1Q9",
+        "text": "<https:\/\/github.com\/digitalrebar\/provision\/blob\/c35fa94dae0e278e0aa258271f4fbff79566b1a6\/api\/jobs.go#L184>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/blob\/c35fa94dae0e278e0aa258271f4fbff79566b1a6\/api\/jobs.go#L184i",
+                "text": "Digital Rebar Provision is a simple and powerful Golang executable that provides a complete API-driven DHCP\/PXE\/TFTP provisioning system.",
+                "fallback": "GitHub: digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/blob\/c35fa94dae0e278e0aa258271f4fbff79566b1a6\/api\/jobs.go#L184i",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/digitalrebar\/provision\/blob\/c35fa94dae0e278e0aa258271f4fbff79566b1a6\/api\/jobs.go#L184i"
+            }
+        ],
+        "edited": {
+            "user": "UA9A8E1Q9",
+            "ts": "1524527172.000000"
+        },
+        "ts": "1524527171.000100"
+    },
+    {
+        "type": "message",
+        "user": "UA9A8E1Q9",
+        "text": "i had already found that",
+        "ts": "1524527176.000033"
+    },
+    {
+        "type": "message",
+        "user": "UA9A8E1Q9",
+        "text": "<@U02DHRR2L> what i was doing (or trying to do there) is loading the sledgehammer initrid and kernel with kexec then when the \"reboot\" command comes though it re-loads sledgehammer",
+        "ts": "1524527244.000286"
+    },
+    {
+        "type": "message",
+        "user": "UA9A8E1Q9",
+        "text": "avoiding the full restart",
+        "ts": "1524527258.000124"
+    },
+    {
+        "type": "message",
+        "user": "UA9A8E1Q9",
+        "text": "but you guys answered what I wanted to know. I think i can work-around it by making a stage just for the \"reboot\"",
+        "ts": "1524527318.000122"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "what is it ultimately you're driving towards?  not just the mechanics of it - curious what your use case is",
+        "ts": "1524527357.000041"
+    },
+    {
+        "type": "message",
+        "user": "UA9A8E1Q9",
+        "text": "the end goal i'm driving towards is being able to re-slam the OS on the node and still preserve most of the data on the drives",
+        "ts": "1524527425.000045"
+    },
+    {
+        "type": "message",
+        "user": "UA9A8E1Q9",
+        "text": "one of the use-cases is hadoop where it takes a lot of network\/disk IO to replicate the data if we want to fully de-provision it",
+        "ts": "1524527467.000016"
+    },
+    {
+        "type": "message",
+        "user": "UA9A8E1Q9",
+        "text": "the reason for wanting to \"reslam\" the OS is so we can get closer to handling our on-prem nodes like we would our ec2 instances",
+        "ts": "1524527534.000099"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ok - nice - I like it are you wanting to run the OS off of the local disks - or looking to do a Live Boot (in mem) run for the OS - then reboot becomes OS upgrade path ?",
+        "ts": "1524527553.000228"
+    },
+    {
+        "type": "message",
+        "user": "UA9A8E1Q9",
+        "text": "currently planning to run the OS on disk",
+        "ts": "1524527575.000125"
+    },
+    {
+        "type": "message",
+        "user": "UA9A8E1Q9",
+        "text": "we could potentially do the in-memory path later on",
+        "ts": "1524527592.000324"
+    },
+    {
+        "type": "message",
+        "user": "UA9A8E1Q9",
+        "text": "but we already have the nodes there with the drives for the OS",
+        "ts": "1524527605.000020"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we're working on some patterns to do custom image building for in-memory\/live boot deployment types, was curious if that was interesting",
+        "ts": "1524527621.000268"
+    },
+    {
+        "type": "message",
+        "user": "UA9A8E1Q9",
+        "text": "and it obv involves some scaling\/risk to do pure network boot like that",
+        "ts": "1524527622.000277"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yep - your boot system becomes critical path",
+        "ts": "1524527644.000185"
+    },
+    {
+        "type": "message",
+        "user": "UA9A8E1Q9",
+        "text": "I think it's interesting for sure. I don't want to jump into that boat yet until we're more confident in our setup",
+        "ts": "1524527691.000058"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "understandable",
+        "ts": "1524527701.000027"
+    },
+    {
+        "type": "message",
+        "user": "UA9A8E1Q9",
+        "text": "appreciate the help and the answering of my questions guys :slightly_smiling_face:",
+        "ts": "1524527791.000084"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "no problem - ping us again if anything else comes up - i'd be interested to see how you do it with the tool - out of curiosity",
+        "ts": "1524527823.000036"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<@UA9A8E1Q9> that kexec task should be in a different workflow, if I understand what you are trying to do.",
+        "client_msg_id": "1eaa94fe-f260-4d88-a8ea-c2b75ea78e05",
+        "thread_ts": "1524532280.000109",
+        "reply_count": 1,
+        "replies": [
+            {
+                "user": "UA9A8E1Q9",
+                "ts": "1524582754.000358"
+            }
+        ],
+        "unread_count": 1,
+        "ts": "1524532280.000109"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "So I should get back around to using community-content bootenvs - is there documentation on how `.InstallRepos` works?",
+        "ts": "1524535027.000026"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "never mind, I think I found it",
+        "ts": "1524535191.000279"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "also I chuckled\n&gt; 23.6.1.5. Change Stage Map (OLD AND BUSTED)\n&gt; 23.6.1.6. Workflows (NEW HOTNESS)",
+        "ts": "1524535521.000129"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": ":slightly_smiling_face:",
+        "client_msg_id": "52096de0-b930-4bc0-9c36-fd34e891ffab",
+        "ts": "1524536872.000141"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "The provisioner repos stuff is designed to allow drp to operate without needing any local os install or Sledgehammer artifacts.",
+        "client_msg_id": "77d26c2b-6708-4a31-8dbe-311a66e28063",
+        "ts": "1524536992.000062"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": "yeah I was one of the people who needed that (since we mirror repositories locally and have a really small pipe to the internet)",
+        "ts": "1524540778.000052"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we had you in mind ... :slightly_smiling_face:",
+        "ts": "1524540803.000186"
+    },
+    {
+        "type": "message",
+        "user": "U54E4SD4G",
+        "text": ":stuck_out_tongue:",
+        "ts": "1524540808.000177"
+    }
+]

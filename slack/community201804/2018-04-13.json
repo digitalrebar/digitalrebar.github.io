@@ -1,0 +1,78 @@
+[
+    {
+        "type": "message",
+        "user": "UA4S5MFD2",
+        "text": "hey greg i added that `exit_reboot` helped as suggested but the machine never moves to the next stage.",
+        "ts": "1523652401.000169"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - so - it will reboot into that task again.  We usually test to see if dru tools say to reboot or not.",
+        "ts": "1523652540.000495"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "if not, we return success and the system continues.",
+        "ts": "1523652549.000248"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That allows you to loop in the same task until done.",
+        "ts": "1523652558.000168"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "If you want to chain like that, you need to explicitly set the next stage before exiting reboot.",
+        "ts": "1523652577.000536"
+    },
+    {
+        "type": "message",
+        "user": "UA4S5MFD2",
+        "text": "ahh gotcha ok",
+        "ts": "1523652708.000397"
+    },
+    {
+        "type": "message",
+        "user": "UA4S5MFD2",
+        "text": "is there a helper for \"next stage\"?",
+        "ts": "1523652718.000347"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Yeah, our flash code for messing with dru knows how to interpret the output from DRU (both exit code and log output) to do the right thing.",
+        "ts": "1523652762.000022"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "and our bios code for Dell boxes wraps omreport and omconfig to intelligently detect whether a reboot is needed.",
+        "ts": "1523652833.000289",
+        "reactions": [
+            {
+                "name": "grin",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "text": "Time to feed the :bear:!",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1523652833.000357"
+    },
+    {
+        "type": "message",
+        "user": "UA4S5MFD2",
+        "text": "nice :slightly_smiling_face:",
+        "ts": "1523652851.000041"
+    }
+]
