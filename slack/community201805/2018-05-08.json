@@ -1,0 +1,685 @@
+[
+    {
+        "type": "message",
+        "user": "UAHLYMQ21",
+        "text": "Hello, I’m trying to add more than one SSH key which reading the FAQ should be possible. But when trying in the RackN-GUI the list doesn’t seem to work - it only adds the last key in the list. And when trying from the cli as suggested in the FAQ I get a encoder error that it can’t handle utf-8. Any suggestions on how I can solve this?",
+        "ts": "1525763977.000003"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@UAHLYMQ21> - <http:\/\/provision.readthedocs.io\/en\/tip\/doc\/faq-troubleshooting.html#add-ssh-keys-to-authorized-keys> - What does your profile look like? Did you put that profile on a machine?  Did you put the machine through a workflow\/stage that applied the `ssh-access` task?",
+        "ts": "1525784743.000070"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Can you give an example of the utf-8 formatted file?",
+        "ts": "1525784800.000353"
+    },
+    {
+        "type": "message",
+        "user": "UAHLYMQ21",
+        "text": "That’s one I’m trying to use, and I use the global profile",
+        "ts": "1525784804.000333"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "`drpcli profiles get global param access-keys`",
+        "ts": "1525784869.000001"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "should give you the current setting of the `access-keys` parameter",
+        "ts": "1525784886.000636"
+    },
+    {
+        "type": "message",
+        "user": "UAHLYMQ21",
+        "text": "Hm, now I seem to have bigger issues. I get this no matter what command I type:\n```Error: Error creating session: CLIENT_ERROR\n  Cannot handle content-type text\/plain; charset=utf-8\n  No decoder for content-type text\/plain; charset=utf-8```",
+        "ts": "1525784968.000399"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Was just trying it on my side and make sure of some things.",
+        "ts": "1525785205.000063"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - this could be a permissions\/access issue.",
+        "ts": "1525785234.000570"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "How are you setting your Endpoint address and credentials?  <@UAHLYMQ21>",
+        "ts": "1525785251.000570"
+    },
+    {
+        "type": "message",
+        "user": "UAHLYMQ21",
+        "text": "The address was set with the install script I believe?",
+        "ts": "1525785335.000184"
+    },
+    {
+        "type": "message",
+        "user": "UAHLYMQ21",
+        "text": "Credentials I used the cli to add a new user",
+        "ts": "1525785344.000542"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UAHLYMQ21> - are you running the `drpcli` command on the DRP Endpoint itself - or from another machine ?",
+        "ts": "1525785368.000692"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Did you change the `rocketskates` username and\/or password?",
+        "ts": "1525785381.000522"
+    },
+    {
+        "type": "message",
+        "user": "UAHLYMQ21",
+        "text": "However, after trying to add that access-keys in the cli the cli doesn’t seem to work at all anymore",
+        "ts": "1525785382.000337"
+    },
+    {
+        "type": "message",
+        "user": "UAHLYMQ21",
+        "text": "Yes, from the endpoint",
+        "ts": "1525785385.000504"
+    },
+    {
+        "type": "message",
+        "user": "UAHLYMQ21",
+        "text": "No, I created a new user instead of the rocketskates one",
+        "ts": "1525785417.000349"
+    },
+    {
+        "type": "message",
+        "user": "UAHLYMQ21",
+        "text": "Which was working fine until after I tried the above",
+        "ts": "1525785438.000664"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you have to specify the correct credentials to access the DRP Endpoint",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1525785501.000000"
+        },
+        "ts": "1525785441.000591"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "with the `drpcli` - run `drpcli` by itself - observe the help text at the end that it outputs - specifically the `-U` and `-P` (username and password) flags",
+        "ts": "1525785473.000354"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Also, if you are running a recent -tip release, new users do not have rights to do anything beyond looking at themselves, changing their passwords, and getting tokens for themselves.",
+        "ts": "1525785635.000254"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "To do anything else, they need roles to let them.",
+        "ts": "1525785654.000683"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "rocketskates comes with the superuser role by default.",
+        "ts": "1525785684.000446"
+    },
+    {
+        "type": "message",
+        "user": "UAHLYMQ21",
+        "text": "Hm, I see. But what’s making me confused is that the new user seems to have all the rights to do things in the RackN-portal, such as provisioning and create workflows etc",
+        "ts": "1525785899.000210"
+    },
+    {
+        "type": "message",
+        "user": "UAHLYMQ21",
+        "text": "Is there a way to give a role to a user without the default user? Or should I just reinstall? :slightly_smiling_face:",
+        "ts": "1525785957.000269"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "If the portal is even working with a non-rocketskates user, then you are probably not running too recent a -tip. :slightly_smiling_face:",
+        "ts": "1525786235.000122"
+    },
+    {
+        "type": "message",
+        "user": "UAHLYMQ21",
+        "text": "No, I’m running -stable",
+        "ts": "1525786265.000232"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "OK, then none of what I said applies.",
+        "ts": "1525786301.000246"
+    },
+    {
+        "type": "message",
+        "user": "UAHLYMQ21",
+        "text": "Ah, alright!",
+        "ts": "1525786314.000265"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UAHLYMQ21> - can you please give us the version you're running?  `drpcli info get | grep -i version`",
+        "ts": "1525786356.000629"
+    },
+    {
+        "type": "message",
+        "user": "UAHLYMQ21",
+        "text": "Getting the same CLIENT_ERROR for that too apparently, so seem I’ve managed to bork it completely :slightly_smiling_face:",
+        "ts": "1525786444.000550"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Check if DRP is running?",
+        "ts": "1525786470.000123"
+    },
+    {
+        "type": "message",
+        "user": "UAHLYMQ21",
+        "text": "Yep, up and running!",
+        "ts": "1525786495.000307"
+    },
+    {
+        "type": "message",
+        "user": "UAHLYMQ21",
+        "text": "```root@rvlprebar01:~# systemctl status dr-provision.service\n* dr-provision.service - DigitalRebar Provision Integrated DHCP and File Provisioner\n   Loaded: loaded (\/etc\/systemd\/system\/dr-provision.service; enabled; vendor preset: enabled)\n   Active: active (running) since Tue 2018-05-08 15:12:31 CEST; 22min ago\n     Docs: <http:\/\/provision.readthedocs.io\/en\/latest\/>\n Main PID: 8531 (dr-provision)\n    Tasks: 8\n   Memory: 36.6M\n      CPU: 3.139s\n   CGroup: \/system.slice\/dr-provision.service\n           `-8531 \/usr\/local\/bin\/dr-provision```",
+        "ts": "1525786507.000604"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "cool - anything up with journalctl at the end of the logs?",
+        "ts": "1525786531.000354"
+    },
+    {
+        "type": "message",
+        "user": "UAHLYMQ21",
+        "text": "Ah yes, no auth token indeed. And the cli doesn’t seem to let me add one either",
+        "ts": "1525786706.000523"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "`drpcli -U &lt;username&gt; -P &lt;password&gt; info get`",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1525786749.000000"
+        },
+        "ts": "1525786746.000709"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "or",
+        "ts": "1525786752.000145"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "`export RS_KEY=\"username:password\"`",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1525786769.000000"
+        },
+        "ts": "1525786765.000515"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "or",
+        "ts": "1525786775.000516"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "`export RS_TOKEN=&lt;TOKEN&gt;`",
+        "ts": "1525786789.000140"
+    },
+    {
+        "type": "message",
+        "user": "UAHLYMQ21",
+        "text": "Ah, that did it the cli is back! Thanks a bunch!",
+        "ts": "1525786900.000469"
+    },
+    {
+        "type": "message",
+        "user": "UAHLYMQ21",
+        "text": "And now I could add the multiple keys as well. Thank you very much!",
+        "ts": "1525786969.000512",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U6QFVRJNB"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<!channel> Come join us today at 11:00 am for our regularly scheduled Meetup.  Today's topics will be:\nWebsockets demo, User Management demo, Tenancy and RBAC discussions, and Community Feedback\nThe Meetup page with all of the details is at: <https:\/\/www.meetup.com\/digitalrebar\/events\/lchdhpyxhblb\/>",
+        "attachments": [
+            {
+                "service_name": "Meetup",
+                "title": "vNNN: Meetup Specific Topics, Feature Planning, Community Feedback",
+                "title_link": "https:\/\/www.meetup.com\/digitalrebar\/events\/lchdhpyxhblb\/",
+                "text": "Tue, May 8, 2018, 11:00 AM: Start Time is 11:00 am PST (12:00 pm MST, 1:00 pm CST, 2:00 pm EST ... )Welcome to the Digital Rebar online meetup. Please note we'll be using <http:\/\/Zoom.us|Zoom.us> for our meeting; so p",
+                "fallback": "Meetup: vNNN: Meetup Specific Topics, Feature Planning, Community Feedback",
+                "image_url": "https:\/\/secure.meetupstatic.com\/photos\/event\/d\/1\/b\/1\/600_467453681.jpeg",
+                "fields": [
+                    {
+                        "title": "Where",
+                        "value": "Online <https:\/\/zoom.us\/j\/3403934274> Mountain View, CA",
+                        "short": true
+                    },
+                    {
+                        "title": "When",
+                        "value": "Tue, May 8, 2018, 11:00 AM",
+                        "short": true
+                    }
+                ],
+                "from_url": "https:\/\/www.meetup.com\/digitalrebar\/events\/lchdhpyxhblb\/",
+                "image_width": 472,
+                "image_height": 250,
+                "image_bytes": 69998,
+                "service_icon": "https:\/\/www.meetup.com\/mu_static\/en-US\/4f86abc993eecccc33a115d00b405ced.png",
+                "id": 1,
+                "original_url": "https:\/\/www.meetup.com\/digitalrebar\/events\/lchdhpyxhblb\/"
+            }
+        ],
+        "ts": "1525797597.000447"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "<!here> sorry I won't be able to attend :disappointed:",
+        "ts": "1525799496.000731"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "We talked about roles and tenants.  And bears.",
+        "ts": "1525807231.000082"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Hey everyone.  I have a weird problem.  I'm trying to load sledgehammer in a network where I have an isc-dhcp-server handing out leases.  When a machine PXE boots it gets a DHCP lease just fine, chain loads sledgehammer no problem, but then sledgehammer stage two tries to get a DHCP lease and just loops forever at \"Sending discover...\"  I never see anything in my logs on the dhcp server.",
+        "ts": "1525807345.000504"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "What the heck could be happening?  PXE and Sledgehammer are using the same NIC, I verified that.",
+        "ts": "1525807366.000259"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "That is weird.  Any other systems having that issue?",
+        "ts": "1525808717.000589"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I can't tell, this is the only system on this network I have access to currently.",
+        "ts": "1525808756.000152"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "hm",
+        "ts": "1525808762.000143"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "You loggen on to it via a remode console, I assume?",
+        "ts": "1525808783.000020"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Yes",
+        "ts": "1525808806.000531"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ok",
+        "ts": "1525808809.000308"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "What does systemctl status show?",
+        "ts": "1525808841.000730"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "On what machine?  I can't get into sledgehammer since it never loads.",
+        "ts": "1525808871.000114"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Ah.",
+        "ts": "1525808899.000481"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "That would be stage1 trying to get stage2, then.",
+        "ts": "1525808923.000360"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "What system is it?",
+        "ts": "1525808940.000399"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "and what kind of nic does it have?",
+        "edited": {
+            "user": "U02DJQSG8",
+            "ts": "1525808979.000000"
+        },
+        "ts": "1525808964.000208"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "It's a supermicro system, I believe with an Intel NIC.",
+        "ts": "1525809080.000380"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "hmmm...",
+        "ts": "1525809116.000144"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Errors in stage1 generally fall into 2 camps:",
+        "ts": "1525809145.000600"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "1: Missing drivers\/firmware in the stage1 initramfs.  Given that this is an Intel nic, and stage1 did not fail complaining about not being able to find the nic it booted from, that is probably not the issue.",
+        "ts": "1525809222.000358"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "2: local network design, like requiring boot off a specific VLAN, channel bonding, etc.",
+        "ts": "1525809298.000218"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "There is a third category, but that involves things like marginal patch cables, spanning tree without portfast, etc.",
+        "ts": "1525809387.000461"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Are you using ipxe or lpxelinux.0?",
+        "ts": "1525809412.000031"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "(based on the sending discover... thing, stage1 is failing around here: <https:\/\/github.com\/digitalrebar\/sledgehammer\/blob\/master\/build_sledgehammer.sh#L495>)",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/sledgehammer",
+                "title_link": "https:\/\/github.com\/digitalrebar\/sledgehammer\/blob\/master\/build_sledgehammer.sh#L495",
+                "text": "Contains the code and publish tools for sledgehammer (DRP and DR use it)",
+                "fallback": "GitHub: digitalrebar\/sledgehammer",
+                "from_url": "https:\/\/github.com\/digitalrebar\/sledgehammer\/blob\/master\/build_sledgehammer.sh#L495",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/digitalrebar\/sledgehammer\/blob\/master\/build_sledgehammer.sh#L495"
+            }
+        ],
+        "ts": "1525809575.000678"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "(I apoligize for the embedded shell script fun)",
+        "ts": "1525809600.000194"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I'm chainloading default.ipxe, I'm not sure which it ends up getting.",
+        "ts": "1525809740.000102"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ok",
+        "ts": "1525809750.000628"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "If you are chainloading default.ipxe, then you are using ipxe. :slightly_smiling_face:",
+        "ts": "1525809780.000017"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "BIOS or UEFI?",
+        "ts": "1525809787.000055"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "BIOS",
+        "ts": "1525809955.000501"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "hm",
+        "ts": "1525809979.000130"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Can you bounce the box and send me a screenshot of where it hangs?",
+        "ts": "1525809992.000604"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Sure hang on.",
+        "ts": "1525810612.000440"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U9BU09D51> uploaded a file: <https:\/\/rackn.slack.com\/files\/U9BU09D51\/FAL7BGZM2\/screen_shot_2018-05-08_at_4.17.05_pm.png|Screen Shot 2018-05-08 at 4.17.05 PM.png>",
+        "file": {
+            "id": "FAL7BGZM2",
+            "created": 1525810682,
+            "timestamp": 1525810682,
+            "name": "Screen Shot 2018-05-08 at 4.17.05 PM.png",
+            "title": "Screen Shot 2018-05-08 at 4.17.05 PM.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "U9BU09D51",
+            "editable": false,
+            "size": 195131,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAL7BGZM2\/screen_shot_2018-05-08_at_4.17.05_pm.png?t=xoxe-2458848645-362799180866-362254971057-364dee64d89776b80eaa818cb86ffa9e",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAL7BGZM2\/download\/screen_shot_2018-05-08_at_4.17.05_pm.png?t=xoxe-2458848645-362799180866-362254971057-364dee64d89776b80eaa818cb86ffa9e",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAL7BGZM2-46ae12df0e\/screen_shot_2018-05-08_at_4.17.05_pm_64.png?t=xoxe-2458848645-362799180866-362254971057-364dee64d89776b80eaa818cb86ffa9e",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAL7BGZM2-46ae12df0e\/screen_shot_2018-05-08_at_4.17.05_pm_80.png?t=xoxe-2458848645-362799180866-362254971057-364dee64d89776b80eaa818cb86ffa9e",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAL7BGZM2-46ae12df0e\/screen_shot_2018-05-08_at_4.17.05_pm_360.png?t=xoxe-2458848645-362799180866-362254971057-364dee64d89776b80eaa818cb86ffa9e",
+            "thumb_360_w": 360,
+            "thumb_360_h": 205,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAL7BGZM2-46ae12df0e\/screen_shot_2018-05-08_at_4.17.05_pm_480.png?t=xoxe-2458848645-362799180866-362254971057-364dee64d89776b80eaa818cb86ffa9e",
+            "thumb_480_w": 480,
+            "thumb_480_h": 273,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAL7BGZM2-46ae12df0e\/screen_shot_2018-05-08_at_4.17.05_pm_160.png?t=xoxe-2458848645-362799180866-362254971057-364dee64d89776b80eaa818cb86ffa9e",
+            "image_exif_rotation": 1,
+            "original_w": 718,
+            "original_h": 408,
+            "permalink": "https:\/\/rackn.slack.com\/files\/U9BU09D51\/FAL7BGZM2\/screen_shot_2018-05-08_at_4.17.05_pm.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FAL7BGZM2-16f0af7bb2",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U9BU09D51",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "dave.parker",
+        "bot_id": null,
+        "ts": "1525810684.000147"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "lol you can stand down.",
+        "ts": "1525810733.000047"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I talked with our network engineering guys and they fixed it.  It was a network issue.",
+        "ts": "1525810758.000575"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I needed a force-up on the port and didn't know it.  iPXE apparently doesn't need it though!",
+        "ts": "1525810957.000615"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Networking is hard.",
+        "ts": "1525810967.000094"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": ":slightly_smiling_face:",
+        "ts": "1525811080.000333"
+    },
+    {
+        "type": "message",
+        "user": "UA35R3W6L",
+        "text": "what's a good documentation on running DRP with an external DHCP server",
+        "ts": "1525814953.000377"
+    },
+    {
+        "type": "message",
+        "user": "UA35R3W6L",
+        "text": "is <http:\/\/provision.readthedocs.io\/en\/tip\/doc\/deployment.html> enough?",
+        "ts": "1525815072.000172"
+    },
+    {
+        "type": "message",
+        "user": "UA35R3W6L",
+        "text": "just pointing our dhcp next server to drp ?",
+        "ts": "1525815083.000434"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes - and the options in the old DHCP server need to be set.",
+        "ts": "1525815404.000390"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "next server and filename",
+        "ts": "1525815423.000180"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You can also run the DHCP server of DRP in proxy mode and it will send the boot options.",
+        "ts": "1525815423.000407"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "and DNS domain name (option 15).",
+        "ts": "1525815445.000413"
+    },
+    {
+        "type": "message",
+        "user": "UA35R3W6L",
+        "text": "thanks, I'll try that",
+        "ts": "1525822198.000021"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<!here> - is the recorded video from today's meetup:\n<https:\/\/u.rackn.io\/mtup17>",
+        "attachments": [
+            {
+                "service_name": "YouTube",
+                "title": "Digital Rebar Meetup #17",
+                "title_link": "https:\/\/u.rackn.io\/mtup17",
+                "text": "This is the recording of the community meetup on May 8, 2018 for the Digital Rebar community. Follow the community at <https:\/\/rebar.digital>.",
+                "fallback": "YouTube: Digital Rebar Meetup #17",
+                "thumb_url": "https:\/\/i.ytimg.com\/vi\/_lC2peBKmuk\/maxresdefault.jpg",
+                "from_url": "https:\/\/u.rackn.io\/mtup17",
+                "thumb_width": 1280,
+                "thumb_height": 720,
+                "service_icon": "https:\/\/s.ytimg.com\/yts\/img\/favicon-vfl8qSV2F.ico",
+                "id": 1,
+                "original_url": "https:\/\/u.rackn.io\/mtup17"
+            }
+        ],
+        "ts": "1525828117.000092"
+    }
+]

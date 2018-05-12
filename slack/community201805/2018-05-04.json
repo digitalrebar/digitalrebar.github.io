@@ -1,0 +1,908 @@
+[
+    {
+        "user": "UAK4ZMSVC",
+        "text": "<@UAK4ZMSVC> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1525417701.000156"
+    },
+    {
+        "user": "UAKA7HMCN",
+        "text": "<@UAKA7HMCN> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1525440594.000569"
+    },
+    {
+        "user": "UAJDYGPAP",
+        "text": "<@UAJDYGPAP> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1525449850.000570"
+    },
+    {
+        "type": "message",
+        "user": "U32PZNCP5",
+        "text": "<@UAK4ZMSVC> $Welcome",
+        "ts": "1525450464.000218"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1525450464.000424"
+    },
+    {
+        "user": "UAKJYRNMD",
+        "text": "<@UAKJYRNMD> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1525451754.000040"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "<!here> I think there is a bug in the last tip version at the ssh-access stage level.\nI noticed that all the keys are there but without newline character, here's an example:\n```ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAizA9z\/FZIqT+Pf6+vv0A52OTnYy0HceRVFH6ON7owaFDbc+Ih+CdA\/hSSHzKFJUN2V\/iw2+DmueD7hpVpbGfkZdUVPg8wpeMb3NVdbR1wv3+lU\/z1kwL33MFLlMfr7nGTbe8737YvrmPmTOYFNBpU2DNS8ifPk30rcBL+lk\/bmU=ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBJ4halNR7KwQcH+lXf58msu5XysLxWV0gob4hf+poTbssh-dss AAAAB3NzaC1kc3MAAACBAIZXINAHHAADfKpDDL+6LWWBxqlOZyCTCeMVvZIi+YI4axIkP0o4yaOmj4EFjMeBjYk5wju79q243Qf9OcsyNJhD9HhfTh5GKaPxdjEnDKKWX1hK6jg4lqqNBnMf8EiIdCEF2Rn7ZjPPNS2BJshoy6Cg5BwtXCUgN68hCIO4SYyNAAAAFQCtMPrbp0S79OijrjG1t9dZ46+MsQAAAIBuAv17FtR\/R9AzIYPphO0Vu2WToKKeKxqJkEfY32fweV3VzRsHV\/WAsjXq8oTv1QR1Gc58LKNQw13JmnEjWtagkc5Qpt1xKtLfIff+zCfzVjsvR\/Yn2pt0N0OhK+yWF8JACR3Vc0bUDMMNv7gstX4z\/Oly2WMl6OFiJZ5f8SAlBAAAAIBNKEVkXrlZJ48qZ7yVyxlPxlobQTEhedGLqPIWOfFSegkpYnodycz63PMAfIMlqI9S7bykoJoEf19ttXzx4DIpnQKGX99EXr\/kDze2h\/kj0o\/a25\/Eyi1supI3Rhv8dImvF2j05pRIrvXtcQUHrCckAPUK8mlMIrcoQJ2+Qj\/\/vg== <mailto:blabla@blabla.com|blabla@blabla.com>```\n\nInstead of:\n```ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAIEAizA9z\/FZIqT+Pf6+vv0A52OTnYy0HceRVFH6ON7owaFDbc+Ih+CdA\/hSSHzKFJUN2V\/iw2+DmueD7hpVpbGfkZdUVPg8wpeMb3NVdbR1wv3+lU\/z1kwL33MFLlMfr7nGTbe8737YvrmPmTOYFNBpU2DNS8ifPk30rcBL+lk\/bmU=\nssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBJ4halNR7KwQcH+lXf58msu5XysLxWV0gob4hf+poTb\nssh-dss AAAAB3NzaC1kc3MAAACBAIZXINAHHAADfKpDDL+6LWWBxqlOZyCTCeMVvZIi+YI4axIkP0o4yaOmj4EFjMeBjYk5wju79q243Qf9OcsyNJhD9HhfTh5GKaPxdjEnDKKWX1hK6jg4lqqNBnMf8EiIdCEF2Rn7ZjPPNS2BJshoy6Cg5BwtXCUgN68hCIO4SYyNAAAAFQCtMPrbp0S79OijrjG1t9dZ46+MsQAAAIBuAv17FtR\/R9AzIYPphO0Vu2WToKKeKxqJkEfY32fweV3VzRsHV\/WAsjXq8oTv1QR1Gc58LKNQw13JmnEjWtagkc5Qpt1xKtLfIff+zCfzVjsvR\/Yn2pt0N0OhK+yWF8JACR3Vc0bUDMMNv7gstX4z\/Oly2WMl6OFiJZ5f8SAlBAAAAIBNKEVkXrlZJ48qZ7yVyxlPxlobQTEhedGLqPIWOfFSegkpYnodycz63PMAfIMlqI9S7bykoJoEf19ttXzx4DIpnQKGX99EXr\/kDze2h\/kj0o\/a25\/Eyi1supI3Rhv8dImvF2j05pRIrvXtcQUHrCckAPUK8mlMIrcoQJ2+Qj\/\/vg== <mailto:blabla@blabla.com|blabla@blabla.com>```",
+        "edited": {
+            "user": "U8FAN7PLK",
+            "ts": "1525460046.000000"
+        },
+        "ts": "1525460035.000635"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Try tip content now.",
+        "ts": "1525460577.000685"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U8FAN7PLK>",
+        "ts": "1525460584.000516"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "community content ?",
+        "ts": "1525460627.000047"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes",
+        "ts": "1525460748.000336"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "gimme 1min.",
+        "ts": "1525460793.000109"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "it's working now :slightly_smiling_face: thanks <@U02DGQYK1>",
+        "ts": "1525461106.000269"
+    },
+    {
+        "type": "message",
+        "subtype": "pinned_item",
+        "user": "U02DHRR2L",
+        "item_type": "C",
+        "attachments": [
+            {
+                "fallback": "[May 4th, 2018 12:11 PM] florent.wagener: it's working now :slightly_smiling_face: thanks <@U02DGQYK1>",
+                "ts": "1525461106.000269",
+                "author_id": "U8FAN7PLK",
+                "author_subname": "florent",
+                "channel_id": "C02L9P26Q",
+                "channel_name": "community",
+                "is_msg_unfurl": true,
+                "text": "it's working now :slightly_smiling_face: thanks <@U02DGQYK1>",
+                "author_name": "florent",
+                "author_link": "https:\/\/rackn.slack.com\/team\/U8FAN7PLK",
+                "author_icon": "https:\/\/secure.gravatar.com\/avatar\/8ed489f4fec23363fa7edff0cf3fab50.jpg?s=48&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0015-48.png",
+                "mrkdwn_in": [
+                    "text"
+                ],
+                "from_hidden_wksp": false
+            }
+        ],
+        "text": "<@U02DHRR2L> pinned a message to this channel.",
+        "ts": "1525461968.000525",
+        "reactions": [
+            {
+                "name": "simple_smile",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "subtype": "pinned_item",
+        "user": "U02DHRR2L",
+        "item_type": "C",
+        "attachments": [
+            {
+                "fallback": "[May 4th, 2018 12:26 PM] zehicle: <@U02DHRR2L> pinned a message to this channel.",
+                "ts": "1525461968.000525",
+                "msg_subtype": "pinned_item",
+                "author_id": "U02DHRR2L",
+                "author_subname": "Rob Hirschfeld",
+                "channel_id": "C02L9P26Q",
+                "channel_name": "community",
+                "is_msg_unfurl": true,
+                "text": "<@U02DHRR2L> pinned a message to this channel.\n<>",
+                "author_name": "Rob Hirschfeld",
+                "author_link": "https:\/\/rackn.slack.com\/team\/U02DHRR2L",
+                "author_icon": "https:\/\/avatars.slack-edge.com\/2018-04-16\/347642523588_bb283abd6412a13b36fe_48.jpg",
+                "mrkdwn_in": [
+                    "text"
+                ],
+                "from_hidden_wksp": false
+            }
+        ],
+        "text": "<@U02DHRR2L> pinned a message to this channel.",
+        "ts": "1525462028.000472"
+    },
+    {
+        "type": "message",
+        "user": "U32PZNCP5",
+        "text": "<@UAKJYRNMD> $welcome",
+        "ts": "1525462217.000395"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1525462217.000630"
+    },
+    {
+        "type": "message",
+        "user": "UAKJYRNMD",
+        "text": "Thanks!",
+        "ts": "1525463155.000443"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "<!here> any idea why this: payload `[{'op': 'add', 'path': '\/netbox-id', 'value': '6770'}]` works in a python PATCH request but not in swagger ?",
+        "ts": "1525467486.000422"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "the error message I got is that:\n```{\n  \"Model\": \"\",\n  \"Key\": \"\",\n  \"Type\": \"PATCH\",\n  \"Messages\": [\n    \"invalid character '\\\\'' looking for beginning of object key string\"\n  ],\n  \"Code\": 400\n}```",
+        "ts": "1525467515.000118"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "does it require having the tests too?",
+        "ts": "1525467563.000316"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "that patch is only the action, no pre-change test",
+        "ts": "1525467579.000638"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "python magically turns single-quotes to double-quotes when turning that structiore into JSON?",
+        "edited": {
+            "user": "U02DJQSG8",
+            "ts": "1525467617.000000"
+        },
+        "ts": "1525467610.000495",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "<@U02DJQSG8> same with double quotes.",
+        "ts": "1525467645.000186"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "it looks like the model &amp; key are missing too",
+        "ts": "1525467666.000457"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I mean, as written, what you have there isn't valid JSON",
+        "ts": "1525467672.000546"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "`[{\"op\": \"add\", \"path\": \"\/netbox-id\", \"value\": \"6770\"}]` &lt;-- that is, though.",
+        "ts": "1525467744.000444"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "```{\n  \"Model\": \"params\",\n  \"Key\": \"a7ede354-6542-4079-8df6-149da1dc7793\",\n  \"Type\": \"PATCH\",\n  \"Messages\": [\n    \"Not Found\"\n  ],\n  \"Code\": 404\n}``` with the double quotes.",
+        "ts": "1525467903.000179"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "works fine in my python requests.",
+        "ts": "1525467909.000386"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "```r = requests.patch(url, data=json.dumps([{\"op\": \"add\", \"path\": \"\/netbox-id\", \"value\": \"6770\"}]), headers=headers, verify=SSLVerify)```",
+        "ts": "1525467939.000204"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "What is `url` in that query?",
+        "ts": "1525467986.000485"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "```<https:\/\/10.0.49.254:8092\/api\/v3\/machines\/a7ede354-6542-4079-8df6-149da1dc7793\/params>```",
+        "ts": "1525468090.000263"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "hm",
+        "ts": "1525468154.000167"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "```<https:\/\/10.0.49.254:8092> = {{ RS_ENPOINT }}\na7ede354-6542-4079-8df6-149da1dc7793 = {{ RS_UUID }}```",
+        "ts": "1525468158.000132"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "i'm using these param to build the url.",
+        "ts": "1525468175.000069"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Well, I need to write better error messages, for one. :slightly_smiling_face:",
+        "ts": "1525468185.000035"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "XD",
+        "ts": "1525468190.000435"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "it worked fine a while ago in swagger. I don't get why it's not working now...",
+        "ts": "1525468252.000237"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I am reading over the code to be sure, but my first instinct is to say that the machine with that UUID has been deleted.",
+        "edited": {
+            "user": "U02DJQSG8",
+            "ts": "1525468307.000000"
+        },
+        "ts": "1525468297.000529"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "impossible that's the machine executing the code.",
+        "ts": "1525468325.000038"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "and i'm looking at it right now in DRP :smile:",
+        "ts": "1525468339.000161"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "hrm.",
+        "ts": "1525468476.000409"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I do not see a codepath that would make a 404 with Model: params and Key: &lt;machine-uuid&gt;",
+        "ts": "1525468534.000002"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Can you dial frontend logging all the way up to trace and retry that request?",
+        "ts": "1525468558.000043"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "(and turn it back down afterwards, otherwise your lofs will grow like crazy)",
+        "ts": "1525468584.000193"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "Can you use the drpcli to make the same change?",
+        "client_msg_id": "b632bc3e-87f1-4f1e-95cd-0d84c60bdf99",
+        "ts": "1525468904.000021"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "let me try",
+        "ts": "1525468936.000044"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "On a completly unrelated note",
+        "ts": "1525469026.000406"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<@U8FAN7PLK> Users can be in at most one tenant, or users can be in multiple tenants?",
+        "ts": "1525469051.000019"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "(and anyone else who has an opinion)",
+        "ts": "1525469067.000404"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Both options have their merits, but they also have drawbacks.",
+        "ts": "1525469087.000118"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "It's the chicken and egg story :smile:",
+        "ts": "1525469093.000294"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Mostly around object creation by tenanted users.",
+        "ts": "1525469100.000378"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "We discussed this with <@U8RFVLLG1> a few weeks ago and I don't think we were able to decide something.",
+        "ts": "1525469131.000453"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "If at most, object creation has easy semantics -- the newly created object is also added to the tenant the user is in.",
+        "ts": "1525469150.000101"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "opinion <@U8G8VDLSJ>?",
+        "ts": "1525469171.000167"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "If an user can be in multiple tenants, the question as to which tenant the object should be created in does not have an easy answer without introducing some form of stupid hack or another.",
+        "ts": "1525469204.000239"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "well depends on how you are managing users",
+        "ts": "1525469256.000261"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "(guess what I am implementing right now)",
+        "ts": "1525469286.000478"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "If at some point you are planning make DRP able to connect to some kind of LDAP or Active Directory",
+        "ts": "1525469288.000152"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "sounds like a scoping problem",
+        "ts": "1525469350.000282"
+    },
+    {
+        "type": "message",
+        "user": "U8RFVLLG1",
+        "text": "My opinion is, in DRP case, a tenant should represent a subset of machines. A machine can't be in more than 1 tenant. Based on this, I would say that \"operators\" (user with limited actions) access only their tenant while on the other hand \"admins\" access everything (multi tenant + the config part)",
+        "ts": "1525469357.000061"
+    },
+    {
+        "type": "message",
+        "user": "U8G8VDLSJ",
+        "text": "A user should only be scoped to one tenant at a time",
+        "ts": "1525469364.000237"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "you could manage group of users to access this or that",
+        "ts": "1525469365.000412"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "hm.",
+        "ts": "1525469375.000087"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "and I got forestall by <@U8RFVLLG1>...",
+        "ts": "1525469405.000003"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I see the LDAP\/AD thing as a way iof solving the \"Is $USER who they claim to be, and are they allowed to talk to us\", not the \"what is $USER allowed to do\"",
+        "ts": "1525469447.000385"
+    },
+    {
+        "type": "message",
+        "user": "U8RFVLLG1",
+        "text": "Both are valid, it's not obvious to decide",
+        "ts": "1525469450.000276"
+    },
+    {
+        "type": "message",
+        "user": "U8RFVLLG1",
+        "text": "<@U02DJQSG8> why not both ?",
+        "ts": "1525469496.000221"
+    },
+    {
+        "type": "message",
+        "user": "U8RFVLLG1",
+        "text": "Like All these OU are tenants, this particular OU is admins",
+        "ts": "1525469518.000031"
+    },
+    {
+        "type": "message",
+        "user": "U8RFVLLG1",
+        "text": "I don't want tenant users playing with network interface parameters for example",
+        "ts": "1525469543.000066"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "because at its lowest level our authorization boils down to a detailed whitelist of (subject,verb,object) triples",
+        "ts": "1525469636.000259"
+    },
+    {
+        "type": "message",
+        "user": "U8RFVLLG1",
+        "text": "_is lost_",
+        "ts": "1525469671.000405"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<https:\/\/github.com\/digitalrebar\/provision\/blob\/master\/doc\/arch\/auth.rst> is the start of the docs that detail how authorization works.",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/blob\/master\/doc\/arch\/auth.rst",
+                "text": "Digital Rebar Provision is a simple and powerful Golang executable that provides a complete API-driven DHCP\/PXE\/TFTP provisioning system.",
+                "fallback": "GitHub: digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/blob\/master\/doc\/arch\/auth.rst",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/digitalrebar\/provision\/blob\/master\/doc\/arch\/auth.rst"
+            }
+        ],
+        "ts": "1525469724.000191"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "basically, each user has a list of Claims.",
+        "ts": "1525469758.000190"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Currently, every user is effectively a superuser.",
+        "ts": "1525469776.000110"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "if users have a single tenant, then you'd have to create multiple users to cross tenants",
+        "ts": "1525469792.000201"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "we'd end up needed to nest tenants",
+        "ts": "1525469828.000071"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "The Role stuff I am adding allows you to specify what each user is authorized to do to a high degree of specificity.",
+        "ts": "1525469850.000047"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<@U02DHRR2L> Yeah, let's not go there for now.",
+        "ts": "1525469866.000162"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "+100",
+        "ts": "1525469885.000378"
+    },
+    {
+        "type": "message",
+        "user": "U8RFVLLG1",
+        "text": "Reading your doc I feel that Tenant in my head = Role :thinking_face:",
+        "ts": "1525469897.000251"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "The Tenant stuff will act as filter on what the users can see in the first place.",
+        "ts": "1525469927.000245"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Role == list of Claims",
+        "ts": "1525469946.000218"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Tenant == list of Objects",
+        "ts": "1525469955.000438"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "if a user is tenanted, then they can only potentially access objects that the Tenant lists.",
+        "ts": "1525470024.000158"
+    },
+    {
+        "type": "message",
+        "user": "U8RFVLLG1",
+        "text": "Objects = ?",
+        "ts": "1525470036.000351"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "if they are not tenated, then they can potentially access any object",
+        "ts": "1525470037.000285"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Machines, reservations, users, etc.",
+        "ts": "1525470066.000206"
+    },
+    {
+        "type": "message",
+        "user": "U8RFVLLG1",
+        "text": "_Rephrasing to be sure I understood_ Role filter your allowed actions while Tenant filter on what you can perform it ?",
+        "edited": {
+            "user": "U8RFVLLG1",
+            "ts": "1525470155.000000"
+        },
+        "ts": "1525470143.000403"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Pretty much, although Roles can also further filter what you can see",
+        "ts": "1525470192.000424"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "You can theoritically implement tenant-lie behaviour with just Roles",
+        "ts": "1525470212.000149"
+    },
+    {
+        "type": "message",
+        "user": "U8RFVLLG1",
+        "text": "Got it and :heart: it",
+        "ts": "1525470218.000312"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "but it would be a pain to maintain.",
+        "ts": "1525470225.000151"
+    },
+    {
+        "type": "message",
+        "user": "U8RFVLLG1",
+        "text": "Much more powerful",
+        "ts": "1525470228.000349"
+    },
+    {
+        "type": "message",
+        "user": "U8RFVLLG1",
+        "text": ":thinking_face:",
+        "ts": "1525470256.000090"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Hence my original query",
+        "ts": "1525470260.000172"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "should I allow users to belong to multiple tenants, or at most one?",
+        "ts": "1525470278.000170"
+    },
+    {
+        "type": "message",
+        "user": "U8RFVLLG1",
+        "text": "1 user = 1 role and 1 tenant in this case",
+        "ts": "1525470304.000408"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "If the former, then creating objects becomes tricly enough on the client side that I will probably disallow it entirely until someone comes up with a good way to make it wwork without painful API gyrations.",
+        "ts": "1525470350.000347"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "why 1 role?",
+        "ts": "1525470362.000360"
+    },
+    {
+        "type": "message",
+        "user": "U8RFVLLG1",
+        "text": "it's already a list, why listing lists ?",
+        "ts": "1525470378.000022"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Composability.",
+        "ts": "1525470401.000137"
+    },
+    {
+        "type": "message",
+        "user": "U8RFVLLG1",
+        "text": "Complexity",
+        "ts": "1525470408.000151"
+    },
+    {
+        "type": "message",
+        "user": "U8RFVLLG1",
+        "text": "I get your point, but at 1 organization level (until you want to SaaS it), we should enforce limited list or role",
+        "ts": "1525470457.000149"
+    },
+    {
+        "type": "message",
+        "user": "U8RFVLLG1",
+        "text": "You = Admin, You = Operators",
+        "ts": "1525470469.000241"
+    },
+    {
+        "type": "message",
+        "user": "U8RFVLLG1",
+        "text": "Not happy, let's build a 3rd one",
+        "ts": "1525470490.000047"
+    },
+    {
+        "type": "message",
+        "user": "U8RFVLLG1",
+        "text": "And it will be at the DRP instance level, not an umbrella kind of ?",
+        "ts": "1525470597.000119"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "There wasn't really any additional complexity in allowing users to be in multiple roles.",
+        "ts": "1525470605.000021"
+    },
+    {
+        "type": "message",
+        "user": "U8RFVLLG1",
+        "text": "If it's the same workload and complexity, I'm in",
+        "ts": "1525470646.000252"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ok.",
+        "ts": "1525470697.000213"
+    },
+    {
+        "type": "message",
+        "user": "U8RFVLLG1",
+        "text": "I feel we need to keep in the mind the multi-instances implementation (like DRP in switches) where we'll have to ensure that it's spread everywhere the same way",
+        "ts": "1525470757.000072"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "The Roles code is already in tip for those interested in playing with it.  No UX support yet, through.",
+        "ts": "1525470781.000041"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "The Tenant code is a WIP @ <https:\/\/github.com\/digitalrebar\/provision\/pull\/851>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "Add tenants by VictorLowther · Pull Request #851 · digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/pull\/851",
+                "text": "Still a WIP.",
+                "fallback": "GitHub: Add tenants by VictorLowther · Pull Request #851 · digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/pull\/851",
+                "thumb_url": "https:\/\/avatars2.githubusercontent.com\/u\/770578?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/digitalrebar\/provision\/pull\/851"
+            }
+        ],
+        "ts": "1525470818.000139"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "The current code allows users to be in more than one Tenant.",
+        "ts": "1525470917.000351"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Based on this conversation, though, I will modify it to only allow a user to be in at most 1 tenant.",
+        "ts": "1525470950.000046"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "and then work on alowing creates by tenanted users, write up some docs, and unit test all this crazy newness.",
+        "ts": "1525471037.000376"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Unless someone strongly objects. :slightly_smiling_face:",
+        "ts": "1525471055.000128"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "what happens for superusers?  can they cross tenants?",
+        "ts": "1525471097.000005"
+    },
+    {
+        "type": "message",
+        "user": "U8RFVLLG1",
+        "text": "I feel it's easier, but maybe I'll come back to you next year asking for it and you'll remind me this :troll:",
+        "ts": "1525471106.000248"
+    },
+    {
+        "type": "message",
+        "user": "U8RFVLLG1",
+        "text": "They should",
+        "ts": "1525471118.000204"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Users not in a tenant can potentially interact with everything",
+        "ts": "1525471140.000042",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U8RFVLLG1",
+                    "U02DHRR2L"
+                ],
+                "count": 2
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "subject to their Rule restrictions.",
+        "ts": "1525471154.000274"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "that is why the \"at most 1 tenant\" statement is phrased that way.",
+        "ts": "1525471177.000225"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "for example, the rocketskates user by default gets the superuser role: `superUser = models.MakeRole(\"superuser\", \"*\", \"*\", \"*\")`",
+        "ts": "1525471314.000008"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "which is a default role provided by the system.",
+        "ts": "1525471323.000413"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "but if you put rocketskates into a tenant, it could only interact with objects that the Tenant lists.",
+        "ts": "1525471346.000140"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "and if the tenant did not have any objects, rocketskates would not be able to see or do anything, despite having the superuser role.",
+        "ts": "1525471470.000072"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Anyways, time to head home and start thinking about dinner.",
+        "ts": "1525471549.000393"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "That sounds good to me",
+        "ts": "1525474092.000294"
+    }
+]

@@ -1,0 +1,112 @@
+[
+    {
+        "type": "message",
+        "user": "U63ACQT8A",
+        "text": "Is there anything else I need to do to utilize the exploded ISO for installation of debian9 on my local network other then assigning a profile with local-repo enabled?",
+        "edited": {
+            "user": "U63ACQT8A",
+            "ts": "1525166034.000000"
+        },
+        "ts": "1525166015.000274"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You shouldn’t need local-repo.",
+        "ts": "1525196218.000322"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You may need a repo structure like in the docs for accessing an internal mirror if the install iso doesn’t have enough stuff.  <@U63ACQT8A>",
+        "ts": "1525196250.000410"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<http:\/\/provision.readthedocs.io\/en\/tip\/doc\/arch\/data.html#template>",
+        "ts": "1525196396.000485"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<http:\/\/provision.readthedocs.io\/en\/tip\/doc\/arch\/data.html#the-package-repositories-param>",
+        "ts": "1525198168.000136"
+    },
+    {
+        "type": "message",
+        "user": "U63ACQT8A",
+        "text": "yah… that was the confusing part of the docs. Didn’t know if I needed the local-repo to use the default exploded iso without going to the internet or if I had to setup a ‘package-repositories’ in my profiles and manually setup with my own copy or if it automatically used the exploded iso without the need to set anything at all :slightly_smiling_face:",
+        "ts": "1525199125.000662"
+    },
+    {
+        "type": "message",
+        "user": "U63ACQT8A",
+        "text": "The deprecation note didn’t help :wink:",
+        "ts": "1525199180.000320"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the `local-repo` will provision against the Exploded ISO - ONLY.  That means a very very minimal OS install - if you specify additional packages, it'll probably fail. The `package-repositories` allows you to override all of the Repos used for install.  You can use it to select appropriate mirrors to use - either geographically \"closer\" to you (or generally faster), or your own internally.",
+        "ts": "1525199501.000510"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I'm not sure the Debian ISO will get you much (via `local-repo`) - it's an extremely slim ISO - and likely doesn't install much.",
+        "ts": "1525199534.000606"
+    },
+    {
+        "type": "message",
+        "user": "U9B83A8F5",
+        "text": "Looking forward to the RackN talks at Interop tomorrow!",
+        "ts": "1525200391.000191",
+        "reactions": [
+            {
+                "name": "simple_smile",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            },
+            {
+                "name": "+1",
+                "users": [
+                    "U6QFVRJNB"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<@U6QFVRJNB>  Actually, with the latest content local-repo does not mean anything anymore.",
+        "ts": "1525202528.000666"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U9B83A8F5> - you in my hands-on session?",
+        "ts": "1525204722.000579"
+    },
+    {
+        "type": "message",
+        "user": "U9B83A8F5",
+        "text": "yep, at least I think so",
+        "ts": "1525205372.000096"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "nice!  I’ll see you then.",
+        "ts": "1525205678.000521"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "If not, let me know.  They were asking about extras.  I figure we can try to accommodate all who fit.",
+        "ts": "1525205723.000242"
+    }
+]
