@@ -1,0 +1,167 @@
+[
+    {
+        "user": "UANNN0Z7D",
+        "text": "<@UANNN0Z7D> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1526181593.000042"
+    },
+    {
+        "type": "message",
+        "user": "UANNN0Z7D",
+        "text": "Hi there. Giving DRP a test drive, so far I'm liking it. A couple of questions though...",
+        "ts": "1526181921.000051"
+    },
+    {
+        "type": "message",
+        "user": "UANNN0Z7D",
+        "text": "First, the UI seems to flicker a _lot_. Every couple of seconds it grays out for a fraction of a second with a \"waiting for endpoint\" spinner. This makes it very hard to use. I'm guessing I'm holding it wrong somehow, any thoughts on what I might have done?",
+        "ts": "1526181973.000031"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Chrome?",
+        "client_msg_id": "17e4b879-895f-4225-a445-e662dd17313f",
+        "ts": "1526182007.000035"
+    },
+    {
+        "type": "message",
+        "user": "UANNN0Z7D",
+        "text": "yes",
+        "ts": "1526182019.000036"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Sadly... Restart your browser.  It seems to be an occasional issue with Chrome.",
+        "client_msg_id": "39df07c5-8506-4c75-ac76-2ab1a0080399",
+        "ts": "1526182062.000050"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I see same issue on mine on Mac every few weeks.  Restart cleans it up. ",
+        "client_msg_id": "11dfcca4-a038-4887-ac20-3347883630dd",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1526182127.000000"
+        },
+        "ts": "1526182106.000061"
+    },
+    {
+        "type": "message",
+        "user": "UANNN0Z7D",
+        "text": "yeah, was about to say: when you mentioned chrome, I saw I was running a version that's a couple months old. Updated, and it's all good now.",
+        "ts": "1526182120.000037"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Xclnt.  I like easy fixes.  I won't lie about that...",
+        "client_msg_id": "8c2981fe-bf8d-4106-bd88-1658d8b45674",
+        "ts": "1526182163.000039"
+    },
+    {
+        "type": "message",
+        "user": "UANNN0Z7D",
+        "text": "the other one was that the debian-9 bootenv failed to install, it was failing to read from the DRP-provided mirror during the install process. Is that a KI?",
+        "ts": "1526182330.000064"
+    },
+    {
+        "type": "message",
+        "user": "UANNN0Z7D",
+        "text": "I tried ubuntu 18.4 after that, and it installed fine, fwiw.",
+        "ts": "1526182342.000072"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I'll take a look at it, but it won't be until tmw....",
+        "client_msg_id": "b0f590fe-45cc-4306-9337-82c31eb80e6b",
+        "ts": "1526182378.000012"
+    },
+    {
+        "type": "message",
+        "user": "UANNN0Z7D",
+        "text": "no worries, not urgent obviously :slightly_smiling_face:",
+        "ts": "1526182442.000029"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Xclnt.  I like when it's not urgent... :upside_down_face:",
+        "client_msg_id": "073001ee-4c5c-4bc8-aa52-9c81e3e3eccd",
+        "ts": "1526182474.000015"
+    },
+    {
+        "type": "message",
+        "user": "UANNN0Z7D",
+        "text": "prodding at it a bit more, :8091\/debian-9\/install\/dists\/ is entirely missing, so obviously the installer isn't happy. I'm assuming I've done something wrong, I'll keep digging.",
+        "ts": "1526182658.000001"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "Check the bootenv for errors.",
+        "client_msg_id": "adb427d0-3c2a-4f6f-be7a-61319b05f4c2",
+        "ts": "1526182722.000045"
+    },
+    {
+        "type": "message",
+        "user": "UANNN0Z7D",
+        "text": "Don't see any errors in the UI, or in dr-provision's logs.",
+        "ts": "1526183005.000060"
+    },
+    {
+        "type": "message",
+        "user": "UANNN0Z7D",
+        "text": "well, good news is debian-8-install fails the same way. With that said, I believe I'm using DRP stable, lemme upgrade to latest and try my luck there.",
+        "ts": "1526184140.000075"
+    },
+    {
+        "type": "message",
+        "user": "UANNN0Z7D",
+        "text": "Either way, seems very fixable, and I'll just test drive on ubuntu et al. in the meantime.",
+        "ts": "1526184161.000062"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@UANNN0Z7D> it's likely in the bootenv content not the drp service if other o\/s are able to boot.   Debian is not as exercised as ubuntu or centos",
+        "client_msg_id": "dc7a684a-a08a-4973-8f07-69dd0ed9d491",
+        "ts": "1526184841.000020"
+    },
+    {
+        "type": "message",
+        "user": "UANNN0Z7D",
+        "text": "Yup, my guess is the bootenv should be getting a bigger iso than the debian-mini edition. IIRC mini.iso has just enough in it to get online and grab everything else from remote repos",
+        "ts": "1526184892.000081"
+    },
+    {
+        "type": "message",
+        "user": "UANNN0Z7D",
+        "text": "so, no local dist\/ to serve.",
+        "ts": "1526184898.000013"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "The $faq has tips for setting internal mirrors but I don't know if it works for debian",
+        "client_msg_id": "84039513-312c-448c-ac61-82236ba14db1",
+        "ts": "1526186914.000055"
+    },
+    {
+        "text": "FAQs are here &gt; <http:\/\/provision.readthedocs.io\/en\/tip\/doc\/faq-troubleshooting.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1526186914.000075"
+    },
+    {
+        "type": "message",
+        "user": "UANNN0Z7D",
+        "text": "I'm reasonably sure if I just upload the netinst iso instead of the mini iso that's listed in the bootenv, everything will work. I'll give that a shot once I'm done watching videos - trying to get straight how workflows, stages, tasks, profiles etc. all interact",
+        "ts": "1526188069.000057"
+    }
+]

@@ -1,0 +1,211 @@
+[
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "qq now that I am out of my local vm lab, I am assigned 1 physical box in the lab but the range I am given is of one ip address",
+        "ts": "1527704582.000611"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "so lets say the start will be 186 and the end will be 186",
+        "ts": "1527704594.000075"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "from reading the docs, this does not seem possible",
+        "ts": "1527704604.000159"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "```ActiveStart: This is the start of the IP address range that this subnet will hand out. It must be within the address range the Subnet is responsible for, and it must be less than ActiveEnd.\nActiveEnd: This is the end of the IP address range that this subnet will hand out. It must be within the address range the Subnet is responsible for, and it must be greater than ActiveStart.```",
+        "ts": "1527704621.000133"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "will this change in the near future or must I work with my networking team to give me a range to work with",
+        "ts": "1527704661.000435"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UAQAE0VNE> you are correct - technically you'd have to create a pool with 2 address to meet our validation tests.",
+        "ts": "1527704705.000284"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Here's a dirty trick you can employ ....",
+        "ts": "1527704715.000149"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "create a range w\/ 2 consecutive IP addresses\ncreate a Reservation with a bogus MAC address that won't appear on your network (eg 00:00:00:00:00:01)\nand assign it the IP address you are not allowed to hand out",
+        "ts": "1527704765.000283"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I haven't tested this - but it should work - the Reservation will \"lock up\" the IP that you're not supposed to hand out - reserving it for a MAC it won't see ... so the only free address is the valid IP you can hand out",
+        "ts": "1527704802.000310"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "sweet I will try that",
+        "ts": "1527704822.000823"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if we melt your network, explode your servers, or destroy your data ... we're awfully sorry ... but we didn't test this ...  :upside_down_face: ... etc ... etc ...",
+        "ts": "1527704878.000250"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "lol",
+        "ts": "1527709900.000681"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "would like to know if that worked for you ... :slightly_smiling_face:",
+        "ts": "1527709942.000549"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "hey all. i didn’t seem to find an answer for this searching around in slack or google. however i’m getting ```$ sudo systemctl start dr-provision\nFailed to start dr-provision.service: Unit dr-provision.service not found```\n\ni had digital rebar installed and running fine, however after executing ```tools\/install.sh --remove-data remove``` to remove it and ```\/tmp\/dr-provision-install$ tools\/install.sh --isolated install\n'dr-provision' service is not running, beginning install process ...\nEnsuring required tools are installed\n.\/ALL-LICENSE: OK\n.\/bin\/linux\/amd64\/drpcli: OK\n.\/bin\/linux\/amd64\/dr-provision: OK\n.\/bin\/linux\/amd64\/incrementer: OK\n.\/bin\/linux\/amd64\/drbundler: OK\n.\/bin\/linux\/arm64\/drpcli: OK\n.\/bin\/linux\/arm64\/dr-provision: OK\n.\/bin\/linux\/arm64\/incrementer: OK\n.\/bin\/linux\/arm64\/drbundler: OK\n.\/bin\/linux\/arm_v7\/drpcli: OK\n.\/bin\/linux\/arm_v7\/dr-provision: OK\n.\/bin\/linux\/arm_v7\/incrementer: OK\n.\/bin\/linux\/arm_v7\/drbundler: OK\n.\/bin\/darwin\/amd64\/drpcli: OK\n.\/bin\/darwin\/amd64\/dr-provision: OK\n.\/bin\/darwin\/amd64\/incrementer: OK\n.\/bin\/darwin\/amd64\/drbundler: OK\n.\/bin\/windows\/amd64\/drpcli.exe: OK\n.\/bin\/windows\/amd64\/dr-provision.exe: OK\n.\/bin\/windows\/amd64\/incrementer.exe: OK\n.\/bin\/windows\/amd64\/drbundler.exe: OK\n.\/assets\/startup\/dr-provision.service: OK\n.\/assets\/startup\/dr-provision.sysv: OK\n.\/assets\/startup\/dr-provision.unit: OK\n.\/tools\/install.sh: OK\nInstalling Version stable of Digital Rebar Provision Community Content\n&gt;&gt;&gt; Downloading file:  drp-community-content.yaml\n&gt;&gt;&gt; Downloading file:  drp-community-content.sha256``` it doesn’t seem to start via the command mentioned above `sudo systemctl start dr-provision`\n\ni’m not seeing anything in my logs about it… and likely have just been looking at this a bit to long and am not seeing something obvious. if someone can mention some ideas that would be helpful.",
+        "edited": {
+            "user": "U9RL0EJH3",
+            "ts": "1527718354.000000"
+        },
+        "ts": "1527718188.000460"
+    },
+    {
+        "type": "message",
+        "user": "U32PZNCP5",
+        "text": "<@U9RL0EJH3> Looks like the typical RackN dev team is not on Slack right now to help. Just want to let you know it may be a few minutes or so.",
+        "ts": "1527718272.000475"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "oh no problem at all, i actually have to head out anyway to coach, so i’ll likely read about why on my cell a bit later and giver’ a go tomorrow.",
+        "ts": "1527718315.000425"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "<@U9RL0EJH3>: running 'install.sh --isolated install' does not install the binaries to the system's path, nor does it install the systemd scripts (which you're trying to run)",
+        "ts": "1527718434.000017"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": ":disappointed:",
+        "ts": "1527718489.000196"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "i picked things up a little late after installing my system some time ago. i thought i had this running as a service. i guess not?",
+        "ts": "1527718548.000414"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "No, I do not think it will if you run the install script with the '--isolated' flag",
+        "ts": "1527718718.000069"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "Need to manually start\/stop the service",
+        "ts": "1527718731.000342"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "<http:\/\/provision.readthedocs.io\/en\/tip\/doc\/quickstart.html>",
+        "ts": "1527718733.000168"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UAS2DTMMM>",
+        "ts": "1527718747.000270"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the Isolated mode does not install nor offer how to install the SystemD (or others) start up files - they are not (by default) used",
+        "ts": "1527718780.000052"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you must start DRP manually with \"isolated\" mode - that is the intent it is a Dev\/Test intended playground install mode - with everything self contained in the directory you install at",
+        "ts": "1527718815.000168"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "<@U6QFVRJNB> yes sir, what I had gathered",
+        "ts": "1527718867.000019"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if you want your systemctl commands to work with the isolated mode install - you can modify the `\/etc\/systemd\/system\/dr-provision.service` file",
+        "ts": "1527718885.000301"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "when you do the Isolated install, if you notice, the help text output does not mention installing service files to start DRP up at startup for you",
+        "ts": "1527718935.000476"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "<@U9RL0EJH3> If you check out the quickstart guide above you will see the command to manually start the dr-provision service and the flags you can use to set up your environment (base-root, local-content, etc)",
+        "ts": "1527718959.000369"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "sudo .\/dr-provision --base-root=`pwd`\/drp-data --local-content=\"\" --default-content=\"\" &gt; drp.log 2&gt;&amp;1 &amp;",
+        "ts": "1527718964.000261"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "He he .... sorry enderless - mean to <@U9RL0EJH3> on that ...",
+        "ts": "1527719004.000134"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "<@U6QFVRJNB> no problem!",
+        "ts": "1527719024.000214"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "Thanks. My brain is done today. I'll go over all the things tomorrow",
+        "client_msg_id": "2e170e52-d5a4-49ef-bfb6-4c05ebdd7083",
+        "ts": "1527720288.000297"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U9RL0EJH3> no problem - ping us tmw if you need to",
+        "ts": "1527720314.000040"
+    }
+]

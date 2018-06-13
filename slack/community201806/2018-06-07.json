@@ -1,0 +1,57 @@
+[
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<!here> - we had a great meetup earlier this week, covering the Kubernetes Cluster deployment with our KRIB tooling.  We introduced the concepts and directions for our _Net Wrangler_ tool ... and as always, community questions and answers.   On next meetup on June 19th we'll continue with a demo of our Kubernetes HA cluster builds with KRIB-HA, also demo Net Wrangler in operations, and also announce the v3.9.0 enhancements, features, and bug fixes.  We look forward to seeing you there.  Check out the meetup page for all details and RSVP:\n<https:\/\/www.meetup.com\/digitalrebar\/events\/lchdhpyxjbzb\/>",
+        "attachments": [
+            {
+                "service_name": "Meetup",
+                "title": "v020: Net Wrangler Demo, Kubernetes KRIB HA, v3.9.0 release, community",
+                "title_link": "https:\/\/www.meetup.com\/digitalrebar\/events\/lchdhpyxjbzb\/",
+                "text": "Tue, Jun 19, 2018, 11:00 AM: Start Time is 11:00 am PST (12:00 pm MST, 1:00 pm CST, 2:00 pm EST ... )Welcome to the Digital Rebar online <http:\/\/meetup.In|meetup.In> our Twentieth meetup, we have some very exciting demo",
+                "fallback": "Meetup: v020: Net Wrangler Demo, Kubernetes KRIB HA, v3.9.0 release, community",
+                "image_url": "https:\/\/secure.meetupstatic.com\/photos\/event\/d\/1\/b\/1\/600_467453681.jpeg",
+                "fields": [
+                    {
+                        "title": "Where",
+                        "value": "Online <https:\/\/zoom.us\/j\/3403934274> Mountain View, CA",
+                        "short": true
+                    },
+                    {
+                        "title": "When",
+                        "value": "Tue, Jun 19, 2018, 11:00 AM",
+                        "short": true
+                    }
+                ],
+                "from_url": "https:\/\/www.meetup.com\/digitalrebar\/events\/lchdhpyxjbzb\/",
+                "image_width": 472,
+                "image_height": 250,
+                "image_bytes": 69998,
+                "service_icon": "https:\/\/www.meetup.com\/mu_static\/en-US\/4f86abc993eecccc33a115d00b405ced.png",
+                "id": 1,
+                "original_url": "https:\/\/www.meetup.com\/digitalrebar\/events\/lchdhpyxjbzb\/"
+            }
+        ],
+        "ts": "1528396402.000563"
+    },
+    {
+        "user": "UB3NL9EKV",
+        "text": "<@UB3NL9EKV> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1528412405.000444"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UB3NL9EKV> $welcome",
+        "ts": "1528415379.000297"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1528415380.000061"
+    }
+]

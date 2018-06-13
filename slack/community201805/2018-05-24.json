@@ -1,0 +1,1151 @@
+[
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "How do I install plugins. I'm on the ui and when I click add it just hangs there with Loading Providers",
+        "ts": "1527178777.000350"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That should be it. What plugin?",
+        "client_msg_id": "A1DFB46B-A442-48AC-BBCF-DF74570A8726",
+        "ts": "1527179241.000192"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@UAQAE0VNE> ",
+        "client_msg_id": "C7D05B9A-E83F-4B6C-BC1E-350EF6DFB939",
+        "ts": "1527179270.000665"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "I was just trying to see a list of available plugins",
+        "ts": "1527179288.000874"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "Im testing right now locally and I have vmware workstation",
+        "ts": "1527179304.000021"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@UAQAE0VNE> I believe <https:\/\/portal.rackn.io\/#\/catalog\/s\/all\/> will show you the whole catalog",
+        "ts": "1527179576.000645"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "kk",
+        "ts": "1527179585.000044"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "you may need to be logged into the RackN portal",
+        "ts": "1527179600.000536"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "cool no worries  and ty for the information",
+        "ts": "1527180007.000343"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "I am stuck pxe booting my 1st vm. I am using VMware Workstation. I'm assuming from erading this I need to update the dhcp config for vmware workstations ```ensure your test Machine is on the same Layer 2 subnet as your DRP endpoint, or that you’ve configured your networks IP Helper to forward your DHCP requests to your DRP Endpoint```",
+        "ts": "1527180091.000656"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UAQAE0VNE> the DRP Endpoint needs to be able to reach the Machine (VM) being provisioned via the network.  If you are using a virtualized environment, you often have to be aware\/concerned with the DHCP services on the Layer 2 network your Machine is on.  In many case, the hypervisor management pieces will run DHCP, which can interfere with the provisioning aspects.   DRP Endpoint can be \"The DHCP\" service (configure it via the Networks\/Subnets pieces), or an external DHCP service can be used, however, the DHCP server needs to be configured to support the DHCP options for Next Boot and Boot File appropriately.",
+        "ts": "1527181801.000193"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "The easiest initial test environment is to insure that the DRP Endpoint and the Machine being provisioned are on the same Layer 2 network, and that no other DHCP services are competing on that same Layer 2 subnet.  It is NOT a requirement that the DHCP service be in this L2 segment exclusively - but it's the easiest path that does not require or need to have network equipment set up to properly DHCP Relay the requests _to_ the DRP Endpoint",
+        "ts": "1527181897.000108"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "It's been a while since I used VMware Workstation (I use VirtualBox) - but I do know that VirtualBox interferes by forcing a DHCP service to run on the virtual network segments.  Turning it off is usually the best course of action.  It's entirely probably that Workstation has a similar construct which may be interfering with your ability to successfully provision in the virtual network environment",
+        "ts": "1527182236.000332"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "yep been looking into it",
+        "ts": "1527183936.000692"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "ty",
+        "ts": "1527184058.000231"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "It _may_ be possible that using our DHCP service in \"Proxy\" mode will work if you have an existing DHCP service on the network - however, not guaranteed.  When you add a Subnet, setthe \"Proxy DHCP\" option to enable (yes) - it works in conjunction with a \"broken\" or incorrectly configured DHCP (sometimes ... :slightly_smiling_face: ).",
+        "ts": "1527184298.000769"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we do recommend NOT using Proxy DHCP unless you really need it, as it isn't always reliable compared to correctly configured DHCP services",
+        "ts": "1527184322.000410"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Is there a way to re-run discovery if a machine is in sledgehammer but for some reason it hasn't sent discovery info to the server?",
+        "ts": "1527185136.000692"
+    },
+    {
+        "type": "message",
+        "user": "UA469LS02",
+        "text": "and as we discovered, dhcp option nextserver is not in the rfc so no guarantee it'll work",
+        "ts": "1527185141.000349"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U9BU09D51>... well ... just reboot the machine w\/ the Workflow still set to Discovery - and it should re-run.",
+        "ts": "1527185195.000458"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "...but...",
+        "ts": "1527185199.000527"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "what do you mean by \"hasn't sent discovery info\" ?  did a Machine object NOT get created?   or did gohai NOT run?  what do you mean by that statement ?",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1527185235.000000"
+        },
+        "ts": "1527185228.000527"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "A machine object didn't get created",
+        "ts": "1527185246.000231"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "never heard of or seen that happen before ... you're sure the Machine that booted in to Sledgehammer booted in to Sledgehammer served by THAT DRP endpoint ?   i.e. you don't have multiple endpoints that might have answered ?",
+        "ts": "1527185296.000018"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I checked the other endpoint that might have answered, I don't see it there either.",
+        "ts": "1527185355.000648"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I've been having weird problems with dr-provision seeming to crash and restart on the server, I'm not sure if that's the issue here or not.",
+        "ts": "1527185393.000329"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "hmm ... generally, things are pretty stable unless you've hit an odd bug - and if you have, we'd like to know about it, so we can either fix it, or point out the fix was done (IIRC, you're on v3.8.0 )",
+        "ts": "1527185487.000515"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if you're capturing the `stdout` logfile info - we'd like to see that after a suspected crash",
+        "ts": "1527185507.000477"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I think it's all dumping to syslog so I'll have to see if I can find anything.  But what I was seeing yesterday was that I wasn't able to connect to the UX.  When I logged in to the server, dr-provision wasn't running.  I poked around looking for logs to tell me what had happened, then when I looked again later dr-provision had seemed to restart on its own (or been restarted by systemd).  This happened a few times around the time I was trying to get a host to discover.",
+        "ts": "1527185704.000770"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "One thing I remember seeing in the logs was dr-provisiong getting the \"GOAWAY\" signal (which I didn't even know was a signal...) and shutting down.  But it wasn't consistent.",
+        "ts": "1527185783.000088"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ok - if you can find more detail around those time frames \/ log entries - would be appreciated",
+        "ts": "1527186143.000637"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I don't see anything in the logs.  I see traffic going back and forth between the server and this system that is sitting at the sledgehammer prompt, but the machine object never gets created.",
+        "ts": "1527187422.000106"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "LOL mystery solved.",
+        "ts": "1527187781.000111"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "The system already existed in dr-provision.  So that's why a new system wasn't showing up.",
+        "ts": "1527187888.000102"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U9BU09D51> check your VM clock setting, just in case.  too much shift and the certificates fail",
+        "ts": "1527188043.000460"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "you may want to test the DRPCLI from inside the VM",
+        "ts": "1527188068.000385"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Hrm ok",
+        "ts": "1527188180.000818"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "^^ now seeing you solved it.  good work",
+        "ts": "1527189101.000063"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "I've been digging in to my issue a little further",
+        "ts": "1527189181.000608"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "My VM TFTP's ipxe.efi\/ipxe.pxe and unpacks the ROM. It seems to fail to ifopen and\/or dhcp from there",
+        "ts": "1527189219.000531"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Actually, apparently it's not solved.  There's still a mix-up with what server is which.  Anyway, I got on this server (which is running sledgehammer) and I see this in the log:\n```May 24 19:14:29 localhost sledgehammer-start-up.sh: \/\/\/\/tmp\/start-up.sh@24(get_macs): printf '[%s]' '\"d0:94:66:28:00:06\",\"d0:94:66:28:00:07\",\"d0:94:66:28:00:08\",\"d0:94:66:28:00:09\",\"50:6b:4b:01:78:c3\",\"50:6b:4b:01:78:c2\"'\nMay 24 19:14:29 localhost sledgehammer-start-up.sh: \/\/\/tmp\/start-up.sh@116(): drpcli machines create '{\"Name\": \"<http:\/\/131.186.115.18.ip.as33517.net|131.186.115.18.ip.as33517.net>\",\nMay 24 19:14:29 localhost sledgehammer-start-up.sh: \"Address\": \"131.186.115.18\",\nMay 24 19:14:29 localhost sledgehammer-start-up.sh: \"HardwareAddrs\": [\"d0:94:66:28:00:06\",\"d0:94:66:28:00:07\",\"d0:94:66:28:00:08\",\"d0:94:66:28:00:09\",\"50:6b:4b:01:78:c3\",\"50:6b:4b:01:78:c2\"]}'\nMay 24 19:14:30 localhost sledgehammer-start-up.sh: Error: CLIENT_ERROR\nMay 24 19:14:30 localhost sledgehammer-start-up.sh: Cannot handle content-type text\/plain; charset=utf-8\nMay 24 19:14:30 localhost sledgehammer-start-up.sh: No decoder for content-type text\/plain; charset=utf-8\nMay 24 19:14:30 localhost sledgehammer-start-up.sh: \/\/tmp\/start-up.sh@116(): json=\nMay 24 19:14:30 localhost sledgehammer-start-up.sh: \/\/tmp\/start-up.sh@117(): echo 'We could not create a node for ourself, trying again.'\nMay 24 19:14:30 localhost sledgehammer-start-up.sh: We could not create a node for ourself, trying again.\nMay 24 19:14:30 localhost sledgehammer-start-up.sh: \/\/tmp\/start-up.sh@118(): sleep 5```",
+        "ts": "1527189306.000559"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "Manually opening ipxe command shell and issuing an \"ifopen &amp;&amp; dhcp\" and then chain loading \"\/\/IP:PORT\/default.ipxe\" works. IPXe chain loads sledgehammer, auto discovery + provisioning works, and my centos 7 workflow\/install completes with no problem",
+        "ts": "1527189321.000003"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "Any ideas to why ipxe is failing to open without manual intervention?",
+        "ts": "1527189346.000286"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<@U9BU09D51> That machine name starts with a number.",
+        "ts": "1527189452.000068"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Oh.  Right.  That issue.",
+        "ts": "1527189461.000338"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Ok, thanks.",
+        "ts": "1527189489.000350"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<https:\/\/github.com\/digitalrebar\/provision\/pull\/894> &lt;-- that should take care of it.",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "Relax first character restriction on machine names by VictorLowther · Pull Request #894 · digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/pull\/894",
+                "fallback": "GitHub: Relax first character restriction on machine names by VictorLowther · Pull Request #894 · digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/pull\/894",
+                "thumb_url": "https:\/\/avatars2.githubusercontent.com\/u\/770578?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/digitalrebar\/provision\/pull\/894"
+            }
+        ],
+        "ts": "1527191639.000663",
+        "reactions": [
+            {
+                "name": "cake",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U32PZNCP5",
+        "text": "I am looking for any community member interested in sharing some information on why you joined Digital Rebar, your experience with the technology and how it has impacted your infrastructure\/organization. No company names are required to simplify the creation of these materials.",
+        "ts": "1527192127.000781"
+    },
+    {
+        "type": "message",
+        "user": "U32PZNCP5",
+        "text": "I want to highlight the community to help people better understand how Digital Rebar can assist their infrastructure",
+        "ts": "1527192150.000486"
+    },
+    {
+        "type": "message",
+        "user": "U32PZNCP5",
+        "text": "Thanks",
+        "ts": "1527192151.000574"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U9BU09D51> - Update to tip and you will have Victor’s fix to allow machine names with numbers.",
+        "ts": "1527193408.000539"
+    },
+    {
+        "type": "message",
+        "user": "UAKG71YS0",
+        "text": "ok ,this is the 2nd time I’ve gotten into this state, and I’m not sure how to get out of it… I’m trying to create a new bootenv and upon first pxe boot, the dr-provision process will just crash, and I can’t get it to start.",
+        "ts": "1527194084.000029"
+    },
+    {
+        "type": "message",
+        "user": "UAKG71YS0",
+        "text": "```[vagrant@localhost drp]$ sudo .\/dr-provision --base-root=\/home\/vagrant\/drp\/drp-data --local-content=\"\" --default-content=\"\"\ndr-provision2018\/05\/24 20:32:40.733598 Version: v3.8.2-0-5864436b3e3aacce2cc7009b107916a5161ac7d2\ndr-provision2018\/05\/24 20:32:40.733730 Extracting Default Assets\ndr-provision2018\/05\/24 20:32:40.733734 Extracting Default Assets\ndr-provision2018\/05\/24 20:32:41.365647 Starting TFTP server\ndr-provision2018\/05\/24 20:32:41.365831 Starting static file server\ndr-provision2018\/05\/24 20:32:41.365874 Starting DHCP server\ndr-provision2018\/05\/24 20:32:41.366261 Starting PXE\/BINL server\ndr-provision2018\/05\/24 20:32:41.367401 Starting API server\npanic: runtime error: invalid memory address or nil pointer dereference [recovered]\n        panic: runtime error: invalid memory address or nil pointer dereference [recovered]\n        panic: runtime error: invalid memory address or nil pointer dereference\n[signal SIGSEGV: segmentation violation code=0x1 addr=0x28 pc=0x8da629]\n\ngoroutine 248 [running]:\ntext\/template.errRecover(0xc420393ac8)\n        \/home\/travis\/.gimme\/versions\/go1.9.linux.amd64\/src\/text\/template\/exec.go:140 +0x1df```",
+        "ts": "1527194089.000155"
+    },
+    {
+        "type": "message",
+        "user": "UAKG71YS0",
+        "text": "I’m fairly certain that it has something to do with an error in my newly created bootenv, but not sure what, or how to fix it if I can’t get the server up",
+        "ts": "1527194121.000192"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I need the full stack trace (if there is more) so we can skip the error.",
+        "ts": "1527194274.000226"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "also the bootenv if it not one of ours.",
+        "ts": "1527194306.000089"
+    },
+    {
+        "type": "message",
+        "user": "UAKG71YS0",
+        "text": "yea, there’s a lot more",
+        "ts": "1527194308.000125"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "in `\/home\/vagrant\/drp\/drp-data\/digitalrebar\/bootenv` directory,  there are the stored bootenvs.",
+        "ts": "1527194327.000395"
+    },
+    {
+        "type": "message",
+        "user": "UAKG71YS0",
+        "text": "i am trying to create a new centos7 bootenv from yours, but using an iso that is already downloaded",
+        "ts": "1527194341.000301"
+    },
+    {
+        "type": "message",
+        "user": "UAKG71YS0",
+        "text": "(different filename than default)",
+        "ts": "1527194346.000444"
+    },
+    {
+        "type": "message",
+        "user": "UAKG71YS0",
+        "text": "ok, checking, and I can send you the full stack trace if you’d like",
+        "ts": "1527194364.000234"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Assuming that you are not using content packs, you can move the “bad” file away and try again on the restart.",
+        "ts": "1527194372.000329"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes please",
+        "ts": "1527194378.000138"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "and like <@U02DJQSG8> said the bootenv as well if possible.",
+        "ts": "1527194392.000653"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@UAKG71YS0> uploaded a file: <https:\/\/rackn.slack.com\/files\/UAKG71YS0\/FAVB2R43T\/full_stack_trace.txt|full stack trace>",
+        "file": {
+            "id": "FAVB2R43T",
+            "created": 1527194396,
+            "timestamp": 1527194396,
+            "name": "full_stack_trace.txt",
+            "title": "full stack trace",
+            "mimetype": "text\/plain",
+            "filetype": "text",
+            "pretty_type": "Plain Text",
+            "user": "UAKG71YS0",
+            "editable": true,
+            "size": 8859,
+            "mode": "snippet",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAVB2R43T\/full_stack_trace.txt?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAVB2R43T\/download\/full_stack_trace.txt?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "permalink": "https:\/\/rackn.slack.com\/files\/UAKG71YS0\/FAVB2R43T\/full_stack_trace.txt",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FAVB2R43T-9d4ce41b11",
+            "edit_link": "https:\/\/rackn.slack.com\/files\/UAKG71YS0\/FAVB2R43T\/full_stack_trace.txt\/edit",
+            "preview": "[vagrant@localhost drp]$ sudo .\/dr-provision --base-root=\/home\/vagrant\/drp\/drp-data --local-content=\"\" --default-content=\"\"\r\ndr-provision2018\/05\/24 20:32:40.733598 Version: v3.8.2-0-5864436b3e3aacce2cc7009b107916a5161ac7d2\r\ndr-provision2018\/05\/24 20:32:40.733730 Extracting Default Assets\r\ndr-provision2018\/05\/24 20:32:40.733734 Extracting Default Assets\r\ndr-provision2018\/05\/24 20:32:41.365647 Starting TFTP server\r",
+            "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>[vagrant@localhost drp]$ sudo .\/dr-provision --base-root=\/home\/vagrant\/drp\/drp-data --local-content=&quot;&quot; --default-content=&quot;&quot;<\/pre><\/div>\n<div><pre>dr-provision2018\/05\/24 20:32:40.733598 Version: v3.8.2-0-5864436b3e3aacce2cc7009b107916a5161ac7d2<\/pre><\/div>\n<div><pre>dr-provision2018\/05\/24 20:32:40.733730 Extracting Default Assets<\/pre><\/div>\n<div><pre>dr-provision2018\/05\/24 20:32:40.733734 Extracting Default Assets<\/pre><\/div>\n<div><pre>dr-provision2018\/05\/24 20:32:41.365647 Starting TFTP server<\/pre><\/div>\n<div><pre><\/pre><\/div>\n<\/div>\n<\/div>\n",
+            "lines": 91,
+            "lines_more": 86,
+            "preview_is_truncated": true,
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "UAKG71YS0",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "chris.beck",
+        "bot_id": null,
+        "ts": "1527194397.000269"
+    },
+    {
+        "type": "message",
+        "user": "UAKG71YS0",
+        "text": "yea, ok, so I can manually fix the json, but i need to know what it’s barfing on",
+        "ts": "1527194444.000531"
+    },
+    {
+        "type": "message",
+        "user": "UAKG71YS0",
+        "text": "I moved the new bootenv out of the way",
+        "ts": "1527194527.000185"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ok",
+        "ts": "1527194535.000110"
+    },
+    {
+        "type": "message",
+        "user": "UAKG71YS0",
+        "text": "so, the server starts now, so I’ll see if I can recreate the issue again",
+        "ts": "1527194537.000338"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "can you send it to me?",
+        "ts": "1527194541.000712"
+    },
+    {
+        "type": "message",
+        "user": "UAKG71YS0",
+        "text": "which, the yaml \/ json?",
+        "ts": "1527194566.000099"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "and, jsut to be sure, this crash happened when something was booting to the new bootenv?",
+        "ts": "1527194584.000148"
+    },
+    {
+        "type": "message",
+        "user": "UAKG71YS0",
+        "text": "yes",
+        "ts": "1527194590.000287"
+    },
+    {
+        "type": "message",
+        "user": "UAKG71YS0",
+        "text": "tftp crash",
+        "ts": "1527194593.000535"
+    },
+    {
+        "type": "message",
+        "user": "UAKG71YS0",
+        "text": "so, i’m assuming a missing file?",
+        "ts": "1527194597.000618"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<@UAKG71YS0> Either yaml or json, I am bilingual. :slightly_smiling_face:",
+        "ts": "1527194607.000109"
+    },
+    {
+        "type": "message",
+        "user": "UAKG71YS0",
+        "text": "null pointer",
+        "ts": "1527194607.000285"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "it could be many thing.",
+        "ts": "1527194621.000119"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "but it is most likely a malformed PXE template.",
+        "ts": "1527194632.000542"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@UAKG71YS0> uploaded a file: <https:\/\/rackn.slack.com\/files\/UAKG71YS0\/FAW1TTYBF\/slightly_modified_centos7_bootenv.txt|slightly modified centos7 bootenv>",
+        "file": {
+            "id": "FAW1TTYBF",
+            "created": 1527194714,
+            "timestamp": 1527194714,
+            "name": "slightly_modified_centos7_bootenv.txt",
+            "title": "slightly modified centos7 bootenv",
+            "mimetype": "text\/plain",
+            "filetype": "text",
+            "pretty_type": "Plain Text",
+            "user": "UAKG71YS0",
+            "editable": true,
+            "size": 2071,
+            "mode": "snippet",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAW1TTYBF\/slightly_modified_centos7_bootenv.txt?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAW1TTYBF\/download\/slightly_modified_centos7_bootenv.txt?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "permalink": "https:\/\/rackn.slack.com\/files\/UAKG71YS0\/FAW1TTYBF\/slightly_modified_centos7_bootenv.txt",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FAW1TTYBF-1e09c81aa4",
+            "edit_link": "https:\/\/rackn.slack.com\/files\/UAKG71YS0\/FAW1TTYBF\/slightly_modified_centos7_bootenv.txt\/edit",
+            "preview": "[vagrant@localhost drp]$ cat \/tmp\/centos-7-install-update.json  | jq\r\n{\r\n  \"Validated\": false,\r\n  \"Available\": false,\r\n  \"Errors\": [],\r",
+            "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>[vagrant@localhost drp]$ cat \/tmp\/centos-7-install-update.json  | jq<\/pre><\/div>\n<div><pre>{<\/pre><\/div>\n<div><pre>  &quot;Validated&quot;: false,<\/pre><\/div>\n<div><pre>  &quot;Available&quot;: false,<\/pre><\/div>\n<div><pre>  &quot;Errors&quot;: [],<\/pre><\/div>\n<div><pre><\/pre><\/div>\n<\/div>\n<\/div>\n",
+            "lines": 70,
+            "lines_more": 65,
+            "preview_is_truncated": true,
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "UAKG71YS0",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "chris.beck",
+        "bot_id": null,
+        "ts": "1527194714.000718"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "hm",
+        "ts": "1527194818.000451"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "so",
+        "ts": "1527194820.000506"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "the code relies on all bootenvs that install an OS to have -install as the last part of their name.",
+        "ts": "1527194856.000702"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "so `\"Name\": \"centos-7-install-update\",` will not work out well. :confused:",
+        "ts": "1527194929.000599"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "`\"Name\": \"centos-7-update-install\"` will work better.",
+        "ts": "1527194975.000365"
+    },
+    {
+        "type": "message",
+        "user": "UAKG71YS0",
+        "text": "uhhhhhh",
+        "ts": "1527195058.000332"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "and -tip content (to be used with -tip dr-provision) has centos 7.5.1804",
+        "ts": "1527195063.000324"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "So I finally got VMWare Workstation configured to use next-server and provisioner is returning a new error",
+        "ts": "1527195146.000536"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "```May 24 13:48:22 ubuntu dr-provision[7092]: dr-provision2018\/05\/24 20:48:22.006224 [280:13]static [error]: \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/midlayer\/tftp.go:82\nMay 24 13:48:22 ubuntu dr-provision[7092]: [280:13]TFTP: lpxelinux.0: transfer error: sending block 0: code=0, error: TFTP Aborted\n```",
+        "ts": "1527195175.000547"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "Im stuck for now",
+        "ts": "1527195181.000362"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "One of those per file read is expected.",
+        "ts": "1527195432.000391"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "(read via tftp)",
+        "ts": "1527195441.000098"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "It is the firmware starting a transver, getting the total size to be transferred, and then aborting the transfer while it goes off and creates a buffer big enough to hold the file to be transferred.",
+        "ts": "1527195486.000249"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "nvm, I forgot one step :slightly_smiling_face:",
+        "ts": "1527195745.000240"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "`drpcli prefs set unknownBootEnv discovery defaultBootEnv sledgehammer defaultStage discover`",
+        "ts": "1527195748.000303"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Yep, those would help. :slightly_smiling_face:",
+        "ts": "1527196724.000498"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "New error now",
+        "ts": "1527196728.000015"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "`TFTP: lpxelinux.0: transfer error: sending block 0: code=0, error: TFTP Aborted`",
+        "ts": "1527196731.000072"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "making progress",
+        "ts": "1527196737.000539"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": ":slightly_smiling_face:",
+        "ts": "1527196739.000110"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "See my comment before last.",
+        "ts": "1527196751.000362"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "kk",
+        "ts": "1527196862.000126"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "I wonder how long this takes, it has been about 12 minutes and its still with the same messages in console",
+        "ts": "1527197500.000409"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "`Sending select for 172.16.187.28`",
+        "ts": "1527197523.000482"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "3 same messages",
+        "ts": "1527197530.000358"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "than",
+        "ts": "1527197535.000026"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "`Sending discover`",
+        "ts": "1527197543.000238"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Oh cool, thanks Greg",
+        "ts": "1527197642.000395"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Thank the Victor - he changed it.",
+        "ts": "1527197674.000203"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "If Sledgehammer is present and accounted for it should be pretty fast to load up.",
+        "ts": "1527198453.000281"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "12 mins is too long.",
+        "ts": "1527198460.000107"
+    },
+    {
+        "type": "message",
+        "user": "UAKG71YS0",
+        "text": "ok, sorry for the simple questions, but I can’t get a virtualbox install of the latest centos 7 to work",
+        "ts": "1527198470.000454"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<@UAQAE0VNE> Can you hit the console on your test boxes to see where they are?",
+        "ts": "1527198479.000515"
+    },
+    {
+        "type": "message",
+        "user": "UAKG71YS0",
+        "text": "using centos-7.5.1804-install as the bootenv, from <https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/content\/bootenvs\/centos-7.5.1804.yml>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision-content",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/content\/bootenvs\/centos-7.5.1804.yml",
+                "text": "provision-content - DigitalRebar Provision Content",
+                "fallback": "GitHub: digitalrebar\/provision-content",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/content\/bootenvs\/centos-7.5.1804.yml",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/content\/bootenvs\/centos-7.5.1804.yml"
+            }
+        ],
+        "ts": "1527198504.000209"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UAKG71YS0> what's the issue with it ?",
+        "ts": "1527198523.000184"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "plus ... does  your vBox world work \"in general\", or is this a new vBox setup ?",
+        "ts": "1527198546.000337"
+    },
+    {
+        "type": "message",
+        "user": "UAKG71YS0",
+        "text": "works fine with centos 6.9 :slightly_smiling_face:",
+        "ts": "1527198683.000267"
+    },
+    {
+        "type": "message",
+        "user": "UAKG71YS0",
+        "text": "I was trying to download the “approved” centos7, but it’s been updated, so that’s why I’m trying to manually update the bootenvs, and profiles, etc",
+        "ts": "1527198722.000338"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ok - did you upgrade DRP, Content, etc. to latest `tip` ? (both content and DRP need to be updated)",
+        "ts": "1527198731.000490"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "and ... the `tip` version that has the C7.5 stuff has been in flux the last week or so ... so if you haven't recently updated, you might need to do so again to fix a few issues with changes to the package repository handling",
+        "ts": "1527198769.000476"
+    },
+    {
+        "type": "message",
+        "user": "UAKG71YS0",
+        "text": "no, how do I do that? I have manually downloaded the yml files for the bootenv and profile",
+        "ts": "1527198778.000159"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "general upgrade instructions are in the Doc:\n<http:\/\/provision.readthedocs.io\/en\/tip\/doc\/upgrade.html>",
+        "ts": "1527198838.000013"
+    },
+    {
+        "type": "message",
+        "user": "UAKG71YS0",
+        "text": "checking",
+        "ts": "1527198844.000492"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Content can be done via the Portal \"Content Packages\" menu item in the left, towards the bottom (in the Synchronize &amp; Upload section)",
+        "ts": "1527198871.000370"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "<@U02DJQSG8> i see sledgehammer loads up and than the message i posted above is what the console shows over and over",
+        "ts": "1527198968.000119"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "but it does not show up in the machine list",
+        "ts": "1527198979.000315"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ok, log in to the console `root\/rebar1)`and see what is happening `journalctl -u sledgehammer`",
+        "ts": "1527199041.000398"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "It is probably some DHCP or DNS related shennanigan.",
+        "ts": "1527199067.000410"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@UAQAE0VNE> uploaded a file: <https:\/\/rackn.slack.com\/files\/UAQAE0VNE\/FAVUGGXQS\/where_it_gets_stuck_at.png|where_it_gets_stuck_at.png> and commented: Doesn't get to the console point. It goes through the beginning stages of loading sledgehammer and than just keeps repeating the same messages over and over",
+        "file": {
+            "id": "FAVUGGXQS",
+            "created": 1527199342,
+            "timestamp": 1527199342,
+            "name": "where_it_gets_stuck_at.png",
+            "title": "where_it_gets_stuck_at.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "UAQAE0VNE",
+            "editable": false,
+            "size": 15445,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAVUGGXQS\/where_it_gets_stuck_at.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAVUGGXQS\/download\/where_it_gets_stuck_at.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAVUGGXQS-5c5d647e9e\/where_it_gets_stuck_at_64.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAVUGGXQS-5c5d647e9e\/where_it_gets_stuck_at_80.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAVUGGXQS-5c5d647e9e\/where_it_gets_stuck_at_360.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_360_w": 360,
+            "thumb_360_h": 186,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAVUGGXQS-5c5d647e9e\/where_it_gets_stuck_at_480.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_480_w": 480,
+            "thumb_480_h": 248,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAVUGGXQS-5c5d647e9e\/where_it_gets_stuck_at_160.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAVUGGXQS-5c5d647e9e\/where_it_gets_stuck_at_720.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_720_w": 720,
+            "thumb_720_h": 372,
+            "image_exif_rotation": 1,
+            "original_w": 729,
+            "original_h": 377,
+            "permalink": "https:\/\/rackn.slack.com\/files\/UAQAE0VNE\/FAVUGGXQS\/where_it_gets_stuck_at.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FAVUGGXQS-fa1c2c3ae0",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 1,
+            "initial_comment": {
+                "id": "FcAVRJSBDZ",
+                "created": 1527199342,
+                "timestamp": 1527199342,
+                "user": "UAQAE0VNE",
+                "is_intro": true,
+                "comment": "Doesn't get to the console point. It goes through the beginning stages of loading sledgehammer and than just keeps repeating the same messages over and over"
+            }
+        },
+        "user": "UAQAE0VNE",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "asanabria",
+        "bot_id": null,
+        "ts": "1527199344.000194"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "I'm probably missing something very basic",
+        "ts": "1527199367.000001"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "do you have a \"Subnet\" defined for that IP range ?",
+        "ts": "1527199379.000537"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "yep",
+        "ts": "1527199385.000251"
+    },
+    {
+        "type": "message",
+        "user": "UAKG71YS0",
+        "text": "(assuming this is right, IMHO install != upgrade): `tools\/install.sh --version=tip --isolated --upgrade=true install`",
+        "ts": "1527199408.000050"
+    },
+    {
+        "type": "message",
+        "user": "UAKG71YS0",
+        "text": "yay, new error, since I tried to manually update:\n```[vagrant@localhost drp]$ sudo .\/dr-provision --base-root=\/home\/vagrant\/drp\/drp-data --local-content=\"\" --default-content=\"\"\ndr-provision2018\/05\/24 22:03:55.944721 Version: v3.8.2-tip-145-2ccd94a7b160f6d673326376305aee2109eb3737\ndr-provision2018\/05\/24 22:03:55.945809 Extracting Default Assets\ndr-provision2018\/05\/24 22:03:55.945818 Extracting Default Assets\ndr-provision2018\/05\/24 22:03:56.608802 Unable to create DataStack: New layer violates key restrictions: keysCannotBeOverridden: centos-7.5.1804-install is already in layer 0\n        keysCannotOverride: centos-7.5.1804-install would be overridden by layer 0```",
+        "ts": "1527199469.000004"
+    },
+    {
+        "type": "message",
+        "user": "UAKG71YS0",
+        "text": "i’ll remove that bootenv",
+        "ts": "1527199478.000281"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": ":slightly_smiling_face: \"install --upgrade=true\" is indeed upgrade ...",
+        "ts": "1527199487.000496"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@UAQAE0VNE> uploaded a file: <https:\/\/rackn.slack.com\/files\/UAQAE0VNE\/FAVRL1KTM\/screenshot_from_2018-05-24_18-03-32.png|subnet>",
+        "file": {
+            "id": "FAVRL1KTM",
+            "created": 1527199483,
+            "timestamp": 1527199483,
+            "name": "Screenshot from 2018-05-24 18-03-32.png",
+            "title": "subnet",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "UAQAE0VNE",
+            "editable": false,
+            "size": 110152,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAVRL1KTM\/screenshot_from_2018-05-24_18-03-32.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAVRL1KTM\/download\/screenshot_from_2018-05-24_18-03-32.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAVRL1KTM-8942f7176b\/screenshot_from_2018-05-24_18-03-32_64.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAVRL1KTM-8942f7176b\/screenshot_from_2018-05-24_18-03-32_80.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAVRL1KTM-8942f7176b\/screenshot_from_2018-05-24_18-03-32_360.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_360_w": 360,
+            "thumb_360_h": 133,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAVRL1KTM-8942f7176b\/screenshot_from_2018-05-24_18-03-32_480.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_480_w": 480,
+            "thumb_480_h": 177,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAVRL1KTM-8942f7176b\/screenshot_from_2018-05-24_18-03-32_160.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAVRL1KTM-8942f7176b\/screenshot_from_2018-05-24_18-03-32_720.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_720_w": 720,
+            "thumb_720_h": 265,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAVRL1KTM-8942f7176b\/screenshot_from_2018-05-24_18-03-32_800.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_800_w": 800,
+            "thumb_800_h": 295,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAVRL1KTM-8942f7176b\/screenshot_from_2018-05-24_18-03-32_960.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_960_w": 960,
+            "thumb_960_h": 354,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FAVRL1KTM-8942f7176b\/screenshot_from_2018-05-24_18-03-32_1024.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 378,
+            "image_exif_rotation": 1,
+            "original_w": 2403,
+            "original_h": 886,
+            "permalink": "https:\/\/rackn.slack.com\/files\/UAQAE0VNE\/FAVRL1KTM\/screenshot_from_2018-05-24_18-03-32.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FAVRL1KTM-3d52461bb2",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "UAQAE0VNE",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "asanabria",
+        "bot_id": null,
+        "ts": "1527199488.000186"
+    },
+    {
+        "type": "message",
+        "user": "UAKG71YS0",
+        "text": "(just add upgrade to the .sh script) - it’s not an install :slightly_smiling_face:",
+        "ts": "1527199519.000041"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I never got around to adding an `upgrade` top level option to the `install.sh` script ...",
+        "ts": "1527199531.000169"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<@UAQAE0VNE> Your subnet is knackered.",
+        "ts": "1527199865.000314"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "you have 128\/24 as the last octet in the available range, but  .10 -&gt; .100 as the range to make available to leases.",
+        "ts": "1527199922.000104"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "You souldn't have even been able to create it. :confused:",
+        "ts": "1527199939.000046"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I have some validation code to fix.",
+        "ts": "1527199952.000030"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "gah, nvm, too close to quitting time.",
+        "ts": "1527200087.000190"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "If you look at the logs on the dr-provision side, do they have any DHCP related warnings?",
+        "ts": "1527200134.000489"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "i figured the problem was my end and silly",
+        "ts": "1527200156.000255"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "```May 24 15:16:17 ubuntu dr-provision[7092]: dr-provision2018\/05\/24 22:16:17.302603 [2374:453]dhcp [ warn]: \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/midlayer\/dhcp.go:822\nMay 24 15:16:17 ubuntu dr-provision[7092]: [2374:453]xid 0x7a046b0a: Ignoring request for DHCP server 172.16.187.254\nMay 24 15:16:20 ubuntu dr-provision[7092]: dr-provision2018\/05\/24 22:16:20.307339 [2375:454]dhcp [ warn]: \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/midlayer\/dhcp.go:822\nMay 24 15:16:20 ubuntu dr-provision[7092]: [2375:454]xid 0x7a046b0a: Ignoring request for DHCP server 172.16.187.254```",
+        "ts": "1527200194.000075"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "... Yes, that would do it. :slightly_smiling_face:",
+        "ts": "1527200387.000261"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "ty for helping me find it though. Much appreciated",
+        "ts": "1527200422.000005"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "<@U02DJQSG8> I am happy to say all is well. Thank you again",
+        "ts": "1527201300.000246"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Hey there, I'm curious how sledgehammer determines the hostname.  It looks like if it doesn't get a hostname from dhcp it does a getent on the IP address.  What exactly does getent do?",
+        "ts": "1527214600.000192"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U9BU09D51> I couldn't find the relevant code that generates it (I just saw it a few days ago ...!) - but yeah, basically if nothing is specified via DHCP Reservation, then the hostname defaults to a `d` followed by a dash separated MAC address of the provisioning interface on the machine ... the `d` was injected to make sure the name did not start with a number",
+        "ts": "1527220461.000069"
+    }
+]

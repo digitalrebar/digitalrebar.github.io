@@ -1,0 +1,921 @@
+[
+    {
+        "type": "message",
+        "user": "UANNN0Z7D",
+        "text": "having dug into the data model, it looks like I can just have a no-op stage with reboot=true, and intuitively that sounds like it'll do what I want. I'll try that later.",
+        "ts": "1526282094.000179"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@UANNN0Z7D> - Wow!  You’ve been busy.  I’ll look into it.  I’ve added more comments to the issues, but it would be helpful to have the digitalrebar dir from the DRP.  If you can send me that in slack dm.  That would be nice.  we’re going to retry it packet.",
+        "ts": "1526305534.000438"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I think I understand the issues, but the logging level will need more exploration.",
+        "ts": "1526305580.000581"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "So there are IPMI-like plugins that will reboot the nodes.  Rebooting the node will restart the workflow from the beginning.  Tasks are reset to the beginning of the last reboot point in the workflow.  The task index is reset upon sledgehammer Or install image restart.",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1526305740.000000"
+        },
+        "ts": "1526305736.000261"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The a reboot task\/stage would be a reasonable library task\/stage to have.",
+        "ts": "1526305815.000747"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The Reboot flag should work the way you want.",
+        "ts": "1526306036.000235"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@UANNN0Z7D> in the dev-library there's also a reset stage that will clear out the current stage.  I've used it in dev testing cases where I want the workflow to reset each time.  That does NOT force reboots, so it's not exactly your use-case but could be helpful.",
+        "ts": "1526308242.000213"
+    },
+    {
+        "type": "message",
+        "user": "UANNN0Z7D",
+        "text": "<@U02DGQYK1> Sure thing. I'm at work right now, gimme a moment to remote into home and grab the data.",
+        "ts": "1526315126.000147"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@UANNN0Z7D> - cool np .  I’m trying to replicate as well.  The debug deadlock is fixed in tip.  We are looking at the ubuntu repo things.  I’m playing with krib and finding that it works on centos7.  I’ll look at ubuntu next.",
+        "ts": "1526315283.000785"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The panic in rendering is also fixed in tip.",
+        "ts": "1526315417.000006"
+    },
+    {
+        "type": "message",
+        "user": "UANNN0Z7D",
+        "text": "aha, well then.",
+        "ts": "1526315424.000390"
+    },
+    {
+        "type": "message",
+        "user": "UANNN0Z7D",
+        "text": "I'll upgrade to tip when I get home :slightly_smiling_face:",
+        "ts": "1526315431.000815"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I’ve recreated on 3.8.2.",
+        "ts": "1526315435.000133"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": ":slightly_smiling_face:",
+        "ts": "1526315437.000576"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I’m going to troubleshoot some more to make sure we understand why it is fixed, but I’d need files now.",
+        "ts": "1526315461.000579"
+    },
+    {
+        "type": "message",
+        "user": "UANNN0Z7D",
+        "text": "Good timing, because turns out my unifi cloud key is demanding a firmware upgrade, and is refusing to let me remote in until I do... So no remote access for me until I get home and placate it :disappointed:",
+        "ts": "1526315474.000737"
+    },
+    {
+        "type": "message",
+        "user": "UANNN0Z7D",
+        "text": "ah, in that case, lemme keep prodding and see if I can get Unifi to cooperate an open up SSH.",
+        "ts": "1526315495.000904"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "sorry - I meant don’t need.",
+        "ts": "1526315523.000145"
+    },
+    {
+        "type": "message",
+        "user": "UANNN0Z7D",
+        "text": "ah, gotcha",
+        "ts": "1526315533.000168"
+    },
+    {
+        "type": "message",
+        "user": "UALQCTQQ3",
+        "text": "following the guide and bumped into this:\n```\nroot@drp-test:~\/drp# .\/drpcli bootenvs uploadiso centos-7-install\nError: Unable to initiate download of <http:\/\/mirror.math.princeton.edu\/pub\/centos\/7\/isos\/x86_64\/CentOS-7-x86_64-Minimal-1708.iso>: 404 Not Found\n```\nconfirmed the 404 in browser\/curl; just a heads up since i see the same link to <http:\/\/princeton.edu|princeton.edu> in the portal too",
+        "ts": "1526316617.000046"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UALQCTQQ3> - yes, thanks to the CentOS team ...",
+        "ts": "1526316686.000213"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "they regularly rename things, drop ISOs, etc ... Looks like they renamed the Minimal ISO again",
+        "ts": "1526316704.000023"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "dropping the 1708 version",
+        "ts": "1526316713.000596"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we'll have a Content update out shortly to fix that",
+        "ts": "1526316729.000379"
+    },
+    {
+        "type": "message",
+        "user": "UALQCTQQ3",
+        "text": "cool thanks, any remediation short of content update?",
+        "ts": "1526317068.000297"
+    },
+    {
+        "type": "message",
+        "user": "UANNN0Z7D",
+        "text": "You could clone and edit the bootenv",
+        "ts": "1526317174.000656"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "You can roll your own BootEnv\/Stage - with the updated IsoUrl and IsoSha256",
+        "ts": "1526317179.000672"
+    },
+    {
+        "type": "message",
+        "user": "UANNN0Z7D",
+        "text": "although that'll bubble up through stages as well",
+        "ts": "1526317183.000019"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I'm almost done testing the updates - in a short bit the `tip` content will have the update for CentOS",
+        "ts": "1526317201.000130"
+    },
+    {
+        "type": "message",
+        "user": "UALQCTQQ3",
+        "text": "kk",
+        "ts": "1526317211.000402"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U6QFVRJNB> uploaded a file: <https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/FAQBLEMV4\/centos-7.4.1804.yml|centos-7.4.1804.yml>",
+        "file": {
+            "id": "FAQBLEMV4",
+            "created": 1526317237,
+            "timestamp": 1526317237,
+            "name": "centos-7.4.1804.yml",
+            "title": "centos-7.4.1804.yml",
+            "mimetype": "text\/plain",
+            "filetype": "yaml",
+            "pretty_type": "YAML",
+            "user": "U6QFVRJNB",
+            "editable": true,
+            "size": 1402,
+            "mode": "snippet",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAQBLEMV4\/centos-7.4.1804.yml?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAQBLEMV4\/download\/centos-7.4.1804.yml?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "permalink": "https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/FAQBLEMV4\/centos-7.4.1804.yml",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FAQBLEMV4-992eb36d8e",
+            "edit_link": "https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/FAQBLEMV4\/centos-7.4.1804.yml\/edit",
+            "preview": "---\nName: \"centos-7.4.1804-install\"\nDescription: \"CentOS-7.4.1804 install bootenv\"\nOS:\n  Family: \"redhat\"",
+            "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre><span class=\"cm-def\">---<\/span><\/pre><\/div>\n<div><pre><span class=\"cm-atom\">Name<\/span><span class=\"cm-meta\">: <\/span><span class=\"cm-string\">&quot;centos-7.4.1804-install&quot;<\/span><\/pre><\/div>\n<div><pre><span class=\"cm-atom\">Description<\/span><span class=\"cm-meta\">: <\/span><span class=\"cm-string\">&quot;CentOS-7.4.1804 install bootenv&quot;<\/span><\/pre><\/div>\n<div><pre><span class=\"cm-atom\">OS<\/span><span class=\"cm-meta\">:<\/span><\/pre><\/div>\n<div><pre><span class=\"cm-atom\">  Family<\/span><span class=\"cm-meta\">: <\/span><span class=\"cm-string\">&quot;redhat&quot;<\/span><\/pre><\/div>\n<\/div>\n<\/div>\n",
+            "lines": 48,
+            "lines_more": 43,
+            "preview_is_truncated": true,
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U6QFVRJNB",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "shane",
+        "bot_id": null,
+        "ts": "1526317237.000933"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U6QFVRJNB> uploaded a file: <https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/FAQBLLX54\/centos-7.4.1804.yml|centos-7.4.1804.yml>",
+        "file": {
+            "id": "FAQBLLX54",
+            "created": 1526317250,
+            "timestamp": 1526317250,
+            "name": "centos-7.4.1804.yml",
+            "title": "centos-7.4.1804.yml",
+            "mimetype": "text\/plain",
+            "filetype": "yaml",
+            "pretty_type": "YAML",
+            "user": "U6QFVRJNB",
+            "editable": true,
+            "size": 291,
+            "mode": "snippet",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAQBLLX54\/centos-7.4.1804.yml?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAQBLLX54\/download\/centos-7.4.1804.yml?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "permalink": "https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/FAQBLLX54\/centos-7.4.1804.yml",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FAQBLLX54-8327a10b5a",
+            "edit_link": "https:\/\/rackn.slack.com\/files\/U6QFVRJNB\/FAQBLLX54\/centos-7.4.1804.yml\/edit",
+            "preview": "---\nName: \"centos-7.4.1804-install\"\nDescription: \"CentOS 7.4.1804 install stage.\"\nBootEnv: \"centos-7.4.1804-install\"\nRunnerWait: true",
+            "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre><span class=\"cm-def\">---<\/span><\/pre><\/div>\n<div><pre><span class=\"cm-atom\">Name<\/span><span class=\"cm-meta\">: <\/span><span class=\"cm-string\">&quot;centos-7.4.1804-install&quot;<\/span><\/pre><\/div>\n<div><pre><span class=\"cm-atom\">Description<\/span><span class=\"cm-meta\">: <\/span><span class=\"cm-string\">&quot;CentOS 7.4.1804 install stage.&quot;<\/span><\/pre><\/div>\n<div><pre><span class=\"cm-atom\">BootEnv<\/span><span class=\"cm-meta\">: <\/span><span class=\"cm-string\">&quot;centos-7.4.1804-install&quot;<\/span><\/pre><\/div>\n<div><pre><span class=\"cm-atom\">RunnerWait<\/span><span class=\"cm-meta\">: <\/span><span class=\"cm-keyword\">true<\/span><\/pre><\/div>\n<\/div>\n<\/div>\n",
+            "lines": 14,
+            "lines_more": 9,
+            "preview_is_truncated": false,
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U6QFVRJNB",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "shane",
+        "bot_id": null,
+        "ts": "1526317251.000006"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "those are what I'm testing right now",
+        "ts": "1526317258.000109"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(I'm also updating the base `centos-7-install` bootenv\/stage too w\/ the 1804 version)",
+        "ts": "1526317500.000209"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "PR 89 has new content - <https:\/\/github.com\/digitalrebar\/provision-content\/pull\/89>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "update CentOS 7 to 1804; add Mac poop to .gitignore by sygibson · Pull Request #89 · digitalrebar\/provision-content",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision-content\/pull\/89",
+                "text": "move the CentOS 1708 to 1804 update SHA sums point the centos-7-install to the 1804 version add .DS_Store Mac poop to the .gitignore",
+                "fallback": "GitHub: update CentOS 7 to 1804; add Mac poop to .gitignore by sygibson · Pull Request #89 · digitalrebar\/provision-content",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision-content\/pull\/89",
+                "thumb_url": "https:\/\/avatars2.githubusercontent.com\/u\/5308433?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/digitalrebar\/provision-content\/pull\/89"
+            }
+        ],
+        "ts": "1526317873.000440"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the 1804 bootenv\/stage tests good on basic install",
+        "ts": "1526317894.000606"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "lol@\"Mac poop\"",
+        "ts": "1526318375.000201"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": ":slightly_smiling_face:",
+        "ts": "1526318436.000422"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UALQCTQQ3> - the `tip` content for `drp-community-content` now has the updated CentOS 7 bootenv\/stages ... If you go to the UX `Content Packages` pages, use the small drop-down for the version number of the DRP Community Content, set it to `tip`, then you can either `Preview`, or `Diff` the changes - then `Upgrade` once you're satisfied with the changes",
+        "ts": "1526323081.000210"
+    },
+    {
+        "user": "UAPM0A4TF",
+        "text": "<@UAPM0A4TF> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1526323543.000697"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UAPM0A4TF> $welcome",
+        "ts": "1526325669.000160"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1526325669.000246"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<!here> - DRP Community Content has been updated in the current `tip` version to support CentOS 7.5 (build 1804) - if you run in to any issues with `uploadiso` failures, you will need to update to `tip` content to get the current CentOS ISO image  (<@UALQCTQQ3> note - I just fixed the naming from `7.4` to `7.5` correctly so  you may need another `tip` update)",
+        "ts": "1526326474.000529"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<@UANNN0Z7D> <https:\/\/github.com\/digitalrebar\/provision\/pull\/877> addresses part of the ubuntu 18.04 issues you are having.",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "Rework package-repositories handling to prefer local install repos. by VictorLowther · Pull Request #877 · digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/pull\/877",
+                "text": "WIP until kernel\/initrd lookaside is there. Except on debianoids, becasuse recent Ubuntu systems require an InRelease file these days instead of Release and Release.gpg on the installed systems, bu...",
+                "fallback": "GitHub: Rework package-repositories handling to prefer local install repos. by VictorLowther · Pull Request #877 · digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/pull\/877",
+                "thumb_url": "https:\/\/avatars2.githubusercontent.com\/u\/770578?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/digitalrebar\/provision\/pull\/877"
+            }
+        ],
+        "ts": "1526331894.000445"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "See the commit notes for part of the reason why I tend to dislike Ubuntu more and more. :confused:",
+        "ts": "1526331932.000570"
+    },
+    {
+        "type": "message",
+        "user": "UANNN0Z7D",
+        "text": "heh",
+        "ts": "1526332231.000553"
+    },
+    {
+        "type": "message",
+        "user": "UANNN0Z7D",
+        "text": "unfortunately, your product requirements around airgap make it significantly harder to make debian-family systems work out of the box. Redhat has more of an enterprisey background on that front, so things flow a bit better.",
+        "ts": "1526332288.000431"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "s\/your product\/customer\/g",
+        "ts": "1526332320.000218"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": ":slightly_smiling_face:",
+        "ts": "1526332329.000597"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Oh, I know how to make it work -- I just need an additional field in the Repo structure when installSource is true to tell drp where to look for any requested kernels and initrds.",
+        "ts": "1526332498.000170"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "The current lookaside logic already works for centos.",
+        "ts": "1526332531.000041"
+    },
+    {
+        "type": "message",
+        "user": "UANNN0Z7D",
+        "text": "well yeah, I assumed your product requirements would come from customers :wink:",
+        "ts": "1526332537.000650"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "just need an additional param to point it at whatever the proper distro-ish kernel\/initrd should come from for $DEBIANOID",
+        "ts": "1526332586.000372"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<https:\/\/github.com\/digitalrebar\/provision-content\/pull\/92> is the matching PR on the content side -- it provides some useful defaults for package-repositories",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "Add defaults for package-repositories, tweak repo updaters to match. by VictorLowther · Pull Request #92 · digitalrebar\/provision-content",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision-content\/pull\/92",
+                "text": "Should not be pulled until digitalrebar\/provision#877 is in.",
+                "fallback": "GitHub: Add defaults for package-repositories, tweak repo updaters to match. by VictorLowther · Pull Request #92 · digitalrebar\/provision-content",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision-content\/pull\/92",
+                "thumb_url": "https:\/\/avatars2.githubusercontent.com\/u\/770578?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/digitalrebar\/provision-content\/pull\/92"
+            }
+        ],
+        "ts": "1526332651.000273"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "that can and should be overridden (by adding the param to the global profile) for airgap and local package manangement purposes.",
+        "edited": {
+            "user": "U02DJQSG8",
+            "ts": "1526332784.000000"
+        },
+        "ts": "1526332760.000138"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "re: product requirements: They do, but it is nice to have a working-ish thing to frame said requirements. :slightly_smiling_face:",
+        "ts": "1526332989.000509"
+    },
+    {
+        "type": "message",
+        "user": "UANNN0Z7D",
+        "text": "Possibly a stupid question, but: now that DRP has workflows, any plans to get rid of stages?",
+        "ts": "1526336208.000248"
+    },
+    {
+        "type": "message",
+        "user": "UANNN0Z7D",
+        "text": "I ask because both workflows and stages feel like \"groups of stuff to do\", but workflows is strictly more powerful. If I could reference tasks direct from a workflow, what use are stages?",
+        "ts": "1526336247.000154"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "well ... \"stages\" are the top level container that Workflows consumes - and a single Stage may refer to multiple tasks - so yes, it's a \"container\" for unit(s) of things to do - we then can select these groupings for Workflows",
+        "ts": "1526336293.000054"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "without Stages, we'd have to compose many different tasks in a given workflow - the Stages provides that clean simplified view of This, That, and Whatever is Next ...",
+        "ts": "1526336329.000173"
+    },
+    {
+        "type": "message",
+        "user": "UANNN0Z7D",
+        "text": "Hm. I guess in my use of DRP so far, most stages end up containing only 1-2 tasks, so it wouldn't be much more complex if I was able to reference tasks directly in workflows. The extra indirection just ends up getting in the way",
+        "ts": "1526336380.000226"
+    },
+    {
+        "type": "message",
+        "user": "UANNN0Z7D",
+        "text": "but maybe I'm just holding it wrong and I should be building larger stages?",
+        "ts": "1526336389.000243"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "True - if you only drop 1 or 2 in to a stage, it might seem redundant - but in some content designs, I've seen a Stage carry 10 to 12 different tasks",
+        "ts": "1526336416.000289"
+    },
+    {
+        "type": "message",
+        "user": "UANNN0Z7D",
+        "text": "yeah. Naively I would have expected the ability to nest workflows for that. That is, a model where workflows chain together tasks directly, but you can also drop other workflows into the chain.",
+        "ts": "1526336490.000284"
+    },
+    {
+        "type": "message",
+        "user": "UANNN0Z7D",
+        "text": "But now I'm just talking a completely different data model, so meh.",
+        "ts": "1526336499.000161"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the data model around Workflows is \"kinda dirty\" right now - as the initial top-level fields weren't designed with workflow in mind ...",
+        "ts": "1526336579.000067"
+    },
+    {
+        "type": "message",
+        "user": "UANNN0Z7D",
+        "text": "Makes sense. In a way I'm glad I didn't check out digital rebar until recently, the new workflow model is a huge improvement for my use",
+        "ts": "1526336644.000379",
+        "reactions": [
+            {
+                "name": "sunglasses",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@UANNN0Z7D> we strongly agree.  very happy with the incremental progress approach",
+        "ts": "1526336863.000243"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "We agree ... it's a huge improvement - and a very very powerful model - the previous change-stage\/map method worked in limited capacity - and was cool to have, but Workflows is a huge leap forward",
+        "ts": "1526336881.000423"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@UANNN0Z7D> it's also about re-use.  Stages are the reusable part - workflows are site customization.  e.g.: I'm about to post a preview of some cluster building stages that are general purpose for building rolling changes or coalescing clusters",
+        "ts": "1526337063.000214"
+    },
+    {
+        "type": "message",
+        "user": "UAMTAB49E",
+        "text": "<@U02DHRR2L> I'm attempting the cool packet ipxe boot into my own rebar but the machine doesn't show up",
+        "client_msg_id": "9FF7CB29-663C-4482-AEEA-2EB5F49D1093",
+        "ts": "1526338202.000272"
+    },
+    {
+        "type": "message",
+        "user": "UAMTAB49E",
+        "text": "What's the minimum setup needed? ",
+        "client_msg_id": "D199CFBD-051A-496D-850E-227AD9287972",
+        "ts": "1526338219.000161"
+    },
+    {
+        "type": "message",
+        "user": "UAMTAB49E",
+        "text": "The ipxe seems to work",
+        "client_msg_id": "00DF2E7A-B325-48A0-8D74-DF465929F69F",
+        "ts": "1526338225.000076"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UAMTAB49E> - did you set the ipxe_script_url ?",
+        "ts": "1526338227.000214"
+    },
+    {
+        "type": "message",
+        "user": "UAMTAB49E",
+        "text": "I've done sledgehammer setup",
+        "client_msg_id": "42EAAB06-67CA-4C9D-B506-A2532F36C20B",
+        "ts": "1526338230.000181"
+    },
+    {
+        "type": "message",
+        "user": "UAMTAB49E",
+        "text": "And setup the ipxe url on the packet machine I'm booting ",
+        "client_msg_id": "C91F4A4E-19C3-40A7-AB0E-DA71B818FAEA",
+        "ts": "1526338244.000001"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you also need to have packet-ipmi plugin installed -and the `packet-discovery` Stage in your workflow",
+        "ts": "1526338253.000050"
+    },
+    {
+        "type": "message",
+        "user": "UAMTAB49E",
+        "text": "Ok does that need r\/w?",
+        "client_msg_id": "637952FD-FC20-44DA-A77A-B1F8C7784876",
+        "ts": "1526338266.000324"
+    },
+    {
+        "type": "message",
+        "user": "UAMTAB49E",
+        "text": "For the API key",
+        "client_msg_id": "9E959023-9B86-40B3-ACB1-E448E8A15642",
+        "ts": "1526338271.000167"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "You do need your Packet API key - which is configured in the `plugin` piece (instantiated from the `plugin_provider`)",
+        "ts": "1526338300.000023"
+    },
+    {
+        "type": "message",
+        "user": "UAMTAB49E",
+        "text": "I've noticed it tried to pull in all my inventory when I use my API key even if I specify a project uuid",
+        "client_msg_id": "EB564430-DC36-4C85-BA0B-1C0CAA332DDB",
+        "ts": "1526338309.000092"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "so - the basic flow is:\n* install plugin_provider packet-ipmi\n* create plugin (add) of type packet-ipmi\n* configure API key and Project\n* enable the \"import existing\" if desired to import machines from your project that exists prior to  you adding the plugin\ncreate a workflow with Discovery -&gt; Packet Discovery -&gt; Sledgehammer-wait (or similar)",
+        "ts": "1526338372.000181"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Might be a bug, that we're not honoring the scope of Project ID ?  Have to check on that",
+        "ts": "1526338397.000084"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the packet discovery stage is critical - as it allows us to talk to the Packet metadata service and collect the info we need to interact with the machine",
+        "ts": "1526338484.000143"
+    },
+    {
+        "type": "message",
+        "user": "UAMTAB49E",
+        "text": "Gotcha",
+        "client_msg_id": "B500472F-2874-4D9D-BBE1-B29EA95C59F9",
+        "ts": "1526338617.000122"
+    },
+    {
+        "type": "message",
+        "user": "UAMTAB49E",
+        "text": "Ok will check it and revert ",
+        "client_msg_id": "A203B724-5B88-4895-83B5-A7700DC034BC",
+        "ts": "1526338622.000312"
+    },
+    {
+        "type": "message",
+        "user": "UAMTAB49E",
+        "text": "I do think the scope of the project isn't honored ",
+        "client_msg_id": "D62D937C-D068-4B5B-BD59-7028418B0CDE",
+        "ts": "1526338631.000374"
+    },
+    {
+        "type": "message",
+        "user": "UAMTAB49E",
+        "text": "Can confirm and file a bug ",
+        "client_msg_id": "8288F8D8-BE86-4B5F-B90F-5B136CE64E5E",
+        "ts": "1526338639.000372"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Also - you won't see any machines show up until they've booted once and gone through discovery",
+        "ts": "1526338649.000219"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<https:\/\/github.com\/digitalrebar\/provision\/issues\/new>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "Build software better, together",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/issues\/new",
+                "text": "GitHub is where people build software. More than 27 million people use GitHub to discover, fork, and contribute to over 80 million projects.",
+                "fallback": "GitHub: Build software better, together",
+                "image_width": 1200,
+                "image_height": 620,
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/issues\/new",
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/digitalrebar\/provision\/issues\/new"
+            }
+        ],
+        "ts": "1526338661.000008"
+    },
+    {
+        "type": "message",
+        "user": "UAMTAB49E",
+        "text": "Gotcha. It'd be useful to see anything that hits the ipxe url",
+        "client_msg_id": "AAC606B8-52AF-4AF2-BA15-7E7DF4B1E5AA",
+        "ts": "1526338872.000122"
+    },
+    {
+        "type": "message",
+        "user": "UAMTAB49E",
+        "text": "From a log perspective",
+        "client_msg_id": "2BD569BA-1D11-46E9-970F-3CE709BEA621",
+        "ts": "1526338876.000434"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "there's a lot more we can do with the integration - what we have today has been incremental adds ... as we have the time or requests for newness ...",
+        "ts": "1526338925.000175"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "Make sure you set the defaults too. If those are not set then drp will not respond",
+        "client_msg_id": "c7df2e18-0bab-401e-b529-6ecb3eb721ab",
+        "ts": "1526338980.000075"
+    },
+    {
+        "type": "message",
+        "user": "UAMTAB49E",
+        "text": "Yeah I just meant for ipxe server logs",
+        "client_msg_id": "556AD4CE-D0E0-42A9-AAB9-F6E63932CE79",
+        "ts": "1526339102.000021"
+    },
+    {
+        "type": "message",
+        "user": "UAMTAB49E",
+        "text": "To know a machine was hitting the endpoint ",
+        "client_msg_id": "557622DD-EF49-419B-97B5-B6B61015A62D",
+        "ts": "1526339112.000073"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The project in the plugin is only used for machine create calls.  It is the default project. It does not scope import ",
+        "client_msg_id": "BC0E718B-0865-4D14-A58D-5C74DD2DCF3D",
+        "ts": "1526339433.000088"
+    },
+    {
+        "type": "message",
+        "user": "UAMTAB49E",
+        "text": "With the org model on packet it may be good to rethink that a bit",
+        "client_msg_id": "CE104CC0-B8F7-40FC-85FB-40158C919E18",
+        "ts": "1526339524.000159"
+    },
+    {
+        "type": "message",
+        "user": "UAMTAB49E",
+        "text": "I'll also suggest some access controls for the API key ",
+        "client_msg_id": "587BE44E-0D58-4C1F-94B6-BF1B24D0D371",
+        "ts": "1526339539.000181"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "so - that's a feature request for packet I had - scoped API keys - to a given project - as far as I can tell, and API key seems to be global to the user, and I can't create a (for example) temporary key scoped to only a given Org\/Project",
+        "ts": "1526339601.000140"
+    },
+    {
+        "type": "message",
+        "user": "UAMTAB49E",
+        "text": "On the packet side ",
+        "client_msg_id": "3AA004DE-BA44-4220-9EB0-3AC3D7DCC3D5",
+        "ts": "1526339606.000191"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": ":slightly_smiling_face: yes",
+        "ts": "1526339612.000232"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "while you're at it ... it'd be pretty cool to have time-limited API keys - with a given TTL",
+        "ts": "1526339641.000364"
+    },
+    {
+        "type": "message",
+        "user": "UAMTAB49E",
+        "text": "Good :bulb:",
+        "client_msg_id": "9BFF5ED3-3472-4615-991B-960E07625C33",
+        "ts": "1526339781.000194"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I use the packet environment a lot for demo and training purposes, and hand out API keys to students - always having to be mindful the impact of the API key access worries me - and both limiting it by Scope (org\/project) and Time will give a lot more pease of mind for that sort of use",
+        "ts": "1526339851.000137"
+    },
+    {
+        "type": "message",
+        "user": "UAMTAB49E",
+        "text": "Lucky us ",
+        "client_msg_id": "2A6D204D-307E-4522-BFA8-798AA72F1550",
+        "ts": "1526340177.000187"
+    },
+    {
+        "type": "message",
+        "user": "UAMTAB49E",
+        "text": "per-project API key will be launched probably this week or early next week",
+        "client_msg_id": "F0DB9944-BB0D-4268-AAE5-06BD91697F20",
+        "ts": "1526340180.000094"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "nifty !",
+        "ts": "1526340189.000116"
+    },
+    {
+        "type": "message",
+        "user": "UAMTAB49E",
+        "text": ":+1:",
+        "client_msg_id": "1656D2B6-A82E-46C7-81F0-9E53F65B7E1B",
+        "ts": "1526340192.000245"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Nice!  ",
+        "client_msg_id": "E891D873-CC02-4AB3-BB97-0441BB4582EA",
+        "ts": "1526340203.000162"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The project choice was more around quick api compliance more than anything else.  ",
+        "client_msg_id": "CD5DFBC0-A514-430D-95FD-2C02E126CCE9",
+        "ts": "1526340249.000183"
+    },
+    {
+        "type": "message",
+        "user": "UAMTAB49E",
+        "text": "fyi shane helped me out",
+        "ts": "1526346849.000068",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U6QFVRJNB",
+                    "U02DHRR2L",
+                    "U02DGQYK1"
+                ],
+                "count": 3
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "UAMTAB49E",
+        "text": "now installing servers via DRP",
+        "edited": {
+            "user": "UAMTAB49E",
+            "ts": "1526346904.000000"
+        },
+        "ts": "1526346858.000081"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "Preview of the new cluster operations coming to Task Library tip.  <https:\/\/youtu.be\/w8uGRs-_d-Y>",
+        "attachments": [
+            {
+                "service_name": "YouTube",
+                "service_url": "https:\/\/www.youtube.com\/",
+                "title": "Digital Rebar Cluster Stages Intro",
+                "title_link": "https:\/\/youtu.be\/w8uGRs-_d-Y",
+                "author_name": "RackN & Digital Rebar",
+                "author_link": "https:\/\/www.youtube.com\/channel\/UCr3bBtP-pMsDQ5c0IDjt_LQ",
+                "thumb_url": "https:\/\/i.ytimg.com\/vi\/w8uGRs-_d-Y\/hqdefault.jpg",
+                "thumb_width": 480,
+                "thumb_height": 360,
+                "fallback": "YouTube Video: Digital Rebar Cluster Stages Intro",
+                "video_html": "<iframe width=\"400\" height=\"225\" src=\"https:\/\/www.youtube.com\/embed\/w8uGRs-_d-Y?feature=oembed&autoplay=1&iv_load_policy=3\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen><\/iframe>",
+                "video_html_width": 400,
+                "video_html_height": 225,
+                "from_url": "https:\/\/youtu.be\/w8uGRs-_d-Y",
+                "service_icon": "https:\/\/a.slack-edge.com\/2089\/img\/unfurl_icons\/youtube.png",
+                "id": 1,
+                "original_url": "https:\/\/youtu.be\/w8uGRs-_d-Y"
+            }
+        ],
+        "ts": "1526351273.000193"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "By adding cluster stages into a workflow, the system can coordinate cross-machine activities in parallel or sequence.  This is a generic pattern based on the leader election process for KRIB",
+        "ts": "1526351328.000202"
+    },
+    {
+        "type": "message",
+        "user": "UANNN0Z7D",
+        "text": "Nice! Was about to inquire about HA k8s setup, but with these blocks and krib as a reference it seems quite easy to roll",
+        "ts": "1526351994.000079"
+    }
+]

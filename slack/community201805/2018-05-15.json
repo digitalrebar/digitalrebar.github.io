@@ -1,0 +1,423 @@
+[
+    {
+        "user": "UAPR3GUCU",
+        "text": "<@UAPR3GUCU> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1526391907.000252"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "thanks!  I was thinking that refactoring KRIB to use these stages would give some new options - on the downside, it makes the base setup harder",
+        "ts": "1526392005.000824"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UAPR3GUCU> $welcome",
+        "ts": "1526392006.000174"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1526392006.000281"
+    },
+    {
+        "type": "message",
+        "user": "UAPR3GUCU",
+        "text": "thx for the welcome - looking forward to this K8 world!",
+        "ts": "1526392149.000655"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "When a system runs sledgehammer does it have easy access to all the info gathered by gohai?",
+        "ts": "1526395568.000213"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Related question, is the UUID that DRP assigns the host the same as the system UUID?",
+        "ts": "1526395679.000430"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "1. Yes, you can fetch it as a param or use drpcli gohai to get it anew.",
+        "ts": "1526395854.000073"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "2. No, we cannot rely on the UUIDs embedded in the BIOS to actually be unique.",
+        "ts": "1526395891.000273"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "When it is left as all zeros is bad enough",
+        "ts": "1526396057.000160"
+    },
+    {
+        "user": "UARBSQB0F",
+        "text": "<@UARBSQB0F> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1526412700.000256"
+    },
+    {
+        "user": "UAQAE0VNE",
+        "text": "<@UAQAE0VNE> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1526412796.000353"
+    },
+    {
+        "type": "message",
+        "user": "UARBSQB0F",
+        "text": "So, newbie question: I've got about 10 machines in a remote rack, with support. I'm a very experienced DevOps guy, but new to Rebar. How much of my work will it take to get basic Kube on those machines using Rebar?",
+        "thread_ts": "1526413028.000593",
+        "reply_count": 17,
+        "replies": [
+            {
+                "user": "UARBSQB0F",
+                "ts": "1526413817.000149"
+            },
+            {
+                "user": "U02DHRR2L",
+                "ts": "1526414337.000022"
+            },
+            {
+                "user": "U02DHRR2L",
+                "ts": "1526414362.000449"
+            },
+            {
+                "user": "UARBSQB0F",
+                "ts": "1526415102.000175"
+            },
+            {
+                "user": "UARBSQB0F",
+                "ts": "1526415140.000038"
+            },
+            {
+                "user": "U6QFVRJNB",
+                "ts": "1526415285.000675"
+            },
+            {
+                "user": "U6QFVRJNB",
+                "ts": "1526416131.000191"
+            },
+            {
+                "user": "UARBSQB0F",
+                "ts": "1526419277.000360"
+            },
+            {
+                "user": "U6QFVRJNB",
+                "ts": "1526419453.000217"
+            },
+            {
+                "user": "U6QFVRJNB",
+                "ts": "1526419482.000128"
+            },
+            {
+                "user": "U6QFVRJNB",
+                "ts": "1526419671.000597"
+            },
+            {
+                "user": "UARBSQB0F",
+                "ts": "1526419931.000244"
+            },
+            {
+                "user": "U6QFVRJNB",
+                "ts": "1526421853.000245"
+            },
+            {
+                "user": "UARBSQB0F",
+                "ts": "1526514906.000046"
+            },
+            {
+                "user": "U02DGQYK1",
+                "ts": "1526514974.000256"
+            },
+            {
+                "user": "U6QFVRJNB",
+                "ts": "1526517994.000074"
+            },
+            {
+                "user": "UARBSQB0F",
+                "ts": "1526546560.000130"
+            }
+        ],
+        "unread_count": 17,
+        "ts": "1526413028.000593"
+    },
+    {
+        "type": "message",
+        "user": "U32PZNCP5",
+        "text": "<@UARBSQB0F> $welcome",
+        "ts": "1526413129.000390"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1526413129.000532"
+    },
+    {
+        "type": "message",
+        "user": "UARBSQB0F",
+        "text": "A day? A week? Two weeks? A month? I don't need accurate, just ballpark.",
+        "thread_ts": "1526413028.000593",
+        "parent_user_id": "UARBSQB0F",
+        "ts": "1526413817.000149"
+    },
+    {
+        "text": "Not enough info to know.   It depends on OS, network, storage,  and ha needs.  Plus your level of expertise.  The drp kubespray integration would be useful if you like ansible. Our krib is fast and easy but may not meet your production needs.",
+        "unfurl_links": true,
+        "client_msg_id": "c824ed57-bf99-414f-a03b-13e7ff054f82",
+        "unfurl_media": true,
+        "thread_ts": "1526413028.000593",
+        "is_thread_broadcast": true,
+        "channel_id": 2689784228,
+        "type": "message",
+        "subtype": "thread_broadcast",
+        "user": "U02DHRR2L",
+        "root": {
+            "type": "message",
+            "user": "UARBSQB0F",
+            "text": "So, newbie question: I've got about 10 machines in a remote rack, with support. I'm a very experienced DevOps guy, but new to Rebar. How much of my work will it take to get basic Kube on those machines using Rebar?",
+            "thread_ts": "1526413028.000593",
+            "reply_count": 17,
+            "replies": [
+                {
+                    "user": "UARBSQB0F",
+                    "ts": "1526413817.000149"
+                },
+                {
+                    "user": "U02DHRR2L",
+                    "ts": "1526414337.000022"
+                },
+                {
+                    "user": "U02DHRR2L",
+                    "ts": "1526414362.000449"
+                },
+                {
+                    "user": "UARBSQB0F",
+                    "ts": "1526415102.000175"
+                },
+                {
+                    "user": "UARBSQB0F",
+                    "ts": "1526415140.000038"
+                },
+                {
+                    "user": "U6QFVRJNB",
+                    "ts": "1526415285.000675"
+                },
+                {
+                    "user": "U6QFVRJNB",
+                    "ts": "1526416131.000191"
+                },
+                {
+                    "user": "UARBSQB0F",
+                    "ts": "1526419277.000360"
+                },
+                {
+                    "user": "U6QFVRJNB",
+                    "ts": "1526419453.000217"
+                },
+                {
+                    "user": "U6QFVRJNB",
+                    "ts": "1526419482.000128"
+                },
+                {
+                    "user": "U6QFVRJNB",
+                    "ts": "1526419671.000597"
+                },
+                {
+                    "user": "UARBSQB0F",
+                    "ts": "1526419931.000244"
+                },
+                {
+                    "user": "U6QFVRJNB",
+                    "ts": "1526421853.000245"
+                },
+                {
+                    "user": "UARBSQB0F",
+                    "ts": "1526514906.000046"
+                },
+                {
+                    "user": "U02DGQYK1",
+                    "ts": "1526514974.000256"
+                },
+                {
+                    "user": "U6QFVRJNB",
+                    "ts": "1526517994.000074"
+                },
+                {
+                    "user": "UARBSQB0F",
+                    "ts": "1526546560.000130"
+                }
+            ],
+            "unread_count": 17,
+            "ts": "1526413028.000593"
+        },
+        "ts": "1526414337.000022"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "Drp is not the hard part here.",
+        "client_msg_id": "2ba477e2-d1c8-4e38-945c-c248b6fbae47",
+        "thread_ts": "1526413028.000593",
+        "parent_user_id": "UARBSQB0F",
+        "ts": "1526414362.000449"
+    },
+    {
+        "type": "message",
+        "user": "UARBSQB0F",
+        "text": "OS is (AFAICT) my choice, so whatever's easiest. Two separate networks. Storage is intended to be Ceph on 3 nodes. kubespray, with its HA master, seems a better choice.",
+        "thread_ts": "1526413028.000593",
+        "parent_user_id": "UARBSQB0F",
+        "ts": "1526415102.000175"
+    },
+    {
+        "type": "message",
+        "user": "UARBSQB0F",
+        "text": "Doesn't have to be super-HA at first; we're looking for MVP, with later improvements.",
+        "thread_ts": "1526413028.000593",
+        "parent_user_id": "UARBSQB0F",
+        "ts": "1526415140.000038"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "KRIB is fast - but no HA today, we're working towards HA, but kubeadm doesn't really \"do\" HA very natively",
+        "client_msg_id": "dae019b2-cf27-4ee5-873d-c1b5e908b0b2",
+        "thread_ts": "1526413028.000593",
+        "parent_user_id": "UARBSQB0F",
+        "ts": "1526415285.000675"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UAQAE0VNE> $welcome",
+        "client_msg_id": "022ad19d-9dfa-43e5-bbe0-780fddabb094",
+        "ts": "1526415317.000262"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1526415317.000376"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Coming Soon(tm) to a -tip near you: The ability to deploy dr-provision and provision systems without needing to upload any additional artifacts.  As long as you can talk to the Internet.  And enjoy booting out of rate-limited S3 buckets.",
+        "ts": "1526415476.000419"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "(and, incedentally, show what is needed to make airgapped installs work more or less the same way)",
+        "ts": "1526415578.000028"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "Ty",
+        "client_msg_id": "584daf55-571d-497e-827b-1c0843cbb162",
+        "ts": "1526415898.000016"
+    },
+    {
+        "type": "message",
+        "user": "UA469LS02",
+        "text": "hooray",
+        "ts": "1526415903.000080"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Incidentally, all that already worked for Sledgehammer and Centos, but it was not documented ~at all~ well",
+        "ts": "1526416078.000031"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Our KRIB installer also supports in-memory (live boot) immutable clusters, as well as traditional install-to-disk method",
+        "client_msg_id": "610e7820-fa2a-4aee-ad73-14855a262d01",
+        "thread_ts": "1526413028.000593",
+        "parent_user_id": "UARBSQB0F",
+        "ts": "1526416131.000191"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "and in hte latest -tip community content  the package-repositories param has repo definitions for every OS we support in that content bundle to act as a guide.",
+        "ts": "1526416173.000787"
+    },
+    {
+        "type": "message",
+        "user": "UARBSQB0F",
+        "text": "<@U6QFVRJNB> Is there a ticket I can follow for HA on KRIB?",
+        "thread_ts": "1526413028.000593",
+        "parent_user_id": "UARBSQB0F",
+        "ts": "1526419277.000360"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "no ticket - we just started evaluating (today) adding the HA recipe to KRIB - however the state of `kubeadm` HA (what KRIB uses) is very sad - they're just using general standard HA patterns, not doing anything \"good\" to integrate HA capabilities natively in to kubeadm - it's just bolting on external certificate mgmt., load balancers, and multi-node etcd on to the existing system - no native handling of those capabilities within kubeadm - as it (IMO) should be",
+        "thread_ts": "1526413028.000593",
+        "parent_user_id": "UARBSQB0F",
+        "ts": "1526419453.000217"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "this is one of the guide we're working from: <https:\/\/kubernetes.io\/docs\/setup\/independent\/high-availability\/>",
+        "attachments": [
+            {
+                "text": "Creating HA clusters with kubeadm",
+                "fallback": "Creating HA clusters with kubeadm",
+                "from_url": "https:\/\/kubernetes.io\/docs\/setup\/independent\/high-availability\/",
+                "service_icon": "https:\/\/kubernetes.io\/images\/favicon.png",
+                "service_name": "kubernetes.io",
+                "id": 1,
+                "original_url": "https:\/\/kubernetes.io\/docs\/setup\/independent\/high-availability\/"
+            }
+        ],
+        "thread_ts": "1526413028.000593",
+        "parent_user_id": "UARBSQB0F",
+        "ts": "1526419482.000128"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "keep an eye open on the <#C02L9P26Q|community> channel - we'll announce when it's ready there",
+        "thread_ts": "1526413028.000593",
+        "parent_user_id": "UARBSQB0F",
+        "ts": "1526419671.000597"
+    },
+    {
+        "type": "message",
+        "user": "UARBSQB0F",
+        "text": "Any idea on timeline for adding it? That'll help me decide between KRIB and kubespray.",
+        "thread_ts": "1526413028.000593",
+        "parent_user_id": "UARBSQB0F",
+        "ts": "1526419931.000244"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Well - <@U02DGQYK1> was going to look in to it \"soon\" ... it'll depend on customer support and other requirements if we can get around to updating the community content around this ... we want to update it to support HA, but KRIB is a demonstration workload - it's not a \"supported feature\" of Digital Rebar Provision - more than anything else, it demonstrates how complex clusters can be brought up and via our lightweight coordination, live-boot immutable images, and configuration capabilities",
+        "thread_ts": "1526413028.000593",
+        "parent_user_id": "UARBSQB0F",
+        "ts": "1526421853.000245"
+    }
+]

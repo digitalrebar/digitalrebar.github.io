@@ -1,0 +1,177 @@
+[
+    {
+        "user": "UB6EM48HM",
+        "text": "<@UB6EM48HM> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1528733098.000202"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UB6EM48HM> $welcome",
+        "ts": "1528733593.000853"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1528733594.000063"
+    },
+    {
+        "type": "message",
+        "user": "UB6EM48HM",
+        "text": "Thanks <@U6QFVRJNB>. Been following Rob on and off since Crowbar days. Worked in the private cloud space as an intern  at Nimbula and am kicking tires again.",
+        "ts": "1528738600.000547"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@UB6EM48HM> glad to have you here!  It's been a wild ride since those days - still amazed that SUSE kept that project going.",
+        "ts": "1528742862.000033"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I have an issue with a script that tries to do an apt-get install for some extra packages after an ubuntu install.  The script just does an apt-get update and an apt-get install, but the package(s) fail to install because apt cant resolve some of the dependencies.  But the same script runs fun after a reboot.  What's the difference between the environment that scripts started by the runner run in and the environment of the freshly rebooted system?",
+        "ts": "1528754273.000269"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "apt sucks in chroot environments",
+        "ts": "1528754345.000206"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "this is the pattern I generally use in non-interactive environments to try and get APT to play nicely:\n```# enable non-interactive installs\nexport DEBIAN_FRONTEND=noninteractive\ncat &gt; \/usr\/sbin\/policy-rc.d &lt;&lt; EOF\n#!\/bin\/sh\necho \"All runlevel operations denied by policy\" &gt;&amp;2\nexit 101\nEOF\nchmod 755 \/usr\/sbin\/policy-rc.d\n\n# generic update to the platform\napt-get update\napt-get -y -o Dpkg::Options::=\"--force-confdef\" -o Dpkg::Options::=\"--force-confold\" dist-upgrade```",
+        "ts": "1528754372.000240"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "followed by:\n```rm -f \/usr\/sbin\/policy-rc.d```\nafter done",
+        "ts": "1528754392.000459"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(replace the \"dis-upgrade\" with whatever you're actually trying to do)",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1528754406.000000"
+        },
+        "ts": "1528754402.000444"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Ah yeah, I think you showed me this once before when I had a similar problem that I ended up solving by not installing the packages.  :slightly_smiling_face:  Let me see if I can get it to work",
+        "ts": "1528754442.000063"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": ":slightly_smiling_face:",
+        "ts": "1528754457.000478"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I'm trying to avoid creating a new bootenv to put the packages in a pgksel command.  Which works, but.  Eww.",
+        "ts": "1528754479.000214"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I think <@U02DJQSG8> had some other APT magic that might need added within the chroot environment",
+        "ts": "1528754481.000446"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "hmm - I was working with a pattern to update the bootenvs to add User added packages via a Param\/Profile applied to the Machines to inject in to the KS\/Seed dynamically",
+        "ts": "1528754526.000020"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Yeah, whenever I want to install extra packages I tend to do it as a post install task.",
+        "client_msg_id": "acd5abf4-3b57-4f1c-9174-cc907980080c",
+        "ts": "1528754553.000468"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "which can be done by just writing a simple stage\/task\/template and adding in to the Workflow",
+        "ts": "1528754606.000375"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Sorta.",
+        "ts": "1528754612.000226"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "If you are getting errors doing installs when running the post install scripts, there are a few things that can go wrong.",
+        "ts": "1528754664.000260"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Most of them are bypassed by making sure you have conifgured repos properly and by using the package  install helpers",
+        "ts": "1528754711.000064"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "tip has `extra-packages` parameter that is a list of strings that get added to the `pkg-sel` part of the netseed file.",
+        "ts": "1528754724.000115"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Or that.",
+        "ts": "1528754737.000314"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "My usual real answer is to install packages just before you need them in whatever workload, and not as part of the OS install process.",
+        "ts": "1528754788.000268"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": ":slightly_smiling_face:",
+        "ts": "1528754790.000471"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I thought there was something about APT and stdin\/stderr needing to be attached for some operations ... or something ...",
+        "ts": "1528754862.000417"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "right `extra-packages` ... that's what I was thinking of :slightly_smiling_face:",
+        "ts": "1528754912.000454"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Yeah, so dpkg pre and post scripts do really silly things with fds.",
+        "ts": "1528754937.000014"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "for \"over 20 years of legacy\" reasons.",
+        "ts": "1528754958.000349"
+    }
+]

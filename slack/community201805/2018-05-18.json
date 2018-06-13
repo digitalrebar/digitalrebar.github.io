@@ -1,0 +1,1245 @@
+[
+    {
+        "type": "message",
+        "user": "U9W6VGD47",
+        "text": "Hi all,\nI'm new with Rebar and linux system in general, I had managed to get rebar deploying systems just fine, and I was really please with it.\nUnfortunatly, my server crashed and restarted last night due to some other cronjob.\nNow dr-provision refuse to start, and I have those related message in var\/log\/messages.",
+        "ts": "1526632129.000486"
+    },
+    {
+        "type": "message",
+        "user": "U9W6VGD47",
+        "text": "&gt;&gt;&gt;May 18 06:01:36 mgmt dr-provision: dr-provision2018\/05\/18 04:01:36.759079 [0:1]backend [fatal]: \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/backend\/dataTracker.go:804\nMay 18 06:01:36 mgmt dr-provision: [0:1]dataTracker: Error loading data: Failed to load backing objects from cache: Unable to load leases: unexpected end of JSON input\nMay 18 06:01:36 mgmt systemd: dr-provision.service: main process exited, code=exited, status=1\/FAILURE\nMay 18 06:01:36 mgmt systemd: Unit dr-provision.service entered failed state.\nMay 18 06:01:36 mgmt systemd: dr-provision.service failed.",
+        "ts": "1526632137.000281"
+    },
+    {
+        "type": "message",
+        "user": "U9W6VGD47",
+        "text": "Has anyone seen those error?\nI don't kwon why dr-provision [0:1] backend error[fatal] looks for that \/home\/travis path. I have no travis user and I have installed rebar in the system path.\nI asked the web but I did not find any related post.\nCan anyone help me out with this TS ?\nMany thanks",
+        "ts": "1526632146.000095"
+    },
+    {
+        "type": "message",
+        "user": "U9W6VGD47",
+        "text": "Finally, dr-provision started after removing all the lease json file",
+        "ts": "1526637402.000342"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@U9W6VGD47> uploaded a file: <https:\/\/rackn.slack.com\/files\/U9W6VGD47\/FAT345362\/-.txt|Untitled>",
+        "file": {
+            "id": "FAT345362",
+            "created": 1526637433,
+            "timestamp": 1526637433,
+            "name": "-.txt",
+            "title": "Untitled",
+            "mimetype": "text\/plain",
+            "filetype": "text",
+            "pretty_type": "Plain Text",
+            "user": "U9W6VGD47",
+            "editable": true,
+            "size": 1589,
+            "mode": "snippet",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAT345362\/-.txt?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FAT345362\/download\/-.txt?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "permalink": "https:\/\/rackn.slack.com\/files\/U9W6VGD47\/FAT345362\/-.txt",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FAT345362-4482f660e6",
+            "edit_link": "https:\/\/rackn.slack.com\/files\/U9W6VGD47\/FAT345362\/-.txt\/edit",
+            "preview": "● dr-provision.service - DigitalRebar Provision Integrated DHCP and File Provisioner\r\n   Loaded: loaded (\/etc\/systemd\/system\/dr-provision.service; enabled; vendor preset: disabled)\r\n   Active: active (running) since Fri 2018-05-18 11:45:12 CEST; 11min ago\r\n     Docs: http:\/\/provision.readthedocs.io\/en\/latest\/\r\n Main PID: 1639 (dr-provision)\r",
+            "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>● dr-provision.service - DigitalRebar Provision Integrated DHCP and File Provisioner<\/pre><\/div>\n<div><pre>   Loaded: loaded (\/etc\/systemd\/system\/dr-provision.service; enabled; vendor preset: disabled)<\/pre><\/div>\n<div><pre>   Active: active (running) since Fri 2018-05-18 11:45:12 CEST; 11min ago<\/pre><\/div>\n<div><pre>     Docs: http:\/\/provision.readthedocs.io\/en\/latest\/<\/pre><\/div>\n<div><pre> Main PID: 1639 (dr-provision)<\/pre><\/div>\n<div><pre><\/pre><\/div>\n<\/div>\n<\/div>\n",
+            "lines": 18,
+            "lines_more": 13,
+            "preview_is_truncated": true,
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "U9W6VGD47",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "tardyn",
+        "bot_id": null,
+        "ts": "1526637433.000349"
+    },
+    {
+        "type": "message",
+        "user": "U9W6VGD47",
+        "text": "Thx",
+        "ts": "1526637438.000103"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U9W6VGD47> - as you figured out- the Lease file must have been corrupted when the server crashed.  Removing it was the right course of action.  The \"travis\" stuff relates to our regression test and build system - those paths and info relate to that, not to your currently installed information.",
+        "ts": "1526649642.000559"
+    },
+    {
+        "user": "UAS6Z98CU",
+        "text": "<@UAS6Z98CU> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1526661028.000203"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@UAS6Z98CU> $welcome",
+        "ts": "1526666748.000141"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1526666748.000682"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "Sup folks.",
+        "ts": "1526668521.000246"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "Working on a deployment. External DHCP, set up with next server\/bootfile name = ipxe.efi (according to <http:\/\/provision.readthedocs.io\/en\/tip\/doc\/deployment.html>)",
+        "ts": "1526668556.000722"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "EFI PXE client boot (same subnet) successfully hits the DRP endpoint. Client side, I can see IPXe being loaded, network interfaces established, and a request for ipxe.efi issued (and grabbed successfully).",
+        "ts": "1526668653.000456"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "After that is an endless IPXe boot loop.",
+        "ts": "1526668664.000225"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "Using the baked in centos-7.4.1708-install. Workflow\/stage is sledgehammer discovery -&gt; centos-7 install -&gt; complete-nowait",
+        "ts": "1526668726.000431"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "Any ideas?",
+        "ts": "1526668729.000490"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "have you set the default workflow?  Is the machine known to the system?",
+        "ts": "1526669834.000712"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "Yes, set the default workflow",
+        "ts": "1526669939.000303"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "I do not believe the machine is known to the system. Advice on how to do that?",
+        "ts": "1526669963.000442"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "drpcli machines list | jq '.[].Uuid'  brings up nothing",
+        "ts": "1526669982.000440"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "Ideally, I'm looking to replace my PXE\/TFTP system and will be using this to build out new systems.",
+        "ts": "1526670037.000728"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "Reading the docs makes it clear that hosting the DHCP on the DRP endpoint facilitates the machine registration (mac\/UUID) but I'm looking to keep external DHCP\/DNS in the current environment",
+        "ts": "1526670106.000089"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "workflow is discover (bootenv sledgehammer) -&gt; centos install -&gt; complete-nowait",
+        "ts": "1526670329.000166"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Make sure the unknown bootenv preference is set to discovery ",
+        "client_msg_id": "503F9AD9-704E-4CB4-BA48-110A3E2FFD10",
+        "ts": "1526671534.000337"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "drpcli prefs list\n{\n  \"baseTokenSecret\": \"qKeTc2egP98U80E7YOG5uS8Tt61cNVD5\",\n  \"debugBootEnv\": \"debug\",\n  \"debugDhcp\": \"warn\",\n  \"debugFrontend\": \"info\",\n  \"debugPlugins\": \"warn\",\n  \"debugRenderer\": \"warn\",\n  \"defaultBootEnv\": \"centos-7.4.1708-install\",\n  \"defaultStage\": \"discover\",\n  \"defaultWorkflow\": \"centos 7\",\n  \"knownTokenTimeout\": \"3600\",\n  \"logLevel\": \"warn\",\n  \"systemGrantorSecret\": \"hS47rMWEQvUch9Ei6Gaca-Hs4mmM51df\",\n  \"unknownBootEnv\": \"discovery\",\n  \"unknownTokenTimeout\": \"600\"\n}",
+        "ts": "1526671565.000198"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Okay not it ",
+        "client_msg_id": "D69584FC-3A5D-4349-A2D3-05615B2699CD",
+        "ts": "1526671632.000485"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Are all the stages available. I assume they are.  Make sure in the ux that all the stages are available with check and not an c",
+        "client_msg_id": "DBD80A74-3BF6-4BB1-9BC1-68F02EFE7BAE",
+        "ts": "1526671698.000602"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "X",
+        "client_msg_id": "8BEDC039-77B8-4812-A69D-9D551A08639F",
+        "ts": "1526671701.000135"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Mainly discover and Centosinstall",
+        "client_msg_id": "68AD4901-7D5F-4E7B-80B9-7255E832AE34",
+        "ts": "1526671730.000392"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "<@U02DGQYK1> Yessir, all appear available",
+        "ts": "1526671750.000517"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "ran the `drpcli bootenvs uploadiso` for centos and sledgehammer",
+        "ts": "1526671769.000620"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@UAS2DTMMM> uploaded a file: <https:\/\/rackn.slack.com\/files\/UAS2DTMMM\/FASM722BX\/2018-05-18_15-29-40.png|2018-05-18_15-29-40.png>",
+        "file": {
+            "id": "FASM722BX",
+            "created": 1526671799,
+            "timestamp": 1526671799,
+            "name": "2018-05-18_15-29-40.png",
+            "title": "2018-05-18_15-29-40.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "UAS2DTMMM",
+            "editable": false,
+            "size": 95635,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FASM722BX\/2018-05-18_15-29-40.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FASM722BX\/download\/2018-05-18_15-29-40.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FASM722BX-cf056547aa\/2018-05-18_15-29-40_64.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FASM722BX-cf056547aa\/2018-05-18_15-29-40_80.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FASM722BX-cf056547aa\/2018-05-18_15-29-40_360.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_360_w": 360,
+            "thumb_360_h": 161,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FASM722BX-cf056547aa\/2018-05-18_15-29-40_480.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_480_w": 480,
+            "thumb_480_h": 214,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FASM722BX-cf056547aa\/2018-05-18_15-29-40_160.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FASM722BX-cf056547aa\/2018-05-18_15-29-40_720.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_720_w": 720,
+            "thumb_720_h": 321,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FASM722BX-cf056547aa\/2018-05-18_15-29-40_800.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_800_w": 800,
+            "thumb_800_h": 357,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FASM722BX-cf056547aa\/2018-05-18_15-29-40_960.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_960_w": 960,
+            "thumb_960_h": 428,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FASM722BX-cf056547aa\/2018-05-18_15-29-40_1024.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 457,
+            "image_exif_rotation": 1,
+            "original_w": 1463,
+            "original_h": 653,
+            "permalink": "https:\/\/rackn.slack.com\/files\/UAS2DTMMM\/FASM722BX\/2018-05-18_15-29-40.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FASM722BX-e12ac73a79",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "UAS2DTMMM",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "dhancock077",
+        "bot_id": null,
+        "ts": "1526671802.000320"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - next - what version are you using for drp and content?",
+        "ts": "1526671858.000023"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "Version v3.8.2",
+        "ts": "1526671881.000556"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "hmm - thinking …",
+        "ts": "1526671975.000092"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "content version from the content package page?  (just not tip).",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1526672035.000000"
+        },
+        "ts": "1526672015.000189"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "drp-community-content\nv1.8.0",
+        "ts": "1526672063.000508"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "This is a provisioned VMWare ESXi VM @ 6.0",
+        "ts": "1526672163.000634"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "As of 6.0, EFI+secure boot is bundled (if I recall correctly)",
+        "ts": "1526672192.000205"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "I believe 6.5 they started offering flags for secure boot and EFI separate.",
+        "ts": "1526672217.000145"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "Not sure if that would matter",
+        "ts": "1526672221.000529"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "hmm - what is the machine?",
+        "ts": "1526672281.000467"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "that you are booting?",
+        "ts": "1526672285.000134"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "What do you mean?",
+        "ts": "1526672326.000148"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@UAS2DTMMM> - sorry - what is DRP running on?  What is the machine you trying to PXE boot\/install?",
+        "ts": "1526672344.000277"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "Blank virtual machine template set to PXE network boot",
+        "ts": "1526672345.000290"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "ahh",
+        "ts": "1526672349.000599"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "cat \/etc\/redhat-release\nCentOS Linux release 7.4.1708 (Core)",
+        "ts": "1526672364.000402"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "no firewall rules in place",
+        "ts": "1526672380.000075"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "DRP machine shouldn’t matter, but mostly wanting to know that you are sane and all.  :slightly_smiling_face:",
+        "ts": "1526672395.000633"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "So, you are attempting to PXE boot a VMWare VM using EFI that may have secure boot turned on?",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1526672426.000000"
+        },
+        "ts": "1526672422.000471"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "Negative, I was wrong",
+        "ts": "1526672518.000147"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "6.5 _introduces_ secure boot",
+        "ts": "1526672532.000245"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "&lt;6.5 is just EFI\/UEFI, no secure boot",
+        "ts": "1526672565.000413"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - secure boot will almost guaranteed to not work.  pxe.efi is not signed.",
+        "ts": "1526672570.000315"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Or I suspected it is not signed.",
+        "ts": "1526672587.000444"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "Right. Would need EPS + signing",
+        "ts": "1526672600.000560"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "Sorry to derail. Mis-remembered :slightly_smiling_face:",
+        "ts": "1526672610.000259"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "Just reading through VMWare KB articles now and confirmed that 6.0 supports EFI. 6.5+ supports EFI + secure boot",
+        "ts": "1526672648.000146"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "With regard to EFI in VMWare, we haven’t tested that.  We’ve tested against tianacore (sp) based versions of EFI in Dell and Kvm environments.",
+        "ts": "1526672654.000298"
+    },
+    {
+        "text": "Time to feed the :bear:!",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1526672654.000375"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "EFI is pretty finicky.  For example, VirtualBox EFI booting will NOT work.  It doesn’t have full network support and fails in lots of ways.",
+        "ts": "1526672703.000584"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "&gt; EFI is pretty finicky.\nTell me about it!",
+        "ts": "1526672742.000308"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "In general, I prefer Legacy booting in virtual envs, but it may not be your option.",
+        "ts": "1526672777.000106"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Another thing you can do is to turn up the renderer debug and try the sequence and see if it requires a file after the ipxe.efi bootloader.",
+        "ts": "1526672810.000108"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That will tell us if it is atleast trying to advance beyond starting ipxe.efi.",
+        "ts": "1526672830.000266"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "Same hear, but I'm looking to start rolling out EFI for certain compliance\/auditing",
+        "ts": "1526672843.000596"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Okay - makes sense, but is that in a physical env or in this virtual env.",
+        "ts": "1526672875.000110"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "Would be both. Current build system services both physical and virtual inventory",
+        "ts": "1526672905.000502"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "What would be the best way to turn up rendered debug?",
+        "ts": "1526672917.000170"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Prefs in system info panel of UX.",
+        "ts": "1526672928.000331"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "gotcha, great",
+        "ts": "1526672976.000409"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "will run a tcpdump in conjunction",
+        "ts": "1526672989.000315"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "good call",
+        "ts": "1526673003.000320"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "Dumb question, but where does the debug info output to?",
+        "ts": "1526673007.000243"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "or `drpcli prefs set debugRenderer debug`",
+        "ts": "1526673045.000497"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "stderr - if running in production, you can see it journalctl.  If not, then where you run the command.  It is also captured and viewable in the UX under Logs near the bottom of the nav tree.",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1526673077.000000"
+        },
+        "ts": "1526673059.000557"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(sorry - that's the CLI equiv. of turning on debug for renderer)",
+        "ts": "1526673148.000320"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "Hmm",
+        "ts": "1526673502.000134"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "enabling debug seems to have locked up the DRP endpoint",
+        "ts": "1526673526.000157"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "how much debug did you turn on?",
+        "ts": "1526673541.000262"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "debug",
+        "ts": "1526673550.000234"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "drpcli prefs list\nError: Error creating session: CLIENT_ERROR: Get <https:\/\/127.0.0.1:8092\/api\/v3\/users\/rocketskates\/token>: dial tcp 127.0.0.1:8092: getsockopt: connection refused",
+        "ts": "1526673557.000597"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "on just the one pref?",
+        "ts": "1526673569.000052"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "UX is unresponsive",
+        "ts": "1526673572.000211"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "<@U02DGQYK1> yes, just the one pref",
+        "ts": "1526673580.000657"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - stop the service.  We have a logging bug in 3.8.2 that is fixed in tip, but I thought it was with other log levels on other prefs.",
+        "ts": "1526673613.000684"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "Yessir",
+        "ts": "1526673651.000543"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Edit digitalrebar\/prefs\/debugRenderer.json file and set to error instead of debug.",
+        "ts": "1526673657.000325"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "sigh",
+        "ts": "1526673658.000530"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "sorry.",
+        "ts": "1526673662.000472"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "Lol",
+        "ts": "1526673668.000086"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "No worries!",
+        "ts": "1526673675.000631"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "tcpdump will be the way.",
+        "ts": "1526673733.000490"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "request for ipxe.efi, option ack, and data gram\/packet transfers of ipxe.efi chunks",
+        "ts": "1526674043.000336"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "Last packet is a final ack of source file: ipxe.efi",
+        "ts": "1526674062.000405"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "TFTP",
+        "ts": "1526674068.000530"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "re: wireshark",
+        "ts": "1526674077.000572"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yeah - that makes sense.",
+        "ts": "1526674079.000388"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It should then ask for IP.pxe or default.ipxe or MAC.pxe",
+        "ts": "1526674103.000584"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Since it doesn’t, it makes me think that something is funky in the VMWare EFI layer.  If possible, you could try ipxe.pxe in legacy mode to see if the system works.",
+        "ts": "1526674235.000297"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The other thing is to make sure the VM is really in UEFI mode when it boots.  I assume it is because you built the VM that way.",
+        "ts": "1526674293.000301"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "It does appear to connect to the DRP endpoint, request TFPT ipxe.efi, and the transfer ipxe.efi successfully. The final packet is an acknowledgment of the transfer of ipxe.efi to the client",
+        "ts": "1526674804.000110"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "after that, I can see the ipxe boot process restart on the client",
+        "ts": "1526674823.000087"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "ipxe initializing, configuring interfaces, setting IP (via DHCP), setting gateway and nexthop (DRP endpoint), and grabbing the ipxe.efi file",
+        "ts": "1526674860.000619"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "repeat ad nauseam",
+        "ts": "1526674882.000584"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "Endless ipxe boot loop",
+        "ts": "1526674890.000185"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "I tried default.efi but there was some error (can't remember off hand) and looking through github issues I saw that you guys recommended moving to ipxe.efi since it was fully supported in the latest releases",
+        "ts": "1526674960.000189"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "Setting to legacy bios boot throws a \"NBP is too big to fit in free base memory\"",
+        "ts": "1526675026.000305"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "with ipxe.efi",
+        "ts": "1526675057.000468"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yeah - you ahve to boot ipxe.pxe",
+        "ts": "1526675068.000109"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "or directly boot default.ipxe if your legacy mode supports ipxe by default.",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1526675090.000000"
+        },
+        "ts": "1526675087.000048"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You ahve to change the DHCP handed out boot file.",
+        "ts": "1526675099.000626"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "Yea, I tried option 67 with both default.ipxe and ipxe.efi",
+        "ts": "1526675142.000391"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "`ipxe.pxe`",
+        "ts": "1526675164.000119"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": ":slightly_smiling_face: not `ipxe.efi`",
+        "ts": "1526675176.000492"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "rofl",
+        "ts": "1526675290.000423"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "well then",
+        "ts": "1526675293.000153"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - so that means that your legacy bios simulation doesn’t support ipxe by default.  Do what <@U6QFVRJNB> says.",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1526675307.000000"
+        },
+        "ts": "1526675300.000372"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": ":slightly_smiling_face: legacy mode = `ipxe.pxe`, efi mode = `ipxe.efi`",
+        "ts": "1526675317.000327"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "Switched over the VM to legacy bios boot and updated dhcp option 67 to ipxe.pxe",
+        "ts": "1526675753.000397"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "Still seems to be the same issue; client boots, initializes network interfaces, gets DHCP IP and sets gateway\/next hop to DRP endpoint, requests ipxe.pxe from DRP, receives ipxe.pxe and unpacks it",
+        "ts": "1526675822.000536"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "Stuck in that loop",
+        "ts": "1526675829.000471"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@UAS2DTMMM> uploaded a file: <https:\/\/rackn.slack.com\/files\/UAS2DTMMM\/FASJACS4S\/2018-05-18_16-34-51.png|2018-05-18_16-34-51.png>",
+        "file": {
+            "id": "FASJACS4S",
+            "created": 1526675855,
+            "timestamp": 1526675855,
+            "name": "2018-05-18_16-34-51.png",
+            "title": "2018-05-18_16-34-51.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "UAS2DTMMM",
+            "editable": false,
+            "size": 136851,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FASJACS4S\/2018-05-18_16-34-51.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FASJACS4S\/download\/2018-05-18_16-34-51.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FASJACS4S-ebbcbc5112\/2018-05-18_16-34-51_64.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FASJACS4S-ebbcbc5112\/2018-05-18_16-34-51_80.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FASJACS4S-ebbcbc5112\/2018-05-18_16-34-51_360.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_360_w": 360,
+            "thumb_360_h": 200,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FASJACS4S-ebbcbc5112\/2018-05-18_16-34-51_480.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_480_w": 480,
+            "thumb_480_h": 267,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FASJACS4S-ebbcbc5112\/2018-05-18_16-34-51_160.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "image_exif_rotation": 1,
+            "original_w": 720,
+            "original_h": 400,
+            "permalink": "https:\/\/rackn.slack.com\/files\/UAS2DTMMM\/FASJACS4S\/2018-05-18_16-34-51.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FASJACS4S-5f67781665",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "UAS2DTMMM",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "dhancock077",
+        "bot_id": null,
+        "ts": "1526675857.000466"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "I can see a full transfer of the file via TFTP to the client\/VM and an ack that it was received",
+        "ts": "1526675903.000468"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@UAS2DTMMM> uploaded a file: <https:\/\/rackn.slack.com\/files\/UAS2DTMMM\/FASNDSQ69\/2018-05-18_16-39-09.gif|2018-05-18_16-39-09.gif>",
+        "file": {
+            "id": "FASNDSQ69",
+            "created": 1526676010,
+            "timestamp": 1526676010,
+            "name": "2018-05-18_16-39-09.gif",
+            "title": "2018-05-18_16-39-09.gif",
+            "mimetype": "image\/gif",
+            "filetype": "gif",
+            "pretty_type": "GIF",
+            "user": "UAS2DTMMM",
+            "editable": false,
+            "size": 2931826,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FASNDSQ69\/2018-05-18_16-39-09.gif?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FASNDSQ69\/download\/2018-05-18_16-39-09.gif?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FASNDSQ69-339d4475f8\/2018-05-18_16-39-09_64.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FASNDSQ69-339d4475f8\/2018-05-18_16-39-09_80.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FASNDSQ69-339d4475f8\/2018-05-18_16-39-09_360.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_360_w": 360,
+            "thumb_360_h": 200,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FASNDSQ69-339d4475f8\/2018-05-18_16-39-09_480.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_480_w": 480,
+            "thumb_480_h": 267,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FASNDSQ69-339d4475f8\/2018-05-18_16-39-09_160.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_360_gif": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FASNDSQ69-339d4475f8\/2018-05-18_16-39-09_360.gif?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_480_gif": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FASNDSQ69-339d4475f8\/2018-05-18_16-39-09_480.gif?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "image_exif_rotation": 1,
+            "original_w": 720,
+            "original_h": 400,
+            "deanimate_gif": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FASNDSQ69-339d4475f8\/2018-05-18_16-39-09_deanimate_gif.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "permalink": "https:\/\/rackn.slack.com\/files\/UAS2DTMMM\/FASNDSQ69\/2018-05-18_16-39-09.gif",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FASNDSQ69-903204fa8b",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "UAS2DTMMM",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "dhancock077",
+        "bot_id": null,
+        "ts": "1526676025.000584"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Did you try `default.ipxe` in legacy mode?",
+        "ts": "1526676071.000300"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "Can't seem to find default.ipxe in drp-data",
+        "ts": "1526676228.000113"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "The physical file",
+        "ts": "1526676233.000103"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "those files are generated dynamically when requested - they do not physically exist on disk",
+        "ts": "1526676324.000502"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "DRP is made up of a layered virtual filesystem - with one of those layers being a read\/write layer that 'falls through' to the disk for storage, the rest exist in memory",
+        "ts": "1526676358.000023"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "Gotcha, interesting",
+        "ts": "1526676384.000446"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "Was just noting that because ipxe.efi\/pxe exist in drp-data\/tftpboot\/",
+        "ts": "1526676419.000309"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@UAS2DTMMM> uploaded a file: <https:\/\/rackn.slack.com\/files\/UAS2DTMMM\/FASFLA011\/2018-05-18_16-51-24.png|2018-05-18_16-51-24.png>",
+        "file": {
+            "id": "FASFLA011",
+            "created": 1526676701,
+            "timestamp": 1526676701,
+            "name": "2018-05-18_16-51-24.png",
+            "title": "2018-05-18_16-51-24.png",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "UAS2DTMMM",
+            "editable": false,
+            "size": 16508,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FASFLA011\/2018-05-18_16-51-24.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FASFLA011\/download\/2018-05-18_16-51-24.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FASFLA011-f3b37135c5\/2018-05-18_16-51-24_64.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FASFLA011-f3b37135c5\/2018-05-18_16-51-24_80.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FASFLA011-f3b37135c5\/2018-05-18_16-51-24_360.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_360_w": 360,
+            "thumb_360_h": 33,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FASFLA011-f3b37135c5\/2018-05-18_16-51-24_480.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_480_w": 480,
+            "thumb_480_h": 44,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FASFLA011-f3b37135c5\/2018-05-18_16-51-24_160.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FASFLA011-f3b37135c5\/2018-05-18_16-51-24_720.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_720_w": 720,
+            "thumb_720_h": 66,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FASFLA011-f3b37135c5\/2018-05-18_16-51-24_800.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_800_w": 800,
+            "thumb_800_h": 73,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FASFLA011-f3b37135c5\/2018-05-18_16-51-24_960.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_960_w": 960,
+            "thumb_960_h": 88,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FASFLA011-f3b37135c5\/2018-05-18_16-51-24_1024.png?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 94,
+            "image_exif_rotation": 1,
+            "original_w": 1136,
+            "original_h": 104,
+            "permalink": "https:\/\/rackn.slack.com\/files\/UAS2DTMMM\/FASFLA011\/2018-05-18_16-51-24.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FASFLA011-722a52e08b",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "UAS2DTMMM",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "dhancock077",
+        "bot_id": null,
+        "ts": "1526676703.000299"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "TFTP error \"file not found\" for default.ipxe",
+        "ts": "1526676712.000467"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "`default.ipxe` is virtually provided by the `discovery` bootenv when it is specified by the `unknownBootenv` pref.",
+        "ts": "1526676717.000164"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "That was setting the VM to legacy bios boot and dhcp option 67 to `default.ipxe`",
+        "ts": "1526676791.000256"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - sooo - we need to make sure the prefs point correctly and didn’t get unset when the system locked up and you had to edit the debug level back.",
+        "ts": "1526676827.000294"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "`drpcli prefs list`",
+        "ts": "1526677029.000055"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "{\n  \"baseTokenSecret\": \"qKeTc2egP98U80E7YOG5uS8Tt61cNVD5\",\n  \"debugBootEnv\": \"debug\",\n  \"debugDhcp\": \"warn\",\n  \"debugFrontend\": \"info\",\n  \"debugPlugins\": \"warn\",\n  \"debugRenderer\": \"info\",\n  \"defaultBootEnv\": \"centos-7.4.1708-install\",\n  \"defaultStage\": \"discover\",\n  \"defaultWorkflow\": \"centos 7\",\n  \"knownTokenTimeout\": \"3600\",\n  \"logLevel\": \"warn\",\n  \"systemGrantorSecret\": \"hS47rMWEQvUch9Ei6Gaca-Hs4mmM51df\",\n  \"unknownBootEnv\": \"discovery\",\n  \"unknownTokenTimeout\": \"600\"\n}",
+        "ts": "1526678074.000458"
+    },
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@UAS2DTMMM> uploaded a file: <https:\/\/rackn.slack.com\/files\/UAS2DTMMM\/FASFZ5GBD\/-.txt|Untitled>",
+        "file": {
+            "id": "FASFZ5GBD",
+            "created": 1526678177,
+            "timestamp": 1526678177,
+            "name": "-.txt",
+            "title": "Untitled",
+            "mimetype": "text\/plain",
+            "filetype": "text",
+            "pretty_type": "Plain Text",
+            "user": "UAS2DTMMM",
+            "editable": true,
+            "size": 4786,
+            "mode": "snippet",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FASFZ5GBD\/-.txt?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FASFZ5GBD\/download\/-.txt?t=xoxe-2458848645-380882575011-380758634548-f60f5f775ebc6a71b39246bfc0435c36",
+            "permalink": "https:\/\/rackn.slack.com\/files\/UAS2DTMMM\/FASFZ5GBD\/-.txt",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FASFZ5GBD-2904b5217f",
+            "edit_link": "https:\/\/rackn.slack.com\/files\/UAS2DTMMM\/FASFZ5GBD\/-.txt\/edit",
+            "preview": "```May 18 15:56:37 aapxebld01 dr-provision[1515]: dr-provision2018\/05\/18 20:56:37.404198 [86:27]bootenv [debug]: \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/backend\/renderData.go:154\r\nMay 18 15:56:37 aapxebld01 dr-provision[1515]: [86:27]Content:\r\nMay 18 15:56:37 aapxebld01 dr-provision[1515]: #!ipxe\r\nMay 18 15:56:37 aapxebld01 dr-provision[1515]: chain http:\/\/10.211.204.42:8091\/${netX\/mac}.ipxe && exit || goto chainip\r\nMay 18 15:56:37 aapxebld01 dr-provision[1515]: :chainip\r",
+            "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>```May 18 15:56:37 aapxebld01 dr-provision[1515]: dr-provision2018\/05\/18 20:56:37.404198 [86:27]bootenv [debug]: \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/backend\/renderData.go:154<\/pre><\/div>\n<div><pre>May 18 15:56:37 aapxebld01 dr-provision[1515]: [86:27]Content:<\/pre><\/div>\n<div><pre>May 18 15:56:37 aapxebld01 dr-provision[1515]: #!ipxe<\/pre><\/div>\n<div><pre>May 18 15:56:37 aapxebld01 dr-provision[1515]: chain http:\/\/10.211.204.42:8091\/${netX\/mac}.ipxe &amp;&amp; exit || goto chainip<\/pre><\/div>\n<div><pre>May 18 15:56:37 aapxebld01 dr-provision[1515]: :chainip<\/pre><\/div>\n<div><pre><\/pre><\/div>\n<\/div>\n<\/div>\n",
+            "lines": 36,
+            "lines_more": 31,
+            "preview_is_truncated": true,
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "UAS2DTMMM",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "dhancock077",
+        "bot_id": null,
+        "ts": "1526678177.000392"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "That was with an ipxe.efi sequence. DRP is reporting that the client aborted the transfer",
+        "ts": "1526678482.000307"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "ipxe.pxe in legacy boot produces essentially the same \"client aborted transfer\" errors",
+        "ts": "1526679237.000133"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "default.ipxe still throws a \"file not found\" error in legacy bios boot",
+        "ts": "1526679732.000125"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Aborts in Tftp are how the client gets the file size.  You should be able to http get the file from prt 8091 ",
+        "client_msg_id": "28122E67-0A57-446D-91CA-6A8E21EEA86F",
+        "ts": "1526680078.000172"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "HTTP request to :8091\/ipxe.efi &amp;&amp; :8091\/ipxe.pxe both work (received the file from a separate client)",
+        "ts": "1526680236.000127"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "default.ipxe results:",
+        "ts": "1526680250.000016"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "```#!ipxe\nchain <http:\/\/10.211.204.42:8091\/${netX\/mac}.ipxe> &amp;&amp; exit || goto chainip\n:chainip\nchain <http:\/\/10.211.204.42:8091\/${netX\/ip}.ipxe> &amp;&amp; exit || goto sledgehammer\n:sledgehammer\nkernel <http:\/\/10.211.204.42:8091\/sledgehammer\/6122f34b46b5b74b668d6779e33f5fcd0f44a8cc\/vmlinuz0> initrd=stage1.img rootflags=loop root=live:\/sledgehammer.iso rootfstype=auto ro liveimg rd_NO_LUKS rd_NO_MD rd_NO_DM provisioner.web=<http:\/\/10.211.204.42:8091> --  BOOTIF=01-${netX\/mac:hexhyp}\ninitrd <http:\/\/10.211.204.42:8091\/sledgehammer\/6122f34b46b5b74b668d6779e33f5fcd0f44a8cc\/stage1.img>\nboot```",
+        "edited": {
+            "user": "UAS2DTMMM",
+            "ts": "1526680545.000000"
+        },
+        "ts": "1526680255.000142"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Hmm. Not sure. Do all the ips match?",
+        "client_msg_id": "E1F8752E-CBF9-49A0-91F0-C7C34AB78EAF",
+        "ts": "1526682532.000050"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "Yes sir",
+        "client_msg_id": "7b3895ea-622c-4480-bf53-3fbba6b6911d",
+        "ts": "1526683360.000078"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "10.211.204.42 is the DRP server",
+        "client_msg_id": "d2089077-7505-4c50-9c80-30f45eafebd2",
+        "ts": "1526683406.000011"
+    },
+    {
+        "type": "message",
+        "user": "UAS2DTMMM",
+        "text": "Appreciate all the help and input guys. Been scratching my head for a bit and reading a ton of docs before reaching out.",
+        "client_msg_id": "19e78d81-d553-4e74-9fcc-a8c4535d078a",
+        "ts": "1526684653.000045",
+        "reactions": [
+            {
+                "name": "simple_smile",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    }
+]
