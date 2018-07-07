@@ -1,0 +1,321 @@
+[
+    {
+        "type": "message",
+        "subtype": "file_share",
+        "text": "<@UA98B96BA> uploaded a file: <https:\/\/rackn.slack.com\/files\/UA98B96BA\/FBA6KS15G\/screen_shot_2018-06-19_at_9.56.15_am.png|@shane Any idea what is wrong here:>",
+        "file": {
+            "id": "FBA6KS15G",
+            "created": 1529420235,
+            "timestamp": 1529420235,
+            "name": "Screen Shot 2018-06-19 at 9.56.15 AM.png",
+            "title": "@shane Any idea what is wrong here:",
+            "mimetype": "image\/png",
+            "filetype": "png",
+            "pretty_type": "PNG",
+            "user": "UA98B96BA",
+            "editable": false,
+            "size": 186511,
+            "mode": "hosted",
+            "is_external": false,
+            "external_type": "",
+            "is_public": true,
+            "public_url_shared": false,
+            "display_as_bot": false,
+            "username": "",
+            "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FBA6KS15G\/screen_shot_2018-06-19_at_9.56.15_am.png?t=xoxe-3-3-3-3",
+            "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FBA6KS15G\/download\/screen_shot_2018-06-19_at_9.56.15_am.png?t=xoxe-3-3-3-3",
+            "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FBA6KS15G-4c514119b2\/screen_shot_2018-06-19_at_9.56.15_am_64.png?t=xoxe-3-3-3-3",
+            "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FBA6KS15G-4c514119b2\/screen_shot_2018-06-19_at_9.56.15_am_80.png?t=xoxe-3-3-3-3",
+            "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FBA6KS15G-4c514119b2\/screen_shot_2018-06-19_at_9.56.15_am_360.png?t=xoxe-3-3-3-3",
+            "thumb_360_w": 360,
+            "thumb_360_h": 237,
+            "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FBA6KS15G-4c514119b2\/screen_shot_2018-06-19_at_9.56.15_am_480.png?t=xoxe-3-3-3-3",
+            "thumb_480_w": 480,
+            "thumb_480_h": 316,
+            "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FBA6KS15G-4c514119b2\/screen_shot_2018-06-19_at_9.56.15_am_160.png?t=xoxe-3-3-3-3",
+            "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FBA6KS15G-4c514119b2\/screen_shot_2018-06-19_at_9.56.15_am_720.png?t=xoxe-3-3-3-3",
+            "thumb_720_w": 720,
+            "thumb_720_h": 474,
+            "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FBA6KS15G-4c514119b2\/screen_shot_2018-06-19_at_9.56.15_am_800.png?t=xoxe-3-3-3-3",
+            "thumb_800_w": 800,
+            "thumb_800_h": 527,
+            "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FBA6KS15G-4c514119b2\/screen_shot_2018-06-19_at_9.56.15_am_960.png?t=xoxe-3-3-3-3",
+            "thumb_960_w": 960,
+            "thumb_960_h": 632,
+            "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FBA6KS15G-4c514119b2\/screen_shot_2018-06-19_at_9.56.15_am_1024.png?t=xoxe-3-3-3-3",
+            "thumb_1024_w": 1024,
+            "thumb_1024_h": 674,
+            "image_exif_rotation": 1,
+            "original_w": 2272,
+            "original_h": 1496,
+            "permalink": "https:\/\/rackn.slack.com\/files\/UA98B96BA\/FBA6KS15G\/screen_shot_2018-06-19_at_9.56.15_am.png",
+            "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FBA6KS15G-6def969246",
+            "channels": [],
+            "groups": [],
+            "ims": [],
+            "comments_count": 0
+        },
+        "user": "UA98B96BA",
+        "upload": true,
+        "display_as_bot": false,
+        "username": "robert.graham",
+        "bot_id": null,
+        "ts": "1529420239.000526"
+    },
+    {
+        "type": "message",
+        "user": "UA98B96BA",
+        "text": "I just transferred the krib content package to my DRP instance",
+        "ts": "1529420296.000626"
+    },
+    {
+        "type": "message",
+        "user": "UA98B96BA",
+        "text": "both the krib-config and krib-install throw the invalid template name error",
+        "ts": "1529420350.000856"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "What version of KRIB did you pull in?",
+        "client_msg_id": "ce2c7963-0bcf-42e6-af96-408ac83c4de2",
+        "ts": "1529420593.000894"
+    },
+    {
+        "type": "message",
+        "user": "UA98B96BA",
+        "text": "v1.8.0",
+        "ts": "1529420641.000992"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "please update to the `tip` version in the contents menu",
+        "ts": "1529420807.000531"
+    },
+    {
+        "type": "message",
+        "user": "UA98B96BA",
+        "text": "ok, is there a way to just update the contents menu or do I need to update drp to tip?",
+        "ts": "1529421328.000502"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "In the Contents menu item -you should see \"KRIB\" in the center panel - there is a (very small) drop down arrow to the right of the \"KRIB\" name, if you click it, it should give you a pick list of versions",
+        "ts": "1529421427.000811"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "select \"tip\" then \"upgrade\"",
+        "ts": "1529421437.000027"
+    },
+    {
+        "type": "message",
+        "user": "UA98B96BA",
+        "text": "yep, I see it, thanks",
+        "ts": "1529421457.000536"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UA98B96BA> ... any joy with the upgraded KRIB ?",
+        "ts": "1529430046.000411"
+    },
+    {
+        "user": "UBAAELJTC",
+        "text": "<@UBAAELJTC> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1529430473.000812"
+    },
+    {
+        "type": "message",
+        "user": "UA98B96BA",
+        "text": "Yep, the updated content did the trick",
+        "ts": "1529430504.000229"
+    },
+    {
+        "type": "message",
+        "user": "UA98B96BA",
+        "text": "ty",
+        "ts": "1529430506.000414"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "xclnt",
+        "ts": "1529430517.000711"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "There are already 3 of us on the meetup zoom. :slightly_smiling_face:",
+        "ts": "1529431102.000353"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<!here> - community meetup zoom link:\n<https:\/\/zoom.us\/j\/3403934274>",
+        "ts": "1529431133.000436"
+    },
+    {
+        "type": "message",
+        "user": "UB6EM48HM",
+        "text": "Is this just a general meetup, providing updates?",
+        "ts": "1529431344.000565"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "updates, demos, community discussion ...",
+        "ts": "1529431400.000651"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "We hold them every 2 weeks -- they are updates, feedback, showing off the latest shiny thnigs, etc.",
+        "edited": {
+            "user": "U02DJQSG8",
+            "ts": "1529431415.000000"
+        },
+        "ts": "1529431407.000573"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<https:\/\/www.meetup.com\/digitalrebar\/events\/lchdhpyxjbzb\/>",
+        "attachments": [
+            {
+                "service_name": "Meetup",
+                "title": "v020: Net Wrangler Demo, Kubernetes KRIB HA, v3.9.0 release, community",
+                "title_link": "https:\/\/www.meetup.com\/digitalrebar\/events\/lchdhpyxjbzb\/",
+                "text": "Tue, Jun 19, 2018, 11:00 AM: Start Time is 11:00 am PST (12:00 pm MST, 1:00 pm CST, 2:00 pm EST ... )Welcome to the Digital Rebar online <http:\/\/meetup.In|meetup.In> our Twentieth meetup, we have some very exciting demo",
+                "fallback": "Meetup: v020: Net Wrangler Demo, Kubernetes KRIB HA, v3.9.0 release, community",
+                "image_url": "https:\/\/secure.meetupstatic.com\/photos\/event\/d\/1\/b\/1\/600_467453681.jpeg",
+                "fields": [
+                    {
+                        "title": "Where",
+                        "value": "Online <https:\/\/zoom.us\/j\/3403934274> Mountain View, CA",
+                        "short": true
+                    },
+                    {
+                        "title": "When",
+                        "value": "Tue, Jun 19, 2018, 11:00 AM",
+                        "short": true
+                    }
+                ],
+                "from_url": "https:\/\/www.meetup.com\/digitalrebar\/events\/lchdhpyxjbzb\/",
+                "image_width": 472,
+                "image_height": 250,
+                "image_bytes": 69998,
+                "service_icon": "https:\/\/www.meetup.com\/mu_static\/en-US\/4f86abc993eecccc33a115d00b405ced.png",
+                "id": 1,
+                "original_url": "https:\/\/www.meetup.com\/digitalrebar\/events\/lchdhpyxjbzb\/"
+            }
+        ],
+        "ts": "1529431411.000178"
+    },
+    {
+        "type": "message",
+        "user": "U8RFVLLG1",
+        "text": "Damn... I missed it... Waiting for the replay... :disappointed:",
+        "ts": "1529436593.000589"
+    },
+    {
+        "type": "message",
+        "user": "U32PZNCP5",
+        "text": "working on it right now",
+        "ts": "1529438996.000213"
+    },
+    {
+        "type": "message",
+        "user": "U32PZNCP5",
+        "text": "It will be at <https:\/\/youtu.be\/a_r8w2et3gU> in about 5 minutes or so",
+        "ts": "1529439112.000611",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U8RFVLLG1"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "UA98B96BA",
+        "text": "Does the `latest` docker container tag contain the v3.9 KRIB HA features?",
+        "ts": "1529439183.000431"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Latest should be tracking what will become v3.9.0 - if you pull it, run `drpcli info get` - it should be a version tag like v3.8.2-tip-123",
+        "client_msg_id": "8d771196-e8e4-4309-824e-4473effbc6a3",
+        "ts": "1529439364.000642"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "123 will be something else",
+        "client_msg_id": "02ea442c-1c4f-4698-8560-c1c45c1db579",
+        "ts": "1529439385.000624"
+    },
+    {
+        "type": "message",
+        "user": "UA98B96BA",
+        "text": "`v3.8.2-tip-189-2f5945fb1c39b08c76116da9971883e8a1da6e46`",
+        "ts": "1529440022.000568"
+    },
+    {
+        "type": "message",
+        "user": "UA98B96BA",
+        "text": "perfect, ty",
+        "ts": "1529440038.000461"
+    },
+    {
+        "type": "message",
+        "user": "UA98B96BA",
+        "text": "Is the KRIB-HA plugin available yet? or is that a later release?",
+        "ts": "1529440244.000055"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@UA98B96BA> we're still working on some aspects - I'll coordinate w\/ <@U02DGQYK1> and see where we stand",
+        "ts": "1529440910.000585"
+    },
+    {
+        "type": "message",
+        "user": "UA98B96BA",
+        "text": "ok, no worries, ty",
+        "ts": "1529440936.000270"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I'd guess another week for some of  the rough edges to be sorted out, and then it'll be available in \"MVP\" form",
+        "ts": "1529440984.000169"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "but, a lot going on right now, so ... that may slip",
+        "ts": "1529441006.000541"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "we're in the process of moving the KRIB work into the DigitalRebar github repo (likely under the community-content path) and changing the license to APLv2.",
+        "ts": "1529453529.000186"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "I'll be starting that shortly.  I'm evaluating w <@U02DGQYK1> how\/when to port over the HA parts since they require the Cert Generator plugin (which is not open at the moment)",
+        "ts": "1529453601.000234"
+    }
+]

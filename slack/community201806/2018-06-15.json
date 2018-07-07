@@ -1,0 +1,161 @@
+[
+    {
+        "user": "UB7M1G7SL",
+        "text": "<@UB7M1G7SL> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1529075081.000021"
+    },
+    {
+        "type": "message",
+        "user": "UB6EM48HM",
+        "text": "<!here> - My coworker just called RackN \/ left a voicemail - he's got a consulting gig with a short window and wants to see if RackN meets his requirements. Any chance someone can reach out to him today?",
+        "ts": "1529076237.000380"
+    },
+    {
+        "type": "message",
+        "user": "UB6EM48HM",
+        "text": "His name is Chris Harms.",
+        "edited": {
+            "user": "UB6EM48HM",
+            "ts": "1529076266.000000"
+        },
+        "ts": "1529076256.000692"
+    },
+    {
+        "type": "message",
+        "user": "UB6EM48HM",
+        "text": "Got a Slack from him this morning:\n\"Are you aware of any products that would be good for bare metal hardware automation? Specifically looking at firmware, bios, and IOS upgrade on Dell, Netapp and Cisco hardware.\"",
+        "ts": "1529076360.000031"
+    },
+    {
+        "text": "Time to feed the :bear:!",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1529076360.000139"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UB7M1G7SL> $welcome :slightly_smiling_face:",
+        "ts": "1529076714.000803"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1529076715.000119"
+    },
+    {
+        "type": "message",
+        "user": "UB6EM48HM",
+        "text": "Also, FWIW, <@UB7M1G7SL> - is not the same person. Just bad timing :slightly_smiling_face:",
+        "ts": "1529076743.000005"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "no problem",
+        "ts": "1529076761.000270"
+    },
+    {
+        "user": "UB8AF7KNX",
+        "text": "<@UB8AF7KNX> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1529078270.000204"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@UB8AF7KNX> $welcome - Lots of docs starting in the link below.",
+        "ts": "1529078462.000113"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1529078462.000456"
+    },
+    {
+        "type": "message",
+        "user": "UB7M1G7SL",
+        "text": "thanks <@U6QFVRJNB>",
+        "ts": "1529078545.000659"
+    },
+    {
+        "type": "message",
+        "user": "U32PZNCP5",
+        "text": "<@UB6EM48HM> it’s just Chris day at Digital Rebar",
+        "ts": "1529078610.000673",
+        "reactions": [
+            {
+                "name": "joy",
+                "users": [
+                    "UB6EM48HM",
+                    "U02DHRR2L"
+                ],
+                "count": 2
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "UB8AF7KNX",
+        "text": "<!here> thanks all for the welcome I need to speak to someone about getting pricing for the product. Who can I talk too?",
+        "ts": "1529079471.000197"
+    },
+    {
+        "type": "message",
+        "user": "U32PZNCP5",
+        "text": "<@UB8AF7KNX> Saw your email and responded. Thanks",
+        "ts": "1529079552.000313"
+    },
+    {
+        "type": "message",
+        "user": "UB6EM48HM",
+        "text": "<@U02DHRR2L> - thanks for connecting with CHarms!",
+        "ts": "1529086289.000731",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U6QFVRJNB",
+                    "U32PZNCP5"
+                ],
+                "count": 2
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@UB6EM48HM> happy to help out.  sounds like an interesting use case.",
+        "ts": "1529086314.000346",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "UB6EM48HM"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "text": "we can setup off community slack rooms if you want private discussion",
+        "type": "message",
+        "subtype": "me_message",
+        "user": "U02DHRR2L",
+        "ts": "1529086753.000252"
+    },
+    {
+        "type": "message",
+        "user": "UB6EM48HM",
+        "text": "Yeah, maybe we could setup an OST room with Chris and I + RackN peeps? That way when this RFQ gets a response - we can hit the ground running :slightly_smiling_face:",
+        "ts": "1529087375.000409"
+    }
+]

@@ -1,0 +1,829 @@
+[
+    {
+        "user": "UBJKQR0CQ",
+        "text": "<@UBJKQR0CQ> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1530788157.000071"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "I used the ipmi-configure to discover machines through IPMI, and used params to set username and password. However, the workflow always stuck at ipmi-configure stage and never move forward, I am wondering the workflow stages have to be different, my workflow has:\n1-ipmi-configure (sledgehammer as boot env)\n2-sledgehammer-wait\n3-terraform-ready\n\nalso, I was adding trying to add the machine manually though the portal\n\nI double checked and ssh to the IPMI address, and its reachable and ssh connects just fine.",
+        "client_msg_id": "cd9e5f10-debf-4580-87a1-6ad17e22d912",
+        "ts": "1530805121.000255"
+    },
+    {
+        "type": "message",
+        "user": "U32PZNCP5",
+        "text": "<@UBJKQR0CQ> $Welcome",
+        "client_msg_id": "e8c712c5-340d-47fe-b55a-32593726393b",
+        "ts": "1530805602.000326"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1530805602.000396"
+    },
+    {
+        "type": "message",
+        "user": "UBJKQR0CQ",
+        "text": "Hello, thanks",
+        "client_msg_id": "5ff137ef-2d42-4b14-960c-ee7ceae2401a",
+        "ts": "1530805642.000129"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UBBSHF675> - have you checked the Job Log to see what it says?  It's probably an error being kicked back that stops the job from successfully running.",
+        "client_msg_id": "322feb0d-b943-4ae3-92d4-cd5b5dfaa873",
+        "ts": "1530806027.000418"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "No error is logged. I cleared the Job-log directory, and re-launched DRP and did the same steps, it always stuck at ipmi-configure stage, and no error is logged. it seems like it does not event attempt to contact the other machine at all.",
+        "client_msg_id": "de37e8a5-df5c-48f9-b6a8-58352107f054",
+        "ts": "1530809689.000365"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "I added the username and password params to ipmi-configure stage, and I also tried to add ipmi\/address (which is the same IPMI address), but is does not change anything.",
+        "client_msg_id": "c07626d4-903e-4f68-8fab-678177422930",
+        "ts": "1530810185.000342"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "<@U6QFVRJNB> is adding a machine manually, starts the workflow automatically, or do I need to do extra step to start the workflow ?",
+        "client_msg_id": "77e704a3-31da-4469-b642-869dd3399b7c",
+        "ts": "1530810670.000045"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@UBBSHF675> really it's the runner that does the workflow",
+        "client_msg_id": "e366d72c-bd04-49ae-8f42-307aa057ef0b",
+        "ts": "1530812416.000229"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "so, it won't start until you have a runner working on the machine",
+        "client_msg_id": "6beda7ba-bfae-4fa2-91bb-d764bc35fb7f",
+        "ts": "1530812434.000089"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "you can use a script on the machine to have the runner (drpcli) register the machine and then start the workflow",
+        "client_msg_id": "a3634520-2ac0-45f4-b993-3e53472d80ca",
+        "ts": "1530812466.000408"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "if you are having workflow stall, make sure that you have a runner going - there's a stage for installing the runner in a new O\/S or O\/S image",
+        "client_msg_id": "df5387fb-5cc6-404d-9ae3-c80605a1725a",
+        "ts": "1530812515.000185"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "you mean this command drpcli machines update &lt;UUID&gt; '{ \"Workflow\": \"ubuntu18\" }'",
+        "client_msg_id": "999ec000-0c5c-4a68-88e8-f2fd991325c6",
+        "ts": "1530812925.000273"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "I also tried drpcli machine workflow UUID myworkflow, also nothing happens",
+        "client_msg_id": "4ffb036c-4748-497f-b3c3-acc1eac5cdf0",
+        "ts": "1530813343.000259"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "<@U02DHRR2L> I am not sure if that's the runner you are talking about",
+        "client_msg_id": "b314935f-71ba-41b4-80a7-881c2ba3f0ec",
+        "ts": "1530813396.000018"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "drpcli is the runner",
+        "client_msg_id": "414b1f2d-355a-454e-8d35-392c0e177029",
+        "ts": "1530813665.000087"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/content\/templates\/runner.tmpl>",
+        "client_msg_id": "46f0de40-6569-48b0-87da-e0d70a1cc3a8",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision-content",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/content\/templates\/runner.tmpl",
+                "text": "provision-content - DigitalRebar Provision Content",
+                "fallback": "GitHub: digitalrebar\/provision-content",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/content\/templates\/runner.tmpl",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/cfr.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/content\/templates\/runner.tmpl"
+            }
+        ],
+        "ts": "1530813703.000133"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "How come sometimes I'm not allowed to change a machine's stage through the API?  I try, and get code 422, \"Changing machine stage not allowed\"",
+        "client_msg_id": "075fd6c8-9fbc-414a-8410-8869fda35ec6",
+        "ts": "1530818921.000160"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Oh, I guess \"Changing machine bootenv not allowed\" is part of it too.",
+        "client_msg_id": "85cc8cf5-12b8-4772-9c7e-038805e84301",
+        "ts": "1530819178.000011"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Hrm.",
+        "client_msg_id": "87cf65a5-6686-4427-9c12-ae614da0bfc0",
+        "ts": "1530819178.000315"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "That happens whenever a machine is assigned to a Workflow that is processing.",
+        "client_msg_id": "c49b4124-92e1-432c-a6c4-9d2dd21792bd",
+        "ts": "1530819325.000127"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Ah ok.",
+        "client_msg_id": "7c508f5c-3af5-4114-8906-805d121e4d70",
+        "ts": "1530819372.000370"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "How do I clear the workflow through the API?  Can I just delete it?",
+        "client_msg_id": "097a29b9-0f05-420e-ba97-5fc24e22bd35",
+        "ts": "1530819388.000267"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U9BU09D51> you can set it to empty string, yes.",
+        "client_msg_id": "cd14d31d-36a5-43fb-a925-4789044d135b",
+        "ts": "1530819635.000119"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "you may also want to clear the Stage when you do that",
+        "client_msg_id": "4dffaac2-f611-4991-8531-0e3b02c71f21",
+        "ts": "1530819663.000173"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Ok.",
+        "client_msg_id": "221bfcb2-2964-4875-a11a-c9b185e29efe",
+        "ts": "1530819672.000030"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Thanks",
+        "client_msg_id": "6e2932da-a3f7-4d4e-9d6a-df94dccb13ac",
+        "ts": "1530819672.000367"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "<@U02DHRR2L> so I tried drpcli machines processjobs ,  and it does start processing, so now I get an error \n\"Could not open device at \/dev\/ipmi0 or \/dev\/ipmi\/0 or \/dev\/ipmidev\/0: No such file or directory\nattempt 0 failed -  trying again...\"\nso I did \"modprobe ipmi_devintf\" to insert the kernel module for ipmi but still getting the same error, do I need to install some other ipmi software on my machine? (other than ipmitool)?",
+        "client_msg_id": "cee375a6-371e-4a73-8359-3c7c415a2f91",
+        "ts": "1530819956.000229"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "one of the solutions I came across is inserting the kernel module \"ipmi_si\", but this module would only work on physical machines, does not work on virtual mahcines, do you think this is the problem?",
+        "client_msg_id": "6dc1652a-0a8f-4b8a-b2ee-33fd9bcf8b17",
+        "ts": "1530820184.000382"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "you are using IPMI tool on virtual?",
+        "client_msg_id": "330fee90-c6ab-43c5-97ed-9767c393c2b8",
+        "ts": "1530820281.000295"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yes - don't have a BMC (Baseboard Management Controller) in a Virtual Machine - you can't modify the BMC ... IPMI is just a protocol to talk to a BMC",
+        "client_msg_id": "dc47b537-92c4-4ce4-9a18-6e94d18b3d53",
+        "ts": "1530820282.000240"
+    },
+    {
+        "text": "jinx w Shane",
+        "type": "message",
+        "subtype": "me_message",
+        "user": "U02DHRR2L",
+        "ts": "1530820296.000370"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@UBBSHF675> we have the virtualbox-ipmi for purposes like that",
+        "client_msg_id": "0a3afedb-07b9-493c-9659-7d0be8dbe88b",
+        "ts": "1530820338.000054"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "I am running DRP on virtual machine, but the machine I am trying to access is physical",
+        "client_msg_id": "942fbec6-168f-4b72-a000-59c363a2df1c",
+        "ts": "1530820349.000284"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "which uses the platform APIs to simulate IPMI for building workflow",
+        "client_msg_id": "8426a266-010d-40e7-8468-af101d0187ee",
+        "ts": "1530820357.000090"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "ah, ok",
+        "client_msg_id": "9b505d15-9eaf-4865-adcb-5788c47d6c52",
+        "ts": "1530820363.000266"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "so what <@U6QFVRJNB> said, means I need to run DRP on a physical machine ?",
+        "client_msg_id": "ef04b87e-72be-43ac-aa2b-6d33ee080155",
+        "ts": "1530820408.000031"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "no, the endpoint can run on VMs just fine",
+        "client_msg_id": "9b5eb0b3-4ba9-4cf5-907f-9b56d51da986",
+        "ts": "1530820425.000240"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "so why am I getting this error?",
+        "client_msg_id": "a7296429-4bb2-488c-9ed9-297cec6330f3",
+        "ts": "1530820475.000096"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "Could not open device at \/dev\/ipmi0 or \/dev\/ipmi\/0 or \/dev\/ipmidev\/0: No such file or directory\nattempt 0 failed",
+        "client_msg_id": "7dc11fe7-2dc7-4e53-b4a4-739b8aa7a769",
+        "ts": "1530820490.000370"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "on the endpoint ?",
+        "client_msg_id": "266acc52-0dbd-4c65-a97f-cad3deffb139",
+        "ts": "1530820515.000225"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "I think it would help if we had more information about your system - both the DRP VM and what you are trying to control via IPMI",
+        "client_msg_id": "43b9bc10-47b8-408c-b77a-9061b63e65e2",
+        "ts": "1530820578.000008"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "What is the physical gear you are trying to manage?",
+        "client_msg_id": "3967aca9-3b50-48d1-9cc6-fdcb0b9ce478",
+        "ts": "1530820751.000135"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "DRP VM:\nVirtualbox vm, running Ubuntu 18.04LTS\nIPMI Machine:\nDell PowerEdge C6320",
+        "client_msg_id": "bf260e3a-cd85-437e-b80a-bfda606fd027",
+        "ts": "1530820756.000211"
+    },
+    {
+        "text": "Time to feed the :bear:!",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1530820756.000293"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ok",
+        "client_msg_id": "976964b9-5d5d-41ec-b0b4-23ae08d2883a",
+        "ts": "1530820799.000212"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "can you log into the idrac on that box?",
+        "client_msg_id": "44d991e2-48e1-4e02-9dc2-98f4e3cf10f8",
+        "ts": "1530820808.000181"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "yes",
+        "client_msg_id": "6d257579-fc9e-4dd4-a887-ad7ca789d0ba",
+        "ts": "1530820836.000162"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ok.",
+        "client_msg_id": "17caca8e-cfd7-44c3-8acf-62c46d6996f3",
+        "ts": "1530820854.000259"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Where are you running `drpcli machines processjobs`",
+        "client_msg_id": "b124a685-c47d-483c-bc61-623d4f90b001",
+        "ts": "1530820873.000219"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "?",
+        "client_msg_id": "f344d4d2-6e35-4db2-80b3-2e689dc96e14",
+        "ts": "1530820875.000174"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "on the endpoint",
+        "client_msg_id": "8d542bb8-0799-4666-a934-1d21b1fda479",
+        "ts": "1530820896.000386"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Is that the machine running dr-provision?",
+        "client_msg_id": "2514704e-75eb-4e90-9fff-8a8f26468e14",
+        "ts": "1530820911.000355"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "yes",
+        "client_msg_id": "9086f031-25ab-43bf-bb01-9f61c98982de",
+        "ts": "1530820919.000004"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ok",
+        "client_msg_id": "48d0f8c4-4904-43fb-b438-df163d787eb3",
+        "ts": "1530820921.000032"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "that command must be run on the target machine.",
+        "client_msg_id": "7a4c60ba-ebb4-45d3-a057-7fffb6f0f6a4",
+        "ts": "1530820930.000161"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "and if you boot the 6320 into Sledgehammer the agent (which is what you are running with that command) will run automatically.",
+        "client_msg_id": "50644e84-4081-47b6-a234-78b4e1df341e",
+        "ts": "1530820994.000160"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "REally, the only time you would run drpcli machines processjobs manually is of you were troubleshooting why the agent was failing.",
+        "client_msg_id": "b4657091-80fa-4888-8b61-abaa96e59403",
+        "ts": "1530821055.000097"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "otherwise, we arrange for it to run as a daemon everywhere it is needed.",
+        "client_msg_id": "d3c9509e-9b53-4571-a077-12ee88c1f046",
+        "ts": "1530821096.000088"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "Does that mean the machine should be in a sledgehammer-wait state, before I can run configure-ipmi ?",
+        "client_msg_id": "91a8f0b5-dd74-4696-ab3e-57f4dd1fb117",
+        "ts": "1530821173.000191"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Well, the machine needs to be booted into Sledgehammer.",
+        "client_msg_id": "0437a7d3-f456-4ac4-a670-8a7c56f3359b",
+        "ts": "1530821218.000030"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I would just build a workflow that goes from discover to ipmi-configure, set the varoius ipmi parameters to configure it the way you want, and go from there.",
+        "client_msg_id": "e4fcd03e-ca5b-4e79-90a6-848c9b300199",
+        "ts": "1530821281.000317"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "I see, I will try to do this.\nthe confusion was because I thought it works like this:\n-configure-ipmi would ssh to target machine, and change boot order to PXE.\n-then install Sledgehammer, and go from there.",
+        "client_msg_id": "232c19e4-54c4-4630-bf8e-78a6202db503",
+        "ts": "1530821413.000200"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Nope.  we do not rely on SSH at all.",
+        "client_msg_id": "9fbc5406-d2f3-4415-8575-565f0d552b53",
+        "ts": "1530821469.000310"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "You PXE boot the box into Sledgehammer, our agent starts, and runs through whatever workflow is assigned to the machine.",
+        "client_msg_id": "29b59931-1114-4fdd-b795-5d9bbb0e1965",
+        "ts": "1530821505.000208"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "v2 did use SSH and we choose to move away from it for a myriad of reasons",
+        "client_msg_id": "52084dcd-ae77-45f7-a86f-5a500d389475",
+        "ts": "1530821522.000390"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "Ok, thank you for the clarification.",
+        "client_msg_id": "c6eb3db2-a9d6-4466-a856-3d061da5bfb5",
+        "ts": "1530821583.000336"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "\"Can not change stages with pending tasks unless forced\"",
+        "client_msg_id": "59c77f18-87f0-4c01-a231-9f659fd6e49a",
+        "ts": "1530826431.000160"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "How do I force something through the API?",
+        "client_msg_id": "97520163-deeb-4045-9fc0-9ef701dcfbbb",
+        "ts": "1530826438.000010"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Oh there's a force parameter.",
+        "client_msg_id": "cf16a308-9e21-4850-87eb-ee9f45cc58aa",
+        "ts": "1530826713.000171"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "JSON `\"force\": true`",
+        "client_msg_id": "387e1b8a-0b2e-4bed-b193-9e3d61e59e1d",
+        "ts": "1530826733.000223"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "`{ \"op\": \"replace\", \"path\": \"\/Stage\", \"value\": \"STAGE\", \"force\": true }` doesn't seem to work",
+        "client_msg_id": "260d2238-f154-4465-89b6-4e461dced4f3",
+        "ts": "1530827621.000161"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Ah, nevermind, figured it out.  :smile:",
+        "client_msg_id": "c1c11a5b-0509-449f-8e33-514f3c7bccdf",
+        "ts": "1530828394.000041"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "as a general pattern - you can try operation via the Web Portal, and turn on the developer JS tools - you'll be able to see all of the exact API calls we issue - for example the \"workflow clear item\", \"force\" enabled, etc...",
+        "client_msg_id": "d0e8f58c-188a-44cc-bac6-a70917ce7412",
+        "ts": "1530829114.000193"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Oh cool, thanks.",
+        "client_msg_id": "0a0a6a37-cca9-4d50-9fff-0e1d11d7eb4a",
+        "ts": "1530829318.000219"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "also, Properties on DRP models are generally capitalized.",
+        "client_msg_id": "160312e7-7f24-4d2f-9bb5-590ee197f81c",
+        "ts": "1530831165.000108"
+    },
+    {
+        "type": "message",
+        "user": "UBJ22A0N5",
+        "text": "How do I add customer initrd.gz to a cloned BootEnvironment?  It looks like I may be able to do it with modifying Env.JoinInitrds and Env.Kernel, but I’m just not able to connect the dots.",
+        "client_msg_id": "b5c256de-04d3-4f45-ae9b-a0f65afb9abd",
+        "ts": "1530832576.000190"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UBJ22A0N5> right now you have to clone the BootEnv and then edit it to modify the `Initrd` and\/or `Kernel` that is specified from the default - the paths are relative to the exploded out ISO in the DRP Endpoint",
+        "client_msg_id": "852fa8c3-8ffb-41fe-b969-6f75d8f32b3e",
+        "ts": "1530836157.000045"
+    },
+    {
+        "type": "message",
+        "user": "UBJ22A0N5",
+        "text": "<@U6QFVRJNB> Thanks.  So I just change the files where it is stored on the disk?",
+        "client_msg_id": "6e2b82e6-0292-4fd4-82f4-a69097a4d120",
+        "ts": "1530836656.000143"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Are you using the web Portal ?",
+        "client_msg_id": "20341e80-98e1-4278-80a0-5a7c71579946",
+        "ts": "1530836672.000102"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "or CLI ?",
+        "client_msg_id": "97f3e940-ef95-4014-a5ed-170ccb5c81b0",
+        "ts": "1530836682.000084"
+    },
+    {
+        "type": "message",
+        "user": "UBJ22A0N5",
+        "text": "Only to learn",
+        "client_msg_id": "1869a31a-660c-4dae-bbad-cbf126f0f72a",
+        "ts": "1530836683.000060"
+    },
+    {
+        "type": "message",
+        "user": "UBJ22A0N5",
+        "text": "First web portal then cli and eventually api",
+        "client_msg_id": "5a43b36d-5ab0-4446-9b95-29c1bfd86a58",
+        "ts": "1530836695.000068"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "what version of DRP are you running  ?",
+        "client_msg_id": "8dc322a0-1af2-4e39-a5f2-df5a7c039271",
+        "ts": "1530836699.000090"
+    },
+    {
+        "type": "message",
+        "user": "UBJ22A0N5",
+        "text": "I installed it Tuesday",
+        "client_msg_id": "8b540793-e058-4fe5-b202-bcb7880ef24d",
+        "ts": "1530836718.000022"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can see your version in the `Info &amp; Preferences` menu item - then the lower right panel",
+        "client_msg_id": "8983b5d9-12c2-47eb-9ca0-92740f0fc33b",
+        "ts": "1530836805.000070"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "probably v3.9.0 then",
+        "client_msg_id": "8116fcd8-9fb0-4c63-99ec-87a5a4d798c1",
+        "ts": "1530836816.000112"
+    },
+    {
+        "type": "message",
+        "user": "UBJ22A0N5",
+        "text": "v3.9.0-0-aa4d113c7a433d6a81fb985275be01901ae28e6d",
+        "client_msg_id": "6033a3aa-9977-4aa3-8bbc-1a0341758a4d",
+        "ts": "1530836837.000093"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "when you Clone an object (including a BootEnv) - you should be presented with an Editable panel of the cloned item - you change the fields\/things in it",
+        "client_msg_id": "e78db34f-efb9-4d5e-a5d6-85077059a56c",
+        "ts": "1530836844.000129"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(yep stable released v3.9.0)",
+        "client_msg_id": "9d35bac8-186a-412d-a83b-96b980f91680",
+        "ts": "1530836853.000125"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the cloned version fields are editable -including Kernel and Initrd",
+        "client_msg_id": "21fa56c0-e73c-4846-9ef6-7a63e48437bc",
+        "ts": "1530836903.000054"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "make sure to Save after making edits to the clone",
+        "client_msg_id": "d6c75e91-937d-4189-9533-7ba13c554b6d",
+        "ts": "1530836911.000111"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "this is roughly equivalent of doing the CLI commands:\n```drpcli bootenvs show centos-7-install --format=yaml &gt; my-centos.yaml\n# edit the copy\ndrpcli bootenvs create .\/my-centos.yaml```",
+        "client_msg_id": "861a28d7-6938-4c29-aa5c-9b51ddb23a40",
+        "ts": "1530836965.000124"
+    },
+    {
+        "type": "message",
+        "user": "UBJ22A0N5",
+        "text": "I see that “kernel” is editable.  install\/netboot\/ubuntu-installer\/amd64\/linux  but the initirds is not. install\/netboot\/ubuntu-installer\/amd64\/initrd.gz",
+        "client_msg_id": "a645015c-063a-4629-ad8c-5f5605515f68",
+        "ts": "1530836997.000072"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "hmmm ... that's weird ...",
+        "client_msg_id": "5c3c1f40-b73f-49cb-a849-01cca3a88ce4",
+        "ts": "1530837038.000030"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "try the CLI syntax then",
+        "client_msg_id": "8025b061-dcd2-4a9f-a6b5-f0f89797ba54",
+        "ts": "1530837043.000051"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": ":slightly_smiling_face:",
+        "client_msg_id": "e8bddba1-46cb-4fdc-a27e-4668d9d0c11b",
+        "ts": "1530837044.000057"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "looks like a goofy bug with the Portal UX behavior - with Initrd being after the Templates",
+        "client_msg_id": "29df91c7-1c36-42b2-af0c-d27192fe18ac",
+        "ts": "1530837083.000085"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U02DHRR2L> ^^^ ???",
+        "client_msg_id": "49bd8b0a-affd-484e-9096-50e85dcc4a4f",
+        "ts": "1530837092.000137"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if you do via CLI - you'll want to make sure to change the `Name` field to something like `my-ubuntu` ... or whatever",
+        "client_msg_id": "e88bf28d-ade1-4f60-a22c-b2b79a0e6c90",
+        "ts": "1530837128.000157"
+    },
+    {
+        "type": "message",
+        "user": "UBJ22A0N5",
+        "text": "That is great.  I prefer the cli, just the UI can be easier when starting…",
+        "client_msg_id": "a8201aa5-8b95-455a-9c73-bd90f413b4f3",
+        "ts": "1530837220.000121"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "totally understandable ... even our in-house CLI curmudgeon (<@U02DJQSG8>) can be caught using the web Portal from time to time ... :slightly_smiling_face:",
+        "client_msg_id": "f4d3bfd5-c470-4efa-af4b-d3e123b2497f",
+        "ts": "1530837280.000004"
+    },
+    {
+        "text": "grumps.",
+        "type": "message",
+        "subtype": "me_message",
+        "user": "U02DJQSG8",
+        "ts": "1530837349.000095",
+        "reactions": [
+            {
+                "name": "sunglasses",
+                "users": [
+                    "UBJ22A0N5"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "UBJ22A0N5",
+        "text": "Do I use drpcli files upload to load the new initrd.gz?",
+        "client_msg_id": "f8422555-36e9-4394-80b0-5f53e158d83d",
+        "edited": {
+            "user": "UBJ22A0N5",
+            "ts": "1530837429.000000"
+        },
+        "ts": "1530837376.000173"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can - you can also stage them in the tftpboot directory appropriately - either `drp-data` directory or `\/var\/lib\/dr-provision` depending how you did the original install (isolated vs not)",
+        "client_msg_id": "228db77e-c301-4aaa-b139-de9cad1d3ef8",
+        "ts": "1530837441.000063"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "one note - I'm not sure about the Path rules - I assume the \"absolute\" will be rooted in the `tftpboot` directory - while the current BootEnv use of the relative paths are ... ahem relative ... to the exploded ISO directory",
+        "client_msg_id": "e58706a4-ba65-4333-b153-effe1c3703f3",
+        "ts": "1530837498.000122"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the `drpcli files upload ... ` command will upload to the `tftpboot\/files` directory",
+        "client_msg_id": "02394c99-51eb-4789-afc7-049556dce870",
+        "ts": "1530837533.000006"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "@shane before going too much farther, there are some design issues that we should go over with Greg.",
+        "client_msg_id": "0aab8876-ca25-440e-96e9-ba42073a649b",
+        "ts": "1530837597.000163"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yeah - I bumped in to those already :slightly_smiling_face:",
+        "client_msg_id": "c787e6d2-3aa6-4725-aef3-40e70ce408bb",
+        "ts": "1530837611.000122"
+    },
+    {
+        "type": "message",
+        "user": "UBJ22A0N5",
+        "text": "Thanks for the help shane.  That should provide the functionality that I am looking for.",
+        "client_msg_id": "4fa2453d-8990-4ef9-b71c-e911190c01da",
+        "ts": "1530837691.000123"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Drpcki files upload will not work unless the bootenv is designed to use it.",
+        "client_msg_id": "27285178-febc-4e06-9d5a-2a1ffc710e47",
+        "ts": "1530837831.000078"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "There are some old design issues that have to be considered.",
+        "client_msg_id": "3490eb16-1232-49c6-bec9-c292122555ff",
+        "ts": "1530837861.000088"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I can go into more detail tomorrow.",
+        "client_msg_id": "955fa509-f04c-487f-b636-945d46512ee3",
+        "ts": "1530837904.000008"
+    }
+]

@@ -1,0 +1,300 @@
+[
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "yes the machine was discovered by Sledgehammer and was in Terrafrom-ready state.",
+        "client_msg_id": "00939f00-a88f-4441-9128-ce9b0ecb23c2",
+        "ts": "1530630654.000253"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "I am still running tests on Virtualbox, so DHCP is vbox virtual network",
+        "client_msg_id": "78de4466-69e2-465c-8fd9-cd196afdd7d5",
+        "ts": "1530630717.000449"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "Also where can I find ipmi-discover? I have IPMI commands plugin, but cant find ipmi-discover.",
+        "client_msg_id": "c6230c62-df9d-4f8b-8b62-7163df0d3596",
+        "ts": "1530635329.000568"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "ipmi-discover is provided by the `ipmi` plugin, not the `virtualbox-ipmi` plugin.",
+        "client_msg_id": "1ba4faed-4a04-4e4e-913c-221866d82058",
+        "ts": "1530635480.000249"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "is ipmi-discover a stage ?",
+        "client_msg_id": "e63c6986-2e51-4ec2-8d0c-6daebad5257e",
+        "ts": "1530635674.000367"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "yes, it's content tied to the plugin",
+        "client_msg_id": "4d3d147d-719e-4ae0-ac00-0e4dd41e3252",
+        "ts": "1530635959.000366"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "ok, and the plugin name that I need to get is \"IPMI commands\"?",
+        "client_msg_id": "551b6480-046a-46a5-b4c0-41b8da3348e6",
+        "ts": "1530636014.000342"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "yes",
+        "client_msg_id": "2082bca3-6d26-4bc2-9566-23b4aace8235",
+        "ts": "1530636048.000428"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "I did that, but I only have ipmi-configure stage",
+        "client_msg_id": "518b1a26-332f-4ba3-8849-a274906a85a5",
+        "ts": "1530636084.000358"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yes - ipmi-discover is a task, I believe.",
+        "client_msg_id": "63cda900-b50e-4fb1-8711-8aff1f4cddf9",
+        "ts": "1530636198.000318"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "its not in the tasks either. its not a template or a param. I cant find that anywhere.",
+        "client_msg_id": "3def8dc9-4093-4b10-a77e-53afe7110f09",
+        "ts": "1530636346.000201"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "to be clear, this not part of Virtualbox experiments, I am trying to discover physical servers using IPMI.",
+        "client_msg_id": "34909e00-4e74-4758-899e-5214069f80e2",
+        "ts": "1530637035.000299"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay",
+        "client_msg_id": "08d71be9-8547-41b2-b973-35f27c0971ba",
+        "ts": "1530637056.000093"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "There isn’t `ipmi-discover`",
+        "client_msg_id": "00700513-c65c-47fa-84bc-36cf5406f605",
+        "ts": "1530637107.000484"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "There is only `ipmi-configure`",
+        "client_msg_id": "107c5e8c-91d1-4433-9271-151799f0e986",
+        "ts": "1530637115.000301"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "At that stage, set the configure parameters to do what you want, and away it goes.",
+        "client_msg_id": "3f1e8311-92ef-423b-bf86-6e278656f5bf",
+        "ts": "1530637135.000102"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<https:\/\/provision.readthedocs.io\/en\/tip\/doc\/content-packages\/ipmi.html>",
+        "client_msg_id": "7b16e93f-39ef-4a0e-9e36-84611b86f755",
+        "ts": "1530637928.000130"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "just a reminder - no community meeting today (would have already started)",
+        "client_msg_id": "6bbb2db8-aea3-4446-8086-f9307d371755",
+        "ts": "1530643207.000188"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "next planned meeting would be 7\/17",
+        "client_msg_id": "608465bb-0f7b-4ba0-a6cf-531c2cc94b69",
+        "ts": "1530643234.000185"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "if you're waiting\/watching for the Kubernetes (KRIB) work I announced in channel last week then here's a short update:\n1) we've merged the KRIB (v1) and KRIB-HA (v2) work together going forward as KRIB (so v3?)\n1+) the code is all APLv2 \n2) it's still a work in progress, so expect some bumps\n3) it relies on the cert plugin for now.  we've made that available without needing a licensed org\n4) we are going to move cert, packet-ipmi, virtualbox-ipmi plugins over to digitalrebar and setting the license to APL.  They are all available today in the RackN online library, but it will take some time to split out the code and fix the builds if you wanted to build them yourself.\n\nFor now, we're keeping the KRIB work relatively quiet so the DRP community has time to test and validate.  Eventually, we'll promote more broadly.",
+        "client_msg_id": "59fae6a8-eaee-4080-801d-e2454ef00859",
+        "ts": "1530643638.000062",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "UB7M1G7SL"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "I used the ipmi-configure to discover machines through IPMI, and used params to set username and password. However, the workflow always stuck at ipmi-configure stage and never move forward, I am wondering the workflow stages have to be different, my workflow has:\n1-ipmi-configure (sledgehammer as boot env)\n2-sledgehammer-wait\n3-terraform-ready",
+        "client_msg_id": "b2f9bb22-3963-41e8-9359-afd88a2c26ca",
+        "ts": "1530645897.000292"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "also, I was adding trying to add the machine manually though the portal",
+        "client_msg_id": "0e44c817-2b01-4c1b-a16e-79d91791705a",
+        "ts": "1530645934.000112"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "I double checked and ssh to the IPMI address, and its reachable and ssh connects just fine.",
+        "client_msg_id": "2cd92762-d5ba-43f9-948e-188f2a8b2439",
+        "ts": "1530646029.000133"
+    },
+    {
+        "user": "UBJ22A0N5",
+        "text": "<@UBJ22A0N5> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1530662132.000147"
+    },
+    {
+        "type": "message",
+        "user": "UBJ22A0N5",
+        "text": "Hi …I’m trying to install Ubuntu 16.04 and following the getting started guide.  However, my pxe network doesn’t have a gateway or access to the internet.  This should not be required, but the install pauses until I hit enter a few times.  Then it continues the install over the local network.\n\nDoes anyone know which boot parameters need to be changes?  \n\nThe default is `debian-installer\/locale=en_US.utf8 console-setup\/layoutcode=us keyboard-configuration\/layoutcode=us netcfg\/dhcp_timeout=120 netcfg\/choose_interface=auto url={{.Machine.Url}}\/seed netcfg\/get_hostname={{.Machine.Name}} root=\/dev\/ram rw quiet {{if .ParamExists \"kernel-console\"}}{{.Param \"kernel-console\"}}{{end}} -- {{if .ParamExists \"kernel-console\"}}{{.Param \"kernel-console\"}}{{end}}`",
+        "client_msg_id": "0c2a4394-a380-4d46-9546-39137879a1aa",
+        "ts": "1530664849.000057"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@UBJ22A0N5> yes, there's a parameter for that \"local-repo\" which should be set to true.",
+        "client_msg_id": "85413adc-8b9e-4fb3-8e18-ff657a49a902",
+        "ts": "1530665206.000121"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/content\/params\/local-repo.yaml>",
+        "client_msg_id": "23d22a57-109b-4220-8f15-207286a47730",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision-content",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/content\/params\/local-repo.yaml",
+                "text": "provision-content - DigitalRebar Provision Content",
+                "fallback": "GitHub: digitalrebar\/provision-content",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/content\/params\/local-repo.yaml",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/cfr.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/content\/params\/local-repo.yaml"
+            }
+        ],
+        "ts": "1530665207.000069"
+    },
+    {
+        "type": "message",
+        "user": "UBJ22A0N5",
+        "text": "<@U02DHRR2L> thanks.  I’m trying it now.",
+        "client_msg_id": "496faedb-d7e8-43b7-bfb3-01a444690573",
+        "ts": "1530666026.000135"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "no problem, I'm updating the $faq to include that",
+        "client_msg_id": "ad7a01ca-b10a-43b0-8071-50b83abeccce",
+        "ts": "1530666070.000100"
+    },
+    {
+        "text": "FAQs are here &gt; <http:\/\/provision.readthedocs.io\/en\/tip\/doc\/faq-troubleshooting.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1530666070.000123"
+    },
+    {
+        "type": "message",
+        "user": "UBJ22A0N5",
+        "text": "<@U02DHRR2L> That did it.  Thanks!",
+        "client_msg_id": "b90c4b4b-9b84-4c80-9a6e-8a6b61f786a5",
+        "ts": "1530667428.000006"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "Glad to help!",
+        "client_msg_id": "3165bdce-89ce-4f68-8b39-b0c774470485",
+        "ts": "1530667522.000068"
+    },
+    {
+        "type": "message",
+        "user": "UBJ22A0N5",
+        "text": "<@U02DHRR2L> I spoke too soon.  Eager for dinner :slightly_smiling_face:  \n\nThat didn’t make any difference.  I created a profile and assigned it to the server.  ```.\/drpcli profiles show local-repos\n{\n  \"Available\": true,\n  \"Description\": \"\",\n  \"Documentation\": \"\",\n  \"Errors\": [],\n  \"Meta\": {\n    \"color\": \"black\",\n    \"icon\": \"hashtag\",\n    \"title\": \"User added profile\"\n  },\n  \"Name\": \"local-repos\",\n  \"Params\": {\n    \"local-repo\": true\n  },\n  \"ReadOnly\": false,\n  \"Validated\": true\n}\n.\/drpcli machines show 405f3f72-d6dc-477f-b7e5-240008609279 | grep local-repos\n    \"local-repos\"\n```",
+        "client_msg_id": "3e0c9238-2aba-468d-a995-d03638d4fc6d",
+        "ts": "1530668920.000069"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "btw: there's a drpcli call for params .\/drpcli machines params [machineid]",
+        "client_msg_id": "a79537cd-0cf6-45a7-8f7a-4e8bb3bf958e",
+        "ts": "1530669455.000025"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U02DHRR2L> I believe local_repo went away with the repo fixes <@U02DJQSG8> added.  Ubuntu is annoying because it kinda assumes internet access.  ",
+        "client_msg_id": "18D044AF-9C48-48B8-AEEC-12B7CFC75246",
+        "ts": "1530672460.000003"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "I'll fix the doc and note that in the param",
+        "client_msg_id": "84f81135-4c82-4fc4-9cd8-d5144e72ebea",
+        "ts": "1530673064.000109"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "Is there a workaround?",
+        "client_msg_id": "7bdc1034-47c7-4e64-9b32-78195daa4718",
+        "ts": "1530673173.000099"
+    },
+    {
+        "type": "message",
+        "user": "UBJ22A0N5",
+        "text": "Adding “default_route=true” to the boot parameters and including a dns server on the local subnet in DHCP seems to have corrected the problem.",
+        "client_msg_id": "9842c4e3-8dd8-4e68-a0ec-25e251d059a3",
+        "ts": "1530675887.000084"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "I'll update the docs.  Sorry for throwing the curveballs.  ",
+        "client_msg_id": "16e6b809-4cb3-4c57-b6a8-70c266e9da03",
+        "ts": "1530676293.000104"
+    }
+]

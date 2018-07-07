@@ -1,0 +1,194 @@
+[
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "Error: GET: bootenvs\/sledgehammer: Not Found",
+        "client_msg_id": "06067f6f-ce3b-487b-8756-7cdfee798ed0",
+        "ts": "1529864226.000099"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "I cant load any of the boot environments, is the remote server up?",
+        "client_msg_id": "876b1e46-1028-4749-a5a6-defbc7b1ce55",
+        "ts": "1529864252.000046"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "I'll check",
+        "ts": "1529867770.000068"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "but, your getting anything from the DRP API is local",
+        "ts": "1529867790.000073"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "what's the full URL?",
+        "ts": "1529867808.000069"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UBBSHF675> the upload iso helper command works just fine for me - from the local Shell to my DRP instance:\n```root@demo:~# drpcli bootenvs uploadiso sledgehammer\n{\n  \"Path\": \"sledgehammer-6122f34b46b5b74b668d6779e33f5fcd0f44a8cc.tar\",\n  \"Size\": 367605248\n}```",
+        "client_msg_id": "657cc700-68ab-403d-b6ce-3ec3860dd1ba",
+        "ts": "1529867893.000105"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if you are running `drpcli` from a remote machine (eg your laptop) - you have to remember to set the Endpoint address and port to connect to on your remote DRP instance - for example:\n`drpcli --endpoint <https:\/\/192.168.8.1:8092> info get`",
+        "client_msg_id": "1cdfad21-35e6-482c-9481-1913aa11f28d",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1529867970.000000"
+        },
+        "thread_ts": "1529867938.000007",
+        "reply_count": 22,
+        "replies": [
+            {
+                "user": "UBBSHF675",
+                "ts": "1530119038.000509"
+            },
+            {
+                "user": "UBBSHF675",
+                "ts": "1530119064.000104"
+            },
+            {
+                "user": "UBBSHF675",
+                "ts": "1530119159.000301"
+            },
+            {
+                "user": "U6QFVRJNB",
+                "ts": "1530119165.000443"
+            },
+            {
+                "user": "UBBSHF675",
+                "ts": "1530119190.000102"
+            },
+            {
+                "user": "UBBSHF675",
+                "ts": "1530119218.000184"
+            },
+            {
+                "user": "U6QFVRJNB",
+                "ts": "1530119424.000410"
+            },
+            {
+                "user": "UBBSHF675",
+                "ts": "1530119525.000123"
+            },
+            {
+                "user": "U6QFVRJNB",
+                "ts": "1530119541.000131"
+            },
+            {
+                "user": "UBBSHF675",
+                "ts": "1530119584.000447"
+            },
+            {
+                "user": "U6QFVRJNB",
+                "ts": "1530119605.000056"
+            },
+            {
+                "user": "U6QFVRJNB",
+                "ts": "1530119662.000009"
+            },
+            {
+                "user": "U6QFVRJNB",
+                "ts": "1530119686.000292"
+            },
+            {
+                "user": "U6QFVRJNB",
+                "ts": "1530119703.000141"
+            },
+            {
+                "user": "UBBSHF675",
+                "ts": "1530119714.000458"
+            },
+            {
+                "user": "UBBSHF675",
+                "ts": "1530119725.000374"
+            },
+            {
+                "user": "UBBSHF675",
+                "ts": "1530119742.000425"
+            },
+            {
+                "user": "U6QFVRJNB",
+                "ts": "1530119756.000349"
+            },
+            {
+                "user": "UBBSHF675",
+                "ts": "1530119757.000218"
+            },
+            {
+                "user": "UBBSHF675",
+                "ts": "1530119775.000383"
+            },
+            {
+                "user": "U6QFVRJNB",
+                "ts": "1530119785.000261"
+            },
+            {
+                "user": "UBBSHF675",
+                "ts": "1530119835.000031"
+            }
+        ],
+        "unread_count": 22,
+        "ts": "1529867938.000007"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can also use the environment variables, like so:\n`export RS_ENDPOINT=<https:\/\/192.168.8.1:8092>`",
+        "client_msg_id": "4e1a0404-9996-49a5-ae7c-9691e4748201",
+        "ts": "1529867960.000119"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "then:\n`drpcli info get`\nwill reference the _RS_ENDPOINT_ variable appropriately",
+        "client_msg_id": "cd81979c-a01a-4f45-b2c7-bcc65d1eecf2",
+        "ts": "1529867998.000014"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if you are unsure of where the Sledgehammer (for instance) BootEnv ISO comes from, you can check the BootEnv itself for `IsoUrl` location:\n```root@demo:~# drpcli bootenvs show sledgehammer | jq '.OS.IsoUrl'\n\"<http:\/\/rackn-sledgehammer.s3-website-us-west-2.amazonaws.com\/sledgehammer\/6122f34b46b5b74b668d6779e33f5fcd0f44a8cc\/sledgehammer-6122f34b46b5b74b668d6779e33f5fcd0f44a8cc.tar>\"```",
+        "client_msg_id": "46751eec-1e09-43d7-aa1e-71e207e0236b",
+        "ts": "1529868092.000076"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "now you can get that ISO directly if you desire:\n`wget <http:\/\/rackn-sledgehammer.s3-website-us-west-2.amazonaws.com\/sledgehammer\/6122f34b46b5b74b668d6779e33f5fcd0f44a8cc\/sledgehammer-6122f34b46b5b74b668d6779e33f5fcd0f44a8cc.tar>`",
+        "client_msg_id": "b681f698-fadb-4e0f-949c-2de3110baee2",
+        "ts": "1529868136.000007"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "this verifies the download location (OS.IsoUrl) is not the issue",
+        "client_msg_id": "6d6bf15d-403f-45c9-ae81-b70c37a7e0f4",
+        "ts": "1529868155.000106"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "Thank you <@U6QFVRJNB> I think it was the endpoint configuration",
+        "client_msg_id": "1026ba26-65ed-40eb-aeb7-6bc2eafcca91",
+        "ts": "1529874274.000098"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "great - glad it's good now",
+        "client_msg_id": "b3a1eac1-cf11-4450-9d55-0160f955d0ae",
+        "ts": "1529874292.000125"
+    }
+]

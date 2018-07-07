@@ -1,0 +1,274 @@
+[
+    {
+        "type": "message",
+        "user": "UAKCC9HQU",
+        "text": "on a scale of 1 to impossible, how hard would it be to write a custom dhcp strategy?",
+        "ts": "1528988024.000339"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "can you give some ideas about what you are thinking for the strategy?",
+        "ts": "1528988072.000239"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@UAKCC9HQU> - about halfway.  :slightly_smiling_face:",
+        "ts": "1528988318.000243"
+    },
+    {
+        "type": "message",
+        "user": "UAKCC9HQU",
+        "text": "probably an API strategy or something like it",
+        "ts": "1528989132.000682"
+    },
+    {
+        "type": "message",
+        "user": "UAKCC9HQU",
+        "text": "what I want is to call out to the switch and assign the IP based on which port the MAC is on",
+        "ts": "1528989270.000776"
+    },
+    {
+        "type": "message",
+        "user": "UAKCC9HQU",
+        "text": "but thats not generic at all, so I figured it would probably be best to embed that logic in an API somewhere, and just call the API with a MAC",
+        "ts": "1528989315.000112"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@UAKCC9HQU> - have you looked at DHCP option 82?",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1528989790.000000"
+        },
+        "ts": "1528989625.000066"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "If you have a switch capable of injecting Option 82 (one of subfields contains the network ingress information), then a strat could be written to use that info to hand out reserved addresses.  It is almost like the strat system was designed for that.  :wink:  It needs more work and a place to test it.",
+        "ts": "1528990136.000798"
+    },
+    {
+        "text": ":face_with_rolling_eyes: \"almost like\" (tm)",
+        "type": "message",
+        "subtype": "me_message",
+        "user": "U02DHRR2L",
+        "ts": "1528990228.000036"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "If you can do dynamic pool for sledgehammer boot, you can use a stage with the LLDP stuff to get port info and calculate final IP",
+        "client_msg_id": "1709f327-bcce-409f-aadf-4f81aba88742",
+        "ts": "1528990383.000296"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Yeah, the whole reason we have a Strategy field in our DHCP related models is because a previous customer wanted to so something with option 82.",
+        "ts": "1528990527.000315"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "but \"we want to do something with option 82\" is as far as they got before other concerns became bigger, so we never did anything with that.",
+        "ts": "1528990571.000680"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I have vague dreams of being able to attach some lua code to strategies to do their thing, but a vague dream is all it is right now. :confused:",
+        "ts": "1528990651.000286"
+    },
+    {
+        "text": "&lt;historian font&gt;in some ways... option 82 was the genesis for DRP because the current v2 code base could not handle it or the repercussions&lt;\/historian font&gt;",
+        "type": "message",
+        "subtype": "me_message",
+        "user": "U02DHRR2L",
+        "ts": "1528990681.000037"
+    },
+    {
+        "user": "UB7MD42TU",
+        "text": "<@UB7MD42TU> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1528991477.000526"
+    },
+    {
+        "type": "message",
+        "user": "UAKCC9HQU",
+        "text": "It does look like our switches support option 82",
+        "ts": "1528991826.000912"
+    },
+    {
+        "type": "message",
+        "user": "UAKCC9HQU",
+        "text": "working on getting it enable to see what it spits out, but that will probably work",
+        "ts": "1528991844.000492"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "well - there is some DRP work to do.  :slightly_smiling_face:",
+        "ts": "1528991906.000704"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "actually, if you could send us a DHCP log trace at DEBUG level with something booting through that it, it would be awesome.",
+        "ts": "1528991939.000830"
+    },
+    {
+        "type": "message",
+        "user": "U32PZNCP5",
+        "text": "<@UB7MD42TU> $Welcome",
+        "ts": "1528991954.000075"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1528991954.000367"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "I want to use a value set in the gohai-inventory in a bootenv template.  What's the easiest way to do this?  Specifically the value I want to get can be grabbed like this from the CLI:",
+        "ts": "1529006083.000050"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "```$ drpcli machines show ae76c224-cb98-4b29-a555-470dd26da418 | jq '.Params[\"gohai-inventory\"][\"DMI\"][\"System\"][\"SerialNumber\"]'\n\"CQDRBM2\"```",
+        "ts": "1529006102.000522"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U9BU09D51> - you might want to look at the Inventory pattern that <@U02DHRR2L> just did",
+        "ts": "1529006234.000400"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Inventory pattern ... <@U9BU09D51>",
+        "attachments": [
+            {
+                "fallback": "[June 12th, 2018 7:50 AM] zehicle: <!here> new Inventory stage!  We're preparing for the v3.9 release and I wanted to share a recent addition to the task-library that adds often requested inventory features in a simple way.\n\n1) SUMMARY - allows users to define a flat list of items pulled from GOhai (using jq filters)\n2) INTEGRITY - allows users to halt workflow if the latest inventory does not match previous inventory as a way to detect tampering or changes\n3) VERIFICATION - allows users to apply basic regex to inventory values to validate systems comply with expectations\n\nThese settings are configured via params in a shared profile.  The following video shows to to configure them.",
+                "ts": "1528815009.000602",
+                "author_id": "U02DHRR2L",
+                "author_subname": "Rob Hirschfeld",
+                "channel_id": "C02L9P26Q",
+                "channel_name": "community",
+                "is_msg_unfurl": true,
+                "text": "<!here> new Inventory stage!  We're preparing for the v3.9 release and I wanted to share a recent addition to the task-library that adds often requested inventory features in a simple way.\n\n1) SUMMARY - allows users to define a flat list of items pulled from GOhai (using jq filters)\n2) INTEGRITY - allows users to halt workflow if the latest inventory does not match previous inventory as a way to detect tampering or changes\n3) VERIFICATION - allows users to apply basic regex to inventory values to validate systems comply with expectations\n\nThese settings are configured via params in a shared profile.  The following video shows to to configure them.",
+                "author_name": "Rob Hirschfeld",
+                "author_link": "https:\/\/rackn.slack.com\/team\/U02DHRR2L",
+                "author_icon": "https:\/\/avatars.slack-edge.com\/2018-04-16\/347642523588_bb283abd6412a13b36fe_48.jpg",
+                "mrkdwn_in": [
+                    "text"
+                ],
+                "color": "D0D0D0",
+                "from_url": "https:\/\/rackn.slack.com\/archives\/C02L9P26Q\/p1528815009000602",
+                "is_share": true,
+                "footer": "Posted in #community"
+            }
+        ],
+        "ts": "1529006313.000039"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "inventory vid",
+        "attachments": [
+            {
+                "service_name": "YouTube",
+                "service_url": "https:\/\/www.youtube.com\/",
+                "title": "Digital Rebar Inventory Stage (RackN Task-Library)",
+                "title_link": "https:\/\/youtu.be\/xDqxEW5bgiQ",
+                "author_name": "RackN & Digital Rebar",
+                "author_link": "https:\/\/www.youtube.com\/channel\/UCr3bBtP-pMsDQ5c0IDjt_LQ",
+                "thumb_url": "https:\/\/i.ytimg.com\/vi\/xDqxEW5bgiQ\/hqdefault.jpg",
+                "thumb_width": 480,
+                "thumb_height": 360,
+                "fallback": "YouTube Video: Digital Rebar Inventory Stage (RackN Task-Library)",
+                "video_html": "<iframe width=\"400\" height=\"225\" src=\"https:\/\/www.youtube.com\/embed\/xDqxEW5bgiQ?feature=oembed&autoplay=1&iv_load_policy=3\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen><\/iframe>",
+                "video_html_width": 400,
+                "video_html_height": 225,
+                "service_icon": "https:\/\/a.slack-edge.com\/2089\/img\/unfurl_icons\/youtube.png",
+                "id": 1,
+                "original_url": "https:\/\/youtu.be\/xDqxEW5bgiQ",
+                "color": "D0D0D0",
+                "from_url": "https:\/\/rackn.slack.com\/archives\/C02L9P26Q\/p1528815079000548",
+                "is_share": true
+            }
+        ],
+        "ts": "1529006321.000470"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "that'll allow you to congeal down the huge JSON blob to your defined set of key\/value stuff you want - also you can do a check on hardware -vs- what you expect to be there ...",
+        "ts": "1529006368.000194"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U9BU09D51> - if you're using either the Gohai or the new Inventory pieces, it depends where\/how you're trying to access the JSON structure, the `drpcli` approach will work, but you can also use Templating to render the info inside of a Template for direct use - this is a LOT lighter weight than using `drpcli` because it reduces the external API calls and is done as part of the template rendering piece",
+        "ts": "1529006918.000631"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can do something like:\n`{{.ParamAsJSON \"gohai-inventory\"}}`\nor\n`{{.ParamAsJSON \"inventory\/data\"}}`",
+        "ts": "1529007111.000317"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "these can then be used however you want inside your Template (bash, python, ruby, whatever)",
+        "ts": "1529007130.000630"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Ok, thanks",
+        "ts": "1529008212.000020"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "You can even loop over the results of a list like we make for inventory\/data using range!",
+        "client_msg_id": "ae17dfb7-d1f3-40c8-9911-f5cb0f2b795f",
+        "ts": "1529008264.000285"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "example Range template pattern:\n```{{if .ParamExists \"array-of-things\"}}\n        {{range $key := .Param \"array-of-things\"}}\n            echo \"item-in-array: '{{$key}}'\"\n        {{end}}\n{{else -}}\n    echo \"Param 'array-of-things' not available.\"\n{{end -}}\n```",
+        "ts": "1529008847.000294"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "if you set good defaults in the params, you can even skip the .ParamExists and go right to range!",
+        "ts": "1529013143.000395"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "{{range} also has an {{else}} to handle the empty case.  It's really cool stuff!",
+        "ts": "1529013172.000169"
+    },
+    {
+        "text": "gushes of simplicity of golang templates (and knows that it has limits too)",
+        "type": "message",
+        "subtype": "me_message",
+        "user": "U02DHRR2L",
+        "ts": "1529013195.000299"
+    }
+]

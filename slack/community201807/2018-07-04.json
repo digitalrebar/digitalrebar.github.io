@@ -1,0 +1,16 @@
+[
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@UBJ22A0N5> I wonder. I bet I put option 3 and 6 in my subnets.  That may work around the problem as well",
+        "client_msg_id": "75C899C7-3B07-4872-9EF8-A402DCEF45EA",
+        "ts": "1530709915.000029"
+    },
+    {
+        "type": "message",
+        "user": "UBJ22A0N5",
+        "text": "<@U02DGQYK1> That worked as well.  Thanks.",
+        "client_msg_id": "4ad1de46-1755-45d3-a017-36285b67b270",
+        "ts": "1530720558.000023"
+    }
+]

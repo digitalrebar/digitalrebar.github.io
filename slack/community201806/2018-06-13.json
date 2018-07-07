@@ -1,0 +1,40 @@
+[
+    {
+        "user": "UB72B5T9Q",
+        "text": "<@UB72B5T9Q> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1528914831.000258"
+    },
+    {
+        "type": "message",
+        "user": "UB72B5T9Q",
+        "text": "are there existing BootEnvs for Atomic distributions?",
+        "ts": "1528916372.000701"
+    },
+    {
+        "type": "message",
+        "user": "U32PZNCP5",
+        "text": "<@UB72B5T9Q> $Welcome",
+        "ts": "1528916497.000779"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1528916498.000089"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UB72B5T9Q> - in DRPv3 (current product) - no we don't have those",
+        "ts": "1528916523.000347"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Not sure if we had anything like that for previous version",
+        "ts": "1528916533.000319"
+    }
+]

@@ -1,0 +1,317 @@
+[
+    {
+        "type": "message",
+        "user": "UA98B96BA",
+        "text": "Is there a quick writeup on how to utilize the ha-krib plugin?",
+        "client_msg_id": "500606a4-16c6-41e9-886e-26be286d5522",
+        "ts": "1530887091.000054"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UA98B96BA> the ha-krib is now folded in to the open \"krib\" content (it contains ha-krib) ... <@U02DHRR2L> is working on updates very very actively this week - including documentation",
+        "client_msg_id": "59030ccd-bc17-427f-aae9-d6060d472c03",
+        "ts": "1530887145.000141"
+    },
+    {
+        "type": "message",
+        "user": "UA98B96BA",
+        "text": "Yeah, I saw the plugin come in with the krib content. I'm about to start messing with it and figured I would ask if you had anything written up yet.",
+        "client_msg_id": "bea46983-1346-40fa-bce0-04924cd026c2",
+        "ts": "1530887212.000143"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the \"official\" documentation location is:\n<https:\/\/provision.readthedocs.io\/en\/tip\/doc\/integrations\/krib.html>\nbut it doesn't contain the HA pieces yet - and it still references the older `change-stage\/map` workflow system (deprecated in favor of `Workflows`)",
+        "client_msg_id": "e4ec466e-9451-485d-b33c-24a7c829a9fb",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1530887230.000000"
+        },
+        "ts": "1530887216.000228"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "there is some new \"content\" package documentation on it:\n<https:\/\/provision.readthedocs.io\/en\/tip\/doc\/content-packages\/krib.html>",
+        "client_msg_id": "ccdf20ea-ef37-4b3b-ac13-07604ce13730",
+        "ts": "1530887279.000138"
+    },
+    {
+        "type": "message",
+        "user": "UA98B96BA",
+        "text": "perfect, thanks <@U6QFVRJNB>",
+        "client_msg_id": "e9a7cfc2-63b6-4653-8199-012942e67b81",
+        "ts": "1530887329.000267"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we should hopefully have all of the documentation updated in the next few days - so hopefully mid-week next week things will look a lot better - again Rob is working quite actively on the content pack right now to clean things up, and enhance it",
+        "client_msg_id": "2fa150b7-7ac3-4fee-ae09-8bdb0ab44f48",
+        "ts": "1530887384.000376"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "I'm planning to get a few videos posted shortly",
+        "client_msg_id": "1f363255-957e-4ae0-adce-5b5e21284f36",
+        "ts": "1530888954.000190"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "showing the basics - I was able to do a full run last night",
+        "client_msg_id": "4be1e66a-64b4-4850-94c5-9ff92cbbe6c8",
+        "ts": "1530888974.000510"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "there are some tricks to know about cleanup for multiple runs",
+        "client_msg_id": "b7770f5d-a9f0-45d7-abee-ef2162fc478b",
+        "ts": "1530889002.000011"
+    },
+    {
+        "type": "message",
+        "user": "UAKCC9HQU",
+        "text": "I found a bug in the rackn portal, whats the best way to report it?",
+        "client_msg_id": "26d1391a-893a-4002-987e-8d950bc32686",
+        "ts": "1530899861.000127"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can submit here:  <https:\/\/github.com\/digitalrebar\/provision\/issues\/new>",
+        "client_msg_id": "a56de3bf-d650-4b2d-bf82-a021400f2370",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "Build software better, together",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/issues\/new",
+                "text": "GitHub is where people build software. More than 28 million people use GitHub to discover, fork, and contribute to over 85 million projects.",
+                "fallback": "GitHub: Build software better, together",
+                "image_width": 1200,
+                "image_height": 620,
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/issues\/new",
+                "service_icon": "https:\/\/cfr.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/digitalrebar\/provision\/issues\/new"
+            }
+        ],
+        "ts": "1530899890.000323"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "If you could label it `provision-ux-bug`",
+        "client_msg_id": "7e4203ef-9321-43ac-bed3-b78ab1af3dc9",
+        "ts": "1530899910.000389"
+    },
+    {
+        "type": "message",
+        "user": "UAKCC9HQU",
+        "text": "It doesn't look like i can add labels, but the bug is here: <https:\/\/github.com\/digitalrebar\/provision\/issues\/931>",
+        "client_msg_id": "2bae519c-a879-4e50-ac6e-62bc2f845bbf",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "Error while editing stage in RackN Portal · Issue #931 · digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/issues\/931",
+                "text": "When editing a stage, the task list does not automatically update the index of the elements, and blank elements are not ignored when saving. When cloning a stage with the intent of removing one of ...",
+                "fallback": "GitHub: Error while editing stage in RackN Portal · Issue #931 · digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/issues\/931",
+                "thumb_url": "https:\/\/avatars3.githubusercontent.com\/u\/1095966?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/cfr.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/digitalrebar\/provision\/issues\/931"
+            }
+        ],
+        "ts": "1530900500.000032"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Ok - we'll (<@U02DHRR2L>) take a look - thank you <@UAKCC9HQU>",
+        "client_msg_id": "e7e071e0-b724-404d-8a73-8a44f6457faa",
+        "ts": "1530900528.000218"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "1) You have to manually remove the blanks - there's delete button for that. We cannot make assumptions about blanks.",
+        "client_msg_id": "d7902408-8380-40c9-b4c0-96bcd24ff7a3",
+        "ts": "1530900646.000378"
+    },
+    {
+        "type": "message",
+        "user": "UAKCC9HQU",
+        "text": "Is that done some other way than clicking the X next to the task in the task list?",
+        "client_msg_id": "89c45e03-9279-4ef6-a0f9-d38674e2785b",
+        "ts": "1530900722.000204"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "not in the UX",
+        "client_msg_id": "a97c6f1a-dd87-47a9-9ead-1cb1006fd96a",
+        "ts": "1530900743.000243"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "it's just an ordered list in the data model",
+        "client_msg_id": "0026cc2c-e28e-4db8-988e-d8a86c98d5ca",
+        "ts": "1530900755.000231"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "we did not code reorder in the UX",
+        "client_msg_id": "eeddc884-e834-4f23-a7b7-57ae948fb92d",
+        "ts": "1530900789.000075"
+    },
+    {
+        "type": "message",
+        "user": "UAKCC9HQU",
+        "text": "Clone -&gt; Delete Last Task -&gt; Add: Works",
+        "client_msg_id": "af97b411-77e1-4f68-84e4-7a8b92829e4d",
+        "ts": "1530900872.000013"
+    },
+    {
+        "type": "message",
+        "user": "UAKCC9HQU",
+        "text": "Clone -&gt; Delete Middle Task -&gt; Add: Error",
+        "client_msg_id": "aebaa58c-dd36-455f-a3c4-61a702ff518c",
+        "ts": "1530900886.000138"
+    },
+    {
+        "type": "message",
+        "user": "UAKCC9HQU",
+        "text": "and I don't see any way to fix the error in the UI",
+        "client_msg_id": "f4018a59-2d2a-4b72-856c-d78666180e83",
+        "ts": "1530900898.000278"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "I'll take a look.\n\nFWIW: We STRONGLY recommend using the bundle development pattern when building new workflow \/ stages \/ etc.  The UX was not designed for component development.",
+        "client_msg_id": "ba19a452-7169-4a33-b02e-a713ae1c1adc",
+        "ts": "1530900901.000254"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@UAKCC9HQU> I see the problem",
+        "client_msg_id": "81b0f3a9-93f4-44dc-965c-c0da158d6bc6",
+        "ts": "1530900941.000396"
+    },
+    {
+        "type": "message",
+        "user": "UAKCC9HQU",
+        "text": "Yeah, this is just for a one off thing \/ exploration . Its a simple stage, so I can just re-create it by hand.",
+        "client_msg_id": "90fa8f3c-c918-4909-bb46-b5c8f35bec81",
+        "ts": "1530900973.000140"
+    },
+    {
+        "type": "message",
+        "user": "UAKCC9HQU",
+        "text": "Since it works fine as long as you go in order.",
+        "client_msg_id": "2230bed9-6b7b-49ba-959a-ee1be9710908",
+        "ts": "1530900986.000037"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "We have a video training on the bundle upload pattern.",
+        "client_msg_id": "01df0368-474c-46da-8e0c-597aec12eefa",
+        "ts": "1530900996.000330"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "which is very productive even on small edits",
+        "client_msg_id": "3f9f60eb-acbe-47be-8788-8ee517f2778a",
+        "ts": "1530901013.000259"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "and encourages good content management practices",
+        "client_msg_id": "b8d33bf9-d9bc-44f7-a859-c0ed63e02b15",
+        "ts": "1530901026.000063"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@UAKCC9HQU> I was able to find and fix the issue (using delete instead of splice).  It will go through the process and should be available in the tip UX tomorrow.",
+        "client_msg_id": "f77fe52a-72b3-43ce-919c-de6a9de54b6f",
+        "ts": "1530902711.000374"
+    },
+    {
+        "type": "message",
+        "user": "UAKCC9HQU",
+        "text": "cool, thanks for the quick fix <@U02DHRR2L>",
+        "client_msg_id": "44d3fe5f-eaa6-4c7b-8667-89951f8bc3e2",
+        "ts": "1530903628.000174"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "was a very simple fix!  we (RackN) don't use the UX for much editing, so it's helpful to get bugs like that reported.  It was a common component, so likely other list selectors were also broken.",
+        "client_msg_id": "6128dbf7-55df-4899-a149-eb7d5e0ecd1b",
+        "ts": "1530903831.000099"
+    },
+    {
+        "type": "message",
+        "user": "UA98B96BA",
+        "text": "```Log for Job: 63738a9f-cd7d-4810-ba0e-537f6c319572\nStarting task etcd-config on 59c493f5-54ea-4e19-8ecc-0787f1e25238\nStarting command .\/etcd-config-etcd-config.sh.tmpl\n\n\nCommand running\nConfigure the etcd cluster\nAdd initial variables to track members.\n[]\n[]\nCreating 1 servers\nElecting etcd members to cluster profile: cts-ha-krib\nSTAGE REQUIRES CERT PLUGIN!!  Contact RackN for access.\nCommand exited with status 1\nAction etcd-config.sh.tmpl finished\nTask etcd-config failed\nMarked machine 59c493f5-54ea-4e19-8ecc-0787f1e25238 as not runnable\nUpdated job 63738a9f-cd7d-4810-ba0e-537f6c319572 to failed\nTask signalled that it failed```",
+        "client_msg_id": "8eecfb50-dcb8-4f46-90d8-0be3f9165373",
+        "ts": "1530907284.000282"
+    },
+    {
+        "type": "message",
+        "user": "UA98B96BA",
+        "text": "Is that expected?",
+        "client_msg_id": "2f650a81-488c-4c81-a15c-775455c354aa",
+        "ts": "1530907300.000071"
+    },
+    {
+        "type": "message",
+        "user": "UA98B96BA",
+        "text": "CERT PLUGIN not available?",
+        "client_msg_id": "ce1bdee4-ca4c-4753-acd8-0ab48d54ae36",
+        "ts": "1530907312.000268"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Ping <@U02DHRR2L> on DM ",
+        "client_msg_id": "0954617c-a4a8-483b-968b-26cdb62d54b5",
+        "ts": "1530907364.000142"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "It is expected, and one of the road bumps we're ironing out ",
+        "client_msg_id": "34bf3a12-5a0a-4f2c-a289-915e08e74dde",
+        "ts": "1530907392.000064"
+    },
+    {
+        "type": "message",
+        "user": "UA98B96BA",
+        "text": "Will do <@U6QFVRJNB> :thumbsup:",
+        "client_msg_id": "5de44577-a3d5-4a84-91ac-55f8a4aaa1e1",
+        "ts": "1530907565.000229"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "the cert plugin is moved to open access - you should be able to select it in the catalog",
+        "client_msg_id": "9d8dbf3a-7b3c-4da4-8fcf-a58d96fbd79b",
+        "ts": "1530910945.000230"
+    }
+]

@@ -1,0 +1,270 @@
+[
+    {
+        "user": "UBCD13YJW",
+        "text": "<@UBCD13YJW> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1529677269.000606"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<!channel> - Release 3.9.0 is cut and out.  Content packages are moved to v1.9.0 and plugins are at v2.3.0.  Terraform plugin is at v1.1.1.",
+        "ts": "1529690688.000509",
+        "reactions": [
+            {
+                "name": "tada",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            },
+            {
+                "name": "+1",
+                "users": [
+                    "U8FAN7PLK"
+                ],
+                "count": 1
+            },
+            {
+                "name": "heart_eyes",
+                "users": [
+                    "U8RFVLLG1"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Amazon is running slowing still - The UX portal page is not updated yet, but should be in the next 24 hours.  You can use <http:\/\/tip.rackn.io|tip.rackn.io> to get latest UX.",
+        "ts": "1529690724.000106"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Release notes are here: <https:\/\/github.com\/digitalrebar\/provision\/releases\/tag\/v3.9.0>",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/releases\/tag\/v3.9.0",
+                "text": "Digital Rebar Provision is a simple and powerful Golang executable that provides a complete API-driven DHCP\/PXE\/TFTP provisioning system.",
+                "fallback": "GitHub: digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/releases\/tag\/v3.9.0",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/digitalrebar\/provision\/releases\/tag\/v3.9.0"
+            }
+        ],
+        "ts": "1529690772.000439"
+    },
+    {
+        "type": "message",
+        "user": "U32PZNCP5",
+        "text": "<@UBCD13YJW> $Welcome",
+        "client_msg_id": "508ae852-d83b-4d66-802a-e11b05eec3c8",
+        "ts": "1529690826.000308"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1529690826.000480"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "This release has A LOT of great functionality (and also a lot of code movement) including HA, RBAC, Multi-Tenant, and encrypted Params.  Of course, bug fixes and performance too.  \nIt's worth reviewing the release notes carefully.",
+        "ts": "1529690967.000189"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Hey folks.",
+        "ts": "1529698483.000249"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Suddenly having a problem getting the UX to show machine details.  When I click on a machine in the UX the page just hangs at loading forever.  The chrome developer tools give me this as the call that's failing:\n```{Model: \"machines\", Key: \"\", Type: \"GET\", Messages: [\"Filter not found: slim\"], Code: 406}\nCode\n:\n406\nKey\n:\n\"\"\nMessages\n:\n[\"Filter not found: slim\"]\nModel\n:\n\"machines\"\nType\n:\n\"GET\"```",
+        "ts": "1529698540.000448"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Any thoughts?  This apparently started happening today.  It was still working for me but not anybody else on the team until we rebooted the rebar server, now I get the same problem.",
+        "ts": "1529698599.000411"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Something shady with slim ...",
+        "client_msg_id": "bc122cd0-82f9-4c31-9cbc-1f4d040b1394",
+        "ts": "1529698678.000375"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U9BU09D51> - the `slim` feature is newly introduced by <@U02DJQSG8> and <@U02DGQYK1> to reduce the parameter amount pushed back in an API call",
+        "client_msg_id": "00378110-6c6e-45d2-b0fe-82ad657702b2",
+        "ts": "1529698716.000507"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "are you using \"<http:\/\/portal.rackn.io|portal.rackn.io>\" or the \"<http:\/\/tip.rackn.io|tip.rackn.io>\" UX ?",
+        "client_msg_id": "0e6d6f0c-8c8c-4af9-a9c9-663b906b26d1",
+        "ts": "1529698739.000336"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Looks like portal",
+        "ts": "1529698754.000265"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "give it a shot on Tip (click on the \"beaker\" icon in upper right)",
+        "client_msg_id": "dde90257-be3b-4c0a-9714-5a7ca0f5f25e",
+        "ts": "1529698767.000252"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we're moving over the Tip UX to Portal (stable), but the backend AWS systems are nightmarishly slow",
+        "client_msg_id": "c8e9cca7-b99c-4e82-8823-677e1b7d4b02",
+        "ts": "1529698792.000490"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Looks like I get the same error.",
+        "ts": "1529698845.000611"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "what version DRP are you running ?",
+        "client_msg_id": "c3c9f5c5-1f11-450a-b1ab-a5836a1f8f5a",
+        "ts": "1529698968.000313"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Okay - The UX is supposed to not use slim with older DRPs.  It is a bug in the UX.",
+        "ts": "1529699041.000362"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Versions: DR v3.8.0 &amp; UX v1.3.0",
+        "ts": "1529699048.000299"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I suspect.",
+        "ts": "1529699048.000356"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yeah - update to DR v3.9.0 and it will go away.",
+        "ts": "1529699062.000236"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Ok. So upgrade?",
+        "ts": "1529699062.000462"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Ok, thanks.",
+        "ts": "1529699081.000291"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Hmm - Strange.  It works for me.  with something without the slim feature-flag.",
+        "ts": "1529699290.000194"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "but not as far back as 3.8.0",
+        "ts": "1529699317.000249"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I got the error w\/ v3.8.2-tip-189",
+        "client_msg_id": "3a113e1d-8438-4ecc-afca-633902be4cc0",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1529699348.000000"
+        },
+        "ts": "1529699338.000468"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(using `tip` UX)",
+        "client_msg_id": "3e55e9f7-631c-4696-b7ce-6b0dc889f018",
+        "ts": "1529699379.000563"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "hmm - v3.8.2-tip-184 with tip UX doesn’t for me.",
+        "ts": "1529699480.000277"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "details machine page.  May not be going far enough.",
+        "ts": "1529699664.000118"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "just a second.",
+        "ts": "1529699667.000276"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Okay - see it now",
+        "ts": "1529699678.000342"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Fixed.  New release out there and moving through the system.",
+        "ts": "1529700440.000456"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U02DGQYK1> and <@U9BU09D51> - just confirming that the fix has rolled out to stable UX - and my testing shows it working well with the same test case that failed for me previously",
+        "client_msg_id": "1393424a-3cc3-478e-90d5-cd42f8e3bc57",
+        "ts": "1529708856.000029",
+        "reactions": [
+            {
+                "name": "grin",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    }
+]

@@ -1,0 +1,233 @@
+[
+    {
+        "user": "UBEAWJF2L",
+        "text": "<@UBEAWJF2L> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1530117394.000323"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "so I have the same error, running from local machine this time",
+        "client_msg_id": "f4afa719-8a7a-40bb-897b-da6961bc1774",
+        "thread_ts": "1529867938.000007",
+        "parent_user_id": "U6QFVRJNB",
+        "ts": "1530119038.000509"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "and I didn't change the endpoint configuration",
+        "client_msg_id": "de166924-4c50-444a-85ad-5ef2a49f6170",
+        "thread_ts": "1529867938.000007",
+        "parent_user_id": "U6QFVRJNB",
+        "ts": "1530119064.000104"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UBEAWJF2L> $welcome",
+        "client_msg_id": "64b09702-ecf0-4557-9d01-e342f0ae43f5",
+        "ts": "1530119132.000048"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "thread_ts": 0,
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1530119132.000290"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "I am having an experimental setup on VBox",
+        "client_msg_id": "b96bb1cf-2b13-4c17-abdc-e138b9be3c1b",
+        "thread_ts": "1529867938.000007",
+        "parent_user_id": "U6QFVRJNB",
+        "ts": "1530119159.000301"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "trying to find our original conversation in community - I hate slack threading :disappointed:",
+        "client_msg_id": "56e73658-338b-48d2-9b72-f653cd85aae9",
+        "thread_ts": "1529867938.000007",
+        "parent_user_id": "U6QFVRJNB",
+        "ts": "1530119165.000443"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "Error: GET: bootenvs\/sledgehammer: Not Found",
+        "client_msg_id": "a100240c-280d-435c-afb1-c8ab5fb5c166",
+        "thread_ts": "1529867938.000007",
+        "parent_user_id": "U6QFVRJNB",
+        "ts": "1530119190.000102"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "this error when I try: \"drpcli bootenvs uploadiso sledgehammer\"",
+        "client_msg_id": "dad6ecc1-b4f2-45b8-a8cb-1ce0bb880818",
+        "thread_ts": "1529867938.000007",
+        "parent_user_id": "U6QFVRJNB",
+        "ts": "1530119218.000184"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "does `drpcli info get` return information on the DRP Endpoint ?",
+        "client_msg_id": "04b1c6c1-ebda-4305-a2b8-bdb10fc38fb1",
+        "thread_ts": "1529867938.000007",
+        "parent_user_id": "U6QFVRJNB",
+        "ts": "1530119424.000410"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "\"address\": \"127.0.0.1\",\n  \"api_port\": 8092,\n  \"arch\": \"amd64\",\n  \"binl_enabled\": true,\n  \"binl_port\": 4011,\n  \"dhcp_enabled\": true,\n  \"dhcp_port\": 67,",
+        "client_msg_id": "168bc23d-7b0f-4147-a768-bb7ef300d329",
+        "thread_ts": "1529867938.000007",
+        "parent_user_id": "U6QFVRJNB",
+        "ts": "1530119525.000123"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "cool - what about:  `drpcli contents show drp-community-content | jq '.meta.Name'`",
+        "client_msg_id": "83a597d6-0ba0-4dcc-ba91-2698f43ad6b3",
+        "thread_ts": "1529867938.000007",
+        "parent_user_id": "U6QFVRJNB",
+        "ts": "1530119541.000131"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "Error: GET: contents\/drp-community-content: No such content store",
+        "client_msg_id": "42b37c11-f6a7-4ba0-9c1c-95c9945554c4",
+        "thread_ts": "1529867938.000007",
+        "parent_user_id": "U6QFVRJNB",
+        "ts": "1530119584.000447"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ah - yes - you have to install the Community Content pack to be able to use it :slightly_smiling_face:",
+        "client_msg_id": "851116bb-c49b-4707-9c5e-f4039149dbee",
+        "thread_ts": "1529867938.000007",
+        "parent_user_id": "U6QFVRJNB",
+        "ts": "1530119605.000056"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "by default, we install Community Content via the installer, unless you specify `--nocontent` during install time",
+        "client_msg_id": "4c53ed17-ea99-4a0f-94be-ad9e3d12bf15",
+        "thread_ts": "1529867938.000007",
+        "parent_user_id": "U6QFVRJNB",
+        "ts": "1530119662.000009"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the Community Content pack contains all of the pieces and parts to define how to do installations for basic KickStart\/Preseeds",
+        "client_msg_id": "d7eef84d-9f5e-4e46-9a6f-c7cde01ee705",
+        "thread_ts": "1529867938.000007",
+        "parent_user_id": "U6QFVRJNB",
+        "ts": "1530119686.000292"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Are you using the Web Portal ?",
+        "client_msg_id": "da5625d5-5301-4915-b948-fecb525123df",
+        "thread_ts": "1529867938.000007",
+        "parent_user_id": "U6QFVRJNB",
+        "ts": "1530119703.000141"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "yes",
+        "client_msg_id": "afe0ab67-b391-4bf9-b284-1c0f2eb8b168",
+        "thread_ts": "1529867938.000007",
+        "parent_user_id": "U6QFVRJNB",
+        "ts": "1530119714.000458"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "I just transferred the package",
+        "client_msg_id": "53ff6186-960f-456b-9d4d-779b7225f3c0",
+        "thread_ts": "1529867938.000007",
+        "parent_user_id": "U6QFVRJNB",
+        "ts": "1530119725.000374"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "I think its working now",
+        "client_msg_id": "98bbf14b-c92e-4397-9b26-8b7a541b61e5",
+        "thread_ts": "1529867938.000007",
+        "parent_user_id": "U6QFVRJNB",
+        "ts": "1530119742.000425"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ta da !",
+        "client_msg_id": "a19b6491-cbf0-48db-8542-eb103598c443",
+        "thread_ts": "1529867938.000007",
+        "parent_user_id": "U6QFVRJNB",
+        "ts": "1530119756.000349"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "but I don't remember doing that before",
+        "client_msg_id": "1f67e36d-3381-4368-81b1-fb481e71ce42",
+        "thread_ts": "1529867938.000007",
+        "parent_user_id": "U6QFVRJNB",
+        "ts": "1530119757.000218"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "thanks, sorry if my questions are a bit silly",
+        "client_msg_id": "97e6ef4e-4ace-47ea-813d-6f4aab3f7726",
+        "thread_ts": "1529867938.000007",
+        "parent_user_id": "U6QFVRJNB",
+        "ts": "1530119775.000383"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "no worries - new learning curve",
+        "client_msg_id": "44bc1428-57a0-498c-b9d3-82b58a7d6376",
+        "thread_ts": "1529867938.000007",
+        "parent_user_id": "U6QFVRJNB",
+        "ts": "1530119785.000261"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "thank you",
+        "client_msg_id": "3285f56f-7fa5-4fa2-9511-241a99e55a48",
+        "thread_ts": "1529867938.000007",
+        "parent_user_id": "U6QFVRJNB",
+        "ts": "1530119835.000031"
+    },
+    {
+        "type": "message",
+        "user": "UBEAWJF2L",
+        "text": "Hi <@U6QFVRJNB>, thank you",
+        "client_msg_id": "c827aefc-982c-4844-bcf9-2e03d0af2dea",
+        "edited": {
+            "user": "UBEAWJF2L",
+            "ts": "1530124052.000000"
+        },
+        "ts": "1530124024.000431"
+    }
+]

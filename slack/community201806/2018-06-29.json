@@ -1,0 +1,46 @@
+[
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "yes I did, do I need to get the iso from drp community as well, or can I use mine?",
+        "client_msg_id": "70322736-fe91-4f5d-8742-ccb56f218b17",
+        "thread_ts": "1530226069.000250",
+        "parent_user_id": "U6QFVRJNB",
+        "ts": "1530288560.000372"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "also whenever I try to clone or create a new template I keep getting this error:\nTemplates[3]: No common template for centos-6.ks.tmpl",
+        "client_msg_id": "a716e311-3057-40fa-9963-cf1d35cb342d",
+        "thread_ts": "1530226069.000250",
+        "parent_user_id": "U6QFVRJNB",
+        "ts": "1530290354.000363"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "I am not even trying to create a centos template",
+        "client_msg_id": "1316bf31-c0c5-49ae-9207-707abc8af69c",
+        "thread_ts": "1530226069.000250",
+        "parent_user_id": "U6QFVRJNB",
+        "ts": "1530290376.000006"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<!here> - NOTE - TIP digitalrebar content will require a sledgehammer update.  New sledgehammer supports NFS if needed.",
+        "client_msg_id": "c8898e58-5826-4d9f-9ed7-1633f28e5b6a",
+        "ts": "1530336691.000006",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U6QFVRJNB",
+                    "U02DHRR2L"
+                ],
+                "count": 2
+            }
+        ]
+    }
+]
