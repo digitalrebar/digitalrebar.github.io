@@ -1,0 +1,126 @@
+<html><body><style>
+			* {
+				font-family:sans-serif;
+			}
+			body {
+				text-align:center;
+				padding:1em;
+			}
+			.messages {
+				width:100%;
+				max-width:700px;
+				text-align:left;
+				display:inline-block;
+			}
+			.messages img {
+				background-color:rgb(248,244,240);
+				width:36px;
+				height:36px;
+				border-radius:0.2em;
+				display:inline-block;
+				vertical-align:top;
+				margin-right:0.65em;
+			}
+			.messages .time {
+				display:inline-block;
+				color:rgb(200,200,200);
+				margin-left:0.5em;
+			}
+			.messages .username {
+				display:inline-block;
+				font-weight:600;
+				line-height:1;
+			}
+			.messages .message {
+				display:inline-block;
+				vertical-align:top;
+				line-height:1;
+				width:calc(100% - 3em);
+			}
+			.messages .message .msg {
+				line-height:1.5;
+			}
+		</style><div class="messages"><div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-07-10 14:15</div><div class="msg">@ - rocking it with the Issues and PRs.  Thanks.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-10 14:37</div><div class="msg">:thumbsup:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-10 14:59</div><div class="msg">@ - here's a simple content pack you can install (`drpcli contents create ./ntpd-start.yaml`) which provides an `ntpd-start` Stage you can add to your workflows ... this has ONLY been tested and designed to work with Sledgehammer ...</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-10 15:00</div><div class="msg">as I mention in the Issue - we are working on a larger more complete NTP time service content component that will fully manage NTP services and configuration on a given Machine</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-10 15:02</div><div class="msg">That works for me....I'll give it a test</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-10 15:02</div><div class="msg">ty</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-10 15:36</div><div class="msg">Not having luck with that content package with sledgheammer</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-10 15:37</div><div class="msg">hmm ... worked on my v3.9.0 endpoint with Sledgehammer starting 6122 signature</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-10 15:37</div><div class="msg">did the contents create successfully ?   is the stage available ?  and the task ?   how did you apply it to the Sledgehammer workflow/Machine ?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-10 15:37</div><div class="msg">I think the ntpdate command it bombing out, still investigating</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-10 15:38</div><div class="msg">I put it in the discovery workflow right after the discover stage</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-10 15:38</div><div class="msg">```Log for Job: a6fda49f-778d-4d76-999c-c46dfbe79456
+Starting task ntpd-start on 429fda36-7f17-46ea-bce7-f6beddb59f35
+Starting command ./ntpd-start-ntpd-start
+
+
+Command running
+&gt;&gt;&gt; Attempting to start NTP services ... 
++ set -e
+++ grep '^server' /etc/ntp.conf
+++ head -1
+++ awk ' { print $2 } '
++ SERVER=<a href="http://0.centos.pool.ntp.org">http://0.centos.pool.ntp.org</a>
++ ntpdate <a href="http://0.centos.pool.ntp.org">http://0.centos.pool.ntp.org</a>
+10 Jul 15:19:53 ntpdate[1672]: no server suitable for synchronization found
+Command exited with status 1
+Action ntpd-start finished
+Task ntpd-start failed
+Marked machine 429fda36-7f17-46ea-bce7-f6beddb59f35 as not runnable
+Updated job a6fda49f-778d-4d76-999c-c46dfbe79456 to failed
+Task signalled that it failed```</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-10 15:39</div><div class="msg">If we are using the DHCP ntp server that is specified through dhclient it get's added at the end of /etc/ntp.conf</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-10 15:39</div><div class="msg">```
+server 42.159.162.17   # added by /sbin/dhclient-script
+```</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-10 15:40</div><div class="msg">In my case</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-10 15:40</div><div class="msg">ah - sigh - easy enough - you can modify the YAML blob with the appropriate script action then run `drpcli contents upload ntpd-start /tmp/ntpd-start.yaml` to update the content pack on your DRP endpoint</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-10 15:40</div><div class="msg">My server is in a segmented network that won;t have access to the public ntp pool</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-10 15:40</div><div class="msg">gotta run to a meeting now - back in a bit</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-10 15:41</div><div class="msg">no worries I can handle that, just wanted to give you an update</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-10 15:41</div><div class="msg">appreciate the help</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-10 15:41</div><div class="msg">yep - thx for feedback - my environment doesn't inject NTP servers via DHCP - so I didn't see those :slightly_smiling_face:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-07-10 16:09</div><div class="msg">@ - I?ve pulled into tip krib content a fix for the bridge value not being set to one.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-10 16:10</div><div class="msg">Just commented on that fix</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-10 16:10</div><div class="msg">What are your thoughts?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-10 16:10</div><div class="msg"><a href="https://github.com/digitalrebar/provision-content/commit/d03996dbf5c824562a23933e5eaf06aeb0138607">https://github.com/digitalrebar/provision-content/commit/d03996dbf5c824562a23933e5eaf06aeb0138607</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-07-10 16:11</div><div class="msg">You are right.  I?m thinking about Krib from a immutable boot / ram-only perspective not bare metal.  Your fix is better.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-07-10 16:11</div><div class="msg">I?ll add it.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-10 16:11</div><div class="msg">:thumbsup:</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-10 16:12</div><div class="msg">I did assume standard sysctl directories...so hopefully that works</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-07-10 16:12</div><div class="msg">converting `` to $()</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-10 16:12</div><div class="msg">Yeah, that's probably better</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-07-10 16:13</div><div class="msg">yaml encoding of this gets ugly.  It works, but ?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-10 16:13</div><div class="msg">I didnt run it through a shell linter</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-10 16:13</div><div class="msg">But tests worked on my centos vagrant vm</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-07-10 16:13</div><div class="msg">I?m more worried about what it looks like in yaml.  There are a couple of things that get annoying.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-07-10 16:13</div><div class="msg">This is mostly Centos focused right now.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-10 16:13</div><div class="msg">ah yes, lol</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-07-10 16:18</div><div class="msg">okay - tip now has the completer fix :slightly_smiling_face:</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-10 16:19</div><div class="msg">I just changed this line from head to tail
+`SERVER=$(grep "^server" /etc/ntp.conf | head -1 | awk ' { print $2 } ')`</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-10 16:19</div><div class="msg">That should grab the last server in the ntp.conf which should be from dhclient</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-10 16:19</div><div class="msg">Worked in my test environment</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-10 16:44</div><div class="msg">cool - I'll incorporate in to my proposed change - not sure if we'll add this in to sledgehammer or what - need to pow-wow w/ the team</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-10 16:44</div><div class="msg">something will get added in .... :slightly_smiling_face:</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-10 16:57</div><div class="msg">Sounds good, thanks for the help</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-10 16:58</div><div class="msg">yep - thanks for the good reports and helping to debug things - the KRIB stuff went through a pretty massive rewrite and restructure - so it still needs some "shaking out" to get it smoothed over</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-02-20/319135093095_c0e6268d269110cacc49_72.gif" /><div class="message"><div class="username">dave.parker</div><div class="time">2018-07-10 17:38</div><div class="msg">How come when I click on Plugins in the GUI, it says I have to add a plugin provider, but when I click to do that, it just hangs forever?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-02-20/319135093095_c0e6268d269110cacc49_72.gif" /><div class="message"><div class="username">dave.parker</div><div class="time">2018-07-10 17:38</div><div class="msg">It just says "Loading Providers" and the wheel spins forever.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-10 18:21</div><div class="msg">Try <a href="http://tip.rackn.io">http://tip.rackn.io</a>.  I thought we fixed that. </div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-10 18:22</div><div class="msg">Which plugin?  Also, try different versions?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-02-20/319135093095_c0e6268d269110cacc49_72.gif" /><div class="message"><div class="username">dave.parker</div><div class="time">2018-07-10 18:27</div><div class="msg">I guess it's actually the New Plugin page.  I don't have any plugins installed yet.  It just says "Loading Providers"</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-02-20/319135093095_c0e6268d269110cacc49_72.gif" /><div class="message"><div class="username">dave.parker</div><div class="time">2018-07-10 18:28</div><div class="msg">It says I need to install a provider, and when I click "add" is when it hangs on loading providers.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-10 18:29</div><div class="msg">Ah. I'll take a look at that.  It expects you to have a provider</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-10 18:29</div><div class="msg">You install provider in the other section</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-02-20/319135093095_c0e6268d269110cacc49_72.gif" /><div class="message"><div class="username">dave.parker</div><div class="time">2018-07-10 18:32</div><div class="msg">Oh ok.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-02-20/319135093095_c0e6268d269110cacc49_72.gif" /><div class="message"><div class="username">dave.parker</div><div class="time">2018-07-10 18:33</div><div class="msg">Ah ok, I didn't see that.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-10 18:44</div><div class="msg">has joined #2018-07-10</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-10 20:00</div><div class="msg">I'm trying to understand why after installing centos with the `centos-7-install` stage the uefi bootorder auto changes from PXE to local disk. Has anyone seen this behavior? Shouldn't the bare metal server always PXE boot?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-10 20:01</div><div class="msg">Is that what the `reorder-uefi-bootorder` stage is trying to remediate? or am I just misunderstanding something?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2016-11-15/104181243072_307b971367a7363128bf_72.jpg" /><div class="message"><div class="username">spector</div><div class="time">2018-07-10 20:11</div><div class="msg">$Welcome @</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-10 20:11</div><div class="msg">Digital Rebar welcome information is here &gt; <a href="http://rebar.digital/community/welcome.html">http://rebar.digital/community/welcome.html</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-10 22:14</div><div class="msg">@ Yes, the installer does that on UEFI gear, because UEFI boot sequences are exposed to the OS.  It is what the `reorder-uefi-bootorder` stage is intended to remediate.</div></div></div><br/>
+</div></body></html>

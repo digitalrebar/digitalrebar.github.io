@@ -1,0 +1,103 @@
+<html><body><style>
+			* {
+				font-family:sans-serif;
+			}
+			body {
+				text-align:center;
+				padding:1em;
+			}
+			.messages {
+				width:100%;
+				max-width:700px;
+				text-align:left;
+				display:inline-block;
+			}
+			.messages img {
+				background-color:rgb(248,244,240);
+				width:36px;
+				height:36px;
+				border-radius:0.2em;
+				display:inline-block;
+				vertical-align:top;
+				margin-right:0.65em;
+			}
+			.messages .time {
+				display:inline-block;
+				color:rgb(200,200,200);
+				margin-left:0.5em;
+			}
+			.messages .username {
+				display:inline-block;
+				font-weight:600;
+				line-height:1;
+			}
+			.messages .message {
+				display:inline-block;
+				vertical-align:top;
+				line-height:1;
+				width:calc(100% - 3em);
+			}
+			.messages .message .msg {
+				line-height:1.5;
+			}
+		</style><div class="messages"><div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-20 15:33</div><div class="msg">after successfully install centos 7.5 via using the community bootenvs; i can?t install any packages on this host. any suggestions?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-20 15:35</div><div class="msg"># yum install epel-release
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+No package epel-release available.
+Error: Nothing to do</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2016-11-15/104181243072_307b971367a7363128bf_72.jpg" /><div class="message"><div class="username">spector</div><div class="time">2018-07-20 16:16</div><div class="msg">My apologies @, should have sent this last night $Welcome</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-20 16:16</div><div class="msg">Digital Rebar welcome information is here &gt; <a href="http://rebar.digital/community/welcome.html">http://rebar.digital/community/welcome.html</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-20 16:21</div><div class="msg">@ - can you `ls -l /etc/yum.repos.d/` on that built machine?   I just ran through the stock C7 install.  We should be writing a `00-rebar.repo` which contains `centos-7-everything-extras` named repo that resolves that pkg successfully</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-20 16:22</div><div class="msg">did you use the `package-repositories` feature?  or use a customized kickstart (eg. via `select-kickseed`)?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-20 16:25</div><div class="msg">I have been trying to figure out why I have this error whenever I try to clone or create a new template(both using CLI or Ux):
+Error: Templates[3]: No common template for centos-6.ks.tmpl
+I can only clone and create new templates if I remove "os-other" package, however, I need this package for ESXi. 
+any idea why is this happening ?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-20 16:25</div><div class="msg">@ not sure at the moment, will look in to it</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-20 16:28</div><div class="msg">@shane ls -al /etc/yum.repos.d/
+total 12
+drwxr-xr-x.  2 root root 4096 Jul 19 22:04 .
+drwxr-xr-x. 75 root root 4096 Jul 19 22:07 ..
+-rw-r--r--.  1 root root  145 Jul 19 22:04 00-rebar.repo</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-20 16:29</div><div class="msg">can you check for the repo definition in that 00-rebar.repo file  (centos-7-everything-extras)</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-20 16:31</div><div class="msg">baseurl is pointed to my provision server
+[centos-7.5.1804-install]
+name=centos-7.5.1804 - centos-7.5.1804-install
+baseurl=<a href="http://10.11.110.50:8091/centos-7.5.1804/install">http://10.11.110.50:8091/centos-7.5.1804/install</a>
+gpgcheck=0</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-20 16:32</div><div class="msg">i?m still learning DR provision?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-20 16:32</div><div class="msg">ok - copy that 00... file out of there - then see if you can do this:
+`yum -y reinstall centos-release`</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-20 16:33</div><div class="msg">if that pkg is available it should rewire the distro default repos back in place</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-20 16:33</div><div class="msg">if it does - then you can delete the 00-rebar.repo file</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-20 16:34</div><div class="msg">i got these messages after moved the 00? file and run that ?yum -y ??</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-20 16:34</div><div class="msg">[centos-7.5.1804-install]
+name=centos-7.5.1804 - centos-7.5.1804-install
+baseurl=<a href="http://10.11.110.50:8091/centos-7.5.1804/install">http://10.11.110.50:8091/centos-7.5.1804/install</a>
+gpgcheck=0</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-20 16:34</div><div class="msg">sorry</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-20 16:35</div><div class="msg"># yum -y reinstall centos-release
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+There are no enabled repos.
+ Run ?yum repolist all? to see the repos you have.
+ To enable Red Hat Subscription Management repositories:
+     subscription-manager repos --enable &lt;repo&gt;
+ To enable custom repositories:
+     yum-config-manager --enable &lt;repo&gt;</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-20 16:35</div><div class="msg">copy that file out - don't move it ...</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-20 16:35</div><div class="msg">if you move it, there won't be any repo definitions for `yum` to operate against :slightly_smiling_face:</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-20 16:36</div><div class="msg">yeah, it works</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-20 16:37</div><div class="msg">did you set the `local-repos` only Param in Global profile, or on the Machine ?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-20 16:37</div><div class="msg">how come copy the 00.. file works?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-20 16:37</div><div class="msg">in the Global profile</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-20 16:38</div><div class="msg">the 00... file contains a modified set of Repo definitions so we can customize them according to your needs - for example if you have a local Mirror of the packages you want (or need to because of security) to use</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-20 16:38</div><div class="msg">don't do `local-repo`, please</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-20 16:38</div><div class="msg">that is deprecated, and going away</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-20 16:38</div><div class="msg">ok</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-20 16:38</div><div class="msg">the repo system will do the "right thing" by default - and let you override the repositories to use if desired - via the `package-repositories` Parameter</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-20 16:39</div><div class="msg">example:  <a href="https://provision.readthedocs.io/en/tip/doc/arch/data.html?highlight=package-repositories#the-package-repositories-param">https://provision.readthedocs.io/en/tip/doc/arch/data.html?highlight=package-repositories#the-package-repositories-param</a></div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-20 16:40</div><div class="msg">thanks a lot!</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-20 16:42</div><div class="msg">NP</div></div></div><br/>
+</div></body></html>

@@ -1,0 +1,426 @@
+[
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "I created a simple template",
+        "client_msg_id": "73438093-6213-46f8-acb3-54e4f2b4251f",
+        "ts": "1531486486.000418"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "```#!\/bin\/bash\n#\n\n\nPACKS=`curl -H \"St2-Api-Key: API_KEY_GOES_HERE\" <https:\/\/10.100.129.67\/api\/v1\/packs> -k1`\n\necho \"Finished retrieving packs\"\necho $PACKS\nexit 0```",
+        "client_msg_id": "56a236aa-573d-46ae-9dde-1467594d2d3d",
+        "edited": {
+            "user": "UAQAE0VNE",
+            "ts": "1531486622.000000"
+        },
+        "ts": "1531486502.000200"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "but I never see the output when it runs",
+        "client_msg_id": "e5ba76c6-82d9-47d7-9318-fb5453a3933e",
+        "ts": "1531486510.000079"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "This is all I see in the output of the job",
+        "client_msg_id": "e73b13fd-f83c-4527-9126-a6f9125eef1d",
+        "ts": "1531486533.000097"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "`Log for Job: 50945823-0755-4d17-b5bd-4743bd859424`",
+        "client_msg_id": "6382b5cc-3317-4a72-af2e-92816276ecee",
+        "ts": "1531486536.000031"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "that uuid changes each time and thats it",
+        "client_msg_id": "c051e55c-96f4-439f-baea-f92e4c217649",
+        "ts": "1531486544.000347"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "I am trying to figure out on how to test this",
+        "client_msg_id": "fafd511b-b225-4ade-a749-b6734a94241c",
+        "ts": "1531486611.000358"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "well - the PACKS line is missing the completing backtick.",
+        "client_msg_id": "ccabaa5f-e29d-4afd-874b-d738bb284b63",
+        "ts": "1531486621.000125"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": ":slightly_smiling_face:",
+        "client_msg_id": "e77bcc34-c234-4cec-9b9f-2e5a57e4864a",
+        "ts": "1531486626.000377"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "yea I just noticed that :slightly_smiling_face: <@U02DGQYK1> but in all seriousness how do I debug this from the logs",
+        "client_msg_id": "76593fd2-9e57-4536-9fd0-b60384c30b9e",
+        "ts": "1531486649.000202"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It should have sent it.",
+        "client_msg_id": "fc3a02b4-b6dc-4419-9e5e-de109201a27e",
+        "ts": "1531486661.000056"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The backtick could have caused an exit 0 with no output.",
+        "client_msg_id": "bb4adf1b-f90a-4889-9684-8a6bb0d38044",
+        "ts": "1531486676.000069"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "you can add set -x to the top.",
+        "client_msg_id": "64c8cb30-59d7-4504-995c-b4efe268d3ca",
+        "ts": "1531486688.000319"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We often include a `setup.tmpl`",
+        "client_msg_id": "faead135-60f7-45d3-9619-476f3b83053d",
+        "ts": "1531486698.000280"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "and it has some helpers.",
+        "client_msg_id": "c4d4b186-39db-45e1-89a7-64541a847027",
+        "ts": "1531486733.000043"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "cool reading it now",
+        "client_msg_id": "5045d4f1-54fa-4057-a977-be37b8c8d888",
+        "ts": "1531486737.000268"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Then you can use params to turn on set -x or not",
+        "client_msg_id": "a22a4908-1859-4e5f-a538-59afe1d77895",
+        "ts": "1531486754.000024"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "also from the ui I am tryijng to just run one task, how do i do that besides bulk actions which requires me to run a stage",
+        "client_msg_id": "e490a844-ce91-49ee-ad2c-9de79de10e53",
+        "ts": "1531487045.000108"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "or a workflow",
+        "client_msg_id": "1ff5e996-764b-438a-bfd0-bf0cacbd886c",
+        "ts": "1531487048.000055"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "<@U02DGQYK1> ty for pointing me in the right direction",
+        "client_msg_id": "487dae7a-2fa7-45d0-bfac-e1a67b85bc08",
+        "ts": "1531487555.000374"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "I am trying to figure out the api call that I need to make from stackstorm to call rebar to run a particular workflow on a machine",
+        "client_msg_id": "121c7b53-51f5-472c-8f7d-27290a68301c",
+        "edited": {
+            "user": "UAQAE0VNE",
+            "ts": "1531496147.000000"
+        },
+        "ts": "1531495940.000466"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "does anyone know it off hand?",
+        "client_msg_id": "6630527c-95e7-448b-b527-09d3b3cde291",
+        "ts": "1531495948.000304"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "Also how do I access the data that Ohai collects within a template?",
+        "client_msg_id": "b7e7045f-6134-47f5-acbb-d7dba4ab7bea",
+        "ts": "1531497699.000378"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "get_param helper from setup.tmpl and then jq",
+        "client_msg_id": "092a63d4-7c9a-4a72-9805-2b76ac1a0298",
+        "ts": "1531498580.000075"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "There is also an inventory help stage that will parse the gohai into additional parameters.",
+        "client_msg_id": "df9bb2c4-26f3-41ee-bcd2-e83af46f7f96",
+        "ts": "1531499011.000337"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "yep I found the You Tube Video",
+        "client_msg_id": "a372388c-23b7-4f0f-8987-2c2f817c5139",
+        "ts": "1531500641.000136"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "that was really helpful",
+        "client_msg_id": "d1f1de26-d569-4d50-9834-e7c314034440",
+        "ts": "1531500646.000217"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "even with learning profiles",
+        "client_msg_id": "61ded98f-cb84-477f-bd4b-bed54f227389",
+        "ts": "1531500650.000308"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "Would be nice if this can turn into how to documentations",
+        "client_msg_id": "45a0932a-cafb-4990-ade9-393ba8f9910f",
+        "ts": "1531500659.000347"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "oh - most of this is doc at raw level, not a putting it all together path.",
+        "client_msg_id": "1d7639c3-c16b-44d5-a6cb-e780396d1ea4",
+        "ts": "1531500812.000371"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "I know that :wink:, which is why it would be nice to get some howto's together, Even though the Video was very hjelpful, I had to pause rewind a few times, and in doing so I learned alot",
+        "client_msg_id": "d53f190d-27f2-4f9f-af23-047510181a12",
+        "ts": "1531500882.000182"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "What is rebar internal db ",
+        "client_msg_id": "c1b00a61-e328-4db8-820e-33a70ab0138a",
+        "ts": "1531507034.000299"
+    },
+    {
+        "type": "message",
+        "user": "U7P8TES5B",
+        "text": "Sorry for the general cluelessness, but I'm having problems getting DRP to recognize a custom partitioning scheme. I've cloned the template part-scheme-default.tmpl to part-scheme-btrfs.tmpl.  After the initial boot, I edit the machine to invoke the ubuntu18 workflow and set a parameter 'part-scheme' to 'btrfs'. Machine reboots and starts installing, but does not invoke the custom template. I've turned trace on but I don't see any inidcation that DRP is looking for a value for part-scheme. Oh, and how do I add a stage to a workflow?",
+        "client_msg_id": "bff60715-1c18-4a54-8ad5-4bd94a31b57d",
+        "thread_ts": "1531507088.000275",
+        "reply_count": 3,
+        "replies": [
+            {
+                "user": "U7P8TES5B",
+                "ts": "1531591945.000033"
+            },
+            {
+                "user": "U6QFVRJNB",
+                "ts": "1531593222.000042"
+            },
+            {
+                "user": "U7P8TES5B",
+                "ts": "1531604810.000045"
+            }
+        ],
+        "unread_count": 3,
+        "ts": "1531507088.000275"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@UAQAE0VNE> - a local file store - in HA mode, it is consul.",
+        "client_msg_id": "8d608944-9ef7-4353-ad98-845f1d686aa6",
+        "ts": "1531508228.000182"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "where is the local file located?",
+        "client_msg_id": "e4954acc-f388-49c0-b3f0-e07e7f5aaca0",
+        "ts": "1531508350.000352"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "drp-data\/digitalrebar in isolated mode",
+        "client_msg_id": "15671da3-b398-41f7-b507-679a551c21bf",
+        "ts": "1531508652.000319"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "or \/var\/lib\/dr-provision\/digitalrebar in production mode",
+        "client_msg_id": "84be6639-711c-421c-aa2b-9d772eecff6c",
+        "ts": "1531508667.000098"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "hi all, when configuring a separate dhcp server (not managed by rebar) what filename should i be referencing?",
+        "client_msg_id": "44de9676-58e4-462d-836a-5eaaa0ad8223",
+        "ts": "1531511305.000116"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "i’ve edited out something that might be considered private to some at our company. but here is an example of what we had configured ```host <http:\/\/kvm.fqdn.com|kvm.fqdn.com> {\n       hardware ethernet  XX:96:91:28:XX:XX;\n       fixed-address <http:\/\/kvm.fqdn.com|kvm.fqdn.com>;\n       default-lease-time 2592000;\n       max-lease-time 2592000;\n       next-server DR.IP.ADD.RESS;\n       filename \"default.ipxe\";\n       }```",
+        "client_msg_id": "998d24d1-45c1-48af-9f62-cef16cff4fa7",
+        "ts": "1531513439.000330"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "the host gets an ip, reaches out to the digital rebar server, i see it with a tcpdump requesting `default.ipxe`. which doesn’t exist. so i suspect `default.ipxe` is the wrong file to ask for? moreover because i believe the network cards only support pxe and not ipxe.",
+        "client_msg_id": "6b5c6ee6-1951-4d87-9827-65fa693c5a04",
+        "ts": "1531513516.000092"
+    },
+    {
+        "type": "message",
+        "user": "U7P8TES5B",
+        "text": "Nik - my configuration is set to the filename lpxelinux.0",
+        "client_msg_id": "18a8a944-f589-4662-8c05-d3678e8ea12e",
+        "ts": "1531513827.000185"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "is it possible to just symlink default.ipxe -&gt; lpxelinux.0? well… actually i’ve tried that and it doesn’t work. not sure why.",
+        "client_msg_id": "a1e824b5-0bbb-4b11-87c4-8410a1f23f47",
+        "ts": "1531514088.000281"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Different tools ",
+        "client_msg_id": "16D12324-7E0D-4616-AEF6-014FD62440E2",
+        "ts": "1531514405.000088"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Oh.  Make sure you had default bootenv sledgehammer and stage disscover.   I",
+        "client_msg_id": "50655F6A-BFC2-47E0-8CB7-75F758715C34",
+        "ts": "1531514479.000147"
+    },
+    {
+        "type": "message",
+        "user": "UA98B96BA",
+        "text": "Has anyone done much with DRP and ESXi 6.5 or 6.7? I'm trying to execute drpcli commands as part of the %post section of the kickstart to update the machine to runnable and processjobs, but it seems the ESXi busybox shell environment is preventing communication out to any port except 80. Have you guys's run into that issue?",
+        "client_msg_id": "6a979900-97a0-4483-ba69-9f1eca546e22",
+        "ts": "1531518291.000162"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yes.  It is a pain and not consistent.   We have some stale examples in the os-other content package.  ",
+        "client_msg_id": "4473C6EE-0CBB-43D4-BC97-8C235A5FECE6",
+        "ts": "1531518910.000077"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "There needs to be a cleaning and production work on it.  ",
+        "client_msg_id": "D5F57166-0E6B-4A58-BDD3-1764E387B3FA",
+        "ts": "1531518946.000177"
+    },
+    {
+        "type": "message",
+        "user": "UA98B96BA",
+        "text": "Are those on github?",
+        "client_msg_id": "6a09c0df-ea68-4300-b5cd-8d46b948ebd9",
+        "ts": "1531518956.000142"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "RackN SaaS portal with account login, I think.",
+        "client_msg_id": "a7304555-875f-4489-a0c3-8a390062fbef",
+        "ts": "1531518980.000006"
+    },
+    {
+        "type": "message",
+        "user": "UA98B96BA",
+        "text": "I guess an option would be to setup a reverse proxy server and redirect port 80 to drp:8091",
+        "client_msg_id": "98e69d90-f9c7-43c4-a280-6084924ea08a",
+        "ts": "1531520931.000133"
+    },
+    {
+        "type": "message",
+        "user": "UA98B96BA",
+        "text": "clunky but would get the job done",
+        "client_msg_id": "2f8b2f3b-ff08-44a3-9146-f117ff93a83d",
+        "ts": "1531520944.000058"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "You can set the drp api port with a command line flag",
+        "client_msg_id": "b5accd3e-a9fe-4733-9334-5ed31108770d",
+        "ts": "1531521039.000108"
+    },
+    {
+        "type": "message",
+        "user": "UA98B96BA",
+        "text": "Is it recommended to run on port 80? That would definitely work",
+        "client_msg_id": "2ab7e71e-15ed-43cc-b0b3-001e87e79f5d",
+        "ts": "1531521253.000042"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "It's not a safe default but there's no inherent issue",
+        "client_msg_id": "89309d05-561b-4509-983d-3575b9d52c03",
+        "ts": "1531521935.000084"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "<@U02DGQYK1> yea the default bootenv is `sledgehammer` and the stage is set for `discover`.  in effort to not change `default.ipxe` in the dhcp configuration can i just sym link something? i’m only asking that cause someone else manages the dhcp server at my organization and i wont be able to get in touch with them until next week.",
+        "client_msg_id": "b123bb42-c389-4695-ba09-e3402fbb862e",
+        "ts": "1531532913.000045"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "If they do not set nextboot, you may be able to use proxy mode in the dhcp server",
+        "client_msg_id": "4a13e930-376b-48a7-9dce-e4a2b4b7b628",
+        "ts": "1531534252.000023"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "<@U02DHRR2L> is nextboot the same as `next-server` ? if so I do have that set, i just didn’t include my ip in the configuration example above.",
+        "client_msg_id": "47bb556d-7c68-4495-a19c-54712cd8e8b4",
+        "ts": "1531536103.000072"
+    }
+]

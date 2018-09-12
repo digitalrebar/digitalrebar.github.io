@@ -1,0 +1,432 @@
+[
+    {
+        "user": "UC3HUCBEE",
+        "text": "<@UC3HUCBEE> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1533574841.000493"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "<!here> I've discovered that this bug can be worked around by doing a hard refresh too.",
+        "client_msg_id": "c1618450-babe-4c91-b2d7-8d85a17de860",
+        "ts": "1533575316.000086"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UC3HUCBEE> $welcome",
+        "client_msg_id": "0f0d65ef-2d99-4303-b94b-68be18e70dc3",
+        "ts": "1533575335.000362"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1533575335.000446"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U8FAN7PLK> - you should be able to force accept the new TLS certificate, by going directly to the DRP Endpoint API port - you're web browser will then let you accept the self-signed certificate and redirect you to the stable portal.  (example:  <https:\/\/10.10.10.10:8092> )",
+        "client_msg_id": "da7b7c7b-bd15-4cce-be2d-049c57c3a3cf",
+        "ts": "1533575412.000003"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<@UBXEU90UQ> <https:\/\/github.com\/digitalrebar\/provision\/pull\/963> has the reservation scopes change that should address the issues you are having.",
+        "client_msg_id": "cd38813a-f36f-4c8e-9171-0368d26291bc",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "Add scoped reservations by VictorLowther · Pull Request #963 · digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/pull\/963",
+                "text": "This adds support to dr-provision for having per-subnet scoped reservations, and improving the sanity checking around reservation IP addresses, hardware identification strategies, and hardware iden...",
+                "fallback": "GitHub: Add scoped reservations by VictorLowther · Pull Request #963 · digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/pull\/963",
+                "thumb_url": "https:\/\/avatars2.githubusercontent.com\/u\/770578?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/digitalrebar\/provision\/pull\/963"
+            }
+        ],
+        "ts": "1533576080.000207"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Still a partial WIP, but it should give you an idea of where I am going with the concept.",
+        "client_msg_id": "c047d9d9-0a95-4010-b3ce-8708b8209421",
+        "ts": "1533576115.000379"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "<!here> hey guys, quick question, if I want to limit the usage of the IPMI plugin to specific actions, I guess I should use the `specific` field for that claim, which can only be specified through the command line right ?",
+        "client_msg_id": "050dc5c2-cb39-4dd1-a16b-0eb839e6f874",
+        "edited": {
+            "user": "U8FAN7PLK",
+            "ts": "1533582841.000000"
+        },
+        "ts": "1533582830.000023"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes  - that is right.",
+        "client_msg_id": "381d5974-6c85-4c85-b21b-2c42183d154f",
+        "ts": "1533582913.000396"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "so if I want to limit the IPMI plugins to only poweroff for example I should use a command like this:\n```\ndrpcli roles update prod-role '\"Claims\": [{\"action\": \"get, list\", \"scope\": \"plugins\", \"specific\": \"poweroff\"}]'\n```\nUnfortunately, the specific isn't showing in the UX, maybe I am not using the right keyword ?",
+        "client_msg_id": "f599c594-483c-40d6-9cac-b9a68b8e17e9",
+        "edited": {
+            "user": "U8FAN7PLK",
+            "ts": "1533583976.000000"
+        },
+        "ts": "1533583942.000339"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "but it's showing in command line:\n```drpcli roles show prod-role\n{\n  \"Available\": true,\n  \"Claims\": [\n    {\n      \"action\": \"get, list\",\n      \"scope\": \"plugins\",\n      \"specific\": \"poweroff\"\n    }\n  ],\n```",
+        "client_msg_id": "e320fd73-a42e-4bcb-8490-2c5d7ad00f2c",
+        "ts": "1533584008.000116"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "sorry - it would be action",
+        "client_msg_id": "c546d279-1fa5-4a36-b105-03b242e96542",
+        "ts": "1533584029.000104"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "wait!",
+        "client_msg_id": "000ea4b4-cd41-443c-8b07-d7b54662fdfc",
+        "ts": "1533584050.000148"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "let me think.",
+        "client_msg_id": "57e15f14-ef12-42c0-b274-b263b14d0222",
+        "ts": "1533584054.000274"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "ipmi actions are scoped like:",
+        "client_msg_id": "9a535a51-37db-47c7-b46d-767d60fbcabc",
+        "ts": "1533584080.000157"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "scope = machines",
+        "client_msg_id": "a96276b1-60b9-4531-8a35-6904af8cd5d1",
+        "ts": "1533584086.000042"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "actions = ipmi power commands - “poweroff,poweron”",
+        "client_msg_id": "bc098476-3816-4f25-9f43-f30e62b73092",
+        "ts": "1533584103.000414"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "specific = “UUID”",
+        "client_msg_id": "6b99443c-ca4e-4681-925a-67f9cfd16028",
+        "ts": "1533584113.000239"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "mmm",
+        "client_msg_id": "7e396250-d2bb-4292-9df4-8141cf6edb57",
+        "ts": "1533584158.000189"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "let me try",
+        "client_msg_id": "2b178d74-ea40-4d7e-a80d-1610b80ead74",
+        "ts": "1533584176.000246"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "the UUID is the UUID of a machine right ?",
+        "client_msg_id": "c37d9fa4-57db-4ad2-9d13-5791fbc5646a",
+        "ts": "1533584329.000141"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes or *",
+        "client_msg_id": "553e9f76-5b3e-4050-ae96-cece41763271",
+        "ts": "1533584430.000100"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "ok",
+        "client_msg_id": "abb8a265-2c43-4bc3-9791-a96e908a82b6",
+        "ts": "1533584473.000060"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "so something like this should work:\n```\n    {\n      \"actions\": \"poweroff, poweron\"\n      \"scope\": \"machines\",\n      \"specific\": \"*\"\n    },\n```",
+        "client_msg_id": "6bcdaaae-bcf4-4032-9d92-edb88e09bc2e",
+        "ts": "1533584743.000457"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I think so",
+        "client_msg_id": "652f8fa0-ec3c-421b-8832-0e5262d0ff61",
+        "ts": "1533584805.000124"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "This isn't accepted:\n```\n    {\n      \"action\": \"poweron, poweroff\",\n      \"scope\": \"machines\",\n      \"specific\": \"*\"\n    },\n```\n```Error: ValidationError: roles\/prod-role\n  No such action 'poweroff'\n  No such action 'poweron'\n```\nThis is accepted but doesn't do what I want:\n```    {\n      \"actions\": \"poweron, poweroff\",\n      \"scope\": \"machines\",\n      \"specific\": \"*\"\n    },\n```\nIn fact it's transformed into something completely different when I do `drpcli roles show prod-role`:\n```\n    {\n      \"action\": \"get,list\",\n      \"scope\": \"machines\",\n      \"specific\": \"*\"\n    },\n```",
+        "client_msg_id": "bdfe2425-3f79-4b12-81a0-580bdf78a4a7",
+        "ts": "1533585032.000185"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "action is defaulted.  Let me look.",
+        "client_msg_id": "e61ba2e5-0a76-439e-b473-f60828b5c7bc",
+        "ts": "1533585310.000019"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "action is the correct key.",
+        "client_msg_id": "d048ec04-aec7-4454-ba73-6feafa93335d",
+        "ts": "1533585414.000130"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "in UX when I want to edit a claim, under the action tab, I have the possibility to also select `action` and\/or `actions`, isn't that redundant?",
+        "client_msg_id": "f7902279-a391-49b0-8d1f-6d58ee48e08f",
+        "ts": "1533585491.000364"
+    },
+    {
+        "type": "message",
+        "text": "",
+        "files": [
+            {
+                "id": "FC3MH2A58",
+                "created": 1533585600,
+                "timestamp": 1533585600,
+                "name": "image.png",
+                "title": "Pasted image at 2018-08-06, 3:59 PM",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "U8FAN7PLK",
+                "editable": false,
+                "size": 29100,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FC3MH2A58\/image.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FC3MH2A58\/download\/image.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FC3MH2A58-0265950673\/image_64.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FC3MH2A58-0265950673\/image_80.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FC3MH2A58-0265950673\/image_360.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_360_w": 360,
+                "thumb_360_h": 172,
+                "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FC3MH2A58-0265950673\/image_480.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_480_w": 480,
+                "thumb_480_h": 229,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FC3MH2A58-0265950673\/image_160.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FC3MH2A58-0265950673\/image_720.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_720_w": 720,
+                "thumb_720_h": 344,
+                "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FC3MH2A58-0265950673\/image_800.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_800_w": 800,
+                "thumb_800_h": 382,
+                "image_exif_rotation": 1,
+                "original_w": 830,
+                "original_h": 396,
+                "permalink": "https:\/\/rackn.slack.com\/files\/U8FAN7PLK\/FC3MH2A58\/image.png",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FC3MH2A58-8f790694d2"
+            }
+        ],
+        "upload": true,
+        "user": "U8FAN7PLK",
+        "display_as_bot": false,
+        "ts": "1533585605.000080"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "this is weird :slightly_smiling_face:",
+        "client_msg_id": "928a3305-0590-4ab2-b618-e45aa47c1c5e",
+        "ts": "1533585610.000340"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "that does seem weird.  hmmm",
+        "client_msg_id": "600a2697-e6ae-4186-bc50-d99a76e6f39f",
+        "ts": "1533585672.000431"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I think this is a bug.  We aren’t pulling in the plugin provide actions into claims validation it looks like.",
+        "client_msg_id": "3de0f106-846c-445c-814a-37c90600f022",
+        "ts": "1533585728.000175"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "ok :slightly_smiling_face:",
+        "client_msg_id": "57fab38b-964d-4d72-845f-933e6add4ef7",
+        "ts": "1533585757.000252"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "so my guess is for now I can't limit the plugins actions in a user role :slightly_smiling_face:",
+        "client_msg_id": "ae51838e-2160-424c-84a5-e2ba306529a4",
+        "edited": {
+            "user": "U8FAN7PLK",
+            "ts": "1533585873.000000"
+        },
+        "ts": "1533585781.000191"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yeah - we intended to.  Need to figure how to wire it.  It is actually easy, but have to break some validation.",
+        "client_msg_id": "fb8ecd7d-7615-4547-a84b-dfe7e4fef657",
+        "ts": "1533585872.000304"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "maybe - let me look a little more",
+        "client_msg_id": "d8dfb7c4-d15d-4613-928c-c4321d4cca92",
+        "ts": "1533585888.000023"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "of course :slightly_smiling_face:",
+        "client_msg_id": "c7d51c17-61d5-445c-bb5f-bb9a0fbf6901",
+        "ts": "1533585894.000009"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "actually, I think there is a way. just a second.",
+        "client_msg_id": "61e144f8-cfcb-4cea-90c1-4ab4f7e78b04",
+        "ts": "1533585903.000247"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Try this:  `\"action\": \"action:poweron, action:poweroff\"`",
+        "client_msg_id": "fe6530fc-3407-4789-9703-5b6d5e30fd33",
+        "ts": "1533586034.000366"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "actions and action are valid as well because there are cli opitons to list the actions or action info on a machine.",
+        "client_msg_id": "cd56c9bf-3c5a-4341-9305-26588eea836d",
+        "ts": "1533586063.000144"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "So you can actually restrict the access to the list actions request on a machine.",
+        "client_msg_id": "2318a1f9-b246-4e1f-920e-dddd1f486b6d",
+        "ts": "1533586083.000090"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "or the show action &lt;action&gt; on a machine.",
+        "client_msg_id": "d34ceb69-879e-4ae4-bd64-b5607f2914a4",
+        "ts": "1533586091.000429"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@U8FAN7PLK> - I think there is a way.  the `action:&lt;cmd&gt;` form should work",
+        "client_msg_id": "a7426c9f-5cca-46fb-bb6a-274e6546efae",
+        "ts": "1533586132.000247"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "let me try",
+        "client_msg_id": "06badcac-bfd0-4b39-8ba4-0f82381f5fba",
+        "ts": "1533586509.000170"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "yes it's working !",
+        "client_msg_id": "095f21f6-21c2-4e33-a1ce-da0168af2707",
+        "ts": "1533586558.000042"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - just forgot the syntax.  I knew Victor had implemented.  sorry for taking so long to pull it out of my mind.",
+        "client_msg_id": "33a5bdf8-72c0-46fc-9a89-9e15983644e4",
+        "ts": "1533586624.000263"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "No worries <@U02DGQYK1>",
+        "client_msg_id": "cdac1c18-99f3-4c7d-9a0f-ef74e8620485",
+        "ts": "1533586722.000085"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "<@U02DJQSG8> just saw your message from earlier, looks good :slightly_smiling_face: I’ll build and have a play tomorrow if I get a chance :+1:",
+        "client_msg_id": "903d8db9-de44-49b6-93e9-0dcffab5c38d",
+        "ts": "1533588897.000296"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ok, coolio.",
+        "client_msg_id": "842c9092-89f2-4f18-be10-c00e9a0498dc",
+        "ts": "1533588913.000301"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "It should be in tip by morning US time ",
+        "client_msg_id": "A3D9F725-4B96-459F-8DE6-6ED06605AF71",
+        "ts": "1533590570.000022"
+    }
+]

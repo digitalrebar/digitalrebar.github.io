@@ -1,0 +1,141 @@
+<html><body><style>
+			* {
+				font-family:sans-serif;
+			}
+			body {
+				text-align:center;
+				padding:1em;
+			}
+			.messages {
+				width:100%;
+				max-width:700px;
+				text-align:left;
+				display:inline-block;
+			}
+			.messages img {
+				background-color:rgb(248,244,240);
+				width:36px;
+				height:36px;
+				border-radius:0.2em;
+				display:inline-block;
+				vertical-align:top;
+				margin-right:0.65em;
+			}
+			.messages .time {
+				display:inline-block;
+				color:rgb(200,200,200);
+				margin-left:0.5em;
+			}
+			.messages .username {
+				display:inline-block;
+				font-weight:600;
+				line-height:1;
+			}
+			.messages .message {
+				display:inline-block;
+				vertical-align:top;
+				line-height:1;
+				width:calc(100% - 3em);
+			}
+			.messages .message .msg {
+				line-height:1.5;
+			}
+		</style><div class="messages"><div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-06 17:00</div><div class="msg">has joined #2018-08-06</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/8ed489f4fec23363fa7edff0cf3fab50.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0015-72.png" /><div class="message"><div class="username">florent.wagener</div><div class="time">2018-08-06 17:08</div><div class="msg"><!here> I've discovered that this bug can be worked around by doing a hard refresh too.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-08-06 17:08</div><div class="msg">@ $welcome</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-06 17:08</div><div class="msg">Digital Rebar welcome information is here &gt; <a href="http://rebar.digital/community/welcome.html">http://rebar.digital/community/welcome.html</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-08-06 17:10</div><div class="msg">@florent.wagener - you should be able to force accept the new TLS certificate, by going directly to the DRP Endpoint API port - you're web browser will then let you accept the self-signed certificate and redirect you to the stable portal.  (example:  <a href="https://10.10.10.10:8092">https://10.10.10.10:8092</a> )</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-08-06 17:21</div><div class="msg">@ <a href="https://github.com/digitalrebar/provision/pull/963">https://github.com/digitalrebar/provision/pull/963</a> has the reservation scopes change that should address the issues you are having.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-08-06 17:21</div><div class="msg">Still a partial WIP, but it should give you an idea of where I am going with the concept.</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/8ed489f4fec23363fa7edff0cf3fab50.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0015-72.png" /><div class="message"><div class="username">florent.wagener</div><div class="time">2018-08-06 19:13</div><div class="msg"><!here> hey guys, quick question, if I want to limit the usage of the IPMI plugin to specific actions, I guess I should use the `specific` field for that claim, which can only be specified through the command line right ?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-08-06 19:15</div><div class="msg">yes  - that is right.</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/8ed489f4fec23363fa7edff0cf3fab50.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0015-72.png" /><div class="message"><div class="username">florent.wagener</div><div class="time">2018-08-06 19:32</div><div class="msg">so if I want to limit the IPMI plugins to only poweroff for example I should use a command like this:
+```
+drpcli roles update prod-role '"Claims": [{"action": "get, list", "scope": "plugins", "specific": "poweroff"}]'
+```
+Unfortunately, the specific isn't showing in the UX, maybe I am not using the right keyword ?</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/8ed489f4fec23363fa7edff0cf3fab50.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0015-72.png" /><div class="message"><div class="username">florent.wagener</div><div class="time">2018-08-06 19:33</div><div class="msg">but it's showing in command line:
+```drpcli roles show prod-role
+{
+  "Available": true,
+  "Claims": [
+    {
+      "action": "get, list",
+      "scope": "plugins",
+      "specific": "poweroff"
+    }
+  ],
+```</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-08-06 19:33</div><div class="msg">sorry - it would be action</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-08-06 19:34</div><div class="msg">wait!</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-08-06 19:34</div><div class="msg">let me think.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-08-06 19:34</div><div class="msg">ipmi actions are scoped like:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-08-06 19:34</div><div class="msg">scope = machines</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-08-06 19:35</div><div class="msg">actions = ipmi power commands - ?poweroff,poweron?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-08-06 19:35</div><div class="msg">specific = ?UUID?</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/8ed489f4fec23363fa7edff0cf3fab50.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0015-72.png" /><div class="message"><div class="username">florent.wagener</div><div class="time">2018-08-06 19:35</div><div class="msg">mmm</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/8ed489f4fec23363fa7edff0cf3fab50.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0015-72.png" /><div class="message"><div class="username">florent.wagener</div><div class="time">2018-08-06 19:36</div><div class="msg">let me try</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/8ed489f4fec23363fa7edff0cf3fab50.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0015-72.png" /><div class="message"><div class="username">florent.wagener</div><div class="time">2018-08-06 19:38</div><div class="msg">the UUID is the UUID of a machine right ?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-08-06 19:40</div><div class="msg">yes or *</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/8ed489f4fec23363fa7edff0cf3fab50.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0015-72.png" /><div class="message"><div class="username">florent.wagener</div><div class="time">2018-08-06 19:41</div><div class="msg">ok</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/8ed489f4fec23363fa7edff0cf3fab50.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0015-72.png" /><div class="message"><div class="username">florent.wagener</div><div class="time">2018-08-06 19:45</div><div class="msg">so something like this should work:
+```
+    {
+      "actions": "poweroff, poweron"
+      "scope": "machines",
+      "specific": "*"
+    },
+```</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-08-06 19:46</div><div class="msg">I think so</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/8ed489f4fec23363fa7edff0cf3fab50.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0015-72.png" /><div class="message"><div class="username">florent.wagener</div><div class="time">2018-08-06 19:50</div><div class="msg">This isn't accepted:
+```
+    {
+      "action": "poweron, poweroff",
+      "scope": "machines",
+      "specific": "*"
+    },
+```
+```Error: ValidationError: roles/prod-role
+  No such action 'poweroff'
+  No such action 'poweron'
+```
+This is accepted but doesn't do what I want:
+```    {
+      "actions": "poweron, poweroff",
+      "scope": "machines",
+      "specific": "*"
+    },
+```
+In fact it's transformed into something completely different when I do `drpcli roles show prod-role`:
+```
+    {
+      "action": "get,list",
+      "scope": "machines",
+      "specific": "*"
+    },
+```</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-08-06 19:55</div><div class="msg">action is defaulted.  Let me look.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-08-06 19:56</div><div class="msg">action is the correct key.</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/8ed489f4fec23363fa7edff0cf3fab50.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0015-72.png" /><div class="message"><div class="username">florent.wagener</div><div class="time">2018-08-06 19:58</div><div class="msg">in UX when I want to edit a claim, under the action tab, I have the possibility to also select `action` and/or `actions`, isn't that redundant?</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/8ed489f4fec23363fa7edff0cf3fab50.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0015-72.png" /><div class="message"><div class="username">florent.wagener</div><div class="time">2018-08-06 20:00</div><div class="msg">this is weird :slightly_smiling_face:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-08-06 20:01</div><div class="msg">that does seem weird.  hmmm</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-08-06 20:02</div><div class="msg">I think this is a bug.  We aren?t pulling in the plugin provide actions into claims validation it looks like.</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/8ed489f4fec23363fa7edff0cf3fab50.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0015-72.png" /><div class="message"><div class="username">florent.wagener</div><div class="time">2018-08-06 20:02</div><div class="msg">ok :slightly_smiling_face:</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/8ed489f4fec23363fa7edff0cf3fab50.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0015-72.png" /><div class="message"><div class="username">florent.wagener</div><div class="time">2018-08-06 20:03</div><div class="msg">so my guess is for now I can't limit the plugins actions in a user role :slightly_smiling_face:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-08-06 20:04</div><div class="msg">yeah - we intended to.  Need to figure how to wire it.  It is actually easy, but have to break some validation.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-08-06 20:04</div><div class="msg">maybe - let me look a little more</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/8ed489f4fec23363fa7edff0cf3fab50.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0015-72.png" /><div class="message"><div class="username">florent.wagener</div><div class="time">2018-08-06 20:04</div><div class="msg">of course :slightly_smiling_face:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-08-06 20:05</div><div class="msg">actually, I think there is a way. just a second.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-08-06 20:07</div><div class="msg">Try this:  `"action": "action:poweron, action:poweroff"`</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-08-06 20:07</div><div class="msg">actions and action are valid as well because there are cli opitons to list the actions or action info on a machine.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-08-06 20:08</div><div class="msg">So you can actually restrict the access to the list actions request on a machine.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-08-06 20:08</div><div class="msg">or the show action &lt;action&gt; on a machine.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-08-06 20:08</div><div class="msg">@florent.wagener - I think there is a way.  the `action:&lt;cmd&gt;` form should work</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/8ed489f4fec23363fa7edff0cf3fab50.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0015-72.png" /><div class="message"><div class="username">florent.wagener</div><div class="time">2018-08-06 20:15</div><div class="msg">let me try</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/8ed489f4fec23363fa7edff0cf3fab50.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0015-72.png" /><div class="message"><div class="username">florent.wagener</div><div class="time">2018-08-06 20:15</div><div class="msg">yes it's working !</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-08-06 20:17</div><div class="msg">okay - just forgot the syntax.  I knew Victor had implemented.  sorry for taking so long to pull it out of my mind.</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/8ed489f4fec23363fa7edff0cf3fab50.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0015-72.png" /><div class="message"><div class="username">florent.wagener</div><div class="time">2018-08-06 20:18</div><div class="msg">No worries @greg</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-06 20:54</div><div class="msg">@vlowther just saw your message from earlier, looks good :slightly_smiling_face: I?ll build and have a play tomorrow if I get a chance :+1:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-08-06 20:55</div><div class="msg">ok, coolio.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-08-06 21:22</div><div class="msg">It should be in tip by morning US time </div></div></div><br/>
+</div></body></html>

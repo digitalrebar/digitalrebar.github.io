@@ -1,0 +1,86 @@
+<html><body><style>
+			* {
+				font-family:sans-serif;
+			}
+			body {
+				text-align:center;
+				padding:1em;
+			}
+			.messages {
+				width:100%;
+				max-width:700px;
+				text-align:left;
+				display:inline-block;
+			}
+			.messages img {
+				background-color:rgb(248,244,240);
+				width:36px;
+				height:36px;
+				border-radius:0.2em;
+				display:inline-block;
+				vertical-align:top;
+				margin-right:0.65em;
+			}
+			.messages .time {
+				display:inline-block;
+				color:rgb(200,200,200);
+				margin-left:0.5em;
+			}
+			.messages .username {
+				display:inline-block;
+				font-weight:600;
+				line-height:1;
+			}
+			.messages .message {
+				display:inline-block;
+				vertical-align:top;
+				line-height:1;
+				width:calc(100% - 3em);
+			}
+			.messages .message .msg {
+				line-height:1.5;
+			}
+		</style><div class="messages"><div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-30 10:23</div><div class="msg">NetWrangler looks interesting :+1:</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-30 12:18</div><div class="msg">Is there a github project for building Sledgehammer? Or documentation of how it's built?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-08-30 13:03</div><div class="msg"><a href="https://github.com/digitalrebar/sledgehammer">https://github.com/digitalrebar/sledgehammer</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-08-30 13:04</div><div class="msg">@ ^^</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-30 13:04</div><div class="msg">Thanks!</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-08-30 13:04</div><div class="msg">@ $welcome</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-30 13:04</div><div class="msg">Digital Rebar welcome information is here &gt; <a href="http://rebar.digital/community/welcome.html">http://rebar.digital/community/welcome.html</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-08-30 13:13</div><div class="msg">@ we are trying to move off of that and use drp to build it.  </div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/8ed489f4fec23363fa7edff0cf3fab50.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0015-72.png" /><div class="message"><div class="username">florent.wagener</div><div class="time">2018-08-30 18:10</div><div class="msg"><!here> hey guys, I am parsing the documentation regarding golan text/template, and I am having trouble find if it's possible to create `for loop` structure given a json input.
+Let's say I have this param (called `interfaces`) on a machine:
+```[
+	{	'Name: 'eno2'
+		'MacAddress': 'ac:1f:6b:48:bc:e3', 
+		'StableName': 'eno2', 
+	}, 
+	{	'Name':'eth0',
+		'MacAddress': 'ac:1f:6b:48:bc:e2', 
+		'StableName': 'eno1', 
+	}
+]```
+And I want to use the `curtin/network/template` param to configure my network on my server. So I am going to create a new template file that I assume should look like this if my idea is possible:
+```
+network:
+ version: 1
+ config:
+ {{ if .ParamExists "interface" }}
+ 	{{ range .Param "interfaces" }}
+	- type: physical
+	- name: {{ .Param "interfaces" }} (I'm looking to get the stable name here but don't know how)
+	{{ end }}
+ {{ end }}
+```</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/8ed489f4fec23363fa7edff0cf3fab50.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0015-72.png" /><div class="message"><div class="username">florent.wagener</div><div class="time">2018-08-30 18:12</div><div class="msg">didn't get any good example of what I want to do here:
+<a href="https://golang.org/pkg/text/template/#hdr-Actions">https://golang.org/pkg/text/template/#hdr-Actions</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-08-30 18:16</div><div class="msg">yes, you can do it using range functions</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-08-30 18:17</div><div class="msg">@florent.wagener here's an example</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-08-30 18:18</div><div class="msg">the new `sprig` functions provide some array options too.</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/8ed489f4fec23363fa7edff0cf3fab50.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0015-72.png" /><div class="message"><div class="username">florent.wagener</div><div class="time">2018-08-30 18:18</div><div class="msg">woohooo!</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/8ed489f4fec23363fa7edff0cf3fab50.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0015-72.png" /><div class="message"><div class="username">florent.wagener</div><div class="time">2018-08-30 18:18</div><div class="msg">thx @zehicle trying that now!</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-08-30 18:19</div><div class="msg">the sprig pieces let you do all sorts of crazy manipulations; HOWEVER, THEY REQUIRE v1.10+</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-08-30 18:20</div><div class="msg">that example includes toString and replace which are both sprig library</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-08-30 19:11</div><div class="msg"><!here> ICYMI video showing how to use kexec to skip boots during provision: <a href="https://youtu.be/Xm688Km3N4Y">https://youtu.be/Xm688Km3N4Y</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-08-30 19:12</div><div class="msg">requires latest TIP content</div></div></div><br/>
+</div></body></html>

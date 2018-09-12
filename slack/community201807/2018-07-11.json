@@ -1,0 +1,134 @@
+[
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "When deleting a parameter, I see the following JSON patch being sent to the API:\n```\n[{op: \"test\", path: \"\/Params\/disk-inventory\",…}, {op: \"remove\", path: \"\/Params\/disk-inventory\"}]\n```\nIs that \"...\" a literal string being passed like that, or did something get truncated?",
+        "client_msg_id": "34d8bfdc-db25-449a-8db6-ea5281b7dab9",
+        "ts": "1531323887.000235"
+    },
+    {
+        "type": "message",
+        "user": "UA98B96BA",
+        "text": "ty <@U02DJQSG8>, that UEFI boot sequence was really starting to anger me. That `reorder-uefi-bootorder` stage was exactly what I needed.",
+        "client_msg_id": "ed15ec28-54c3-48c7-bd61-cafa5607cd32",
+        "thread_ts": "1531260847.000198",
+        "parent_user_id": "U02DJQSG8",
+        "ts": "1531332356.000235"
+    },
+    {
+        "type": "message",
+        "user": "UA98B96BA",
+        "text": "<@U02DGQYK1> I ran into an issue with the `krib-install-cluster` workflow. I logged an issue and submitted a PR. The travisci build is failing, but not sure why. Let me know if you need anymore info.\n<https:\/\/github.com\/graham1228\/provision-content\/tree\/issue-109>\n<https:\/\/github.com\/digitalrebar\/provision-content\/pull\/110>",
+        "client_msg_id": "c67de060-ff86-48cd-94e5-2ab93470feaf",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "graham1228\/provision-content",
+                "title_link": "https:\/\/github.com\/graham1228\/provision-content\/tree\/issue-109",
+                "text": "provision-content - DigitalRebar Provision Content",
+                "fallback": "GitHub: graham1228\/provision-content",
+                "from_url": "https:\/\/github.com\/graham1228\/provision-content\/tree\/issue-109",
+                "thumb_url": "https:\/\/avatars2.githubusercontent.com\/u\/22373710?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/cfr.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/graham1228\/provision-content\/tree\/issue-109"
+            },
+            {
+                "service_name": "GitHub",
+                "title": "Installing wget since it's not included in the base CentOS install by graham1228 · Pull Request #110 · digitalrebar\/provision-content",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision-content\/pull\/110",
+                "text": "#109",
+                "fallback": "GitHub: Installing wget since it's not included in the base CentOS install by graham1228 · Pull Request #110 · digitalrebar\/provision-content",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision-content\/pull\/110",
+                "thumb_url": "https:\/\/avatars2.githubusercontent.com\/u\/22373710?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/cfr.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 2,
+                "original_url": "https:\/\/github.com\/digitalrebar\/provision-content\/pull\/110"
+            }
+        ],
+        "ts": "1531336934.000395"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UA98B96BA> - I haven't looked at it - but there is an `extra-packages` Param that is designed to allow you to inject packages you want to add - so you can set this Param on the Machine (or in a profile on the Machine) - and add additional packages to the kickstart for install",
+        "client_msg_id": "c3f318ed-0b80-4a6d-8910-c63f0456325e",
+        "ts": "1531337688.000389"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "HOWEVER - you need to insure you have appropriate Repos defined for those extra packages to succeed install",
+        "client_msg_id": "b03a44eb-ce92-45e7-85f7-98ce75334504",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1531337710.000000"
+        },
+        "ts": "1531337701.000332"
+    },
+    {
+        "type": "message",
+        "user": "UA98B96BA",
+        "text": "Yeah, I did a workaround by just creating my own stage to install wget, but since the template for KRIB is trying to use wget, it makes sense to make sure that package is installed before utilizing the wget command",
+        "client_msg_id": "e8a8aa03-c7e4-4a87-aca8-db36fad89a70",
+        "ts": "1531337786.000095"
+    },
+    {
+        "type": "message",
+        "user": "U7P8TES5B",
+        "text": "Hi! How do I configure drp and dnsmasq to work together? I've got a router running asuswrt-merlin that is providing dhcp services. I've set up DRP as a dhcp proxy in the GUI, and I have modified the dnsmasq configuration adding the line: dhcp-boot=lpxelinux.0,,192.168.0.15. Net booting a KVM image then succeeds in so far as the drp tftp server is contacted. But then it hangs with an eventual message that ldlinux.c32 is not found.",
+        "client_msg_id": "76c3fac4-afb8-4a37-8d26-26b28e0cdd5f",
+        "thread_ts": "1531338161.000121",
+        "reply_count": 6,
+        "replies": [
+            {
+                "user": "U7P8TES5B",
+                "ts": "1531345576.000002"
+            },
+            {
+                "user": "U7P8TES5B",
+                "ts": "1531345591.000046"
+            },
+            {
+                "user": "U02DGQYK1",
+                "ts": "1531397669.000197"
+            },
+            {
+                "user": "U7P8TES5B",
+                "ts": "1531409251.000493"
+            },
+            {
+                "user": "U02DGQYK1",
+                "ts": "1531409724.000001"
+            },
+            {
+                "user": "U7P8TES5B",
+                "ts": "1531412085.000329"
+            }
+        ],
+        "unread_count": 6,
+        "ts": "1531338161.000121"
+    },
+    {
+        "type": "message",
+        "user": "U7P8TES5B",
+        "text": "Looks like I got it. I rechecked my subnet configuration and saw the dhcp and proxy were both set to on. Set dhcp off and proxy on, and got a sledgehammer boot.",
+        "client_msg_id": "eb50180b-0d59-4f6e-89a6-2ca40cbd4d20",
+        "thread_ts": "1531338161.000121",
+        "parent_user_id": "U7P8TES5B",
+        "ts": "1531345576.000002"
+    },
+    {
+        "type": "message",
+        "user": "U7P8TES5B",
+        "text": "Is dhcp off and proxy on a valid configuration?",
+        "client_msg_id": "f4a864f0-29ba-4fab-9ccb-dc36ceb05193",
+        "thread_ts": "1531338161.000121",
+        "parent_user_id": "U7P8TES5B",
+        "ts": "1531345591.000046"
+    }
+]

@@ -1,0 +1,590 @@
+[
+    {
+        "user": "UCQ7LPFD2",
+        "text": "<@UCQ7LPFD2> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1536590066.000200"
+    },
+    {
+        "user": "UCQMP6JCV",
+        "text": "<@UCQMP6JCV> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1536597300.000200"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UA9Q8FLTC> sorry - not familiar with the Debian side - are you specifying a mirror site, or just using the open mirrors ?",
+        "client_msg_id": "2a202c7e-b9b7-4068-9c82-61a37ff4791d",
+        "thread_ts": "1536597961.000100",
+        "reply_count": 1,
+        "replies": [
+            {
+                "user": "UA9Q8FLTC",
+                "ts": "1536600461.000100"
+            }
+        ],
+        "unread_count": 1,
+        "ts": "1536597961.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UCQ7LPFD2> $welcome",
+        "client_msg_id": "4f25790c-e085-4935-98fc-5ae547eb4acf",
+        "thread_ts": "1536597965.000100",
+        "reply_count": 1,
+        "replies": [
+            {
+                "user": "UCQ7LPFD2",
+                "ts": "1536644577.000100"
+            }
+        ],
+        "unread_count": 1,
+        "ts": "1536597965.000100"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1536597965.000200"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UCQMP6JCV> welcome to you too :slightly_smiling_face:",
+        "client_msg_id": "3c20433a-5dd9-4606-b747-c935ab5528d2",
+        "ts": "1536597984.000100"
+    },
+    {
+        "type": "message",
+        "user": "UCQMP6JCV",
+        "text": "Thank you Shane",
+        "client_msg_id": "32fb4c42-9a7a-444f-8a14-4ef85753904b",
+        "ts": "1536598201.000100"
+    },
+    {
+        "type": "message",
+        "user": "U63ACQT8A",
+        "text": "<@U02DHRR2L> <@UBXEU90UQ> I had created a role a while back, but need to update it to the latest release. <https:\/\/github.com\/stanchan\/ansible-role-dr-provision>",
+        "client_msg_id": "241fc11f-7564-4228-a203-82b4358d1f9d",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "stanchan\/ansible-role-dr-provision",
+                "title_link": "https:\/\/github.com\/stanchan\/ansible-role-dr-provision",
+                "text": "Contribute to stanchan\/ansible-role-dr-provision development by creating an account on GitHub.",
+                "fallback": "GitHub: stanchan\/ansible-role-dr-provision",
+                "from_url": "https:\/\/github.com\/stanchan\/ansible-role-dr-provision",
+                "thumb_url": "https:\/\/avatars0.githubusercontent.com\/u\/659277?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/stanchan\/ansible-role-dr-provision"
+            }
+        ],
+        "ts": "1536598412.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "nice - I had forgot about that.",
+        "client_msg_id": "63c0c5eb-73da-4593-a034-635f29ee2bc5",
+        "ts": "1536598646.000100"
+    },
+    {
+        "type": "message",
+        "user": "U63ACQT8A",
+        "text": "Tried to make it flexible for any OS type, but not tested on ARM yet. Will try to setup a RPi cluster to test.",
+        "client_msg_id": "4495f1cb-d762-4c39-9527-fcb274736170",
+        "ts": "1536598863.000100"
+    },
+    {
+        "type": "message",
+        "user": "U63ACQT8A",
+        "text": "Unfortunately, been a little busy with other work stuff.",
+        "client_msg_id": "6cd8a1b7-a73f-48ad-8d87-bb0fc30cc335",
+        "ts": "1536598901.000100"
+    },
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": "<@U6QFVRJNB> I think its internet connection as I got 4 nics on this server that i'm trying to automate",
+        "client_msg_id": "2acc8ec9-e485-42cb-9143-4e6bcd9906e5",
+        "thread_ts": "1536597961.000100",
+        "parent_user_id": "U6QFVRJNB",
+        "ts": "1536600461.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "np",
+        "client_msg_id": "cb920972-2aed-4f92-8612-16ae8cdfc8f9",
+        "ts": "1536600613.000200"
+    },
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": "is there any document or tutorial on how to setup an ISO install from scratch?",
+        "client_msg_id": "0bf3a4ec-fa3b-4756-b492-631e92c7469a",
+        "ts": "1536600676.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "the quickstart document does that for the Ubuntu\/CentOS BootEnvs - for Debian, you'd need to create a new BootEnv specification using the Full ISO and not the minimal ISO we specify - then use the same `drpcli bootenvs uploadiso ...` command structure",
+        "client_msg_id": "83bd23e3-0420-4598-a3f2-de86ff2c8d6f",
+        "ts": "1536600796.000100"
+    },
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": "I figured that much...guess i'm missing something :confused:",
+        "client_msg_id": "2b029c95-f423-4ae8-86a8-77ad3e3d4abb",
+        "ts": "1536600837.000100"
+    },
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": "as when i upload the iso...it still marked as not available",
+        "client_msg_id": "eb4db53d-d1bb-44c3-9fd5-cfc3d75ea3a5",
+        "ts": "1536600860.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "I assume you cloned an existing BootEnv and changed it ?",
+        "client_msg_id": "9bdc4b33-83b5-406d-a2ce-a198b7dbb891",
+        "ts": "1536600892.000100"
+    },
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": "yes, cloned both the debian one and ubuntu",
+        "client_msg_id": "dbb7fd04-adc8-4b1d-a299-ca8710e68737",
+        "ts": "1536600914.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you need to make sure you specify the correct sha256sum for the new ISO - or don't specify it if you don't want to do hash checks of the ISO (not recommended)",
+        "client_msg_id": "16507a2c-1e6f-4c6c-a424-f5d87672cc93",
+        "ts": "1536600959.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "if you bore in on the BootEnv, you should see the error message why it's unavailable",
+        "client_msg_id": "26c761be-e67b-4dfb-8f1a-c4fbf11ecd46",
+        "ts": "1536600979.000100"
+    },
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": "yes, I did",
+        "client_msg_id": "685269a5-f9aa-4d8e-8ae3-9663911da051",
+        "ts": "1536600983.000100"
+    },
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": "yes it was 4 errors..i'll share it when i get to it later today",
+        "client_msg_id": "6f6dcdd1-90a2-4573-91bc-1b0868e59efa",
+        "ts": "1536601047.000100"
+    },
+    {
+        "type": "message",
+        "user": "UCQMP6JCV",
+        "text": "At what phase would machine templates get created in `\/var\/lib\/dr-provision\/tftpboot\/machines` for TFTP?",
+        "client_msg_id": "1afe9fe0-48e2-49b9-9603-5adc33539f60",
+        "ts": "1536601456.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "never",
+        "client_msg_id": "c5401b57-0272-41b2-9170-e73eb24675a7",
+        "ts": "1536601466.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "well - cheap answer.",
+        "client_msg_id": "57e57771-7431-4896-9dd7-4562b5b3dd95",
+        "ts": "1536601471.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "They are never rendered to the file system.",
+        "client_msg_id": "6bc6ebae-63a3-4514-86d3-242062bbcecf",
+        "ts": "1536601480.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You can check them by: `curl http:\/\/&lt;ip&gt;:8091\/machines\/….`",
+        "client_msg_id": "905556c7-bbd3-45cf-84d4-377b012beb14",
+        "ts": "1536601512.000100"
+    },
+    {
+        "type": "message",
+        "user": "UCQMP6JCV",
+        "text": "Does it render upon tftp request?",
+        "client_msg_id": "fb5d7669-5e96-4220-9fdf-2da1b4a01b30",
+        "ts": "1536601512.000200"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Yes",
+        "client_msg_id": "2552a571-eef4-442a-b5bb-d69837a56a67",
+        "ts": "1536601515.000200"
+    },
+    {
+        "type": "message",
+        "user": "UCQMP6JCV",
+        "text": "aye, 10-4",
+        "client_msg_id": "67b016ca-824f-498f-a71b-230967d48d80",
+        "ts": "1536601527.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That way it can be the latest values without having to track filesystem objects.",
+        "client_msg_id": "e0fd1f4f-e516-48a2-a3f1-ab3cc3fb542d",
+        "ts": "1536601537.000100"
+    },
+    {
+        "type": "message",
+        "user": "UCQMP6JCV",
+        "text": "Just picking things up and the first use case is probably the more difficult for ESX",
+        "client_msg_id": "9ea694fe-cce6-451f-a8cb-d72833da9153",
+        "ts": "1536601549.000200"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Check the esxi content pack if you haven’t already.  `os-other`",
+        "client_msg_id": "3937fc49-c0e4-4a68-931f-52d1e7f10d0e",
+        "ts": "1536601575.000100"
+    },
+    {
+        "type": "message",
+        "user": "UCQMP6JCV",
+        "text": "I was using that but get an error it’s unable to find the boot.cfg file",
+        "client_msg_id": "ba2a5716-e40a-47ed-976d-02a53e7a6a02",
+        "ts": "1536601613.000100"
+    },
+    {
+        "type": "message",
+        "text": "",
+        "files": [
+            {
+                "id": "FCQJLU24S",
+                "created": 1536601655,
+                "timestamp": 1536601655,
+                "name": "Screenshot 2018-09-10 13.47.24.png",
+                "title": "Screenshot 2018-09-10 13.47.24.png",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "UCQMP6JCV",
+                "editable": false,
+                "size": 55587,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FCQJLU24S\/screenshot_2018-09-10_13.47.24.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FCQJLU24S\/download\/screenshot_2018-09-10_13.47.24.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FCQJLU24S-8174cae054\/screenshot_2018-09-10_13.47.24_64.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FCQJLU24S-8174cae054\/screenshot_2018-09-10_13.47.24_80.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FCQJLU24S-8174cae054\/screenshot_2018-09-10_13.47.24_360.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_360_w": 360,
+                "thumb_360_h": 28,
+                "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FCQJLU24S-8174cae054\/screenshot_2018-09-10_13.47.24_480.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_480_w": 480,
+                "thumb_480_h": 37,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FCQJLU24S-8174cae054\/screenshot_2018-09-10_13.47.24_160.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FCQJLU24S-8174cae054\/screenshot_2018-09-10_13.47.24_720.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_720_w": 720,
+                "thumb_720_h": 55,
+                "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FCQJLU24S-8174cae054\/screenshot_2018-09-10_13.47.24_800.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_800_w": 800,
+                "thumb_800_h": 61,
+                "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FCQJLU24S-8174cae054\/screenshot_2018-09-10_13.47.24_960.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_960_w": 960,
+                "thumb_960_h": 74,
+                "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FCQJLU24S-8174cae054\/screenshot_2018-09-10_13.47.24_1024.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_1024_w": 1024,
+                "thumb_1024_h": 79,
+                "image_exif_rotation": 1,
+                "original_w": 2996,
+                "original_h": 230,
+                "permalink": "https:\/\/rackn.slack.com\/files\/UCQMP6JCV\/FCQJLU24S\/screenshot_2018-09-10_13.47.24.png",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FCQJLU24S-9b1c7e54c2"
+            }
+        ],
+        "upload": true,
+        "user": "UCQMP6JCV",
+        "display_as_bot": false,
+        "ts": "1536601658.000100"
+    },
+    {
+        "type": "message",
+        "user": "UCQMP6JCV",
+        "text": "dumb me created the folder and file manually to see if that was “it” and it got passed but felt wrong",
+        "client_msg_id": "38e29f59-73e1-45e7-a960-6bf0f1906af9",
+        "ts": "1536601670.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "not dumb",
+        "client_msg_id": "e81c852f-b9cf-4cd0-9eed-6b767e15c02e",
+        "ts": "1536601703.000200"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You may want to search the history for esxi.  I thnk there are some notes in the channel.",
+        "client_msg_id": "1e31834b-969b-49b1-840a-c50ff4917542",
+        "ts": "1536601877.000100"
+    },
+    {
+        "type": "message",
+        "user": "UCQMP6JCV",
+        "text": "doing some traces it looks like it’s not doing the intercept. re: history - aye",
+        "client_msg_id": "773656dc-7b68-437d-86a2-f8d8c5407d4e",
+        "ts": "1536602106.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "is the machine’s bootenv set?",
+        "client_msg_id": "04c2d067-90fa-47a1-bf7f-0361b692f7d3",
+        "ts": "1536602122.000100"
+    },
+    {
+        "type": "message",
+        "user": "UCQMP6JCV",
+        "text": "Yea",
+        "client_msg_id": "d0893dc2-a4b0-4634-af01-d8806a2d787b",
+        "ts": "1536602169.000200"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "hmm - try and curl that file.",
+        "client_msg_id": "bc0a8b71-f876-4a82-aefe-596cdedbe847",
+        "ts": "1536602214.000100"
+    },
+    {
+        "type": "message",
+        "user": "UCQMP6JCV",
+        "text": "That’s what I was doing but w\/ tftp client",
+        "client_msg_id": "07b56d68-5dc3-4abd-95e5-05607092bc29",
+        "ts": "1536602237.000100"
+    },
+    {
+        "type": "message",
+        "user": "UCQMP6JCV",
+        "text": "```tftp&gt; get machines\/56946aa3-46c8-48f5-8997-d3c3a2f0abe0\/boot.cfg\nError code 1: open \/var\/lib\/dr-provision\/tftpboot\/machines\/56946aa3-46c8-48f5-8997-d3c3a2f0abe0\/boot.cfg: no such file or directory```",
+        "client_msg_id": "c80e39d5-c493-4fba-899b-3ba20c3422b9",
+        "ts": "1536602244.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "hmmm okay check the bootenv",
+        "client_msg_id": "b3843308-79b2-4caf-9002-9bbfd934784b",
+        "ts": "1536602351.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "check the logs for dr-p, see if a parameter is missing.",
+        "client_msg_id": "ea6861cf-5a2d-4443-998c-47582dc24ce4",
+        "ts": "1536602485.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Also make sure the bootenv is available",
+        "client_msg_id": "45918b79-76c5-4685-b4a8-758317a3620a",
+        "ts": "1536602492.000100"
+    },
+    {
+        "type": "message",
+        "user": "UCQMP6JCV",
+        "text": "It may not be intended to work w\/ UEFI chains.  I had to clone the current  template to remove the loop ```#!ipxe\niseq ${platform} efi &amp;&amp; goto efi || goto noefi\n:efi\necho Chainloading into the ESXi install environment via ipxe does not work yet\nsleep 120\ngoto efi\nchain {{.Env.PathFor \"http\" \"efi\/boot\/bootx64.efi\"}} {{.BootParams}}\n:noefi\nset 210:string \/{{.Env.PathFor \"tftp\" \"\"}}\/\nchain esxi.0```",
+        "client_msg_id": "23d716d3-670d-4449-967e-e0a21b2ee6c3",
+        "ts": "1536602743.000100"
+    },
+    {
+        "user": "UCPTR4716",
+        "text": "<@UCPTR4716> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1536604197.000200"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UCPTR4716> $welcome",
+        "client_msg_id": "c80a2b06-b27c-47ce-904f-cd42819e2486",
+        "ts": "1536604243.000100"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1536604243.000200"
+    },
+    {
+        "type": "message",
+        "user": "UCPTR4716",
+        "text": "thanks, reading",
+        "client_msg_id": "98e75582-bac7-4ac5-b48b-fbac89755157",
+        "ts": "1536604263.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Hmm - looks like our link to our Youtube videos is no longer valid - will get that fixed :disappointed:",
+        "client_msg_id": "3a4ed27c-ddba-4883-b33c-f7ff8ce3d805",
+        "ts": "1536604403.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@UCQMP6JCV> - can you write up a bug on it.",
+        "client_msg_id": "98c2010c-d6c4-483d-bb9d-d82a73ae6aca",
+        "ts": "1536608927.000200"
+    },
+    {
+        "type": "message",
+        "user": "UCQMP6JCV",
+        "text": "on which piece, the ipxe loop error or the no boot.cfg found?",
+        "client_msg_id": "82a0997a-8a15-47e9-8d6b-f5f67ec2f600",
+        "ts": "1536609016.000100"
+    },
+    {
+        "type": "message",
+        "user": "UCQMP6JCV",
+        "text": "I don’t know if I found a bug or not :disappointed:",
+        "client_msg_id": "b3c59dac-e06b-4509-96f1-4cec36c13c7d",
+        "ts": "1536609029.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "the looping part if it is real.",
+        "client_msg_id": "072223f7-1939-4ff6-aacd-db9bdbcb1edb",
+        "ts": "1536609168.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The not rendering should show an error message in drp logs.",
+        "client_msg_id": "4f892c53-f0da-4523-aba3-f138221bf63a",
+        "ts": "1536609191.000100"
+    },
+    {
+        "type": "message",
+        "user": "UCQMP6JCV",
+        "text": "aye",
+        "client_msg_id": "a269a168-f6f9-4071-993f-ab3d757f4c41",
+        "ts": "1536609226.000100"
+    },
+    {
+        "type": "message",
+        "user": "UCQMP6JCV",
+        "text": "```        #!ipxe\n        iseq ${platform} efi &amp;&amp; goto efi || goto noefi\n        :efi\n        echo Chainloading into the ESXi install environment via ipxe does not work yet\n        sleep 120\n        goto efi\n        chain {{.Env.PathFor \"http\" \"efi\/boot\/bootx64.efi\"}} {{.BootParams}}\n        :noefi\n        set 210:string \/{{.Env.PathFor \"tftp\" \"\"}}\/\n        chain esxi.0``` - i’ll submit for that",
+        "client_msg_id": "7d5ca8b7-4e0f-4f38-9ddc-ecf693e9722a",
+        "ts": "1536609437.000200"
+    },
+    {
+        "type": "message",
+        "user": "UCQMP6JCV",
+        "text": "I don’t see how it ever breaks out of the loop",
+        "client_msg_id": "b705a5f0-9df3-46a7-a0e9-9ec11dfe184e",
+        "ts": "1536609450.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "I won’t.  Efi isn’t exactly supported correctly.",
+        "client_msg_id": "da917118-3020-424c-8444-d5e816e6e1aa",
+        "ts": "1536609891.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Or installs really only know how to chain load to com32 based systems which doesn’t work with efi systems.",
+        "client_msg_id": "4ba9475c-15d5-49a7-af96-4286f021fec4",
+        "ts": "1536609929.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Or is might, but might not.  That is why we have the esxi.0 image that we boot to.  It has enough com support to run out of hte iso.  Now, VMWare may have updates to work better with EFI and a different path, but we haven’t built or found it.",
+        "client_msg_id": "b1aa0a40-596b-47ca-ae08-2bedb6e5b410",
+        "ts": "1536609982.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "Can someone give me some examples how to configure DHCP built-in on DR-Provision server via drpcli command?",
+        "client_msg_id": "f982c7d7-545f-41f7-92cb-72e69ca537bd",
+        "ts": "1536611127.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UANLCF8QP> - the quickstart guide has some info on it:  <https:\/\/provision.readthedocs.io\/en\/tip\/doc\/quickstart.html#rs-qs-subnet>",
+        "client_msg_id": "02566ce3-a57a-40aa-9f51-d973d2706303",
+        "ts": "1536611187.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you have to construct a JSON blob with the appropriate values - sometimes it's easier to create what you need from the UX - then use `drpcli` to \"show\" the created resource, and use that as a template for your automation",
+        "client_msg_id": "59d0cb5f-a577-4971-84c1-7bf67c3b538c",
+        "ts": "1536611230.000100",
+        "reactions": [
+            {
+                "name": "muscle",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "thanks <@U6QFVRJNB>",
+        "client_msg_id": "1a62ef01-07d4-443a-b58d-aea90ab3e5b2",
+        "ts": "1536611320.000100"
+    },
+    {
+        "type": "message",
+        "user": "UCQ7LPFD2",
+        "text": "thanks! looking forward to connect",
+        "client_msg_id": "b82c67ea-dee7-4756-9a9d-e38c4725d9c8",
+        "thread_ts": "1536597965.000100",
+        "parent_user_id": "U6QFVRJNB",
+        "ts": "1536644577.000100"
+    }
+]

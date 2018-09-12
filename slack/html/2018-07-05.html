@@ -1,0 +1,177 @@
+<html><body><style>
+			* {
+				font-family:sans-serif;
+			}
+			body {
+				text-align:center;
+				padding:1em;
+			}
+			.messages {
+				width:100%;
+				max-width:700px;
+				text-align:left;
+				display:inline-block;
+			}
+			.messages img {
+				background-color:rgb(248,244,240);
+				width:36px;
+				height:36px;
+				border-radius:0.2em;
+				display:inline-block;
+				vertical-align:top;
+				margin-right:0.65em;
+			}
+			.messages .time {
+				display:inline-block;
+				color:rgb(200,200,200);
+				margin-left:0.5em;
+			}
+			.messages .username {
+				display:inline-block;
+				font-weight:600;
+				line-height:1;
+			}
+			.messages .message {
+				display:inline-block;
+				vertical-align:top;
+				line-height:1;
+				width:calc(100% - 3em);
+			}
+			.messages .message .msg {
+				line-height:1.5;
+			}
+		</style><div class="messages"><div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-05 10:55</div><div class="msg">has joined #2018-07-05</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-05 15:38</div><div class="msg">I used the ipmi-configure to discover machines through IPMI, and used params to set username and password. However, the workflow always stuck at ipmi-configure stage and never move forward, I am wondering the workflow stages have to be different, my workflow has:
+1-ipmi-configure (sledgehammer as boot env)
+2-sledgehammer-wait
+3-terraform-ready
+
+also, I was adding trying to add the machine manually though the portal
+
+I double checked and ssh to the IPMI address, and its reachable and ssh connects just fine.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2016-11-15/104181243072_307b971367a7363128bf_72.jpg" /><div class="message"><div class="username">spector</div><div class="time">2018-07-05 15:46</div><div class="msg">@ $Welcome</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-05 15:46</div><div class="msg">Digital Rebar welcome information is here &gt; <a href="http://rebar.digital/community/welcome.html">http://rebar.digital/community/welcome.html</a></div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-05 15:47</div><div class="msg">Hello, thanks</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-05 15:53</div><div class="msg">@ - have you checked the Job Log to see what it says?  It's probably an error being kicked back that stops the job from successfully running.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-05 16:54</div><div class="msg">No error is logged. I cleared the Job-log directory, and re-launched DRP and did the same steps, it always stuck at ipmi-configure stage, and no error is logged. it seems like it does not event attempt to contact the other machine at all.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-05 17:03</div><div class="msg">I added the username and password params to ipmi-configure stage, and I also tried to add ipmi/address (which is the same IPMI address), but is does not change anything.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-05 17:11</div><div class="msg">@shane is adding a machine manually, starts the workflow automatically, or do I need to do extra step to start the workflow ?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-05 17:40</div><div class="msg">@ really it's the runner that does the workflow</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-05 17:40</div><div class="msg">so, it won't start until you have a runner working on the machine</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-05 17:41</div><div class="msg">you can use a script on the machine to have the runner (drpcli) register the machine and then start the workflow</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-05 17:41</div><div class="msg">if you are having workflow stall, make sure that you have a runner going - there's a stage for installing the runner in a new O/S or O/S image</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-05 17:48</div><div class="msg">you mean this command drpcli machines update &lt;UUID&gt; '{ "Workflow": "ubuntu18" }'</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-05 17:55</div><div class="msg">I also tried drpcli machine workflow UUID myworkflow, also nothing happens</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-05 17:56</div><div class="msg">@zehicle I am not sure if that's the runner you are talking about</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-05 18:01</div><div class="msg">drpcli is the runner</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-05 18:01</div><div class="msg"><a href="https://github.com/digitalrebar/provision-content/blob/master/content/templates/runner.tmpl">https://github.com/digitalrebar/provision-content/blob/master/content/templates/runner.tmpl</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-02-20/319135093095_c0e6268d269110cacc49_72.gif" /><div class="message"><div class="username">dave.parker</div><div class="time">2018-07-05 19:28</div><div class="msg">How come sometimes I'm not allowed to change a machine's stage through the API?  I try, and get code 422, "Changing machine stage not allowed"</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-02-20/319135093095_c0e6268d269110cacc49_72.gif" /><div class="message"><div class="username">dave.parker</div><div class="time">2018-07-05 19:32</div><div class="msg">Oh, I guess "Changing machine bootenv not allowed" is part of it too.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-02-20/319135093095_c0e6268d269110cacc49_72.gif" /><div class="message"><div class="username">dave.parker</div><div class="time">2018-07-05 19:32</div><div class="msg">Hrm.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-05 19:35</div><div class="msg">That happens whenever a machine is assigned to a Workflow that is processing.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-02-20/319135093095_c0e6268d269110cacc49_72.gif" /><div class="message"><div class="username">dave.parker</div><div class="time">2018-07-05 19:36</div><div class="msg">Ah ok.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-02-20/319135093095_c0e6268d269110cacc49_72.gif" /><div class="message"><div class="username">dave.parker</div><div class="time">2018-07-05 19:36</div><div class="msg">How do I clear the workflow through the API?  Can I just delete it?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-05 19:40</div><div class="msg">@dave.parker you can set it to empty string, yes.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-05 19:41</div><div class="msg">you may also want to clear the Stage when you do that</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-02-20/319135093095_c0e6268d269110cacc49_72.gif" /><div class="message"><div class="username">dave.parker</div><div class="time">2018-07-05 19:41</div><div class="msg">Ok.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-02-20/319135093095_c0e6268d269110cacc49_72.gif" /><div class="message"><div class="username">dave.parker</div><div class="time">2018-07-05 19:41</div><div class="msg">Thanks</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-05 19:45</div><div class="msg">@zehicle so I tried drpcli machines processjobs ,  and it does start processing, so now I get an error 
+"Could not open device at /dev/ipmi0 or /dev/ipmi/0 or /dev/ipmidev/0: No such file or directory
+attempt 0 failed -  trying again..."
+so I did "modprobe ipmi_devintf" to insert the kernel module for ipmi but still getting the same error, do I need to install some other ipmi software on my machine? (other than ipmitool)?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-05 19:49</div><div class="msg">one of the solutions I came across is inserting the kernel module "ipmi_si", but this module would only work on physical machines, does not work on virtual mahcines, do you think this is the problem?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-05 19:51</div><div class="msg">you are using IPMI tool on virtual?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-05 19:51</div><div class="msg">yes - don't have a BMC (Baseboard Management Controller) in a Virtual Machine - you can't modify the BMC ... IPMI is just a protocol to talk to a BMC</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-05 19:51</div><div class="msg">jinx w Shane</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-05 19:52</div><div class="msg">@ we have the virtualbox-ipmi for purposes like that</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-05 19:52</div><div class="msg">I am running DRP on virtual machine, but the machine I am trying to access is physical</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-05 19:52</div><div class="msg">which uses the platform APIs to simulate IPMI for building workflow</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-05 19:52</div><div class="msg">ah, ok</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-05 19:53</div><div class="msg">so what @shane said, means I need to run DRP on a physical machine ?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-05 19:53</div><div class="msg">no, the endpoint can run on VMs just fine</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-05 19:54</div><div class="msg">so why am I getting this error?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-05 19:54</div><div class="msg">Could not open device at /dev/ipmi0 or /dev/ipmi/0 or /dev/ipmidev/0: No such file or directory
+attempt 0 failed</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-05 19:55</div><div class="msg">on the endpoint ?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-05 19:56</div><div class="msg">I think it would help if we had more information about your system - both the DRP VM and what you are trying to control via IPMI</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-05 19:59</div><div class="msg">What is the physical gear you are trying to manage?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-05 19:59</div><div class="msg">DRP VM:
+Virtualbox vm, running Ubuntu 18.04LTS
+IPMI Machine:
+Dell PowerEdge C6320</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-05 19:59</div><div class="msg">Time to feed the :bear:!</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-05 19:59</div><div class="msg">ok</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-05 20:00</div><div class="msg">can you log into the idrac on that box?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-05 20:00</div><div class="msg">yes</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-05 20:00</div><div class="msg">ok.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-05 20:01</div><div class="msg">Where are you running `drpcli machines processjobs`</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-05 20:01</div><div class="msg">?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-05 20:01</div><div class="msg">on the endpoint</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-05 20:01</div><div class="msg">Is that the machine running dr-provision?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-05 20:01</div><div class="msg">yes</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-05 20:02</div><div class="msg">ok</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-05 20:02</div><div class="msg">that command must be run on the target machine.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-05 20:03</div><div class="msg">and if you boot the 6320 into Sledgehammer the agent (which is what you are running with that command) will run automatically.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-05 20:04</div><div class="msg">REally, the only time you would run drpcli machines processjobs manually is of you were troubleshooting why the agent was failing.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-05 20:04</div><div class="msg">otherwise, we arrange for it to run as a daemon everywhere it is needed.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-05 20:06</div><div class="msg">Does that mean the machine should be in a sledgehammer-wait state, before I can run configure-ipmi ?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-05 20:06</div><div class="msg">Well, the machine needs to be booted into Sledgehammer.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-05 20:08</div><div class="msg">I would just build a workflow that goes from discover to ipmi-configure, set the varoius ipmi parameters to configure it the way you want, and go from there.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-05 20:10</div><div class="msg">I see, I will try to do this.
+the confusion was because I thought it works like this:
+-configure-ipmi would ssh to target machine, and change boot order to PXE.
+-then install Sledgehammer, and go from there.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-05 20:11</div><div class="msg">Nope.  we do not rely on SSH at all.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-05 20:11</div><div class="msg">You PXE boot the box into Sledgehammer, our agent starts, and runs through whatever workflow is assigned to the machine.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-05 20:12</div><div class="msg">v2 did use SSH and we choose to move away from it for a myriad of reasons</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-05 20:13</div><div class="msg">Ok, thank you for the clarification.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-02-20/319135093095_c0e6268d269110cacc49_72.gif" /><div class="message"><div class="username">dave.parker</div><div class="time">2018-07-05 21:33</div><div class="msg">"Can not change stages with pending tasks unless forced"</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-02-20/319135093095_c0e6268d269110cacc49_72.gif" /><div class="message"><div class="username">dave.parker</div><div class="time">2018-07-05 21:33</div><div class="msg">How do I force something through the API?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-02-20/319135093095_c0e6268d269110cacc49_72.gif" /><div class="message"><div class="username">dave.parker</div><div class="time">2018-07-05 21:38</div><div class="msg">Oh there's a force parameter.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-05 21:38</div><div class="msg">JSON `"force": true`</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-02-20/319135093095_c0e6268d269110cacc49_72.gif" /><div class="message"><div class="username">dave.parker</div><div class="time">2018-07-05 21:53</div><div class="msg">`{ "op": "replace", "path": "/Stage", "value": "STAGE", "force": true }` doesn't seem to work</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-02-20/319135093095_c0e6268d269110cacc49_72.gif" /><div class="message"><div class="username">dave.parker</div><div class="time">2018-07-05 22:06</div><div class="msg">Ah, nevermind, figured it out.  :smile:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-05 22:18</div><div class="msg">as a general pattern - you can try operation via the Web Portal, and turn on the developer JS tools - you'll be able to see all of the exact API calls we issue - for example the "workflow clear item", "force" enabled, etc...</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-02-20/319135093095_c0e6268d269110cacc49_72.gif" /><div class="message"><div class="username">dave.parker</div><div class="time">2018-07-05 22:21</div><div class="msg">Oh cool, thanks.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-05 22:52</div><div class="msg">also, Properties on DRP models are generally capitalized.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-05 23:16</div><div class="msg">How do I add customer initrd.gz to a cloned BootEnvironment?  It looks like I may be able to do it with modifying Env.JoinInitrds and Env.Kernel, but I?m just not able to connect the dots.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-06 00:15</div><div class="msg">@ right now you have to clone the BootEnv and then edit it to modify the `Initrd` and/or `Kernel` that is specified from the default - the paths are relative to the exploded out ISO in the DRP Endpoint</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-06 00:24</div><div class="msg">@shane Thanks.  So I just change the files where it is stored on the disk?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-06 00:24</div><div class="msg">Are you using the web Portal ?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-06 00:24</div><div class="msg">or CLI ?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-06 00:24</div><div class="msg">Only to learn</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-06 00:24</div><div class="msg">First web portal then cli and eventually api</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-06 00:24</div><div class="msg">what version of DRP are you running  ?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-06 00:25</div><div class="msg">I installed it Tuesday</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-06 00:26</div><div class="msg">you can see your version in the `Info &amp; Preferences` menu item - then the lower right panel</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-06 00:26</div><div class="msg">probably v3.9.0 then</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-06 00:27</div><div class="msg">v3.9.0-0-aa4d113c7a433d6a81fb985275be01901ae28e6d</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-06 00:27</div><div class="msg">when you Clone an object (including a BootEnv) - you should be presented with an Editable panel of the cloned item - you change the fields/things in it</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-06 00:27</div><div class="msg">(yep stable released v3.9.0)</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-06 00:28</div><div class="msg">the cloned version fields are editable -including Kernel and Initrd</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-06 00:28</div><div class="msg">make sure to Save after making edits to the clone</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-06 00:29</div><div class="msg">this is roughly equivalent of doing the CLI commands:
+```drpcli bootenvs show centos-7-install --format=yaml &gt; my-centos.yaml
+# edit the copy
+drpcli bootenvs create ./my-centos.yaml```</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-06 00:29</div><div class="msg">I see that ?kernel? is editable.  install/netboot/ubuntu-installer/amd64/linux  but the initirds is not. install/netboot/ubuntu-installer/amd64/initrd.gz</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-06 00:30</div><div class="msg">hmmm ... that's weird ...</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-06 00:30</div><div class="msg">try the CLI syntax then</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-06 00:30</div><div class="msg">:slightly_smiling_face:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-06 00:31</div><div class="msg">looks like a goofy bug with the Portal UX behavior - with Initrd being after the Templates</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-06 00:31</div><div class="msg">@zehicle ^^^ ???</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-06 00:32</div><div class="msg">if you do via CLI - you'll want to make sure to change the `Name` field to something like `my-ubuntu` ... or whatever</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-06 00:33</div><div class="msg">That is great.  I prefer the cli, just the UI can be easier when starting?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-06 00:34</div><div class="msg">totally understandable ... even our in-house CLI curmudgeon (@vlowther) can be caught using the web Portal from time to time ... :slightly_smiling_face:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-06 00:35</div><div class="msg">grumps.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-06 00:36</div><div class="msg">Do I use drpcli files upload to load the new initrd.gz?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-06 00:37</div><div class="msg">you can - you can also stage them in the tftpboot directory appropriately - either `drp-data` directory or `/var/lib/dr-provision` depending how you did the original install (isolated vs not)</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-06 00:38</div><div class="msg">one note - I'm not sure about the Path rules - I assume the "absolute" will be rooted in the `tftpboot` directory - while the current BootEnv use of the relative paths are ... ahem relative ... to the exploded ISO directory</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-06 00:38</div><div class="msg">the `drpcli files upload ... ` command will upload to the `tftpboot/files` directory</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-06 00:39</div><div class="msg">@shane before going too much farther, there are some design issues that we should go over with Greg.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-06 00:40</div><div class="msg">yeah - I bumped in to those already :slightly_smiling_face:</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-06 00:41</div><div class="msg">Thanks for the help shane.  That should provide the functionality that I am looking for.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-06 00:43</div><div class="msg">Drpcki files upload will not work unless the bootenv is designed to use it.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-06 00:44</div><div class="msg">There are some old design issues that have to be considered.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-06 00:45</div><div class="msg">I can go into more detail tomorrow.</div></div></div><br/>
+</div></body></html>

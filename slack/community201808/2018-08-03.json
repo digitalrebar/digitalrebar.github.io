@@ -1,0 +1,491 @@
+[
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "Hmm. I appear to have managed to ‘break’ dhcp (not really) by having multiple vlans on client and drp server. One of the interfaces on the client has a reservation and because the vlan interfaces (e.g. `bond0.1010`, `bond0.1011` etc) get the same MAC address, they blindly get given the IP from the reservation - all vlans end up with the same IP. I thought fixing that might be as easy as adding a new Strategy that uses ifname + mac but Strategies only get passed the DHCP packet and have no knowledge of the interface :white_frowning_face:",
+        "client_msg_id": "b9349d8b-7f0a-4110-816e-0be8c0afc3dc",
+        "ts": "1533294886.000157"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Hm, I will have to think about that one.",
+        "client_msg_id": "5e2888f3-fc40-4f38-a3c2-c4f50348cfa9",
+        "ts": "1533298879.000279"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Can you describe your network layout in more detail?",
+        "client_msg_id": "91470bf3-25d8-4360-8d9a-2de66e1ce6e4",
+        "ts": "1533298908.000137"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "Yeah so 4 VLANs - `boot (10.50.1.0\/24)`, `storage (10.50.2.0\/24)`, `migrate (10.50.3.0\/24)`, `virt (10.50.4.0\/24)`.\nEach Client and the DRP server has a LAG `bond0` to ToR switch.\nEach Client has a `p2p2` interface which is untagged on the `boot` VLAN.\nDRP server has interfaces `bond0.boot (10.50.1.254)`, `bond0.storage (10.50.2.254)`, `bond0.migrate (10.50.3.254)`, `virt (10.50.4.254)`\nClient servers have interfaces `p2p2 (DHCP - boot VLAN untagged)`, `bond0.storage (DHCP - storage VLAN tagged)`… (and the same for virt and migrate)",
+        "client_msg_id": "c8a6e98a-1d05-44b6-8ab0-880ad0ec0c36",
+        "edited": {
+            "user": "UBXEU90UQ",
+            "ts": "1533301974.000000"
+        },
+        "ts": "1533299917.000301"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "the clients are configured to PXE boot off p2p2, install C7, and have bond0 with those vlan interfaces configured (storage, virt, migrate)",
+        "client_msg_id": "ec450c8c-0e74-4aad-9ad7-8b2205400be1",
+        "ts": "1533299998.000130"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "they reboot, and get a dynamic lease from each interface - e.g. first server has `bond0.storage: 10.50.2.10`, `bond0.migrate: 10.50.3.10`, `bond0.virt: 10.50.4.10`",
+        "client_msg_id": "44bf543f-0bc1-4f73-b9b5-09d2623f67e2",
+        "ts": "1533300063.000280"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "If I then go and create a reservation for the 10.50.2.10 lease for that server, and then reboot it, all `bond0.&lt;vlan&gt;` interfaces will get a 10.50.2.10 IP",
+        "client_msg_id": "f06006fd-9fe0-405e-8dcb-44462c546fa8",
+        "ts": "1533300111.000308"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "this is because the reservation token is just the MAC address - and linux VLAN interfaces use the MAC address of the parent interface",
+        "client_msg_id": "115714b6-a042-4169-a266-a8e5a9d04d69",
+        "ts": "1533300304.000134"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "which means the server has the same MAC on every VLAN interface",
+        "client_msg_id": "40b1e172-2920-492b-8dba-44a34b3990ae",
+        "ts": "1533300314.000298"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "if i leave them all dynamic with no reservations, everything works fine",
+        "client_msg_id": "eb7788dd-2257-4776-b12f-434f770d1475",
+        "ts": "1533300592.000055"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "hmmm - so - I understand what is going on.  We’ll have to decide if changing the behavior will break lots of people or not.  I suspect not, but need to think about it.",
+        "client_msg_id": "82a398ed-e3f5-42db-bb26-51130f111cdf",
+        "ts": "1533301735.000155"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "helpful if i submit a github issue with the above?",
+        "client_msg_id": "d1460792-68be-4e84-873d-8e6c95bb3e6f",
+        "ts": "1533302537.000301"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "hm...",
+        "client_msg_id": "94a00393-3e06-4c82-89c1-d6239bef4dd3",
+        "ts": "1533304865.000150"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "the trick will be in deciding what we should use for a unique ID.",
+        "client_msg_id": "cd5a8e03-9d5e-42b6-9b7c-fa718ab25a7f",
+        "ts": "1533304883.000583"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "The DUID is out for several reasons.",
+        "client_msg_id": "b980ecce-5f62-41e9-832d-bbd785aa85fe",
+        "ts": "1533304928.000225"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I would prefer that the MAC address stayed globally unique, but...",
+        "client_msg_id": "2774a30c-d663-4fe4-9525-4f0534187898",
+        "ts": "1533304999.000553"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I prefer to not rely on server-side interface names, because they can change, and it will do Horrible Things to future DHCP failover strategies.",
+        "client_msg_id": "ebaf27c9-b850-4290-a06b-8c7d2405f28f",
+        "ts": "1533305198.000203"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "local interface IP maybe?",
+        "client_msg_id": "52dec5d6-3b7d-40d2-87e3-e74c327f3c49",
+        "ts": "1533305561.000189"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "(on the server-side)",
+        "client_msg_id": "1f288e6b-f3ef-4086-9dac-d71dd2cae83a",
+        "ts": "1533305569.000448"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "cos thats what ‘subnets’ are anyway right, they just associate a listen address with a DHCP range",
+        "client_msg_id": "3cc3a16f-5a23-4e8c-96f5-1f4b5952308a",
+        "ts": "1533305836.000067"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Yeah, that is what I have been leaning towards.",
+        "client_msg_id": "19f8d2d4-f591-434a-bd8b-5b22ef75d885",
+        "ts": "1533305937.000139"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "is there ever a situation where a lease that was given out on one interface (subnet?) needs to be given out on another?",
+        "client_msg_id": "72cc21a4-eb9a-494c-ab33-1bffd54a3a09",
+        "ts": "1533305947.000056"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "i dont know enough about DHCP to answer that :smile:",
+        "client_msg_id": "7e978b70-234a-424a-8d5b-74f096857f08",
+        "ts": "1533305955.000043"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "We pretty much never deal in terms of interfaces beyond the low-level packet processing loop.",
+        "client_msg_id": "d245f475-53b9-40cd-9e29-42c8ff833f78",
+        "ts": "1533305987.000037"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "because they can be added, removed, updated, etc. on the fly.",
+        "client_msg_id": "2844a2ef-c088-4d4d-98bc-cf8a714d577c",
+        "ts": "1533306006.000479"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "yeah as its so liable to change",
+        "client_msg_id": "b64cb6ae-7a6a-4876-b91b-70ea4de5a60c",
+        "ts": "1533306009.000068"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "every time i restart networking my vlan subinterfaces get new interface indexes, proving that point",
+        "client_msg_id": "dd9d8f86-2a64-45d1-a3c2-86af51fc5e2c",
+        "ts": "1533306027.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "hm.",
+        "client_msg_id": "b79f55d1-5741-4129-ab29-d2aace914d63",
+        "ts": "1533306786.000275"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Could we track by subnet (either subnet IP from interface or giaddr field) and Mac?  The non-reservation bond path works, so we are getting the subnet parts right.  It breaks our assumption about MAC is king.",
+        "client_msg_id": "a117a9ed-2415-4bca-bbf1-133dd8547852",
+        "ts": "1533307038.000055"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Yeah, the issue <@UBXEU90UQ> is running into is that reservations as currently defined are a global thing -- they say \"mac foo gets IP bar\", not \"mac foo in subnet bar gets IP baz\"",
+        "client_msg_id": "cae41a4e-42d5-42d7-a244-d8530d8ef5fd",
+        "ts": "1533308520.000132"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I can extend them to cover that case, the question is what is the best approach.",
+        "client_msg_id": "09ce61d5-320f-4e41-a422-b3b2b9d73bab",
+        "ts": "1533308619.000103"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I just don't want to break the use case of being able to assign an IP to a machine even through it is not in any of our subnet definitions.",
+        "client_msg_id": "009b0b68-3eba-4389-8403-41949df708e9",
+        "ts": "1533308803.000207"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "The short-term workaround is to not create reservations for this particular usecase",
+        "client_msg_id": "16850fcd-877a-4a1e-8425-4eb5b346c9a4",
+        "ts": "1533309102.000201"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "and try not to run out of IP addresses in the subnets in question. :slightly_smiling_face:",
+        "client_msg_id": "2cd8181d-4dbf-4590-8b8d-caba3247a484",
+        "ts": "1533309126.000327"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "and don't purge the expired leases.",
+        "client_msg_id": "23d448e0-c1c2-4ccd-9c68-251076256852",
+        "ts": "1533309158.000155"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "i mean in practice what we’d usually do is allocate the IP by DHCP on first run and then set it static on the interface",
+        "client_msg_id": "874fccbf-72c2-4a68-a0a5-9a750461840e",
+        "ts": "1533309251.000038"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "but i didn’t do that due to complexity and wanting to prove out something else",
+        "client_msg_id": "926b025f-7368-4fb3-96b2-a34b33cce06d",
+        "ts": "1533309270.000437"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "and ran into this instead :smile:",
+        "client_msg_id": "dd3b5ecf-a37d-46c0-a541-665fb0a7ee83",
+        "ts": "1533309274.000268"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Yeah, and that is a reasonable practice.",
+        "client_msg_id": "72b7b00b-3afb-4158-9047-85ab68c4fb2c",
+        "ts": "1533309282.000404"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "and as long as you don't run out of IPs and don't purge the leases, that will continue to work with us as well.",
+        "client_msg_id": "686a11aa-7ac5-43ff-8398-0f0762180842",
+        "ts": "1533309356.000031"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ok, so reservations will grow a Scoped flag to deal with this use case.",
+        "client_msg_id": "6d81eda3-6361-442c-860b-0077a40e2435",
+        "ts": "1533309478.000249",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U02DHRR2L",
+                    "UBXEU90UQ"
+                ],
+                "count": 2
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I will need to spend a bit of time fleshing this stuff out.",
+        "client_msg_id": "f6fc32c3-1bd2-4703-a568-4f1b7c43ed1e",
+        "ts": "1533309565.000166"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<!channel> —  I forgot.  Sledgehammer was updated in this release.  Please update that iso if you update to v1.4.0 community content.",
+        "client_msg_id": "b63e8a43-7442-49e1-950b-a6ae5376a163",
+        "ts": "1533311303.000449"
+    },
+    {
+        "user": "UBZS4HC06",
+        "text": "<@UBZS4HC06> has left the channel",
+        "type": "message",
+        "subtype": "channel_leave",
+        "ts": "1533313931.000075"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "<!here> hey guys, is it possible to use wildcards when selecting members of an object type in a tenant?",
+        "client_msg_id": "7abdf683-1bd5-478e-87d5-2ad66d24c6b9",
+        "edited": {
+            "user": "U8FAN7PLK",
+            "ts": "1533318912.000000"
+        },
+        "ts": "1533318902.000390"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yes, I believe *.  Not regex",
+        "client_msg_id": "65737d3d-f742-4f06-a41f-2c543bbcce95",
+        "ts": "1533319088.000419"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Interesting feature request.",
+        "client_msg_id": "b3d7cc2c-69ba-4892-99ca-3c06d08a5ded",
+        "ts": "1533319097.000024"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "My interest is to select some machines that have similar names",
+        "client_msg_id": "4ae37168-fff5-4a2b-aff5-1322199caa12",
+        "edited": {
+            "user": "U8FAN7PLK",
+            "ts": "1533319460.000000"
+        },
+        "ts": "1533319455.000473"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "I tried with * but it doesn't seem to work",
+        "client_msg_id": "d0928398-0cc0-4c1d-bbcb-09e122b9fc5d",
+        "edited": {
+            "user": "U8FAN7PLK",
+            "ts": "1533319484.000000"
+        },
+        "ts": "1533319476.000075"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "yeah - `'*' or exact match.  Not \"fred*\"`",
+        "client_msg_id": "10cc2854-39fd-493b-a49c-693a04024305",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1533319511.000000"
+        },
+        "ts": "1533319504.000276"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "should work.   You can add each machine name, I think.  “fred,greg,florent,victor,…”",
+        "client_msg_id": "db3e5ce0-a788-4108-b430-7a006657a177",
+        "ts": "1533319563.000117"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "ok",
+        "client_msg_id": "f0e77061-0bc3-4a9a-bae9-c2fb02270421",
+        "ts": "1533319644.000314"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "I tried `'fred*'` that's why ^^",
+        "client_msg_id": "e4530cbc-6b05-42fa-bc41-15bb3484670d",
+        "ts": "1533319660.000127"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "Otherwise I am currently testing RBAC.",
+        "client_msg_id": "a3983610-0950-4bd5-bdf3-c27dd7f64f28",
+        "ts": "1533319695.000445"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "I have trouble with the claims. What exactly are the keywords for the scopes and actions ?",
+        "client_msg_id": "f0b9d4f6-8858-4368-90bf-69cb651c6d60",
+        "ts": "1533319743.000447"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "no suggestion is shown in the menu when I edit a role, but it is shown when creating a new one.",
+        "client_msg_id": "6b810824-a8c6-4d76-905b-065e4810e644",
+        "edited": {
+            "user": "U8FAN7PLK",
+            "ts": "1533319819.000000"
+        },
+        "ts": "1533319759.000346"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "`drpcli info get | jq .scopes`",
+        "client_msg_id": "4d1c9a42-c0dc-4b12-94ab-559ce6b170e1",
+        "ts": "1533319825.000097"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "vi",
+        "client_msg_id": "8bf22812-db84-494e-92c3-8ffbc09d8fd3",
+        "ts": "1533319856.000121"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "yep, I confirm, editing a role in the UX isn't working.",
+        "client_msg_id": "e628c696-bbec-4ca7-a95e-4f000ccd4c1b",
+        "ts": "1533320023.000266"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Bug what you tried, please.",
+        "client_msg_id": "9a6cbcab-4c82-4f27-b7fb-e091652d84c8",
+        "ts": "1533320065.000268"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "1. Create a new role\n2. Set up the claims of the new role\n3. Save it.\n4. Go back to editing the previously saved role\n5. Try to modify the claims or anything won't work.",
+        "client_msg_id": "b1e4be49-8d39-43f2-9a29-04b6b31aa2ec",
+        "ts": "1533321957.000402"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "editing with drpcli works:\n`drpcli roles update prod-role '\"Claims\": [{\"action\": \"list\", \"scope\": \"machines\"}]'` showed no issue.",
+        "client_msg_id": "17b3b38f-4e84-40f8-be26-f1d4c552b56e",
+        "ts": "1533322150.000064"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U8FAN7PLK> thanks, that helps.  I'll take a look",
+        "client_msg_id": "e5d05bb9-5585-4790-9ad0-48e3ee2bdf63",
+        "ts": "1533329526.000303"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "I think my UX is unstable since the upgrade",
+        "client_msg_id": "460ca349-e46f-465a-88f9-f27276efa379",
+        "ts": "1533338432.000117"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "You may need to accept the certificate from the endpoint. ",
+        "client_msg_id": "2b539661-c505-44cb-a733-9529787f59f3",
+        "ts": "1533338851.000041"
+    }
+]

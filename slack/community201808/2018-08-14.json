@@ -1,0 +1,150 @@
+[
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<!channel> Meetup today at 11am PST ...  we hope to see all of you there!  Topics:\n• UX \/ Portal enhancements (Workflow Timings, Template Rendering, various easter eggs)\n• AUDITING: demo of enhancements on what triggered events and who caused them to trigger\n• OS:  Mac OS BSDP support for NetBoot\/NetInstall\n• CLASSIFY:  demo of Classification engine and auto workflow\nMeetup info:  <https:\/\/www.meetup.com\/digitalrebar\/events\/253623766>",
+        "client_msg_id": "e3ccab52-8acb-4680-965f-9d156a14e4b8",
+        "attachments": [
+            {
+                "service_name": "Meetup",
+                "title": "v023: UX Enhancements, Mac NetBoot\/NetInstall, Auditing, Classification",
+                "title_link": "https:\/\/www.meetup.com\/digitalrebar\/events\/253623766",
+                "text": "Tue, Aug 14, 2018, 11:00 AM: Start Time is 11:00 am PST (12:00 pm MST, 1:00 pm CST, 2:00 pm EST ... )Welcome to the Digital Rebar online meetup. Please note we'll be using <http:\/\/Zoom.us|Zoom.us> for our meeting; so",
+                "fallback": "Meetup: v023: UX Enhancements, Mac NetBoot\/NetInstall, Auditing, Classification",
+                "image_url": "https:\/\/secure.meetupstatic.com\/photos\/event\/d\/1\/b\/1\/600_467453681.jpeg",
+                "fields": [
+                    {
+                        "title": "Where",
+                        "value": "Online <https:\/\/zoom.us\/j\/3403934274> Mountain View, CA",
+                        "short": true
+                    },
+                    {
+                        "title": "When",
+                        "value": "Tue, Aug 14, 2018, 11:00 AM",
+                        "short": true
+                    }
+                ],
+                "from_url": "https:\/\/www.meetup.com\/digitalrebar\/events\/253623766",
+                "image_width": 472,
+                "image_height": 250,
+                "image_bytes": 69998,
+                "service_icon": "https:\/\/www.meetup.com\/mu_static\/en-US\/4f86abc993eecccc33a115d00b405ced.png",
+                "id": 1,
+                "original_url": "https:\/\/www.meetup.com\/digitalrebar\/events\/253623766"
+            }
+        ],
+        "ts": "1534257184.000100"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "Hi,\nI am running ESXi install workflow through terraform, everything is going well. However, after the installation successfully complete, terraform never stops and does not report that the installation is done.\nwhat stage do I need to add to ESXi installation workflow to let terraform report that its done?",
+        "client_msg_id": "f3b04042-974a-4e79-9bec-9ac55dac32fc",
+        "ts": "1534264316.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UBBSHF675> what does your workflow currently look like?  (`drpcli workflows show WORKFLOW | jq '.Stages'`)",
+        "client_msg_id": "3da33ee3-adff-4279-8117-e4f0e4c1bb98",
+        "ts": "1534264917.000100"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "\"esxi-6.5-install\",\n    \"complete\"",
+        "client_msg_id": "df5db051-81b0-4a8f-b377-53e659e0531c",
+        "ts": "1534265120.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You need to alter you esxi kickstart to set the stage to complete ",
+        "client_msg_id": "A7055A18-1D8F-4361-AB80-27F96AA02DA3",
+        "ts": "1534266347.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "We should do that in the tree.  Really. ",
+        "client_msg_id": "59DD90E1-2A99-4252-814A-4815409DC155",
+        "ts": "1534266385.000100"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "is there an example on how to set the stage in kickstart  file?",
+        "client_msg_id": "62b9b227-4091-43b8-a98f-4da1f98d2c6e",
+        "ts": "1534267478.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ESXi kickstart %pre necessary to mark Machine complete in workflow.",
+        "attachments": [
+            {
+                "fallback": "[July 17th, 2018 1:51 PM] vlowther: Here is what I came up with after spending the day  testing:",
+                "ts": "1531860662.000279",
+                "author_id": "U02DJQSG8",
+                "author_subname": "Victor Lowther",
+                "channel_id": "C02L9P26Q",
+                "channel_name": "community",
+                "is_msg_unfurl": true,
+                "text": "Here is what I came up with after spending the day  testing:",
+                "author_name": "Victor Lowther",
+                "author_link": "https:\/\/rackn.slack.com\/team\/U02DJQSG8",
+                "author_icon": "https:\/\/avatars.slack-edge.com\/2014-07-15\/2462284870_48.jpg",
+                "mrkdwn_in": [
+                    "text"
+                ],
+                "color": "D0D0D0",
+                "from_url": "https:\/\/rackn.slack.com\/archives\/C02L9P26Q\/p1531860662000279",
+                "is_share": true,
+                "footer": "Posted in #community"
+            }
+        ],
+        "ts": "1534267752.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UBBSHF675> ^^^^",
+        "client_msg_id": "b9bd9312-2835-4077-9efa-cb8ab15f1632",
+        "ts": "1534267765.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we need to add that to the DRP based kickstart ...",
+        "client_msg_id": "93cd2c8d-1302-4e3d-965b-26643f05549a",
+        "ts": "1534267779.000100"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "another thing, I am trying to run a workflow for large number of machines at once, the process seems to fail with large number ( &gt; 5) of machines during PXE boot, it shows error reading files.\nany suggestions on how to approach and investigate this issue.\nI tried using bulk actions tab, as well as terraform provider.",
+        "client_msg_id": "88c3b0ea-6f5e-4571-84ad-066f5862b908",
+        "ts": "1534268394.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "Turn up logging level. ",
+        "client_msg_id": "41510962-68a8-4c4b-8e61-3f9f27245fd5",
+        "ts": "1534269692.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UBBSHF675> - fyi - we have tested 100s of concurrent machine provisioning activities successfully with DRP - the first thing to do is verify that you account for any external infrastructure that might be causing issues - http mirrors, DHCP services, DNS services, etc...",
+        "client_msg_id": "d19daff2-6764-47e4-8bea-fffda5541c2c",
+        "ts": "1534271268.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "then take a look at the Workflow a given machine was running, and you can see task timings at the bottom of the workflow - this may help understand where the failures are",
+        "client_msg_id": "68206eb0-d66c-4d87-a24b-fc11c2523ed5",
+        "ts": "1534271314.000100"
+    }
+]

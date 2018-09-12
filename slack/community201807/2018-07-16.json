@@ -1,0 +1,348 @@
+[
+    {
+        "user": "UBQNH9ZT3",
+        "text": "<@UBQNH9ZT3> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1531755482.000128"
+    },
+    {
+        "type": "message",
+        "user": "UA98B96BA",
+        "text": "Is there a way to correlate what the API call would be for a given drpcli command?",
+        "client_msg_id": "a5fde03b-5ccb-4bfb-8c9c-cec3977a3387",
+        "ts": "1531767054.000027"
+    },
+    {
+        "type": "message",
+        "user": "UA98B96BA",
+        "text": "i.e.\nWhat is the API curl command equivalent to these drpcli command:\n```drpcli machines update \"{{.Machine.UUID}}\" '{ \"Runnable\": true, \"CurrentTask\": -1 }'\ndrpcli machines processjobs \"{{.Machine.UUID}}\"```",
+        "client_msg_id": "af40fc65-cf2b-4e80-a92e-7815b5592df5",
+        "thread_ts": "1531767125.000390",
+        "reply_count": 1,
+        "replies": [
+            {
+                "user": "UA98B96BA",
+                "ts": "1531772585.000307"
+            }
+        ],
+        "unread_count": 1,
+        "ts": "1531767125.000390"
+    },
+    {
+        "type": "message",
+        "user": "U32PZNCP5",
+        "text": "<@UBQNH9ZT3> $Welcome",
+        "client_msg_id": "3d090414-0824-4c53-a028-fd7a0e182c8d",
+        "ts": "1531767332.000433"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1531767332.000484"
+    },
+    {
+        "type": "message",
+        "user": "UBQNH9ZT3",
+        "text": "thanks :wink:",
+        "client_msg_id": "1e89eba4-e3e6-44f1-b584-2cd26ecf1f6c",
+        "ts": "1531767366.000452"
+    },
+    {
+        "type": "message",
+        "user": "UA98B96BA",
+        "text": "Also, is there a `drpcli` compiled for busybox? The linux binary throws a segmentation fault.",
+        "client_msg_id": "6e53764a-0da8-47f8-9673-6dffda85c6c4",
+        "thread_ts": "1531767125.000390",
+        "parent_user_id": "UA98B96BA",
+        "ts": "1531772585.000307"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "we have an existing DR provision running; however, i would like to review which subnets are available on the server and how to add a new subnet(s) if needed. I really appreciate for your help",
+        "client_msg_id": "9924a9a0-cc37-43b4-93bd-76f5a0bea80a",
+        "ts": "1531777039.000210"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@UA98B96BA> there's some docs about that <https:\/\/provision.readthedocs.io\/en\/tip\/doc\/dev\/dev-curl.html>",
+        "client_msg_id": "6f404d79-f956-40f3-9c72-cdf67831bae5",
+        "ts": "1531777989.000101"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "BUT... processjobs is NOT an API call.  It's the runner's state machine working",
+        "client_msg_id": "ae722ef4-78b7-4041-b54d-acb17abaafb7",
+        "ts": "1531778007.000232"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "so there's no CURL way to do that",
+        "client_msg_id": "f000166e-94b6-456d-9e27-60fb1e0be973",
+        "ts": "1531778020.000302"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@UANLCF8QP> the UX will provide a list of subnets under the networks tab and the CLI also has a drpcli subnets list option.",
+        "client_msg_id": "fbd1f3cb-416e-4d35-959e-9e84c9e26496",
+        "ts": "1531778064.000232"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "i ran $ drpcli subnets list\n[]",
+        "client_msg_id": "0cd7277e-5945-42cc-be24-7ed5f3341fde",
+        "ts": "1531778129.000162"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "it shows me nothing",
+        "client_msg_id": "b8f76b15-6b42-4022-a2bf-27693bfb3570",
+        "ts": "1531778137.000097"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "drpcli interfaces list",
+        "client_msg_id": "6b648f9e-2d42-4295-acad-8ea5feb7f0ad",
+        "ts": "1531778195.000153"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "then you can configure a subnet from that.",
+        "client_msg_id": "329b46f6-1b14-44ae-95b0-59353650da7c",
+        "ts": "1531778202.000125"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The UX will create subnets from the interfaces list if you select add subnet",
+        "client_msg_id": "2204ff37-5d16-44f9-af1c-bb1378b1bb94",
+        "ts": "1531778228.000231"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "by convention the UX in the wizard names the subnets based on the interface.  That's not required, only a convention",
+        "client_msg_id": "3e49e76b-ceb9-4e4c-97e8-f0f752e30cc6",
+        "ts": "1531778241.000197"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "thanks <@U02DGQYK1>",
+        "client_msg_id": "d7ea2cda-73c7-4edb-b4fb-01df1be08d18",
+        "ts": "1531778259.000349"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "hi guys, today i made some progress. i added the following filename `bootx64.efi` instead of `lpxelinux.0` because the host machine is a UEFI based system.",
+        "client_msg_id": "43eda1cf-7853-4bfe-a9c6-88ae0d1bfb0d",
+        "ts": "1531783062.000144"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "the system started to boot however it mentioned something about no config file. and sat at an `ELILO` prompt with an ongoing `.........`",
+        "client_msg_id": "90affa25-8e94-401c-9fff-185ab6d25186",
+        "ts": "1531783099.000116"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "do i have to add the system in digital rebar some how?",
+        "client_msg_id": "ec74ad67-dfbf-4e44-bdb2-d5d70b9bc561",
+        "ts": "1531783126.000158"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "i’d like to get it to boot the sledgehammer image at a minimum.",
+        "client_msg_id": "18f5e3e7-0969-4ba4-b971-14bd65af1c7a",
+        "ts": "1531783142.000108"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "when sledgehammer starts, it will automatically register back to the DRP endpoint.  It sounds like you are getting stuck earlier in the process.  Set the endpoint log level up to debug and see if the machine is talking to the endpoint.",
+        "client_msg_id": "1256a599-e551-4990-bf81-18c7ff27bbd3",
+        "ts": "1531783398.000220"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "oh tis talking. i’ve done a tcpdump in digital rebar on port 69 and watched all the messages.",
+        "client_msg_id": "f3016f5a-2dcb-4330-8a82-92cf10b80d1a",
+        "ts": "1531783464.000157"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "unless you’re referring to another endpoint?",
+        "client_msg_id": "3290843b-f713-4da5-88ab-8798b6943d64",
+        "ts": "1531783470.000158"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "the last one i see is ` 32 RRQ \"elilo.conf\" octet blksize 1024`",
+        "client_msg_id": "31b68387-34cd-4432-a1dd-8171af386484",
+        "ts": "1531783490.000083"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "no, that's right",
+        "client_msg_id": "f21641b2-4cf0-435e-9477-923d5bd66393",
+        "ts": "1531783493.000158"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "there has to be a default boot environment or something it would go into, being that the configuration file is absent for the specific host",
+        "client_msg_id": "7c746c66-fad5-44ae-ad60-28a0eb059fb7",
+        "ts": "1531783627.000204"
+    },
+    {
+        "type": "message",
+        "text": "",
+        "files": [
+            {
+                "id": "FBRJA4N7L",
+                "created": 1531783745,
+                "timestamp": 1531783745,
+                "name": "Screen Shot 2018-07-16 at 7.28.54 PM.png",
+                "title": "Screen Shot 2018-07-16 at 7.28.54 PM.png",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "U9RL0EJH3",
+                "editable": false,
+                "size": 30624,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FBRJA4N7L\/screen_shot_2018-07-16_at_7.28.54_pm.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FBRJA4N7L\/download\/screen_shot_2018-07-16_at_7.28.54_pm.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FBRJA4N7L-ca55543bc2\/screen_shot_2018-07-16_at_7.28.54_pm_64.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FBRJA4N7L-ca55543bc2\/screen_shot_2018-07-16_at_7.28.54_pm_80.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FBRJA4N7L-ca55543bc2\/screen_shot_2018-07-16_at_7.28.54_pm_360.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_360_w": 360,
+                "thumb_360_h": 188,
+                "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FBRJA4N7L-ca55543bc2\/screen_shot_2018-07-16_at_7.28.54_pm_480.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_480_w": 480,
+                "thumb_480_h": 250,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FBRJA4N7L-ca55543bc2\/screen_shot_2018-07-16_at_7.28.54_pm_160.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FBRJA4N7L-ca55543bc2\/screen_shot_2018-07-16_at_7.28.54_pm_720.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_720_w": 720,
+                "thumb_720_h": 376,
+                "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FBRJA4N7L-ca55543bc2\/screen_shot_2018-07-16_at_7.28.54_pm_800.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_800_w": 800,
+                "thumb_800_h": 417,
+                "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FBRJA4N7L-ca55543bc2\/screen_shot_2018-07-16_at_7.28.54_pm_960.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_960_w": 960,
+                "thumb_960_h": 501,
+                "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FBRJA4N7L-ca55543bc2\/screen_shot_2018-07-16_at_7.28.54_pm_1024.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_1024_w": 1024,
+                "thumb_1024_h": 534,
+                "image_exif_rotation": 1,
+                "original_w": 1384,
+                "original_h": 722,
+                "permalink": "https:\/\/rackn.slack.com\/files\/U9RL0EJH3\/FBRJA4N7L\/screen_shot_2018-07-16_at_7.28.54_pm.png",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FBRJA4N7L-85cbef74a1"
+            }
+        ],
+        "upload": true,
+        "user": "U9RL0EJH3",
+        "display_as_bot": false,
+        "ts": "1531783749.000066"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "and those `.` are endless",
+        "client_msg_id": "5ef7805c-4e88-4be4-83e3-43390ffb45de",
+        "ts": "1531783760.000163"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ELILO, huh?",
+        "client_msg_id": "14ae64fb-b8c8-4d68-bb11-836df0bc00ae",
+        "ts": "1531784762.000178"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "We stopped supporting that a while ago.",
+        "client_msg_id": "05cdd10d-d047-4906-b797-8af91f1c7b05",
+        "ts": "1531784780.000164"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "use ipxe.efi instead.",
+        "client_msg_id": "4535d074-fe78-4fe5-be6a-bcf3446a1d81",
+        "ts": "1531784799.000182"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "not saying its the latest version of rebar i’m running.",
+        "client_msg_id": "2fbbe16c-69d5-4a34-a58a-b81a768373c4",
+        "ts": "1531784808.000008"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "so you’re saying by change bootx64.efi to ipxe.efi should fix the problem?",
+        "client_msg_id": "52de878b-3c6b-4c56-8290-6fdb5d4f8ec6",
+        "edited": {
+            "user": "U9RL0EJH3",
+            "ts": "1531784832.000000"
+        },
+        "ts": "1531784829.000127"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Yep.",
+        "client_msg_id": "21f76d61-3ffc-4bc2-9513-acebec50cb39",
+        "ts": "1531784838.000024"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "elilo has a few faults that are hard to work around.",
+        "client_msg_id": "21039df4-8255-4fea-9e5d-4eb51d655e96",
+        "ts": "1531784855.000199"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "no way to exit, and it has not been under development for quite some time.",
+        "client_msg_id": "b8e4af8b-5442-432b-be3b-729566eb3d1a",
+        "ts": "1531784880.000089"
+    },
+    {
+        "type": "message",
+        "user": "U9RL0EJH3",
+        "text": "yea i don’t actually know why it went to that… ok. we’ll try ipxe.efi",
+        "client_msg_id": "05675627-93b2-407d-8e18-b6a9215ff3cc",
+        "ts": "1531785524.000005"
+    }
+]

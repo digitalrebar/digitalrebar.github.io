@@ -1,0 +1,56 @@
+<html><body><style>
+			* {
+				font-family:sans-serif;
+			}
+			body {
+				text-align:center;
+				padding:1em;
+			}
+			.messages {
+				width:100%;
+				max-width:700px;
+				text-align:left;
+				display:inline-block;
+			}
+			.messages img {
+				background-color:rgb(248,244,240);
+				width:36px;
+				height:36px;
+				border-radius:0.2em;
+				display:inline-block;
+				vertical-align:top;
+				margin-right:0.65em;
+			}
+			.messages .time {
+				display:inline-block;
+				color:rgb(200,200,200);
+				margin-left:0.5em;
+			}
+			.messages .username {
+				display:inline-block;
+				font-weight:600;
+				line-height:1;
+			}
+			.messages .message {
+				display:inline-block;
+				vertical-align:top;
+				line-height:1;
+				width:calc(100% - 3em);
+			}
+			.messages .message .msg {
+				line-height:1.5;
+			}
+		</style><div class="messages"><div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-05 11:01</div><div class="msg">Trying to track down that auth issue from yesterday - it looks like the user `Secret` changes between the first `drpcli contents create` and the subsequent ones</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-05 11:01</div><div class="msg">the token being sent by drpcli is identical, but the User?s `Secret` field has changed so I assume it invalidates the token</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-05 11:02</div><div class="msg">`grantorSecret` and `userSecret` both change, as does the return from `drpcli users list`</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-05 11:22</div><div class="msg">so on a hunch, I commented out the line which changes the `user.Secret` when `user.ChangePassword` is run? and validation passes.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-05 11:24</div><div class="msg">I then put the line which regenerates the `Secret` *before* the line that saves the user on password change, and it seems to work like that as well? I reckon the Secret is regenerated but not saved into the user store, so when I generate the token it?s somehow done using the ephemeral user token and doesn?t match when retrieved from store. Or something like that?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-05 12:07</div><div class="msg">Or maybe the modified User object is being saved into the store at some point in the future with the new `Secret` after the token has been generated, invalidating it?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-05 12:49</div><div class="msg">Github issue about the above blurb <a href="https://github.com/digitalrebar/provision-content/issues/135">https://github.com/digitalrebar/provision-content/issues/135</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-09-05 13:16</div><div class="msg">Thanks, @</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-05 16:52</div><div class="msg">This might sound weird, but is there a way to name hosts' MAC addresses or IPs and just stream disk content and reboot (without any smarts or tricks)? I'm asking because I figure at this stage that would probably work fine (if it could be done) for my repeated provisioning task where everything is always identical (so I could provision manually once and save each server's disk image). Otherwise with custom ISOs that we use in these systems (different non-standard distro and app combos packaged as ISOs, each is custom made, used for different types of hosts) it's going to take me months to figure out how to explode them and so on...</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-09-05 17:44</div><div class="msg">@ - That is basically a two part thing.  first part - can you capture a system.  Second part, can you image an system from a capture.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-09-05 17:45</div><div class="msg">The image-deploy plugin can be used to do the second.  @shane has been working on parts to do the first.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-09-05 17:46</div><div class="msg">Between @vlowther and @shane, they have content packs (internal to RackN right now) that build sledgehammer and capture it for use as a bootenv.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-09-05 17:46</div><div class="msg">These are RackN licensed items.  For full disclosure.</div></div></div><br/>
+</div></body></html>

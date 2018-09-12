@@ -1,0 +1,9 @@
+[
+    {
+        "type": "message",
+        "user": "UCD5VP2C8",
+        "text": "Is there a trick to getting `package-repositories` with `installSource: true` working correctly with Kickstart-based systems? I don't want the install URL to be the DR server in my case.",
+        "client_msg_id": "590333df-caf4-471f-b836-51c49f1238ad",
+        "ts": "1535233141.000100"
+    }
+]

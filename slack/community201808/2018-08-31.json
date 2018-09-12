@@ -1,0 +1,110 @@
+[
+    {
+        "type": "message",
+        "user": "UCHL0U7EH",
+        "text": "Hi guys, I'm able to install machines with 2 NICs for via DHCP, is it possible to work with static IPs for access interface (not PXE) or digital rebar supports only DHCP?",
+        "client_msg_id": "d078b000-7aec-47b7-aa59-514f0386ad33",
+        "ts": "1535733865.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@UCHL0U7EH> yes, it's possible to use static IPs on NICs.  There's just no UX \/ or default way to define it",
+        "client_msg_id": "a9dd5725-32f4-4332-a478-1bff27f2cd4c",
+        "ts": "1535734498.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "because we don't see consistent patterns for defining the networks in the templates",
+        "client_msg_id": "f5d5db3a-4469-426f-9e59-2e84022c1462",
+        "edited": {
+            "user": "U02DHRR2L",
+            "ts": "1535734531.000000"
+        },
+        "ts": "1535734518.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "we've made it very easy to add post-configuration tasks that you can use to define the NICs and pull params from the machine model",
+        "client_msg_id": "8c57315f-b1fe-424d-b7ca-b1b2f02b3448",
+        "edited": {
+            "user": "U02DHRR2L",
+            "ts": "1535734571.000000"
+        },
+        "ts": "1535734564.000100"
+    },
+    {
+        "type": "message",
+        "user": "UCHL0U7EH",
+        "text": "good, would you have any example?",
+        "client_msg_id": "8028289a-fb45-4f69-ad64-273cd55cf268",
+        "ts": "1535734652.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<https:\/\/github.com\/digitalrebar\/colordemo>",
+        "client_msg_id": "50abb4f3-01c4-457f-bba6-dbd687a74054",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/colordemo",
+                "title_link": "https:\/\/github.com\/digitalrebar\/colordemo",
+                "text": "Training Content. Contribute to digitalrebar\/colordemo development by creating an account on GitHub.",
+                "fallback": "GitHub: digitalrebar\/colordemo",
+                "from_url": "https:\/\/github.com\/digitalrebar\/colordemo",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/digitalrebar\/colordemo"
+            }
+        ],
+        "ts": "1535734681.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "shows how to add stages into the system",
+        "client_msg_id": "bf3cbdac-ea39-4482-9980-44540fb14e3e",
+        "ts": "1535734698.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "including how to read and set params on machiens",
+        "client_msg_id": "c16a125c-d9cb-4f94-989c-a08f26f53f94",
+        "ts": "1535734711.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "the videos are designed as instruction",
+        "client_msg_id": "8fd9eca0-b337-484b-ad82-2da433dce664",
+        "ts": "1535734736.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "you'll need to create a task that sets the network config.",
+        "client_msg_id": "0a2267bf-f5a0-4034-9c39-082d7433f1de",
+        "ts": "1535734758.000100"
+    },
+    {
+        "text": "if you can figure out a generic pattern for a stage, it could be a great addition to the community content.",
+        "type": "message",
+        "subtype": "me_message",
+        "user": "U02DHRR2L",
+        "ts": "1535734838.000100"
+    },
+    {
+        "type": "message",
+        "user": "UCHL0U7EH",
+        "text": "nice, I'll try this way",
+        "client_msg_id": "38facf13-7fd9-4eb5-ab64-d4626608cbb8",
+        "ts": "1535734953.000100"
+    }
+]

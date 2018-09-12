@@ -1,0 +1,349 @@
+[
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "Morning all -",
+        "client_msg_id": "967ea7a2-be54-42bd-af14-405dc98b42f7",
+        "ts": "1534952306.000100"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "do we know if there is any methods to utilize this tool without use PXE and just send a command to add a node?",
+        "client_msg_id": "c6241c54-6edb-49de-849b-8f522a6332ed",
+        "ts": "1534952348.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "drpcli machines create",
+        "client_msg_id": "744585af-e26d-4d42-a34a-5f7840073f61",
+        "ts": "1534953980.000200"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "so if i had machines 192.168.1.202 - 250 - how could i use the tool to provision machines ? i wouldnt want another endpoint just be able to manage the servers",
+        "client_msg_id": "0589dc6a-640f-4df9-a86d-3802bdd2d239",
+        "ts": "1534954631.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "you could use DRP DHCP reservations to assign mac to IP.",
+        "client_msg_id": "33cfafc8-1f3c-472c-a841-f0898c90c934",
+        "ts": "1534954832.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You can also use DRP Subnet ACtive range to scope the IP addresses handed out by DRP DHCP.",
+        "client_msg_id": "d1949fb9-cafe-4b02-b5db-e0defc9ec7da",
+        "ts": "1534954846.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U7J7U5DA9> you can create a Machine Object to represent a physical machine - without booting the machine in to sledgehammer - basically - take a look at `drpcli machines show Name:&lt;MACHINE_NAME&gt;` - save that to a file, modify appropirately, then create with that JSON as input",
+        "client_msg_id": "71cd430b-e10a-44a9-9f1c-c3c198fd9b7b",
+        "ts": "1534955224.000100"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "<!here> hey guys, I am currently trying to check if a param exist in a machine. The thing is I do not know the name of the parameter.\nThis is a generated parameter name which is concatenating interfaces name with a string.\nTypically I have these parameters:\n```eno1\/lldp\/chassis\neno2\/lldp\/chassis\netc...```\n\nTo make it simple, I have a stage that is retrieving the lldp information of all interfaces and store the chassis and port of each interface in a param in the machine object in DRP.\nWhat I want to do after that is to compare the previously retrieved lldp informations with what is stored in our DCIM.\n\nThe thing is that I want to ensure that the lldp parameters of each interface is there before doing the comparison, so I am trying to write a piece of python code that look like this:\n```\ndef nic_inventory_check(nic_list):\n    exit_message = []\n    exit_code = []\n    for nic in nic_list:\n        {{if .ParamExists \"{0}\/lldp\/port\".format(nic)}}\n            exit_message.append((\"Param {0}\/lldp\/port found.\".format(nic)))\n            exit_code.append(0)\n            yield {'{0}\/lldp\/port'.format(nic)): {{.Param \"{0}\/lldp\/port\".format(nic)}}}\n        {{else}}\n            exit_message.append((\"Param {0}\/lldp\/port not found.\".format(nic)))\n            exit_code.append(2)\n            yield 'error'\n        {{end}}\n        {{if .ParamExists \"{0}\/lldp\/chassis\".format(nic)}}\n            exit_message.append((\"Param {0}\/lldp\/chassis found.\".format(nic)))\n            exit_code.append(0)\n            yield {'{0}\/lldp\/chassis'.format(nic)): {{.Param \"{0}\/lldp\/chassis\".format(nic)}}\n        {{else}}\n            exit_message.append((\"Param {0}\/lldp\/chassis not found.\".format(nic)))\n            exit_code.append(2)\n            yield 'error'\n        {{end}}\n```\nOf course this piece of code isn't accepted by DRP :`{{if .ParamExists \"{0}\/lldp\/port\".format(nic)}}`. It is telling me that there is a parsing error:\n```Parse error for template ubisoft-lldp-check.py.tmpl: template: ubisoft-lldp-check.py.tmpl:88: unexpected . after term \"\\\"{0}\/lldp\/port\\\"\"```",
+        "client_msg_id": "9fce352d-2785-44d1-ae16-dd52de02e349",
+        "ts": "1534965427.000100"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "I assume that mixing python code with `golang\/text template` isn't working. Do you guys have an idea on how I could make this work ?",
+        "client_msg_id": "be0747c1-0ff5-49a0-a4d3-85ed20d822bd",
+        "ts": "1534965521.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@U8FAN7PLK> - correct - you can not mix Golang Templating and Python.  The golang template piece is interpreted on the DRP Endpoint _prior_ to being handed to the Machine, and subsequently the Python interpreter.",
+        "client_msg_id": "24db91a7-3b07-49d1-9a25-fc28f22b1068",
+        "ts": "1534966591.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "In this case - you would probably want to make logic choices and local machine checks first in Python  - then use `drpcli` to call to the DRP Endpoint to get the params info.  You'll need to generate a Token for use in the Python piece, to pass to `drpcli` to authenticate.  See the `setup.tmpl` template for a Bash example.",
+        "client_msg_id": "69d02b46-8d46-4e33-a05c-36af76aa6cf6",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1534966908.000000"
+        },
+        "ts": "1534966652.000200"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "We do have a pattern in the Inventory content that is designed to store and check information related to hardware and state changes in the hardware, using DRP itself as the data store.  You might want to see if this pattern is adaptable to what you are doing.",
+        "client_msg_id": "137bd54b-8643-4c86-9512-20f8681117d3",
+        "ts": "1534966704.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<https:\/\/www.youtube.com\/watch?v=xDqxEW5bgiQ&amp;t=1s>",
+        "client_msg_id": "5475433e-3fed-45ee-a6de-97ae7d81f3ff",
+        "attachments": [
+            {
+                "service_name": "YouTube",
+                "service_url": "https:\/\/www.youtube.com\/",
+                "title": "Digital Rebar Inventory Stage (RackN Task-Library)",
+                "title_link": "https:\/\/www.youtube.com\/watch?v=xDqxEW5bgiQ&amp;t=1s",
+                "author_name": "RackN & Digital Rebar",
+                "author_link": "https:\/\/www.youtube.com\/channel\/UCr3bBtP-pMsDQ5c0IDjt_LQ",
+                "thumb_url": "https:\/\/i.ytimg.com\/vi\/xDqxEW5bgiQ\/hqdefault.jpg",
+                "thumb_width": 480,
+                "thumb_height": 360,
+                "fallback": "YouTube Video: Digital Rebar Inventory Stage (RackN Task-Library)",
+                "video_html": "<iframe width=\"400\" height=\"225\" src=\"https:\/\/www.youtube.com\/embed\/xDqxEW5bgiQ?feature=oembed&start=1&autoplay=1&iv_load_policy=3\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen><\/iframe>",
+                "video_html_width": 400,
+                "video_html_height": 225,
+                "from_url": "https:\/\/www.youtube.com\/watch?v=xDqxEW5bgiQ&amp;t=1s",
+                "service_icon": "https:\/\/a.slack-edge.com\/2089\/img\/unfurl_icons\/youtube.png",
+                "id": 1,
+                "original_url": "https:\/\/www.youtube.com\/watch?v=xDqxEW5bgiQ&amp;t=1s"
+            }
+        ],
+        "ts": "1534966733.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "We have also added a lot of Golang Template halpers in the most current version of DRP (v3.10.0) that extends and adds a lot of capabilities the server-side golang template processing.  This won't necessarily help you with this specific task, but you might want to take a look at it for future reference and templating work:\n<http:\/\/masterminds.github.io\/sprig\/>",
+        "client_msg_id": "a1a8fbea-d2ac-4d88-9f68-ee02e5b000e6",
+        "attachments": [
+            {
+                "service_name": "sprig",
+                "title": "Sprig Function Documentation",
+                "title_link": "http:\/\/masterminds.github.io\/sprig\/",
+                "text": "Useful template functions for Go templates.",
+                "fallback": "sprig: Sprig Function Documentation",
+                "from_url": "http:\/\/masterminds.github.io\/sprig\/",
+                "id": 1,
+                "original_url": "http:\/\/masterminds.github.io\/sprig\/"
+            }
+        ],
+        "ts": "1534966863.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "additionally - we have some work around LLDP we've done already as part of the Network menu functionality",
+        "client_msg_id": "ea5ace05-bf9e-41a1-931f-c325739e8a5a",
+        "ts": "1534966950.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Also - you can use a consistently named Param to store the information in - but use a more complex structure to store the dynamic details in that Param - you can then use a `{{range ... }}` golang template structure to iterate over each of the key\/value pairs - and pass that in for use in Python - here's an example of ``range``",
+        "client_msg_id": "a8a60c5e-3279-4541-9348-1f01c19acc99",
+        "ts": "1534967417.000100",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<https:\/\/github.com\/digitalrebar\/provision-content\/blob\/94af748094ef45d27eaa096f3bd11b6fbdd64cfa\/rose\/templates\/rose-config.sh.tmpl#L48>",
+        "client_msg_id": "a548adf3-d52e-4ee7-831d-abef56ef3277",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision-content",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision-content\/blob\/94af748094ef45d27eaa096f3bd11b6fbdd64cfa\/rose\/templates\/rose-config.sh.tmpl#L48",
+                "text": "provision-content - DigitalRebar Provision Content",
+                "fallback": "GitHub: digitalrebar\/provision-content",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision-content\/blob\/94af748094ef45d27eaa096f3bd11b6fbdd64cfa\/rose\/templates\/rose-config.sh.tmpl#L48",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/digitalrebar\/provision-content\/blob\/94af748094ef45d27eaa096f3bd11b6fbdd64cfa\/rose\/templates\/rose-config.sh.tmpl#L48"
+            }
+        ],
+        "ts": "1534967418.000200"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "thanks <@U6QFVRJNB> This is usefull informations, I'm gonna read all of that and keep you posted :slightly_smiling_face:",
+        "client_msg_id": "f29e91cf-a148-49c1-8a2f-37ad2ff7580f",
+        "ts": "1534967443.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "The other thing you could do is store the LLDP info for all of the nics as a single JSON blob",
+        "client_msg_id": "c48d430c-cfed-42f7-806f-e9311dc0f695",
+        "ts": "1534968089.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "in a single param",
+        "client_msg_id": "9f120b0f-f413-4afe-a4f4-d08ef36a040b",
+        "ts": "1534968110.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "^^^ \"consistently named Param to store information in\" :slightly_smiling_face:",
+        "client_msg_id": "9dc613a9-4c71-4f0a-b3ca-8661a2f7879e",
+        "ts": "1534968119.000100"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "<@U02DJQSG8> I could do that too yes...",
+        "client_msg_id": "055b3560-d871-4e1c-b1df-49ad2aa5d7dd",
+        "ts": "1534968225.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "then you can have one {{.ParamAsJSON \"param-name\"}} call to get the param as a JSON blob, and do all your iterating in Python.",
+        "client_msg_id": "9bfbbe44-bc42-46ad-b8f3-3580f5f7fd60",
+        "ts": "1534968231.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "I think we have a lldp json stage",
+        "client_msg_id": "2528b068-4a0b-4dcd-b9ea-04c87422a4aa",
+        "edited": {
+            "user": "U02DHRR2L",
+            "ts": "1534968263.000000"
+        },
+        "ts": "1534968254.000100"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "<@U02DHRR2L> yes you did, but this is much like the gohai stage. There is a lot of information I don't need int that param:\nThat's why I am interested in the inventory stage that <@U6QFVRJNB> mentionned.",
+        "client_msg_id": "b62ebe55-2fe9-437b-a5e9-332a6b5b9508",
+        "edited": {
+            "user": "U8FAN7PLK",
+            "ts": "1534968370.000000"
+        },
+        "ts": "1534968324.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "yes.  My expectation was that you would be able to use the adhoc jq filters from the inventory on lldp data to add more keys into your inventory\/data.",
+        "client_msg_id": "5e5c355c-f12d-46fe-896e-927136eef16b",
+        "ts": "1534968786.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "the inventory stage design allows you to specify any command that creates json and then apply jq to filter down to critical fields.",
+        "client_msg_id": "ae4445e8-8937-4984-bf74-20e60df111c7",
+        "ts": "1534968829.000100"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "oooh",
+        "client_msg_id": "017bf1fe-2467-424b-a7c7-ae2fdc24e9f5",
+        "ts": "1534968839.000100"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "that's fancy",
+        "client_msg_id": "6a2e0a4b-c359-4803-8aad-d4ca70e63661",
+        "ts": "1534968842.000100"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "Is there any example ? not sure how to do it though.",
+        "client_msg_id": "fe6d3a9c-6891-4f3c-87df-81f8f0b0c8bc",
+        "ts": "1534968879.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<https:\/\/provision.readthedocs.io\/en\/tip\/doc\/content-packages\/task-library.html#inventory-collect>",
+        "client_msg_id": "314f7346-b71c-4cc5-896f-1def7c1eefe6",
+        "ts": "1534968987.000200"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "This is amazing.",
+        "client_msg_id": "d3a5a0d6-6036-4fb7-b28b-8d2f98f380bc",
+        "ts": "1534969978.000100",
+        "reactions": [
+            {
+                "name": "grin",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "I'm gonna give this a try first.",
+        "client_msg_id": "6eaa78fb-eb7a-4050-b5fe-fce0c2f416d2",
+        "ts": "1534969983.000100"
+    },
+    {
+        "type": "message",
+        "user": "U8FAN7PLK",
+        "text": "This could be the answer for a lot of thing I am already doing and some I am not yet doing :smile:",
+        "client_msg_id": "1cce0317-0918-4f5e-ad50-3b2942d7e076",
+        "ts": "1534970088.000100"
+    },
+    {
+        "text": "SPRIG ROCKS",
+        "type": "message",
+        "subtype": "me_message",
+        "user": "U02DHRR2L",
+        "ts": "1534999189.000100",
+        "reactions": [
+            {
+                "name": "confetti_ball",
+                "users": [
+                    "U6QFVRJNB"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "Fun little integration for KRIB and inventory.... if you use the inventory stage (creates inventory\/data from gohai) then KRIB will automatically use that data to label to nodes.",
+        "client_msg_id": "7a76ebfb-3a3f-40e8-8134-83c7bfe3d2b5",
+        "ts": "1534999711.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "That means that you can use the inventory information to select nodes for scheduling in Kubernetes automatically",
+        "client_msg_id": "bd604480-fa9d-4f6d-bb56-c58e868eb631",
+        "ts": "1534999746.000100"
+    }
+]

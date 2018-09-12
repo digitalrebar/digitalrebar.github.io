@@ -1,0 +1,128 @@
+[
+    {
+        "type": "message",
+        "user": "UAQU29EJW",
+        "text": "<https:\/\/provision.readthedocs.io\/en\/tip\/doc\/configuring.html#rs-configuring-default> states for Ubunty it's RocketSkates (<https:\/\/provision.readthedocs.io\/en\/tip\/doc\/configuring.html#default-template-identity>); in console (not SSH) it doesn't work for the \"root\" user.\nI followed Quick Install (from tip) step by step, and installed Ubuntu 18.04 as per Install Your First Machine - <https:\/\/provision.readthedocs.io\/en\/tip\/doc\/quickstart.html#install-your-first-machine>.\nI will try the approach with SSH key next, but neither RocketSkates nor rocketskates work for \"root\" in console.\n\nEdit: 1) With CentOS 7.5.xxx Minimal ISO, default password works fine\nEdit: 2) I am using ssh-access with Ubuntu 18 instead of console as a workaround",
+        "client_msg_id": "c5813ecd-c518-4835-9a16-eb64776e2a13",
+        "edited": {
+            "user": "UAQU29EJW",
+            "ts": "1535809444.000000"
+        },
+        "thread_ts": "1532030800.000226",
+        "parent_user_id": "U6QFVRJNB",
+        "ts": "1535804331.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UAQU29EJW> - for Ubuntu - the preseed specifies that the username is `rocketskates`, not \"root\".  In the `net-seed.tmpl`, around lines 83 to 86 - the username\/info\/password are specified.  Line 85 sets the default username, if you do not override it with a Param.  Root appears to not be set - so you need to login as `rocketskates`, then `sudo` to root.  I just tested that path on the Console of a machine.",
+        "attachments": [
+            {
+                "fallback": "[September 1st, 2018 5:18 AM] prezzy_dent: <https:\/\/provision.readthedocs.io\/en\/tip\/doc\/configuring.html#rs-configuring-default> states for Ubunty it's RocketSkates (<https:\/\/provision.readthedocs.io\/en\/tip\/doc\/configuring.html#default-template-identity>); in console (not SSH) it doesn't work for the \"root\" user.\nI followed Quick Install (from tip) step by step, and installed Ubuntu 18.04 as per Install Your First Machine - <https:\/\/provision.readthedocs.io\/en\/tip\/doc\/quickstart.html#install-your-first-machine>.\nI will try the approach with SSH key next, but neither RocketSkates nor rocketskates work for \"root\" in console.\n\nEdit: 1) With CentOS 7.5.xxx Minimal ISO, default password works fine\nEdit: 2) I am using ssh-access with Ubuntu 18 instead of console as a workaround",
+                "ts": "1535804331.000100",
+                "author_id": "UAQU29EJW",
+                "author_subname": "Sean",
+                "channel_id": "C02L9P26Q",
+                "channel_name": "community",
+                "is_msg_unfurl": true,
+                "is_reply_unfurl": true,
+                "text": "<https:\/\/provision.readthedocs.io\/en\/tip\/doc\/configuring.html#rs-configuring-default> states for Ubunty it's RocketSkates (<https:\/\/provision.readthedocs.io\/en\/tip\/doc\/configuring.html#default-template-identity>); in console (not SSH) it doesn't work for the \"root\" user.\nI followed Quick Install (from tip) step by step, and installed Ubuntu 18.04 as per Install Your First Machine - <https:\/\/provision.readthedocs.io\/en\/tip\/doc\/quickstart.html#install-your-first-machine>.\nI will try the approach with SSH key next, but neither RocketSkates nor rocketskates work for \"root\" in console.\n\nEdit: 1) With CentOS 7.5.xxx Minimal ISO, default password works fine\nEdit: 2) I am using ssh-access with Ubuntu 18 instead of console as a workaround",
+                "author_name": "Sean",
+                "author_link": "https:\/\/rackn.slack.com\/team\/UAQU29EJW",
+                "author_icon": "https:\/\/secure.gravatar.com\/avatar\/eb5bc3da01ded0ad7a7ee56c5e555045.jpg?s=48&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0017-48.png",
+                "mrkdwn_in": [
+                    "text"
+                ],
+                "color": "D0D0D0",
+                "from_url": "https:\/\/rackn.slack.com\/archives\/C02L9P26Q\/p1535804331000100?thread_ts=1532030800000226&cid=C02L9P26Q",
+                "is_share": true,
+                "footer": "From a thread in #community"
+            }
+        ],
+        "thread_ts": "1535813636.000100",
+        "reply_count": 2,
+        "replies": [
+            {
+                "user": "UAQU29EJW",
+                "ts": "1535813919.000100"
+            },
+            {
+                "user": "U6QFVRJNB",
+                "ts": "1535814078.000100"
+            }
+        ],
+        "unread_count": 2,
+        "ts": "1535813636.000100",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "UAQU29EJW"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(and `RocketSkates` is the correct password in our default preseed for the `rocketskates` user)",
+        "client_msg_id": "0ec14930-6107-46d7-8ea0-7437c446166a",
+        "ts": "1535813684.000100"
+    },
+    {
+        "type": "message",
+        "user": "UAQU29EJW",
+        "text": "Thank you. Interestingly in Centos there's \"root\".\nI am still learning (reading the manual right now) my way around the workflows, stages, etc. Should be able to check by myself but need more practice",
+        "client_msg_id": "d11b77f9-94fa-4d1f-b857-a41142c251a8",
+        "thread_ts": "1535813636.000100",
+        "parent_user_id": "U6QFVRJNB",
+        "ts": "1535813919.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "The differences between CentOS and Ubuntu are specific to how those Distros handle their default root\/username policies.  DRP simply mimics those patterns.",
+        "client_msg_id": "861a7104-a72a-437c-8e4e-7b192ad49027",
+        "thread_ts": "1535813636.000100",
+        "parent_user_id": "U6QFVRJNB",
+        "ts": "1535814078.000100"
+    },
+    {
+        "type": "message",
+        "user": "UAQU29EJW",
+        "text": "`runner-service` - I searched the slack, poked around the GUI - can't figure out how to actually use it to install a non-default rpm or deb package? I clone this service, then it asks me to add a template and content. All I want is `apt-get install vim  -y` - do I need to create or reuse templates for this?  If a video where this is demo'd exists I wouldn't mind to watch it. Is `Wait` or `Do not wait` appropriate Runner Wait choice for a clone of runner service?",
+        "client_msg_id": "051c3544-4dea-4ff1-a297-55d18828f71b",
+        "ts": "1535864320.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Check the net-seed.tmpl - I think there is a Param you can set to add additional pkgs. Remember you can only add pkgs that are in the repo mirrors, otherwise the install will hang and not complete successfully.... ",
+        "client_msg_id": "025224e3-4cd5-4e35-9af5-c5d931c3e28e",
+        "ts": "1535864556.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Param is `extra-packages`",
+        "client_msg_id": "221425d1-ba26-4451-9abd-dc07ac2e57fc",
+        "ts": "1535864662.000100",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "UAQU29EJW"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "UCFAD8JQH",
+        "text": "Hey, guys! How do I access to nested fields of the some `Param` object? For instance:\n```\n{{if .ParamExists \"network-configuration\" -}}\nd-i netcfg\/choose_interface select {{.Param \"network-configuration\/interface\"}}\nd-i netcfg\/disable_autoconfig boolean true\nd-i netcfg\/get_ipaddress string {{.Param \"network-configuration\/ipaddress\"}}\nd-i netcfg\/get_netmask string {{.Param \"network-configuration\/netmask\"}}\nd-i netcfg\/get_gateway string {{.Param \"network-configuration\/gateway\"}}\nd-i netcfg\/get_nameservers string {{.Param \"network-configuration\/nameservers\"}}\nd-i netcfg\/confirm_static boolean true\n{{else -}}\n{{end}}\n```\nWhen I try to do this, I'm getting a error:\n```\nсен 02 07:34:42 proxy1 dr-provision[631]: [0:8]Static FS: Dynamic file error for \/machines\/d5962282-8187-4d68-8b98-28fcb85c1284\/seed: template: :438:4: executing \"select-kickseed.tmpl\" at &lt;.CallTemplate&gt;: error calling CallTemplate: template: qantor-preseed.tmpl:20:37: executing \"qantor-preseed.tmpl\" at &lt;.Param&gt;: error calling Param: No such machine parameter network-configuration\/interface\n```",
+        "client_msg_id": "3ba3ddf7-fe9d-4dc8-9fbe-9b08250d7260",
+        "ts": "1535865869.000100"
+    }
+]

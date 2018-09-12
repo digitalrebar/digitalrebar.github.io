@@ -1,0 +1,173 @@
+[
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "hmm… is there any way to write out an ‘object’ param to a file as yaml on the host being provisioned? If there’s an example somewhere that would be super useful",
+        "client_msg_id": "8f25cc78-7bb4-4cf9-9671-5d99a1188090",
+        "ts": "1533030469.000267"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@UBXEU90UQ> - in a template?  `.ParamAsYaml` or `.ParamAsJson` see the docs.",
+        "client_msg_id": "59e4c399-32a6-44a3-9229-48f65585f811",
+        "ts": "1533042837.000232"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<!channel> - Today's meetup kicks off at 11am PST.  We'll be talking about the new v3.10.0 release features and fixes, DRP Prometheus Metrics, OS Specific Workflows, and Terraform Pooling capabilities in the provider.  Checkup the meetup page which has a link to the full agenda:  <https:\/\/www.meetup.com\/digitalrebar\/events\/lchdhpyxkbpc\/>",
+        "client_msg_id": "bd174c13-30f4-4b15-adf0-04777eb97c1c",
+        "attachments": [
+            {
+                "service_name": "Meetup",
+                "title": "v022: v3.10.0 release, Prometheus Metrics, OS Specific WF, Terraform Pooling",
+                "title_link": "https:\/\/www.meetup.com\/digitalrebar\/events\/lchdhpyxkbpc\/",
+                "text": "Tue, Jul 31, 2018, 11:00 AM: Start Time is 11:00 am PST (12:00 pm MST, 1:00 pm CST, 2:00 pm EST ... )Welcome to the Digital Rebar online meetup. Please note we'll be using <http:\/\/Zoom.us|Zoom.us> for our meeting; so",
+                "fallback": "Meetup: v022: v3.10.0 release, Prometheus Metrics, OS Specific WF, Terraform Pooling",
+                "image_url": "https:\/\/secure.meetupstatic.com\/photos\/event\/d\/1\/b\/1\/600_467453681.jpeg",
+                "fields": [
+                    {
+                        "title": "Where",
+                        "value": "Online <https:\/\/zoom.us\/j\/3403934274> Mountain View, CA",
+                        "short": true
+                    },
+                    {
+                        "title": "When",
+                        "value": "Tue, Jul 31, 2018, 11:00 AM",
+                        "short": true
+                    }
+                ],
+                "from_url": "https:\/\/www.meetup.com\/digitalrebar\/events\/lchdhpyxkbpc\/",
+                "image_width": 472,
+                "image_height": 250,
+                "image_bytes": 69998,
+                "service_icon": "https:\/\/www.meetup.com\/mu_static\/en-US\/4f86abc993eecccc33a115d00b405ced.png",
+                "id": 1,
+                "original_url": "https:\/\/www.meetup.com\/digitalrebar\/events\/lchdhpyxkbpc\/"
+            }
+        ],
+        "ts": "1533048988.000302",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U8FAN7PLK"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "user": "UC08YH350",
+        "text": "<@UC08YH350> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1533061256.000234"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Is there an easy way to restart a failed stage on a machine that's alive (been provisioned with a base OS) and running the runner-service?",
+        "client_msg_id": "85fb7c58-dd52-4fdb-8a58-3b816aebd565",
+        "ts": "1533066850.000212"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The machine should be marked not Runnable.",
+        "client_msg_id": "75717471-b871-4066-9e1f-8ea1b518aa4e",
+        "ts": "1533066973.000097"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Making the machine runnable will start where the failure occurred.",
+        "client_msg_id": "c4863067-75c1-4c02-84b8-c2f8c3a13f9c",
+        "ts": "1533066985.000470"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Can I run arbitrary stages\/tasks on machines that have the runner-service running?",
+        "client_msg_id": "5b356189-b09e-43f3-972d-e9d58ef833d1",
+        "ts": "1533067551.000084"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Not without building a workflow and setting the system to it.",
+        "client_msg_id": "4d23ee50-aba1-46f9-ae13-8c195e483545",
+        "ts": "1533067711.000101"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UC08YH350> $welcome ",
+        "client_msg_id": "ced32a10-42fb-4de4-b636-42db70b43f9e",
+        "ts": "1533068132.000031"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1533068132.000136"
+    },
+    {
+        "user": "UC0BLRQE6",
+        "text": "<@UC0BLRQE6> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1533068493.000371"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Ok",
+        "client_msg_id": "daedb335-4f2b-46f7-b428-2c2ff4f91728",
+        "ts": "1533068520.000036"
+    },
+    {
+        "type": "message",
+        "user": "U9BU09D51",
+        "text": "Thanks",
+        "client_msg_id": "a3887bad-0de6-477c-94b1-090ad8be2a2c",
+        "ts": "1533068522.000167"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UC0BLRQE6> $welcome ",
+        "client_msg_id": "dd8c8993-8e8b-4bc4-b9eb-78706adb350e",
+        "ts": "1533068584.000186"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1533068584.000242"
+    },
+    {
+        "type": "message",
+        "user": "UC0BLRQE6",
+        "text": "<@U6QFVRJNB> thank you",
+        "client_msg_id": "0f3f1f76-f4f1-446d-9c35-8cad52758968",
+        "ts": "1533068609.000328"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U9BU09D51> in the latest version of the UX, there are a whole bunch of \"make runnable\" buttons in the UX for this purpose",
+        "client_msg_id": "e4bd9d19-7055-425a-965b-5223f26ef059",
+        "ts": "1533095712.000070"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "one late addition to v3.10 - DRP now supports BSDP for network booting macs (aka Apple hardware).",
+        "client_msg_id": "cdcc8591-f3c6-4a13-b8d4-03813134211d",
+        "ts": "1533095753.000041"
+    }
+]

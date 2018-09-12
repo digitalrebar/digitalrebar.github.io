@@ -1,0 +1,33 @@
+[
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<!channel> - Released the community content to pick up debian release updates.",
+        "client_msg_id": "1bc13e3a-655e-4b0a-8df0-3e87d91e476b",
+        "ts": "1534029077.000003",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U6QFVRJNB",
+                    "U02DHRR2L"
+                ],
+                "count": 2
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UC6UCDSAH> $welcome ",
+        "client_msg_id": "a72f4239-ae8f-46aa-b3fa-b9d8bee00000",
+        "ts": "1534029739.000032"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1534029739.000041"
+    }
+]

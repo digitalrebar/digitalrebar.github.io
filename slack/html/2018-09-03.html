@@ -1,0 +1,55 @@
+<html><body><style>
+			* {
+				font-family:sans-serif;
+			}
+			body {
+				text-align:center;
+				padding:1em;
+			}
+			.messages {
+				width:100%;
+				max-width:700px;
+				text-align:left;
+				display:inline-block;
+			}
+			.messages img {
+				background-color:rgb(248,244,240);
+				width:36px;
+				height:36px;
+				border-radius:0.2em;
+				display:inline-block;
+				vertical-align:top;
+				margin-right:0.65em;
+			}
+			.messages .time {
+				display:inline-block;
+				color:rgb(200,200,200);
+				margin-left:0.5em;
+			}
+			.messages .username {
+				display:inline-block;
+				font-weight:600;
+				line-height:1;
+			}
+			.messages .message {
+				display:inline-block;
+				vertical-align:top;
+				line-height:1;
+				width:calc(100% - 3em);
+			}
+			.messages .message .msg {
+				line-height:1.5;
+			}
+		</style><div class="messages"><div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-03 13:02</div><div class="msg">Getting a panic / 500  ?No decoder for content-type application/x-gzip? when trying to use drpcli users token [id]? but i swear it worked earlier when the user I was using was the default (not provided to drpcli via env var)</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-09-03 13:51</div><div class="msg">That can mean your password is not set @ </div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-09-03 13:52</div><div class="msg">If that fixes it,  let's make sure it's in the faq</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-03 13:53</div><div class="msg">yeah, worked that out just now actually</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-03 13:53</div><div class="msg">i think my add user command didn?t work properly</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-03 13:53</div><div class="msg">there?s a user, but it has no roles ? but it does have a secret set</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-03 13:56</div><div class="msg">ahh crap i know why, passing it a username AND a json blob which i think just creates a blank user and ignores the json</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-03 13:56</div><div class="msg">:smile:</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-03 14:07</div><div class="msg">urgh</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-03 14:07</div><div class="msg">yeah it?s just a problem with how ansible escapes stuff in command line</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-03 16:40</div><div class="msg">also? i remember there being a kexec-ok param which i now can?t find which I thought was in community content? where does it come from? :slightly_smiling_face:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-09-03 17:17</div><div class="msg">@ you need tip DRP version and top content </div></div></div><br/>
+</div></body></html>

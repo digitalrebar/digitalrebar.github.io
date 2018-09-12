@@ -1,0 +1,428 @@
+[
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "morning all",
+        "client_msg_id": "dcfffdf0-37f1-4a26-a54b-0c345dd33d42",
+        "ts": "1534770478.000100"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "in setting up my workflow i may have put too many steps in? <https:\/\/imgur.com\/a\/PzFubld>",
+        "client_msg_id": "51962a95-d111-40c2-9675-d9447a969f6e",
+        "attachments": [
+            {
+                "service_name": "Imgur",
+                "title": "WORKFLOW",
+                "title_link": "https:\/\/imgur.com\/a\/PzFubld",
+                "text": "Imgur",
+                "fallback": "Imgur: WORKFLOW",
+                "image_url": "https:\/\/i.imgur.com\/nHIY6r4.jpg",
+                "image_width": 854,
+                "image_height": 71,
+                "from_url": "https:\/\/imgur.com\/a\/PzFubld",
+                "image_bytes": 6975,
+                "service_icon": "http:\/\/s.imgur.com\/images\/favicon-152.png",
+                "id": 1,
+                "original_url": "https:\/\/imgur.com\/a\/PzFubld"
+            }
+        ],
+        "ts": "1534770648.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "it's just the way the render bunches up the icons.  I need to add a nowrap style",
+        "client_msg_id": "56847c48-321d-4289-9e85-a48c755c41d5",
+        "edited": {
+            "user": "U02DHRR2L",
+            "ts": "1534781648.000000"
+        },
+        "ts": "1534781642.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "if you check the row, it will show you the stages on the right",
+        "client_msg_id": "ae7721c3-7afa-4d5c-a7ad-ca86a9c0baa8",
+        "ts": "1534781673.000100"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "i updated my ssh-key in the global template. the sshkey goes after the ubuntu install?",
+        "client_msg_id": "25348e41-cb02-402b-8caa-9145347012dd",
+        "ts": "1534781748.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "if you want they keys installed in the OS",
+        "client_msg_id": "443ba8ea-67c1-4c39-8571-47ae4efcd7fc",
+        "ts": "1534781838.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "it would be in twice if you build a workflow that's both discover AND install ubuntu as a single thing",
+        "client_msg_id": "eb7d8a5e-b9fd-48b3-9b69-7842d1a5bab8",
+        "ts": "1534781865.000100"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "a shorter and more efficient workflow could be - sledgehammer- wait, ubuntu, ssh-key and then the complete to keep runner going?",
+        "client_msg_id": "9cce73db-c397-4bca-a817-9bb3b5fcd14b",
+        "ts": "1534781879.000100"
+    },
+    {
+        "text": "assuming you want your keys injected into sledgehammer in that case",
+        "type": "message",
+        "subtype": "me_message",
+        "user": "U02DHRR2L",
+        "ts": "1534781879.000200"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "you need to add a runner install stage if you want the DRP runner to keep working in the final OS",
+        "client_msg_id": "2cf080b4-4734-4cc5-9e02-ae8ac6764d47",
+        "ts": "1534781931.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "you really only need sledgehammer-wait if you are staying in sledgehammer.  it's never mid-workflow",
+        "client_msg_id": "01702539-3c70-4108-b759-18bcedfdfdf1",
+        "ts": "1534781967.000200"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "it really does not do much",
+        "client_msg_id": "5a518782-f88d-428a-91fa-ef64a32f9008",
+        "ts": "1534781974.000100"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "i have been watching the videos and you guys have been busy. what is the benefit of the DRP runner?",
+        "client_msg_id": "e6c5165d-3b90-4d1e-b7ae-92d6459133a5",
+        "ts": "1534781980.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "it's required if you want workflows",
+        "client_msg_id": "32fec308-a2e0-4235-aaad-ef6d57897d97",
+        "ts": "1534781998.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "once it's off, DRP cannot control the system at all.",
+        "client_msg_id": "6e98e16e-d9e8-4ba1-b4d4-116bb6affb65",
+        "ts": "1534782014.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "DRP runner = DRP agent = DRP CLI.  All the same thing",
+        "client_msg_id": "15ff2486-a2b9-4390-a230-dac9510f4b44",
+        "ts": "1534782062.000100"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "ok i am not seeing drp as an option for workflow",
+        "client_msg_id": "8491f5b4-7e35-466e-a517-0e76d43b1cc6",
+        "ts": "1534782146.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "??",
+        "client_msg_id": "e4ee3123-fa6b-485f-8302-d304595ecc7f",
+        "ts": "1534782279.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "it's automatically started in all of the default templates",
+        "client_msg_id": "86dc5d9a-c7f7-4d9a-bf65-0709090dc752",
+        "ts": "1534782302.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "in O\/S installs, it will terminate by default after all the post-provision work is complete UNLESS you install it as a service.",
+        "client_msg_id": "13bc7d04-a955-4f00-ba22-1bc7b48e4936",
+        "ts": "1534782338.000100"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "i was following your 'ROSE' video i think there was some steps im left with question on",
+        "client_msg_id": "f3a73ddb-4ab5-41ad-9d90-691b8db58350",
+        "ts": "1534782445.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "then it will keep running and automatically detect when workflows changes (including reboots)",
+        "client_msg_id": "e7c30d52-193e-415c-aa75-cc93481d477b",
+        "ts": "1534782518.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "ROSE would be a pretty advanced place to start.",
+        "client_msg_id": "bcb4eec7-5e78-4ff3-98ac-59460fd26dda",
+        "ts": "1534782607.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "what are you trying to accomplish?",
+        "client_msg_id": "363db021-b071-4b9f-9c21-eaf9f5afcc8f",
+        "ts": "1534782623.000100"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "i am trying to create a lab that i can use to deploy whatever i need. ideally... I like what you did with ROSE as with openstack i can deploy anything i need",
+        "client_msg_id": "b8e1a5fd-dc96-4340-a214-bea4f4696e3e",
+        "ts": "1534783614.000100"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "my original goal had to be put on hold from when i had <http:\/\/iamkey.org|iamkey.org>",
+        "client_msg_id": "657fcfcb-9123-4ab8-be70-bd329757a414",
+        "ts": "1534783641.000100"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "at least now i can walk and move about but cant lift anything less than 30 lbs",
+        "client_msg_id": "c4cf738b-5372-44be-b85e-9deae976b9be",
+        "ts": "1534783678.000100"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "the goal was to use this tool to setup learning environment configurations. maybe someone needs help with windows or linux commands",
+        "client_msg_id": "9c15e0e4-659d-42bb-b385-f85950703307",
+        "ts": "1534783728.000100"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "it would probably be faster by phone to say it than to put everyone else to sleep here",
+        "client_msg_id": "5f7acec2-c35c-456c-a0fe-8a0ef4392352",
+        "ts": "1534783825.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "we're booked this afternoon - would have to be tomorrow for voice.  \nmy point w\/ ROSE was to encourage you to try smaller steps first.  Make sure base Ubuntu provision works first",
+        "client_msg_id": "9c90a4aa-2bf3-4e11-ae20-6a1e18317920",
+        "ts": "1534788959.000100"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "for whatever reason my ubuntu deployment is showing ssh access with no boot environment for the machine when i look at overview.. when i go to machines everything is good to go and green but when i ssh to the box connection is refused. i am using the default for now if you want to look @ <http:\/\/www.networked.pw|www.networked.pw>",
+        "client_msg_id": "403e4159-00dd-4c8c-9877-b3b3ed7d6907",
+        "ts": "1534789302.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "you need to install your SSH keys in the global profile and include the SSH keys stage",
+        "client_msg_id": "e38e4c5e-f0b3-4c15-bfc1-337f648e01ab",
+        "ts": "1534790014.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<https:\/\/provision.readthedocs.io\/en\/tip\/doc\/faq-troubleshooting.html?highlight=ssh#add-ssh-keys-to-authorized-keys>",
+        "client_msg_id": "1a967dd3-ff13-4f6a-989b-4d1011e87687",
+        "ts": "1534790039.000100"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "i did that in the global i thought.. maybe i didnt click save?",
+        "client_msg_id": "04bd476f-3ffe-4f70-890c-937072bf4257",
+        "ts": "1534790293.000100"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "nope its there",
+        "client_msg_id": "79488fc7-f0d5-4305-8b71-18e367a8cc09",
+        "ts": "1534790338.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "check the job logs for the SSH stage.  It may have an error that helps show what happened",
+        "client_msg_id": "1524da22-5c99-4f4e-ae11-bd893bbef15c",
+        "ts": "1534791598.000100"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "i just went and checked and ubuntu 18 was stuck on pressed so i just rebooted the client",
+        "client_msg_id": "0e6407db-e965-4792-9e2d-5eac9e3c2dd6",
+        "ts": "1534794426.000100"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "went to check the process and it was going along fine and still stuck on preseed... if i deploy a machine with sledgehammer i can ssh key to it",
+        "client_msg_id": "ceef4822-56ae-45be-80e5-b073f06679ab",
+        "ts": "1534795628.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Make sure your workflow has a finish-install or complete at the end otherwise the install will hang.  If you change the workflow, you will need to change the machine out of that workflow and then back into.  Then reboot the machine.",
+        "client_msg_id": "ea70abf2-c76a-4b77-bb2d-7625c37453d4",
+        "ts": "1534796000.000100"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "<@U02DGQYK1> The workflow i have now is install ubuntu18, ssh access and finish install - i did update the global so it has my ssh key - am i missing anything?",
+        "client_msg_id": "26bf33b2-c691-4776-b672-fcd6e38dd3f9",
+        "ts": "1534798426.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That should be okay.  Assuming you don’t want to run anything in the rebooted installed os.",
+        "client_msg_id": "03a0929a-7c2d-4757-9fd2-2a7dc0379777",
+        "ts": "1534798758.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "typically, we also include the DRP runner stage so that you can change workflow and have it detect that",
+        "client_msg_id": "0616d796-6d00-49ee-abbf-fbd66f4dc77b",
+        "ts": "1534798767.000100"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "<@U02DGQYK1> what do i need to run something in the rebooted install os",
+        "client_msg_id": "e9ef32a5-1bd4-4f88-8f63-a5776e6f9c61",
+        "ts": "1534798812.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That is what <@U02DHRR2L> is talking about.",
+        "client_msg_id": "764833d7-7cd9-4131-b5f0-ba7344792542",
+        "ts": "1534798826.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Add the `task-library` content package.",
+        "client_msg_id": "faa00c9e-edaf-42a5-b57f-a1e66924ebff",
+        "ts": "1534798833.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "That will add the `runner-service` stage.  Put that before `finish-install` but after `ubuntu-18.04-install`.  That will put the runner in the post-install environment and start it on put.",
+        "client_msg_id": "9fc91255-ef47-4609-a6bb-6c5f642e3789",
+        "ts": "1534798877.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Then you put `complete` after `finish-install`",
+        "client_msg_id": "f416ac7e-22c7-4c29-b996-54fcb2f09f22",
+        "ts": "1534798889.000200"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Once a system gets to `complete` you will know it has booted and checked in.",
+        "client_msg_id": "2067c725-8262-4414-8abe-f933e4f1ce23",
+        "ts": "1534798903.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Anything you want to do post-install can be added between `finish-install` and `complete`.",
+        "client_msg_id": "dc87706a-abc4-4cd3-871d-6a9072e2abe6",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1534798920.000000"
+        },
+        "ts": "1534798918.000100"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "weird - the task-library wont add",
+        "client_msg_id": "d1a8d98b-e725-4153-9350-86146d7143cb",
+        "ts": "1534799124.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "check the Logs under the Endpoint Admin section.",
+        "client_msg_id": "c852945e-9840-4bf6-a11d-d8a195779c89",
+        "ts": "1534799168.000100"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "2\n\n[15:08]\nxid 0xd606ccd7: Ignoring request for DHCP server 192.168.1.1\ndhcp\ndhcp.go:834\n\n\n[14:24]\nxid 0xe8782bdf: Ignoring request for DHCP server 192.168.1.1\ndhcp\ndhcp.go:834\n\n\n[12:33]\nxid 0x6b66dfba: Ignoring request for DHCP server 192.168.1.1\ndhcp\ndhcp.go:834\n\n\n[11:47]\nxid 0xef1bcb2c: Ignoring request for DHCP server 192.168.1.1\ndhcp\ndhcp.go:834\n\n\n[10:03]\nxid 0xb12354f0: Ignoring request for DHCP server 192.168.1.1\ndhcp\ndhcp.go:834\n\n\n[09:54]\nxid 0xb17f1a17: Another DHCP server may be on the network: &lt;nil&gt;\ndhcp\ndhcp.go:862\n\n\n[09:34]\nxid 0x6b88c76b: Ignoring request for DHCP server 192.168.1.1\ndhcp\ndhcp.go:834\n\n\n[07:34]\nNo DRP authentication token from 76.125.103.251\nfrontend\nfrontend.go:287\n\n\n[06:58]\nxid 0xd334a0f6: Ignoring request for DHCP server 192.168.1.1\ndhcp\ndhcp.go:834\n\n\n[06:44]\nxid 0x176e3f6b: Ignoring request for DHCP server 192.168.1.1\ndhcp\ndhcp.go:834\n\n\n[21:08]\nAuthenticated user rocketskates from 127.0.0.1\nfrontend\nfrontend.go:283\n3\n\n[20:45]\nAuthenticated user rocketskates from 76.125.103.251\nfrontend\nfrontend.go:283\n\n\n[20:32]\nAuthenticated user rocketskates from 127.0.0.1\nfrontend\nfrontend.go:283",
+        "client_msg_id": "c1ee2957-69c3-4184-b91a-527478915836",
+        "ts": "1534799225.000100"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "nothing useful",
+        "client_msg_id": "32ddf094-f8f5-4b3a-b606-da850399c70c",
+        "ts": "1534799238.000100"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "i got it",
+        "client_msg_id": "4cf65776-3c40-4ff0-a317-f1c513687e48",
+        "ts": "1534799321.000100",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "i have a green status that it is all done, but when i look at the overview it is yellow... im confused",
+        "client_msg_id": "b26a9efc-db85-4dea-90b7-f0869db528b5",
+        "ts": "1534801003.000100"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "when i still try to ssh - connection refused",
+        "client_msg_id": "f7ef27ed-81c9-4deb-8c93-8ead615c93b9",
+        "ts": "1534801217.000100"
+    }
+]

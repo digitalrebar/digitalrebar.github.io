@@ -1,0 +1,135 @@
+<html><body><style>
+			* {
+				font-family:sans-serif;
+			}
+			body {
+				text-align:center;
+				padding:1em;
+			}
+			.messages {
+				width:100%;
+				max-width:700px;
+				text-align:left;
+				display:inline-block;
+			}
+			.messages img {
+				background-color:rgb(248,244,240);
+				width:36px;
+				height:36px;
+				border-radius:0.2em;
+				display:inline-block;
+				vertical-align:top;
+				margin-right:0.65em;
+			}
+			.messages .time {
+				display:inline-block;
+				color:rgb(200,200,200);
+				margin-left:0.5em;
+			}
+			.messages .username {
+				display:inline-block;
+				font-weight:600;
+				line-height:1;
+			}
+			.messages .message {
+				display:inline-block;
+				vertical-align:top;
+				line-height:1;
+				width:calc(100% - 3em);
+			}
+			.messages .message .msg {
+				line-height:1.5;
+			}
+		</style><div class="messages"><div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-09 08:56</div><div class="msg">has joined #2018-07-09</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-09 13:28</div><div class="msg">@ $welcome</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-09 13:28</div><div class="msg">Digital Rebar welcome information is here &gt; <a href="http://rebar.digital/community/welcome.html">http://rebar.digital/community/welcome.html</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-09 13:32</div><div class="msg">The new items in the video have been pulled into tip</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-09 15:45</div><div class="msg">So, I've run through the KRIB pattern a couple of times and I keep getting the same erorr during the krib-config task
+```Log for Job: 532b184a-865d-4ec5-8e35-56e0985f882e
+Starting task krib-config on cbd36552-6054-4109-a0ba-46a0fd0cc452
+2018-07-09 15:29:46.392986575 +0000 UTC m=+296.145977317: Writing krib-kubeadm.cfg.tmpl to /tmp/kubeadm.cfg
+Action krib-kubeadm.cfg.tmpl finished
+Starting command ./krib-config-krib-config.sh.tmpl
+
+
+Command running
+Configure kubeadm master and minions...
+MAKE SURE SWAP IS OFF!- kubeadm requirement
+My Master index is 0
+I am master - run kubeadm
+I0709 15:29:47.532361    4449 feature_gate.go:230] feature gates: &amp;{map[]}
+I0709 15:29:47.603416    4449 kernel_validator.go:81] Validating kernel version
+I0709 15:29:47.603544    4449 kernel_validator.go:96] Validating kernel config
+	[WARNING Hostname]: hostname "<a href="http://d94-57-a5-6b-37-18.ctilab.com">http://d94-57-a5-6b-37-18.ctilab.com</a>" could not be reached
+	[WARNING Hostname]: hostname "<a href="http://d94-57-a5-6b-37-18.ctilab.com">http://d94-57-a5-6b-37-18.ctilab.com</a>" lookup <a href="http://d94-57-a5-6b-37-18.ctilab.com">http://d94-57-a5-6b-37-18.ctilab.com</a> on 42.159.162.26:53: no such host
+[preflight] Some fatal errors occurred:
+	[ERROR ExternalEtcdVersion]: Get <a href="https://42.159.236.18:2379/version">https://42.159.236.18:2379/version</a>: x509: certificate has expired or is not yet valid
+[preflight] If you know what you are doing, you can make a check non-fatal with `--ignore-preflight-errors=...`
+Command exited with status 2
+Action krib-config.sh.tmpl finished
+Task krib-config failed
+Marked machine cbd36552-6054-4109-a0ba-46a0fd0cc452 as not runnable
+Updated job 532b184a-865d-4ec5-8e35-56e0985f882e to failed
+Task signalled that it failed
+
+```</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-09 15:46</div><div class="msg">Any ideas? I must be doing somethign wrong.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-09 16:17</div><div class="msg">That looks like times are out of sync across the cluster nodes.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-09 16:17</div><div class="msg">potentially including the dr-provision box.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-02-20/319135093095_c0e6268d269110cacc49_72.gif" /><div class="message"><div class="username">dave.parker</div><div class="time">2018-07-09 16:25</div><div class="msg">Quick question.  I see this particular patch being applied after deleting a profile from a machine:
+```
+[{op: "test", path: "/Profiles/2", value: "r530-kvmhv0"}, {op: "remove", path: "/Profiles/2"}]
+```</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-02-20/319135093095_c0e6268d269110cacc49_72.gif" /><div class="message"><div class="username">dave.parker</div><div class="time">2018-07-09 16:26</div><div class="msg">I never see any other tests though. So how did you determine that r530-kvmhv0 was at index 2?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-02-20/319135093095_c0e6268d269110cacc49_72.gif" /><div class="message"><div class="username">dave.parker</div><div class="time">2018-07-09 16:27</div><div class="msg">Do you just grab the profile array from the API first and determine the index that way?  Seems likely but I'm not sure.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-09 16:27</div><div class="msg">Yep.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-02-20/319135093095_c0e6268d269110cacc49_72.gif" /><div class="message"><div class="username">dave.parker</div><div class="time">2018-07-09 16:28</div><div class="msg">Ok.  I kind of answered my own question while asking it, but thanks for rubber ducking for me.  :smile:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-09 16:28</div><div class="msg">:slightly_smiling_face:</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-09 16:29</div><div class="msg">drp node has the correct time</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-09 16:29</div><div class="msg">```root@labdrp01:~ ( <a href="http://labdrp01.ctilab.com">http://labdrp01.ctilab.com</a> )
+11:28:21 # date
+Mon Jul  9 11:28:24 CDT 2018
+```</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-09 16:29</div><div class="msg">Pretty much all changes in the CLI involve getting an object, changing it somehow, then sending a PATCH describing the changes back to the API</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-09 16:30</div><div class="msg">Although I do not have a ntp server setup in my DHCP subnet on drp.....so maybe that's the issue</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-09 16:47</div><div class="msg">It may not necessarily be the DRP server that it out of sync -- I usually see errors of that type when there is too big a delta between the server the certs were generated and the server where the certs were used.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-09 16:49</div><div class="msg">Does sledgehammer use the dhcp ntp server when it comes up? Looks like my DRP server is CDT and sledgehammer is GMT</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-09 16:51</div><div class="msg">Only if there is an NTP option set, IIRC.  DRP by default does not try to enforce any time synchronizatrion.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-09 16:54</div><div class="msg">Oh, so probably need to set the `ntp-servers` param then?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-09 16:56</div><div class="msg">Those are only honored at OS install time.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-09 16:56</div><div class="msg">and even then, only if set.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-09 16:57</div><div class="msg">I was using the KRIB install to disk pattern</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-09 16:58</div><div class="msg">hm.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-09 16:58</div><div class="msg">Might be a bug in the KRIB content layer, then.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-09 16:59</div><div class="msg">I see that it has a task to try and sync with <a href="http://time.apple.com">http://time.apple.com</a></div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-09 17:00</div><div class="msg">I'm trying with the live KRIB to see if that works</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-09 17:19</div><div class="msg">question @spector, following this <a href="https://www.rackn.com/2018/03/14/deploy-and-test-digital-rebar-provision-in-less-than-10-minutes-how-to-guide/">https://www.rackn.com/2018/03/14/deploy-and-test-digital-rebar-provision-in-less-than-10-minutes-how-to-guide/</a>, is it expected to work with a Packet ?project API key??  I tried using it and got a failure to register the SSH keys, but when I switched to a global key, it worked</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-09 17:20</div><div class="msg">@ - I think Packet released per-Project API keys after I built that automation - so I need to look at what Packet requires on the API side of things to support that in our automation</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-09 17:23</div><div class="msg">cool, just wanted to make sure I wasn?t doing anything stupid</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-09 17:43</div><div class="msg">Yeah, I get the same error with the live KRIB workflow</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-09 17:45</div><div class="msg">The time on the sledgehammer image is off....should be 5:43 GMT but is 5:30 GMT</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-09 17:55</div><div class="msg">Did you guy's run into this with your KRIB live testing?
+`[ERROR FileContent--proc-sys-net-bridge-bridge-nf-call-iptables]: /proc/sys/net/bridge/bridge-nf-call-iptables contents are not set to 1`</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-09 17:55</div><div class="msg">If I manually change that in the sledgehammer image I can get past it</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-09 17:56</div><div class="msg">Yep, that cert issue was related to the time being off on the sledgehammer image.....I ran a ntpdate on the sledgehammer image and got past the error</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-07-09 18:08</div><div class="msg">That may be new in the latest krib.  we are still getting through that part.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-09 19:14</div><div class="msg">:thumbsup:</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-09 19:15</div><div class="msg">@greg Also had some issues with the sledgehammer image's time not set correctly which caused some cert errors during the krib-config stage</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-09 19:16</div><div class="msg">I had to ssh into the image and run `ntpdate` to resolve the error</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-09 19:23</div><div class="msg">@ you may want to set the NTP options in the DHCP config: <a href="https://serverfault.com/questions/7565/dhcp-options-for-network-time-server">https://serverfault.com/questions/7565/dhcp-options-for-network-time-server</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-07-09 19:24</div><div class="msg">actually, @ - are you in VirtualBox?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-07-09 19:24</div><div class="msg">I have a timesync stage for that error.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-09 19:24</div><div class="msg">No using bare metal HPE server's</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-07-09 19:25</div><div class="msg">hmm - time sync is a real issue in either case.  I needed it for my VB testing.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-09 19:25</div><div class="msg">DRP is running in a VMWare vm, but it's time is correct</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-09 19:27</div><div class="msg">I think the sledgehammer image needs to have dhclient updated to use the NTP server from DHCP...........but not positive</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-09 19:27</div><div class="msg">I looked at the ntp.conf and the dhclient process on sledgehammer and it's just using the default config</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-09 19:28</div><div class="msg">Have you guy's had time issue's in the past?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-09 19:29</div><div class="msg">It's possible the dhcp server on my DRP server is not setup correctly though</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-09 19:39</div><div class="msg">time issues are often an issue when servers have been off for a while.  especially older ones with weak BIOS batteries</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-09 20:33</div><div class="msg">So, I think the time issue in sledgehammer is because the ntpd service isn't being started at boot. It looks like the line for the ntp server is getting placed in `/etc/ntp.conf` but the time isnt getting synced because the ntpd service never gets started.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-09 20:34</div><div class="msg">I'm thinking maybe a line here needs to be added
+<a href="https://github.com/digitalrebar/sledgehammer/blob/master/sledgehammer.ks#L138">https://github.com/digitalrebar/sledgehammer/blob/master/sledgehammer.ks#L138</a>
+
+`systemctl enable ntpd`</div></div></div><br/>
+</div></body></html>

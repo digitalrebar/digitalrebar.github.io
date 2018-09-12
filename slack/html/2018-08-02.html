@@ -1,0 +1,85 @@
+<html><body><style>
+			* {
+				font-family:sans-serif;
+			}
+			body {
+				text-align:center;
+				padding:1em;
+			}
+			.messages {
+				width:100%;
+				max-width:700px;
+				text-align:left;
+				display:inline-block;
+			}
+			.messages img {
+				background-color:rgb(248,244,240);
+				width:36px;
+				height:36px;
+				border-radius:0.2em;
+				display:inline-block;
+				vertical-align:top;
+				margin-right:0.65em;
+			}
+			.messages .time {
+				display:inline-block;
+				color:rgb(200,200,200);
+				margin-left:0.5em;
+			}
+			.messages .username {
+				display:inline-block;
+				font-weight:600;
+				line-height:1;
+			}
+			.messages .message {
+				display:inline-block;
+				vertical-align:top;
+				line-height:1;
+				width:calc(100% - 3em);
+			}
+			.messages .message .msg {
+				line-height:1.5;
+			}
+		</style><div class="messages"><div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-02 16:59</div><div class="msg">has joined #2018-08-02</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-02 17:27</div><div class="msg">Hi all, I?m trying to import deployed machines in to Ansible inventory grid, inspired by kubespray guide, but failing on it with default message about No Ansible Profiles Defined in Ansible page.
+
+I added list of machines to ansible/groups-members with following syntax:
+
+"ansible/groups-members": {
+  "server": [
+    "dd2-51-2c-d0-c6-b4.home.lab"
+  ],
+  "server2": [
+    "d0e-e8-1d-ff-d3-a3.home.lab"
+  ],
+  "node1": [
+    "d96-97-ce-d8-38-85.home.lab"
+  ]
+},
+
+I guess due syntax error I cannot save them. What is exactly wrong? Adding couple of picture to better describe my testing env.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-08-02 17:42</div><div class="msg">You may have to use the CLI for the moment to set some of the vars.  We?ll need to see what @zehicle says about it.  May be a little while.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-08-02 17:43</div><div class="msg">also - you may try setting the name of your profile to NOT include spaces - not sure if all of the places escape the profile correctly</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-02 17:58</div><div class="msg">has joined #2018-08-02</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-08-02 20:20</div><div class="msg">@ all of the ansible inventory generation code is in the inventory.py script.  You should be able to look at that to see how the params are used.  The ansible UX for those parameters may be pretty sensitive about how they are formatted.   So use the regular profile editor as a fall back.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-08-02 20:21</div><div class="msg">the good news is that it's JUST parameters feeding the inventory</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-08-02 20:21</div><div class="msg">@ $welcome :slightly_smiling_face:</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-02 20:21</div><div class="msg">Digital Rebar welcome information is here &gt; <a href="http://rebar.digital/community/welcome.html">http://rebar.digital/community/welcome.html</a></div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-02 22:20</div><div class="msg">hi, I am trying to install DRP and got this error:</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-02 22:21</div><div class="msg">I am trying to install in one of our locations in Germany, is that an issue?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-02 22:22</div><div class="msg">I used the command :
+curl -fsSL <a href="https://raw.githubusercontent.com/digitalrebar/digitalrebar/master/deploy/quickstart.sh">https://raw.githubusercontent.com/digitalrebar/digitalrebar/master/deploy/quickstart.sh</a> | bash</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-08-02 22:22</div><div class="msg">That is the OLD OLD project.  You need <a href="https://github.com/digitalreabar/provision">https://github.com/digitalreabar/provision</a></div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-02 22:23</div><div class="msg">oh, I thought the documentation online is updatedc</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-02 22:23</div><div class="msg">ok thanks</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-08-02 22:23</div><div class="msg">we've tried to stamp out references to the OLD OLD version, but we haven't been 100% successful :disappointed:</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-02 22:29</div><div class="msg">also is it ok to use Centos7?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-08-02 22:30</div><div class="msg">that's pretty much our go-to OS we use here ... so ... yeah</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-02 22:30</div><div class="msg">great!</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-08-03 01:59</div><div class="msg"><!channel> - DRP Release v3.10.0 and Content Packages Release v1.10.0 and Plugin Release v2.4.0 are out!
+<a href="https://github.com/digitalrebar/provision/releases/tag/v3.10.0">https://github.com/digitalrebar/provision/releases/tag/v3.10.0</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-08-03 01:59</div><div class="msg">:heart:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-08-03 02:33</div><div class="msg">^^^^^  Some great stuff in v3.10.0 release - one of the super cool features, we've added Sprig based Golang Template functions to our Template Rendering engines.  This means you now get access to some 100+ utility functions you can use when building and rendering templates.  Check out the list:
+<a href="http://masterminds.github.io/sprig/">http://masterminds.github.io/sprig/</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-08-03 02:51</div><div class="msg">My favorite feature is the workflow analysis page</div></div></div><br/>
+</div></body></html>

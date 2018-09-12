@@ -1,0 +1,94 @@
+<html><body><style>
+			* {
+				font-family:sans-serif;
+			}
+			body {
+				text-align:center;
+				padding:1em;
+			}
+			.messages {
+				width:100%;
+				max-width:700px;
+				text-align:left;
+				display:inline-block;
+			}
+			.messages img {
+				background-color:rgb(248,244,240);
+				width:36px;
+				height:36px;
+				border-radius:0.2em;
+				display:inline-block;
+				vertical-align:top;
+				margin-right:0.65em;
+			}
+			.messages .time {
+				display:inline-block;
+				color:rgb(200,200,200);
+				margin-left:0.5em;
+			}
+			.messages .username {
+				display:inline-block;
+				font-weight:600;
+				line-height:1;
+			}
+			.messages .message {
+				display:inline-block;
+				vertical-align:top;
+				line-height:1;
+				width:calc(100% - 3em);
+			}
+			.messages .message .msg {
+				line-height:1.5;
+			}
+		</style><div class="messages"><div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-17 15:13</div><div class="msg">hmm.. is the bsdtar binary name hardcoded in drp? Just realised that on SL6 bsdtar is provided as ?bsdtar3? and the binary is named that too :confused:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-08-17 15:43</div><div class="msg">Probably.  :confused:</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-17 15:45</div><div class="msg">just symlinked around it :smile:</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-17 15:48</div><div class="msg">just manual install-ing with ansible now</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-17 15:48</div><div class="msg">the install script makes some fair assumptions which don?t always hold true</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-17 15:49</div><div class="msg">(like? it prefers upstart over sysv but rhel6 has both, and for some reason upstart doesnt work with the given config :D)</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-17 15:49</div><div class="msg">the only reason this is a faff is because I?m trying to install DRP on our production deployment systems *without* blowing them away and redeploying on c7 (yet)</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-08-17 15:51</div><div class="msg">pR with notes would be helpful. If you can </div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-17 15:56</div><div class="msg">it?ll have to wait until monday but sure :slightly_smiling_face:</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-17 16:36</div><div class="msg">@shane this happened again; i can?t destroy the machine with UUID</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-17 16:36</div><div class="msg">$ drpcli machines destroy 7aca0add-b2e5-4ea0-8a82-fe5e65e149a3
+Error: CLIENT_ERROR
+  Cannot handle content-type text/plain; charset=utf-8
+  No decoder for content-type text/plain; charset=utf-8</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-17 16:36</div><div class="msg">but i can view the profile</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-17 16:36</div><div class="msg">$ drpcli machines show 7aca0add-b2e5-4ea0-8a82-fe5e65e149a3
+{
+  ?Address?: ?10.11.106.118",
+  ?Available?: true,
+  ?BootEnv?: ?wmps-install?,
+  ?CurrentJob?: ??,
+  ?CurrentTask?: -1,
+  ?Description?: ??,
+  ?Errors?: [],
+  ?HardwareAddrs?: [],
+  ?Meta?: {
+    ?feature-flags?: ?change-stage-v2?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-08-17 17:23</div><div class="msg">@ - do you know what steps you may have performed at the Console/Shell, in `drpcli`, or UI ... that might have led to this ?   We're looking at the backing store code and our handling around this, but haven't found any internal patterns yet that would lead to this condition where the back JSON object on disk is deleted while the in-memory object model is still "laying around" ...</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-17 18:08</div><div class="msg">run few more tests and results are the same, here are steps to reproduce it.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-17 18:08</div><div class="msg">Restart dr-provision service (stop/start)
+
+Create a new machine
+
+Make sure the machine UUID existing in the /var/log/dr-provision/digitalrebar/machines/
+
+Check machine?s profile; everything looks good.
+
+Delete a machine and got an error messages
+Error: CLIENT_ERROR
+ Cannot handle content-type text/plain; charset=utf-8
+ No decoder for content-type text/plain; charset=utf-8
+
+Check the machine profile; it looks good.
+
+Check the machine?s UUID in the /var/log/dr-provision/digitalrebar/machines/; it?s no longer there.
+
+Restart dr-provision service and then the machine?s profile is no longer exists</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-17 18:11</div><div class="msg">$ drpcli version
+Version: v3.8.0-0-1e4c58d48257bdb9562126fefc89897bae23210e</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-08-17 18:27</div><div class="msg">hm.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-08-17 18:28</div><div class="msg">If you upgrade to 3.10, does the same thing happen?</div></div></div><br/>
+</div></body></html>

@@ -1,0 +1,161 @@
+[
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U7J7U5DA9> - did you manage to reset your login?",
+        "client_msg_id": "cad9241b-f4ac-4892-8e85-1c44a30c4d25",
+        "ts": "1534621184.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "Just did a complete KRIB run through - <https:\/\/youtu.be\/rzBq3BsYQTM>",
+        "client_msg_id": "a23b463b-ebae-48b0-a487-43a425601f1d",
+        "attachments": [
+            {
+                "service_name": "YouTube",
+                "service_url": "https:\/\/www.youtube.com\/",
+                "title": "Digital Rebar KRIB Complete Run Through",
+                "title_link": "https:\/\/youtu.be\/rzBq3BsYQTM",
+                "author_name": "RackN & Digital Rebar",
+                "author_link": "https:\/\/www.youtube.com\/channel\/UCr3bBtP-pMsDQ5c0IDjt_LQ",
+                "thumb_url": "https:\/\/i.ytimg.com\/vi\/rzBq3BsYQTM\/hqdefault.jpg",
+                "thumb_width": 480,
+                "thumb_height": 360,
+                "fallback": "YouTube Video: Digital Rebar KRIB Complete Run Through",
+                "video_html": "<iframe width=\"400\" height=\"225\" src=\"https:\/\/www.youtube.com\/embed\/rzBq3BsYQTM?feature=oembed&autoplay=1&iv_load_policy=3\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen><\/iframe>",
+                "video_html_width": 400,
+                "video_html_height": 225,
+                "from_url": "https:\/\/youtu.be\/rzBq3BsYQTM",
+                "service_icon": "https:\/\/a.slack-edge.com\/2089\/img\/unfurl_icons\/youtube.png",
+                "id": 1,
+                "original_url": "https:\/\/youtu.be\/rzBq3BsYQTM"
+            }
+        ],
+        "ts": "1534624634.000100"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "<@U02DHRR2L> I made it back",
+        "client_msg_id": "47e5c6cc-bdc4-4084-a9f6-a971d3fd8592",
+        "ts": "1534627454.000100"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "as always you and the team have been busy",
+        "client_msg_id": "3845c7f1-6ce0-4cb2-962b-6bd01bcdf010",
+        "ts": "1534627622.000100",
+        "reactions": [
+            {
+                "name": "sunglasses",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "i think this is right... <https:\/\/imgur.com\/a\/mT8PQGu>",
+        "client_msg_id": "2cc0b4e1-414c-4581-b6a9-429848bd7304",
+        "attachments": [
+            {
+                "service_name": "Imgur",
+                "title": "2nd nic",
+                "title_link": "https:\/\/imgur.com\/a\/mT8PQGu",
+                "text": "Imgur",
+                "fallback": "Imgur: 2nd nic",
+                "image_url": "https:\/\/i.imgur.com\/CeWNE8z.jpg",
+                "image_width": 147,
+                "image_height": 250,
+                "from_url": "https:\/\/imgur.com\/a\/mT8PQGu",
+                "image_bytes": 22581,
+                "service_icon": "http:\/\/s.imgur.com\/images\/favicon-152.png",
+                "id": 1,
+                "original_url": "https:\/\/imgur.com\/a\/mT8PQGu"
+            }
+        ],
+        "ts": "1534629881.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "are you using latest?  what are you trying to do?",
+        "client_msg_id": "0dd2b0e2-f5fb-464e-a3f9-2a8d428fb794",
+        "ts": "1534635525.000200"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "working on a cluster...",
+        "client_msg_id": "5eac8d40-e87c-4b6b-b39b-a4d0a8ead068",
+        "ts": "1534639032.000100"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "i was able to get a PXE boot and setup a workflow to install ubuntu 16.04 and it hangs on preseed at 16%",
+        "client_msg_id": "9e9ec2e4-2210-4ece-a3ed-e5a3a5bb3aa3",
+        "ts": "1534639091.000100"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "I am using the steps to install for a production install",
+        "client_msg_id": "fea11b2f-47a0-4e46-9197-b704281c8fe7",
+        "ts": "1534639128.000100"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "the other question is how do i remove a step from a workflow i created",
+        "client_msg_id": "16b20cfc-891e-4376-bfaa-f98ffe9acf3f",
+        "ts": "1534639302.000100"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "fixed the workflow - it was faster to recreate than to edit and apply",
+        "client_msg_id": "93d9ed3a-32e6-452f-8157-3486e6cb60d7",
+        "ts": "1534639944.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "workflow in the UX is drag and drop",
+        "client_msg_id": "dc6bb23d-d023-4f2c-90c0-7c98ec62cdbd",
+        "ts": "1534645622.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "I think ubuntu requires a DNS and\/or external access.  you may need to set your DHCP to find an external path",
+        "client_msg_id": "f47ac32c-243a-4426-93e6-034c4ff9be64",
+        "ts": "1534645683.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U7J7U5DA9> does this match your issue?  <https:\/\/provision.readthedocs.io\/en\/tip\/doc\/faq-troubleshooting.html?highlight=ubuntu#booting-ubunutu-without-external-access>",
+        "client_msg_id": "c3fea7cf-eded-4083-9cfa-3ba6a9a7d3f2",
+        "ts": "1534650943.000100"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "i am sure im missing something in the \/etc\/network\/interfaces..",
+        "client_msg_id": "f8fb1cf5-2a85-4972-bd11-21cb4f3f8c93",
+        "ts": "1534651159.000100"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "# The primary network interface\nallow-hotplugs enp0s8\niface enp0s8 inet dhcp\n\n# Secondary\nallow-hotplugs enp0s9\niface enp0s9 inet static\naddress 10.0.0.1\nnetmask 255.255.255.0",
+        "client_msg_id": "4f7eab13-ed0b-4a14-ab51-e11bef144350",
+        "ts": "1534651163.000100"
+    }
+]

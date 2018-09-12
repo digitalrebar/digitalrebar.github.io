@@ -1,0 +1,139 @@
+[
+    {
+        "user": "UCFAD8JQH",
+        "text": "<@UCFAD8JQH> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1535381922.000200"
+    },
+    {
+        "type": "message",
+        "user": "UCD5VP2C8",
+        "text": "For EFI systems is there a reason to use iPXE vs Grub as the initial bootloader?",
+        "client_msg_id": "a59d28c1-a2ca-4489-b1c1-25134e4533d0",
+        "ts": "1535383357.000100"
+    },
+    {
+        "type": "message",
+        "user": "UCD5VP2C8",
+        "text": "For whatever it's worth I made a parallel Sledgehammer boot env called Grubhammer :slightly_smiling_face:",
+        "client_msg_id": "e654e674-10ad-4be9-a464-1e003d4461f8",
+        "ts": "1535383782.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@UCD5VP2C8> - mostly one set of files.",
+        "client_msg_id": "cd707d83-49bf-4cf0-805f-9d5ae53888b1",
+        "ts": "1535387499.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The standard bootenvs know about the files for ipxe and pxelinux.",
+        "client_msg_id": "ef8ecaa9-2181-47ed-934a-4842f8a01841",
+        "ts": "1535387539.000100"
+    },
+    {
+        "type": "message",
+        "user": "UCD5VP2C8",
+        "text": "I'm experimenting with grub since the vendor instructions for network boot environments use it",
+        "client_msg_id": "193b74f7-b62e-4b8e-8386-495ee855a850",
+        "ts": "1535387571.000100"
+    },
+    {
+        "type": "message",
+        "user": "UCD5VP2C8",
+        "text": "<https:\/\/docs.oracle.com\/cd\/E52668_01\/E54695\/html\/ol7-install-pxe-dhcp-tftp.html>",
+        "client_msg_id": "b579506b-b82b-4334-add7-453d80675863",
+        "ts": "1535387622.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay.  If grub asks for common file locations, then it is easy enough to templatized into the standard templates.",
+        "client_msg_id": "db09a34a-1793-485b-91ca-18133fafe42a",
+        "ts": "1535387630.000100"
+    },
+    {
+        "type": "message",
+        "user": "UCD5VP2C8",
+        "text": "I got it to work pretty easily",
+        "client_msg_id": "7a5f2096-90aa-41b9-a1dd-f78e25f9e56a",
+        "ts": "1535387692.000100"
+    },
+    {
+        "type": "message",
+        "user": "UCD5VP2C8",
+        "text": "Sledgehammer won't SecureBoot but otherwise everything works great",
+        "client_msg_id": "1a39caf0-d59d-48be-b2ec-e0ea3b2f3565",
+        "ts": "1535387746.000200"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "okay - cool.",
+        "client_msg_id": "530aba53-0d63-45d5-952c-4c1ff0feeb1a",
+        "ts": "1535387762.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "hello <@UCFHMTYLS> $welcome",
+        "client_msg_id": "1d3e5813-715f-46f8-a669-dd5b7577be41",
+        "edited": {
+            "user": "U02DHRR2L",
+            "ts": "1535388317.000000"
+        },
+        "ts": "1535388311.000100"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1535388311.000200"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "It was mostly that ipxe was more reliable ant easier to understand than Grub2 was when we started writing boot environments.",
+        "client_msg_id": "2c3eea8c-ecdc-4305-a185-3f0dae2a4b3c",
+        "ts": "1535394736.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "TEMPLATE NOTE WITH SPRIG COMMANDS added in v3.10.  They are NOT backwards compatible!  Your templates will not render in previous versions",
+        "client_msg_id": "ff003270-cda9-42d1-a488-83155b0d59ad",
+        "edited": {
+            "user": "U02DHRR2L",
+            "ts": "1535396070.000000"
+        },
+        "ts": "1535396050.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<!here> Reminder for Digital Rebar Meeting tomorrow @ 1 central.  <https:\/\/www.meetup.com\/digitalrebar\/>",
+        "client_msg_id": "76b55df8-33e7-4c84-a126-1349055431dd",
+        "attachments": [
+            {
+                "service_name": "Meetup",
+                "title": "Digital Rebar (Mountain View, CA)",
+                "title_link": "https:\/\/www.meetup.com\/digitalrebar\/",
+                "text": "Digital Rebar Provision (DRP) is the open source (APLv2) , fast and simple data center provisioning and control scaffolding designed with a cloud native architecture. This Online Meetup group will dis",
+                "fallback": "Meetup: Digital Rebar (Mountain View, CA)",
+                "image_url": "https:\/\/secure.meetupstatic.com\/photos\/event\/d\/1\/b\/1\/600_467453681.jpeg",
+                "from_url": "https:\/\/www.meetup.com\/digitalrebar\/",
+                "image_width": 472,
+                "image_height": 250,
+                "image_bytes": 69998,
+                "service_icon": "https:\/\/www.meetup.com\/mu_static\/en-US\/4f86abc993eecccc33a115d00b405ced.png",
+                "id": 1,
+                "original_url": "https:\/\/www.meetup.com\/digitalrebar\/"
+            }
+        ],
+        "ts": "1535410989.000100"
+    }
+]

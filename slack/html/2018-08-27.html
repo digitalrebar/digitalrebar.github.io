@@ -1,0 +1,59 @@
+<html><body><style>
+			* {
+				font-family:sans-serif;
+			}
+			body {
+				text-align:center;
+				padding:1em;
+			}
+			.messages {
+				width:100%;
+				max-width:700px;
+				text-align:left;
+				display:inline-block;
+			}
+			.messages img {
+				background-color:rgb(248,244,240);
+				width:36px;
+				height:36px;
+				border-radius:0.2em;
+				display:inline-block;
+				vertical-align:top;
+				margin-right:0.65em;
+			}
+			.messages .time {
+				display:inline-block;
+				color:rgb(200,200,200);
+				margin-left:0.5em;
+			}
+			.messages .username {
+				display:inline-block;
+				font-weight:600;
+				line-height:1;
+			}
+			.messages .message {
+				display:inline-block;
+				vertical-align:top;
+				line-height:1;
+				width:calc(100% - 3em);
+			}
+			.messages .message .msg {
+				line-height:1.5;
+			}
+		</style><div class="messages"><div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-27 14:58</div><div class="msg">has joined #2018-08-27</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-27 15:22</div><div class="msg">For EFI systems is there a reason to use iPXE vs Grub as the initial bootloader?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-27 15:29</div><div class="msg">For whatever it's worth I made a parallel Sledgehammer boot env called Grubhammer :slightly_smiling_face:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-08-27 16:31</div><div class="msg">@ - mostly one set of files.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-08-27 16:32</div><div class="msg">The standard bootenvs know about the files for ipxe and pxelinux.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-27 16:32</div><div class="msg">I'm experimenting with grub since the vendor instructions for network boot environments use it</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-27 16:33</div><div class="msg"><a href="https://docs.oracle.com/cd/E52668_01/E54695/html/ol7-install-pxe-dhcp-tftp.html">https://docs.oracle.com/cd/E52668_01/E54695/html/ol7-install-pxe-dhcp-tftp.html</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-08-27 16:33</div><div class="msg">okay.  If grub asks for common file locations, then it is easy enough to templatized into the standard templates.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-27 16:34</div><div class="msg">I got it to work pretty easily</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-27 16:35</div><div class="msg">Sledgehammer won't SecureBoot but otherwise everything works great</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-08-27 16:36</div><div class="msg">okay - cool.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-08-27 16:45</div><div class="msg">hello @ $welcome</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-27 16:45</div><div class="msg">Digital Rebar welcome information is here &gt; <a href="http://rebar.digital/community/welcome.html">http://rebar.digital/community/welcome.html</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-08-27 18:32</div><div class="msg">It was mostly that ipxe was more reliable ant easier to understand than Grub2 was when we started writing boot environments.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-08-27 18:54</div><div class="msg">TEMPLATE NOTE WITH SPRIG COMMANDS added in v3.10.  They are NOT backwards compatible!  Your templates will not render in previous versions</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-08-27 23:03</div><div class="msg"><!here> Reminder for Digital Rebar Meeting tomorrow @ 1 central.  <a href="https://www.meetup.com/digitalrebar/">https://www.meetup.com/digitalrebar/</a></div></div></div><br/>
+</div></body></html>

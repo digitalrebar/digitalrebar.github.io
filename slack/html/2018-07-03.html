@@ -1,0 +1,118 @@
+<html><body><style>
+			* {
+				font-family:sans-serif;
+			}
+			body {
+				text-align:center;
+				padding:1em;
+			}
+			.messages {
+				width:100%;
+				max-width:700px;
+				text-align:left;
+				display:inline-block;
+			}
+			.messages img {
+				background-color:rgb(248,244,240);
+				width:36px;
+				height:36px;
+				border-radius:0.2em;
+				display:inline-block;
+				vertical-align:top;
+				margin-right:0.65em;
+			}
+			.messages .time {
+				display:inline-block;
+				color:rgb(200,200,200);
+				margin-left:0.5em;
+			}
+			.messages .username {
+				display:inline-block;
+				font-weight:600;
+				line-height:1;
+			}
+			.messages .message {
+				display:inline-block;
+				vertical-align:top;
+				line-height:1;
+				width:calc(100% - 3em);
+			}
+			.messages .message .msg {
+				line-height:1.5;
+			}
+		</style><div class="messages"><div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-03 15:10</div><div class="msg">yes the machine was discovered by Sledgehammer and was in Terrafrom-ready state.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-03 15:11</div><div class="msg">I am still running tests on Virtualbox, so DHCP is vbox virtual network</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-03 16:28</div><div class="msg">Also where can I find ipmi-discover? I have IPMI commands plugin, but cant find ipmi-discover.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-07-03 16:31</div><div class="msg">ipmi-discover is provided by the `ipmi` plugin, not the `virtualbox-ipmi` plugin.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-03 16:34</div><div class="msg">is ipmi-discover a stage ?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-03 16:39</div><div class="msg">yes, it's content tied to the plugin</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-03 16:40</div><div class="msg">ok, and the plugin name that I need to get is "IPMI commands"?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-03 16:40</div><div class="msg">yes</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-03 16:41</div><div class="msg">I did that, but I only have ipmi-configure stage</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-07-03 16:43</div><div class="msg">Yes - ipmi-discover is a task, I believe.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-03 16:45</div><div class="msg">its not in the tasks either. its not a template or a param. I cant find that anywhere.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-03 16:57</div><div class="msg">to be clear, this not part of Virtualbox experiments, I am trying to discover physical servers using IPMI.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-07-03 16:57</div><div class="msg">okay</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-07-03 16:58</div><div class="msg">There isn?t `ipmi-discover`</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-07-03 16:58</div><div class="msg">There is only `ipmi-configure`</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-07-03 16:58</div><div class="msg">At that stage, set the configure parameters to do what you want, and away it goes.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-07-03 17:12</div><div class="msg"><a href="https://provision.readthedocs.io/en/tip/doc/content-packages/ipmi.html">https://provision.readthedocs.io/en/tip/doc/content-packages/ipmi.html</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-03 18:40</div><div class="msg">just a reminder - no community meeting today (would have already started)</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-03 18:40</div><div class="msg">next planned meeting would be 7/17</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-03 18:47</div><div class="msg">if you're waiting/watching for the Kubernetes (KRIB) work I announced in channel last week then here's a short update:
+1) we've merged the KRIB (v1) and KRIB-HA (v2) work together going forward as KRIB (so v3?)
+1+) the code is all APLv2 
+2) it's still a work in progress, so expect some bumps
+3) it relies on the cert plugin for now.  we've made that available without needing a licensed org
+4) we are going to move cert, packet-ipmi, virtualbox-ipmi plugins over to digitalrebar and setting the license to APL.  They are all available today in the RackN online library, but it will take some time to split out the code and fix the builds if you wanted to build them yourself.
+
+For now, we're keeping the KRIB work relatively quiet so the DRP community has time to test and validate.  Eventually, we'll promote more broadly.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-03 19:24</div><div class="msg">I used the ipmi-configure to discover machines through IPMI, and used params to set username and password. However, the workflow always stuck at ipmi-configure stage and never move forward, I am wondering the workflow stages have to be different, my workflow has:
+1-ipmi-configure (sledgehammer as boot env)
+2-sledgehammer-wait
+3-terraform-ready</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-03 19:25</div><div class="msg">also, I was adding trying to add the machine manually though the portal</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-03 19:27</div><div class="msg">I double checked and ssh to the IPMI address, and its reachable and ssh connects just fine.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-03 23:55</div><div class="msg">has joined #2018-07-03</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-04 00:40</div><div class="msg">Hi ?I?m trying to install Ubuntu 16.04 and following the getting started guide.  However, my pxe network doesn?t have a gateway or access to the internet.  This should not be required, but the install pauses until I hit enter a few times.  Then it continues the install over the local network.
+
+Does anyone know which boot parameters need to be changes?  
+
+The default is `debian-installer/locale=en_US.utf8 console-setup/layoutcode=us keyboard-configuration/layoutcode=us netcfg/dhcp_timeout=120 netcfg/choose_interface=auto url={{.Machine.Url}}/seed netcfg/get_hostname={{.Machine.Name}} root=/dev/ram rw quiet {{if .ParamExists "kernel-console"}}{{.Param "kernel-console"}}{{end}} -- {{if .ParamExists "kernel-console"}}{{.Param "kernel-console"}}{{end}}`</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-04 00:46</div><div class="msg">@ yes, there's a parameter for that "local-repo" which should be set to true.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-04 00:46</div><div class="msg"><a href="https://github.com/digitalrebar/provision-content/blob/master/content/params/local-repo.yaml">https://github.com/digitalrebar/provision-content/blob/master/content/params/local-repo.yaml</a></div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-04 01:00</div><div class="msg">@zehicle thanks.  I?m trying it now.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-04 01:01</div><div class="msg">no problem, I'm updating the $faq to include that</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-04 01:01</div><div class="msg">FAQs are here &gt; <a href="http://provision.readthedocs.io/en/tip/doc/faq-troubleshooting.html">http://provision.readthedocs.io/en/tip/doc/faq-troubleshooting.html</a></div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-04 01:23</div><div class="msg">@zehicle That did it.  Thanks!</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-04 01:25</div><div class="msg">Glad to help!</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-04 01:48</div><div class="msg">@zehicle I spoke too soon.  Eager for dinner :slightly_smiling_face:  
+
+That didn?t make any difference.  I created a profile and assigned it to the server.  ```./drpcli profiles show local-repos
+{
+  "Available": true,
+  "Description": "",
+  "Documentation": "",
+  "Errors": [],
+  "Meta": {
+    "color": "black",
+    "icon": "hashtag",
+    "title": "User added profile"
+  },
+  "Name": "local-repos",
+  "Params": {
+    "local-repo": true
+  },
+  "ReadOnly": false,
+  "Validated": true
+}
+./drpcli machines show 405f3f72-d6dc-477f-b7e5-240008609279 | grep local-repos
+    "local-repos"
+```</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-04 01:57</div><div class="msg">btw: there's a drpcli call for params ./drpcli machines params [machineid]</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-07-04 02:47</div><div class="msg">@zehicle I believe local_repo went away with the repo fixes @vlowther added.  Ubuntu is annoying because it kinda assumes internet access.  </div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-04 02:57</div><div class="msg">I'll fix the doc and note that in the param</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-04 02:59</div><div class="msg">Is there a workaround?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-04 03:44</div><div class="msg">Adding ?default_route=true? to the boot parameters and including a dns server on the local subnet in DHCP seems to have corrected the problem.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-04 03:51</div><div class="msg">I'll update the docs.  Sorry for throwing the curveballs.  </div></div></div><br/>
+</div></body></html>

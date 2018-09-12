@@ -1,0 +1,415 @@
+[
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "yeah got it working, thought i was using tip DRP but I wasn’t, cheers",
+        "client_msg_id": "fd93b8fc-5fe3-4807-be1d-0dbc7b6fcbe3",
+        "ts": "1536057357.000100",
+        "reactions": [
+            {
+                "name": "muscle",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "So I’m spinning up DRP using Ansible… so far it does stuff like uploads boot isos, sets up user accounts, configures subnets, sets boot env defaults etc. Basically right now it’ll get a machine to the point of being able to PXE boot a host to discovery, but no further. What I’d like to do is have a full DRP setup (workflows, stages, tasks, params etc) all imported and configured, when DRP is built.\n\nTo that end I’m building out a content pack that contains everything for our specific setup, but one thing I’ve realised while looking at packing it is that it relies on some tasks and stages (lldp + others iirc) which come from e.g. `task-library` or `dev-library`. Is it possible to import those content packs automatically? Would it be better to just copy those stages into our own content pack, or do you guys already have a workflow around this type of thing?",
+        "client_msg_id": "bb62180e-7406-4b85-a7b6-03234c242a41",
+        "ts": "1536064310.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "```#!\/bin\/bash\n#\n# customize me\nRACKN_ACCOUNT_ID=${RACKN_ACCOUNT_ID:-\"\"}\n​\n[[ -z \"$RACKN_ACCOUNT_ID\" ]] &amp;&amp; read -p \"RackN Account ID: \" RACKN_ACCOUNT_ID\n​\nRACKN_AUTH=\"?username=${RACKN_ACCOUNT_ID}\"\nCURL=\"curl -sfSL\"\nBASE_URL=\"<https:\/\/qww9e4paf1.execute-api.us-west-2.amazonaws.com\/main\/catalog>\"\nCONTENTS=\"drp-community-content task-library terraform krib\"\n​\nfor CONTENT in $CONTENTS\ndo\n  echo \"Saving '$CONTENT' content pack as '.\/${CONTENT}.json' ... \"\n  $CURL \\\n    ${BASE_URL}\/content\/${CONTENT}${RACKN_AUTH} \\\n    -o ${CONTENT}.json\n  # example inject in to DRP endpoint\n  # drpcli contents create ${CONTENT}.json\ndone```",
+        "client_msg_id": "ca76ae52-f941-43e9-ac89-6f8e1eecb21c",
+        "ts": "1536066755.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UBXEU90UQ> ^^^ Sample shell script snippet to download content pack",
+        "client_msg_id": "b8e69d13-04ab-419a-9d7b-d23638893f10",
+        "ts": "1536066817.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "You need a valid portal user ID (account ID) for the Auth piece ",
+        "client_msg_id": "7945974d-6f75-4691-8652-7ef0d232e8d4",
+        "ts": "1536066860.000100"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "<@U6QFVRJNB> aaaaaah awesome, I assumed the AWS url used by the UI was transient and didn’t want to write anything around it but if that’s the way, then off I go :smile: Thanks muchly",
+        "client_msg_id": "5141abf6-eb72-4338-b45d-4823d420bf48",
+        "ts": "1536067029.000100",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U6QFVRJNB"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@UBXEU90UQ> - you willing to share your ansible playbook?",
+        "client_msg_id": "e02f5321-3114-42b8-bc2d-9de3876bab75",
+        "ts": "1536071250.000100"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "<@U02DGQYK1> it’s on internal VCS right now as not finished but yeah, should be doable",
+        "client_msg_id": "4ab5c4fb-761b-4e7c-ae61-5dd89bd4cac8",
+        "ts": "1536071379.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UBXEU90UQ> - when you're ready to show your stuff ( :slightly_smiling_face: ) I'll be happy to work with you to get it published",
+        "client_msg_id": "0d21feec-7a8a-4590-807a-40ed337b6eec",
+        "ts": "1536071420.000100"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "Cool :+1:",
+        "client_msg_id": "2023fb41-605b-4338-bbcf-75f77feb2d65",
+        "ts": "1536071474.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Thanks!",
+        "client_msg_id": "71a0be67-4517-4af4-a909-0a5cf024e133",
+        "ts": "1536071501.000100"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "use case my side is bootstrapping new ovirt-based virt clusters so our ansible stuff (will contain) cumulus roles and such",
+        "client_msg_id": "befb60ae-18f2-44d6-b5ea-d3acdf71227c",
+        "ts": "1536071615.000100"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "has anyone run the DRP runner on cumulus linux before? :smile:",
+        "client_msg_id": "cb6878aa-7d9e-48e4-90a0-4835224e256c",
+        "ts": "1536071638.000100"
+    },
+    {
+        "type": "message",
+        "text": "Sorry for all the questions :slightly_smiling_face: - do tokens generated with `drpcli users token &lt;id&gt;` expire? Having a weird issue with `drpcli contents create`  (from ansible task below), where when using `RS_TOKEN` in the environment the first run of `drpcli ...` works and then all the following using the same token fail with `AUTH: Validation failed`. If I comment `RS_TOKEN` and use `RS_KEY` instead it works fine. Could activating one of those content files invalidate the token for example?",
+        "files": [
+            {
+                "id": "FCLKNGH9S",
+                "created": 1536077295,
+                "timestamp": 1536077295,
+                "name": "drp-activate-content_yaml.yaml",
+                "title": "drp-activate-content.yaml",
+                "mimetype": "text\/plain",
+                "filetype": "yaml",
+                "pretty_type": "YAML",
+                "user": "UBXEU90UQ",
+                "editable": true,
+                "size": 788,
+                "mode": "snippet",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FCLKNGH9S\/drp-activate-content_yaml.yaml?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FCLKNGH9S\/download\/drp-activate-content_yaml.yaml?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "permalink": "https:\/\/rackn.slack.com\/files\/UBXEU90UQ\/FCLKNGH9S\/drp-activate-content_yaml.yaml",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FCLKNGH9S-d55237e8dd",
+                "edit_link": "https:\/\/rackn.slack.com\/files\/UBXEU90UQ\/FCLKNGH9S\/drp-activate-content_yaml.yaml\/edit",
+                "preview": "- name: Get Admin Token\r\n  no_log: yes\r\n  command: \"drpcli users token {{ drp.users[0].Name }}\"\r\n  environment:\r\n    RS_ENDPOINT: \"https:\/\/localhost:{{ drp.api_port }}\"\r",
+                "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre><span class=\"cm-meta\">- <\/span><span class=\"cm-atom\">name<\/span><span class=\"cm-meta\">: <\/span>Get Admin Token<\/pre><\/div>\n<div><pre><span class=\"cm-atom\">  no_log<\/span><span class=\"cm-meta\">: <\/span><span class=\"cm-keyword\">yes<\/span><\/pre><\/div>\n<div><pre><span class=\"cm-atom\">  command<\/span><span class=\"cm-meta\">: <\/span><span class=\"cm-string\">&quot;drpcli users token {{ drp.users[0].Name }}&quot;<\/span><\/pre><\/div>\n<div><pre><span class=\"cm-atom\">  environment<\/span><span class=\"cm-meta\">:<\/span><\/pre><\/div>\n<div><pre><span class=\"cm-atom\">    RS_ENDPOINT<\/span><span class=\"cm-meta\">: <\/span><span class=\"cm-string\">&quot;https:\/\/localhost:{{ drp.api_port }}&quot;<\/span><\/pre><\/div>\n<\/div>\n<\/div>\n",
+                "lines": 22,
+                "lines_more": 17,
+                "preview_is_truncated": false
+            }
+        ],
+        "upload": true,
+        "user": "UBXEU90UQ",
+        "display_as_bot": false,
+        "edited": {
+            "user": "UBXEU90UQ",
+            "ts": "1536077325.000000"
+        },
+        "ts": "1536077296.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "The default timeout unless specified is an hour.",
+        "client_msg_id": "5aa805ce-9224-40c8-95fb-c62c498646f2",
+        "ts": "1536077449.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "you can add `ttl &lt;seconds&gt;` to the cli to increase the duration.",
+        "client_msg_id": "9010821a-4f17-4677-b194-6a306e413225",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1536077498.000000"
+        },
+        "ts": "1536077490.000100"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "hrm - this is all over in a matter of seconds , activating content files is basically the next step after getting the token",
+        "client_msg_id": "fc22c097-aead-4c1b-a008-e50e2860237f",
+        "ts": "1536077534.000100"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "think i’ll give it a try later manually and see what happens, just to rule out ansible weirdness",
+        "client_msg_id": "270bbedf-61da-4254-95b3-29b05f32ec38",
+        "ts": "1536077626.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "You may have to make sure you don’t get double double quotes",
+        "client_msg_id": "91a09050-cabe-41e9-89d2-34ca98035f5d",
+        "ts": "1536077647.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Does json_query return a double quoted json string?",
+        "client_msg_id": "d7f7a6b0-a713-4ea2-9299-a242137d5189",
+        "ts": "1536077688.000100"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "nope, returns as just a normal python string so if I change the command to `env` i get `RS_TOKEN=&lt;token&gt;` with no double quotes",
+        "client_msg_id": "2873f457-99a4-41a5-a7de-d6db6cb0be4e",
+        "ts": "1536077766.000100"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "baffling… near as I can tell, the environment ansible is sending is correct",
+        "client_msg_id": "0ee41c02-b74d-4fbb-befc-d03f1e90b64e",
+        "ts": "1536078514.000200"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "it may be a bug in our token auth side",
+        "client_msg_id": "2557fc0f-1f15-4d93-b9dc-01aa5ebedff0",
+        "ts": "1536078536.000100"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "however if i split the commands up and run them manually (two separate tasks) it doesn’t happen",
+        "client_msg_id": "ac9015f4-854b-48db-a662-64ca8e86e62a",
+        "ts": "1536078544.000100"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "wonder if it’s a timing thing…",
+        "client_msg_id": "3d746a27-e366-4698-a57d-b72d972631a1",
+        "ts": "1536078553.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "clock sync issue (probably not - all localhost).",
+        "client_msg_id": "8e9014c0-8e02-4964-8f3b-1277867df6f7",
+        "ts": "1536078582.000100"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "oh between drpcli and dr-provision",
+        "client_msg_id": "7f016ea4-1ecf-4f70-84e9-16cff1c5f08f",
+        "ts": "1536078598.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "in general shouldn’t matter.  All tokens are calculated relative to the dr-provision",
+        "client_msg_id": "dc6e7466-11d0-488b-84a4-f9642b139236",
+        "ts": "1536078634.000100"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "i added a 5s delay in and it does the same thing, so I guess not timing",
+        "client_msg_id": "4511ece0-9038-41e1-a51f-69e042e008e0",
+        "ts": "1536078721.000100"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "ah well, home time - problem for later :slightly_smiling_face:",
+        "client_msg_id": "979813a4-ae4e-4881-a3c3-f30da74f520e",
+        "ts": "1536078872.000100"
+    },
+    {
+        "type": "message",
+        "user": "UB6EM48HM",
+        "text": "Where can I find more information on RackN pricing?",
+        "client_msg_id": "c9d9647b-dfef-4c34-8ef0-140ea99e787a",
+        "ts": "1536089497.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "generally, we setup a call to discuss",
+        "client_msg_id": "af8071b3-7492-4b9b-a983-2f46dbfd7ef9",
+        "ts": "1536089726.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@UB6EM48HM> ^^",
+        "client_msg_id": "9cd69dbb-1b3e-4b88-b4d6-ba4c7a84d0d0",
+        "ts": "1536089738.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "I'll send you an email",
+        "client_msg_id": "25626f6c-3960-45fe-81a5-af3b3fda1ba0",
+        "ts": "1536089753.000100"
+    },
+    {
+        "type": "message",
+        "user": "UB6EM48HM",
+        "text": "Sounds good. It sounds like we are going to timebox an effort to implement DRB at a customer site, just not sure I can articulate what RackN would additionally provide + cost.",
+        "client_msg_id": "b9c642ad-01c4-4d01-9bc1-b39b14d93f80",
+        "ts": "1536089861.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "That's why a call is helpful to review cost, components and needs.",
+        "client_msg_id": "e2be1ac9-33e1-4d7c-ae56-2eef96a03f3b",
+        "ts": "1536089947.000100"
+    },
+    {
+        "type": "message",
+        "user": "UB6EM48HM",
+        "text": "Totally. I'll reply to this thread you've started. Thanks.",
+        "client_msg_id": "5268bbdd-b508-48be-a91c-4de9af73a1de",
+        "ts": "1536089989.000100",
+        "reactions": [
+            {
+                "name": "sunglasses",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<!here> This is your quarterly request to help promote the project!  Any external promotion helps us spread the word about Digital Rebar Provision.    Even github stars are helpful: <https:\/\/github.com\/digitalrebar\/provision>",
+        "client_msg_id": "f2fa8962-6764-4a90-93cf-1928bd96969f",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision",
+                "text": "Digital Rebar Provision is a simple and powerful Golang executable that provides a complete API-driven DHCP\/PXE\/TFTP provisioning system. - digitalrebar\/provision",
+                "fallback": "GitHub: digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/digitalrebar\/provision"
+            }
+        ],
+        "ts": "1536091122.000100"
+    },
+    {
+        "user": "UCNCK126A",
+        "text": "<@UCNCK126A> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1536092965.000200"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "Hi All, how to reset a user password? if he\/she’s forgot",
+        "client_msg_id": "47ff44f6-428e-4240-9bdc-8df4a3a6e0a5",
+        "ts": "1536093239.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "thanks all, i figured it out",
+        "client_msg_id": "032d61eb-a611-4834-822d-bc266ee3703d",
+        "ts": "1536093376.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "nvm -…",
+        "client_msg_id": "f3e4269d-01d1-4b00-aab1-87a1e9b102f7",
+        "ts": "1536093381.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": ":slightly_smiling_face:",
+        "client_msg_id": "e44a8dc1-08d7-41ad-9d39-3372f7fca44c",
+        "ts": "1536093383.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "thanks <@U02DGQYK1>",
+        "client_msg_id": "9d22b6f6-a275-4477-85e2-2e28e3a91498",
+        "ts": "1536093403.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "<@U02DGQYK1> why the ISO images of Debian-8 and Debian-9 are too small? i ran into issue when install both of them “can’t find the kernel”. How to fix it?",
+        "client_msg_id": "b6c0664a-cdf6-49ea-94ac-791f9a416e4f",
+        "ts": "1536095210.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UANLCF8QP> - just deployed Debian9 without problems - but you may need to upgrade DRP and DRP community content to latest versions....  Debian pulled version of 8 and 9 \"off of the shelf\" - so there may be problems with some of the older versions",
+        "client_msg_id": "51c52082-13e7-4675-876f-cf6848ccda26",
+        "ts": "1536105820.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we use the \"mini\" ISO to do Debian deployments against, the ISO is small by design, and all packages come from the mirrors",
+        "client_msg_id": "7d04cf1b-3272-4698-9813-8a80cb72a17c",
+        "ts": "1536105851.000100"
+    }
+]

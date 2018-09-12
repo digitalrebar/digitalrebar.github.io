@@ -1,0 +1,252 @@
+[
+    {
+        "type": "message",
+        "text": "Hi, I am trying to customize a template of kickstart file in the templates tab, but keep getting this weird error:",
+        "files": [
+            {
+                "id": "FBTEHF3C4",
+                "created": 1532029029,
+                "timestamp": 1532029029,
+                "name": "image.png",
+                "title": "image.png",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "UBBSHF675",
+                "editable": false,
+                "size": 55134,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FBTEHF3C4\/image.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FBTEHF3C4\/download\/image.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FBTEHF3C4-a00b0d6373\/image_64.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FBTEHF3C4-a00b0d6373\/image_80.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FBTEHF3C4-a00b0d6373\/image_360.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_360_w": 360,
+                "thumb_360_h": 249,
+                "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FBTEHF3C4-a00b0d6373\/image_480.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_480_w": 480,
+                "thumb_480_h": 332,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FBTEHF3C4-a00b0d6373\/image_160.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FBTEHF3C4-a00b0d6373\/image_720.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_720_w": 720,
+                "thumb_720_h": 498,
+                "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FBTEHF3C4-a00b0d6373\/image_800.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_800_w": 800,
+                "thumb_800_h": 553,
+                "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FBTEHF3C4-a00b0d6373\/image_960.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_960_w": 960,
+                "thumb_960_h": 664,
+                "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FBTEHF3C4-a00b0d6373\/image_1024.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_1024_w": 1024,
+                "thumb_1024_h": 708,
+                "image_exif_rotation": 1,
+                "original_w": 1057,
+                "original_h": 731,
+                "permalink": "https:\/\/rackn.slack.com\/files\/UBBSHF675\/FBTEHF3C4\/image.png",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FBTEHF3C4-db2187e18d"
+            }
+        ],
+        "upload": true,
+        "user": "UBBSHF675",
+        "display_as_bot": false,
+        "ts": "1532029033.000234"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "I tried different IDs, no matter what I do (create new or clone) I get the same error. I am not even working with CentOS at all!",
+        "client_msg_id": "631cdce3-d099-4fe2-851b-68dd772e4453",
+        "ts": "1532029099.000059"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "hmm - not sure.",
+        "client_msg_id": "fc7b5aeb-dc02-4773-823f-c7c5e968df67",
+        "ts": "1532029730.000286"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "make sure doesn’t exist",
+        "client_msg_id": "bbed3859-8f6d-4dc6-af7e-ce715ab305c4",
+        "ts": "1532029739.000361"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "is doesn't, I tried giving different names.",
+        "client_msg_id": "626a3bc7-487f-4da4-af01-4177796fcc63",
+        "ts": "1532030273.000049"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "it's possible that there's something in the model that's not showing in the UX.  I'd recommend using the CLI for editing (or bundling) instead of the UX",
+        "client_msg_id": "5b7be8fc-e2cd-48ba-8f5a-d6c9332aa6ae",
+        "ts": "1532030386.000027"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "you can look at the JSON model in the UX that you are cloning from",
+        "client_msg_id": "95ba27e6-0b1d-4713-82e6-973c83928ae2",
+        "ts": "1532030413.000008"
+    },
+    {
+        "text": "strongly recommends against using the UX for template editing",
+        "type": "message",
+        "subtype": "me_message",
+        "user": "U02DHRR2L",
+        "ts": "1532030428.000371"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "Gents, what’s the default userid and password of the centos-7.5.1804-install?",
+        "client_msg_id": "bfda5f5d-e6b5-45eb-b0f6-4af9032a16dc",
+        "ts": "1532030764.000401"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<https:\/\/provision.readthedocs.io\/en\/tip\/doc\/faq-troubleshooting.html#what-are-the-default-passwords>",
+        "client_msg_id": "137b785a-43c8-4cd2-b67a-8bbc7d01626e",
+        "thread_ts": "1532030800.000226",
+        "reply_count": 1,
+        "replies": [
+            {
+                "user": "UAQU29EJW",
+                "ts": "1535804331.000100"
+            }
+        ],
+        "unread_count": 1,
+        "ts": "1532030800.000226"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "thanks <@U6QFVRJNB>",
+        "client_msg_id": "138d26a3-6dab-4e42-9257-043c4bafb809",
+        "ts": "1532030940.000008"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "there are a lot of good (random) nuggets in the $faq doc pages",
+        "client_msg_id": "5e52a04e-8ea2-43e9-bc48-43d5901fc608",
+        "ts": "1532030980.000048"
+    },
+    {
+        "text": "FAQs are here &gt; <http:\/\/provision.readthedocs.io\/en\/tip\/doc\/faq-troubleshooting.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1532030980.000180"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "<@U02DHRR2L> \n drpcli templates create net-seed.json\nError: ValidationError: templates\/my-net-seed.tmpl: Templates[3]: No common template for centos-6.ks.tmpl",
+        "client_msg_id": "aeb3297e-8637-49cb-8104-227f3660f24c",
+        "ts": "1532031732.000429"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "I got the same error trying to add that through command line",
+        "client_msg_id": "85db23ee-4b2f-434b-a806-4bc2cf05217f",
+        "ts": "1532031753.000315"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "I removed the package Os-other then cloning a template worked!\nbut I need os-other package?",
+        "client_msg_id": "af3959f0-b957-4ffe-8364-a7a653605549",
+        "edited": {
+            "user": "UBBSHF675",
+            "ts": "1532101323.000000"
+        },
+        "ts": "1532036005.000317"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "TERRAFORM USERS.... I'm about to post a set of pull requests that add pool behavior to the provider.  You'll be able to set pools of machines and select them from the plan.  Also, fixed the jsonvalue bug in the filter. (\/cc <@UA29Z3MN0>)",
+        "client_msg_id": "52ef9043-91db-4d18-a816-d0185c96ef8c",
+        "ts": "1532042486.000071",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "UA29Z3MN0"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "user": "UBU0BPRA9",
+        "text": "<@UBU0BPRA9> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1532045433.000045"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "I am getting a PXE-32 TFTP open timeout error. Any thoughts?",
+        "client_msg_id": "da0224bf-6be7-49b7-bf0f-87e9a8fdbf1c",
+        "ts": "1532054742.000083"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "next stage in the KRIB evolution &gt; fully automatic setup (in just 7:24) via Terraform: <https:\/\/youtu.be\/5trB3_IFFX8>",
+        "client_msg_id": "a164ddc0-8878-497b-add4-4c8f8622f2a7",
+        "attachments": [
+            {
+                "service_name": "YouTube",
+                "service_url": "https:\/\/www.youtube.com\/",
+                "title": "Digital Rebar Kubernetes Terraform in 8 minutes",
+                "title_link": "https:\/\/youtu.be\/5trB3_IFFX8",
+                "author_name": "RackN & Digital Rebar",
+                "author_link": "https:\/\/www.youtube.com\/channel\/UCr3bBtP-pMsDQ5c0IDjt_LQ",
+                "thumb_url": "https:\/\/i.ytimg.com\/vi\/5trB3_IFFX8\/hqdefault.jpg",
+                "thumb_width": 480,
+                "thumb_height": 360,
+                "fallback": "YouTube Video: Digital Rebar Kubernetes Terraform in 8 minutes",
+                "video_html": "<iframe width=\"400\" height=\"225\" src=\"https:\/\/www.youtube.com\/embed\/5trB3_IFFX8?feature=oembed&autoplay=1&iv_load_policy=3\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen><\/iframe>",
+                "video_html_width": 400,
+                "video_html_height": 225,
+                "from_url": "https:\/\/youtu.be\/5trB3_IFFX8",
+                "service_icon": "https:\/\/a.slack-edge.com\/2089\/img\/unfurl_icons\/youtube.png",
+                "id": 1,
+                "original_url": "https:\/\/youtu.be\/5trB3_IFFX8"
+            }
+        ],
+        "ts": "1532061873.000096",
+        "reactions": [
+            {
+                "name": "beanie",
+                "users": [
+                    "U6QFVRJNB"
+                ],
+                "count": 1
+            },
+            {
+                "name": "+1",
+                "users": [
+                    "UBU0BPRA9"
+                ],
+                "count": 1
+            }
+        ]
+    }
+]

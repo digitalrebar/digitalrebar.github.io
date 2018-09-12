@@ -1,0 +1,808 @@
+[
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": "does sledgehammer can boot a RPi?",
+        "client_msg_id": "fd3341fb-1580-4adc-b360-00df3a0f6d56",
+        "ts": "1534432232.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UA9Q8FLTC> - at the moment, we do not support booting ARM based hardware - we are working on this feature - no specifics on release of it though - DRP Endpoint itself does support running on an ARM platform - and we have community and customers that have used RPi platforms successfully",
+        "client_msg_id": "4d0ad965-b224-4450-99de-bb57b4d7ad9c",
+        "ts": "1534432314.000100"
+    },
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": "thanks <@U6QFVRJNB>, can I at least serve a netboot image through drp so the Rpi can boot? or its all based on iPXE ?",
+        "client_msg_id": "b28f32a8-58e0-4e93-943f-0c0d12ebbfc7",
+        "ts": "1534432572.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UA9Q8FLTC> - not entirely sure ... I'd have to check w\/ <@U02DJQSG8> if he has any thoughts on that - we did just add (experimental) Apple BSDP support for Apple NetBoot and NetInstall capabilities - that's in the current `tip` version (and _very_ experimental right now)",
+        "client_msg_id": "cf3adcf3-1063-49f3-b1f8-3eedff62ff8c",
+        "ts": "1534436314.000100"
+    },
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": ":thumbsup: thanks, i'm looking into terraform to power on\/off and rest the pi cluster...I Can do it with commands",
+        "client_msg_id": "bd281ff2-6fb8-4598-b82f-275204b0372d",
+        "ts": "1534436439.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "looks like slack finally came back from a siesta ...",
+        "client_msg_id": "0e7be169-fc82-46db-9930-9d808774c1e2",
+        "ts": "1534437464.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "you can also terraform-all-the-DRP-things, too: <https:\/\/provision.readthedocs.io\/en\/tip\/doc\/content-packages\/terraform.html>",
+        "client_msg_id": "8d6c8887-45dd-4693-8b83-a393fbd7c0b5",
+        "ts": "1534437466.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "<@UA9Q8FLTC>  If you can point me at something that describes the netboot protocol an rpi uses, I can tell you how hard it would be to get dr-provision to netboot it.",
+        "client_msg_id": "54f163b2-93ca-43e9-9e73-32d87bdc53fc",
+        "ts": "1534437571.000100"
+    },
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": "awesome",
+        "client_msg_id": "65bc9cc8-14e1-42db-b3cf-60a7e7df95f7",
+        "ts": "1534437597.000100"
+    },
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": "<@U02DJQSG8> <https:\/\/www.raspberrypi.org\/documentation\/hardware\/raspberrypi\/bootmodes\/net_tutorial.md>",
+        "client_msg_id": "eaa653f1-883f-40cd-b2dc-0bc32fcec194",
+        "attachments": [
+            {
+                "title": "Network Boot Your Raspberry Pi - Raspberry Pi Documentation",
+                "title_link": "https:\/\/www.raspberrypi.org\/documentation\/hardware\/raspberrypi\/bootmodes\/net_tutorial.md",
+                "text": "This section contains documentation with technical information about the Raspberry Pi hardware, including official add-ons and the Pi itself.",
+                "fallback": "Network Boot Your Raspberry Pi - Raspberry Pi Documentation",
+                "from_url": "https:\/\/www.raspberrypi.org\/documentation\/hardware\/raspberrypi\/bootmodes\/net_tutorial.md",
+                "service_icon": "https:\/\/www.raspberrypi.org\/wp-content\/themes\/mind-control\/images\/favicon.png",
+                "service_name": "raspberrypi.org",
+                "id": 1,
+                "original_url": "https:\/\/www.raspberrypi.org\/documentation\/hardware\/raspberrypi\/bootmodes\/net_tutorial.md"
+            }
+        ],
+        "ts": "1534437635.000100"
+    },
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": "it uses a bootcode.bin file that is served via the tftp",
+        "client_msg_id": "34d347a4-4033-4c38-9861-31e9bd914575",
+        "ts": "1534437668.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "ok, so slap that and the associated start.elf (as mentioned in <https:\/\/www.raspberrypi.org\/documentation\/hardware\/raspberrypi\/bootmodes\/net.md>) under \/var\/lib\/dr-provision\/tftpboot and see what happens.",
+        "client_msg_id": "3733daa7-9518-475f-b891-42a97f217853",
+        "attachments": [
+            {
+                "title": "Network booting - Raspberry Pi Documentation",
+                "title_link": "https:\/\/www.raspberrypi.org\/documentation\/hardware\/raspberrypi\/bootmodes\/net.md",
+                "text": "This section contains documentation with technical information about the Raspberry Pi hardware, including official add-ons and the Pi itself.",
+                "fallback": "Network booting - Raspberry Pi Documentation",
+                "from_url": "https:\/\/www.raspberrypi.org\/documentation\/hardware\/raspberrypi\/bootmodes\/net.md",
+                "service_icon": "https:\/\/www.raspberrypi.org\/wp-content\/themes\/mind-control\/images\/favicon.png",
+                "service_name": "raspberrypi.org",
+                "id": 1,
+                "original_url": "https:\/\/www.raspberrypi.org\/documentation\/hardware\/raspberrypi\/bootmodes\/net.md"
+            }
+        ],
+        "ts": "1534437889.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "That will not help with getting Sledgehamemr to run on it for a huge variety of reasons, but it is a valid smoketest.",
+        "client_msg_id": "23d422fa-3ec2-42c0-b2f8-cf0d39f76d49",
+        "ts": "1534437944.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "hm",
+        "client_msg_id": "c9ff8e19-c6e6-4aa0-90b6-9936b6094274",
+        "ts": "1534438015.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "reading more at that doc, the Pi signals that it is an x86 box running in legacy BIOS mode, with a magic extra vendor options.",
+        "client_msg_id": "468d177c-5378-423a-81c3-9939c029de76",
+        "ts": "1534438104.000100"
+    },
+    {
+        "text": "sighs",
+        "type": "message",
+        "subtype": "me_message",
+        "user": "U02DJQSG8",
+        "ts": "1534438162.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "There is a standard way in the PXE spec of signalling that you are an arm\/arm64 box, guys.",
+        "client_msg_id": "490d7916-632a-48be-af64-befba30f4814",
+        "ts": "1534438233.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "instead, based on the incoming DHCP request I have no wqay of knowing if hte box is an RPi or not.",
+        "client_msg_id": "14b20c84-1c26-4814-988f-1e2621c0c462",
+        "ts": "1534438301.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "I just have to supply the magic vendor option in the offer and hope.",
+        "client_msg_id": "9baa0705-78be-41c6-81fa-3a6631cdc39e",
+        "ts": "1534438319.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "They could have sent a vendor option in the DHCP request that indicates the box is an RPi, but nooo.",
+        "client_msg_id": "1256dcb3-24e2-4a13-b010-9a8324ebeaad",
+        "ts": "1534438382.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "gah, whoever hacked that into the rpi firmware is an even worse firmware coder than usual.",
+        "client_msg_id": "74064d01-ad64-4aa2-a8cb-dce709c5e2fb",
+        "ts": "1534438463.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Anyways, you will also need to throw an option 43 into whatever subnet you want to boot your rpis from that has the magic value `Raspberry Pi Boot` except maybe with 3 extra spaces at the end depending on how old your firmware and\/or rpi is.",
+        "client_msg_id": "c1d2e476-49d6-46f3-992f-dfa132d49215",
+        "ts": "1534438789.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "With that, a `\/bootloader.bin` in the static file space (`\/var\/lib\/dr-provision\/tftpboot` by default), and the `start.elf` wherever it belongs, your RPi should then try to boot off whatever NFS share you configured for it to netboot from.",
+        "client_msg_id": "ca224490-ae26-414d-a1ca-7a2796ca1ccd",
+        "ts": "1534438927.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "From there, getting it to something vaguely resembling Sledgehammer is an epic journey all on its own.",
+        "client_msg_id": "5b5ba3da-6eb5-4671-9a54-987f6470df87",
+        "ts": "1534439049.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Mostly because we don't have one. :slightly_smiling_face:",
+        "client_msg_id": "1afacbbf-bcbd-4dec-b231-8ea3ae585579",
+        "ts": "1534439066.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "\/rant off (for now)",
+        "client_msg_id": "810c953a-df1b-4901-aace-4d5f6c890fbc",
+        "ts": "1534439100.000100"
+    },
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": "thanks",
+        "client_msg_id": "17a053fd-91ad-41f9-a49e-96d2960e5f48",
+        "ts": "1534439304.000100"
+    },
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": "i'll give it a shot",
+        "client_msg_id": "1e68e0f2-6f4a-465a-9cfa-4b97702726bd",
+        "ts": "1534439308.000100"
+    },
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": "sledgehammer isn't too important...i'm thinking to boot rancheros for rpi",
+        "client_msg_id": "a458118f-8453-4a7c-a0b4-1c83887361eb",
+        "ts": "1534439359.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "hi all, it’s really strange when i display the machine profile via UUID, but i can’t destroy it. any thought?",
+        "client_msg_id": "d235a0dc-831d-44ae-b2d2-41eee02a645f",
+        "ts": "1534455607.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "$ drpcli machines show 838e512a-70f0-4483-b4a5-fcbed5401912\n{\n  “Address”: “10.11.106.118\",\n  “Available”: true,\n  “BootEnv”: “wmps-install”,\n  “CurrentJob”: “”,\n  “CurrentTask”: -1,\n  “Description”: “”,\n  “Errors”: [],\n  “HardwareAddrs”: [],\n  “Meta”: {\n    “feature-flags”: “change-stage-v2”",
+        "client_msg_id": "b6e4cbf6-d2ae-4cb1-8a9e-2884598879d7",
+        "ts": "1534455621.000200"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "$ drpcli machines destroy 838e512a-70f0-4483-b4a5-fcbed5401912\nError: DELETE: key 838e512a-70f0-4483-b4a5-fcbed5401912: not found",
+        "client_msg_id": "8f2884f5-0a61-4171-9955-d7282b64fc10",
+        "ts": "1534455635.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "hm... Any errors in the dr-provision log?",
+        "client_msg_id": "8d28eb4b-9732-438e-bd0c-3bfe5898e78a",
+        "ts": "1534455793.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "i can’t find the error logs; just see job-logs directory and ton of files in there",
+        "client_msg_id": "f3473057-1e78-4dae-837b-797a2c672fc6",
+        "ts": "1534456186.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UANLCF8QP> - logs would be wherever you send STDOUT when starting up the DRP service in isolated mode, or in the Journal logs in systemd based systems if you start with systemctl",
+        "client_msg_id": "da10b103-7178-48c3-97b3-d040deab904a",
+        "ts": "1534456285.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "got it; thanks",
+        "client_msg_id": "8db92e7c-c457-4ec1-98d9-e95634972832",
+        "ts": "1534456378.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "i don’t see anything information related or indicate to destroy the machine at all",
+        "client_msg_id": "60be856c-af41-4a4f-b73c-93769309d721",
+        "ts": "1534456952.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "Aug 16 22:02:22 labs-provision dr-provision[2207]: dr-provision2018\/08\/16 22:02:22.725844 [64175:2577]static [error]: \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/midlayer\/tftp.go:82\nAug 16 22:02:22 labs-provision dr-provision[2207]: [64175:2577]TFTP: lpxelinux.0: transfer error: sending block 0: code=0, error: TFTP Aborted",
+        "client_msg_id": "8f04e906-cd81-4f84-ab01-135e44c3c65e",
+        "ts": "1534456980.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "tjat",
+        "client_msg_id": "73512ea0-b791-4175-8031-8f8084a98a92",
+        "ts": "1534456983.000200"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "that's normal",
+        "client_msg_id": "74923616-6a4f-4877-92ba-9f6bc541e92e",
+        "ts": "1534456991.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "that's how TFTP likes to get a file size for transfer since TFTP itself (as a protocol) doesn't support file size request operation",
+        "client_msg_id": "1105cb83-b205-414d-8025-a5b81d8f460d",
+        "ts": "1534457014.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<https:\/\/provision.readthedocs.io\/en\/tip\/doc\/faq-troubleshooting.html#tftp-error>",
+        "client_msg_id": "c201fdf7-dd7b-4ed8-954a-c150eda6cbd4",
+        "ts": "1534457049.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "journalctl -u dr-provision.service -f and then $ drpcli machines destroy 838e512a-70f0-4483-b4a5-fcbed5401912\nError: DELETE: key 838e512a-70f0-4483-b4a5-fcbed5401912: not found",
+        "client_msg_id": "4494e2e7-73aa-4c86-8764-287e634caddf",
+        "ts": "1534457052.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "i see nothing in the logs",
+        "client_msg_id": "5c518827-e701-4be4-a27f-ffc2c415bb48",
+        "ts": "1534457064.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "hmm - try to bump the \"default log level\" up to `debug` in Info &amp; Preferences - then try again - if nothing - try `trace`",
+        "client_msg_id": "70c70c44-7901-44f6-b9b2-4a9c681ec517",
+        "ts": "1534457144.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "don't leave it at `trace` long - that will significantly impact the performance of your DRP endpoint",
+        "client_msg_id": "8b707d2c-b2ca-4e59-bddc-993b61e237d0",
+        "ts": "1534457169.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "can you also please do an:\n`ls -l \/var\/lib\/dr-provision\/digitalrebar\/machines\/838e512a-70f0-4483-b4a5-fcbed5401912.json`",
+        "client_msg_id": "8cc618bb-0444-450c-992e-ac5a9f59f943",
+        "ts": "1534457204.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "that should be the write layers stored copy of the JSON object for the Machine",
+        "client_msg_id": "b4446a07-ff2a-4478-97e6-d9afeffde64c",
+        "ts": "1534457226.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(you may have relocated \/var\/lib\/dr-provision from default ... )",
+        "client_msg_id": "e70bb230-03ff-4700-85da-40274ffc59cd",
+        "ts": "1534457238.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "the file 838* does not exit on that directory",
+        "client_msg_id": "a1f2654e-bd6e-4d4e-aade-5d66cd88b705",
+        "ts": "1534457334.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "assuming you have more than this one machine on the DRP endpoint - can you see if there are JSON files in that directory ?",
+        "client_msg_id": "480bc227-56b9-4845-9d23-5ddd25a867ae",
+        "ts": "1534457369.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "yes, we have 169 file total",
+        "client_msg_id": "058fd907-039b-4bfe-943e-6965dd36a6bb",
+        "ts": "1534457415.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "$ ls -l \/var\/lib\/dr-provision\/digitalrebar\/machines\/8\n81533173-5ac5-4826-9178-d88cfd22d7c7.json  8739d042-678b-48ff-9694-a69fe03da668.json  8ce1c027-25ce-429e-9c90-69c70b2b35dd.json  8f72549b-8344-4a64-83de-06c1a5d9404e.json\n84101a29-daf2-4e04-bb88-fd7b816c2500.json  8acfeab3-d3c7-4c92-823c-4bcb4d7790a1.json  8e95bcfd-c915-464b-ad69-832935350234.json\n84bc7826-1d6c-46c5-8716-5f5b2b28f3f8.json  8b9e9ea4-a146-460f-891f-7a53023e7d2c.json  8ecc7936-5283-47a9-8ae9-dcdb788c8f5d.json",
+        "client_msg_id": "c6dc3648-b821-4c66-aa14-3244c4d072fd",
+        "ts": "1534457462.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "$ ls -l \/var\/lib\/dr-provision\/digitalrebar\/machines\/83\nls: cannot access ‘\/var\/lib\/dr-provision\/digitalrebar\/machines\/83’: No such file or directory",
+        "client_msg_id": "2af5e2c4-d14f-4326-b38f-824dac19a978",
+        "ts": "1534457476.000200"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "hmm - so the write file store copy of that machine has been deleted it sounds like",
+        "client_msg_id": "cfb33194-000b-4772-a703-3e8c20d88c05",
+        "ts": "1534457497.000200"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "when was last time you restarted that DRP endpoint - and what version is it running ?",
+        "client_msg_id": "b0890eb5-b39b-4c47-bc3f-cf8a906917d4",
+        "ts": "1534457520.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "`drpcli info get | jq .version`",
+        "client_msg_id": "1e44b665-e801-4020-99b9-a4a6eb416025",
+        "ts": "1534457551.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "last restarted on jul-25",
+        "client_msg_id": "1ecc39b4-4bf1-453b-b3ee-c09d139d591b",
+        "ts": "1534457573.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "“v3.8.0-0-1e4c58d48257bdb9562126fefc89897bae23210e”",
+        "client_msg_id": "9fc4d596-fef9-4a70-a36f-bf937a11e11b",
+        "ts": "1534457602.000200"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "did bumping logging level up give any better info ?",
+        "client_msg_id": "f80d3485-a37d-4c54-8c10-d67b02dfe9c3",
+        "ts": "1534457630.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "if you don’t mind to show me how to bump logging level",
+        "client_msg_id": "496d94eb-f8d7-423b-9847-14c37bb4c416",
+        "ts": "1534457718.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "are you using drpcli or UI ?",
+        "client_msg_id": "abeea4c5-2760-404f-bb4b-161b0dcb77bb",
+        "ts": "1534457752.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "drpcli",
+        "client_msg_id": "4f3f7e48-f0ba-4403-b224-d509d8c6028e",
+        "ts": "1534457787.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "`drpcli prefs set '{\"logLevel\":\"debug\"}'`",
+        "client_msg_id": "6d8d1751-041c-413b-a00e-3c9c55dd2add",
+        "ts": "1534458177.000200"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "weird ... that one doesn't have a \"helper\" ... so normally we can do something like: `drpcli prefs set debugFrontend warn`",
+        "client_msg_id": "0d44a763-dbeb-4709-b029-ec1582f44ca5",
+        "ts": "1534458207.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "but the `loglevel` field doesn't have a helper like that - so we have to use the JSON format to make it happy",
+        "client_msg_id": "57454251-944f-41d5-9465-ded9f285771d",
+        "ts": "1534458225.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "alright the log level is set to debug mode",
+        "client_msg_id": "e7211105-a76f-4034-9a53-ee0567198936",
+        "ts": "1534458408.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "i’m running $ drpcli machines destroy 838e512a-70f0-4483-b4a5-fcbed5401912\nError: DELETE: key 838e512a-70f0-4483-b4a5-fcbed5401912: not found",
+        "client_msg_id": "09af17f4-eeac-40df-913d-2dda79daea07",
+        "ts": "1534458481.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "# journalctl -u dr-provision.service -f\n-- Logs begin at Wed 2018-07-25 15:10:54 UTC. --\nAug 16 22:20:10 labs-provision dr-provision[2207]: dr-provision2018\/08\/16 22:20:10.934197 [64306:2592]frontend [audit]: \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/frontend\/frontend.go:359\nAug 16 22:20:10 labs-provision dr-provision[2207]: [64306:2592]Authenticated user ben from 10.10.135.119\nAug 16 22:21:32 labs-provision dr-provision[2207]: dr-provision2018\/08\/16 22:21:32.121559 [64435:2593]static [error]: \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/midlayer\/tftp.go:82\nAug 16 22:21:32 labs-provision dr-provision[2207]: [64435:2593]TFTP: lpxelinux.0: transfer error: sending block 0: code=0, error: TFTP Aborted\nAug 16 22:23:16 labs-provision dr-provision[2207]: dr-provision2018\/08\/16 22:23:16.754754 [64448:2594]static [error]: \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/midlayer\/tftp.go:82\nAug 16 22:23:16 labs-provision dr-provision[2207]: [64448:2594]TFTP: lpxelinux.0: transfer error: sending block 0: code=0, error: TFTP Aborted\nAug 16 22:25:01 labs-provision dr-provision[2207]: dr-provision2018\/08\/16 22:25:01.020282 [64456:2595]static [error]: \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/midlayer\/tftp.go:82\nAug 16 22:25:01 labs-provision dr-provision[2207]: [64456:2595]TFTP: lpxelinux.0: transfer error: sending block 0: code=0, error: TFTP Aborted\nAug 16 22:26:45 labs-provision dr-provision[2207]: dr-provision2018\/08\/16 22:26:45.149912 [64469:2596]static [error]: \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/midlayer\/tftp.go:82\nAug 16 22:26:45 labs-provision dr-provision[2207]: [64469:2596]TFTP: lpxelinux.0: transfer error: sending block 0: code=0, error: TFTP Aborted",
+        "client_msg_id": "dc163fe8-d6c9-4d6d-a455-cff871f95838",
+        "ts": "1534458495.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "nope - nothing there",
+        "client_msg_id": "f5c138b3-9785-469b-9d25-b5358f930499",
+        "ts": "1534458544.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "yeah",
+        "client_msg_id": "0f2db8f7-bcb3-407d-aa26-189ec1c324e5",
+        "ts": "1534458611.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "kick to `trace` and hit it fast to get logs, then kick it back down to `warn`",
+        "client_msg_id": "17752a7c-e910-4bde-89e3-923b1cc3f2c8",
+        "ts": "1534458704.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "ok",
+        "client_msg_id": "2801cc23-ab1d-4547-a894-9bcbe46b260c",
+        "ts": "1534458721.000200"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "nothing happen after run $ drpcli machines destroy 838e512a-70f0-4483-b4a5-fcbed5401912\nError: DELETE: key 838e512a-70f0-4483-b4a5-fcbed5401912: not found",
+        "client_msg_id": "5de77eaf-c15e-46c0-96b1-e6e3fb7d16d1",
+        "ts": "1534458782.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "$ drpcli prefs set ‘{“logLevel”:“trace”}’\n{\n  “baseTokenSecret”: “OxCwy6xWaMMR3i-CKCk54GiFwjVWa5IC”,\n  “debugBootEnv”: “warn”,\n  “debugDhcp”: “warn”,\n  “debugFrontend”: “info”,\n  “debugPlugins”: “warn”,\n  “debugRenderer”: “warn”,\n  “defaultBootEnv”: “local”,\n  “defaultStage”: “none”,\n  “knownTokenTimeout”: “3600\",\n  “logLevel”: “trace”,",
+        "client_msg_id": "e80b8b72-253d-4246-978e-51b07be36820",
+        "ts": "1534458794.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ok - lets make sure loglevel is back to 'warn' - then try Frontend - so:\n```drpcli prefs set '{\"logLevel\":\"warn\"}'\ndrpcli prefs set debugFrontend trace```\nhit it with the Delete, then set your Frontend back to \"warn\":\n```drpcli prefs set debugFrontend warn```",
+        "client_msg_id": "2d83ebf7-cafe-4082-bb56-38a3d40c0e11",
+        "ts": "1534458889.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "i did that",
+        "client_msg_id": "921154e3-d418-4c03-bffb-ca969cf5f396",
+        "ts": "1534458923.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "when i run drpcli prefs set debugFrontend trace and $ drpcli machines destroy 838e512a-70f0-4483-b4a5-fcbed5401912",
+        "client_msg_id": "9a410522-92bf-4d40-9154-f42d1c4df6df",
+        "ts": "1534459084.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "the command is just hanging there without throw out the “Error…” messages",
+        "client_msg_id": "e125fced-2296-4f8f-97c3-e23bfff69c5e",
+        "ts": "1534459146.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "hmm -  hit it w\/ drpcli again and drop debugFrontend back down to warn",
+        "client_msg_id": "063794e7-5ace-4866-a875-5036ea6b3f55",
+        "ts": "1534459222.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "now $ drpcli prefs set debugFrontend warn is hanging too",
+        "client_msg_id": "3108b724-710d-4010-b43e-7c62011530c7",
+        "ts": "1534459464.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "trace on Frontend may have been too aggressive, and we may have wedged DRP :disappointed:",
+        "client_msg_id": "52ef3008-a638-47eb-933d-4ac3d6776399",
+        "ts": "1534459494.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "there are a few fixes around that between v3.8.0 and current v3.10.0 versions",
+        "client_msg_id": "4e70fcb6-97f0-49ef-af72-f42b6ad9f3db",
+        "ts": "1534459511.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "i can’t run any commands rn.",
+        "client_msg_id": "46a52cc9-278c-4418-9631-e673706fa162",
+        "ts": "1534459559.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "all hanging",
+        "client_msg_id": "f5fce8b5-e4f0-4eb0-9429-8ef6bd8f4462",
+        "ts": "1534459563.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "unfortunately - you'll need to jump on the DRP endpoint and kill the process and restart ...",
+        "client_msg_id": "f0fbac45-03af-4e82-85af-113bd61e8644",
+        "ts": "1534459589.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "on the plus side, it's entirely possible that'll clear up the machine delete issue - we haven't seen that happen in the field before though - so was really hoping to get a log trace",
+        "client_msg_id": "5807376d-9b9b-4b9b-baab-2e79f9308c14",
+        "ts": "1534459620.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "it seems like drpcli prefs set debugFrontend trace caused the dr-provision service hangs",
+        "client_msg_id": "0e9e0976-a5e2-4b0e-bf90-0e8a51b284c6",
+        "ts": "1534459699.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yes - trace level is pretty aggressive",
+        "client_msg_id": "d4f9f874-d063-4461-99f9-895fc9e7290e",
+        "ts": "1534459715.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "restarted dr-provision but it’s not working",
+        "client_msg_id": "b30c0d2e-691e-4118-910c-ee0dc744eac1",
+        "ts": "1534459853.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ok - kill process - then check the file \/ edit to change to \"warn\":  `\/var\/lib\/dr-provision\/digitalrebar\/preferences\/debugFrontend.json`",
+        "client_msg_id": "3665bd16-f2dd-48c4-ac4a-c05a6f98b47b",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1534459984.000000"
+        },
+        "ts": "1534459954.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "should look like:  `{\"Meta\":{},\"Name\":\"debugFrontend\",\"Val\":\"warn\"}`",
+        "client_msg_id": "8cf28917-ae67-4c5a-b1d1-8a5dd31831a9",
+        "ts": "1534460011.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "after you edit it - then start DRP",
+        "client_msg_id": "73127d80-1517-4bc3-b03b-1155f9345f81",
+        "ts": "1534460019.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "alright it’s back to normal",
+        "client_msg_id": "ee4cf941-7f41-491f-925b-7c4d6697f10e",
+        "ts": "1534460082.000100",
+        "reactions": [
+            {
+                "name": "ok_hand",
+                "users": [
+                    "U6QFVRJNB"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "check if that Machine object exists now (`drpcli machines show &lt;uuid&gt;`)",
+        "client_msg_id": "2ed83d71-fd72-4adc-bc9b-fa9abc029343",
+        "ts": "1534460112.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "it’s no longer see that UUID",
+        "client_msg_id": "a78ca89a-967f-4349-87da-8c58786d5a44",
+        "ts": "1534460151.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "ls",
+        "client_msg_id": "f2e1126e-91c4-4c5a-aa4c-b561e0d0fc21",
+        "ts": "1534460162.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "so - the Machine object existed in the in-memory layers of the Backing Store ... but had been deleted from Disk at some point ... either external action, or somehow by drpcli command - without deleting the object in the in-memory",
+        "client_msg_id": "067d168c-b2fe-4b76-bafd-962b0fece751",
+        "ts": "1534460213.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we've never seen that with DRP before ... so really curious how it got in to that state ...",
+        "client_msg_id": "f9a2bd0e-d604-4dc3-a356-107cd1dee903",
+        "ts": "1534460238.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "agree",
+        "client_msg_id": "a98b90b3-30ac-4dab-84f9-dbfefeb23f7f",
+        "ts": "1534460242.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "thanks a lot for all your help!",
+        "client_msg_id": "e214fe3d-e37b-4b71-9aa4-98f3c8ae26e9",
+        "ts": "1534460342.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "a simple test of this via external action shows how we can get in to this state:\n```root@demo:~\/drp-data\/digitalrebar\/machines# drpcli machines show 53a4fb08-4184-4158-8e76-24843fb8cc58 | head -3\n{\n  \"Address\": \"1.2.3.4\",\n  \"Available\": true,\n\nroot@demo:~\/drp-data\/digitalrebar\/machines# rm 53a4fb08-4184-4158-8e76-24843fb8cc58.json\n\nroot@demo:~\/drp-data\/digitalrebar\/machines# drpcli machines show 53a4fb08-4184-4158-8e76-24843fb8cc58 | head -3\n{\n  \"Address\": \"1.2.3.4\",\n  \"Available\": true,\n\nroot@demo:~\/drp-data\/digitalrebar\/machines# ls -l 53a4fb08-4184-4158-8e76-24843fb8cc58.json\nls: cannot access 53a4fb08-4184-4158-8e76-24843fb8cc58.json: No such file or directory\n\nroot@demo:~\/drp-data\/digitalrebar\/machines# drpcli machines destroy 53a4fb08-4184-4158-8e76-24843fb8cc58\nError: DELETE: remove \/root\/drp-data\/digitalrebar\/machines\/53a4fb08-4184-4158-8e76-24843fb8cc58.json: no such file or directory```",
+        "client_msg_id": "4d58bc88-3efe-4e5e-89f6-ec11ea590067",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1534460514.000000"
+        },
+        "ts": "1534460380.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "so in that case, the on disk version was destroyed, but the in-memory version still exists",
+        "client_msg_id": "7a9bc1d7-1235-4286-b2d2-8100bcc2ebcd",
+        "ts": "1534460400.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "not sure if that's the case in your instance - but one path to get there",
+        "client_msg_id": "fe465160-16c4-4886-8c8a-7489ba19b2a9",
+        "ts": "1534460451.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "i see, in my case i was using drpcli machines destroy",
+        "client_msg_id": "917cae13-97e1-4964-b718-8d7142e10646",
+        "ts": "1534460453.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "first i was change the bootenv but it didn’t work so i decided to destroy and create it again, somehow, i ran into that error",
+        "client_msg_id": "18e2d765-11ea-476d-86d0-0009f65df35a",
+        "ts": "1534460529.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "ok - please let us know if you see it again - we'd like to understand what might have happened ...",
+        "client_msg_id": "92888f09-864f-43b1-b445-eb7ebc54959b",
+        "ts": "1534460549.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "ok",
+        "client_msg_id": "36b6a604-e1f7-4c08-bd89-440ada577281",
+        "ts": "1534460565.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@UANLCF8QP> I'd strongly recommend upgrading for community support.  If you have to stay with 3.8, you may want to consider commercial support. ",
+        "client_msg_id": "02094a16-abe5-4f62-8453-c7c7b525f5eb",
+        "ts": "1534466711.000100"
+    }
+]

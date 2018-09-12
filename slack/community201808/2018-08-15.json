@@ -1,0 +1,421 @@
+[
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": "the docker for digitalrebar\/provision fails to build..i've created a PR",
+        "client_msg_id": "c502bc14-b92c-4b7e-8783-ab0d2a857656",
+        "ts": "1534317827.000100"
+    },
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": "<https:\/\/github.com\/digitalrebar\/provision\/pull\/971>",
+        "client_msg_id": "f60c98a8-1797-4dd0-b0f9-02c098653086",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "The URL of the public signing key has changed! by isamuelson · Pull Request #971 · digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/pull\/971",
+                "text": "Any previous reference to <https:\/\/raw.githubusercontent.com\/sgerrand\/alpine-pkg-glibc\/master\/sgerrand.rsa.pub> should be updated with immediate effect to <https:\/\/alpine-pkgs.sgerrand.com\/sgerrand.rs>...",
+                "fallback": "GitHub: The URL of the public signing key has changed! by isamuelson · Pull Request #971 · digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/pull\/971",
+                "thumb_url": "https:\/\/avatars2.githubusercontent.com\/u\/1440852?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/digitalrebar\/provision\/pull\/971"
+            }
+        ],
+        "ts": "1534317829.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@UA9Q8FLTC> thanks for the pull!  It's been merged please let us know if that resolved the docker builds ",
+        "client_msg_id": "8f1370d2-b99d-4770-849d-e51367413b5c",
+        "ts": "1534335039.000100"
+    },
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": "<@U02DHRR2L> sure. working now on a rpi version of the Dockerfile",
+        "client_msg_id": "a2cd080e-e34f-4c55-9493-5324e25e6f6b",
+        "ts": "1534342115.000100",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": "by the way...is there any sample on how to setup a k8s cluster with rebar?",
+        "client_msg_id": "c865b442-ad16-4808-84e1-0a5d13f2d537",
+        "ts": "1534343241.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yes - our \"KRIB\" content does it via the kubeadm process",
+        "client_msg_id": "5fec4c0b-111c-4aee-8cde-337a6c46351a",
+        "ts": "1534343263.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "or if your a masochist, you can do it with our Ansible\/Kubespray integration as well",
+        "client_msg_id": "86c7acbe-b612-4f10-9fdc-d086119b5f19",
+        "ts": "1534343281.000100"
+    },
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": "kubespray is the way i was thinking of",
+        "client_msg_id": "13273b36-d496-4c84-9edf-97780a7089d7",
+        "ts": "1534343297.000100"
+    },
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": "can you point me to the sourcecode?",
+        "client_msg_id": "747e5f6f-96ad-4315-b39b-639e5b0a6f33",
+        "ts": "1534343303.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<https:\/\/provision.readthedocs.io\/en\/tip\/doc\/content-packages.html>",
+        "client_msg_id": "6a5cacf5-0936-4ceb-adc7-7251feb231c2",
+        "ts": "1534343314.000100"
+    },
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": "awesome! thank you",
+        "client_msg_id": "49770901-776d-4c9d-b96f-a2fcd1c54735",
+        "ts": "1534343320.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "see the \"KRIB\" and the \"Kubespray\" content packages",
+        "client_msg_id": "fd25de58-e523-40de-bd55-88526babd225",
+        "ts": "1534343322.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "KRIB is under very active development and gaining lots of capabilities and features currently",
+        "client_msg_id": "aefe7c9a-161d-4406-b863-2edddf15db0c",
+        "ts": "1534343344.000100"
+    },
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": "excellent",
+        "client_msg_id": "ea1d196a-fbaa-4d54-a91d-e34a9b1013e7",
+        "ts": "1534343349.000100"
+    },
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": "nice",
+        "client_msg_id": "b4d8d148-8aaf-4b43-a1b9-a8c02848d21b",
+        "ts": "1534343366.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "there are a number of KRIB youtube videos as well - some of them are referenced in the documentation",
+        "client_msg_id": "85e81f43-3b81-407f-80d5-1254e5dafd0f",
+        "ts": "1534343375.000100"
+    },
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": "anything for setting up ceph ?",
+        "client_msg_id": "778bed44-23f2-4c63-b136-ca0f2a5ef6bb",
+        "ts": "1534343387.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "nope - we don't have a Ceph content pack ... but it could be pretty easily built ... if you had an existing Ansible playbook, our Ansible content should be able to handle it with minimal fuss",
+        "client_msg_id": "6c173032-58ae-4659-abaf-c92ede83b601",
+        "ts": "1534343424.000100"
+    },
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": "perfect",
+        "client_msg_id": "e9fa2d6d-37bf-40a6-991d-4394972df487",
+        "ts": "1534343438.000100"
+    },
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": "thank you",
+        "client_msg_id": "a126daf1-a7be-4039-a3cb-2d6159dcca85",
+        "ts": "1534343446.000100",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U6QFVRJNB"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": "does krib uses ansible?",
+        "client_msg_id": "a32bf4e2-8c95-43ad-9927-302d4d40bfd9",
+        "ts": "1534343491.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "nope",
+        "client_msg_id": "ec4fa992-bd51-4086-85df-2f4cf3427f64",
+        "ts": "1534343514.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it uses `kubeadm` patterns to build masters and join workers to the cluster - with dynamic master election (if desired)",
+        "client_msg_id": "a040e191-e057-4236-812e-cc579daed5dc",
+        "ts": "1534343540.000100"
+    },
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": "i'm looking more into multi-master cluster",
+        "client_msg_id": "c7dc7349-e743-48ff-9437-e5a3945abd5e",
+        "ts": "1534343563.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "it's a LOT faster than Ansible - around 5 to 8 mins versus 25 to 35 mins",
+        "client_msg_id": "fff65c71-58a2-4521-8c6d-ab1f72b35c9d",
+        "ts": "1534343565.000100"
+    },
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": "thats good :slightly_smiling_face:",
+        "client_msg_id": "c9cd0baf-b81b-4d8d-b557-e989dbe891f5",
+        "ts": "1534343591.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we're working on some patterns with live boot-to-KRIB-image images, and kernel kexec patterns to radically accelerate this too - but those are probably a few months off",
+        "client_msg_id": "6a2fbea4-b4f6-48f9-aa03-01836d243aa3",
+        "ts": "1534343671.000100"
+    },
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": "ok",
+        "client_msg_id": "841e13dc-673e-4f9a-b340-10250f3b7bac",
+        "ts": "1534343694.000100"
+    },
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": "i have this in ansible so probabily will be easier to use the kubespray content package",
+        "client_msg_id": "969c6650-d383-423b-940d-24a2d83ae8f5",
+        "ts": "1534343723.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "<@UA9Q8FLTC> - there is a helm chart for ceph floating around that runs ceph in the cluster and adds it to the core.",
+        "client_msg_id": "41b112d5-f83e-4f35-9486-d06a08c32d36",
+        "ts": "1534343741.000100"
+    },
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": "i'll try to find it",
+        "client_msg_id": "fb895b13-6bcb-4205-aeb2-69dd66744115",
+        "ts": "1534343817.000100"
+    },
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": "thank you",
+        "client_msg_id": "10a4ef61-dc7c-476d-97e6-8d4006adddb2",
+        "ts": "1534343818.000100"
+    },
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": "<@U6QFVRJNB> when I run `docker run digitalrebar\/provision`....should i be able to access the portal via localhost:8092?",
+        "client_msg_id": "3be5774b-13b4-4e32-8170-e1076b1878c3",
+        "edited": {
+            "user": "UA9Q8FLTC",
+            "ts": "1534355754.000000"
+        },
+        "ts": "1534355701.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "did you map the ports?",
+        "client_msg_id": "fb9c65ea-e4e9-4ad1-812b-9a2bc247fc5c",
+        "ts": "1534355766.000100"
+    },
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": "its in the Dockerfile so i assume they are mapped",
+        "client_msg_id": "9c391592-30d3-4d17-b16e-6e0a45de9ec1",
+        "ts": "1534355780.000100"
+    },
+    {
+        "type": "message",
+        "text": "",
+        "files": [
+            {
+                "id": "FCA7P5ER5",
+                "created": 1534355798,
+                "timestamp": 1534355798,
+                "name": "image.png",
+                "title": "Pasted image at 2018-08-15, 11:56 AM",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "UA9Q8FLTC",
+                "editable": false,
+                "size": 34430,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FCA7P5ER5\/image.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FCA7P5ER5\/download\/image.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FCA7P5ER5-1079810ebc\/image_64.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FCA7P5ER5-1079810ebc\/image_80.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FCA7P5ER5-1079810ebc\/image_360.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_360_w": 360,
+                "thumb_360_h": 15,
+                "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FCA7P5ER5-1079810ebc\/image_480.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_480_w": 480,
+                "thumb_480_h": 20,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FCA7P5ER5-1079810ebc\/image_160.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FCA7P5ER5-1079810ebc\/image_720.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_720_w": 720,
+                "thumb_720_h": 30,
+                "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FCA7P5ER5-1079810ebc\/image_800.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_800_w": 800,
+                "thumb_800_h": 33,
+                "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FCA7P5ER5-1079810ebc\/image_960.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_960_w": 960,
+                "thumb_960_h": 40,
+                "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FCA7P5ER5-1079810ebc\/image_1024.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_1024_w": 1024,
+                "thumb_1024_h": 42,
+                "image_exif_rotation": 1,
+                "original_w": 2366,
+                "original_h": 98,
+                "permalink": "https:\/\/rackn.slack.com\/files\/UA9Q8FLTC\/FCA7P5ER5\/image.png",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FCA7P5ER5-dd460ca980"
+            }
+        ],
+        "upload": true,
+        "user": "UA9Q8FLTC",
+        "display_as_bot": false,
+        "ts": "1534355802.000100"
+    },
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": "looks like they are mapped",
+        "client_msg_id": "93431e7f-10e5-4046-a9e3-03e0e1a41a19",
+        "ts": "1534355817.000100"
+    },
+    {
+        "type": "message",
+        "text": "raspberry pi",
+        "files": [
+            {
+                "id": "FC9B0KEKF",
+                "created": 1534356322,
+                "timestamp": 1534356322,
+                "name": "image.png",
+                "title": "Pasted image at 2018-08-15, 12:05 PM",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "UA9Q8FLTC",
+                "editable": false,
+                "size": 61817,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FC9B0KEKF\/image.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FC9B0KEKF\/download\/image.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FC9B0KEKF-7b813faf15\/image_64.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FC9B0KEKF-7b813faf15\/image_80.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FC9B0KEKF-7b813faf15\/image_360.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_360_w": 360,
+                "thumb_360_h": 270,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FC9B0KEKF-7b813faf15\/image_160.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "image_exif_rotation": 1,
+                "original_w": 474,
+                "original_h": 356,
+                "permalink": "https:\/\/rackn.slack.com\/files\/UA9Q8FLTC\/FC9B0KEKF\/image.png",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FC9B0KEKF-da364c09b5"
+            }
+        ],
+        "upload": true,
+        "user": "UA9Q8FLTC",
+        "display_as_bot": false,
+        "ts": "1534356324.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": ":slightly_smiling_face:",
+        "client_msg_id": "8ca5c0ed-b45e-427e-a892-991c08875fdd",
+        "ts": "1534356649.000100"
+    },
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": "the libc was the issue for docker on arm",
+        "client_msg_id": "8cf0a602-e890-4efa-aa60-5495df42a7d6",
+        "ts": "1534356751.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@UA9Q8FLTC> considering the footprint on RPi, running the golang directly w\/o Docker would save overhead",
+        "client_msg_id": "f5043ec6-ceb8-49db-88f3-03ce0abf6429",
+        "ts": "1534356862.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "but I'm glad to see you got it working",
+        "client_msg_id": "ddb785e7-cdf2-4584-bc35-a4adc57d1043",
+        "ts": "1534356892.000100"
+    }
+]

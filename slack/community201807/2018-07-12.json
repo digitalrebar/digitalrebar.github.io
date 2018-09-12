@@ -1,0 +1,152 @@
+[
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "well - when you added the dhcp-boot line, you have dns-masq handling all of dhcp.  By disablling the subnet, you turned of DRP’s DHCP and it worked.",
+        "client_msg_id": "8dbcdf2f-6fcd-496f-a7ff-eeba1623c2ff",
+        "thread_ts": "1531338161.000121",
+        "parent_user_id": "U7P8TES5B",
+        "ts": "1531397669.000197"
+    },
+    {
+        "type": "message",
+        "user": "UA98B96BA",
+        "text": "<@U6QFVRJNB> Do you know if DRP is DoD approved or is their some security guide or STIG that you have for DRP. Have you guys done any kind of security scanning of the DRP platform?",
+        "client_msg_id": "7f57e9e3-854a-421e-b6bb-de0c5747745b",
+        "ts": "1531408497.000017"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "There was a group that started that process w the Air Force.  if this becomes a need I can connect you",
+        "client_msg_id": "c62ac35e-90f0-4f9c-96ad-c92470ce2373",
+        "ts": "1531409024.000108"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "We did complete the forms - this was a while back",
+        "client_msg_id": "dde2fef8-f45a-4c19-8eb0-9a4339fc4a6f",
+        "ts": "1531409053.000408"
+    },
+    {
+        "type": "message",
+        "user": "U7P8TES5B",
+        "text": "Sorry for not being clearer with regards to what I meant about a valid configuration. What I meant was it strikes me as odd - not that I am familiar to dhcp - that DRP could be set to be both a DHCP server and a proxy at the same time. If such is the case, the maybe DRP should prevent that from happening?",
+        "client_msg_id": "126ba659-3fbd-4c26-ba50-bdebafbef5ae",
+        "thread_ts": "1531338161.000121",
+        "parent_user_id": "U7P8TES5B",
+        "ts": "1531409251.000493"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Enabled DHCP turns on the dhcp server for that subnet.  The proxy flag say where it should access in proxy mode or not.  This means three states are valid: DHCP: False Proxy: ignored - DHCP is off, DHCP: True Proxy: False - full dhcp server sending bootfile options and IP management, DHCP: True Proxy: True - DHCP in proxy mode- only following DHCP messages with bootfile options and not IP management.",
+        "client_msg_id": "c192da8e-e99d-4a19-9e31-dcd0fba28a74",
+        "thread_ts": "1531338161.000121",
+        "parent_user_id": "U7P8TES5B",
+        "ts": "1531409724.000001"
+    },
+    {
+        "type": "message",
+        "user": "UA98B96BA",
+        "text": "Ok, thanks for info <@U02DHRR2L>. I'll pass the info along to my executive leadership.",
+        "client_msg_id": "45bbcbdf-8060-4f33-9730-5c02955b10f3",
+        "ts": "1531410023.000312"
+    },
+    {
+        "type": "message",
+        "user": "U7P8TES5B",
+        "text": "Thanks for the clarification!",
+        "client_msg_id": "a6d50bd0-e55e-4e2e-8556-03e5b4a6acd5",
+        "thread_ts": "1531338161.000121",
+        "parent_user_id": "U7P8TES5B",
+        "ts": "1531412085.000329"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "Hello,\nI have a scalability question, if I want DRP to provisioning machines in different networks, I can have an endpoint (with DHCP) installed in each network, can I have an overview of all endpoints?\nI am trying to achieve isolation, where I will give endpoint access to a different person per network.",
+        "client_msg_id": "ed8c445d-1f47-4f98-aa0a-9dd1d94df37f",
+        "ts": "1531414474.000143"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@UBBSHF675> there are several ways to address this and part of RackN support.\n1) you can use multi-tenant features to gives multi-user access\n2) we have an endpoint sync extension that creates a star\n3) you can have the DHCP servers forward to a central DRP",
+        "client_msg_id": "6c8cfdd7-dd10-441a-bac1-dfb58d33690f",
+        "ts": "1531414756.000342"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "if isolation is your main goal then #1 would be simplest.",
+        "client_msg_id": "72ac5d9b-12a0-423e-9f68-f2a57943296f",
+        "ts": "1531414778.000365"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "Thank you <@U02DHRR2L>, I will look for more details on #1",
+        "client_msg_id": "84733f55-cbd5-4467-a58a-62e9627e2f97",
+        "ts": "1531414848.000105"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "we discuss multitenant on some of the recent community calls.  It's an enterprise (paid) feature",
+        "client_msg_id": "fffa56b1-6400-43dc-9e29-707b4f5933ff",
+        "ts": "1531414882.000357"
+    },
+    {
+        "type": "message",
+        "user": "UBBSHF675",
+        "text": "got it.",
+        "client_msg_id": "838587df-948a-4789-ac53-51f8f0fbe50a",
+        "ts": "1531414991.000479"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "Do I have to create a stage in order to have a machine execute a task?",
+        "client_msg_id": "457bff70-2ca9-4678-a9f5-6ae15836fc95",
+        "ts": "1531446402.000040"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "yes - typically you want Stage with a Task with either one or more embedded Templates, or external templates specified.",
+        "client_msg_id": "39dc5b14-9ee7-4df0-a6a3-f9de0fd8f1ee",
+        "ts": "1531446456.000077"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "(technically a Stage can also have multiple Tasks specified, too)",
+        "client_msg_id": "c0e661fa-865c-48e6-8124-1767b1b4a665",
+        "ts": "1531446489.000111"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "kk",
+        "client_msg_id": "8491145c-fc0d-4c48-b831-4193514f568c",
+        "ts": "1531446502.000032"
+    },
+    {
+        "type": "message",
+        "user": "UAQAE0VNE",
+        "text": "ty",
+        "client_msg_id": "fc28b24a-d82b-47e8-8e61-eec4db4664b9",
+        "ts": "1531446502.000111",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U6QFVRJNB"
+                ],
+                "count": 1
+            }
+        ]
+    }
+]

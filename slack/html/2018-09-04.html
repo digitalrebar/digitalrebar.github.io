@@ -1,0 +1,112 @@
+<html><body><style>
+			* {
+				font-family:sans-serif;
+			}
+			body {
+				text-align:center;
+				padding:1em;
+			}
+			.messages {
+				width:100%;
+				max-width:700px;
+				text-align:left;
+				display:inline-block;
+			}
+			.messages img {
+				background-color:rgb(248,244,240);
+				width:36px;
+				height:36px;
+				border-radius:0.2em;
+				display:inline-block;
+				vertical-align:top;
+				margin-right:0.65em;
+			}
+			.messages .time {
+				display:inline-block;
+				color:rgb(200,200,200);
+				margin-left:0.5em;
+			}
+			.messages .username {
+				display:inline-block;
+				font-weight:600;
+				line-height:1;
+			}
+			.messages .message {
+				display:inline-block;
+				vertical-align:top;
+				line-height:1;
+				width:calc(100% - 3em);
+			}
+			.messages .message .msg {
+				line-height:1.5;
+			}
+		</style><div class="messages"><div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-04 10:35</div><div class="msg">yeah got it working, thought i was using tip DRP but I wasn?t, cheers</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-04 12:31</div><div class="msg">So I?m spinning up DRP using Ansible? so far it does stuff like uploads boot isos, sets up user accounts, configures subnets, sets boot env defaults etc. Basically right now it?ll get a machine to the point of being able to PXE boot a host to discovery, but no further. What I?d like to do is have a full DRP setup (workflows, stages, tasks, params etc) all imported and configured, when DRP is built.
+
+To that end I?m building out a content pack that contains everything for our specific setup, but one thing I?ve realised while looking at packing it is that it relies on some tasks and stages (lldp + others iirc) which come from e.g. `task-library` or `dev-library`. Is it possible to import those content packs automatically? Would it be better to just copy those stages into our own content pack, or do you guys already have a workflow around this type of thing?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-09-04 13:12</div><div class="msg">```#!/bin/bash
+#
+# customize me
+RACKN_ACCOUNT_ID=${RACKN_ACCOUNT_ID:-""}
+?
+[[ -z "$RACKN_ACCOUNT_ID" ]] &amp;&amp; read -p "RackN Account ID: " RACKN_ACCOUNT_ID
+?
+RACKN_AUTH="?username=${RACKN_ACCOUNT_ID}"
+CURL="curl -sfSL"
+BASE_URL="<a href="https://qww9e4paf1.execute-api.us-west-2.amazonaws.com/main/catalog">https://qww9e4paf1.execute-api.us-west-2.amazonaws.com/main/catalog</a>"
+CONTENTS="drp-community-content task-library terraform krib"
+?
+for CONTENT in $CONTENTS
+do
+  echo "Saving '$CONTENT' content pack as './${CONTENT}.json' ... "
+  $CURL \
+    ${BASE_URL}/content/${CONTENT}${RACKN_AUTH} \
+    -o ${CONTENT}.json
+  # example inject in to DRP endpoint
+  # drpcli contents create ${CONTENT}.json
+done```</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-09-04 13:13</div><div class="msg">@ ^^^ Sample shell script snippet to download content pack</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-09-04 13:14</div><div class="msg">You need a valid portal user ID (account ID) for the Auth piece </div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-04 13:17</div><div class="msg">@shane aaaaaah awesome, I assumed the AWS url used by the UI was transient and didn?t want to write anything around it but if that?s the way, then off I go :smile: Thanks muchly</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-09-04 14:27</div><div class="msg">@ - you willing to share your ansible playbook?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-04 14:29</div><div class="msg">@greg it?s on internal VCS right now as not finished but yeah, should be doable</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-09-04 14:30</div><div class="msg">@ - when you're ready to show your stuff ( :slightly_smiling_face: ) I'll be happy to work with you to get it published</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-04 14:31</div><div class="msg">Cool :+1:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-09-04 14:31</div><div class="msg">Thanks!</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-04 14:33</div><div class="msg">use case my side is bootstrapping new ovirt-based virt clusters so our ansible stuff (will contain) cumulus roles and such</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-04 14:33</div><div class="msg">has anyone run the DRP runner on cumulus linux before? :smile:</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-04 16:08</div><div class="msg">Sorry for all the questions :slightly_smiling_face: - do tokens generated with `drpcli users token &lt;id&gt;` expire? Having a weird issue with `drpcli contents create`  (from ansible task below), where when using `RS_TOKEN` in the environment the first run of `drpcli ...` works and then all the following using the same token fail with `AUTH: Validation failed`. If I comment `RS_TOKEN` and use `RS_KEY` instead it works fine. Could activating one of those content files invalidate the token for example?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-09-04 16:10</div><div class="msg">The default timeout unless specified is an hour.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-09-04 16:11</div><div class="msg">you can add `ttl &lt;seconds&gt;` to the cli to increase the duration.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-04 16:12</div><div class="msg">hrm - this is all over in a matter of seconds , activating content files is basically the next step after getting the token</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-04 16:13</div><div class="msg">think i?ll give it a try later manually and see what happens, just to rule out ansible weirdness</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-09-04 16:14</div><div class="msg">You may have to make sure you don?t get double double quotes</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-09-04 16:14</div><div class="msg">Does json_query return a double quoted json string?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-04 16:16</div><div class="msg">nope, returns as just a normal python string so if I change the command to `env` i get `RS_TOKEN=&lt;token&gt;` with no double quotes</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-04 16:28</div><div class="msg">baffling? near as I can tell, the environment ansible is sending is correct</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-09-04 16:28</div><div class="msg">it may be a bug in our token auth side</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-04 16:29</div><div class="msg">however if i split the commands up and run them manually (two separate tasks) it doesn?t happen</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-04 16:29</div><div class="msg">wonder if it?s a timing thing?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-09-04 16:29</div><div class="msg">clock sync issue (probably not - all localhost).</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-04 16:29</div><div class="msg">oh between drpcli and dr-provision</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-09-04 16:30</div><div class="msg">in general shouldn?t matter.  All tokens are calculated relative to the dr-provision</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-04 16:32</div><div class="msg">i added a 5s delay in and it does the same thing, so I guess not timing</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-04 16:34</div><div class="msg">ah well, home time - problem for later :slightly_smiling_face:</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-04 19:31</div><div class="msg">Where can I find more information on RackN pricing?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-09-04 19:35</div><div class="msg">generally, we setup a call to discuss</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-09-04 19:35</div><div class="msg">@ ^^</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-09-04 19:35</div><div class="msg">I'll send you an email</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-04 19:37</div><div class="msg">Sounds good. It sounds like we are going to timebox an effort to implement DRB at a customer site, just not sure I can articulate what RackN would additionally provide + cost.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-09-04 19:39</div><div class="msg">That's why a call is helpful to review cost, components and needs.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-04 19:39</div><div class="msg">Totally. I'll reply to this thread you've started. Thanks.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-09-04 19:58</div><div class="msg"><!here> This is your quarterly request to help promote the project!  Any external promotion helps us spread the word about Digital Rebar Provision.    Even github stars are helpful: <a href="https://github.com/digitalrebar/provision">https://github.com/digitalrebar/provision</a></div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-04 20:29</div><div class="msg">has joined #2018-09-04</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-04 20:33</div><div class="msg">Hi All, how to reset a user password? if he/she?s forgot</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-04 20:36</div><div class="msg">thanks all, i figured it out</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-09-04 20:36</div><div class="msg">nvm -?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-09-04 20:36</div><div class="msg">:slightly_smiling_face:</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-04 20:36</div><div class="msg">thanks @greg</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-04 21:06</div><div class="msg">@greg why the ISO images of Debian-8 and Debian-9 are too small? i ran into issue when install both of them ?can?t find the kernel?. How to fix it?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-09-05 00:03</div><div class="msg">@ - just deployed Debian9 without problems - but you may need to upgrade DRP and DRP community content to latest versions....  Debian pulled version of 8 and 9 "off of the shelf" - so there may be problems with some of the older versions</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-09-05 00:04</div><div class="msg">we use the "mini" ISO to do Debian deployments against, the ISO is small by design, and all packages come from the mirrors</div></div></div><br/>
+</div></body></html>

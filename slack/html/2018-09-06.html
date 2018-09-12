@@ -1,0 +1,102 @@
+<html><body><style>
+			* {
+				font-family:sans-serif;
+			}
+			body {
+				text-align:center;
+				padding:1em;
+			}
+			.messages {
+				width:100%;
+				max-width:700px;
+				text-align:left;
+				display:inline-block;
+			}
+			.messages img {
+				background-color:rgb(248,244,240);
+				width:36px;
+				height:36px;
+				border-radius:0.2em;
+				display:inline-block;
+				vertical-align:top;
+				margin-right:0.65em;
+			}
+			.messages .time {
+				display:inline-block;
+				color:rgb(200,200,200);
+				margin-left:0.5em;
+			}
+			.messages .username {
+				display:inline-block;
+				font-weight:600;
+				line-height:1;
+			}
+			.messages .message {
+				display:inline-block;
+				vertical-align:top;
+				line-height:1;
+				width:calc(100% - 3em);
+			}
+			.messages .message .msg {
+				line-height:1.5;
+			}
+		</style><div class="messages"><div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-06 10:54</div><div class="msg">is the DRP catalog serverless? Just ran into a random 502 attempting to download drp-community-content and then all the others worked fine, felt like a spin up delay or something :slightly_smiling_face:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-09-06 11:24</div><div class="msg">Yes</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-06 12:30</div><div class="msg">cool, i?ll just make Ansible retry a couple of times then :slightly_smiling_face:</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-06 13:32</div><div class="msg">sigh? just realised a day later that I opened an issue for DRP on the drp-content repo :confused:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-09-06 13:55</div><div class="msg">no worries - we track both :slightly_smiling_face:</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-06 14:06</div><div class="msg">added it as a PR to the correct repo anyway, just in case my fix is the correct one :expressionless:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-09-06 14:13</div><div class="msg">thanks @ - we haven't had a chance to review yet, hopefully @greg will get a chance to look at it today</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-06 14:22</div><div class="msg">:+1: - on an unrelated note - am I right that it?s not possible to change the ?global? profile name assigned to all machines right now?
+
+Looks like the default profile name is hardcoded in `DataTracker`. Reason I ask is that ideally I?d like to include my own `global` profile in our own content pack, but as `global` is autocreated I get `keysCannotBeOverridden: global is already in layer 0`.
+
+I can obviously modify the global profile myself but that misses out all the niceties of being able to have everything in the content pack, tracked in git and appropriately CI?d :slightly_smiling_face:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-09-06 14:23</div><div class="msg">yes - `global` is hard coded, and intended to always be available on all machines</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-09-06 14:25</div><div class="msg">it has the lowest order of precedence - so any Params specified in other profiles override it, and subsequently, any Params directly applied to the Machine Object override those</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-09-06 14:25</div><div class="msg">can you just call your global something like `global-squiz` or similarly ... ?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-09-06 14:26</div><div class="msg">you can add a stage that would always add that provide to any machine during discovery</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-06 14:26</div><div class="msg">^ thats what I was missing, thanks :smile:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-09-06 14:26</div><div class="msg">the RackN classify content package performs this function (proxy for @greg )</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-09-06 14:26</div><div class="msg">we also have some Classification content that can be used to verify a machines configuration, and based on some values - apply specific profiles and workflows to those machines</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-09-06 14:27</div><div class="msg">jinx</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-06 14:27</div><div class="msg">hah, thanks guys</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-06 14:27</div><div class="msg">okay i?ll just create a separate one and do it that way</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-06 14:32</div><div class="msg">the whole content pack thing is super useful btw, being able to version control all of it helps a lot?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-09-06 14:34</div><div class="msg">yep - a lesson we learned many years ago ... :slightly_smiling_face:</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-06 14:34</div><div class="msg">That's what attracted our company to DR to begin with -- the ability to deploy infrastructure with git webhooks.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-06 14:38</div><div class="msg">yeah? thats nice</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-06 14:39</div><div class="msg">haven?t even really thought what more we can do with this yet more than what we were using foreman for</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-06 16:49</div><div class="msg">Is it typical for a Machine to have pending tasks after a successful OS installation workflow?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-09-06 16:55</div><div class="msg">@ - what does your Workflow look like, and what are the pending tasks?  The current kickstart/preseed solution allows for adding Stages/Tasks to be executed post-install, but prior to reboot.  One of the (often) common tasks is to run the `runner-service` stage to add the Agent as a service in the final OS piece ... some others include injecting SSH keys for remote access, etc...</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-06 16:56</div><div class="msg">```{
+  "Validated": true,
+  "Available": true,
+  "Errors": [],
+  "ReadOnly": false,
+  "Meta": {
+    "color": "black",
+    "icon": "shuffle",
+    "title": "OracleLinux"
+  },
+  "Name": "oracle-7",
+  "Description": "Oracle Enterprise Linux",
+  "Documentation": "",
+  "Stages": [
+    "oracle-7-install",
+    "complete-nowait"
+  ]
+}```</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-06 16:56</div><div class="msg">`runner-service` rings a bell though, thanks.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-06 17:00</div><div class="msg">Is runner-service included in community content? I don't see it on my local, isolated installation.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-09-06 17:00</div><div class="msg">it's in `task-library`</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-06 17:10</div><div class="msg">Do I need a license for task-library? I'm having trouble installing it from the RackN portal</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-06 17:22</div><div class="msg">Never mind I got it</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-06 17:32</div><div class="msg">@shane that's just what I needed, thanks!</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-06 17:33</div><div class="msg">Got the green checkmark of awesomeness :slightly_smiling_face:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-09-06 17:33</div><div class="msg">cool</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-06 17:55</div><div class="msg">What is a _node_ in terms of licensing paid content?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-09-06 17:56</div><div class="msg">@ - answering on direct message</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-06 20:19</div><div class="msg">man kexec reboots are awesome :smile:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-09-06 20:32</div><div class="msg">lol :slightly_smiling_face:</div></div></div><br/>
+</div></body></html>

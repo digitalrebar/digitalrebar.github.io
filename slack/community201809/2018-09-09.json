@@ -1,0 +1,53 @@
+[
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "Just added ISTIO MESH for Kubernetes (KRIB) using the advanced Helm chart configuration features just pulled into tip.\n<https:\/\/youtu.be\/qWSB3TTVUC8>",
+        "client_msg_id": "305917c1-0266-47b2-961d-6e799a2c3216",
+        "attachments": [
+            {
+                "service_name": "YouTube",
+                "service_url": "https:\/\/www.youtube.com\/",
+                "title": "KRIB Istio Installation via automatic Helm Charts",
+                "title_link": "https:\/\/youtu.be\/qWSB3TTVUC8",
+                "author_name": "RackN & Digital Rebar",
+                "author_link": "https:\/\/www.youtube.com\/channel\/UCr3bBtP-pMsDQ5c0IDjt_LQ",
+                "thumb_url": "https:\/\/i.ytimg.com\/vi\/qWSB3TTVUC8\/hqdefault.jpg",
+                "thumb_width": 480,
+                "thumb_height": 360,
+                "fallback": "YouTube Video: KRIB Istio Installation via automatic Helm Charts",
+                "video_html": "<iframe width=\"400\" height=\"225\" src=\"https:\/\/www.youtube.com\/embed\/qWSB3TTVUC8?feature=oembed&autoplay=1&iv_load_policy=3\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen><\/iframe>",
+                "video_html_width": 400,
+                "video_html_height": 225,
+                "from_url": "https:\/\/youtu.be\/qWSB3TTVUC8",
+                "service_icon": "https:\/\/a.slack-edge.com\/2089\/img\/unfurl_icons\/youtube.png",
+                "id": 1,
+                "original_url": "https:\/\/youtu.be\/qWSB3TTVUC8"
+            }
+        ],
+        "ts": "1536537602.000100",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U6QFVRJNB"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "This capability is available for anything with a Helm chart.  We tried to enable a lot of features in the new helm chart runner - we'd love to hear if we got all of the ones you need",
+        "client_msg_id": "ac28a638-21f8-445a-b359-7ef2768763cd",
+        "ts": "1536537641.000100"
+    },
+    {
+        "type": "message",
+        "user": "UA9Q8FLTC",
+        "text": "Anyone know how to solve the \"Bad archive mirror\" when trying to install debian?",
+        "client_msg_id": "3d5cc0f4-6c45-4747-a691-1f8a51d6b6ff",
+        "ts": "1536561819.000100"
+    }
+]

@@ -1,0 +1,58 @@
+<html><body><style>
+			* {
+				font-family:sans-serif;
+			}
+			body {
+				text-align:center;
+				padding:1em;
+			}
+			.messages {
+				width:100%;
+				max-width:700px;
+				text-align:left;
+				display:inline-block;
+			}
+			.messages img {
+				background-color:rgb(248,244,240);
+				width:36px;
+				height:36px;
+				border-radius:0.2em;
+				display:inline-block;
+				vertical-align:top;
+				margin-right:0.65em;
+			}
+			.messages .time {
+				display:inline-block;
+				color:rgb(200,200,200);
+				margin-left:0.5em;
+			}
+			.messages .username {
+				display:inline-block;
+				font-weight:600;
+				line-height:1;
+			}
+			.messages .message {
+				display:inline-block;
+				vertical-align:top;
+				line-height:1;
+				width:calc(100% - 3em);
+			}
+			.messages .message .msg {
+				line-height:1.5;
+			}
+		</style><div class="messages"><div><img src="https://avatars.slack-edge.com/2018-02-20/319135093095_c0e6268d269110cacc49_72.gif" /><div class="message"><div class="username">dave.parker</div><div class="time">2018-07-11 15:44</div><div class="msg">When deleting a parameter, I see the following JSON patch being sent to the API:
+```
+[{op: "test", path: "/Params/disk-inventory",?}, {op: "remove", path: "/Params/disk-inventory"}]
+```
+Is that "..." a literal string being passed like that, or did something get truncated?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-11 18:05</div><div class="msg">ty @vlowther, that UEFI boot sequence was really starting to anger me. That `reorder-uefi-bootorder` stage was exactly what I needed.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-11 19:22</div><div class="msg">@greg I ran into an issue with the `krib-install-cluster` workflow. I logged an issue and submitted a PR. The travisci build is failing, but not sure why. Let me know if you need anymore info.
+<a href="https://github.com/graham1228/provision-content/tree/issue-109">https://github.com/graham1228/provision-content/tree/issue-109</a>
+<a href="https://github.com/digitalrebar/provision-content/pull/110">https://github.com/digitalrebar/provision-content/pull/110</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-11 19:34</div><div class="msg">@ - I haven't looked at it - but there is an `extra-packages` Param that is designed to allow you to inject packages you want to add - so you can set this Param on the Machine (or in a profile on the Machine) - and add additional packages to the kickstart for install</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-11 19:35</div><div class="msg">HOWEVER - you need to insure you have appropriate Repos defined for those extra packages to succeed install</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-11 19:36</div><div class="msg">Yeah, I did a workaround by just creating my own stage to install wget, but since the template for KRIB is trying to use wget, it makes sense to make sure that package is installed before utilizing the wget command</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/a9639a021e5eb0e7a6850f8f2c5120ea.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0008-72.png" /><div class="message"><div class="username">snesbitt</div><div class="time">2018-07-11 19:42</div><div class="msg">Hi! How do I configure drp and dnsmasq to work together? I've got a router running asuswrt-merlin that is providing dhcp services. I've set up DRP as a dhcp proxy in the GUI, and I have modified the dnsmasq configuration adding the line: dhcp-boot=lpxelinux.0,,192.168.0.15. Net booting a KVM image then succeeds in so far as the drp tftp server is contacted. But then it hangs with an eventual message that ldlinux.c32 is not found.</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/a9639a021e5eb0e7a6850f8f2c5120ea.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0008-72.png" /><div class="message"><div class="username">snesbitt</div><div class="time">2018-07-11 21:46</div><div class="msg">Looks like I got it. I rechecked my subnet configuration and saw the dhcp and proxy were both set to on. Set dhcp off and proxy on, and got a sledgehammer boot.</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/a9639a021e5eb0e7a6850f8f2c5120ea.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0008-72.png" /><div class="message"><div class="username">snesbitt</div><div class="time">2018-07-11 21:46</div><div class="msg">Is dhcp off and proxy on a valid configuration?</div></div></div><br/>
+</div></body></html>

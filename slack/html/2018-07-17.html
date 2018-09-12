@@ -1,0 +1,130 @@
+<html><body><style>
+			* {
+				font-family:sans-serif;
+			}
+			body {
+				text-align:center;
+				padding:1em;
+			}
+			.messages {
+				width:100%;
+				max-width:700px;
+				text-align:left;
+				display:inline-block;
+			}
+			.messages img {
+				background-color:rgb(248,244,240);
+				width:36px;
+				height:36px;
+				border-radius:0.2em;
+				display:inline-block;
+				vertical-align:top;
+				margin-right:0.65em;
+			}
+			.messages .time {
+				display:inline-block;
+				color:rgb(200,200,200);
+				margin-left:0.5em;
+			}
+			.messages .username {
+				display:inline-block;
+				font-weight:600;
+				line-height:1;
+			}
+			.messages .message {
+				display:inline-block;
+				vertical-align:top;
+				line-height:1;
+				width:calc(100% - 3em);
+			}
+			.messages .message .msg {
+				line-height:1.5;
+			}
+		</style><div class="messages"><div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-17 13:40</div><div class="msg">hm... @ compiled for busybox?  no.   What distro are you running drpcli in?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-17 13:40</div><div class="msg">esxi with a busybox interpreter</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-17 13:40</div><div class="msg">esxi 6.7 to be exact</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-17 13:41</div><div class="msg">unfortunately - we don't have `drpcli` for ESXi platforms ... it's a closed "appliance" environment :disappointed:</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-17 13:42</div><div class="msg">In that case what would be the best way to reach back to drp from the host to continue the workflow without drpcli?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-17 13:43</div><div class="msg">You don't. :disappointed: Everything you want to do afterwards has to be scripted in the kickstart.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-17 13:43</div><div class="msg">I was thinking a curl/wget/nc command, but the `processjobs` isnt exposed through the API</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-17 13:43</div><div class="msg">unless the esxi userspace opens up, we cannot run tasks in it.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-17 13:44</div><div class="msg">processjobs is not as single API call -- it is its own state machine.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-17 13:45</div><div class="msg">So the issue I have is when always network booting, I somehow have to reach back to drp so it will update the boot order or my server will just continually reboot into the esxi installer via PXE</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-17 13:45</div><div class="msg">hm.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-17 13:46</div><div class="msg">the -tip version of os-other should have that fixed.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-17 13:46</div><div class="msg">Is there a way to have the esx-6-install stage not wait for the runner and switch over to local bootenv?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-17 13:47</div><div class="msg">...</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-17 13:47</div><div class="msg">or not.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-17 13:47</div><div class="msg">Hang on a few.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-17 13:48</div><div class="msg">I don't have access to the os-other repo.......</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-17 13:48</div><div class="msg">ah</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-17 13:48</div><div class="msg">Well, then, a snippet like this should do the job:</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-17 13:50</div><div class="msg">Ah yes, that's where I was headed with needing drpcli........ty!</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-17 13:50</div><div class="msg">tested on esxi 6.5, it may need some python3 fixes for 3.7</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-17 13:52</div><div class="msg">Let me know if that works, and I would appreciate any tweaks that may be needed.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-17 13:52</div><div class="msg">I don't mess with esxi that much.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-17 13:52</div><div class="msg">Yep, I'll test out and if there needs to be any changes I'll shoot them back to you</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-17 13:53</div><div class="msg">Cool.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-17 13:53</div><div class="msg">Much appreciated!</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-17 17:02</div><div class="msg"><!channel> - our community meetup is scheduled to start in 1 hour (11 am PST).  We hope you can join us.  Meetup topics are HA Kubernetes with KRIB, v3.9.0 release notes, Documentation All The Things!, and as always community feedback.  Meetup details:  <a href="https://www.meetup.com/digitalrebar/events/lchdhpyxkbwb/">https://www.meetup.com/digitalrebar/events/lchdhpyxkbwb/</a></div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-17 17:47</div><div class="msg">I have a sledgehammer question.  Where is the default machine name set?  I would like to add the asset tag from gohai to the initial name to ease identifying servers when I boot more than one.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-17 18:02</div><div class="msg">Dan - sledgehammer will use the DHCP supplied name in the lease - if not defined there, it'll fall back to using a preset naming preceded with a `d`, then the MAC address in dashed notation.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-17 18:02</div><div class="msg">You can set the Machine Name as part of a Stage in your Workflow - and make a call to get the Asset Tag from Gohai and set the name - subsequent boots of the machine will pick up the new name.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-17 18:14</div><div class="msg">I gotta bail out, is this being recorded so I can reference it later?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-17 18:14</div><div class="msg">yes</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-17 18:14</div><div class="msg">Thank you!</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-02-20/319135093095_c0e6268d269110cacc49_72.gif" /><div class="message"><div class="username">dave.parker</div><div class="time">2018-07-17 18:24</div><div class="msg">Maybe a dumb question, but why the decision to create parameters with "/" in the name?  It seems to be messing with my ability to use python's requests library to interface with the API.  Requests insists on acting on, for instance, 'ipmi' instead of 'ipmi/address'</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-02-20/319135093095_c0e6268d269110cacc49_72.gif" /><div class="message"><div class="username">dave.parker</div><div class="time">2018-07-17 18:25</div><div class="msg">Code that works fine for parameters without forward slashes fails on parameters with forward slashes in the name.  :disappointed:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-17 18:25</div><div class="msg">yeah, it's a pain.  there's history about why</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-17 18:25</div><div class="msg">check out <a href="https://github.com/digitalrebar/provision/blob/master/integrations/ansible/inventory.py">https://github.com/digitalrebar/provision/blob/master/integrations/ansible/inventory.py</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-17 18:25</div><div class="msg">it will show you how to handle the / in the names</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-02-20/319135093095_c0e6268d269110cacc49_72.gif" /><div class="message"><div class="username">dave.parker</div><div class="time">2018-07-17 18:27</div><div class="msg">Ok, thanks.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-02-20/319135093095_c0e6268d269110cacc49_72.gif" /><div class="message"><div class="username">dave.parker</div><div class="time">2018-07-17 19:02</div><div class="msg">This isn't quite helping me unfortunately, I'm still confused.
+I'm trying to send this patch to the rebar server via the python requests module:
+```patch = [{"op": "test", "path": "/Params/{}".format(parameter), "value": value}, {"op": "remove", "path": "/Params/{}".format(parameter)}]```
+When 'parameter' is set to something like 'ipmi/enabled' that evaluates to this:
+```patch = [{"op": "test", "path": "/Params/ipmi/enabled", "value": value}, {"op": "remove", "path": "/Params/ipmi/enabled"}]```
+and requests fails because 
+```Patch error at line 0: Selector ipmi not a member of map[string]interface```
+I can't seem to escape that '/' in any way that makes this work.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-17 19:10</div><div class="msg">Oh!! Patch had special semantics for that... looking up reference</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-17 19:10</div><div class="msg">It's a patch spec thing</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-17 19:11</div><div class="msg">JSON Pointer, specifically</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-17 19:12</div><div class="msg"><a href="https://tools.ietf.org/html/rfc6901">https://tools.ietf.org/html/rfc6901</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-02-20/319135093095_c0e6268d269110cacc49_72.gif" /><div class="message"><div class="username">dave.parker</div><div class="time">2018-07-17 19:12</div><div class="msg">Oh ok</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-17 19:13</div><div class="msg">and JSON patch: <a href="https://tools.ietf.org/html/rfc6902">https://tools.ietf.org/html/rfc6902</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-17 19:13</div><div class="msg">There are probably Python libraries to handle generating them for you automatically.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-02-20/319135093095_c0e6268d269110cacc49_72.gif" /><div class="message"><div class="username">dave.parker</div><div class="time">2018-07-17 19:32</div><div class="msg">Hooray!  That worked.  TIL</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-02-20/319135093095_c0e6268d269110cacc49_72.gif" /><div class="message"><div class="username">dave.parker</div><div class="time">2018-07-17 19:32</div><div class="msg">Thanks.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-17 19:37</div><div class="msg">it's a common trap for people starting w/ patch coding.  Think of it as earning the / delimiter badge</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-02-20/319135093095_c0e6268d269110cacc49_72.gif" /><div class="message"><div class="username">dave.parker</div><div class="time">2018-07-17 19:39</div><div class="msg">:smile:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-17 19:44</div><div class="msg">@dave.parker has earned the Patch ~ Escape Badge</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2018-02-20/319135093095_c0e6268d269110cacc49_72.gif" /><div class="message"><div class="username">dave.parker</div><div class="time">2018-07-17 19:45</div><div class="msg">lol!</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-17 20:38</div><div class="msg"><!here> replay from today's meetup:  <a href="https://u.rackn.io/mtup21">https://u.rackn.io/mtup21</a></div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-17 20:50</div><div class="msg">@vlowther Here is the updated working python code for esxi 6.7 and python3:
+```%pre --interpreter=python
+import urllib.request
+import ssl
+
+url = '{{.ApiURL}}/api/v3/machines/{{.Machine.UUID}}'
+
+opener = urllib.request.build_opener(urllib.request.HTTPSHandler(context=ssl.SSLContext(ssl.PROTOCOL_SSLv23)))
+
+patch = "[\n{\"op\":\"replace\",\"path\":\"/Workflow\",\"value\":\"\"},\n{\"op\":\"replace\",\"path\":\"/Stage\",\"value\":\"none\"},\n{\"op\":\"replace\",\"path\":\"/BootEnv\",\"value\":\"local\"}\n]"
+patch = patch.encode('ascii')
+
+req = urllib.request.Request(url, data=patch)
+req.add_header('Content-Type', 'application/json')
+req.add_header('Authorization','Bearer {{.GenerateToken}}')
+req.add_header('Cache-Control', 'no-cache')
+req.get_method = lambda: 'PATCH'
+r = opener.open(req)```</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-17 20:51</div><div class="msg">Here is what I came up with after spending the day  testing:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-17 20:52</div><div class="msg">And the same thing for esx 6.0:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-17 20:54</div><div class="msg"><!here>: The next -tip of the os-other content pack will have working examples of esxi6.0u2, 6.5.0a, 6.5.0u2, and 6.7.0</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-17 20:57</div><div class="msg">@ why the cache-control header?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-17 20:58</div><div class="msg">I was just using postman to test and it had it in the code.......probably not needed</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-17 20:58</div><div class="msg">well, dr-provision doesn't care. :slightly_smiling_face:</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-17 21:02</div><div class="msg">Thanks for the help on this @vlowther</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-07-17 21:02</div><div class="msg">No prob.</div></div></div><br/>
+</div></body></html>

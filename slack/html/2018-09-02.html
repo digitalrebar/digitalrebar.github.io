@@ -1,0 +1,55 @@
+<html><body><style>
+			* {
+				font-family:sans-serif;
+			}
+			body {
+				text-align:center;
+				padding:1em;
+			}
+			.messages {
+				width:100%;
+				max-width:700px;
+				text-align:left;
+				display:inline-block;
+			}
+			.messages img {
+				background-color:rgb(248,244,240);
+				width:36px;
+				height:36px;
+				border-radius:0.2em;
+				display:inline-block;
+				vertical-align:top;
+				margin-right:0.65em;
+			}
+			.messages .time {
+				display:inline-block;
+				color:rgb(200,200,200);
+				margin-left:0.5em;
+			}
+			.messages .username {
+				display:inline-block;
+				font-weight:600;
+				line-height:1;
+			}
+			.messages .message {
+				display:inline-block;
+				vertical-align:top;
+				line-height:1;
+				width:calc(100% - 3em);
+			}
+			.messages .message .msg {
+				line-height:1.5;
+			}
+		</style><div class="messages"><div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-09-02 16:58</div><div class="msg">@ - I assume that `network-configuration` is a param structure that you created?   The "`/`" notation does not by itself reference "nested elements" in the Param.  We use it for separation of Content Pack params - so we often notate things like "krib/foo" as "belongs to the 'krib' content, and is Param "foo".  However - the Params full/correct name is still "krib/foo".  The slash does not denote anything "special" about the param - it's just part of the name of the param.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-09-02 17:00</div><div class="msg">If you want to use a more complex single YAML/JSON object with an array structure - then you'll need to look at a few other examples.  I'd recommend checking the KRIB content pack for some examples - here the "`krib/cluster-masters`" param as an example (in YAML):
+<a href="https://github.com/digitalrebar/provision-content/blob/master/krib/params/krib-cluster-masters.yaml">https://github.com/digitalrebar/provision-content/blob/master/krib/params/krib-cluster-masters.yaml</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-09-02 17:03</div><div class="msg">You can see it in use in the template with the `range` golang template call iterating over it, at:
+<a href="https://github.com/digitalrebar/provision-content/blob/master/krib/templates/krib-kubeadm.cfg.tmpl#L14">https://github.com/digitalrebar/provision-content/blob/master/krib/templates/krib-kubeadm.cfg.tmpl#L14</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-09-02 17:07</div><div class="msg">An operating example of this structure in use looks like:
+```- Address: 10.75.67.9
+  Name: machines-ewr1-01.unspecified.domain.local
+  Uuid: b963457f-a2c8-453c-9223-3620c95f7af2
+- Address: 10.75.63.11
+  Name: machines-ewr1-02.unspecified.domain.local
+  Uuid: b962q57f-a2c8-453c-9297-3620c9447af2```</div></div></div><br/>
+</div></body></html>

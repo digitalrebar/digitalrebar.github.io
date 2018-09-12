@@ -1,0 +1,16 @@
+[
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@U7J7U5DA9> colors are generally (not always) determined by the item being shown.  So overview is showing you stages.  If your ending stage is yellow (e.g. sledgehammer-wait is an intermediate state) then overview will show yellow.",
+        "client_msg_id": "aca64c89-5fc1-4a12-a34c-0b8c445170dd",
+        "ts": "1534867380.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "for the bulk page, the \"all tasks are done\" color is green",
+        "client_msg_id": "86213b0c-6ee9-4dae-b8de-f98ef9b1dc8c",
+        "ts": "1534867400.000100"
+    }
+]

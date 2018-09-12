@@ -1,0 +1,62 @@
+<html><body><style>
+			* {
+				font-family:sans-serif;
+			}
+			body {
+				text-align:center;
+				padding:1em;
+			}
+			.messages {
+				width:100%;
+				max-width:700px;
+				text-align:left;
+				display:inline-block;
+			}
+			.messages img {
+				background-color:rgb(248,244,240);
+				width:36px;
+				height:36px;
+				border-radius:0.2em;
+				display:inline-block;
+				vertical-align:top;
+				margin-right:0.65em;
+			}
+			.messages .time {
+				display:inline-block;
+				color:rgb(200,200,200);
+				margin-left:0.5em;
+			}
+			.messages .username {
+				display:inline-block;
+				font-weight:600;
+				line-height:1;
+			}
+			.messages .message {
+				display:inline-block;
+				vertical-align:top;
+				line-height:1;
+				width:calc(100% - 3em);
+			}
+			.messages .message .msg {
+				line-height:1.5;
+			}
+		</style><div class="messages"><div><img src="https://avatars.slack-edge.com/2017-10-13/256271954148_da84c7b3cef0ae8f3c29_72.png" /><div class="message"><div class="username">johnsutten</div><div class="time">2018-08-20 00:25</div><div class="msg">im going to install debian 9.5 and get back with you</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-10-13/256271954148_da84c7b3cef0ae8f3c29_72.png" /><div class="message"><div class="username">johnsutten</div><div class="time">2018-08-20 01:21</div><div class="msg">I think this config might work a bit better anyone have suggestions? epn0s8 is on the internet and 10.0.0.x is the dhcp pxe server and when machines are provisioned they can communicate to the outside world</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-10-13/256271954148_da84c7b3cef0ae8f3c29_72.png" /><div class="message"><div class="username">johnsutten</div><div class="time">2018-08-20 01:21</div><div class="msg"># The primary network interface
+allow-hotplug enp0s8
+iface enp0s8 inet static
+address 192.168.1.12
+netmask 255.255.255.0
+broadcast 192.168.1.255
+gateway 192.168.1.1
+dns-nameservers 192.168.1.1
+
+# Secondary
+allow-hotplug enp0s9
+iface enp0s9 inet static
+address 10.0.0.1
+netmask 255.255.255.0
+
+post-up iptables -t nat -A POSTROUTING -o enp0s8 -j SNAT --to-source 192.168.1.12
+post-down iptables -t nat -D POSTROUTING -o enp0s8 -j SNAT --to-source 192.168.1.12</div></div></div><br/>
+</div></body></html>

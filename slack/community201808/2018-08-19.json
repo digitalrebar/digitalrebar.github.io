@@ -1,0 +1,23 @@
+[
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "im going to install debian 9.5 and get back with you",
+        "client_msg_id": "b0152a20-c983-4862-ba57-0d746e1d4080",
+        "ts": "1534724747.000100"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "I think this config might work a bit better anyone have suggestions? epn0s8 is on the internet and 10.0.0.x is the dhcp pxe server and when machines are provisioned they can communicate to the outside world",
+        "client_msg_id": "2c0f4e63-bdb0-4df6-9de1-fad997033bb6",
+        "ts": "1534728093.000100"
+    },
+    {
+        "type": "message",
+        "user": "U7J7U5DA9",
+        "text": "# The primary network interface\nallow-hotplug enp0s8\niface enp0s8 inet static\naddress 192.168.1.12\nnetmask 255.255.255.0\nbroadcast 192.168.1.255\ngateway 192.168.1.1\ndns-nameservers 192.168.1.1\n\n# Secondary\nallow-hotplug enp0s9\niface enp0s9 inet static\naddress 10.0.0.1\nnetmask 255.255.255.0\n\npost-up iptables -t nat -A POSTROUTING -o enp0s8 -j SNAT --to-source 192.168.1.12\npost-down iptables -t nat -D POSTROUTING -o enp0s8 -j SNAT --to-source 192.168.1.12",
+        "client_msg_id": "9321e702-7775-4071-8753-bd7290f1a0de",
+        "ts": "1534728095.000100"
+    }
+]

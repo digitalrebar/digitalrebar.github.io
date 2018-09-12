@@ -5,5 +5,26 @@
         "text": "<@UA98B96BA> you do need to use the TIP version (which is default now) to get the unrestricted version",
         "client_msg_id": "84f22ed8-d95b-4471-8d3e-1f1a96c55b39",
         "ts": "1530979762.000069"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "I've created a video showing my latest work on KRIB.",
+        "client_msg_id": "74bc5293-2c67-49dd-9a9d-a2684acec0bb",
+        "ts": "1531003135.000069"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<https:\/\/www.youtube.com\/playlist?list=PLXPBeIrpXjfhKqmTvxI5-0CmgUh82dztr>",
+        "client_msg_id": "bb315cd5-d0f0-4082-aa40-217d95bdef45",
+        "ts": "1531003137.000044"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "There's also a video about my dev process",
+        "client_msg_id": "60dfb54d-5821-4864-ade5-8e64ad11292e",
+        "ts": "1531003147.000046"
     }
 ]

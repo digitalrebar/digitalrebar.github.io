@@ -1,0 +1,67 @@
+<html><body><style>
+			* {
+				font-family:sans-serif;
+			}
+			body {
+				text-align:center;
+				padding:1em;
+			}
+			.messages {
+				width:100%;
+				max-width:700px;
+				text-align:left;
+				display:inline-block;
+			}
+			.messages img {
+				background-color:rgb(248,244,240);
+				width:36px;
+				height:36px;
+				border-radius:0.2em;
+				display:inline-block;
+				vertical-align:top;
+				margin-right:0.65em;
+			}
+			.messages .time {
+				display:inline-block;
+				color:rgb(200,200,200);
+				margin-left:0.5em;
+			}
+			.messages .username {
+				display:inline-block;
+				font-weight:600;
+				line-height:1;
+			}
+			.messages .message {
+				display:inline-block;
+				vertical-align:top;
+				line-height:1;
+				width:calc(100% - 3em);
+			}
+			.messages .message .msg {
+				line-height:1.5;
+			}
+		</style><div class="messages"><div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-08-18 19:39</div><div class="msg">@johnsutten - did you manage to reset your login?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-08-18 20:37</div><div class="msg">Just did a complete KRIB run through - <a href="https://youtu.be/rzBq3BsYQTM">https://youtu.be/rzBq3BsYQTM</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-10-13/256271954148_da84c7b3cef0ae8f3c29_72.png" /><div class="message"><div class="username">johnsutten</div><div class="time">2018-08-18 21:24</div><div class="msg">@zehicle I made it back</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-10-13/256271954148_da84c7b3cef0ae8f3c29_72.png" /><div class="message"><div class="username">johnsutten</div><div class="time">2018-08-18 21:27</div><div class="msg">as always you and the team have been busy</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-10-13/256271954148_da84c7b3cef0ae8f3c29_72.png" /><div class="message"><div class="username">johnsutten</div><div class="time">2018-08-18 22:04</div><div class="msg">i think this is right... <a href="https://imgur.com/a/mT8PQGu">https://imgur.com/a/mT8PQGu</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-08-18 23:38</div><div class="msg">are you using latest?  what are you trying to do?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-10-13/256271954148_da84c7b3cef0ae8f3c29_72.png" /><div class="message"><div class="username">johnsutten</div><div class="time">2018-08-19 00:37</div><div class="msg">working on a cluster...</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-10-13/256271954148_da84c7b3cef0ae8f3c29_72.png" /><div class="message"><div class="username">johnsutten</div><div class="time">2018-08-19 00:38</div><div class="msg">i was able to get a PXE boot and setup a workflow to install ubuntu 16.04 and it hangs on preseed at 16%</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-10-13/256271954148_da84c7b3cef0ae8f3c29_72.png" /><div class="message"><div class="username">johnsutten</div><div class="time">2018-08-19 00:38</div><div class="msg">I am using the steps to install for a production install</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-10-13/256271954148_da84c7b3cef0ae8f3c29_72.png" /><div class="message"><div class="username">johnsutten</div><div class="time">2018-08-19 00:41</div><div class="msg">the other question is how do i remove a step from a workflow i created</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-10-13/256271954148_da84c7b3cef0ae8f3c29_72.png" /><div class="message"><div class="username">johnsutten</div><div class="time">2018-08-19 00:52</div><div class="msg">fixed the workflow - it was faster to recreate than to edit and apply</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-08-19 02:27</div><div class="msg">workflow in the UX is drag and drop</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-08-19 02:28</div><div class="msg">I think ubuntu requires a DNS and/or external access.  you may need to set your DHCP to find an external path</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-08-19 03:55</div><div class="msg">@johnsutten does this match your issue?  <a href="https://provision.readthedocs.io/en/tip/doc/faq-troubleshooting.html?highlight=ubuntu#booting-ubunutu-without-external-access">https://provision.readthedocs.io/en/tip/doc/faq-troubleshooting.html?highlight=ubuntu#booting-ubunutu-without-external-access</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-10-13/256271954148_da84c7b3cef0ae8f3c29_72.png" /><div class="message"><div class="username">johnsutten</div><div class="time">2018-08-19 03:59</div><div class="msg">i am sure im missing something in the /etc/network/interfaces..</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-10-13/256271954148_da84c7b3cef0ae8f3c29_72.png" /><div class="message"><div class="username">johnsutten</div><div class="time">2018-08-19 03:59</div><div class="msg"># The primary network interface
+allow-hotplugs enp0s8
+iface enp0s8 inet dhcp
+
+# Secondary
+allow-hotplugs enp0s9
+iface enp0s9 inet static
+address 10.0.0.1
+netmask 255.255.255.0</div></div></div><br/>
+</div></body></html>

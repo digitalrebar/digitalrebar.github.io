@@ -1,0 +1,55 @@
+<html><body><style>
+			* {
+				font-family:sans-serif;
+			}
+			body {
+				text-align:center;
+				padding:1em;
+			}
+			.messages {
+				width:100%;
+				max-width:700px;
+				text-align:left;
+				display:inline-block;
+			}
+			.messages img {
+				background-color:rgb(248,244,240);
+				width:36px;
+				height:36px;
+				border-radius:0.2em;
+				display:inline-block;
+				vertical-align:top;
+				margin-right:0.65em;
+			}
+			.messages .time {
+				display:inline-block;
+				color:rgb(200,200,200);
+				margin-left:0.5em;
+			}
+			.messages .username {
+				display:inline-block;
+				font-weight:600;
+				line-height:1;
+			}
+			.messages .message {
+				display:inline-block;
+				vertical-align:top;
+				line-height:1;
+				width:calc(100% - 3em);
+			}
+			.messages .message .msg {
+				line-height:1.5;
+			}
+		</style><div class="messages"><div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-07 11:17</div><div class="msg">Hi All! Is it supported paravirtualized disk drive provided by KVM host? With ubuntu 18.04 installation is failing on missing disk, without virtio controller is deployment finished without error...</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-08-07 13:15</div><div class="msg">Yes, but you have to change the boot disk to `vda` using the `operating-system-disk` parameter.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-15/2462284870_72.jpg" /><div class="message"><div class="username">vlowther</div><div class="time">2018-08-07 13:15</div><div class="msg">since disks hanging off a virtio disk controller are not scsi devices.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-08-07 15:46</div><div class="msg">BUG ALERT: we've heard of an issue with the UX not connecting to endpoints recently.  We have duplicated this issue and are working on a fix.  If you would like updates about this issue, please subscribe to <a href="https://github.com/digitalrebar/provision/issues/965">https://github.com/digitalrebar/provision/issues/965</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-08-07 16:13</div><div class="msg">I've posted a workaround for the bug in the bug histlory</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/a2d274b96ea1d5c2a235db48dea6403b.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F66f9%2Fimg%2Favatars%2Fava_0003-72.png" /><div class="message"><div class="username">romain.lafontaine</div><div class="time">2018-08-07 18:06</div><div class="msg">The workaround doesn't work on my side :disappointed: waiting for the fix</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-08-07 19:04</div><div class="msg">We are testing a fix now.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-08-07 19:04</div><div class="msg">you may be able to workaround by starting with URL/system</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-08-07 19:15</div><div class="msg">Okay - releases are published.  tip,test,stable, and v1.4.1 are updated in the tree.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-08-07 19:16</div><div class="msg">It will take up to 24 hours to filter through Amazon.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-08-07 19:16</div><div class="msg"><!channel> -^</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-08-07 22:23</div><div class="msg">has joined #2018-08-07</div></div></div><br/>
+</div></body></html>

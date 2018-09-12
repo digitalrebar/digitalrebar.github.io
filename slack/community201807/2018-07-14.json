@@ -1,0 +1,92 @@
+[
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "There is some discussion of this feature earlier in the channel.  I could not find the docs reference. ",
+        "client_msg_id": "76bbec73-81ee-4302-8f82-72cdd59f59a8",
+        "ts": "1531570690.000010"
+    },
+    {
+        "text": "Ok - basically my bad - the custom template is getting invoked and it was an issue with my preseed command.:blush:\n\nI will mention that the log is a bit confusing. Just prior to the dump of the seed file in the log is a series of entries of the form: `Param &lt;param&gt; not defined, falling back to default value`. I made the assumption that since there was no entry for part-scheme, it wasn't being seen.\n\nBottom line, it would be nice for debugging purposes if the logs contained a complete dump of all parameters and values for a given run.",
+        "client_msg_id": "34c5f7b0-18bf-4b0b-87e8-6e43430f4cc1",
+        "thread_ts": "1531507088.000275",
+        "is_thread_broadcast": true,
+        "edited": {
+            "user": "U7P8TES5B",
+            "ts": "1531592353.000000"
+        },
+        "type": "message",
+        "subtype": "thread_broadcast",
+        "user": "U7P8TES5B",
+        "root": {
+            "type": "message",
+            "user": "U7P8TES5B",
+            "text": "Sorry for the general cluelessness, but I'm having problems getting DRP to recognize a custom partitioning scheme. I've cloned the template part-scheme-default.tmpl to part-scheme-btrfs.tmpl.  After the initial boot, I edit the machine to invoke the ubuntu18 workflow and set a parameter 'part-scheme' to 'btrfs'. Machine reboots and starts installing, but does not invoke the custom template. I've turned trace on but I don't see any inidcation that DRP is looking for a value for part-scheme. Oh, and how do I add a stage to a workflow?",
+            "client_msg_id": "bff60715-1c18-4a54-8ad5-4bd94a31b57d",
+            "thread_ts": "1531507088.000275",
+            "reply_count": 3,
+            "replies": [
+                {
+                    "user": "U7P8TES5B",
+                    "ts": "1531591945.000033"
+                },
+                {
+                    "user": "U6QFVRJNB",
+                    "ts": "1531593222.000042"
+                },
+                {
+                    "user": "U7P8TES5B",
+                    "ts": "1531604810.000045"
+                }
+            ],
+            "unread_count": 3,
+            "ts": "1531507088.000275"
+        },
+        "ts": "1531591945.000033"
+    },
+    {
+        "text": "<@U7P8TES5B>  - if you turn up the logging levels on the info &amp; preferences pages, you'll see a lot more... Probably the renderer log",
+        "unfurl_links": true,
+        "client_msg_id": "ecbab8fd-7d0a-4356-b27c-6026c5681b54",
+        "unfurl_media": true,
+        "thread_ts": "1531507088.000275",
+        "is_thread_broadcast": true,
+        "type": "message",
+        "subtype": "thread_broadcast",
+        "user": "U6QFVRJNB",
+        "root": {
+            "type": "message",
+            "user": "U7P8TES5B",
+            "text": "Sorry for the general cluelessness, but I'm having problems getting DRP to recognize a custom partitioning scheme. I've cloned the template part-scheme-default.tmpl to part-scheme-btrfs.tmpl.  After the initial boot, I edit the machine to invoke the ubuntu18 workflow and set a parameter 'part-scheme' to 'btrfs'. Machine reboots and starts installing, but does not invoke the custom template. I've turned trace on but I don't see any inidcation that DRP is looking for a value for part-scheme. Oh, and how do I add a stage to a workflow?",
+            "client_msg_id": "bff60715-1c18-4a54-8ad5-4bd94a31b57d",
+            "thread_ts": "1531507088.000275",
+            "reply_count": 3,
+            "replies": [
+                {
+                    "user": "U7P8TES5B",
+                    "ts": "1531591945.000033"
+                },
+                {
+                    "user": "U6QFVRJNB",
+                    "ts": "1531593222.000042"
+                },
+                {
+                    "user": "U7P8TES5B",
+                    "ts": "1531604810.000045"
+                }
+            ],
+            "unread_count": 3,
+            "ts": "1531507088.000275"
+        },
+        "ts": "1531593222.000042"
+    },
+    {
+        "type": "message",
+        "user": "U7P8TES5B",
+        "text": "<@U6QFVRJNB> - BootEnv, Renderer and Default Log Level were all set to trace.",
+        "client_msg_id": "d7d251bf-8897-49f8-8656-3083127baa75",
+        "thread_ts": "1531507088.000275",
+        "parent_user_id": "U7P8TES5B",
+        "ts": "1531604810.000045"
+    }
+]

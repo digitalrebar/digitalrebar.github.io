@@ -1,0 +1,425 @@
+[
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "somehow a spelling error has found itself into the UI tip :smile:",
+        "client_msg_id": "a1fc80a3-5f26-4c99-88a6-4430312d1edd",
+        "ts": "1535537437.000100"
+    },
+    {
+        "type": "message",
+        "text": "",
+        "files": [
+            {
+                "id": "FCJKKNV1U",
+                "created": 1535537470,
+                "timestamp": 1535537470,
+                "name": "Screen Shot 2018-08-29 at 11.10.04.png",
+                "title": "pic.jpeg",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "UBXEU90UQ",
+                "editable": false,
+                "size": 9171,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FCJKKNV1U\/screen_shot_2018-08-29_at_11.10.04.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FCJKKNV1U\/download\/screen_shot_2018-08-29_at_11.10.04.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FCJKKNV1U-8d0913359c\/screen_shot_2018-08-29_at_11.10.04_64.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FCJKKNV1U-8d0913359c\/screen_shot_2018-08-29_at_11.10.04_80.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FCJKKNV1U-8d0913359c\/screen_shot_2018-08-29_at_11.10.04_360.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_360_w": 320,
+                "thumb_360_h": 74,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FCJKKNV1U-8d0913359c\/screen_shot_2018-08-29_at_11.10.04_160.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "image_exif_rotation": 1,
+                "original_w": 320,
+                "original_h": 74,
+                "permalink": "https:\/\/rackn.slack.com\/files\/UBXEU90UQ\/FCJKKNV1U\/screen_shot_2018-08-29_at_11.10.04.png",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FCJKKNV1U-cd7e0e5400"
+            }
+        ],
+        "upload": true,
+        "user": "UBXEU90UQ",
+        "display_as_bot": false,
+        "ts": "1535537471.000100"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "oh and usbents",
+        "client_msg_id": "129cbdf8-4772-469c-80fe-6315da206ccb",
+        "ts": "1535537671.000100"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "subents*",
+        "client_msg_id": "be4ee63d-73f6-4dc9-bfb1-309577e9b4dd",
+        "ts": "1535537673.000100"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "so lets say i have an instance of DRP in each DC.. how do i keep the ‘custom’ stuff in sync? e.g. I have custom params, templates, profiles, workflows etc",
+        "client_msg_id": "64a90658-bd8b-4615-a150-13b6ad7670ed",
+        "ts": "1535541684.000200"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "is that what packages are for?",
+        "client_msg_id": "470bb353-8d25-4e3e-ae63-49cc811fa184",
+        "ts": "1535541689.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "Content bundles, yes.",
+        "client_msg_id": "d870a429-8423-49dd-af92-06ad8a584381",
+        "ts": "1535543921.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@UBXEU90UQ> RackN had been building tooling for that",
+        "client_msg_id": "8bbcd897-f7b0-4d50-b6d7-a9c07b0a2dd0",
+        "ts": "1535546694.000100"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "had? or has :stuck_out_tongue: I found one of the content upload vids which seems to provide a pretty good overview of how it works :slightly_smiling_face:",
+        "client_msg_id": "6e20281d-d57a-4e1b-b299-b898b1f7e14c",
+        "ts": "1535547479.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "Sorry...has.  more typos",
+        "client_msg_id": "9c3dce60-d42e-4fc6-b118-65a49756158e",
+        "ts": "1535548231.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "Content bundles for single endpoints.  We are working on multi site sync",
+        "client_msg_id": "3d7f0df8-314c-4d18-ba05-4f06b1d68354",
+        "ts": "1535548265.000100"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "gotcha",
+        "client_msg_id": "8c07628b-dd5b-40d5-be62-8c186e321a9e",
+        "ts": "1535550156.000100"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "tbh the multi site thing for me isn’t a big deal, its more as long as I can package up content from one and sync to another that’s all i really need",
+        "client_msg_id": "afbf6bc2-7dec-4fa9-9b97-82db4bf4920d",
+        "ts": "1535550192.000100"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "(and by sync i mean manually or whatevs)",
+        "client_msg_id": "5ecacbbf-4e50-4c89-9139-338236866cca",
+        "ts": "1535550210.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "then bundles is perfect",
+        "client_msg_id": "ddfeb7ed-675a-478f-8594-74cf5b4a3098",
+        "ts": "1535550784.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@UBXEU90UQ> fixes for those typos is moving through the process.  You'll need to click Logout to clear the bad menu from your session storage.",
+        "client_msg_id": "12bdf4ea-211b-42a6-bf82-d6513dff8e6b",
+        "ts": "1535552355.000100"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "cool cool :+1:",
+        "client_msg_id": "a841b4c1-b55e-4453-bc59-3ad33431eaa4",
+        "ts": "1535552562.000100"
+    },
+    {
+        "user": "UCHL0U7EH",
+        "text": "<@UCHL0U7EH> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1535555608.000200"
+    },
+    {
+        "type": "message",
+        "user": "UCHL0U7EH",
+        "text": "Hello guys, I'm from Brazil, I'm DevOps at Maxihost Datacenter. Today I'm trying RackN+DigitalRebar, we intend to use Rebar to deploy our physical machines and automate more tasks that we can't do using MaaS.",
+        "client_msg_id": "5a29e8e2-bf87-4fe6-a9d6-590aae338f57",
+        "ts": "1535557395.000100",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U6QFVRJNB"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "$welcome <@UCHL0U7EH> ",
+        "client_msg_id": "eb5df70b-4cec-4ba8-9b25-7f79374ce069",
+        "ts": "1535557458.000100"
+    },
+    {
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "type": "message",
+        "subtype": "slackbot_response",
+        "user": "USLACKBOT",
+        "ts": "1535557458.000200"
+    },
+    {
+        "type": "message",
+        "user": "UCHL0U7EH",
+        "text": "thanks!",
+        "client_msg_id": "02b4a1af-7d59-4bd2-a888-7bf8993d71b2",
+        "ts": "1535557472.000100"
+    },
+    {
+        "type": "message",
+        "user": "UCHL0U7EH",
+        "text": "to go ahead with the POC, I just have a doubt about how Rebars manages the machines' network interfaces",
+        "client_msg_id": "52c1d81f-7e96-4617-8465-09dd555b0226",
+        "ts": "1535557564.000200"
+    },
+    {
+        "type": "message",
+        "user": "UCHL0U7EH",
+        "text": "today our machines use 2 NICs, the first one for public access\/IPMI and the second NIC for PXE boot over a private network",
+        "client_msg_id": "7e258b11-272d-4074-8221-159bc546600e",
+        "ts": "1535557567.000100"
+    },
+    {
+        "type": "message",
+        "text": "Like that",
+        "files": [
+            {
+                "id": "FCGQN7TBJ",
+                "created": 1535557595,
+                "timestamp": 1535557595,
+                "name": "image.png",
+                "title": "Pasted image at 2018-08-29, 12:46 PM",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "UCHL0U7EH",
+                "editable": false,
+                "size": 16152,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FCGQN7TBJ\/image.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FCGQN7TBJ\/download\/image.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FCGQN7TBJ-53bc9e099e\/image_64.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FCGQN7TBJ-53bc9e099e\/image_80.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FCGQN7TBJ-53bc9e099e\/image_360.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_360_w": 360,
+                "thumb_360_h": 59,
+                "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FCGQN7TBJ-53bc9e099e\/image_480.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_480_w": 480,
+                "thumb_480_h": 79,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FCGQN7TBJ-53bc9e099e\/image_160.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FCGQN7TBJ-53bc9e099e\/image_720.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_720_w": 720,
+                "thumb_720_h": 118,
+                "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FCGQN7TBJ-53bc9e099e\/image_800.png?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "thumb_800_w": 800,
+                "thumb_800_h": 131,
+                "image_exif_rotation": 1,
+                "original_w": 951,
+                "original_h": 156,
+                "permalink": "https:\/\/rackn.slack.com\/files\/UCHL0U7EH\/FCGQN7TBJ\/image.png",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FCGQN7TBJ-f8c04892e1"
+            }
+        ],
+        "upload": true,
+        "user": "UCHL0U7EH",
+        "display_as_bot": false,
+        "ts": "1535557597.000100"
+    },
+    {
+        "type": "message",
+        "user": "UCHL0U7EH",
+        "text": "is Rebar able to work with this same network topology? I mean, discovering the 2 NICs",
+        "client_msg_id": "f9b53294-67c8-44f0-81b4-392762de69c2",
+        "ts": "1535557707.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@UCHL0U7EH> discover = configure?  The gohai inventory run on the machine will list all the NICs on the system.",
+        "client_msg_id": "ce11a53a-926a-4e2b-92be-32d32af2959c",
+        "ts": "1535557819.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "you want to setup the other network interface in the operating system?",
+        "client_msg_id": "456bd1d9-7209-4ed0-82c8-a88f4782b6fc",
+        "ts": "1535557841.000100"
+    },
+    {
+        "type": "message",
+        "user": "UCHL0U7EH",
+        "text": "yes",
+        "client_msg_id": "408ce650-999e-41c8-a513-c16b35472b97",
+        "ts": "1535557849.000100"
+    },
+    {
+        "type": "message",
+        "user": "UCHL0U7EH",
+        "text": "humm, so I have to use the stage discover that includes gohai",
+        "client_msg_id": "75f64db5-cb53-4548-a61d-a1bf702725a1",
+        "ts": "1535558112.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "discover includes gohai by default",
+        "client_msg_id": "b9b4ed52-0947-4d57-bfc9-87da0d74de3d",
+        "ts": "1535558124.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "yes, you should be using discover \/ sledgehammer",
+        "client_msg_id": "78b0ec1a-9aaa-48f0-80f9-b36f267e14d2",
+        "ts": "1535558138.000200"
+    },
+    {
+        "type": "message",
+        "user": "UCHL0U7EH",
+        "text": "nice, I'm seeing gohai-inventory now in my UI",
+        "client_msg_id": "28926d79-8562-4312-a2cd-6f4092eb00ca",
+        "ts": "1535558600.000100"
+    },
+    {
+        "type": "message",
+        "user": "UCHL0U7EH",
+        "text": "is it possible to set IP to the network interface using GUI like MaaS or just using drpcli ?",
+        "client_msg_id": "f1de15d3-5aa1-4d84-9170-27673d785943",
+        "ts": "1535558847.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UCHL0U7EH> - the Digital Rebar model uses \"workflow\", which is composed of flexible building blocks (Stages, Tasks, Templates, Profiles, Params, etc).   Part of customizing workflow to your use case might include adding a \"stage\" and \"templates\" to do the network configuration.  You'd drive your machines through the appropriate workflow from the Sledgehammer \/ Discovery process, to implement the customizations you need ... as you see in the `gohai-inventory`, we model all of the physical hardware components to make them available to workflow to use to make decisions on deployment details.",
+        "client_msg_id": "aa779fd1-6b83-4f93-b102-78cf0bf6ad95",
+        "ts": "1535564568.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Additionally, we have a \"lighter weight\" inventory pieces that will summarize \"important\" fields from the more complex gohai-inventory - which makes it easier to manipulate and use.   There are several examples with our current Content Packs that you can review.  We also have a \"demo\" \/ \"training\" content pack that you might like to review for how to author content:\n<https:\/\/github.com\/digitalrebar\/colordemo>",
+        "client_msg_id": "3c845ad6-c2a4-4482-9c76-4de0e1bfcd65",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/colordemo",
+                "title_link": "https:\/\/github.com\/digitalrebar\/colordemo",
+                "text": "Training Content. Contribute to digitalrebar\/colordemo development by creating an account on GitHub.",
+                "fallback": "GitHub: digitalrebar\/colordemo",
+                "from_url": "https:\/\/github.com\/digitalrebar\/colordemo",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/digitalrebar\/colordemo"
+            }
+        ],
+        "ts": "1535564656.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "Last - we have a new piece that's not yet production - but will be very instrumental in network configuration - we call it \"`NetWrangler`\" - which will help to implement complex NIC configurations on machines as part of workflow",
+        "client_msg_id": "121ca257-b382-48cb-891a-676d8c5dc432",
+        "ts": "1535564835.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "we discussed NetWrangler in our Community Meetup v020 - meetup recording is at:\n<https:\/\/u.rackn.io\/mtup20>",
+        "client_msg_id": "590826d7-cf7f-4bd0-9716-c8f7754af36e",
+        "attachments": [
+            {
+                "service_name": "YouTube",
+                "title": "Digital Rebar Meetup #20",
+                "title_link": "https:\/\/u.rackn.io\/mtup20",
+                "text": "Recording of the bi-weekly Digital Rebar Community Online Meetup held on June 19, 2018. Learn more about Digital Rebar at <http:\/\/rebar.digital>.",
+                "fallback": "YouTube: Digital Rebar Meetup #20",
+                "thumb_url": "https:\/\/i.ytimg.com\/vi\/a_r8w2et3gU\/maxresdefault.jpg",
+                "from_url": "https:\/\/u.rackn.io\/mtup20",
+                "thumb_width": 1280,
+                "thumb_height": 720,
+                "service_icon": "https:\/\/s.ytimg.com\/yts\/img\/favicon-vfl8qSV2F.ico",
+                "id": 1,
+                "original_url": "https:\/\/u.rackn.io\/mtup20"
+            }
+        ],
+        "ts": "1535564921.000100"
+    },
+    {
+        "type": "message",
+        "user": "UCHL0U7EH",
+        "text": "Thank you very much <@U6QFVRJNB> I'm gonna try this now",
+        "client_msg_id": "5536dc66-3ce9-49be-8bbd-5052c227c24e",
+        "ts": "1535566222.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<@UCHL0U7EH> you may also want to look at this FAQ about using DHCP to assign IPs to machines via automation",
+        "client_msg_id": "32273c8d-fc2d-4003-a168-def7c2ab0700",
+        "ts": "1535566486.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DHRR2L",
+        "text": "<https:\/\/provision.readthedocs.io\/en\/tip\/doc\/faq-troubleshooting.html#set-hostname-in-a-dhcp-reservation>",
+        "client_msg_id": "3ff21ec4-ddc4-436e-877c-1a2058827680",
+        "ts": "1535566487.000100"
+    },
+    {
+        "type": "message",
+        "user": "UCHL0U7EH",
+        "text": "nice, thanks",
+        "client_msg_id": "46fa6aa4-616c-4bb7-ba28-a676762ad65e",
+        "ts": "1535566717.000100"
+    },
+    {
+        "user": "UCJ47MZTP",
+        "text": "<@UCJ47MZTP> has joined the channel",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1535605269.000200"
+    }
+]

@@ -1,0 +1,131 @@
+<html><body><style>
+			* {
+				font-family:sans-serif;
+			}
+			body {
+				text-align:center;
+				padding:1em;
+			}
+			.messages {
+				width:100%;
+				max-width:700px;
+				text-align:left;
+				display:inline-block;
+			}
+			.messages img {
+				background-color:rgb(248,244,240);
+				width:36px;
+				height:36px;
+				border-radius:0.2em;
+				display:inline-block;
+				vertical-align:top;
+				margin-right:0.65em;
+			}
+			.messages .time {
+				display:inline-block;
+				color:rgb(200,200,200);
+				margin-left:0.5em;
+			}
+			.messages .username {
+				display:inline-block;
+				font-weight:600;
+				line-height:1;
+			}
+			.messages .message {
+				display:inline-block;
+				vertical-align:top;
+				line-height:1;
+				width:calc(100% - 3em);
+			}
+			.messages .message .msg {
+				line-height:1.5;
+			}
+		</style><div class="messages"><div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-10 14:34</div><div class="msg">has joined #2018-09-10</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-10 16:35</div><div class="msg">has joined #2018-09-10</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-09-10 16:46</div><div class="msg">@ sorry - not familiar with the Debian side - are you specifying a mirror site, or just using the open mirrors ?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-09-10 16:46</div><div class="msg">@ $welcome</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-10 16:46</div><div class="msg">Digital Rebar welcome information is here &gt; <a href="http://rebar.digital/community/welcome.html">http://rebar.digital/community/welcome.html</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-09-10 16:46</div><div class="msg">@ welcome to you too :slightly_smiling_face:</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-10 16:50</div><div class="msg">Thank you Shane</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/b4d71ae747b19c05783e687f536534e7.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F3654%2Fimg%2Favatars%2Fava_0018-72.png" /><div class="message"><div class="username">stanchan</div><div class="time">2018-09-10 16:53</div><div class="msg">@zehicle @ I had created a role a while back, but need to update it to the latest release. <a href="https://github.com/stanchan/ansible-role-dr-provision">https://github.com/stanchan/ansible-role-dr-provision</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-09-10 16:57</div><div class="msg">nice - I had forgot about that.</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/b4d71ae747b19c05783e687f536534e7.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F3654%2Fimg%2Favatars%2Fava_0018-72.png" /><div class="message"><div class="username">stanchan</div><div class="time">2018-09-10 17:01</div><div class="msg">Tried to make it flexible for any OS type, but not tested on ARM yet. Will try to setup a RPi cluster to test.</div></div></div><br/>
+<div><img src="https://secure.gravatar.com/avatar/b4d71ae747b19c05783e687f536534e7.jpg?s=72&d=https%3A%2F%2Fa.slack-edge.com%2F3654%2Fimg%2Favatars%2Fava_0018-72.png" /><div class="message"><div class="username">stanchan</div><div class="time">2018-09-10 17:01</div><div class="msg">Unfortunately, been a little busy with other work stuff.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-10 17:27</div><div class="msg">@shane I think its internet connection as I got 4 nics on this server that i'm trying to automate</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-09-10 17:30</div><div class="msg">np</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-10 17:31</div><div class="msg">is there any document or tutorial on how to setup an ISO install from scratch?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-09-10 17:33</div><div class="msg">the quickstart document does that for the Ubuntu/CentOS BootEnvs - for Debian, you'd need to create a new BootEnv specification using the Full ISO and not the minimal ISO we specify - then use the same `drpcli bootenvs uploadiso ...` command structure</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-10 17:33</div><div class="msg">I figured that much...guess i'm missing something :confused:</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-10 17:34</div><div class="msg">as when i upload the iso...it still marked as not available</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-09-10 17:34</div><div class="msg">I assume you cloned an existing BootEnv and changed it ?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-10 17:35</div><div class="msg">yes, cloned both the debian one and ubuntu</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-09-10 17:35</div><div class="msg">you need to make sure you specify the correct sha256sum for the new ISO - or don't specify it if you don't want to do hash checks of the ISO (not recommended)</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-09-10 17:36</div><div class="msg">if you bore in on the BootEnv, you should see the error message why it's unavailable</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-10 17:36</div><div class="msg">yes, I did</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-10 17:37</div><div class="msg">yes it was 4 errors..i'll share it when i get to it later today</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-10 17:44</div><div class="msg">At what phase would machine templates get created in `/var/lib/dr-provision/tftpboot/machines` for TFTP?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-09-10 17:44</div><div class="msg">never</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-09-10 17:44</div><div class="msg">well - cheap answer.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-09-10 17:44</div><div class="msg">They are never rendered to the file system.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-09-10 17:45</div><div class="msg">You can check them by: `curl http://&lt;ip&gt;:8091/machines/?.`</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-10 17:45</div><div class="msg">Does it render upon tftp request?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-09-10 17:45</div><div class="msg">Yes</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-10 17:45</div><div class="msg">aye, 10-4</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-09-10 17:45</div><div class="msg">That way it can be the latest values without having to track filesystem objects.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-10 17:45</div><div class="msg">Just picking things up and the first use case is probably the more difficult for ESX</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-09-10 17:46</div><div class="msg">Check the esxi content pack if you haven?t already.  `os-other`</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-10 17:46</div><div class="msg">I was using that but get an error it?s unable to find the boot.cfg file</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-10 17:47</div><div class="msg">dumb me created the folder and file manually to see if that was ?it? and it got passed but felt wrong</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-09-10 17:48</div><div class="msg">not dumb</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-09-10 17:51</div><div class="msg">You may want to search the history for esxi.  I thnk there are some notes in the channel.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-10 17:55</div><div class="msg">doing some traces it looks like it?s not doing the intercept. re: history - aye</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-09-10 17:55</div><div class="msg">is the machine?s bootenv set?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-10 17:56</div><div class="msg">Yea</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-09-10 17:56</div><div class="msg">hmm - try and curl that file.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-10 17:57</div><div class="msg">That?s what I was doing but w/ tftp client</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-10 17:57</div><div class="msg">```tftp&gt; get machines/56946aa3-46c8-48f5-8997-d3c3a2f0abe0/boot.cfg
+Error code 1: open /var/lib/dr-provision/tftpboot/machines/56946aa3-46c8-48f5-8997-d3c3a2f0abe0/boot.cfg: no such file or directory```</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-09-10 17:59</div><div class="msg">hmmm okay check the bootenv</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-09-10 18:01</div><div class="msg">check the logs for dr-p, see if a parameter is missing.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-09-10 18:01</div><div class="msg">Also make sure the bootenv is available</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-10 18:05</div><div class="msg">It may not be intended to work w/ UEFI chains.  I had to clone the current  template to remove the loop ```#!ipxe
+iseq ${platform} efi &amp;&amp; goto efi || goto noefi
+:efi
+echo Chainloading into the ESXi install environment via ipxe does not work yet
+sleep 120
+goto efi
+chain {{.Env.PathFor "http" "efi/boot/bootx64.efi"}} {{.BootParams}}
+:noefi
+set 210:string /{{.Env.PathFor "tftp" ""}}/
+chain esxi.0```</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-10 18:29</div><div class="msg">has joined #2018-09-10</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-09-10 18:30</div><div class="msg">@ $welcome</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-10 18:30</div><div class="msg">Digital Rebar welcome information is here &gt; <a href="http://rebar.digital/community/welcome.html">http://rebar.digital/community/welcome.html</a></div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-10 18:31</div><div class="msg">thanks, reading</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-09-10 18:33</div><div class="msg">Hmm - looks like our link to our Youtube videos is no longer valid - will get that fixed :disappointed:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-09-10 19:48</div><div class="msg">@ - can you write up a bug on it.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-10 19:50</div><div class="msg">on which piece, the ipxe loop error or the no boot.cfg found?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-10 19:50</div><div class="msg">I don?t know if I found a bug or not :disappointed:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-09-10 19:52</div><div class="msg">the looping part if it is real.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-09-10 19:53</div><div class="msg">The not rendering should show an error message in drp logs.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-10 19:53</div><div class="msg">aye</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-10 19:57</div><div class="msg">```        #!ipxe
+        iseq ${platform} efi &amp;&amp; goto efi || goto noefi
+        :efi
+        echo Chainloading into the ESXi install environment via ipxe does not work yet
+        sleep 120
+        goto efi
+        chain {{.Env.PathFor "http" "efi/boot/bootx64.efi"}} {{.BootParams}}
+        :noefi
+        set 210:string /{{.Env.PathFor "tftp" ""}}/
+        chain esxi.0``` - i?ll submit for that</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-10 19:57</div><div class="msg">I don?t see how it ever breaks out of the loop</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-09-10 20:04</div><div class="msg">I won?t.  Efi isn?t exactly supported correctly.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-09-10 20:05</div><div class="msg">Or installs really only know how to chain load to com32 based systems which doesn?t work with efi systems.</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-09-10 20:06</div><div class="msg">Or is might, but might not.  That is why we have the esxi.0 image that we boot to.  It has enough com support to run out of hte iso.  Now, VMWare may have updates to work better with EFI and a different path, but we haven?t built or found it.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-10 20:25</div><div class="msg">Can someone give me some examples how to configure DHCP built-in on DR-Provision server via drpcli command?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-09-10 20:26</div><div class="msg">@ - the quickstart guide has some info on it:  <a href="https://provision.readthedocs.io/en/tip/doc/quickstart.html#rs-qs-subnet">https://provision.readthedocs.io/en/tip/doc/quickstart.html#rs-qs-subnet</a></div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-09-10 20:27</div><div class="msg">you have to construct a JSON blob with the appropriate values - sometimes it's easier to create what you need from the UX - then use `drpcli` to "show" the created resource, and use that as a template for your automation</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-10 20:28</div><div class="msg">thanks @shane</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-09-11 05:42</div><div class="msg">thanks! looking forward to connect</div></div></div><br/>
+</div></body></html>

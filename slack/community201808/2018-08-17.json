@@ -1,0 +1,135 @@
+[
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "hmm.. is the bsdtar binary name hardcoded in drp? Just realised that on SL6 bsdtar is provided as ‘bsdtar3’ and the binary is named that too :confused:",
+        "client_msg_id": "143654a5-2c0c-42c1-ad84-5414f0031f15",
+        "ts": "1534518789.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "Probably.  :confused:",
+        "client_msg_id": "1A308CD9-C5D0-4359-A696-4EAE8B39A092",
+        "ts": "1534520615.000100"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "just symlinked around it :smile:",
+        "client_msg_id": "46f7160a-d105-4f19-a69d-53d145ec2cbb",
+        "ts": "1534520728.000100"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "just manual install-ing with ansible now",
+        "client_msg_id": "06501694-f578-44f1-b07c-1a73d24cbc77",
+        "ts": "1534520916.000200"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "the install script makes some fair assumptions which don’t always hold true",
+        "client_msg_id": "8a4792d5-7875-4749-8b10-0ff5528e1fe5",
+        "ts": "1534520926.000100"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "(like… it prefers upstart over sysv but rhel6 has both, and for some reason upstart doesnt work with the given config :D)",
+        "client_msg_id": "353570a8-c0b7-481f-a720-ae52d944d90a",
+        "ts": "1534520951.000100"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "the only reason this is a faff is because I’m trying to install DRP on our production deployment systems *without* blowing them away and redeploying on c7 (yet)",
+        "client_msg_id": "a6da5219-84fe-4e4b-a26a-2777ebaf6d07",
+        "ts": "1534520993.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DGQYK1",
+        "text": "pR with notes would be helpful. If you can ",
+        "client_msg_id": "A372D1DA-1DE0-412D-831D-762C5F6FA7C9",
+        "ts": "1534521081.000100"
+    },
+    {
+        "type": "message",
+        "user": "UBXEU90UQ",
+        "text": "it’ll have to wait until monday but sure :slightly_smiling_face:",
+        "client_msg_id": "e759eb27-609d-4562-ac4f-7ad1af16e4d2",
+        "ts": "1534521408.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "<@U6QFVRJNB> this happened again; i can’t destroy the machine with UUID",
+        "client_msg_id": "b3504d92-8464-4462-9343-8c1507c2e76f",
+        "ts": "1534523781.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "$ drpcli machines destroy 7aca0add-b2e5-4ea0-8a82-fe5e65e149a3\nError: CLIENT_ERROR\n  Cannot handle content-type text\/plain; charset=utf-8\n  No decoder for content-type text\/plain; charset=utf-8",
+        "client_msg_id": "4d17edba-3618-458f-8f62-cf3a15f0e619",
+        "ts": "1534523786.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "but i can view the profile",
+        "client_msg_id": "d85e91ed-7a0f-4448-89c5-c494078a7e5b",
+        "ts": "1534523801.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "$ drpcli machines show 7aca0add-b2e5-4ea0-8a82-fe5e65e149a3\n{\n  “Address”: “10.11.106.118\",\n  “Available”: true,\n  “BootEnv”: “wmps-install”,\n  “CurrentJob”: “”,\n  “CurrentTask”: -1,\n  “Description”: “”,\n  “Errors”: [],\n  “HardwareAddrs”: [],\n  “Meta”: {\n    “feature-flags”: “change-stage-v2”",
+        "client_msg_id": "df271589-8d04-430e-a9f9-2e6ebc6d3afa",
+        "ts": "1534523817.000100"
+    },
+    {
+        "type": "message",
+        "user": "U6QFVRJNB",
+        "text": "<@UANLCF8QP> - do you know what steps you may have performed at the Console\/Shell, in `drpcli`, or UI ... that might have led to this ?   We're looking at the backing store code and our handling around this, but haven't found any internal patterns yet that would lead to this condition where the back JSON object on disk is deleted while the in-memory object model is still \"laying around\" ...",
+        "client_msg_id": "30f46a45-a055-4298-9a51-78e14247476d",
+        "ts": "1534526590.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "run few more tests and results are the same, here are steps to reproduce it.",
+        "client_msg_id": "28a57780-9bb0-4aa5-8368-01805c66f68c",
+        "ts": "1534529296.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "Restart dr-provision service (stop\/start)\n\nCreate a new machine\n\nMake sure the machine UUID existing in the \/var\/log\/dr-provision\/digitalrebar\/machines\/\n\nCheck machine’s profile; everything looks good.\n\nDelete a machine and got an error messages\nError: CLIENT_ERROR\n Cannot handle content-type text\/plain; charset=utf-8\n No decoder for content-type text\/plain; charset=utf-8\n\nCheck the machine profile; it looks good.\n\nCheck the machine’s UUID in the \/var\/log\/dr-provision\/digitalrebar\/machines\/; it’s no longer there.\n\nRestart dr-provision service and then the machine’s profile is no longer exists",
+        "client_msg_id": "2b2e2394-2ec9-4c04-9a0d-388049d80806",
+        "ts": "1534529308.000100"
+    },
+    {
+        "type": "message",
+        "user": "UANLCF8QP",
+        "text": "$ drpcli version\nVersion: v3.8.0-0-1e4c58d48257bdb9562126fefc89897bae23210e",
+        "client_msg_id": "faa3b8ad-608a-40b6-9d58-fd4f45d24d86",
+        "ts": "1534529461.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "hm.",
+        "client_msg_id": "8be8d544-5178-4edd-860e-0306276b689b",
+        "ts": "1534530437.000100"
+    },
+    {
+        "type": "message",
+        "user": "U02DJQSG8",
+        "text": "If you upgrade to 3.10, does the same thing happen?",
+        "client_msg_id": "5eca0dcc-4413-4877-a90e-e6a25b1fbde4",
+        "ts": "1534530487.000100"
+    }
+]

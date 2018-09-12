@@ -1,0 +1,73 @@
+<html><body><style>
+			* {
+				font-family:sans-serif;
+			}
+			body {
+				text-align:center;
+				padding:1em;
+			}
+			.messages {
+				width:100%;
+				max-width:700px;
+				text-align:left;
+				display:inline-block;
+			}
+			.messages img {
+				background-color:rgb(248,244,240);
+				width:36px;
+				height:36px;
+				border-radius:0.2em;
+				display:inline-block;
+				vertical-align:top;
+				margin-right:0.65em;
+			}
+			.messages .time {
+				display:inline-block;
+				color:rgb(200,200,200);
+				margin-left:0.5em;
+			}
+			.messages .username {
+				display:inline-block;
+				font-weight:600;
+				line-height:1;
+			}
+			.messages .message {
+				display:inline-block;
+				vertical-align:top;
+				line-height:1;
+				width:calc(100% - 3em);
+			}
+			.messages .message .msg {
+				line-height:1.5;
+			}
+		</style><div class="messages"><div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-27 11:01</div><div class="msg">:wave: howdy all!</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-27 13:18</div><div class="msg">has joined #2018-07-27</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-27 13:43</div><div class="msg">@ $welcome</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-27 13:43</div><div class="msg">i read from the previous one, cheers though :smile:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-27 13:43</div><div class="msg">gotta delete and resubmit a msg when you correct it for the word expansion to work :slightly_smiling_face:</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-27 13:47</div><div class="msg">thousand thumbs-up for DR btw - running like 2 commands to get PXE boot working compared to our live setup (foreman) is a breath of fresh air, haha</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-27 14:39</div><div class="msg">i do have a quick Q - in the ?machines? list if i click on show, all of the fields (RAM, NICs, CPUs etc) show no inventory / data - but the machines are in the discovery image, have run gohai and show the relevant info in there - am I missing something, does that info come from somewhere else?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-27 14:47</div><div class="msg">@ the "inventory" data you are referring to are from a separate "inventory" piece - you need to (optionally customize the inventory), and run the Inventory stage in a workflow on the machines</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-27 14:48</div><div class="msg">there are 2 levels of inventory - the "gohai-inventory" which produces extremely detailed machine information - but is hard to parse and manage for classification efforts and for SKU validation</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-27 14:48</div><div class="msg">the second is the basic "inventory" which creates a simplified (customizable) flat list of the "things that matter to you"</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-27 14:49</div><div class="msg">you can view a video related to using the Inventory and validation pieces, at: 
+<a href="https://www.youtube.com/watch?v=xDqxEW5bgiQ&amp;t=553s">https://www.youtube.com/watch?v=xDqxEW5bgiQ&amp;t=553s</a></div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-27 14:50</div><div class="msg">ahh excellent, thats the clarification i was looking for, cheers :slightly_smiling_face:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2017-09-18/243018470675_611b6896ed20358ab1aa_72.jpg" /><div class="message"><div class="username">shane</div><div class="time">2018-07-27 15:04</div><div class="msg">@ - there is some doc on it - contained in our `task-library` documentation:
+<a href="https://provision.readthedocs.io/en/tip/doc/content-packages/task-library.html">https://provision.readthedocs.io/en/tip/doc/content-packages/task-library.html</a></div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-27 15:25</div><div class="msg">cheers, have it working</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-27 15:26</div><div class="msg">weirdly i have to click into the machine itself before the table lists the inventory settings</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-27 15:26</div><div class="msg">i guess that data isnt loaded by default</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-27 15:28</div><div class="msg">@ you are right - that's caused by the update to slim (do not get params) the machines in the list</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-27 15:28</div><div class="msg">we realized that this would happen yesterday and are thinking about ways to fix it</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-27 15:29</div><div class="msg">ahh</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-27 15:29</div><div class="msg">cool anyway, not a big issue :slightly_smiling_face:</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-27 15:29</div><div class="msg">we're going to end up needing to build a machine inventory view which triggers needing to make changes to the left menu navigation to make room for new views.</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-27 17:20</div><div class="msg">hello,
+is there a tutorial on how to configure IPMI on DELL or HP servers?</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-27 17:20</div><div class="msg">Time to feed the :bear:!</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-27 20:31</div><div class="msg">Regarding ESXi installation, everything goes well. The only thing is after installation, the machine's status is labeled "not set" instead of "complete", and terraform does not report that machines have completed the workflow.  Even though I have added the "complete" stage at the end of the workflow? any thoughts about this?</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-09-17/2677396473_72.jpg" /><div class="message"><div class="username">zehicle</div><div class="time">2018-07-27 21:39</div><div class="msg">@ the ESXi environment cannot run a runner.  I think this is discussed about 2 weeks back in this channel</div></div></div><br/>
+<div><img src="https://avatars.slack-edge.com/2014-07-14/2459866780_72.jpg" /><div class="message"><div class="username">greg</div><div class="time">2018-07-27 21:51</div><div class="msg">Hmm - it does point out that we may want have that done step sent something we do track.  hmm</div></div></div><br/>
+<div><img src="" /><div class="message"><div class="username"></div><div class="time">2018-07-27 22:00</div><div class="msg">has joined #2018-07-27</div></div></div><br/>
+</div></body></html>
