@@ -1,0 +1,101 @@
+[
+    {
+        "client_msg_id": "c3a3299c-e30c-4f25-ab1d-ff1a151e7c8c",
+        "type": "message",
+        "text": "I’m having trouble getting DRP running on a Raspbian although the exact same steps produce a working application on a Debian VM using the same Ansible playbook. To rule out playbook problems I’ve done an isolated install and I get the following output every time I start the application\n```\ndr-provision2018\/10\/20 11:27:46.178552 Version: v3.11.0-0-8da90ceaf50f97c0d645c081f0384507e446424e\ndr-provision2018\/10\/20 11:27:46.180919 Extracting Default Assets\ndr-provision2018\/10\/20 11:27:46.181356 Extracting Default Assets\ndr-provision2018\/10\/20 11:27:52.082764 Starting metrics server\ndr-provision2018\/10\/20 11:27:53.486788 Starting TFTP server\ndr-provision2018\/10\/20 11:27:53.487708 Starting static file server\ndr-provision2018\/10\/20 11:27:53.488485 Starting DHCP server\ndr-provision2018\/10\/20 11:27:53.491895 Starting PXE\/BINL server\ndr-provision2018\/10\/20 11:27:53.493434 Starting API server\nhttp: panic serving 127.0.0.1:52368: runtime error: invalid memory address or nil pointer dereference\ngoroutine 235 [running]:\nnet\/http.(*conn).serve.func1(0x12c0c360)\n\t\/home\/travis\/.gimme\/versions\/go1.10.linux.amd64\/src\/net\/http\/server.go:1726 +0x9c\npanic(0x869508, 0x1903c90)\n\t\/home\/travis\/.gimme\/versions\/go1.10.linux.amd64\/src\/runtime\/panic.go:505 +0x204\nsync\/atomic.addUint64(0x12b76104, 0x1, 0x0, 0x1, 0x12edf940)\n\t\/home\/travis\/.gimme\/versions\/go1.10.linux.amd64\/src\/sync\/atomic\/64bit_arm.go:31 +0x4c\n<http:\/\/github.com\/digitalrebar\/provision\/vendor\/github.com\/digitalrebar\/logger.(*Buffer).NewGroup(0x12b76100|github.com\/digitalrebar\/provision\/vendor\/github.com\/digitalrebar\/logger.(*Buffer).NewGroup(0x12b76100>, 0x12edf940, 0xbeeae22e)\n\t\/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/vendor\/github.com\/digitalrebar\/logger\/logger.go:252 +0x34\n<http:\/\/github.com\/digitalrebar\/provision\/vendor\/github.com\/digitalrebar\/logger.(*log).Fork(0x12e4f140|github.com\/digitalrebar\/provision\/vendor\/github.com\/digitalrebar\/logger.(*log).Fork(0x12e4f140>, 0x0, 0x12af4)\n\t\/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/vendor\/github.com\/digitalrebar\/logger\/logger.go:596 +0x104\n<http:\/\/github.com\/digitalrebar\/provision\/server.server.func1(0xa11ab0|github.com\/digitalrebar\/provision\/server.server.func1(0xa11ab0>, 0x12da0240, 0x1)\n\t\/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/server\/server.go:484 +0x38\nnet\/http.(*conn).setState(0x12c0c360, 0xa11ab0, 0x12da0240, 0x1)\n\t\/home\/travis\/.gimme\/versions\/go1.10.linux.amd64\/src\/net\/http\/server.go:1673 +0x94\nnet\/http.(*conn).serve(0x12c0c360, 0xa0f3b0, 0x131f09e0)\n\t\/home\/travis\/.gimme\/versions\/go1.10.linux.amd64\/src\/net\/http\/server.go:1771 +0xbc4\ncreated by net\/http.(*Server).Serve\n\t\/home\/travis\/.gimme\/versions\/go1.10.linux.amd64\/src\/net\/http\/server.go:2795 +0x208\n```\nI have received the same message on Raspbian 2018-10-09 and 2018-06-27. The last section repeats for API (1) through API (4)",
+        "user": "UDH9AK8NS",
+        "ts": "1540035253.000100",
+        "edited": {
+            "user": "UDH9AK8NS",
+            "ts": "1540035495.000000"
+        }
+    },
+    {
+        "client_msg_id": "0b81daff-096e-4b23-a43f-cf5178dab518",
+        "type": "message",
+        "text": "<@UDH9AK8NS> - I added in arch support to the install script a while ago - but it probably doesn't handle all `arch` cases correctly.  On the device you're trying to install DRP on - can you please provide the output of the following:\n```\nuname -m\nuname -s```",
+        "user": "U6QFVRJNB",
+        "ts": "1540048899.000100"
+    },
+    {
+        "client_msg_id": "3774fe14-5f9a-4b91-8bbd-fdeb22134f79",
+        "type": "message",
+        "text": "It looks like you're getting an ARM build - but it may not be a correct build for your platform.  Unfortunately - the ARM hardware ecosystem leaves a lot to be desired in this respect ... :disappointed:",
+        "user": "U6QFVRJNB",
+        "ts": "1540048931.000100"
+    },
+    {
+        "client_msg_id": "28b48e46-d007-4595-9023-72ee3748686b",
+        "type": "message",
+        "text": "It looks like the ARM build binaries we try to use aren't correct for your platform",
+        "user": "U6QFVRJNB",
+        "ts": "1540048961.000100"
+    },
+    {
+        "client_msg_id": "6b62cb7e-0c12-42e8-95ba-feaf3d743ffb",
+        "type": "message",
+        "text": "(I forgot I had added in the ARM install hooks a while back ... :slightly_smiling_face: )",
+        "user": "U6QFVRJNB",
+        "ts": "1540048985.000200"
+    },
+    {
+        "client_msg_id": "81b756c4-8514-4275-ac97-14f950fd1756",
+        "type": "message",
+        "text": "(also chuck a `uname -a` in there as well - plz)",
+        "user": "U6QFVRJNB",
+        "ts": "1540049069.000100"
+    },
+    {
+        "client_msg_id": "61ead6cb-2b75-40a4-abd4-625cfa5e1b61",
+        "type": "message",
+        "text": "Thanks <@U6QFVRJNB>, is issue #1003 the best place to follow progress on this? I did originally suspect it was an architecture issue but when I saw that ARMv7 bins had been installed I assumed this was not the case here. Here’s the information you requested:\n```\nuname -m\narmv7l\n\nuname -s\nLinux\n\nuname -a\nLinux raspberrypi 4.14.71-v7+ #1145 SMP Fri Sep 21 15:38:35 BST 2018 armv7l GNU\/Linux\n```",
+        "user": "UDH9AK8NS",
+        "ts": "1540049190.000100",
+        "edited": {
+            "user": "UDH9AK8NS",
+            "ts": "1540049223.000000"
+        }
+    },
+    {
+        "client_msg_id": "a8468330-9e67-40bd-852a-9cd5422383ab",
+        "type": "message",
+        "text": "so we do build for `armv71` - and the install script supports that - but we don't test regularly with that architecture - we don't have any of that hardware",
+        "user": "U6QFVRJNB",
+        "ts": "1540049272.000100"
+    },
+    {
+        "client_msg_id": "ab19b342-6e0b-4477-9f48-dacf5adaf68f",
+        "type": "message",
+        "text": "#1003 just references helper binaries for content use - not for the install or running of the `dr-provision` binary itself",
+        "user": "U6QFVRJNB",
+        "ts": "1540049376.000200"
+    },
+    {
+        "client_msg_id": "d8292e4b-5d67-4217-af67-2741f793c02f",
+        "type": "message",
+        "text": "we use Go's crosscompile support to target the `armv71` (Go refers to it as `arm_v7`) support - but we pretty much blindly rely on it \"to do the right things\"",
+        "user": "U6QFVRJNB",
+        "ts": "1540049462.000100"
+    },
+    {
+        "client_msg_id": "a0638948-0072-4760-86ad-2d4c37f0bce6",
+        "type": "message",
+        "text": "others have tested the ARM builds on various hardware - just not sure about your case",
+        "user": "U6QFVRJNB",
+        "ts": "1540049476.000100"
+    },
+    {
+        "client_msg_id": "304ce9b9-5554-4edd-a1c7-29f24dfe93d9",
+        "type": "message",
+        "text": "Okay I’ll give it a try on some older Pis I have lying around and failing that I’ll just build an Intel VM for DRP. Is this something I can help with or do we need to wait for the Go maintainers to release an update that fixes this cross compiling issue? Unfortunately I’m not a developer and I’ve never worked with Go so my basic coding skills are unlikely to help here:slightly_smiling_face:",
+        "user": "UDH9AK8NS",
+        "ts": "1540050698.000100"
+    },
+    {
+        "client_msg_id": "a2e47d1d-bf94-4104-b789-1a69e080d33d",
+        "type": "message",
+        "text": "<@UDH9AK8NS> we don't have that hardware around for testing, so we're in the same boat",
+        "user": "U02DHRR2L",
+        "ts": "1540052910.000100"
+    }
+]

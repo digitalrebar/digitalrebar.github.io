@@ -1,0 +1,23 @@
+[
+    {
+        "client_msg_id": "696bca71-728b-4a4d-827f-988274a4566e",
+        "type": "message",
+        "text": "<@UDHGEKL3W> $welcome ",
+        "user": "U02DHRR2L",
+        "ts": "1539994421.000100"
+    },
+    {
+        "type": "message",
+        "subtype": "slackbot_response",
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "user": "USLACKBOT",
+        "ts": "1539994421.000200"
+    },
+    {
+        "client_msg_id": "1f8f9a98-222c-4f5e-964f-6a2ad10d2888",
+        "type": "message",
+        "text": "Thanks Rob",
+        "user": "UDHGEKL3W",
+        "ts": "1539995216.000100"
+    }
+]

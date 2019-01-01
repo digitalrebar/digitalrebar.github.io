@@ -1,0 +1,145 @@
+[
+    {
+        "user": "UD23V170W",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1537896316.000200",
+        "text": "<@UD23V170W> has joined the channel"
+    },
+    {
+        "user": "UD068NLHX",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1537898263.000200",
+        "text": "<@UD068NLHX> has joined the channel"
+    },
+    {
+        "client_msg_id": "ba0e3962-20f3-420f-9c34-1e676de43fc5",
+        "type": "message",
+        "text": "Hi All! I hope this rather long question is not out of bounds. I'm part of a 2-person devops team for a larger team that develops Linux based appliances. I'm looking to improve upon our manual provisioning process by adopting a tool - thought of cobbler but DRP looks better. Corporate policy prohibits us from running a DHCP server in our subnet so can we run DR in reservation only mode to install our custom Linux OSes to well known (IP\/MAC address) machines (prod, developer, QA, lab, etc)? If so, can you please describe the process? Thanks in advance!",
+        "user": "UD068NLHX",
+        "ts": "1537899061.000100"
+    },
+    {
+        "client_msg_id": "6cd22751-7416-4f25-aa58-e1a2c4ed6c9e",
+        "type": "message",
+        "text": "<@UD23V170W> and <@UD068NLHX> $welcome ... !!",
+        "user": "U6QFVRJNB",
+        "ts": "1537900232.000100"
+    },
+    {
+        "type": "message",
+        "subtype": "slackbot_response",
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "user": "USLACKBOT",
+        "ts": "1537900232.000200"
+    },
+    {
+        "client_msg_id": "9238a422-2aac-4abd-84cc-922b9c0f5e78",
+        "type": "message",
+        "text": "<@UD068NLHX> - we'll get to you in a bit - running the regular meetup right now",
+        "user": "U6QFVRJNB",
+        "ts": "1537900248.000100"
+    },
+    {
+        "client_msg_id": "2e0645e2-77af-46c1-9ac8-f873c4aa91bb",
+        "type": "message",
+        "text": "Thanks!",
+        "user": "UD23V170W",
+        "ts": "1537900365.000100"
+    },
+    {
+        "client_msg_id": "845cfc97-b2ac-4dc0-8723-8a163d5cda74",
+        "type": "message",
+        "text": "<@UD23V170W> you're welcome to join in <https:\/\/zoom.us\/j\/3403934274>",
+        "user": "U02DHRR2L",
+        "ts": "1537901000.000100",
+        "thread_ts": "1537901000.000100",
+        "reply_count": 1,
+        "reply_users_count": 1,
+        "latest_reply": "1537975862.000100",
+        "reply_users": [
+            "UD23V170W"
+        ],
+        "replies": [
+            {
+                "user": "UD23V170W",
+                "ts": "1537975862.000100"
+            }
+        ]
+    },
+    {
+        "client_msg_id": "d2f15549-0564-4118-81ad-7f9442e55d94",
+        "type": "message",
+        "text": "Recording of the bug scrub today &gt; <https:\/\/youtu.be\/F-WawHOjVx4>",
+        "user": "U02DHRR2L",
+        "ts": "1537909005.000100",
+        "attachments": [
+            {
+                "service_name": "YouTube",
+                "service_url": "https:\/\/www.youtube.com\/",
+                "title": "Meetup #26 - Bug Scrub!",
+                "title_link": "https:\/\/youtu.be\/F-WawHOjVx4",
+                "author_name": "RackN & Digital Rebar",
+                "author_link": "https:\/\/www.youtube.com\/channel\/UCr3bBtP-pMsDQ5c0IDjt_LQ",
+                "fallback": "YouTube Video: Meetup #26 - Bug Scrub!",
+                "video_html": "<iframe width=\"400\" height=\"300\" src=\"https:\/\/www.youtube.com\/embed\/F-WawHOjVx4?feature=oembed&autoplay=1&iv_load_policy=3\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen><\/iframe>",
+                "video_html_width": 400,
+                "video_html_height": 300,
+                "from_url": "https:\/\/youtu.be\/F-WawHOjVx4",
+                "service_icon": "https:\/\/a.slack-edge.com\/2089\/img\/unfurl_icons\/youtube.png",
+                "id": 1,
+                "original_url": "https:\/\/youtu.be\/F-WawHOjVx4"
+            }
+        ]
+    },
+    {
+        "user": "UD0PSG3QC",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1537912893.000200",
+        "text": "<@UD0PSG3QC> has joined the channel"
+    },
+    {
+        "client_msg_id": "115ad49d-6fd7-4c4d-92e1-aa2a16dbb2cc",
+        "type": "message",
+        "text": "<@UD0PSG3QC> $welcome",
+        "user": "U02DHRR2L",
+        "ts": "1537913554.000100"
+    },
+    {
+        "type": "message",
+        "subtype": "slackbot_response",
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "user": "USLACKBOT",
+        "ts": "1537913554.000200"
+    },
+    {
+        "client_msg_id": "f46082b2-9644-495e-b612-f1fb29ebf4bf",
+        "type": "message",
+        "text": "I just posted some Rebar 101 training: <https:\/\/youtu.be\/VeAyvZcu66E>",
+        "user": "U02DHRR2L",
+        "ts": "1537913628.000100",
+        "attachments": [
+            {
+                "service_name": "YouTube",
+                "service_url": "https:\/\/www.youtube.com\/",
+                "title": "RackN Digital Rebar 101 Training",
+                "title_link": "https:\/\/youtu.be\/VeAyvZcu66E",
+                "author_name": "RackN & Digital Rebar",
+                "author_link": "https:\/\/www.youtube.com\/channel\/UCr3bBtP-pMsDQ5c0IDjt_LQ",
+                "thumb_url": "https:\/\/i.ytimg.com\/vi\/VeAyvZcu66E\/hqdefault.jpg",
+                "thumb_width": 480,
+                "thumb_height": 360,
+                "fallback": "YouTube Video: RackN Digital Rebar 101 Training",
+                "video_html": "<iframe width=\"400\" height=\"225\" src=\"https:\/\/www.youtube.com\/embed\/VeAyvZcu66E?feature=oembed&autoplay=1&iv_load_policy=3\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen><\/iframe>",
+                "video_html_width": 400,
+                "video_html_height": 225,
+                "from_url": "https:\/\/youtu.be\/VeAyvZcu66E",
+                "service_icon": "https:\/\/a.slack-edge.com\/2089\/img\/unfurl_icons\/youtube.png",
+                "id": 1,
+                "original_url": "https:\/\/youtu.be\/VeAyvZcu66E"
+            }
+        ]
+    }
+]

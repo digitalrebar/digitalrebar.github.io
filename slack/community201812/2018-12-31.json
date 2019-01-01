@@ -1,0 +1,173 @@
+[
+    {
+        "client_msg_id": "7e847075-6a69-430f-bd18-5a71b3a41a2e",
+        "type": "message",
+        "text": "OK, tried the DHCP config suggestions - no difference. I've captured a `tcpdump -vv` of the traffic to &amp; from the target host if that's of use. I can't see any evidence of a second lease being provided. It looks reasonable to me, although I noticed for the first time that on some DHCP requests it gets `default.pxe` and sometimes `ipxe.ipxe`. Doesn't seem relevant to this issue though. Also, when you were asking about 'dual-homed', I should have mentioned that none of the systems have more than one interface on the same network.",
+        "user": "UF0RVSN9Z",
+        "ts": "1546245115.253800",
+        "edited": {
+            "user": "UF0RVSN9Z",
+            "ts": "1546245237.000000"
+        }
+    },
+    {
+        "client_msg_id": "6b4bf5d9-b93b-4871-8ee2-513680e1d28d",
+        "type": "message",
+        "text": "started working on nginx-ingress and cert-manager with krib",
+        "user": "UF1LXSN15",
+        "ts": "1546258786.254500"
+    },
+    {
+        "client_msg_id": "7a983dc8-bb79-4f12-a329-cc0d2f7ac62c",
+        "type": "message",
+        "text": "I *really* wanted to go with istio but blockers are explained here <https:\/\/medium.com\/@prune998\/istio-1-0-2-envoy-cert-manager-lets-encrypt-for-tls-certificate-merge-7a774bff66c2>",
+        "user": "UF1LXSN15",
+        "ts": "1546259074.255300",
+        "attachments": [
+            {
+                "service_name": "Medium",
+                "title": "Istio 1.0.2 (Envoy) + Cert-Manager + Let’s Encrypt for TLS + Certificate Merge",
+                "title_link": "https:\/\/medium.com\/@prune998\/istio-1-0-2-envoy-cert-manager-lets-encrypt-for-tls-certificate-merge-7a774bff66c2",
+                "text": "Recap",
+                "fallback": "Medium: Istio 1.0.2 (Envoy) + Cert-Manager + Let’s Encrypt for TLS + Certificate Merge",
+                "image_url": "https:\/\/cdn-images-1.medium.com\/max\/1200\/1*_uZ5dDIIzhkGy6XSuMf0qw.jpeg",
+                "fields": [
+                    {
+                        "title": "Reading time",
+                        "value": "14 min read",
+                        "short": true
+                    }
+                ],
+                "ts": 1541612311,
+                "from_url": "https:\/\/medium.com\/@prune998\/istio-1-0-2-envoy-cert-manager-lets-encrypt-for-tls-certificate-merge-7a774bff66c2",
+                "image_width": 333,
+                "image_height": 250,
+                "image_bytes": 69081,
+                "service_icon": "https:\/\/cdn-images-1.medium.com\/fit\/c\/304\/304\/1*8I-HPL0bfoIzGied-dzOvA.png",
+                "id": 1,
+                "original_url": "https:\/\/medium.com\/@prune998\/istio-1-0-2-envoy-cert-manager-lets-encrypt-for-tls-certificate-merge-7a774bff66c2"
+            }
+        ],
+        "reactions": [
+            {
+                "name": "eyes",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "client_msg_id": "a630fff0-f70a-4def-b285-0f9945c408eb",
+        "type": "message",
+        "text": "it's doable with some hackery but I'll wait for istio to add proper support",
+        "user": "UF1LXSN15",
+        "ts": "1546259107.256000"
+    },
+    {
+        "client_msg_id": "7b241295-5002-4f06-a904-d919a4bb35a1",
+        "type": "message",
+        "text": "if I really end up needing service mesh can always use nginx in front of istio",
+        "user": "UF1LXSN15",
+        "ts": "1546259172.256600"
+    },
+    {
+        "client_msg_id": "767256c8-e50a-43cb-93b1-7ebbc3952e63",
+        "type": "message",
+        "text": "so I see how to load a template in the task but what if I need to only load that template if a param exists?  can I render the template to a file from withing a .sh template?",
+        "user": "UF1LXSN15",
+        "ts": "1546268200.258100"
+    },
+    {
+        "client_msg_id": "eda1376e-628e-4074-b589-8c86824d0cc1",
+        "type": "message",
+        "text": "found it\n```\n        echo \"expanding template {{$template}} as {{$name}}.yaml\"\n        cat &gt; {{$name}}.yaml &lt;&lt; EOF\n{{ $render.CallTemplate $template $render }}\nEOF\n```",
+        "user": "UF1LXSN15",
+        "ts": "1546268935.258400",
+        "reactions": [
+            {
+                "name": "cake",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "client_msg_id": "a471fdb8-5d73-4d46-9611-4384c0080cce",
+        "type": "message",
+        "text": "that was one of the first custom renders that we needed :slightly_smiling_face:",
+        "user": "U02DHRR2L",
+        "ts": "1546271702.258900"
+    },
+    {
+        "client_msg_id": "cf1672da-88af-4255-88a7-89ff5954cab9",
+        "type": "message",
+        "text": "here's the full list <https:\/\/provision.readthedocs.io\/en\/latest\/doc\/arch\/provision.html#rendering-templates>",
+        "user": "U02DHRR2L",
+        "ts": "1546271765.259100"
+    },
+    {
+        "client_msg_id": "d78488a0-f9c5-459c-9e02-634323682d73",
+        "type": "message",
+        "text": "hmm, how do I escape a golang template within a template?",
+        "user": "UF1LXSN15",
+        "ts": "1546272378.259700"
+    },
+    {
+        "client_msg_id": "fa04ce23-b4ba-46a8-8b06-6bfa327584c3",
+        "type": "message",
+        "text": "lol",
+        "user": "UF1LXSN15",
+        "ts": "1546272379.259900"
+    },
+    {
+        "client_msg_id": "cdabfc4e-3d9d-4ef2-80c4-ff52b25ec104",
+        "type": "message",
+        "text": "have this function in my sh.tmpl file\n```\ngetIngressIp() {\n\techo $(kubectl get svc nginx-ingress-controller \\\n\t  --namespace kube-system \\\n\t  -o=go-template --template='{{(index .status.loadBalancer.ingress 0 ).ip}}')\n}\n```",
+        "user": "UF1LXSN15",
+        "ts": "1546272419.260400",
+        "edited": {
+            "user": "UF1LXSN15",
+            "ts": "1546272451.000000"
+        }
+    },
+    {
+        "client_msg_id": "29cd2791-edaf-4e04-8245-145ffd7a7732",
+        "type": "message",
+        "text": "```--template='{{`{{(index .status.loadBalancer.ingress 0 ).ip}}`}}'``` works",
+        "user": "UF1LXSN15",
+        "ts": "1546272681.261000",
+        "edited": {
+            "user": "UF1LXSN15",
+            "ts": "1546272705.000000"
+        }
+    },
+    {
+        "client_msg_id": "8341c5fe-b3e3-4287-ac13-6f5a112b1654",
+        "type": "message",
+        "text": "do I need to do anything get helm initialized in a job other than make sure my stage comes after the helm stage?",
+        "user": "UF1LXSN15",
+        "ts": "1546273474.262000"
+    },
+    {
+        "client_msg_id": "84d72b7c-576f-4c66-80af-fba2f9a85244",
+        "type": "message",
+        "text": "calling helm install I'm getting ``Error: failed to download \"stable\/nginx-ingress\" (hint: running `helm repo update` may help)``",
+        "user": "UF1LXSN15",
+        "ts": "1546273529.262500",
+        "edited": {
+            "user": "UF1LXSN15",
+            "ts": "1546273548.000000"
+        }
+    },
+    {
+        "client_msg_id": "83f2a0d8-8685-426e-974f-a258781f3624",
+        "type": "message",
+        "text": "started everything off the same as krib-helm.sh.tmpl so not sure what I'm doing wrong other than not being in the same task as krib-helm-init.sh.tmpl",
+        "user": "UF1LXSN15",
+        "ts": "1546274605.263800"
+    }
+]

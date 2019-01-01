@@ -1,0 +1,381 @@
+[
+    {
+        "client_msg_id": "b62308b7-ebac-496c-8331-a90395ec79da",
+        "type": "message",
+        "text": "<@UE4C36RV4> $welcome",
+        "user": "U02DHRR2L",
+        "ts": "1542203886.501900"
+    },
+    {
+        "type": "message",
+        "subtype": "slackbot_response",
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "user": "USLACKBOT",
+        "ts": "1542203886.502000"
+    },
+    {
+        "client_msg_id": "264db72c-70aa-4d01-b786-a65d3c9cc326",
+        "type": "message",
+        "text": "Thanks Rob. I've been working my way through the DRP paces and figured I'd join the community",
+        "user": "UE4C36RV4",
+        "ts": "1542203973.502800"
+    },
+    {
+        "client_msg_id": "9e06dab3-7389-491f-9abf-67cda02e30a5",
+        "type": "message",
+        "text": "welcome <@UE4C36RV4>",
+        "user": "UCU824PB2",
+        "ts": "1542206552.503100"
+    },
+    {
+        "client_msg_id": "d7161ddf-d173-4536-9e32-83f8bfe1ff0d",
+        "type": "message",
+        "text": "Is there a way to run a stage or task from the DRP server? Like kicking off a post os-install ansible run?",
+        "user": "UE4C36RV4",
+        "ts": "1542206886.504300"
+    },
+    {
+        "client_msg_id": "06a89594-c687-4530-91a0-95aba1cf250b",
+        "type": "message",
+        "text": "Glad to have you here!  have you seen the colordemo yet?",
+        "user": "U02DHRR2L",
+        "ts": "1542207050.504600"
+    },
+    {
+        "client_msg_id": "ab71c6c3-3e33-4202-94f5-35805d7338e2",
+        "type": "message",
+        "text": "the one where they changed the color metadata?",
+        "user": "UE4C36RV4",
+        "ts": "1542207161.504900"
+    },
+    {
+        "client_msg_id": "d9aba473-a81a-4d93-b7b2-7c2889c78408",
+        "type": "message",
+        "text": "Yes - the colordemo is an example content pack that shows how to build Workflows to do \"things\"",
+        "user": "U6QFVRJNB",
+        "ts": "1542207230.505500"
+    },
+    {
+        "client_msg_id": "9763cd2c-ced1-47d2-abf4-8f49b6793e3b",
+        "type": "message",
+        "text": "I did, I think but I'll go back and check it again.",
+        "user": "UE4C36RV4",
+        "ts": "1542207274.506100"
+    },
+    {
+        "client_msg_id": "7694c9b5-ae30-4f88-90b5-014b3062ef94",
+        "type": "message",
+        "text": "One of those things can be run Cfg Mgmt tooling - Ansible local execution - or make a call out to Tower to do it, etc",
+        "user": "U6QFVRJNB",
+        "ts": "1542207291.506500"
+    },
+    {
+        "client_msg_id": "510f1d92-b140-4071-be10-f84ccfca36de",
+        "type": "message",
+        "text": "one point to remember - Workflow executes on the machine being provisioned, in the Sledgehammer (discovery)) environment",
+        "user": "U6QFVRJNB",
+        "ts": "1542207335.507200"
+    },
+    {
+        "client_msg_id": "34ab0004-976b-40ef-9b56-ea379761230b",
+        "type": "message",
+        "text": "so any calls\/cmds occur from the Machine in question",
+        "user": "U6QFVRJNB",
+        "ts": "1542207347.507600"
+    },
+    {
+        "client_msg_id": "c4b87a50-a3f2-48a5-aacb-518ad086fc3f",
+        "type": "message",
+        "text": "ahh yes.. so that's my question :smile:",
+        "user": "UE4C36RV4",
+        "ts": "1542207366.508400"
+    },
+    {
+        "client_msg_id": "c5b16966-1d9b-496f-8e3f-32b4bfe1793c",
+        "type": "message",
+        "text": "Plugins, on the other hand - execute on the DRP Endpoint side, on behalf of the machine - so depending on your security model around your provisioned machines - that may matter how\/what you build for custom content",
+        "user": "U6QFVRJNB",
+        "ts": "1542207380.508800"
+    },
+    {
+        "client_msg_id": "9d681b64-aeae-46e3-be76-703264af91aa",
+        "type": "message",
+        "text": "ok, so then for post-install \"not on the machine\" I will dig into plugins",
+        "user": "UE4C36RV4",
+        "ts": "1542207430.509400"
+    },
+    {
+        "client_msg_id": "b9f37e3c-52c5-445a-8839-dc8b4569042f",
+        "type": "message",
+        "text": "I've got some scripts that will do things like identify a node by it's serial, then \"enrich\" by attaching a profile, renaming the machine, creating a dhcp reservation, etc.",
+        "user": "UE4C36RV4",
+        "ts": "1542207516.510600"
+    },
+    {
+        "client_msg_id": "54e73176-35ba-47b2-b131-a70dae9caac6",
+        "type": "message",
+        "text": "do you have those in a \"content pack\" - or are you looking to build them in to one ?",
+        "user": "U6QFVRJNB",
+        "ts": "1542207547.511100"
+    },
+    {
+        "client_msg_id": "c89ba4a9-1168-42e9-a6b5-d367083f41a5",
+        "type": "message",
+        "text": "eventually in a content pack. right now it's adhoc in my virtualbox testing environment",
+        "user": "UE4C36RV4",
+        "ts": "1542207593.511800"
+    },
+    {
+        "client_msg_id": "8fa0098d-adb6-4ecf-b7dd-3229b8a64720",
+        "type": "message",
+        "text": "cool - colordemo should be a good template for you on how to build that in to a content pack",
+        "user": "U6QFVRJNB",
+        "ts": "1542207633.512300"
+    },
+    {
+        "client_msg_id": "0276a6d9-25a7-4134-809d-d84cc012f1fb",
+        "type": "message",
+        "text": "also - there is an Ansible content pack in DRP - which allows for running playbooks on Machines",
+        "user": "U6QFVRJNB",
+        "ts": "1542207663.512900"
+    },
+    {
+        "client_msg_id": "7fcf0d37-1b73-4593-b276-040a625d8630",
+        "type": "message",
+        "text": "This is also classification and inventory content packs that hand a lot of what your script is doing.  Ipmi plugin that also configures and drives IPMI actions.",
+        "user": "U02DGQYK1",
+        "ts": "1542207758.513800"
+    },
+    {
+        "client_msg_id": "dbf43904-c2ff-4ee2-88da-bfbffef7de77",
+        "type": "message",
+        "text": "can you point me to some of those packs (classification and inventory) ?",
+        "user": "UE4C36RV4",
+        "ts": "1542208046.514300"
+    },
+    {
+        "client_msg_id": "48df2dc9-74fa-4960-aa80-1b43a26ae39b",
+        "type": "message",
+        "text": "my identify is pretty simple and runs as a stage in discovery workflow",
+        "user": "UE4C36RV4",
+        "ts": "1542208082.514700"
+    },
+    {
+        "client_msg_id": "6c1c8b43-6907-474a-bd0a-14003669b331",
+        "type": "message",
+        "text": "```\nSERIAL=$(drpcli machines get {{ .Machine.UUID }} param gohai-inventory | jq -r '.DMI.System.SerialNumber')\nPROFILE=\"devices_${SERIAL}\"\ndrpcli machines addprofile ${RS_UUID} ${PROFILE}\n```",
+        "user": "UE4C36RV4",
+        "ts": "1542208083.515100",
+        "edited": {
+            "user": "UE4C36RV4",
+            "ts": "1542208090.000000"
+        }
+    },
+    {
+        "client_msg_id": "faf2d86e-88fe-4f8a-bf75-9143af23edb3",
+        "type": "message",
+        "text": "the enrich is a bit more complex because of parsing the mac out to make a reservation",
+        "user": "UE4C36RV4",
+        "ts": "1542208114.516100"
+    },
+    {
+        "client_msg_id": "3394bffe-f213-4593-89e4-0c6d09dcbdbd",
+        "type": "message",
+        "text": "(and I don't know how to make a reservation token on the machine just yet - so I do this from another location)",
+        "user": "UE4C36RV4",
+        "ts": "1542208173.517300"
+    },
+    {
+        "client_msg_id": "61c10528-5e0b-4228-85c6-6e34a84ab1c3",
+        "type": "message",
+        "text": "That is pretty clean.",
+        "user": "U02DGQYK1",
+        "ts": "1542208218.517600"
+    },
+    {
+        "client_msg_id": "9bdd6390-a26a-4aa0-84d7-3a1d5855dcc9",
+        "type": "message",
+        "text": "They are RackN content.  you can get access to them on a trial basis through the portal.",
+        "user": "U02DGQYK1",
+        "ts": "1542208246.518200"
+    },
+    {
+        "client_msg_id": "d29d09b4-8a2a-47b7-a719-0e2a5b7eb899",
+        "type": "message",
+        "text": "<@UE4C36RV4> - here's a video Rob did on the Inventory content piece",
+        "user": "U6QFVRJNB",
+        "ts": "1542208472.519000"
+    },
+    {
+        "client_msg_id": "2de5d88b-ec59-4337-96af-e8133250aed3",
+        "type": "message",
+        "text": "<https:\/\/youtu.be\/xDqxEW5bgiQ>",
+        "user": "U6QFVRJNB",
+        "ts": "1542208474.519200",
+        "attachments": [
+            {
+                "service_name": "YouTube",
+                "service_url": "https:\/\/www.youtube.com\/",
+                "title": "Digital Rebar Inventory Stage (RackN Task-Library)",
+                "title_link": "https:\/\/youtu.be\/xDqxEW5bgiQ",
+                "author_name": "RackN & Digital Rebar",
+                "author_link": "https:\/\/www.youtube.com\/channel\/UCr3bBtP-pMsDQ5c0IDjt_LQ",
+                "thumb_url": "https:\/\/i.ytimg.com\/vi\/xDqxEW5bgiQ\/hqdefault.jpg",
+                "thumb_width": 480,
+                "thumb_height": 360,
+                "fallback": "YouTube Video: Digital Rebar Inventory Stage (RackN Task-Library)",
+                "video_html": "<iframe width=\"400\" height=\"225\" src=\"https:\/\/www.youtube.com\/embed\/xDqxEW5bgiQ?feature=oembed&autoplay=1&iv_load_policy=3\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen><\/iframe>",
+                "video_html_width": 400,
+                "video_html_height": 225,
+                "from_url": "https:\/\/youtu.be\/xDqxEW5bgiQ",
+                "service_icon": "https:\/\/a.slack-edge.com\/2089\/img\/unfurl_icons\/youtube.png",
+                "id": 1,
+                "original_url": "https:\/\/youtu.be\/xDqxEW5bgiQ"
+            }
+        ]
+    },
+    {
+        "client_msg_id": "428e0e28-5c24-47c7-b734-76da19b269c1",
+        "type": "message",
+        "text": "it's in the DRP youtub playlist: <https:\/\/www.youtube.com\/playlist?list=PLXPBeIrpXjfilUi7Qj1Sl0UhjxNRSC7nx>",
+        "user": "U6QFVRJNB",
+        "ts": "1542208515.519600"
+    },
+    {
+        "client_msg_id": "b7c9daf1-b458-4f9f-8e83-2ae4c6309da2",
+        "type": "message",
+        "text": "<@UE4C36RV4> <@UCU824PB2> we\/RackN have been doing a lot of development integration here.   So our content is battle tested and also integrated to our other content beyond the basic DRP.",
+        "user": "U02DHRR2L",
+        "ts": "1542208835.521900"
+    },
+    {
+        "client_msg_id": "9cd4ab5a-17ca-418a-916c-1238ade28ce0",
+        "type": "message",
+        "text": "Sounds good. Now that I'm a week into it, I'll go a bit more into the demos and setup a trial soon. I wanted to get a handle on how DRP works first.",
+        "user": "UE4C36RV4",
+        "ts": "1542208948.523100"
+    },
+    {
+        "client_msg_id": "555d054c-7d3b-4fc4-9b03-0c4fe6bc274e",
+        "type": "message",
+        "text": "Inventory stage does what you asked. Uses same approach and adds some verification checks",
+        "user": "U02DHRR2L",
+        "ts": "1542209100.524300"
+    },
+    {
+        "client_msg_id": "76b41a9e-203e-4e89-b51c-d68105e3bbad",
+        "type": "message",
+        "text": "one other question.. is there a clear cut way to tell when a workflow is done?  Best I've found is to grab a machine, then see if CurrentTask is &gt; len(Tasks)",
+        "user": "UE4C36RV4",
+        "ts": "1542225523.525700"
+    },
+    {
+        "client_msg_id": "cd742644-f20e-4db9-8bbb-21660d951586",
+        "type": "message",
+        "text": "```\nroot@provisioner:~\/drp# drpcli machines show $RS_UUID | jq 'del(.Params)' &gt; active.json\nroot@provisioner:~\/drp# diff active.json  done.json\n5,6c5,6\n&lt;   \"CurrentJob\": \"33f5db70-da8e-4d17-bd66-acfffd749b9f\",\n&lt;   \"CurrentTask\": 4,\n---\n&gt;   \"CurrentJob\": \"b0dd3844-49bd-4e08-b28d-0daa28eaff77\",\n&gt;   \"CurrentTask\": 5,\nroot@provisioner:~\/drp# cat active.json | jq '.Tasks'\n[\n  \"stage:helloworld\",\n  \"bootenv:sledgehammer\",\n  \"helloworld\",\n  \"stage:sleepstate\",\n  \"sleep100\"\n]\n```",
+        "user": "UE4C36RV4",
+        "ts": "1542225572.525900"
+    },
+    {
+        "client_msg_id": "a04ebaca-3785-45d0-acff-7cab4ddbc78f",
+        "type": "message",
+        "text": "<@UE4C36RV4> - The official way to know if no work is left to do is the `CurrentTask &gt;= len(Tasks)`  With regard to workflow completion, I generally prefer having a completion stage that does nothing but by the end of the workflow.",
+        "user": "U02DGQYK1",
+        "ts": "1542225790.527900"
+    },
+    {
+        "client_msg_id": "0ad5d9fe-7975-4cf5-8df9-22fc4d4900d6",
+        "type": "message",
+        "text": "Then I can wait on machine events for the machine’s stage to get to complete.",
+        "user": "U02DGQYK1",
+        "ts": "1542225823.528600"
+    },
+    {
+        "client_msg_id": "06fee2b9-ac6a-4e4d-a185-cf44cef82d45",
+        "type": "message",
+        "text": ":+1:",
+        "user": "UE4C36RV4",
+        "ts": "1542225823.528700"
+    },
+    {
+        "client_msg_id": "86e314ab-1884-481b-bc15-f676cc091718",
+        "type": "message",
+        "text": "something like this: `drpcli machines wait 4f0a44b1-a789-4ba7-a6fc-61541b996b8d Stage sledgehammer-wait`",
+        "user": "U02DGQYK1",
+        "ts": "1542225915.529800"
+    },
+    {
+        "client_msg_id": "9335d897-5c76-4256-996a-264c88b5a98e",
+        "type": "message",
+        "text": "I had been putting noop \"workflow-done\" stages at the end of some workflows. :slightly_smiling_face:",
+        "user": "UE4C36RV4",
+        "ts": "1542225919.530000"
+    },
+    {
+        "client_msg_id": "36b08d44-fdac-4405-afe2-13015cae0ed8",
+        "type": "message",
+        "text": "Most of the RackN workflows for kubernetes and the like have “bookend” stages to bracket to workflows.",
+        "user": "U02DGQYK1",
+        "ts": "1542225969.531200"
+    },
+    {
+        "client_msg_id": "aaafb705-a4c5-44ad-9392-6a882c53b186",
+        "type": "message",
+        "text": "The start stage is useful as well because it allows you to ensure proper bootenv without forcing middle stages to care about bootenv.",
+        "user": "U02DGQYK1",
+        "ts": "1542226026.532800"
+    },
+    {
+        "client_msg_id": "6bd7916c-a830-4cd5-b459-a116084dccdb",
+        "type": "message",
+        "text": "Cool. I was starting to put those stages in at the end, then I wondered if I was missing something. But now I know `CurrentTask &gt;= len(Tasks)`, and that adding a noop stage is a recommended practice.",
+        "user": "UE4C36RV4",
+        "ts": "1542226108.533700"
+    },
+    {
+        "client_msg_id": "7b9876b0-8098-4ef8-b5ea-55a905d28de8",
+        "type": "message",
+        "text": "Thank you.",
+        "user": "UE4C36RV4",
+        "ts": "1542226109.533900"
+    },
+    {
+        "client_msg_id": "d94306b4-3fa2-47cd-a551-0fd218f60bea",
+        "type": "message",
+        "text": "The challenge with the CurrentTask variable and len(Tasks) is that Tasks can change.",
+        "user": "U02DGQYK1",
+        "ts": "1542226157.534500"
+    },
+    {
+        "client_msg_id": "fe910f8b-f0ef-440b-93cc-4ede9a274993",
+        "type": "message",
+        "text": "If you use the RackN hardware components, they dynamically alter the task list on the fly to inject tasks for bios, raid, and ipmi configuration based upon the presence of adapters and other information.  This means that it can grow over time.  While jq and getting the machine object repeatedly works, the “end-cap” stage allows you to setup an event waiter that has a known and easy to validate target.",
+        "user": "U02DGQYK1",
+        "ts": "1542226274.536600",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1542226298.000000"
+        }
+    },
+    {
+        "client_msg_id": "980b5174-8b1d-4a45-9378-98df180e4971",
+        "type": "message",
+        "text": "understood.  I am definitely seeing a waitforstage(uuid, workflow, stagename, timeout)  type function",
+        "user": "UE4C36RV4",
+        "ts": "1542226366.537300"
+    },
+    {
+        "client_msg_id": "2eaa15e5-f01b-43c4-9780-89b72edb3dbc",
+        "type": "message",
+        "text": "The golang api library already has one with a large ability to do complex ops with it.  the drpcli has a simpler version of it exposed.",
+        "user": "U02DGQYK1",
+        "ts": "1542226433.538200"
+    },
+    {
+        "client_msg_id": "241f18ab-8cc3-47f4-8294-95d6103b830e",
+        "type": "message",
+        "text": "The “runner” uses it to figure out if the machine has work to do.  This means that instead of poll looping on the machine object, the runner actually waits for machine changes and gets notified by events to wake up.  Allowing for huge scale.",
+        "user": "U02DGQYK1",
+        "ts": "1542226488.539400"
+    }
+]

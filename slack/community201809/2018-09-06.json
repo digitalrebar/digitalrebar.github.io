@@ -1,113 +1,113 @@
 [
     {
-        "type": "message",
-        "user": "UBXEU90UQ",
-        "text": "is the DRP catalog serverless? Just ran into a random 502 attempting to download drp-community-content and then all the others worked fine, felt like a spin up delay or something :slightly_smiling_face:",
         "client_msg_id": "a0d7fc03-ffd6-4555-bc91-fba25782d7eb",
+        "type": "message",
+        "text": "is the DRP catalog serverless? Just ran into a random 502 attempting to download drp-community-content and then all the others worked fine, felt like a spin up delay or something :slightly_smiling_face:",
+        "user": "UBXEU90UQ",
         "ts": "1536231259.000100"
     },
     {
-        "type": "message",
-        "user": "U02DHRR2L",
-        "text": "Yes",
         "client_msg_id": "4a0016f6-2163-46a7-af1d-9fecf5ba9407",
+        "type": "message",
+        "text": "Yes",
+        "user": "U02DHRR2L",
         "ts": "1536233068.000100"
     },
     {
-        "type": "message",
-        "user": "UBXEU90UQ",
-        "text": "cool, i’ll just make Ansible retry a couple of times then :slightly_smiling_face:",
         "client_msg_id": "b4dcd36c-990d-4192-a956-2252bbb6dd40",
+        "type": "message",
+        "text": "cool, i’ll just make Ansible retry a couple of times then :slightly_smiling_face:",
+        "user": "UBXEU90UQ",
         "ts": "1536237055.000100"
     },
     {
-        "type": "message",
-        "user": "UBXEU90UQ",
-        "text": "sigh… just realised a day later that I opened an issue for DRP on the drp-content repo :confused:",
         "client_msg_id": "a55b626f-99a0-4172-b062-eda43480a908",
+        "type": "message",
+        "text": "sigh… just realised a day later that I opened an issue for DRP on the drp-content repo :confused:",
+        "user": "UBXEU90UQ",
         "ts": "1536240777.000100"
     },
     {
-        "type": "message",
-        "user": "U6QFVRJNB",
-        "text": "no worries - we track both :slightly_smiling_face:",
         "client_msg_id": "331986c7-e9ea-4fee-956b-dc991bd89b6b",
+        "type": "message",
+        "text": "no worries - we track both :slightly_smiling_face:",
+        "user": "U6QFVRJNB",
         "ts": "1536242133.000100"
     },
     {
-        "type": "message",
-        "user": "UBXEU90UQ",
-        "text": "added it as a PR to the correct repo anyway, just in case my fix is the correct one :expressionless:",
         "client_msg_id": "153e6acd-4044-4060-affe-20feb6d7a23d",
+        "type": "message",
+        "text": "added it as a PR to the correct repo anyway, just in case my fix is the correct one :expressionless:",
+        "user": "UBXEU90UQ",
         "ts": "1536242783.000100"
     },
     {
-        "type": "message",
-        "user": "U6QFVRJNB",
-        "text": "thanks <@UBXEU90UQ> - we haven't had a chance to review yet, hopefully <@U02DGQYK1> will get a chance to look at it today",
         "client_msg_id": "02e52ac6-d45b-4620-8562-b43eaf2b1ee1",
+        "type": "message",
+        "text": "thanks <@UBXEU90UQ> - we haven't had a chance to review yet, hopefully <@U02DGQYK1> will get a chance to look at it today",
+        "user": "U6QFVRJNB",
         "ts": "1536243200.000200"
     },
     {
-        "type": "message",
-        "user": "UBXEU90UQ",
-        "text": ":+1: - on an unrelated note - am I right that it’s not possible to change the ‘global’ profile name assigned to all machines right now?\n\nLooks like the default profile name is hardcoded in `DataTracker`. Reason I ask is that ideally I’d like to include my own `global` profile in our own content pack, but as `global` is autocreated I get `keysCannotBeOverridden: global is already in layer 0`.\n\nI can obviously modify the global profile myself but that misses out all the niceties of being able to have everything in the content pack, tracked in git and appropriately CI’d :slightly_smiling_face:",
         "client_msg_id": "aa60ed0e-c7e1-4686-86e6-fd924f47587a",
+        "type": "message",
+        "text": ":+1: - on an unrelated note - am I right that it’s not possible to change the ‘global’ profile name assigned to all machines right now?\n\nLooks like the default profile name is hardcoded in `DataTracker`. Reason I ask is that ideally I’d like to include my own `global` profile in our own content pack, but as `global` is autocreated I get `keysCannotBeOverridden: global is already in layer 0`.\n\nI can obviously modify the global profile myself but that misses out all the niceties of being able to have everything in the content pack, tracked in git and appropriately CI’d :slightly_smiling_face:",
+        "user": "UBXEU90UQ",
         "ts": "1536243775.000100"
     },
     {
-        "type": "message",
-        "user": "U6QFVRJNB",
-        "text": "yes - `global` is hard coded, and intended to always be available on all machines",
         "client_msg_id": "3e2aac89-923a-45c1-b286-960fc5da3811",
+        "type": "message",
+        "text": "yes - `global` is hard coded, and intended to always be available on all machines",
+        "user": "U6QFVRJNB",
         "ts": "1536243828.000100"
     },
     {
-        "type": "message",
-        "user": "U6QFVRJNB",
-        "text": "it has the lowest order of precedence - so any Params specified in other profiles override it, and subsequently, any Params directly applied to the Machine Object override those",
         "client_msg_id": "9aa7cef5-c763-4b73-9a01-1fa8ca63d595",
+        "type": "message",
+        "text": "it has the lowest order of precedence - so any Params specified in other profiles override it, and subsequently, any Params directly applied to the Machine Object override those",
+        "user": "U6QFVRJNB",
         "ts": "1536243902.000100"
     },
     {
-        "type": "message",
-        "user": "U6QFVRJNB",
-        "text": "can you just call your global something like `global-squiz` or similarly ... ?",
         "client_msg_id": "343783fd-0b32-415d-824b-91cb8968867e",
+        "type": "message",
+        "text": "can you just call your global something like `global-squiz` or similarly ... ?",
+        "user": "U6QFVRJNB",
         "ts": "1536243946.000200"
     },
     {
-        "type": "message",
-        "user": "U02DHRR2L",
-        "text": "you can add a stage that would always add that provide to any machine during discovery",
         "client_msg_id": "07ad1ae8-dedc-4eb5-8640-747d056a51fe",
+        "type": "message",
+        "text": "you can add a stage that would always add that provide to any machine during discovery",
+        "user": "U02DHRR2L",
         "ts": "1536243967.000100"
     },
     {
-        "type": "message",
-        "user": "UBXEU90UQ",
-        "text": "^ thats what I was missing, thanks :smile:",
         "client_msg_id": "ecb76307-35b5-4aa7-87d1-f37167aa3391",
+        "type": "message",
+        "text": "^ thats what I was missing, thanks :smile:",
+        "user": "UBXEU90UQ",
         "ts": "1536243981.000100"
     },
     {
-        "type": "message",
-        "user": "U02DHRR2L",
-        "text": "the RackN classify content package performs this function (proxy for <@U02DGQYK1> )",
         "client_msg_id": "f7367f22-cc4a-42af-9dc9-c9a8386bd547",
+        "type": "message",
+        "text": "the RackN classify content package performs this function (proxy for <@U02DGQYK1> )",
+        "user": "U02DHRR2L",
         "ts": "1536244014.000100"
     },
     {
-        "type": "message",
-        "user": "U6QFVRJNB",
-        "text": "we also have some Classification content that can be used to verify a machines configuration, and based on some values - apply specific profiles and workflows to those machines",
         "client_msg_id": "79435c2b-331b-45c1-b554-cecb34aed829",
+        "type": "message",
+        "text": "we also have some Classification content that can be used to verify a machines configuration, and based on some values - apply specific profiles and workflows to those machines",
+        "user": "U6QFVRJNB",
         "ts": "1536244014.000200"
     },
     {
-        "text": "jinx",
         "type": "message",
         "subtype": "me_message",
+        "text": "jinx",
         "user": "U02DHRR2L",
         "ts": "1536244020.000100",
         "reactions": [
@@ -123,24 +123,24 @@
         ]
     },
     {
-        "type": "message",
-        "user": "UBXEU90UQ",
-        "text": "hah, thanks guys",
         "client_msg_id": "0ab6aaa4-759a-4ca2-a613-cb409d1d47d7",
+        "type": "message",
+        "text": "hah, thanks guys",
+        "user": "UBXEU90UQ",
         "ts": "1536244049.000100"
     },
     {
-        "type": "message",
-        "user": "UBXEU90UQ",
-        "text": "okay i’ll just create a separate one and do it that way",
         "client_msg_id": "e658384b-dcaa-4718-b50f-f578cc3ba1bd",
+        "type": "message",
+        "text": "okay i’ll just create a separate one and do it that way",
+        "user": "UBXEU90UQ",
         "ts": "1536244065.000100"
     },
     {
-        "type": "message",
-        "user": "UBXEU90UQ",
-        "text": "the whole content pack thing is super useful btw, being able to version control all of it helps a lot…",
         "client_msg_id": "2fd3e249-9180-439f-8ce3-182b45291000",
+        "type": "message",
+        "text": "the whole content pack thing is super useful btw, being able to version control all of it helps a lot…",
+        "user": "UBXEU90UQ",
         "ts": "1536244366.000100",
         "reactions": [
             {
@@ -153,17 +153,17 @@
         ]
     },
     {
-        "type": "message",
-        "user": "U6QFVRJNB",
-        "text": "yep - a lesson we learned many years ago ... :slightly_smiling_face:",
         "client_msg_id": "ac5a6580-551c-48b6-abe1-162ec8b44f59",
+        "type": "message",
+        "text": "yep - a lesson we learned many years ago ... :slightly_smiling_face:",
+        "user": "U6QFVRJNB",
         "ts": "1536244445.000100"
     },
     {
-        "type": "message",
-        "user": "UCD5VP2C8",
-        "text": "That's what attracted our company to DR to begin with -- the ability to deploy infrastructure with git webhooks.",
         "client_msg_id": "f46a97e0-b1b1-40b3-8304-c265e66b3148",
+        "type": "message",
+        "text": "That's what attracted our company to DR to begin with -- the ability to deploy infrastructure with git webhooks.",
+        "user": "UCD5VP2C8",
         "ts": "1536244492.000100",
         "reactions": [
             {
@@ -176,45 +176,45 @@
         ]
     },
     {
-        "type": "message",
-        "user": "UBXEU90UQ",
-        "text": "yeah… thats nice",
         "client_msg_id": "52b6b52b-c926-40fb-b749-a2f946edca0d",
+        "type": "message",
+        "text": "yeah… thats nice",
+        "user": "UBXEU90UQ",
         "ts": "1536244735.000100"
     },
     {
-        "type": "message",
-        "user": "UBXEU90UQ",
-        "text": "haven’t even really thought what more we can do with this yet more than what we were using foreman for",
         "client_msg_id": "7e7cd446-8742-48fe-b85f-def96d8a180d",
+        "type": "message",
+        "text": "haven’t even really thought what more we can do with this yet more than what we were using foreman for",
+        "user": "UBXEU90UQ",
         "ts": "1536244755.000100"
     },
     {
-        "type": "message",
-        "user": "UCD5VP2C8",
-        "text": "Is it typical for a Machine to have pending tasks after a successful OS installation workflow?",
         "client_msg_id": "5a4b078e-274b-4dd5-9a80-975c652abd03",
+        "type": "message",
+        "text": "Is it typical for a Machine to have pending tasks after a successful OS installation workflow?",
+        "user": "UCD5VP2C8",
         "ts": "1536252590.000100"
     },
     {
-        "type": "message",
-        "user": "U6QFVRJNB",
-        "text": "<@UCD5VP2C8> - what does your Workflow look like, and what are the pending tasks?  The current kickstart\/preseed solution allows for adding Stages\/Tasks to be executed post-install, but prior to reboot.  One of the (often) common tasks is to run the `runner-service` stage to add the Agent as a service in the final OS piece ... some others include injecting SSH keys for remote access, etc...",
         "client_msg_id": "1f045916-eea4-4458-89fc-1ffeec53dcad",
+        "type": "message",
+        "text": "<@UCD5VP2C8> - what does your Workflow look like, and what are the pending tasks?  The current kickstart\/preseed solution allows for adding Stages\/Tasks to be executed post-install, but prior to reboot.  One of the (often) common tasks is to run the `runner-service` stage to add the Agent as a service in the final OS piece ... some others include injecting SSH keys for remote access, etc...",
+        "user": "U6QFVRJNB",
         "ts": "1536252916.000100"
     },
     {
-        "type": "message",
-        "user": "UCD5VP2C8",
-        "text": "```{\n  \"Validated\": true,\n  \"Available\": true,\n  \"Errors\": [],\n  \"ReadOnly\": false,\n  \"Meta\": {\n    \"color\": \"black\",\n    \"icon\": \"shuffle\",\n    \"title\": \"OracleLinux\"\n  },\n  \"Name\": \"oracle-7\",\n  \"Description\": \"Oracle Enterprise Linux\",\n  \"Documentation\": \"\",\n  \"Stages\": [\n    \"oracle-7-install\",\n    \"complete-nowait\"\n  ]\n}```",
         "client_msg_id": "b81a8cc2-c1ef-4518-addc-a1e2dc506f40",
+        "type": "message",
+        "text": "```{\n  \"Validated\": true,\n  \"Available\": true,\n  \"Errors\": [],\n  \"ReadOnly\": false,\n  \"Meta\": {\n    \"color\": \"black\",\n    \"icon\": \"shuffle\",\n    \"title\": \"OracleLinux\"\n  },\n  \"Name\": \"oracle-7\",\n  \"Description\": \"Oracle Enterprise Linux\",\n  \"Documentation\": \"\",\n  \"Stages\": [\n    \"oracle-7-install\",\n    \"complete-nowait\"\n  ]\n}```",
+        "user": "UCD5VP2C8",
         "ts": "1536252983.000100"
     },
     {
-        "type": "message",
-        "user": "UCD5VP2C8",
-        "text": "`runner-service` rings a bell though, thanks.",
         "client_msg_id": "34484608-f515-4045-89b9-9829d9a340aa",
+        "type": "message",
+        "text": "`runner-service` rings a bell though, thanks.",
+        "user": "UCD5VP2C8",
         "ts": "1536253010.000100",
         "reactions": [
             {
@@ -228,73 +228,73 @@
         ]
     },
     {
-        "type": "message",
-        "user": "UCD5VP2C8",
-        "text": "Is runner-service included in community content? I don't see it on my local, isolated installation.",
         "client_msg_id": "bd4708af-467b-42b7-9143-f897fbbf857a",
+        "type": "message",
+        "text": "Is runner-service included in community content? I don't see it on my local, isolated installation.",
+        "user": "UCD5VP2C8",
         "ts": "1536253231.000100"
     },
     {
-        "type": "message",
-        "user": "U6QFVRJNB",
-        "text": "it's in `task-library`",
         "client_msg_id": "5b752005-9577-4e33-9a58-76e53001224d",
+        "type": "message",
+        "text": "it's in `task-library`",
+        "user": "U6QFVRJNB",
         "ts": "1536253244.000100"
     },
     {
-        "type": "message",
-        "user": "UCD5VP2C8",
-        "text": "Do I need a license for task-library? I'm having trouble installing it from the RackN portal",
         "client_msg_id": "6c21f8da-4c5c-4b88-86bb-6cc9de2ab673",
+        "type": "message",
+        "text": "Do I need a license for task-library? I'm having trouble installing it from the RackN portal",
+        "user": "UCD5VP2C8",
         "ts": "1536253823.000100"
     },
     {
-        "type": "message",
-        "user": "UCD5VP2C8",
-        "text": "Never mind I got it",
         "client_msg_id": "b1b1f2d8-8675-406c-a723-a19fa6767eb4",
+        "type": "message",
+        "text": "Never mind I got it",
+        "user": "UCD5VP2C8",
         "ts": "1536254564.000100"
     },
     {
-        "type": "message",
-        "user": "UCD5VP2C8",
-        "text": "<@U6QFVRJNB> that's just what I needed, thanks!",
         "client_msg_id": "14582015-8dc9-489f-bccf-17d428f35d46",
+        "type": "message",
+        "text": "<@U6QFVRJNB> that's just what I needed, thanks!",
+        "user": "UCD5VP2C8",
         "ts": "1536255135.000100"
     },
     {
-        "type": "message",
-        "user": "UCD5VP2C8",
-        "text": "Got the green checkmark of awesomeness :slightly_smiling_face:",
         "client_msg_id": "ab8803c5-b555-4d1d-9671-33dd2218c8b8",
+        "type": "message",
+        "text": "Got the green checkmark of awesomeness :slightly_smiling_face:",
+        "user": "UCD5VP2C8",
         "ts": "1536255188.000100"
     },
     {
-        "type": "message",
-        "user": "U6QFVRJNB",
-        "text": "cool",
         "client_msg_id": "9e90cbfc-085a-4d62-819f-6c77a626bb19",
+        "type": "message",
+        "text": "cool",
+        "user": "U6QFVRJNB",
         "ts": "1536255232.000100"
     },
     {
-        "type": "message",
-        "user": "UCD5VP2C8",
-        "text": "What is a _node_ in terms of licensing paid content?",
         "client_msg_id": "e8501da4-1d74-4cba-a248-cacff583fe10",
+        "type": "message",
+        "text": "What is a _node_ in terms of licensing paid content?",
+        "user": "UCD5VP2C8",
         "ts": "1536256535.000100"
     },
     {
-        "type": "message",
-        "user": "U6QFVRJNB",
-        "text": "<@UCD5VP2C8> - answering on direct message",
         "client_msg_id": "666caa9a-899d-4033-907a-7ee0b74902a4",
+        "type": "message",
+        "text": "<@UCD5VP2C8> - answering on direct message",
+        "user": "U6QFVRJNB",
         "ts": "1536256566.000100"
     },
     {
-        "type": "message",
-        "user": "UBXEU90UQ",
-        "text": "man kexec reboots are awesome :smile:",
         "client_msg_id": "67844537-cca0-4be4-a821-6a0811923a07",
+        "type": "message",
+        "text": "man kexec reboots are awesome :smile:",
+        "user": "UBXEU90UQ",
         "ts": "1536265166.000100",
         "reactions": [
             {
@@ -310,10 +310,10 @@
         ]
     },
     {
-        "type": "message",
-        "user": "U02DGQYK1",
-        "text": "lol :slightly_smiling_face:",
         "client_msg_id": "38c97582-1d43-4211-b9a3-204b4591380a",
+        "type": "message",
+        "text": "lol :slightly_smiling_face:",
+        "user": "U02DGQYK1",
         "ts": "1536265953.000100"
     }
 ]

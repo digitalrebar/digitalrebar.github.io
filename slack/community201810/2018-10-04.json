@@ -1,0 +1,418 @@
+[
+    {
+        "client_msg_id": "432ac905-56e3-4563-b0b9-3aecac38c9a9",
+        "type": "message",
+        "text": "<https:\/\/github.com\/digitalrebar\/colordemo>",
+        "user": "U02DHRR2L",
+        "ts": "1538655854.000100",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/colordemo",
+                "title_link": "https:\/\/github.com\/digitalrebar\/colordemo",
+                "text": "Training Content. Contribute to digitalrebar\/colordemo development by creating an account on GitHub.",
+                "fallback": "GitHub: digitalrebar\/colordemo",
+                "from_url": "https:\/\/github.com\/digitalrebar\/colordemo",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/digitalrebar\/colordemo"
+            }
+        ]
+    },
+    {
+        "client_msg_id": "2574e30c-2bbc-4ee0-94c5-a9e7c382b2bf",
+        "type": "message",
+        "text": "<@UCWNG6NTV> ^^",
+        "user": "U02DHRR2L",
+        "ts": "1538655871.000100"
+    },
+    {
+        "client_msg_id": "5e0bb8c4-9ce8-47cf-803c-d5b2a4830f29",
+        "type": "message",
+        "text": "Thank you Greg and Rob for the clarification and pointer!",
+        "user": "UCWNG6NTV",
+        "ts": "1538661811.000100"
+    },
+    {
+        "user": "UD6M748E5",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1538665463.000200",
+        "text": "<@UD6M748E5> has joined the channel"
+    },
+    {
+        "client_msg_id": "8d59b26e-8779-425f-a2e5-3ad5baf775f0",
+        "type": "message",
+        "text": "<@UD6M748E5> $welcome ",
+        "user": "U02DHRR2L",
+        "ts": "1538667029.000100"
+    },
+    {
+        "type": "message",
+        "subtype": "slackbot_response",
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "user": "USLACKBOT",
+        "ts": "1538667030.000100"
+    },
+    {
+        "client_msg_id": "96e159d1-f871-4d95-b49f-59402b14ef61",
+        "type": "message",
+        "text": "Setting options for subnets.  Can you give me an example of the ‘value’ field",
+        "user": "UBP7HL339",
+        "ts": "1538680632.000100"
+    },
+    {
+        "client_msg_id": "f48ce235-8190-4f1b-8792-887d7e1c083e",
+        "type": "message",
+        "text": "what we have in our dhcp.conf is",
+        "user": "UBP7HL339",
+        "ts": "1538680644.000100"
+    },
+    {
+        "client_msg_id": "b249d841-d8a2-4ad1-b67a-1b60c3d7e667",
+        "type": "message",
+        "text": "option option-128 code 128 = string",
+        "user": "UBP7HL339",
+        "ts": "1538680653.000100"
+    },
+    {
+        "client_msg_id": "66daca32-0247-4510-bee9-31049b231188",
+        "type": "message",
+        "text": "so I think option-128 but might be string?",
+        "user": "UBP7HL339",
+        "ts": "1538680672.000100"
+    },
+    {
+        "client_msg_id": "dfb290e1-78cc-432a-8fc6-046702b47582",
+        "type": "message",
+        "text": "<https:\/\/provision.readthedocs.io\/en\/latest\/doc\/quickstart.html#rs-qs-subnet>",
+        "user": "U6QFVRJNB",
+        "ts": "1538680683.000100"
+    },
+    {
+        "client_msg_id": "85066721-cc25-47d3-9d5f-91121d566834",
+        "type": "message",
+        "text": "when in doubt read the directions",
+        "user": "UBP7HL339",
+        "ts": "1538680714.000100"
+    },
+    {
+        "client_msg_id": "91fb9898-31f6-489e-bab5-9151288a3a50",
+        "type": "message",
+        "text": ":slightly_smiling_face:",
+        "user": "UBP7HL339",
+        "ts": "1538680716.000100"
+    },
+    {
+        "client_msg_id": "03546eea-fe3c-4f1a-82d6-ab2e2d464d69",
+        "type": "message",
+        "text": "The \"Description\" fields in that JSON example are superfluous - they are ignored - and just there to help document the actual Option number a little better",
+        "user": "U6QFVRJNB",
+        "ts": "1538680732.000100"
+    },
+    {
+        "client_msg_id": "b9a177cf-b214-4eef-9c2d-1eadd824622a",
+        "type": "message",
+        "text": "Ok I get it now",
+        "user": "UBP7HL339",
+        "ts": "1538680765.000100"
+    },
+    {
+        "client_msg_id": "d5c3e738-caea-4aff-8ea1-f24a4c0cd7bf",
+        "type": "message",
+        "text": "more details can be found in the Architecture Reference pages too - and DHCP\/Subnets have a little more info at:\n<https:\/\/provision.readthedocs.io\/en\/latest\/doc\/arch\/dhcp.html>",
+        "user": "U6QFVRJNB",
+        "ts": "1538680901.000100"
+    },
+    {
+        "client_msg_id": "617101ea-32e1-40a9-a387-13551f180381",
+        "type": "message",
+        "text": "<@UBP7HL339> - does that help answer the question ?",
+        "user": "U6QFVRJNB",
+        "ts": "1538681006.000100"
+    },
+    {
+        "client_msg_id": "1149247c-f68e-4e6b-a97d-841a1dcea5da",
+        "type": "message",
+        "text": "yeap I have to look up the integer codes for the options.  We used cheats (domain-name-server instead of 6 for instance)",
+        "user": "UBP7HL339",
+        "ts": "1538681043.000100"
+    },
+    {
+        "client_msg_id": "790a4307-256e-47de-8c2d-3d7d05dc7981",
+        "type": "message",
+        "text": "yeah - that would be a nice enhancement to our Subnet model ... :slightly_smiling_face:",
+        "user": "U6QFVRJNB",
+        "ts": "1538681120.000100"
+    },
+    {
+        "type": "message",
+        "text": "",
+        "files": [
+            {
+                "id": "FD6QGNVFA",
+                "created": 1538681464,
+                "timestamp": 1538681464,
+                "name": "for_instance.txt",
+                "title": "for instance",
+                "mimetype": "text\/plain",
+                "filetype": "text",
+                "pretty_type": "Plain Text",
+                "user": "UBP7HL339",
+                "editable": true,
+                "size": 358,
+                "mode": "snippet",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FD6QGNVFA\/for_instance.txt?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FD6QGNVFA\/download\/for_instance.txt?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "permalink": "https:\/\/rackn.slack.com\/files\/UBP7HL339\/FD6QGNVFA\/for_instance.txt",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FD6QGNVFA-89887d3876",
+                "edit_link": "https:\/\/rackn.slack.com\/files\/UBP7HL339\/FD6QGNVFA\/for_instance.txt\/edit",
+                "preview": "subnet 172.16.141.0 netmask 255.255.255.0{\r\n  range 172.16.141.8 172.16.141.30;\r\n  option domain-name-servers 10.203.171.38;\r\n  option domain-name \"aricentlabs.com\";\r\n  option subnet-mask 255.255.255.0;\r",
+                "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>subnet 172.16.141.0 netmask 255.255.255.0{<\/pre><\/div>\n<div><pre>  range 172.16.141.8 172.16.141.30;<\/pre><\/div>\n<div><pre>  option domain-name-servers 10.203.171.38;<\/pre><\/div>\n<div><pre>  option domain-name &quot;aricentlabs.com&quot;;<\/pre><\/div>\n<div><pre>  option subnet-mask 255.255.255.0;<\/pre><\/div>\n<div><pre><\/pre><\/div>\n<\/div>\n<\/div>\n",
+                "lines": 11,
+                "lines_more": 6,
+                "preview_is_truncated": false
+            }
+        ],
+        "upload": true,
+        "user": "UBP7HL339",
+        "display_as_bot": false,
+        "ts": "1538681465.000100"
+    },
+    {
+        "client_msg_id": "b8948e9d-ad98-40f8-9ce7-490c35f6adc3",
+        "type": "message",
+        "text": "no biggy",
+        "user": "UBP7HL339",
+        "ts": "1538681474.000100"
+    },
+    {
+        "client_msg_id": "b1919270-6a01-4b1f-a3b5-c5a2167a503a",
+        "type": "message",
+        "text": "So is there anyway to handle this sort of thing or is that a workflow (or something else) problem",
+        "user": "UBP7HL339",
+        "ts": "1538681573.000100"
+    },
+    {
+        "type": "message",
+        "text": "",
+        "files": [
+            {
+                "id": "FD8TF5B9C",
+                "created": 1538681579,
+                "timestamp": 1538681579,
+                "name": "-.pl",
+                "title": "Untitled",
+                "mimetype": "text\/plain",
+                "filetype": "perl",
+                "pretty_type": "Perl",
+                "user": "UBP7HL339",
+                "editable": true,
+                "size": 301,
+                "mode": "snippet",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FD8TF5B9C\/-.pl?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FD8TF5B9C\/download\/-.pl?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "permalink": "https:\/\/rackn.slack.com\/files\/UBP7HL339\/FD8TF5B9C\/-.pl",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FD8TF5B9C-a596102527",
+                "edit_link": "https:\/\/rackn.slack.com\/files\/UBP7HL339\/FD8TF5B9C\/-.pl\/edit",
+                "preview": "option arch code 93 = unsigned integer 16;\r\n #next-server X.X.X.X;\r\n class \"pxeclient\" {\r\n    match if substring (option vendor-class-identifier, 0, 9) = \"PXEClient\";\r\n    if option arch = 00:07 {\r",
+                "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre><span class=\"cm-meta\">option<\/span> <span class=\"cm-meta\">arch<\/span> <span class=\"cm-meta\">code<\/span> <span class=\"cm-number\">93<\/span> <span class=\"cm-operator\">=<\/span> <span class=\"cm-meta\">unsigned<\/span> <span class=\"cm-meta\">integer<\/span> <span class=\"cm-number\">16<\/span>;<\/pre><\/div>\n<div><pre> <span class=\"cm-comment\">#next-server X.X.X.X;<\/span><\/pre><\/div>\n<div><pre> <span class=\"cm-meta\">class<\/span> <span class=\"cm-string\">&quot;pxeclient&quot;<\/span> {<\/pre><\/div>\n<div><pre>    <span class=\"cm-meta\">match<\/span> <span class=\"cm-keyword\">if<\/span> <span class=\"cm-meta\">substring<\/span> (<span class=\"cm-meta\">option<\/span> <span class=\"cm-meta\">vendor<\/span><span class=\"cm-operator\">-<\/span><span class=\"cm-meta\">class<\/span><span class=\"cm-operator\">-<\/span><span class=\"cm-meta\">identifier<\/span>, <span class=\"cm-number\">0<\/span>, <span class=\"cm-number\">9<\/span>) <span class=\"cm-operator\">=<\/span> <span class=\"cm-string\">&quot;PXEClient&quot;<\/span>;<\/pre><\/div>\n<div><pre>    <span class=\"cm-keyword\">if<\/span> <span class=\"cm-meta\">option<\/span> <span class=\"cm-meta\">arch<\/span> <span class=\"cm-operator\">=<\/span> <span class=\"cm-number\">00<\/span><span class=\"cm-operator\">:<\/span><span class=\"cm-number\">07<\/span> {<\/pre><\/div>\n<\/div>\n<\/div>\n",
+                "lines": 11,
+                "lines_more": 6,
+                "preview_is_truncated": false
+            }
+        ],
+        "upload": true,
+        "user": "UBP7HL339",
+        "display_as_bot": false,
+        "ts": "1538681580.000100"
+    },
+    {
+        "client_msg_id": "1f7aca5e-0f45-4ba7-ba56-9195c122470a",
+        "type": "message",
+        "text": "as far as EFI vs BIOS",
+        "user": "UBP7HL339",
+        "ts": "1538681598.000100"
+    },
+    {
+        "client_msg_id": "96b9658b-4d57-4808-a4bb-8f6c1ac42507",
+        "type": "message",
+        "text": "you can do similar matching - here's an example via Option 67:\n<https:\/\/provision.readthedocs.io\/en\/tip\/doc\/faq-troubleshooting.html#uefi-boot-support-option-67>",
+        "user": "U6QFVRJNB",
+        "ts": "1538681679.000100"
+    },
+    {
+        "client_msg_id": "038facbf-c60d-4af9-ac9e-5da6bcf1b7e6",
+        "type": "message",
+        "text": "when <@U02DGQYK1> or <@U02DJQSG8> get a chance to respond - they may have some thoughts on what you're trying to do with UEFI - we do have a lot of baked in support to try and magically handle UEFI boot modes easily - but as you likely know - UEFI is massively broken across almost every single vendor implementation ... :disappointed:",
+        "user": "U6QFVRJNB",
+        "ts": "1538681734.000100"
+    },
+    {
+        "client_msg_id": "57806426-046a-4eb6-8198-c3fcbd5a489f",
+        "type": "message",
+        "text": "no!, really?",
+        "user": "UBP7HL339",
+        "ts": "1538681760.000100",
+        "reactions": [
+            {
+                "name": "face_with_rolling_eyes",
+                "users": [
+                    "U6QFVRJNB"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "client_msg_id": "0b575cbe-5f67-4714-bd92-67f082d2c2b0",
+        "type": "message",
+        "text": "It looks nice on paper  :slightly_smiling_face:",
+        "user": "UBP7HL339",
+        "ts": "1538681798.000100"
+    },
+    {
+        "client_msg_id": "af40e0b2-4422-4679-bf1c-2284cd164bf7",
+        "type": "message",
+        "text": "but pain -in -the -ass in real life",
+        "user": "UBP7HL339",
+        "ts": "1538681810.000100",
+        "reactions": [
+            {
+                "name": "hankey",
+                "users": [
+                    "U6QFVRJNB"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "subtype": "me_message",
+        "text": "represses ranting instincts.",
+        "user": "U02DJQSG8",
+        "ts": "1538681957.000100"
+    },
+    {
+        "client_msg_id": "08e1ae5e-f69c-43d9-a09c-2f37bc5284a8",
+        "type": "message",
+        "text": "especialy with that legacy bull*",
+        "user": "UBP7HL339",
+        "ts": "1538682141.000100"
+    },
+    {
+        "client_msg_id": "552b44ad-28ce-47c7-a30c-daf04b6c9604",
+        "type": "message",
+        "text": "<@UBP7HL339> - I think that the tip code will attempt to ipxe (or send ipxe bootloaders that work for UEFI and legacy.  If you want to do what you posted, you can do what <@U6QFVRJNB> referenced.",
+        "user": "U02DGQYK1",
+        "ts": "1538682533.000100"
+    },
+    {
+        "client_msg_id": "b187d065-b5c3-44ad-80ab-7fc16a7e6165",
+        "type": "message",
+        "text": "I think I am going to leave it out for now and see how it works",
+        "user": "UBP7HL339",
+        "ts": "1538686502.000100",
+        "edited": {
+            "user": "UBP7HL339",
+            "ts": "1538686503.000000"
+        }
+    },
+    {
+        "client_msg_id": "4b674e46-6676-47e7-9764-13d5e5a35c1d",
+        "type": "message",
+        "text": "feedback appreciated on success :slightly_smiling_face:",
+        "user": "U6QFVRJNB",
+        "ts": "1538690084.000100"
+    },
+    {
+        "client_msg_id": "184720a2-2d10-46a1-8adc-decd338c5a4c",
+        "type": "message",
+        "text": "<!channel> - Updating to latest drp-community-content will require a sledgehammer update.",
+        "user": "U02DGQYK1",
+        "ts": "1538698700.000100"
+    },
+    {
+        "client_msg_id": "55c49a77-8a7c-4d32-a486-03c89716a6c3",
+        "type": "message",
+        "text": "By latest I mean tip.",
+        "user": "U02DGQYK1",
+        "ts": "1538698716.000100"
+    },
+    {
+        "client_msg_id": "a57ddda7-869f-4416-af2c-39e6c2ec3fdf",
+        "type": "message",
+        "text": "This sledgehammer and updated content packages (both community and rackn) have been updated to support IPv6 environments.",
+        "user": "U02DGQYK1",
+        "ts": "1538698747.000100"
+    },
+    {
+        "type": "message",
+        "subtype": "me_message",
+        "text": "which allows DRP to work in environments WITHOUT IPv4",
+        "user": "U02DHRR2L",
+        "ts": "1538698856.000100"
+    },
+    {
+        "client_msg_id": "f87b7d25-290c-405c-a4e3-cc80a4da90ff",
+        "type": "message",
+        "text": "note: that is NOT out of the box function.  it's possible, but takes some expertise",
+        "user": "U02DHRR2L",
+        "ts": "1538698904.000100"
+    },
+    {
+        "client_msg_id": "fb38023d-7934-4052-8c62-331b56401420",
+        "type": "message",
+        "text": "<@U02DHRR2L> meaning with IPv6 ?",
+        "user": "U8FAN7PLK",
+        "ts": "1538698941.000100"
+    },
+    {
+        "client_msg_id": "ddd0cdbf-cef9-4139-8300-8c69907b6758",
+        "type": "message",
+        "text": "yeah",
+        "user": "U8FAN7PLK",
+        "ts": "1538698976.000100"
+    },
+    {
+        "client_msg_id": "f8949ba7-68da-49f3-baea-4aa4c34d7aff",
+        "type": "message",
+        "text": "yes <@U8FAN7PLK> we're working with someone who is exclusively IPv6",
+        "user": "U02DHRR2L",
+        "ts": "1538698978.000100"
+    },
+    {
+        "client_msg_id": "a9b10ce9-4f4b-4cd9-acc6-277018fca45a",
+        "type": "message",
+        "text": "I just read greg's comment to the end :smile:",
+        "user": "U8FAN7PLK",
+        "ts": "1538698989.000100",
+        "edited": {
+            "user": "U8FAN7PLK",
+            "ts": "1538698995.000000"
+        }
+    },
+    {
+        "client_msg_id": "2ab78344-f3d0-43d4-8513-4f8692d3ed37",
+        "type": "message",
+        "text": "the magic is not just the IPv6 part, it's the without IPv4 part that's really tricky",
+        "user": "U02DHRR2L",
+        "ts": "1538699023.000100"
+    }
+]

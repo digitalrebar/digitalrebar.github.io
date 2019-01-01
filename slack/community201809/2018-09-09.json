@@ -1,9 +1,10 @@
 [
     {
-        "type": "message",
-        "user": "U02DHRR2L",
-        "text": "Just added ISTIO MESH for Kubernetes (KRIB) using the advanced Helm chart configuration features just pulled into tip.\n<https:\/\/youtu.be\/qWSB3TTVUC8>",
         "client_msg_id": "305917c1-0266-47b2-961d-6e799a2c3216",
+        "type": "message",
+        "text": "Just added ISTIO MESH for Kubernetes (KRIB) using the advanced Helm chart configuration features just pulled into tip.\n<https:\/\/youtu.be\/qWSB3TTVUC8>",
+        "user": "U02DHRR2L",
+        "ts": "1536537602.000100",
         "attachments": [
             {
                 "service_name": "YouTube",
@@ -25,7 +26,6 @@
                 "original_url": "https:\/\/youtu.be\/qWSB3TTVUC8"
             }
         ],
-        "ts": "1536537602.000100",
         "reactions": [
             {
                 "name": "+1",
@@ -37,17 +37,17 @@
         ]
     },
     {
-        "type": "message",
-        "user": "U02DHRR2L",
-        "text": "This capability is available for anything with a Helm chart.  We tried to enable a lot of features in the new helm chart runner - we'd love to hear if we got all of the ones you need",
         "client_msg_id": "ac28a638-21f8-445a-b359-7ef2768763cd",
+        "type": "message",
+        "text": "This capability is available for anything with a Helm chart.  We tried to enable a lot of features in the new helm chart runner - we'd love to hear if we got all of the ones you need",
+        "user": "U02DHRR2L",
         "ts": "1536537641.000100"
     },
     {
-        "type": "message",
-        "user": "UA9Q8FLTC",
-        "text": "Anyone know how to solve the \"Bad archive mirror\" when trying to install debian?",
         "client_msg_id": "3d5cc0f4-6c45-4747-a691-1f8a51d6b6ff",
+        "type": "message",
+        "text": "Anyone know how to solve the \"Bad archive mirror\" when trying to install debian?",
+        "user": "UA9Q8FLTC",
         "ts": "1536561819.000100"
     }
 ]

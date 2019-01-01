@@ -1,0 +1,898 @@
+[
+    {
+        "user": "UDB2L53GT",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1539178867.000200",
+        "text": "<@UDB2L53GT> has joined the channel"
+    },
+    {
+        "client_msg_id": "98ef579b-e7ee-4eb7-af74-7cf6a155e604",
+        "type": "message",
+        "text": "Hey guys, this is my 'alter ego' for the open work I am doing with Bast23 domain that will include DevSecOps CI\/CD work.",
+        "user": "UDB2L53GT",
+        "ts": "1539179258.000100"
+    },
+    {
+        "client_msg_id": "e628580e-ab06-4d81-93f5-a6055ece9479",
+        "type": "message",
+        "text": "nice",
+        "user": "U02DGQYK1",
+        "ts": "1539179488.000100"
+    },
+    {
+        "client_msg_id": "0f97817e-a6d9-48fb-83cd-05daca609728",
+        "type": "message",
+        "text": "This my 'alter ego' for mailservices work (USPS)... (Chris Trees, same person as catBast23) is this is my 'public declaration notification' record to the community.  Thanks!",
+        "user": "U62R1805P",
+        "ts": "1539179622.000100"
+    },
+    {
+        "client_msg_id": "8a4d170a-476f-49d8-b296-c5281cd9334e",
+        "type": "message",
+        "text": "This is the official $welcome notice for the alter ego <@UDB2L53GT>",
+        "user": "U6QFVRJNB",
+        "ts": "1539179723.000100"
+    },
+    {
+        "type": "message",
+        "subtype": "slackbot_response",
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "user": "USLACKBOT",
+        "ts": "1539179723.000200"
+    },
+    {
+        "client_msg_id": "6713f167-a2c9-4633-a1e1-40a69c8093aa",
+        "type": "message",
+        "text": "This is confirmation of ctrees public statement.  Yea, this sort of things have keep me out of a lot of worthless legal meetings....",
+        "user": "UDB2L53GT",
+        "ts": "1539179927.000100"
+    },
+    {
+        "client_msg_id": "18ef0cf2-3547-4635-a9c5-b75a1c3a2c79",
+        "type": "message",
+        "text": "I'll post up the DevSecOps stuff to it's own github and post here.",
+        "user": "UDB2L53GT",
+        "ts": "1539180329.000100"
+    },
+    {
+        "client_msg_id": "82d872fa-3393-458b-bdb3-337c0c553fc4",
+        "type": "message",
+        "text": "so... a setup question...\nOn a macmini I did the drp install... then did the vbox 'magic' that greg showed a few days ago... let drp UI find the vbox\n\nccatmini:drp cat$ sudo .\/dr-provision --base-root=`pwd`\/drp-data --local-content=\"\" --default-content=\"\"\nPassword:\ndr-provision2018\/10\/10 14:11:14.829414 Version: v3.11.0-tip-16-7fd6f424065191df261191bc72c85bc189b70100\ndr-provision2018\/10\/10 14:11:14.829579 Extracting Default Assets\ndr-provision2018\/10\/10 14:11:14.829585 Extracting Default Assets\ndr-provision2018\/10\/10 14:11:15.637542 Starting metrics server\ndr-provision2018\/10\/10 14:11:15.761149 Starting TFTP server\ndr-provision2018\/10\/10 14:11:15.761429 Starting static file server\ndr-provision2018\/10\/10 14:11:15.761629 Starting DHCP server\ndr-provision2018\/10\/10 14:11:15.762308 Starting PXE\/BINL server\ndr-provision2018\/10\/10 14:11:15.762661 Starting API server\ndr-provision2018\/10\/10 14:11:16.046866 [3:1]virtualbox-ipmi:virtualbox-ipmi [error]: \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/midlayer\/messaging_client.go:71\n[3:1]Stop failed: Post <http:\/\/unix\/api-plugin\/v3\/stop>: EOF\ndr-provision2018\/10\/10 14:11:16.132084 [16:2]virtualbox-ipmi:virtualbox-ipmi [error]: \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/midlayer\/messaging_client.go:71\n[16:2]Stop failed: Post <http:\/\/unix\/api-plugin\/v3\/stop>: EOF",
+        "user": "UDB2L53GT",
+        "ts": "1539180722.000100"
+    },
+    {
+        "client_msg_id": "df61d04a-e7a3-419b-9dd1-1ede02b520ca",
+        "type": "message",
+        "text": "Should I be specifing the IP for DRP ?",
+        "user": "UDB2L53GT",
+        "ts": "1539180798.000100"
+    },
+    {
+        "client_msg_id": "eccd7bd1-3aed-40d8-a340-6d30a29000c4",
+        "type": "message",
+        "text": "(I am attempting to setup Greg's dev env with vbox)",
+        "user": "UDB2L53GT",
+        "ts": "1539180928.000100"
+    },
+    {
+        "client_msg_id": "c8118a5c-254f-4230-9fce-7ec610813147",
+        "type": "message",
+        "text": "<!here> BARE METAL CLOUD &gt; we just added a new RackN licensed pooling plugin that extends the actions API so that you can request\/release machines from a single API\/CLI call.  That includes being able to set params for images and start workflows.\n\nIf you've seen our terraform plugin, this basically moves that functionality (and some extras!) into the API so that it can be used by any client without coding.",
+        "user": "U02DHRR2L",
+        "ts": "1539182300.000100"
+    },
+    {
+        "client_msg_id": "10dbac08-bace-4ef7-97bc-7a352c2046c7",
+        "type": "message",
+        "text": "Are there any examples illustrating the use of the Terraform plugin?",
+        "user": "UD6M748E5",
+        "ts": "1539182380.000100"
+    },
+    {
+        "client_msg_id": "e252de63-e2d0-472e-aceb-1c467e4f8745",
+        "type": "message",
+        "text": "<@UD6M748E5> - yes, see the Youtube channel - there are a couple of videos with examples",
+        "user": "U6QFVRJNB",
+        "ts": "1539182506.000100"
+    },
+    {
+        "client_msg_id": "68d18906-feef-43a7-8c7a-feadebfa7fe4",
+        "type": "message",
+        "text": "<https:\/\/www.youtube.com\/playlist?list=PLXPBeIrpXjfilUi7Qj1Sl0UhjxNRSC7nx>",
+        "user": "U6QFVRJNB",
+        "ts": "1539182574.000100"
+    },
+    {
+        "client_msg_id": "1094c96c-237c-46de-8c73-0254fe5b5156",
+        "type": "message",
+        "text": "Here's the doc link too <https:\/\/provision.readthedocs.io\/en\/tip\/doc\/content-packages\/terraform.html#component-terraform>",
+        "user": "U02DHRR2L",
+        "ts": "1539182589.000100"
+    },
+    {
+        "client_msg_id": "90bf8dec-9707-46a9-940d-6a7e2e0bfa11",
+        "type": "message",
+        "text": "<@UD6M748E5> as a bonus... we have examples of installing Kubernetes via Terraform using that plugin in the KRIB videos list",
+        "user": "U02DHRR2L",
+        "ts": "1539182663.000100"
+    },
+    {
+        "type": "message",
+        "subtype": "me_message",
+        "text": "which takes under 8 minutes INCLUDING the Packet provisioning time",
+        "user": "U02DHRR2L",
+        "ts": "1539182704.000100"
+    },
+    {
+        "client_msg_id": "e3b9f457-a98c-47b3-a751-a1d6bdfca3e0",
+        "type": "message",
+        "text": "thank you gentlemen",
+        "user": "UD6M748E5",
+        "ts": "1539182707.000100"
+    },
+    {
+        "client_msg_id": "4f8d06a8-512a-4079-a79c-694f85a2548c",
+        "type": "message",
+        "text": "<@UD6M748E5> please note that we merged the Contrail stage into KRIB tip last night.",
+        "user": "U02DHRR2L",
+        "ts": "1539182760.000100"
+    },
+    {
+        "client_msg_id": "09bf0b00-46c5-4933-8a1d-370f454c90fa",
+        "type": "message",
+        "text": "SO... what did I miss ?  (iPXE a machine from vbox)...\n\n[974:5]Incoming iPXE does not support bzImage\ndr-provision2018\/10\/10 14:42:57.903812 [977:6]dhcp:dhcp [ warn]: \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/midlayer\/pxe.go:70",
+        "user": "UDB2L53GT",
+        "ts": "1539182831.000100"
+    },
+    {
+        "client_msg_id": "4b8e8449-5abb-4f52-8d71-bd5da29c540a",
+        "type": "message",
+        "text": "humm... is this the 'dhcp option 67' thing ?",
+        "user": "UDB2L53GT",
+        "ts": "1539183477.000100"
+    },
+    {
+        "client_msg_id": "e21d6e92-8c43-4a33-869b-b48b7c29f4ed",
+        "type": "message",
+        "text": "it is a warning that your ipxe is not powerful enough.  and will be sent a new one.",
+        "user": "U02DGQYK1",
+        "ts": "1539184949.000100"
+    },
+    {
+        "client_msg_id": "1c69e20b-512d-4dba-96c9-82e2f0ac50ab",
+        "type": "message",
+        "text": "it is not fatal.",
+        "user": "U02DGQYK1",
+        "ts": "1539184955.000100"
+    },
+    {
+        "client_msg_id": "c63577de-1335-46e0-9b54-f9c087a0c583",
+        "type": "message",
+        "text": "OH... 'I think' this is the vbox ipxe is the issue (I was attempting a 'BareMetal' vm on vbox)... I think I just need to figure out the workflow that starts up a vbox vm using the VirtualBox IPMI",
+        "user": "UDB2L53GT",
+        "ts": "1539185007.000100"
+    },
+    {
+        "type": "message",
+        "text": "",
+        "files": [
+            {
+                "id": "FDB5Q60G3",
+                "created": 1539185107,
+                "timestamp": 1539185107,
+                "name": "Screen Shot 2018-10-10 at 10.24.25 AM.png",
+                "title": "Screen Shot 2018-10-10 at 10.24.25 AM.png",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "UDB2L53GT",
+                "editable": false,
+                "size": 142815,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FDB5Q60G3\/screen_shot_2018-10-10_at_10.24.25_am.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FDB5Q60G3\/download\/screen_shot_2018-10-10_at_10.24.25_am.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDB5Q60G3-f172ae804c\/screen_shot_2018-10-10_at_10.24.25_am_64.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDB5Q60G3-f172ae804c\/screen_shot_2018-10-10_at_10.24.25_am_80.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDB5Q60G3-f172ae804c\/screen_shot_2018-10-10_at_10.24.25_am_360.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360_w": 360,
+                "thumb_360_h": 145,
+                "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDB5Q60G3-f172ae804c\/screen_shot_2018-10-10_at_10.24.25_am_480.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_480_w": 480,
+                "thumb_480_h": 193,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDB5Q60G3-f172ae804c\/screen_shot_2018-10-10_at_10.24.25_am_160.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDB5Q60G3-f172ae804c\/screen_shot_2018-10-10_at_10.24.25_am_720.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_720_w": 720,
+                "thumb_720_h": 290,
+                "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDB5Q60G3-f172ae804c\/screen_shot_2018-10-10_at_10.24.25_am_800.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_800_w": 800,
+                "thumb_800_h": 322,
+                "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDB5Q60G3-f172ae804c\/screen_shot_2018-10-10_at_10.24.25_am_960.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_960_w": 960,
+                "thumb_960_h": 387,
+                "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDB5Q60G3-f172ae804c\/screen_shot_2018-10-10_at_10.24.25_am_1024.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_1024_w": 1024,
+                "thumb_1024_h": 413,
+                "image_exif_rotation": 1,
+                "original_w": 1129,
+                "original_h": 455,
+                "permalink": "https:\/\/rackn.slack.com\/files\/UDB2L53GT\/FDB5Q60G3\/screen_shot_2018-10-10_at_10.24.25_am.png",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FDB5Q60G3-523ef7e088"
+            }
+        ],
+        "upload": true,
+        "user": "UDB2L53GT",
+        "display_as_bot": false,
+        "ts": "1539185111.000100"
+    },
+    {
+        "client_msg_id": "aa80b858-b4e0-4e28-ad69-122744936573",
+        "type": "message",
+        "text": "On virtualbox, I’ve found that I have to power off and power on the vm to work correctly with the ipxe chaining after the first time.",
+        "user": "U02DGQYK1",
+        "ts": "1539185322.000100"
+    },
+    {
+        "client_msg_id": "93717495-8f56-4a10-9ebf-cbc2a0f4d367",
+        "type": "message",
+        "text": "Ok... just the vm or restart vbox ?",
+        "user": "UDB2L53GT",
+        "ts": "1539185361.000100"
+    },
+    {
+        "type": "message",
+        "text": "",
+        "files": [
+            {
+                "id": "FDAGE2448",
+                "created": 1539185662,
+                "timestamp": 1539185662,
+                "name": "Screen Shot 2018-10-10 at 10.33.55 AM.png",
+                "title": "Screen Shot 2018-10-10 at 10.33.55 AM.png",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "UDB2L53GT",
+                "editable": false,
+                "size": 134879,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FDAGE2448\/screen_shot_2018-10-10_at_10.33.55_am.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FDAGE2448\/download\/screen_shot_2018-10-10_at_10.33.55_am.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDAGE2448-b1d3172e31\/screen_shot_2018-10-10_at_10.33.55_am_64.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDAGE2448-b1d3172e31\/screen_shot_2018-10-10_at_10.33.55_am_80.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDAGE2448-b1d3172e31\/screen_shot_2018-10-10_at_10.33.55_am_360.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360_w": 283,
+                "thumb_360_h": 360,
+                "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDAGE2448-b1d3172e31\/screen_shot_2018-10-10_at_10.33.55_am_480.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_480_w": 378,
+                "thumb_480_h": 480,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDAGE2448-b1d3172e31\/screen_shot_2018-10-10_at_10.33.55_am_160.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDAGE2448-b1d3172e31\/screen_shot_2018-10-10_at_10.33.55_am_720.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_720_w": 567,
+                "thumb_720_h": 720,
+                "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDAGE2448-b1d3172e31\/screen_shot_2018-10-10_at_10.33.55_am_800.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_800_w": 630,
+                "thumb_800_h": 800,
+                "image_exif_rotation": 1,
+                "original_w": 658,
+                "original_h": 836,
+                "permalink": "https:\/\/rackn.slack.com\/files\/UDB2L53GT\/FDAGE2448\/screen_shot_2018-10-10_at_10.33.55_am.png",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FDAGE2448-48aa7a4a0b"
+            }
+        ],
+        "upload": true,
+        "user": "UDB2L53GT",
+        "display_as_bot": false,
+        "ts": "1539185665.000100"
+    },
+    {
+        "type": "message",
+        "text": "",
+        "files": [
+            {
+                "id": "FDB611B43",
+                "created": 1539185725,
+                "timestamp": 1539185725,
+                "name": "Screen Shot 2018-10-10 at 10.34.59 AM.png",
+                "title": "Screen Shot 2018-10-10 at 10.34.59 AM.png",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "UDB2L53GT",
+                "editable": false,
+                "size": 71187,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FDB611B43\/screen_shot_2018-10-10_at_10.34.59_am.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FDB611B43\/download\/screen_shot_2018-10-10_at_10.34.59_am.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDB611B43-83ca7f95f2\/screen_shot_2018-10-10_at_10.34.59_am_64.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDB611B43-83ca7f95f2\/screen_shot_2018-10-10_at_10.34.59_am_80.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDB611B43-83ca7f95f2\/screen_shot_2018-10-10_at_10.34.59_am_360.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360_w": 360,
+                "thumb_360_h": 314,
+                "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDB611B43-83ca7f95f2\/screen_shot_2018-10-10_at_10.34.59_am_480.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_480_w": 480,
+                "thumb_480_h": 419,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDB611B43-83ca7f95f2\/screen_shot_2018-10-10_at_10.34.59_am_160.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "image_exif_rotation": 1,
+                "original_w": 614,
+                "original_h": 536,
+                "permalink": "https:\/\/rackn.slack.com\/files\/UDB2L53GT\/FDB611B43\/screen_shot_2018-10-10_at_10.34.59_am.png",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FDB611B43-e9b1c4bccd"
+            }
+        ],
+        "upload": true,
+        "user": "UDB2L53GT",
+        "display_as_bot": false,
+        "ts": "1539185727.000100"
+    },
+    {
+        "client_msg_id": "0982203f-8eba-4ba1-a1be-4e26b862e3b2",
+        "type": "message",
+        "text": "just the vm",
+        "user": "U02DGQYK1",
+        "ts": "1539185804.000100"
+    },
+    {
+        "type": "message",
+        "text": "",
+        "files": [
+            {
+                "id": "FDALLMJ8H",
+                "created": 1539186306,
+                "timestamp": 1539186306,
+                "name": "Screen Shot 2018-10-10 at 10.44.08 AM.png",
+                "title": "Screen Shot 2018-10-10 at 10.44.08 AM.png",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "UDB2L53GT",
+                "editable": false,
+                "size": 128677,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FDALLMJ8H\/screen_shot_2018-10-10_at_10.44.08_am.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FDALLMJ8H\/download\/screen_shot_2018-10-10_at_10.44.08_am.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDALLMJ8H-ecdc125b43\/screen_shot_2018-10-10_at_10.44.08_am_64.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDALLMJ8H-ecdc125b43\/screen_shot_2018-10-10_at_10.44.08_am_80.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDALLMJ8H-ecdc125b43\/screen_shot_2018-10-10_at_10.44.08_am_360.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360_w": 289,
+                "thumb_360_h": 360,
+                "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDALLMJ8H-ecdc125b43\/screen_shot_2018-10-10_at_10.44.08_am_480.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_480_w": 385,
+                "thumb_480_h": 480,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDALLMJ8H-ecdc125b43\/screen_shot_2018-10-10_at_10.44.08_am_160.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDALLMJ8H-ecdc125b43\/screen_shot_2018-10-10_at_10.44.08_am_720.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_720_w": 577,
+                "thumb_720_h": 720,
+                "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDALLMJ8H-ecdc125b43\/screen_shot_2018-10-10_at_10.44.08_am_800.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_800_w": 641,
+                "thumb_800_h": 800,
+                "image_exif_rotation": 1,
+                "original_w": 654,
+                "original_h": 816,
+                "permalink": "https:\/\/rackn.slack.com\/files\/UDB2L53GT\/FDALLMJ8H\/screen_shot_2018-10-10_at_10.44.08_am.png",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FDALLMJ8H-88f39f4643"
+            }
+        ],
+        "upload": true,
+        "user": "UDB2L53GT",
+        "display_as_bot": false,
+        "ts": "1539186309.000100"
+    },
+    {
+        "client_msg_id": "1d858c74-915b-473f-ac27-20264bef6487",
+        "type": "message",
+        "text": "I have drp-provision running on the mac without --static-ip #",
+        "user": "UDB2L53GT",
+        "ts": "1539186404.000100"
+    },
+    {
+        "client_msg_id": "103ca240-6748-4c86-b77e-4d6b3cefee94",
+        "type": "message",
+        "text": "I noticed Ben maybe fixed his issue by using --static-ip #... would that matter ?  It looks as if drp is answering the dhcp request in the logs... but ??",
+        "user": "UDB2L53GT",
+        "ts": "1539186482.000100"
+    },
+    {
+        "client_msg_id": "e8571764-3ff8-4640-b320-14fcb485a37b",
+        "type": "message",
+        "text": "You need to make sure that the mac has a route for broadcasting.",
+        "user": "U02DGQYK1",
+        "ts": "1539186564.000100"
+    },
+    {
+        "client_msg_id": "6df7ab19-aa60-4778-8cfb-9570a0b10651",
+        "type": "message",
+        "text": "something like: `sudo route add  255.255.255.255 $IPADDR`",
+        "user": "U02DGQYK1",
+        "ts": "1539186604.000100"
+    },
+    {
+        "client_msg_id": "ca44f658-ab0e-4fc2-ab2e-eb75a592e9b0",
+        "type": "message",
+        "text": "where $IPADDR is the hostonly network ip address on the mac for that network.",
+        "user": "U02DGQYK1",
+        "ts": "1539186616.000100"
+    },
+    {
+        "client_msg_id": "c5b57108-d136-4320-8c66-04d21daf7f68",
+        "type": "message",
+        "text": "I did... but checking again...",
+        "user": "UDB2L53GT",
+        "ts": "1539186627.000100"
+    },
+    {
+        "client_msg_id": "ce0fe216-b638-4ecb-addb-0c6cd4017a7b",
+        "type": "message",
+        "text": "hmm okay",
+        "user": "U02DGQYK1",
+        "ts": "1539186655.000100"
+    },
+    {
+        "client_msg_id": "93642a16-285a-41c9-b891-abc500be4b47",
+        "type": "message",
+        "text": "you can turn up dhcp debug logging to see if DRP is getting the requests.",
+        "user": "U02DGQYK1",
+        "ts": "1539186686.000100"
+    },
+    {
+        "client_msg_id": "d17c0654-598e-4f33-8c38-3179e93e86ab",
+        "type": "message",
+        "text": "Also - make sure that you start DRP after the vboxnet0 is up and present.",
+        "user": "U02DGQYK1",
+        "ts": "1539186721.000100"
+    },
+    {
+        "client_msg_id": "cd6c34c7-030e-47b0-a9d2-97df0f4ff679",
+        "type": "message",
+        "text": "DRP should try and handle it, but it may not.",
+        "user": "U02DGQYK1",
+        "ts": "1539186731.000100"
+    },
+    {
+        "client_msg_id": "3197be05-37bf-456a-97f9-7e0eb66c788d",
+        "type": "message",
+        "text": "crap... you were right... my stupid it WAS route add...",
+        "user": "UDB2L53GT",
+        "ts": "1539186828.000100"
+    },
+    {
+        "client_msg_id": "c65df1a9-040a-4b7e-b883-a168a003f329",
+        "type": "message",
+        "text": "I did it but in my 'session last night'...",
+        "user": "UDB2L53GT",
+        "ts": "1539186844.000100"
+    },
+    {
+        "client_msg_id": "45e6168c-083b-4eae-8a29-cf5726cec5d6",
+        "type": "message",
+        "text": "thanks....",
+        "user": "UDB2L53GT",
+        "ts": "1539186969.000100"
+    },
+    {
+        "client_msg_id": "1f316ee9-85c3-42e2-b1cd-033f9cd3de49",
+        "type": "message",
+        "text": "cool",
+        "user": "U02DGQYK1",
+        "ts": "1539187238.000100"
+    },
+    {
+        "client_msg_id": "b472b446-9356-4056-969f-6089e981dae6",
+        "type": "message",
+        "text": "sledgehammer seems to get stuck booting... the vm console shows %3...\n\nthe lease appears, but no machine...",
+        "user": "UDB2L53GT",
+        "ts": "1539188687.000100"
+    },
+    {
+        "client_msg_id": "deb5c2b7-78bd-4aad-943a-bff716e60e96",
+        "type": "message",
+        "text": "I see a 'virtualbox-discover' in the stages... should I be using that ?",
+        "user": "UDB2L53GT",
+        "ts": "1539188782.000100"
+    },
+    {
+        "client_msg_id": "5733ce54-25f5-424b-a513-a45034828a1d",
+        "type": "message",
+        "text": "catmini:drp cat$ .\/drpcli prefs list\n{\n  \"baseTokenSecret\": \"Ekwrct_OrX-FJxPai0vVbqpkb2OvX7Uz\",\n  \"debugBootEnv\": \"warn\",\n  \"debugDhcp\": \"warn\",\n  \"debugFrontend\": \"warn\",\n  \"debugPlugins\": \"warn\",\n  \"debugRenderer\": \"warn\",\n  \"defaultBootEnv\": \"sledgehammer\",\n  \"defaultStage\": \"discover\",\n  \"defaultWorkflow\": \"discovery\",\n  \"knownTokenTimeout\": \"3600\",\n  \"logLevel\": \"warn\",\n  \"systemGrantorSecret\": \"NHQ32w3MDy1N4Tuu2Hi7GGBbLxmVA4RV\",\n  \"unknownBootEnv\": \"discovery\",\n  \"unknownTokenTimeout\": \"600\"\n}",
+        "user": "UDB2L53GT",
+        "ts": "1539188821.000100"
+    },
+    {
+        "client_msg_id": "81292fc5-c06a-4efb-92a3-c01a4ed2cb3e",
+        "type": "message",
+        "text": "catmini:drp cat$ .\/drpcli workflows list\n[\n  {\n    \"Available\": true,\n    \"Description\": \"\",\n    \"Documentation\": \"\",\n    \"Errors\": [],\n    \"Meta\": {},\n    \"Name\": \"centos7\",\n    \"ReadOnly\": false,\n    \"Stages\": [\n      \"centos-7-install\",\n      \"complete\"\n    ],\n    \"Validated\": true\n  },\n  {\n    \"Available\": true,\n    \"Description\": \"\",\n    \"Documentation\": \"\",\n    \"Errors\": [],\n    \"Meta\": {},\n    \"Name\": \"discovery\",\n    \"ReadOnly\": false,\n    \"Stages\": [\n      \"discover\",\n      \"sledgehammer-wait\"\n    ],\n    \"Validated\": true\n  }\n]",
+        "user": "UDB2L53GT",
+        "ts": "1539188844.000100"
+    },
+    {
+        "client_msg_id": "ab07bd81-de9a-461b-a56c-7618a5f3c6dd",
+        "type": "message",
+        "text": "I do have 'sledgehammer-wait' in the 'discovery' (aka following the quick-start)",
+        "user": "UDB2L53GT",
+        "ts": "1539188895.000200"
+    },
+    {
+        "type": "message",
+        "text": "",
+        "files": [
+            {
+                "id": "FDCMJDJCW",
+                "created": 1539190032,
+                "timestamp": 1539190032,
+                "name": "Screen Shot 2018-10-10 at 11.39.59 AM.png",
+                "title": "Screen Shot 2018-10-10 at 11.39.59 AM.png",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "UDB2L53GT",
+                "editable": false,
+                "size": 64864,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FDCMJDJCW\/screen_shot_2018-10-10_at_11.39.59_am.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FDCMJDJCW\/download\/screen_shot_2018-10-10_at_11.39.59_am.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDCMJDJCW-3372315f48\/screen_shot_2018-10-10_at_11.39.59_am_64.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDCMJDJCW-3372315f48\/screen_shot_2018-10-10_at_11.39.59_am_80.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDCMJDJCW-3372315f48\/screen_shot_2018-10-10_at_11.39.59_am_360.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360_w": 360,
+                "thumb_360_h": 222,
+                "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDCMJDJCW-3372315f48\/screen_shot_2018-10-10_at_11.39.59_am_480.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_480_w": 480,
+                "thumb_480_h": 296,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDCMJDJCW-3372315f48\/screen_shot_2018-10-10_at_11.39.59_am_160.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDCMJDJCW-3372315f48\/screen_shot_2018-10-10_at_11.39.59_am_720.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_720_w": 720,
+                "thumb_720_h": 443,
+                "image_exif_rotation": 1,
+                "original_w": 726,
+                "original_h": 447,
+                "permalink": "https:\/\/rackn.slack.com\/files\/UDB2L53GT\/FDCMJDJCW\/screen_shot_2018-10-10_at_11.39.59_am.png",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FDCMJDJCW-ef1f1a2115"
+            }
+        ],
+        "upload": true,
+        "user": "UDB2L53GT",
+        "display_as_bot": false,
+        "ts": "1539190034.000100"
+    },
+    {
+        "client_msg_id": "c02d40a2-dcdf-493e-88ff-706067d7a08a",
+        "type": "message",
+        "text": "I am using tip...",
+        "user": "UDB2L53GT",
+        "ts": "1539190310.000100"
+    },
+    {
+        "type": "message",
+        "text": "",
+        "files": [
+            {
+                "id": "FDAJN1KTJ",
+                "created": 1539190322,
+                "timestamp": 1539190322,
+                "name": "Screen Shot 2018-10-10 at 11.50.33 AM.png",
+                "title": "Screen Shot 2018-10-10 at 11.50.33 AM.png",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "UDB2L53GT",
+                "editable": false,
+                "size": 34534,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FDAJN1KTJ\/screen_shot_2018-10-10_at_11.50.33_am.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FDAJN1KTJ\/download\/screen_shot_2018-10-10_at_11.50.33_am.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDAJN1KTJ-0e0b957984\/screen_shot_2018-10-10_at_11.50.33_am_64.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDAJN1KTJ-0e0b957984\/screen_shot_2018-10-10_at_11.50.33_am_80.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDAJN1KTJ-0e0b957984\/screen_shot_2018-10-10_at_11.50.33_am_360.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360_w": 360,
+                "thumb_360_h": 99,
+                "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDAJN1KTJ-0e0b957984\/screen_shot_2018-10-10_at_11.50.33_am_480.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_480_w": 480,
+                "thumb_480_h": 132,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDAJN1KTJ-0e0b957984\/screen_shot_2018-10-10_at_11.50.33_am_160.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDAJN1KTJ-0e0b957984\/screen_shot_2018-10-10_at_11.50.33_am_720.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_720_w": 720,
+                "thumb_720_h": 198,
+                "image_exif_rotation": 1,
+                "original_w": 793,
+                "original_h": 218,
+                "permalink": "https:\/\/rackn.slack.com\/files\/UDB2L53GT\/FDAJN1KTJ\/screen_shot_2018-10-10_at_11.50.33_am.png",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FDAJN1KTJ-74a3a2a72f"
+            }
+        ],
+        "upload": true,
+        "user": "UDB2L53GT",
+        "display_as_bot": false,
+        "ts": "1539190324.000100"
+    },
+    {
+        "client_msg_id": "649208c7-b825-480b-91af-cf9b3ee2bd91",
+        "type": "message",
+        "text": "Version tip\nv3.11.0-tip-16-7fd6f424065191df261191bc72c85bc189b70100\nFeature Flags\napi-v3, sane-exit-codes, common-blob-size, change-stage-map, job-exit-states, package-repository-handling, profileless-machine, threaded-log-levels, plugin-v2, fsm-runner, plugin-v2-safe-config, workflows, default-workflow, http-range-header, roles, tenants, secure-params, separate-meta-api, slim-objects, secure-param-upgrade, sprig\nEndpoint MAC Address and API Port\n3c:07:54:72:49:e2, 8092\nOS and Architecture\ndarwin amd64",
+        "user": "UDB2L53GT",
+        "ts": "1539190511.000100"
+    },
+    {
+        "client_msg_id": "4f48349c-f620-433a-8099-9035ba980662",
+        "type": "message",
+        "text": "... so THINKING maybe it was the image... I hacked and replaced with the centos pxe:\n\ncatmini:drp-data cat$ sudo cp ~\/test\/vmlinuz-centos751804 tftpboot\/sledgehammer\/a6ea7c254acdbf7050fcd1b2d756471ceb4b2b1a\/vmlinuz0\ncatmini:drp-data cat$ sudo ls -alu tftpboot\/sledgehammer\/a6ea7c254acdbf7050fcd1b2d756471ceb4b2b1a\ntotal 417968\ndrwx------+ 8 root  staff        256 Oct 10 12:21 .\ndrwx------+ 3 root  staff         96 Oct 10 12:18 ..\n-rw-------+ 1 root  staff          0 Oct 10 11:40 .sledgehammer_a6ea7c254acdbf7050fcd1b2d756471ceb4b2b1a.rebar_canary\n-rw-r--r--+ 1 root  wheel  183549952 Oct  9 20:40 root.squashfs\n-rw-r--r--+ 1 root  wheel        160 Oct 10 11:40 sha1sums\n-rw-r--r--+ 1 root  wheel   17814036 Oct  9 20:40 stage1.img\n-rwxr-xr-x+ 1 root  staff    6224704 Oct 10 12:21 vmlinuz0\n-rwxr-xr-x+ 1 root  wheel    6398144 Oct 10 12:19 vmlinuz0-org\ncatmini:drp-data cat$",
+        "user": "UDB2L53GT",
+        "ts": "1539192319.000100"
+    },
+    {
+        "client_msg_id": "f1f5ce11-f016-4528-9c39-a8deba9a4b5e",
+        "type": "message",
+        "text": "the only difference was it stalled on 4% instead of 3%",
+        "user": "UDB2L53GT",
+        "ts": "1539192405.000100"
+    },
+    {
+        "client_msg_id": "df0ee7b6-652f-4100-ad44-5f0a8e6600d8",
+        "type": "message",
+        "text": "those are normal fall-throughs for unknown machines.  Not sure why the system is hanging at 3-4%.",
+        "user": "U02DGQYK1",
+        "ts": "1539192723.000100"
+    },
+    {
+        "client_msg_id": "ce479ac9-3f23-45d2-a2d5-7da179615003",
+        "type": "message",
+        "text": "my 'guess' is vm vbox networking... what version of vbox ru on...\nMine\nVirtualBox Graphical User Interface\nVersion 5.2.4 r119785 (Qt5.6.3)\nCopyright © 2017 Oracle Corporation and\/or its affiliat",
+        "user": "U62R1805P",
+        "ts": "1539193093.000100"
+    },
+    {
+        "client_msg_id": "30aa3387-3615-4165-b20c-4b6aee2d0bd6",
+        "type": "message",
+        "text": "woops my alter ego got in the way...",
+        "user": "UDB2L53GT",
+        "ts": "1539193353.000100"
+    },
+    {
+        "client_msg_id": "87b7dc6e-730a-4310-a290-34cc5eb9d987",
+        "type": "message",
+        "text": "I saw this:",
+        "user": "UDB2L53GT",
+        "ts": "1539193358.000100"
+    },
+    {
+        "client_msg_id": "3e6331db-41a3-4829-859c-0894a4e3b7af",
+        "type": "message",
+        "text": "modifyArgs := []string{\"modifyvm\", m.Name,\n                \"--ioapic\", \"on\",\n                \"--cpus\", fmt.Sprintf(\"%d\", cpuCount),\n                \"--boot1\", \"net\", \"--boot2\", \"disk\", \"--boot3\", \"none\", \"--boot4\", \"none\",\n                \"--memory\", fmt.Sprintf(\"%d\", memSizeInMB), \"--vram\", fmt.Sprintf(\"%d\", vramSizeInMB),\n                \"--nic1\", \"hostonly\", \"--hostonlyadapter1\", \"vboxnet0\", \"--nictype1\", \"82545EM\",\n                \"--nic2\", \"nat\", \"--nictype2\", \"82545EM\"}",
+        "user": "UDB2L53GT",
+        "ts": "1539193359.000200"
+    },
+    {
+        "client_msg_id": "da48cf48-ab63-4ffd-a951-2cf9b071f5bf",
+        "type": "message",
+        "text": "oh - it must be named vboxnet0.  …. sorry",
+        "user": "U02DGQYK1",
+        "ts": "1539193378.000100"
+    },
+    {
+        "type": "message",
+        "text": "",
+        "files": [
+            {
+                "id": "FDAL1M132",
+                "created": 1539193427,
+                "timestamp": 1539193427,
+                "name": "Screen Shot 2018-10-10 at 12.43.18 PM.png",
+                "title": "Screen Shot 2018-10-10 at 12.43.18 PM.png",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "UDB2L53GT",
+                "editable": false,
+                "size": 80286,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FDAL1M132\/screen_shot_2018-10-10_at_12.43.18_pm.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FDAL1M132\/download\/screen_shot_2018-10-10_at_12.43.18_pm.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDAL1M132-b079abe781\/screen_shot_2018-10-10_at_12.43.18_pm_64.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDAL1M132-b079abe781\/screen_shot_2018-10-10_at_12.43.18_pm_80.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDAL1M132-b079abe781\/screen_shot_2018-10-10_at_12.43.18_pm_360.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360_w": 360,
+                "thumb_360_h": 268,
+                "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDAL1M132-b079abe781\/screen_shot_2018-10-10_at_12.43.18_pm_480.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_480_w": 480,
+                "thumb_480_h": 357,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDAL1M132-b079abe781\/screen_shot_2018-10-10_at_12.43.18_pm_160.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "image_exif_rotation": 1,
+                "original_w": 654,
+                "original_h": 486,
+                "permalink": "https:\/\/rackn.slack.com\/files\/UDB2L53GT\/FDAL1M132\/screen_shot_2018-10-10_at_12.43.18_pm.png",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FDAL1M132-6fe46ab121"
+            }
+        ],
+        "upload": true,
+        "user": "UDB2L53GT",
+        "display_as_bot": false,
+        "ts": "1539193429.000100"
+    },
+    {
+        "client_msg_id": "f37d44b9-6daf-42db-b077-c08494eb70b7",
+        "type": "message",
+        "text": "yea I got the vboxnet0... but maybe nic and pro mode ?",
+        "user": "UDB2L53GT",
+        "ts": "1539193482.000100"
+    },
+    {
+        "client_msg_id": "b2e56a12-11cb-4b65-82bd-f1b1b0ba62e1",
+        "type": "message",
+        "text": "catmini:drp cat$ .\/drpcli subnets list\n[\n  {\n    \"ActiveEnd\": \"192.168.56.254\",\n    \"ActiveLeaseTime\": 60,\n    \"ActiveStart\": \"192.168.56.10\",\n    \"Available\": true,\n    \"Description\": \"\",\n    \"Documentation\": \"\",\n    \"Enabled\": true,\n    \"Errors\": [],\n    \"Meta\": {},\n    \"Name\": \"vboxnet0\",\n    \"NextServer\": \"\",\n    \"OnlyReservations\": false,\n    \"Options\": [\n      {\n        \"Code\": 3,\n        \"Value\": \"192.168.56.1\"\n      },\n      {\n        \"Code\": 6,\n        \"Value\": \"192.168.56.1\"\n      },\n      {\n        \"Code\": 15,\n        \"Value\": \"cat9.private\"\n      },\n      {\n        \"Code\": 1,\n        \"Value\": \"255.255.255.0\"\n      },\n      {\n        \"Code\": 28,\n        \"Value\": \"192.168.56.255\"\n      }\n    ],\n    \"Pickers\": [\n      \"hint\",\n      \"nextFree\",\n      \"mostExpired\"\n    ],\n    \"Proxy\": false,\n    \"ReadOnly\": false,\n    \"ReservedLeaseTime\": 7200,\n    \"Strategy\": \"MAC\",\n    \"Subnet\": \"192.168.56.1\/24\",\n    \"Unmanaged\": false,\n    \"Validated\": true\n  }\n]",
+        "user": "UDB2L53GT",
+        "ts": "1539193590.000100"
+    },
+    {
+        "client_msg_id": "f49ae71e-8f8a-4009-ad98-167fe2f43607",
+        "type": "message",
+        "text": "Was the NIC type...",
+        "user": "UDB2L53GT",
+        "ts": "1539193707.000100"
+    },
+    {
+        "client_msg_id": "363ed24a-b77d-449b-be44-19f6423cb0ed",
+        "type": "message",
+        "text": "I sort of rember that from a previous project years ago... (the default vb nic didn't work)",
+        "user": "UDB2L53GT",
+        "ts": "1539193777.000100"
+    },
+    {
+        "client_msg_id": "4fa885f3-8357-46e2-89ca-ee6df7a868c5",
+        "type": "message",
+        "text": "YEA... got a machine :wink:....",
+        "user": "UDB2L53GT",
+        "ts": "1539194081.000100"
+    },
+    {
+        "client_msg_id": "4787a88c-5717-46e9-a956-491362ff757d",
+        "type": "message",
+        "text": "catmini:drp cat$ .\/drpcli machines list\n[\n  {\n    \"Address\": \"192.168.56.10\",\n    \"Available\": true,\n    \"BootEnv\": \"sledgehammer\",\n    \"CurrentJob\": \"08a7ce6e-0da1-46f4-8f9d-c2651276da2c\",\n    \"CurrentTask\": 5,\n    \"Description\": \"\",\n    \"Errors\": [],\n    \"HardwareAddrs\": [\n      \"08:00:27:5e:b7:e8\"",
+        "user": "UDB2L53GT",
+        "ts": "1539194082.000100",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U6QFVRJNB"
+                ],
+                "count": 1
+            },
+            {
+                "name": "sunglasses",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "client_msg_id": "b2b2a322-21a3-41a6-b5e3-5f0fa448c63d",
+        "type": "message",
+        "text": ":slightly_smiling_face:",
+        "user": "U02DGQYK1",
+        "ts": "1539194628.000200",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1539194630.000000"
+        }
+    },
+    {
+        "client_msg_id": "307f9e0f-bd84-4067-8eb5-32fc3bd8477a",
+        "type": "message",
+        "text": "Just to verify. debug-fs is mounted in sledgehammer? I see it when i do `systemctl` ```.\n.\n.\ndev-mqueue.mount          loaded active     mounted         POSIX Message Queue \nproc-sys-fs-binfmt_misc.mount loaded active     mounted         Arbitrary Execut\nrun-user-0.mount          loaded active     mounted         \/run\/user\/0\nsys-kernel-config.mount   loaded active     mounted         Configuration File S\nsys-kernel-debug.mount    loaded active     mounted         Debug File System\nvar-lib-nfs-rpc_pipefs.mount loaded active     mounted         RPC Pipe File Sys\n.\n.\n.\n``` but I want to make sure it wasn't me screwing around.",
+        "user": "UCU824PB2",
+        "ts": "1539194646.000100"
+    },
+    {
+        "client_msg_id": "f2b63be9-7348-4e80-9c25-914c903fd83f",
+        "type": "message",
+        "text": "nm. Found it in systemd config.",
+        "user": "UCU824PB2",
+        "ts": "1539194848.000100"
+    },
+    {
+        "client_msg_id": "1bc7ea74-4509-4d15-8e06-c709a5fa3b8e",
+        "type": "message",
+        "text": "hmm - my sledgehammer doesn’t have debug",
+        "user": "U02DGQYK1",
+        "ts": "1539194897.000100"
+    },
+    {
+        "client_msg_id": "9590cfc4-33b7-4d4a-aca5-e2ed0a197d29",
+        "type": "message",
+        "text": "nm - yes it does.  Silly me.",
+        "user": "U02DGQYK1",
+        "ts": "1539194914.000100"
+    },
+    {
+        "client_msg_id": "a21e2156-313c-4af2-b30a-c48f88651a05",
+        "type": "message",
+        "text": "bad grep",
+        "user": "U02DGQYK1",
+        "ts": "1539194918.000100"
+    },
+    {
+        "type": "message",
+        "subtype": "me_message",
+        "text": "wants to encourage people in channel to use the code\/snippet feature for long posts",
+        "user": "U02DHRR2L",
+        "ts": "1539203742.000100",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U8FAN7PLK",
+                    "U6QFVRJNB"
+                ],
+                "count": 2
+            }
+        ]
+    },
+    {
+        "client_msg_id": "ea316cc8-1ca9-46ac-915b-bbcd1fc75021",
+        "type": "message",
+        "text": "please ... please ... please ^^^^^^^",
+        "user": "U6QFVRJNB",
+        "ts": "1539203958.000100"
+    },
+    {
+        "client_msg_id": "2919e9ab-aab9-4e11-a70d-602eb36c6439",
+        "type": "message",
+        "text": "sorry... says the current offender...",
+        "user": "UDB2L53GT",
+        "ts": "1539204661.000100",
+        "reactions": [
+            {
+                "name": "stuck_out_tongue_winking_eye",
+                "users": [
+                    "U6QFVRJNB",
+                    "U02DHRR2L"
+                ],
+                "count": 2
+            }
+        ]
+    }
+]

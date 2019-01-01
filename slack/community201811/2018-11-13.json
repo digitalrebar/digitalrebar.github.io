@@ -1,0 +1,225 @@
+[
+    {
+        "client_msg_id": "62b430ce-ba70-4515-9177-64eda46afa2d",
+        "type": "message",
+        "text": "I heard from <@U02DGQYK1> this morning that KRIB can now use CoreOS live boot in tip now.  It shaves about 2 minutes (the docker install) from install.  So, that puts it until the 5 minute range",
+        "user": "U02DHRR2L",
+        "ts": "1542127287.488500"
+    },
+    {
+        "client_msg_id": "2146a2d7-8231-49fd-8dab-968999b0e566",
+        "type": "message",
+        "text": "also, pinned all the versions so that things stop breaking from external default versions changing",
+        "user": "U02DHRR2L",
+        "ts": "1542127325.489200",
+        "reactions": [
+            {
+                "name": "sunglasses",
+                "users": [
+                    "U6QFVRJNB"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "client_msg_id": "32ada0cf-1f51-42a4-b836-4857cfb4c2f1",
+        "type": "message",
+        "text": "hi team, I'm noticing that in the install script you have it calls 7z as the zip program, however on CentOS it doesn't check to see if the binary is there, -- well i mean it sort of does, it checks for '7z' however '7za' seems to be the binary itself, although this is not called anywhere else in the script, the script seem to use bsdtar instead to handle ZIP files.",
+        "user": "UDXUALGQJ",
+        "ts": "1542128001.491000"
+    },
+    {
+        "client_msg_id": "273169da-c6e6-499e-a314-14b116605aff",
+        "type": "message",
+        "text": "second issue, I constantly see travis, who the heck is travis :laughing:\n\n```\ndr-provision2018\/11\/13 15:32:02.553994 [52:14]user:rocketskates:frontend [error]: \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/backend\/bootenv.go:460\n[52:14]BootEnv discovery : Explode ISO: Iso sledgehammer-9b5276ac5826520829aa73c149fe672fe2363656.arm64.tar does not exist. Will not be able to PXE boot arch arm64\n```",
+        "user": "UDXUALGQJ",
+        "ts": "1542128085.491400"
+    },
+    {
+        "client_msg_id": "07f4b75a-1c93-4e00-a20c-a1610296818e",
+        "type": "message",
+        "text": "<@UDXUALGQJ> - 7z is used by DRP itself and needs to be installed for proper functioning.  It is not needed by the install script.",
+        "user": "U02DGQYK1",
+        "ts": "1542129091.492000"
+    },
+    {
+        "client_msg_id": "1a2fc78e-5b43-4d5e-ac2d-6563f5f79a37",
+        "type": "message",
+        "text": "Ah ok",
+        "user": "UDXUALGQJ",
+        "ts": "1542129099.492200"
+    },
+    {
+        "client_msg_id": "7f066519-4e7b-4e73-b5b5-25cf46c4c6cd",
+        "type": "message",
+        "text": "what about the 7z vs 7za issue?",
+        "user": "UDXUALGQJ",
+        "ts": "1542129132.492400"
+    },
+    {
+        "client_msg_id": "399d332f-0f6d-4862-8ed9-f91992f57f14",
+        "type": "message",
+        "text": "```\nroot@drp \/home\/nistor\/drp-tip: 7z --help\nbash: 7z: command not found\nroot@drp \/home\/nistor\/drp-tip:\nroot@drp \/home\/nistor\/drp-tip: 7za --help\n7-Zip (a) [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21\np7zip Version 16.02 (locale=en_CA.UTF-8,Utf16=on,HugeFiles=on,64 bits,2 CPUs Intel(R) Xeon(R) CPU E5-2609 v2 @ 2.50GHz (206D2),ASM,AES-NI)\n```",
+        "user": "UDXUALGQJ",
+        "ts": "1542129149.492700"
+    },
+    {
+        "client_msg_id": "d2817e17-86c9-4c8b-86da-53404579fd0a",
+        "type": "message",
+        "text": "it just means that it runs the yum command twice and does nothing.",
+        "user": "U02DGQYK1",
+        "ts": "1542129186.493000"
+    },
+    {
+        "client_msg_id": "2c5f4de4-3635-48b0-a494-f9380a74efdf",
+        "type": "message",
+        "text": "but if the DRP itself needs it then what is not functioning in my install ?",
+        "user": "UDXUALGQJ",
+        "ts": "1542129216.493400"
+    },
+    {
+        "client_msg_id": "adb82199-4f75-479c-8bac-19ed279318ff",
+        "type": "message",
+        "text": "that question doesn’t make sense.",
+        "user": "U02DGQYK1",
+        "ts": "1542129233.493700"
+    },
+    {
+        "client_msg_id": "db216194-fdd6-4106-906b-4d71de035de5",
+        "type": "message",
+        "text": "\"7z is used by DRP itself and needs to be installed for proper functioning.\"   &lt;-- what does 7z get used for by the DRP itself?",
+        "user": "UDXUALGQJ",
+        "ts": "1542129254.494100"
+    },
+    {
+        "client_msg_id": "5172c447-b7c7-4c4f-bdbf-d21988496a93",
+        "type": "message",
+        "text": "because the binary 7z doesn't exist, 7za does, so it woudl seem that some function may not be working properly internally to DRP",
+        "user": "UDXUALGQJ",
+        "ts": "1542129278.494700"
+    },
+    {
+        "client_msg_id": "6d299fb1-ed1c-4a1d-b99d-74ee1c5dc659",
+        "type": "message",
+        "text": "exploding windows encoded bootenv isos.",
+        "user": "U02DGQYK1",
+        "ts": "1542129279.494800"
+    },
+    {
+        "client_msg_id": "f0090e58-b5e0-4a8f-9998-50b9bfe92a4c",
+        "type": "message",
+        "text": "It will likely never be an issue for you.  And I’m checking the script\/drp code that calls it.",
+        "user": "U02DGQYK1",
+        "ts": "1542129300.495300"
+    },
+    {
+        "client_msg_id": "47a93aca-0b51-402b-844a-0829f966af73",
+        "type": "message",
+        "text": "It may only need the library",
+        "user": "U02DGQYK1",
+        "ts": "1542129306.495500"
+    },
+    {
+        "client_msg_id": "2a311f56-1fa0-413a-9550-f067b1241c93",
+        "type": "message",
+        "text": "ah gotcha, ok cool.",
+        "user": "UDXUALGQJ",
+        "ts": "1542129318.495800"
+    },
+    {
+        "client_msg_id": "f865c70b-f662-4bc6-8552-07a37ce56ce5",
+        "type": "message",
+        "text": "Yeah - so - good catch - that will fail, but since that bootenv iso won’t work at all, it is really an issue.",
+        "user": "U02DGQYK1",
+        "ts": "1542129407.496400"
+    },
+    {
+        "client_msg_id": "e5c8a791-4143-472c-8ea0-2826e6937f6c",
+        "type": "message",
+        "text": "Does point out that we should drop the 7z requirement.",
+        "user": "U02DGQYK1",
+        "ts": "1542129415.496700"
+    },
+    {
+        "client_msg_id": "5b713647-f718-44b1-b545-c5ae6dca8a5b",
+        "type": "message",
+        "text": "coolio",
+        "user": "UDXUALGQJ",
+        "ts": "1542129450.496900"
+    },
+    {
+        "client_msg_id": "ca1f946d-99da-4506-9581-29e8e038c10f",
+        "type": "message",
+        "text": "Hi all! Quick question, is there a simple way to add an alternate version of pxelinux to the system? For instance, ESXi w\/ legacy BIOS boots requires syslinux 3.86.  It works if replace the lpxelinux.0 w\/ the older version, but I’d like a less disruptive method if possible.",
+        "user": "UC08YH350",
+        "ts": "1542138216.498800"
+    },
+    {
+        "client_msg_id": "f7d71d77-0916-49a6-b0af-4581ec58e6ed",
+        "type": "message",
+        "text": "I think you can upload the new and clone\/create a new bootenv that points to it",
+        "user": "U02DHRR2L",
+        "ts": "1542139347.499700"
+    },
+    {
+        "client_msg_id": "79486871-8b96-4698-a240-0e2e0f2479c1",
+        "type": "message",
+        "text": "<@UC08YH350> check <https:\/\/github.com\/digitalrebar\/provision-content\/blob\/22788877dd722fc5844da6c58896ca0adf8d1b18\/content\/bootenvs\/sledgehammer.yml#L59>",
+        "user": "U02DHRR2L",
+        "ts": "1542142356.500100",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision-content",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision-content\/blob\/22788877dd722fc5844da6c58896ca0adf8d1b18\/content\/bootenvs\/sledgehammer.yml#L59",
+                "text": "DigitalRebar Provision Content. Contribute to digitalrebar\/provision-content development by creating an account on GitHub.",
+                "fallback": "GitHub: digitalrebar\/provision-content",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision-content\/blob\/22788877dd722fc5844da6c58896ca0adf8d1b18\/content\/bootenvs\/sledgehammer.yml#L59",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/digitalrebar\/provision-content\/blob\/22788877dd722fc5844da6c58896ca0adf8d1b18\/content\/bootenvs\/sledgehammer.yml#L59"
+            }
+        ]
+    },
+    {
+        "client_msg_id": "48715860-30f8-4351-98d4-5975d1fed752",
+        "type": "message",
+        "text": "and <https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/content\/templates\/default-pxelinux.tmpl>",
+        "user": "U02DHRR2L",
+        "ts": "1542142360.500400",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision-content",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/content\/templates\/default-pxelinux.tmpl",
+                "text": "DigitalRebar Provision Content. Contribute to digitalrebar\/provision-content development by creating an account on GitHub.",
+                "fallback": "GitHub: digitalrebar\/provision-content",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/content\/templates\/default-pxelinux.tmpl",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/content\/templates\/default-pxelinux.tmpl"
+            }
+        ]
+    },
+    {
+        "client_msg_id": "eb2bdf44-014b-4afa-8d86-0e09746c533d",
+        "type": "message",
+        "text": "I think that we've done some of this work before in community.  you should check the history.",
+        "user": "U02DHRR2L",
+        "ts": "1542142401.501100"
+    },
+    {
+        "user": "UE4C36RV4",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1542153409.501300",
+        "text": "<@UE4C36RV4> has joined the channel"
+    }
+]

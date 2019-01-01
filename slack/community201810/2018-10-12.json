@@ -1,0 +1,825 @@
+[
+    {
+        "client_msg_id": "96e2d08d-08d0-4c61-95ea-32b9d5bd9dfd",
+        "type": "message",
+        "text": "So Param question.  I was going to do straight machine params but the more I look at it the more I want to make params then attach them to machines.  However, the more I read the documentation, it seems like I need to make",
+        "user": "UBP7HL339",
+        "ts": "1539361994.000100"
+    },
+    {
+        "type": "message",
+        "text": "",
+        "files": [
+            {
+                "id": "FDD03DM1S",
+                "created": 1539362017,
+                "timestamp": 1539362017,
+                "name": "-.m",
+                "title": "Untitled",
+                "mimetype": "text\/plain",
+                "filetype": "objc",
+                "pretty_type": "Objective-C",
+                "user": "UBP7HL339",
+                "editable": true,
+                "size": 82,
+                "mode": "snippet",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FDD03DM1S\/-.m?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FDD03DM1S\/download\/-.m?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "permalink": "https:\/\/rackn.slack.com\/files\/UBP7HL339\/FDD03DM1S\/-.m",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FDD03DM1S-6760e48e6d",
+                "edit_link": "https:\/\/rackn.slack.com\/files\/UBP7HL339\/FDD03DM1S\/-.m\/edit",
+                "preview": "1.  Create Params\r\n2.  Create Profile with params\r\n3.  Attache Profile to Machine?",
+                "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre><span class=\"cm-number\">1.<\/span>  <span class=\"cm-variable\">Create<\/span> <span class=\"cm-variable\">Params<\/span><\/pre><\/div>\n<div><pre><span class=\"cm-number\">2.<\/span>  <span class=\"cm-variable\">Create<\/span> <span class=\"cm-variable\">Profile<\/span> <span class=\"cm-variable\">with<\/span> <span class=\"cm-variable\">params<\/span><\/pre><\/div>\n<div><pre><span class=\"cm-number\">3.<\/span>  <span class=\"cm-variable\">Attache<\/span> <span class=\"cm-variable\">Profile<\/span> <span class=\"cm-variable\">to<\/span> <span class=\"cm-variable\">Machine<\/span><span class=\"cm-operator\">?<\/span><\/pre><\/div>\n<\/div>\n<\/div>\n",
+                "lines": 3,
+                "lines_more": 0,
+                "preview_is_truncated": false
+            }
+        ],
+        "upload": true,
+        "user": "UBP7HL339",
+        "display_as_bot": false,
+        "ts": "1539362018.000100"
+    },
+    {
+        "client_msg_id": "2f4ec146-93bc-40e4-b544-e3999b2c6ebc",
+        "type": "message",
+        "text": "But I am a little fuzzy on the attach profile part.  Do I have to create the machine with the profile already?",
+        "user": "UBP7HL339",
+        "ts": "1539362028.000100"
+    },
+    {
+        "client_msg_id": "78e7823f-41f6-45a5-9fd1-0eba3e11e858",
+        "type": "message",
+        "text": "or can I just attach existing params to the machines  directly",
+        "user": "UBP7HL339",
+        "ts": "1539362048.000100"
+    },
+    {
+        "client_msg_id": "edccb198-a8e8-458d-a428-93b36668ee3e",
+        "type": "message",
+        "text": "The document talks about embedded Profile and Param Maps.  Is that the same object as \/profiles?",
+        "user": "UBP7HL339",
+        "ts": "1539362182.000100"
+    },
+    {
+        "client_msg_id": "c582817a-4c52-4d99-abf2-01964ba628ad",
+        "type": "message",
+        "text": "and machine Profile vs Profiles",
+        "user": "UBP7HL339",
+        "ts": "1539362264.000100"
+    },
+    {
+        "client_msg_id": "3d901af6-ea56-4525-a2ce-dfdd95e3b0cb",
+        "type": "message",
+        "text": "while you are at it",
+        "user": "UBP7HL339",
+        "ts": "1539362265.000100"
+    },
+    {
+        "client_msg_id": "7fbeecf2-bdb6-4495-a990-1c176f49478a",
+        "type": "message",
+        "text": "okay - soooo - yes.  :slightly_smiling_face:",
+        "user": "U02DGQYK1",
+        "ts": "1539362848.000100"
+    },
+    {
+        "client_msg_id": "bd6db013-7f8e-4a89-a4cb-c23355af4b8b",
+        "type": "message",
+        "text": "Parameters should be thought about as type definitions.",
+        "user": "U02DGQYK1",
+        "ts": "1539362864.000100"
+    },
+    {
+        "client_msg_id": "d5c6cfe7-c7a4-4b2f-9dae-a1bc8a4df0fe",
+        "type": "message",
+        "text": "Those “types” can be set on profiles or machines directory.",
+        "user": "U02DGQYK1",
+        "ts": "1539362884.000100"
+    },
+    {
+        "client_msg_id": "96416343-5f54-46e1-8528-2408b20eb63f",
+        "type": "message",
+        "text": "machines can also have profiles that mean they have those parameter values as well.",
+        "user": "U02DGQYK1",
+        "ts": "1539362905.000100"
+    },
+    {
+        "client_msg_id": "513540da-46cb-4c75-926c-e5c80478ed0e",
+        "type": "message",
+        "text": "machines can be created with or without profiles and modified later.",
+        "user": "U02DGQYK1",
+        "ts": "1539362927.000100"
+    },
+    {
+        "client_msg_id": "c58b3bd6-8a2d-4f81-b98b-09b7b5a17749",
+        "type": "message",
+        "text": "<@UBP7HL339> - does that make sense?",
+        "user": "U02DGQYK1",
+        "ts": "1539362954.000100"
+    },
+    {
+        "client_msg_id": "e223c63f-5136-47ea-a4f4-2641fa29ddd4",
+        "type": "message",
+        "text": "So I create parameters.  Then I update the machine with those parameters.",
+        "user": "UBP7HL339",
+        "ts": "1539363426.000100"
+    },
+    {
+        "client_msg_id": "c6914e6c-281e-49bb-be3c-d2209d73ea24",
+        "type": "message",
+        "text": "So if I create a paramater, say {“Name”: “Fluffy”}",
+        "user": "UBP7HL339",
+        "ts": "1539363458.000100"
+    },
+    {
+        "client_msg_id": "83a17648-c353-4774-ac41-a3daf8657bc9",
+        "type": "message",
+        "text": "I wasn’t clear.",
+        "user": "U02DGQYK1",
+        "ts": "1539363477.000100"
+    },
+    {
+        "client_msg_id": "c6ff6c72-ca5a-4075-b031-0ed71be5f0f2",
+        "type": "message",
+        "text": "I add it to a machine by POST \/machine\/uuid\/params  with {“Name” “Fluffy”}",
+        "user": "UBP7HL339",
+        "ts": "1539363482.000100"
+    },
+    {
+        "client_msg_id": "1b3a2a50-c73f-432b-a741-31048440235b",
+        "type": "message",
+        "text": "parameter `{ \"Name\": \"Fluffy\", \"Schema\": { \"type\": \"string\" } }`",
+        "user": "U02DGQYK1",
+        "ts": "1539363506.000100"
+    },
+    {
+        "client_msg_id": "16a6cf85-1689-402f-8c92-62be3a8653f5",
+        "type": "message",
+        "text": "well yeah",
+        "user": "UBP7HL339",
+        "ts": "1539363516.000100"
+    },
+    {
+        "client_msg_id": "8cdc2626-b37e-49bf-94c4-608c432d510b",
+        "type": "message",
+        "text": "I have a parameter named fluffy of type string.",
+        "user": "U02DGQYK1",
+        "ts": "1539363521.000100"
+    },
+    {
+        "client_msg_id": "84406d12-3020-4cc0-93f3-7df885c1aab4",
+        "type": "message",
+        "text": "I can now set Fluffy with type checking on a machine, profile, or plugin.",
+        "user": "U02DGQYK1",
+        "ts": "1539363544.000100"
+    },
+    {
+        "client_msg_id": "aa18c483-ee47-4995-9d38-c0ca597a65f5",
+        "type": "message",
+        "text": "oh",
+        "user": "UBP7HL339",
+        "ts": "1539363561.000100"
+    },
+    {
+        "client_msg_id": "0838bd7c-906e-42da-8213-001076a85a8b",
+        "type": "message",
+        "text": "so the value is set when I apply it to the machine",
+        "user": "UBP7HL339",
+        "ts": "1539363579.000100",
+        "edited": {
+            "user": "UBP7HL339",
+            "ts": "1539363580.000000"
+        }
+    },
+    {
+        "client_msg_id": "06c78626-ec28-4245-85b0-38a3cea5011f",
+        "type": "message",
+        "text": "yes.",
+        "user": "U02DGQYK1",
+        "ts": "1539363586.000100"
+    },
+    {
+        "client_msg_id": "75fe83fc-5eeb-4705-8fb5-d28d707eb46d",
+        "type": "message",
+        "text": "oh so type def I get that now",
+        "user": "UBP7HL339",
+        "ts": "1539363594.000100"
+    },
+    {
+        "client_msg_id": "58052350-e7d4-456f-b95b-2e18b646ad64",
+        "type": "message",
+        "text": "We allow untyped parameters on those objects",
+        "user": "U02DGQYK1",
+        "ts": "1539363594.000200"
+    },
+    {
+        "client_msg_id": "05cf4bfb-d590-4546-a051-dd9b0fed1306",
+        "type": "message",
+        "text": "but the safety around data validation is HUGE with parameters.  It keeps you from doing bad things.",
+        "user": "U02DGQYK1",
+        "ts": "1539363626.000100"
+    },
+    {
+        "client_msg_id": "83eb7abc-a837-4716-a329-4aa999008da5",
+        "type": "message",
+        "text": "so `POST \/machine\/uuid\/params  with {“Fluffy”: “Orange”} or what that is kinda where I am getting stuck",
+        "user": "UBP7HL339",
+        "ts": "1539363677.000100"
+    },
+    {
+        "client_msg_id": "ed098e38-8821-44bc-b9a4-cc9efc6b0643",
+        "type": "message",
+        "text": "You can always do this: `drpcli machines set Name:router params jj to greg`",
+        "user": "U02DGQYK1",
+        "ts": "1539363679.000100"
+    },
+    {
+        "client_msg_id": "906ec7cf-7870-4d68-a009-88a38b2aa8de",
+        "type": "message",
+        "text": "no I can’t",
+        "user": "UBP7HL339",
+        "ts": "1539363685.000100"
+    },
+    {
+        "client_msg_id": "f69f9243-1c85-488d-8ec7-02bf2b23212d",
+        "type": "message",
+        "text": "my entire project is around using the api",
+        "user": "UBP7HL339",
+        "ts": "1539363692.000100"
+    },
+    {
+        "client_msg_id": "10f1b5f6-f18b-4b5b-8165-697d60729bec",
+        "type": "message",
+        "text": "there is an API behind that.",
+        "user": "U02DGQYK1",
+        "ts": "1539363703.000100"
+    },
+    {
+        "client_msg_id": "a53cced8-36d5-4bb7-84b1-be2e93cf0d41",
+        "type": "message",
+        "text": "I assume but it has a format",
+        "user": "UBP7HL339",
+        "ts": "1539363715.000100",
+        "edited": {
+            "user": "UBP7HL339",
+            "ts": "1539363717.000000"
+        }
+    },
+    {
+        "client_msg_id": "287cef2f-2eb6-4079-83e0-cdf30bceda96",
+        "type": "message",
+        "text": "which I am not clear on",
+        "user": "UBP7HL339",
+        "ts": "1539363729.000100",
+        "edited": {
+            "user": "UBP7HL339",
+            "ts": "1539363731.000000"
+        }
+    },
+    {
+        "client_msg_id": "4f8ead62-a7d7-448b-9b40-1b4bfd8a9e47",
+        "type": "message",
+        "text": "`api\/v3\/machines\/&lt;id&gt;\/params\/&lt;name or parameter&gt;` POST with json blob to become value.",
+        "user": "U02DGQYK1",
+        "ts": "1539363742.000100"
+    },
+    {
+        "client_msg_id": "4243908a-88c0-4d14-b147-a008333594c8",
+        "type": "message",
+        "text": "oh",
+        "user": "UBP7HL339",
+        "ts": "1539363768.000100"
+    },
+    {
+        "client_msg_id": "cfc8033c-14ce-4e61-97c9-081225b29172",
+        "type": "message",
+        "text": "<@UBP7HL339> - have you seen the Swagger API documentation on your DRP endpoint ?",
+        "user": "U6QFVRJNB",
+        "ts": "1539363784.000100"
+    },
+    {
+        "client_msg_id": "1596c733-5c6e-4a6b-ae79-28f5f1dc7d75",
+        "type": "message",
+        "text": "Repalce - my 127.0.0.1 with your DRP endpoint - <https:\/\/127.0.0.1:8092\/swagger-ui\/#!\/Machines\/postMachineParam>",
+        "user": "U02DGQYK1",
+        "ts": "1539363792.000200"
+    },
+    {
+        "client_msg_id": "2de5ce41-b75b-4d54-bbf5-520daf5e366b",
+        "type": "message",
+        "text": "yes",
+        "user": "UBP7HL339",
+        "ts": "1539363795.000100"
+    },
+    {
+        "client_msg_id": "78c60969-08b4-4617-a8fc-38f929957809",
+        "type": "message",
+        "text": "and it says {} for the body",
+        "user": "UBP7HL339",
+        "ts": "1539363802.000100"
+    },
+    {
+        "client_msg_id": "110a88ea-4409-47b8-8cd3-e1fca3d54eb6",
+        "type": "message",
+        "text": "which is not super helpful",
+        "user": "UBP7HL339",
+        "ts": "1539363814.000100"
+    },
+    {
+        "client_msg_id": "5fbb5ce8-a35f-4677-8fc3-a97ea63e308a",
+        "type": "message",
+        "text": "Any json object is stored.",
+        "user": "U02DGQYK1",
+        "ts": "1539363834.000100"
+    },
+    {
+        "client_msg_id": "4b61e8e1-b7ed-476c-979a-4f0f047027df",
+        "type": "message",
+        "text": "So “string” would get stored as a string",
+        "user": "U02DGQYK1",
+        "ts": "1539363842.000100"
+    },
+    {
+        "client_msg_id": "40c05d9a-1086-47cb-b0cc-a1ec5a058c06",
+        "type": "message",
+        "text": "or `\"string\"`",
+        "user": "U02DGQYK1",
+        "ts": "1539363849.000100"
+    },
+    {
+        "client_msg_id": "d75771ce-b9ec-40c8-9edc-b01ac4fd571c",
+        "type": "message",
+        "text": "or `53`",
+        "user": "U02DGQYK1",
+        "ts": "1539363853.000100"
+    },
+    {
+        "client_msg_id": "9f4419c5-9f9c-4549-96ef-7608bcfd8894",
+        "type": "message",
+        "text": "a number",
+        "user": "U02DGQYK1",
+        "ts": "1539363855.000100"
+    },
+    {
+        "client_msg_id": "b090221b-fb48-439d-9c54-0707de20e37b",
+        "type": "message",
+        "text": "but accepting any string and understanding how it pust together so your machien can use it are two different things",
+        "user": "UBP7HL339",
+        "ts": "1539363866.000100"
+    },
+    {
+        "client_msg_id": "070cabdf-fb17-4464-8059-be4bd9a54c6c",
+        "type": "message",
+        "text": "Cool - one trick I often use to figure out the API calls - use the Developer Tools on the web browser via the Portal, and you'll see the backend API calls the Portal makes to the DRP endpoint",
+        "user": "U6QFVRJNB",
+        "ts": "1539363870.000100"
+    },
+    {
+        "client_msg_id": "9fe57a54-123f-4cee-b871-17cd4c945574",
+        "type": "message",
+        "text": "or `{ \"i1\": \"o1\", \"i2\": \"o2\"}` would be a deep object",
+        "user": "U02DGQYK1",
+        "ts": "1539363877.000100"
+    },
+    {
+        "client_msg_id": "127814e5-f8a3-4d8c-809e-d95326e9a5af",
+        "type": "message",
+        "text": "that provides real world examples of exactly what's needed",
+        "user": "U6QFVRJNB",
+        "ts": "1539363879.000100"
+    },
+    {
+        "client_msg_id": "cca20ba8-6408-4673-a7f8-a324cd015bb8",
+        "type": "message",
+        "text": "thats true.  I have been looking at the existing params but the machines dont have any",
+        "user": "UBP7HL339",
+        "ts": "1539363914.000100"
+    },
+    {
+        "client_msg_id": "5ab0361b-f2e0-42a4-8f7e-e845c8dbd182",
+        "type": "message",
+        "text": "and that is why we have parameters.  To define the object schema, and validation.  :slightly_smiling_face:",
+        "user": "U02DGQYK1",
+        "ts": "1539363914.000200"
+    },
+    {
+        "client_msg_id": "cdf9e739-0310-4762-88d5-7e485c638507",
+        "type": "message",
+        "text": "So if I did `POST \/machine\/uuid\/params\/fluffy` with `Orange` that would work right",
+        "user": "UBP7HL339",
+        "ts": "1539364033.000100",
+        "edited": {
+            "user": "UBP7HL339",
+            "ts": "1539364041.000000"
+        }
+    },
+    {
+        "client_msg_id": "0df6ae6a-9d50-4f1a-8fbf-4c9fcc577b22",
+        "type": "message",
+        "text": "if it was a string",
+        "user": "UBP7HL339",
+        "ts": "1539364052.000100"
+    },
+    {
+        "client_msg_id": "54b921c1-334f-4433-ac0d-9378fef61e86",
+        "type": "message",
+        "text": "Or does it have to be in a JSON object?",
+        "user": "UBP7HL339",
+        "ts": "1539364099.000100"
+    },
+    {
+        "client_msg_id": "599a586c-46e7-49d6-b4a6-b90a223f5580",
+        "type": "message",
+        "text": "it has to be a json object - so include the double quotes.",
+        "user": "U02DGQYK1",
+        "ts": "1539364160.000100"
+    },
+    {
+        "client_msg_id": "c28c450d-a149-4e72-a4be-09a1d000395a",
+        "type": "message",
+        "text": "`\"Orange\"`",
+        "user": "U02DGQYK1",
+        "ts": "1539364164.000100"
+    },
+    {
+        "client_msg_id": "349f1a75-f4a9-4391-a37b-b49ceb3eb4b2",
+        "type": "message",
+        "text": "but no {} or [] needed?",
+        "user": "UBP7HL339",
+        "ts": "1539364186.000100"
+    },
+    {
+        "client_msg_id": "402fadc3-560a-4805-bca8-7c70281c8d8b",
+        "type": "message",
+        "text": "right",
+        "user": "UBP7HL339",
+        "ts": "1539364191.000100"
+    },
+    {
+        "client_msg_id": "37e03e05-daa4-44b7-9e23-9f55b293fcbf",
+        "type": "message",
+        "text": "correct",
+        "user": "U02DGQYK1",
+        "ts": "1539364191.000200"
+    },
+    {
+        "client_msg_id": "401eaa34-441b-4ba9-acc7-901903ecce66",
+        "type": "message",
+        "text": "ok",
+        "user": "UBP7HL339",
+        "ts": "1539364192.000200"
+    },
+    {
+        "client_msg_id": "712142d7-fe79-4673-a73a-4790730a69f3",
+        "type": "message",
+        "text": "I think that gets me going",
+        "user": "UBP7HL339",
+        "ts": "1539364202.000100"
+    },
+    {
+        "client_msg_id": "117b073e-8420-4f3f-8b61-eb8ba81d6c9f",
+        "type": "message",
+        "text": "thanks",
+        "user": "UBP7HL339",
+        "ts": "1539364203.000100"
+    },
+    {
+        "client_msg_id": "24e1a13f-4c89-40e0-89ac-c6aaafcdec29",
+        "type": "message",
+        "text": "cool",
+        "user": "U02DGQYK1",
+        "ts": "1539364211.000100"
+    },
+    {
+        "client_msg_id": "eb05c699-22b3-427c-b435-95a286763112",
+        "type": "message",
+        "text": "yeap got one going.  Okay now to generalize",
+        "user": "UBP7HL339",
+        "ts": "1539364493.000100"
+    },
+    {
+        "client_msg_id": "69b6c338-ce7d-45bc-aded-8d2916958d3d",
+        "type": "message",
+        "text": "Technically, the `POST \/machine\/&lt;uuid&gt;\/params\/&lt;name&gt;` accepts valid JSON, not a JSON object.",
+        "user": "U02DJQSG8",
+        "ts": "1539365806.000100"
+    },
+    {
+        "client_msg_id": "66970070-5b48-448d-9f0f-df731c262131",
+        "type": "message",
+        "text": "a JSON object specifically refers to `{\"this\": \"kind\", \"of\":\"thing}`",
+        "user": "U02DJQSG8",
+        "ts": "1539365840.000100"
+    },
+    {
+        "client_msg_id": "ca638cd7-7c30-4cc8-928d-08a6ed0f03b6",
+        "type": "message",
+        "text": "valid JSON is either a `\"quoted string\"`, `false`, `true`, `null`, `3.14159`, `[\"a\",[\"list\"], {\"of\":\"things\"},null, 1]` or `{\"an\":\"object\"}`",
+        "user": "U02DJQSG8",
+        "ts": "1539365952.000100"
+    },
+    {
+        "client_msg_id": "b3d1e3c4-ea18-4845-97bb-9751736077e3",
+        "type": "message",
+        "text": "checked against the schema of that param (if there is one), of course.",
+        "user": "U02DJQSG8",
+        "ts": "1539365986.000100"
+    },
+    {
+        "client_msg_id": "197d9f94-9ace-4953-b2b6-0ee10be68feb",
+        "type": "message",
+        "text": "awesome.",
+        "user": "UBP7HL339",
+        "ts": "1539367243.000100"
+    },
+    {
+        "client_msg_id": "9c1318b4-1973-4aea-b498-ca29391b60eb",
+        "type": "message",
+        "text": "So I went through the process and the params I get back on the machine is",
+        "user": "UBP7HL339",
+        "ts": "1539367257.000100"
+    },
+    {
+        "type": "message",
+        "text": "",
+        "files": [
+            {
+                "id": "FDD4KUSEP",
+                "created": 1539367276,
+                "timestamp": 1539367276,
+                "name": "-.js",
+                "title": "Untitled",
+                "mimetype": "text\/plain",
+                "filetype": "javascript",
+                "pretty_type": "JavaScript\/JSON",
+                "user": "UBP7HL339",
+                "editable": true,
+                "size": 28,
+                "mode": "snippet",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FDD4KUSEP\/-.js?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FDD4KUSEP\/download\/-.js?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "permalink": "https:\/\/rackn.slack.com\/files\/UBP7HL339\/FDD4KUSEP\/-.js",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FDD4KUSEP-4273592078",
+                "edit_link": "https:\/\/rackn.slack.com\/files\/UBP7HL339\/FDD4KUSEP\/-.js\/edit",
+                "preview": "{ '10.197.111.12', 'mgmt'}\r\n",
+                "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>{ <span class=\"cm-string\">'10.197.111.12'<\/span>, <span class=\"cm-string\">'mgmt'<\/span>}<\/pre><\/div>\n<\/div>\n<\/div>\n",
+                "lines": 2,
+                "lines_more": 0,
+                "preview_is_truncated": false
+            }
+        ],
+        "upload": true,
+        "user": "UBP7HL339",
+        "display_as_bot": false,
+        "ts": "1539367277.000100"
+    },
+    {
+        "client_msg_id": "f0c691b0-91e2-4f50-9126-e5971cb389ee",
+        "type": "message",
+        "text": "where the param is named ‘mgmt’ does that look right",
+        "user": "UBP7HL339",
+        "ts": "1539367291.000100"
+    },
+    {
+        "client_msg_id": "6a869853-874c-4294-9351-fc18e559aa53",
+        "type": "message",
+        "text": "no",
+        "user": "U02DGQYK1",
+        "ts": "1539367375.000100"
+    },
+    {
+        "client_msg_id": "5df2c141-aaf3-4566-8d38-92da66731b50",
+        "type": "message",
+        "text": "thats good cause thats weird",
+        "user": "UBP7HL339",
+        "ts": "1539367411.000100"
+    },
+    {
+        "client_msg_id": "d7c4df27-48ce-4bf3-acfb-3cbb20390b36",
+        "type": "message",
+        "text": "I’d have expected `{ \"mgmt\": \"10.197.111.12\" }`",
+        "user": "U02DGQYK1",
+        "ts": "1539367415.000100"
+    },
+    {
+        "client_msg_id": "fb030e08-c421-460b-ad88-748b81179979",
+        "type": "message",
+        "text": "woops my fault ignore that I swap name and value",
+        "user": "UBP7HL339",
+        "ts": "1539367570.000100"
+    },
+    {
+        "client_msg_id": "a489388c-6c12-4826-b46a-4c88cfa3960d",
+        "type": "message",
+        "text": "And Victor is right .  I meant object as any of the valid json types and not limited to the specific json object.  The API calls takes json encoded text that can be any JSON type.   Thanks for clarifying Victor.",
+        "user": "U02DGQYK1",
+        "ts": "1539367604.000100"
+    },
+    {
+        "client_msg_id": "dd22534f-3e94-451a-9390-fd4f4bff0e5d",
+        "type": "message",
+        "text": "works thanks guys",
+        "user": "UBP7HL339",
+        "ts": "1539367639.000100",
+        "reactions": [
+            {
+                "name": "slightly_smiling_face",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "client_msg_id": "ddd1ccaa-a3df-4bfa-987f-3c70c51bc3ef",
+        "type": "message",
+        "text": "Okay I give up.  Does the subnet name have some weird requirements I am not aware of.",
+        "user": "UBP7HL339",
+        "ts": "1539368137.000100"
+    },
+    {
+        "client_msg_id": "121190eb-9e16-4f93-9765-0a4e0a695a95",
+        "type": "message",
+        "text": "I keep getting violates the unique index Subnet",
+        "user": "UBP7HL339",
+        "ts": "1539368151.000100"
+    },
+    {
+        "client_msg_id": "c20148bc-9fbc-404e-982e-fcf48f6f3462",
+        "type": "message",
+        "text": "But there isn’t a subnet with the name Management_SUBNET in the system",
+        "user": "UBP7HL339",
+        "ts": "1539368204.000100"
+    },
+    {
+        "client_msg_id": "b2e3f396-f791-4b8b-88fe-c492c7e471d7",
+        "type": "message",
+        "text": "or am I missunderstanding the message",
+        "user": "UBP7HL339",
+        "ts": "1539368233.000100"
+    },
+    {
+        "client_msg_id": "3c9d18f4-010f-4038-b56d-3b0394a4a9a1",
+        "type": "message",
+        "text": "nevermind",
+        "user": "UBP7HL339",
+        "ts": "1539368272.000100"
+    },
+    {
+        "client_msg_id": "841e72b2-71f8-4d80-a590-9f2be1926e59",
+        "type": "message",
+        "text": "i had the same subnet address in there somewhere",
+        "user": "UBP7HL339",
+        "ts": "1539368282.000100"
+    },
+    {
+        "type": "message",
+        "text": "Have you seen this issue? When installing a content pack with a workflow referring to a default stage, it says stage not available (but it actually existed):",
+        "files": [
+            {
+                "id": "FDDAPNVJ6",
+                "created": 1539376327,
+                "timestamp": 1539376327,
+                "name": "Screen Shot 2018-10-12 at 2.29.09 PM.png",
+                "title": "Screen Shot 2018-10-12 at 2.29.09 PM.png",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "UCWNG6NTV",
+                "editable": false,
+                "size": 67080,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FDDAPNVJ6\/screen_shot_2018-10-12_at_2.29.09_pm.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FDDAPNVJ6\/download\/screen_shot_2018-10-12_at_2.29.09_pm.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDDAPNVJ6-b11567b05b\/screen_shot_2018-10-12_at_2.29.09_pm_64.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDDAPNVJ6-b11567b05b\/screen_shot_2018-10-12_at_2.29.09_pm_80.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDDAPNVJ6-b11567b05b\/screen_shot_2018-10-12_at_2.29.09_pm_360.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360_w": 360,
+                "thumb_360_h": 287,
+                "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDDAPNVJ6-b11567b05b\/screen_shot_2018-10-12_at_2.29.09_pm_480.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_480_w": 480,
+                "thumb_480_h": 383,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDDAPNVJ6-b11567b05b\/screen_shot_2018-10-12_at_2.29.09_pm_160.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDDAPNVJ6-b11567b05b\/screen_shot_2018-10-12_at_2.29.09_pm_720.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_720_w": 720,
+                "thumb_720_h": 574,
+                "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDDAPNVJ6-b11567b05b\/screen_shot_2018-10-12_at_2.29.09_pm_800.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_800_w": 800,
+                "thumb_800_h": 638,
+                "image_exif_rotation": 1,
+                "original_w": 878,
+                "original_h": 700,
+                "permalink": "https:\/\/rackn.slack.com\/files\/UCWNG6NTV\/FDDAPNVJ6\/screen_shot_2018-10-12_at_2.29.09_pm.png",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FDDAPNVJ6-d5df029eac"
+            }
+        ],
+        "upload": true,
+        "user": "UCWNG6NTV",
+        "display_as_bot": false,
+        "ts": "1539376331.000100"
+    },
+    {
+        "client_msg_id": "51e6a2b3-409d-4d1b-85d2-b9cbf7a3166d",
+        "type": "message",
+        "text": "It does not always happen since we also refer to other default stages as well.  Another observation: it does not happen if we use python to call drpcli, but happens when we use ansible to call drpcli.",
+        "user": "UCWNG6NTV",
+        "ts": "1539376469.000100",
+        "edited": {
+            "user": "UCWNG6NTV",
+            "ts": "1539376484.000000"
+        }
+    },
+    {
+        "client_msg_id": "aa03bb4c-641e-4c85-b227-f72ad497400b",
+        "type": "message",
+        "text": "if your system has internet access, then DRP can get those pieces for you.",
+        "user": "U02DHRR2L",
+        "ts": "1539376847.000100"
+    },
+    {
+        "client_msg_id": "dbb43b41-692e-452d-8cce-f0cd5ad44c18",
+        "type": "message",
+        "text": "if not, you have to upload the isos",
+        "user": "U02DHRR2L",
+        "ts": "1539376854.000100"
+    },
+    {
+        "client_msg_id": "8fad4398-c192-40a3-a6f5-5fcfdadd1d1a",
+        "type": "message",
+        "text": "<@U02DHRR2L> It does have internet access, is it due to the delay for stage to be ready (due to the time taken to get those pieces)?",
+        "user": "UCWNG6NTV",
+        "ts": "1539377383.000100",
+        "edited": {
+            "user": "UCWNG6NTV",
+            "ts": "1539377394.000000"
+        }
+    },
+    {
+        "client_msg_id": "35ad0840-e2fb-4f95-9b82-7fc6a46931ea",
+        "type": "message",
+        "text": "If I destroy and upload the same content pack again, it works",
+        "user": "UCWNG6NTV",
+        "ts": "1539377432.000100"
+    },
+    {
+        "client_msg_id": "7c9ad3a7-91ed-432a-819e-d75d5b373191",
+        "type": "message",
+        "text": "Is the destroy\/reload 100% consistent - or just happened one or twice?  I ask - because the public mirrors are often quite flakey.  Would suggest uploading the  ISO to be sure those artifacts are available - so you don't have to deal with the vagaries of the public mirrors for marking the content available if that is the issue.",
+        "user": "U6QFVRJNB",
+        "ts": "1539377714.000100"
+    },
+    {
+        "client_msg_id": "7afc7cb5-33d1-4f46-ae8f-692aeadb0735",
+        "type": "message",
+        "text": "Yes it's consistent\/repeatable with Ansible. So the stage does need to wait for isos to be downloaded to be available?",
+        "user": "UCWNG6NTV",
+        "ts": "1539381032.000100"
+    },
+    {
+        "client_msg_id": "80534404-219a-4f21-9f97-c695470f813c",
+        "type": "message",
+        "text": "Yes",
+        "user": "U02DHRR2L",
+        "ts": "1539383426.000100"
+    },
+    {
+        "client_msg_id": "cec3f36e-0f0d-4ba3-9012-060d88d793c1",
+        "type": "message",
+        "text": "You can check the bootenv or stage,  there's a property on then to tell you they are available ",
+        "user": "U02DHRR2L",
+        "ts": "1539383460.000100"
+    },
+    {
+        "client_msg_id": "ead72268-916e-4639-9da1-1528bc2bd2d7",
+        "type": "message",
+        "text": "If you store the iso locally,  you can avoid the internet",
+        "user": "U02DHRR2L",
+        "ts": "1539383506.000100"
+    },
+    {
+        "client_msg_id": "bc67b4d9-daed-45dd-9b7f-8c338e17be1b",
+        "type": "message",
+        "text": "cool, Thanks Rob!",
+        "user": "UCWNG6NTV",
+        "ts": "1539393185.000100"
+    }
+]

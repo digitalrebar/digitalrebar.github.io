@@ -1,0 +1,157 @@
+[
+    {
+        "user": "UE7B053LG",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1542719117.621200",
+        "text": "<@UE7B053LG> has joined the channel"
+    },
+    {
+        "client_msg_id": "2a71ce71-b680-4b88-92db-44b5cb5cbfe2",
+        "type": "message",
+        "text": "hello everyone :slightly_smiling_face:",
+        "user": "UE7B053LG",
+        "ts": "1542719429.621500"
+    },
+    {
+        "client_msg_id": "749fa0f6-7b9c-4c59-8e28-4a6f6506af54",
+        "type": "message",
+        "text": "<@UE7B053LG> $welcome",
+        "user": "U02DHRR2L",
+        "ts": "1542723651.621900"
+    },
+    {
+        "type": "message",
+        "subtype": "slackbot_response",
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "user": "USLACKBOT",
+        "ts": "1542723652.622000"
+    },
+    {
+        "client_msg_id": "2df6c9aa-d85a-4d9e-b70b-932c0ac1be11",
+        "type": "message",
+        "text": "I'm currently trying out digital rebar, which I find to be a very interesting tool :slightly_smiling_face:. I've been following the quickstart and I've been reading other digital rebar docs as well. I haven't found any documentation in regards to my problem , so therefore I ask it in here :slightly_smiling_face:\nI'm trying to install ubuntu 18.04 according to the quickstart steps with a workflow.\nIt seems to start the installation nicely (and also finish it) but afterwards it doesn't boot into the OS (which it should do according to the quickstart (it goes into PXE boot, and jumps out to HDD boot and says similar with \"no operating system found\")).\nCould this be a legacy \/ uefi bios issue?\nI'm thankful for any tips anyone may have.",
+        "user": "UE7B053LG",
+        "ts": "1542724744.626400",
+        "edited": {
+            "user": "UE7B053LG",
+            "ts": "1542725266.000000"
+        }
+    },
+    {
+        "client_msg_id": "727f1a32-8a60-4e80-ad69-cffe706f46dd",
+        "type": "message",
+        "text": "That is most certainly a UEFI issue.",
+        "user": "UCU824PB2",
+        "ts": "1542726399.627200"
+    },
+    {
+        "client_msg_id": "338e9b29-62e1-4521-af42-8fc6352af941",
+        "type": "message",
+        "text": "If the install isn't going to a hdd in the uefi boot list then you should probably use legacy boot. I ran into the same issue a few weeks ago.",
+        "user": "UCU824PB2",
+        "ts": "1542726508.628300"
+    },
+    {
+        "client_msg_id": "df154dbf-5a64-4e10-8ffd-ed15a00fb626",
+        "type": "message",
+        "text": "<@UE7B053LG> - by default the installer assumes `\/dev\/sda` as the target install disk.  If your bootloader is booting \"something else\" as the default Boot Device, then post-install reboot will fail.   You can boot the machine in to Sledgehammer and log in to the console (or add your SSH keys, and SSH to it) - and see what Sledgehammer identifies as the disk ordering and names (eg `lsblk`).   You can specify an alternate Install Disk by setting the Param `operating-system-disk` to an alternate device (eg `sdb` - no preceding `\/dev`)",
+        "user": "U6QFVRJNB",
+        "ts": "1542727918.630900"
+    },
+    {
+        "client_msg_id": "a97b7f1c-135d-41f2-8d5e-901237801f8b",
+        "type": "message",
+        "text": "if that is not the correct disk you want the OS installed\/booted from, then you need to modify your boot order appropriately to insure the BIOS\/bootloader loads the correct drive for you",
+        "user": "U6QFVRJNB",
+        "ts": "1542727954.631700"
+    },
+    {
+        "client_msg_id": "c17a3adf-66b7-4f5d-9cb5-6dcd09b762ff",
+        "type": "message",
+        "text": "(there are RackN commercial plugins for manipulating\/managing BIOS\/Firmware as part of Workflow)",
+        "user": "U6QFVRJNB",
+        "ts": "1542727981.632200"
+    },
+    {
+        "client_msg_id": "bfdb6c5e-5c36-4530-af30-bcbba54e1701",
+        "type": "message",
+        "text": "<@UE7B053LG> if that works, please let us know and we'll add it to the FAQs",
+        "user": "U02DHRR2L",
+        "ts": "1542728309.632700"
+    },
+    {
+        "type": "message",
+        "subtype": "me_message",
+        "text": "notes the FAQs are getting long enough to need to re-organization",
+        "user": "U02DHRR2L",
+        "ts": "1542728327.632800"
+    },
+    {
+        "client_msg_id": "cca7db2c-23c5-42e6-b424-3cad3f1bd1a9",
+        "type": "message",
+        "text": "(it's on my list ... :slightly_smiling_face: )",
+        "user": "U6QFVRJNB",
+        "ts": "1542728441.633000"
+    },
+    {
+        "client_msg_id": "8aaa3953-0560-4833-8dc1-f6ab19910313",
+        "type": "message",
+        "text": "<!here> reminder &gt; community meeting in 3 hours",
+        "user": "U02DHRR2L",
+        "ts": "1542729255.633400"
+    },
+    {
+        "client_msg_id": "1984d828-8f34-4e44-9d60-bd527e712cb3",
+        "type": "message",
+        "text": "wow! thanks for all the tips guys :slightly_smiling_face: , i'll try them once I'm at the office again, and get back to ya!",
+        "user": "UE7B053LG",
+        "ts": "1542735343.635000",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U6QFVRJNB",
+                    "U02DHRR2L"
+                ],
+                "count": 2
+            }
+        ]
+    },
+    {
+        "client_msg_id": "1b2bd329-2f92-4889-8e49-edf03d7c86ed",
+        "type": "message",
+        "text": "<!here> Community Meeting Recording posted:\n<https:\/\/youtu.be\/2cXmM8OLX1o>",
+        "user": "U02DHRR2L",
+        "ts": "1542755540.636000",
+        "edited": {
+            "user": "U02DHRR2L",
+            "ts": "1542755552.000000"
+        },
+        "attachments": [
+            {
+                "service_name": "YouTube",
+                "service_url": "https:\/\/www.youtube.com\/",
+                "title": "Public Cloud &amp; Docker Joins, Plugin Advances: DRP v29 - Nov 20, 2018",
+                "title_link": "https:\/\/youtu.be\/2cXmM8OLX1o",
+                "author_name": "RackN & Digital Rebar",
+                "author_link": "https:\/\/www.youtube.com\/channel\/UCr3bBtP-pMsDQ5c0IDjt_LQ",
+                "fallback": "YouTube Video: Public Cloud & Docker Joins, Plugin Advances: DRP v29 - Nov 20, 2018",
+                "video_html": "<iframe width=\"400\" height=\"225\" src=\"https:\/\/www.youtube.com\/embed\/2cXmM8OLX1o?feature=oembed&autoplay=1&iv_load_policy=3\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen><\/iframe>",
+                "video_html_width": 400,
+                "video_html_height": 225,
+                "from_url": "https:\/\/youtu.be\/2cXmM8OLX1o",
+                "service_icon": "https:\/\/a.slack-edge.com\/2089\/img\/unfurl_icons\/youtube.png",
+                "id": 1,
+                "original_url": "https:\/\/youtu.be\/2cXmM8OLX1o"
+            }
+        ]
+    },
+    {
+        "client_msg_id": "e9d87a9c-b496-496a-aa4c-7a7b1b00fd57",
+        "type": "message",
+        "text": "We covered A LOT of new cool stuff including extensions to the plugin system and running the runner in a container.",
+        "user": "U02DHRR2L",
+        "ts": "1542755572.636700"
+    }
+]

@@ -1,0 +1,145 @@
+[
+    {
+        "client_msg_id": "357714da-47d8-486f-bf6d-d8958cccc645",
+        "type": "message",
+        "text": "having a bit of a brain fart - is there a var to get the current machine *name* in a template?",
+        "user": "UBXEU90UQ",
+        "ts": "1538566594.000100"
+    },
+    {
+        "client_msg_id": "A683AC2D-79A0-4A22-95A2-B3A2D0E857E2",
+        "type": "message",
+        "text": ".Machine.Name   ",
+        "user": "U02DGQYK1",
+        "ts": "1538568876.000100"
+    },
+    {
+        "client_msg_id": "4C2459FD-C2EC-43D2-8FF0-D3314E7769A6",
+        "type": "message",
+        "text": "<@UBXEU90UQ> ",
+        "user": "U02DGQYK1",
+        "ts": "1538568888.000100"
+    },
+    {
+        "client_msg_id": "e1081942-4765-41f5-96ce-2c31e7b6f29e",
+        "type": "message",
+        "text": "ahh",
+        "user": "UBXEU90UQ",
+        "ts": "1538569615.000200"
+    },
+    {
+        "client_msg_id": "c460deab-c99e-46fb-8dc1-cf4256b07474",
+        "type": "message",
+        "text": "excellent, thanks",
+        "user": "UBXEU90UQ",
+        "ts": "1538569618.000100"
+    },
+    {
+        "client_msg_id": "4fd750b0-a68c-462b-af56-55523a91de49",
+        "type": "message",
+        "text": "I just got Ansible AWX jobs triggering correctly post C7 install :slightly_smiling_face: minor annoyances due to how AWX handles provision callbacks but seems to work well",
+        "user": "UBXEU90UQ",
+        "ts": "1538569716.000100"
+    },
+    {
+        "client_msg_id": "0df3b3c7-f17a-47a9-b294-1d7b6b907735",
+        "type": "message",
+        "text": "Related to Machine params..   Do you 1)create the Params directly in the machine endpoint, 2) create params using \/params then attach to the machine or 3) either or",
+        "user": "UBP7HL339",
+        "ts": "1538602135.000100"
+    },
+    {
+        "client_msg_id": "450808b6-17dc-4c16-ba79-92c7fb16e63a",
+        "type": "message",
+        "text": "nevermind Randy answered it",
+        "user": "UBP7HL339",
+        "ts": "1538602277.000100"
+    },
+    {
+        "client_msg_id": "2381f477-085a-48b6-b5da-04ea47550a3a",
+        "type": "message",
+        "text": "Thanks, Randy! ",
+        "user": "U6QFVRJNB",
+        "ts": "1538602303.000100",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "client_msg_id": "aa5c3fb6-f895-4303-9491-0a453ff658f2",
+        "type": "message",
+        "text": ":slightly_smiling_face: I can ramble on a lot more on the topic if Randy didn’t cover it .  :stuck_out_tongue:",
+        "user": "U02DGQYK1",
+        "ts": "1538607713.000100"
+    },
+    {
+        "client_msg_id": "a43dfa45-0c1c-475f-b8b3-15ac8a3d2366",
+        "type": "message",
+        "text": "Thanks guys.  Based on our earlier conversations, we are just going to apply the params to the individual machines.",
+        "user": "UBJ22A0N5",
+        "ts": "1538615670.000100"
+    },
+    {
+        "client_msg_id": "7ca2b706-996a-43fa-9f99-026eb714472b",
+        "type": "message",
+        "text": "Randy, depending on how many you want to apply, you might want to create a profile, put the params in the profile, and then add the profile to the machines - but that's just a logical construct that helps keep things grouped together",
+        "user": "U6QFVRJNB",
+        "ts": "1538615778.000100"
+    },
+    {
+        "client_msg_id": "8c44a916-0e31-43d1-885c-1d688e8db7c8",
+        "type": "message",
+        "text": "Shane.  Thanks.  That is how we had started.  But this is only a half a dozen servers that will be created with scripts.",
+        "user": "UBJ22A0N5",
+        "ts": "1538615956.000100"
+    },
+    {
+        "client_msg_id": "df25166a-19a1-4d09-9457-d47e5885945a",
+        "type": "message",
+        "text": "<@UBJ22A0N5> if you are creating the params (highly recommended) then make sure you set the default.  If so you do that, you can read the params on a machine (in the runner template expansion) even if it's not set on a machine",
+        "user": "U02DHRR2L",
+        "ts": "1538616240.000100",
+        "edited": {
+            "user": "U02DHRR2L",
+            "ts": "1538616252.000000"
+        }
+    },
+    {
+        "client_msg_id": "e8cc00be-8a6a-4061-ad1d-53e8de2fb75f",
+        "type": "message",
+        "text": "Thanks Rob.  I'll add that to the backlog.",
+        "user": "UBJ22A0N5",
+        "ts": "1538616464.000100"
+    },
+    {
+        "client_msg_id": "3e58ac73-bb53-4100-85d8-6af46e94a93e",
+        "type": "message",
+        "text": "Is there a more detailed doc describing how to update a content package? After uploading a content package, I only see \"Remove\" button for the content package in UI, but did not see an edit button.  One thing I wanted to do for the uploaded content package is to change a template in the content pack, but using vi to change the template (e.g., a seed template) is really painful.",
+        "user": "UCWNG6NTV",
+        "ts": "1538629872.000100",
+        "edited": {
+            "user": "UCWNG6NTV",
+            "ts": "1538629935.000000"
+        }
+    },
+    {
+        "client_msg_id": "ffab6cc8-8709-48cf-8d6d-10863721e03a",
+        "type": "message",
+        "text": "There is a video in the RackN YouTube channel talking about the color demo and how to edit and control content packages.",
+        "user": "U02DGQYK1",
+        "ts": "1538630895.000100"
+    },
+    {
+        "client_msg_id": "b952ede3-4e79-4cdb-8972-02b348e86723",
+        "type": "message",
+        "text": "There is not an edit in the UX at that point.  The point of the content package is to be read only. <@UCWNG6NTV>",
+        "user": "U02DGQYK1",
+        "ts": "1538630923.000100"
+    }
+]

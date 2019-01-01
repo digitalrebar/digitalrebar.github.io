@@ -1,0 +1,372 @@
+[
+    {
+        "client_msg_id": "209d4064-ce69-40a0-865d-642692e49540",
+        "type": "message",
+        "text": "Thanks <@UBU0BPRA9> I was going through some video demos yesterday and tried to clone the ha example but the cluster didn't come up with 3 masters so hopefully this fixes that.  I'll let you know very soon.",
+        "user": "UF1LXSN15",
+        "ts": "1545917887.137600",
+        "reactions": [
+            {
+                "name": "sunglasses",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "client_msg_id": "acc4126e-2ebf-4615-8184-b693139c6e18",
+        "type": "message",
+        "text": "looking at the templates it looks like the live cluster should work with coreos base?  I've historically been using coreos so staying with that would be more comfortable for me.",
+        "user": "UF1LXSN15",
+        "ts": "1545917994.139500"
+    },
+    {
+        "client_msg_id": "e2fa4feb-6405-42bc-9fba-789aacbd3ca6",
+        "type": "message",
+        "text": "btw, I'm almost done with a metallb addition to krib.  I'll send a pr once it's working",
+        "user": "UF1LXSN15",
+        "ts": "1545918043.140200"
+    },
+    {
+        "client_msg_id": "df0a96c8-bb43-4451-ba13-d4f7092c5d16",
+        "type": "message",
+        "text": "doing it primarily to help me get more familiar with drp.  it's pretty simple in l2 mode.",
+        "user": "UF1LXSN15",
+        "ts": "1545918123.141200"
+    },
+    {
+        "client_msg_id": "5edbcdba-1105-4cef-ad3a-dd7c74b22bb2",
+        "type": "message",
+        "text": "Cool, hope it helps. I have no experience with coreos. Actively fighting with rook\/ceph but now I am in my long weekend off. Continuing next week Thursday\/Friday. Metallb or other ingress is on my todo list too. ",
+        "user": "UBU0BPRA9",
+        "ts": "1545918944.144800"
+    },
+    {
+        "client_msg_id": "38d99b63-4221-4ea1-94c6-bce61c1c1412",
+        "type": "message",
+        "text": "<@UF1LXSN15> maybe I'm lucky and you have done it until then :) ",
+        "user": "UBU0BPRA9",
+        "ts": "1545919004.146300"
+    },
+    {
+        "client_msg_id": "689bd6cc-a751-4140-9cee-366dd1f5bd7b",
+        "type": "message",
+        "text": "I fought with rook\/ceph a little and then went to rancher longhorn or openebs.  It's pretty easy with coreos because you can just enable a couple of iscsi oneshot services and set a config option in the ignition file, map a couple iscsi binaries into the kubelet container, and it \"just works\" with a simple helm chart install.",
+        "user": "UF1LXSN15",
+        "ts": "1545919378.150500"
+    },
+    {
+        "client_msg_id": "cfd64ed9-0c37-4609-86a1-a2b29d7c522f",
+        "type": "message",
+        "text": "I had it working with rancher rke but I wanted a bit more flexibility so went looking for alternative solutions",
+        "user": "UF1LXSN15",
+        "ts": "1545919438.151100"
+    },
+    {
+        "client_msg_id": "1def4f28-94cc-4715-a703-07e5e4d55cca",
+        "type": "message",
+        "text": "drp is looking like exactly what I've been searching for so far.  I like the templates and the matchbox + terraform combo of tyhoon was a little clunky",
+        "user": "UF1LXSN15",
+        "ts": "1545919576.154300"
+    },
+    {
+        "client_msg_id": "c262e235-2249-4598-b68f-a23cb2efe60c",
+        "type": "message",
+        "text": "So far rook\/ceph operator via helm integration in krib worked, just need further cleaning on krib side since somehow just 2 of 3 masters have the noschedule taint for masters",
+        "user": "UBU0BPRA9",
+        "ts": "1545919590.154900"
+    },
+    {
+        "client_msg_id": "a0724a64-96e3-442a-857c-890136c264eb",
+        "type": "message",
+        "text": "So I've got an osd running on the master",
+        "user": "UBU0BPRA9",
+        "ts": "1545919616.155700"
+    },
+    {
+        "client_msg_id": "f19298bc-51ef-4872-86d7-b86c5918f6ec",
+        "type": "message",
+        "text": "Looking for a simple storage solution (software) supporting disks and object storage, thought ceph is best matching so far",
+        "user": "UBU0BPRA9",
+        "ts": "1545919712.158600"
+    },
+    {
+        "client_msg_id": "79d40d36-4d17-4f21-a6e3-f4b1fe5ddc83",
+        "type": "message",
+        "text": "rancher longhorn I like over openebs because it has a nice web gui where you can check the status of the pvc cluster and also backup and restore volumes from s3 or nfs",
+        "user": "UF1LXSN15",
+        "ts": "1545919718.158800"
+    },
+    {
+        "client_msg_id": "000dca63-aca8-443f-8e4a-45566dcd3cf3",
+        "type": "message",
+        "text": "I will take a look at it ",
+        "user": "UBU0BPRA9",
+        "ts": "1545919773.159200"
+    },
+    {
+        "client_msg_id": "e19c463a-c15a-47a8-a109-2d222705edc7",
+        "type": "message",
+        "text": "Thanks for the hint",
+        "user": "UBU0BPRA9",
+        "ts": "1545919778.159500"
+    },
+    {
+        "client_msg_id": "6c02e5ac-5cb2-4db3-9deb-834ce8272574",
+        "type": "message",
+        "text": ":slightly_smiling_face:  I'll send pr's if I can get it working in krib properly",
+        "user": "UF1LXSN15",
+        "ts": "1545919809.160200",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "UBU0BPRA9",
+                    "U02DHRR2L"
+                ],
+                "count": 2
+            }
+        ]
+    },
+    {
+        "client_msg_id": "ce99b79f-9ffd-4a9a-a39c-3b825e7632c2",
+        "type": "message",
+        "text": "So far drp is just awesome, simple and works as expected ",
+        "user": "UBU0BPRA9",
+        "ts": "1545919856.161600"
+    },
+    {
+        "client_msg_id": "ac916216-7f14-4f10-a00e-6cb0e44d380d",
+        "type": "message",
+        "text": "I also deploy minio somewhere so I can do my storage backups to my unraid nas",
+        "user": "UF1LXSN15",
+        "ts": "1545919878.162000"
+    },
+    {
+        "client_msg_id": "0c5af43e-d67c-46ea-a1b2-7e2471460518",
+        "type": "message",
+        "text": "Last time I checked minio it was quite limited but maybe I will evaluate more",
+        "user": "UBU0BPRA9",
+        "ts": "1545919985.163900"
+    },
+    {
+        "client_msg_id": "50f432c4-27d0-4377-b020-e6bea0431bd9",
+        "type": "message",
+        "text": "it's just s3 with a nice gui that you can attach to a nfs share if you want",
+        "user": "UF1LXSN15",
+        "ts": "1545920019.164400"
+    },
+    {
+        "client_msg_id": "dfb02ca0-adf8-40ba-9dd0-98dcf5b9aaaf",
+        "type": "message",
+        "text": "or raw disk",
+        "user": "UF1LXSN15",
+        "ts": "1545920026.164700"
+    },
+    {
+        "client_msg_id": "7babb8f8-a73f-4f8b-9a8c-eb91d02c083c",
+        "type": "message",
+        "text": "has a nice helm chart that makes it quick and easy to spin up",
+        "user": "UF1LXSN15",
+        "ts": "1545920062.165300"
+    },
+    {
+        "client_msg_id": "3cd163e9-aeb4-429d-9755-61e3c33c0a29",
+        "type": "message",
+        "text": "and I guess after getting ingress and storage as a service setup my next piece will be postgres as a service via patroni.  watched a nice kubecon video on it this morning and it got me excited to try it",
+        "user": "UF1LXSN15",
+        "ts": "1545920149.166800"
+    },
+    {
+        "client_msg_id": "cdf12a40-6ea3-4047-a7f4-d2e79ab4327d",
+        "type": "message",
+        "text": "Seems your agenda is mostly the same as mine. Thinking of coackroachdb but have to check with our devs about it. ",
+        "user": "UBU0BPRA9",
+        "ts": "1545921122.169100"
+    },
+    {
+        "client_msg_id": "5ffb3d2a-1ff2-4c01-b6ac-c46cb822ab14",
+        "type": "message",
+        "text": "whew, so just before christmas i bricked a cumulus switch by power cycling it while it was updating grub",
+        "user": "UBXEU90UQ",
+        "ts": "1545921306.169600"
+    },
+    {
+        "client_msg_id": "bb619d8c-1de6-4faf-9561-6092ab80ef2a",
+        "type": "message",
+        "text": "turns out you can recover them by booting off usb, if you know the super secure bios password",
+        "user": "UBXEU90UQ",
+        "ts": "1545921318.170100"
+    },
+    {
+        "client_msg_id": "a7d6f9dd-e1c7-49df-a6cb-ae73e92c74d2",
+        "type": "message",
+        "text": "‘admin’",
+        "user": "UBXEU90UQ",
+        "ts": "1545921319.170400",
+        "reactions": [
+            {
+                "name": "face_palm",
+                "users": [
+                    "UBU0BPRA9"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "client_msg_id": "fddd5daa-7571-4d52-88b7-216972891d52",
+        "type": "message",
+        "text": "reflashed onie from usb, rebooted into onie installer mode and DRP + ansible took it from there, all fixed :smile:",
+        "user": "UBXEU90UQ",
+        "ts": "1545921377.171100",
+        "reactions": [
+            {
+                "name": "sunglasses",
+                "users": [
+                    "U6QFVRJNB",
+                    "U02DHRR2L"
+                ],
+                "count": 2
+            }
+        ]
+    },
+    {
+        "client_msg_id": "863b9836-11ce-4798-8660-4665d9c0e3cb",
+        "type": "message",
+        "text": "<@UBU0BPRA9> I like the idea of cockroach and may be able to switch to it in the future but most of my workloads are java\/spring\/jpa\/hibernate so right now the quickest transition from standalone sqlserver is a postgres cluster",
+        "user": "UF1LXSN15",
+        "ts": "1545922498.174000"
+    },
+    {
+        "client_msg_id": "22e2b356-4c97-4c7f-a340-bb3ce5fe3264",
+        "type": "message",
+        "text": "Setting up a postgres cluster is a good reason to look at cockroachdb. :-)",
+        "user": "U02DJQSG8",
+        "ts": "1545923777.175500"
+    },
+    {
+        "client_msg_id": "2ae7f734-dc7c-4478-8466-c7d88956cc8a",
+        "type": "message",
+        "text": "Exactly ",
+        "user": "UBU0BPRA9",
+        "ts": "1545923913.175700"
+    },
+    {
+        "client_msg_id": "62c3fc8c-b4cc-4abf-b7ca-e04e25adab88",
+        "type": "message",
+        "text": "maybe I need to look at it again. I thought it wasn't a direct replacement",
+        "user": "UF1LXSN15",
+        "ts": "1545924349.176300"
+    },
+    {
+        "client_msg_id": "98aede51-3802-47c8-a6c4-b8c5e2384821",
+        "type": "message",
+        "text": "It isn't, but setting up and babysitting a Postgres HA cluster is more or less a full time job of its own.  And you are only getting active-passive with one master.",
+        "user": "U02DJQSG8",
+        "ts": "1545925481.177900",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U02DGQYK1",
+                    "U02DHRR2L"
+                ],
+                "count": 2
+            }
+        ]
+    },
+    {
+        "user": "UF2MZ7EDB",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1545926794.179200",
+        "text": "<@UF2MZ7EDB> has joined the channel"
+    },
+    {
+        "client_msg_id": "86bf593a-f285-41ba-b094-06d1d7bd7a0c",
+        "type": "message",
+        "text": "<@UF2MZ7EDB> $welcome",
+        "user": "U02DHRR2L",
+        "ts": "1545927664.179900"
+    },
+    {
+        "type": "message",
+        "subtype": "slackbot_response",
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "user": "USLACKBOT",
+        "ts": "1545927665.180000"
+    },
+    {
+        "client_msg_id": "0924566b-f63c-4d00-98d8-00661198f053",
+        "type": "message",
+        "text": "Finally a reason to keep Slack open :slightly_smiling_face:",
+        "user": "UF2MZ7EDB",
+        "ts": "1545928885.180400"
+    },
+    {
+        "client_msg_id": "961b9e1a-eefc-4fa7-ae60-bbfe1158bbe5",
+        "type": "message",
+        "text": "okay, got metallb working and pr sent :slightly_smiling_face:",
+        "user": "UF1LXSN15",
+        "ts": "1545932168.180800",
+        "reactions": [
+            {
+                "name": "heart_eyes",
+                "users": [
+                    "UBU0BPRA9",
+                    "U02DHRR2L"
+                ],
+                "count": 2
+            }
+        ]
+    },
+    {
+        "client_msg_id": "42fc019a-1619-4b3f-ae90-e557d9328577",
+        "type": "message",
+        "text": "so should be able to achieve the same as this now <https:\/\/docs.platform9.com\/support\/ha-for-baremetal-multimaster-kubernetes-cluster-service-type-load-balancer\/>",
+        "user": "UF1LXSN15",
+        "ts": "1545932471.181200"
+    },
+    {
+        "client_msg_id": "2db87feb-3c70-4999-8136-526493d7dab9",
+        "type": "message",
+        "text": "what subnet or ip should I use for the krib\/cluster-master-vip?",
+        "user": "UF1LXSN15",
+        "ts": "1545932533.182000"
+    },
+    {
+        "user": "UF21UCSSV",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1545939053.182600",
+        "text": "<@UF21UCSSV> has joined the channel"
+    },
+    {
+        "client_msg_id": "ae71479f-e10f-48fe-a830-7ce9f22d595d",
+        "type": "message",
+        "text": "should krib\/cluster-master-vip be removed by krib-dev-reset?  it's not inserted by the install so not sure why it is cleared.",
+        "user": "UF1LXSN15",
+        "ts": "1545947376.183200",
+        "edited": {
+            "user": "UF1LXSN15",
+            "ts": "1545947417.000000"
+        }
+    },
+    {
+        "client_msg_id": "d7408487-73fd-4458-b17d-c342a340f583",
+        "type": "message",
+        "text": "and to answer my pwn prior question krib\/cluster-master-vip should be set to an IP not used by any cluster node and also not in the dhcp range",
+        "user": "UF1LXSN15",
+        "ts": "1545947698.184300"
+    },
+    {
+        "client_msg_id": "adb3e489-6b90-468f-a084-3d45175b9c4e",
+        "type": "message",
+        "text": "<@UF1LXSN15> the krib-dev-reset has been mainly used for single master clusters so far.  there may be omissions for using it with a multi-master one",
+        "user": "U02DHRR2L",
+        "ts": "1545951643.185600"
+    }
+]

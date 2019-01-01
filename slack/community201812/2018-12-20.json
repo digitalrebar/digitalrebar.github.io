@@ -1,0 +1,339 @@
+[
+    {
+        "client_msg_id": "bade907d-af23-4f96-a60b-51382c9c0b3f",
+        "type": "message",
+        "text": "added `--overwrite=true` to `my-krib-config.sh.tmpl` but looks anyway not consistent with the labels for the master:\n```\nkubectl get nodes --show-labels\nNAME            STATUS    ROLES     AGE       VERSION   LABELS\nmaster1.metal   Ready     master    6m        v1.12.3   <http:\/\/beta.kubernetes.io\/arch=amd64,beta.kubernetes.io\/os=linux,kubernetes.io\/hostname=master1.metal,node-role.kubernetes.io\/master=|beta.kubernetes.io\/arch=amd64,beta.kubernetes.io\/os=linux,kubernetes.io\/hostname=master1.metal,node-role.kubernetes.io\/master=>\nmaster2.metal   Ready     master    5m        v1.12.3   <http:\/\/beta.kubernetes.io\/arch=amd64,beta.kubernetes.io\/os=linux,kubernetes.io\/hostname=master2.metal,node-role.kubernetes.io\/master=|beta.kubernetes.io\/arch=amd64,beta.kubernetes.io\/os=linux,kubernetes.io\/hostname=master2.metal,node-role.kubernetes.io\/master=>\nmaster3.metal   Ready     master    5m        v1.12.3   <http:\/\/beta.kubernetes.io\/arch=amd64,beta.kubernetes.io\/os=linux,builder=krib,env=dev,kubernetes.io\/hostname=master3.metal,node-role.kubernetes.io\/master=|beta.kubernetes.io\/arch=amd64,beta.kubernetes.io\/os=linux,builder=krib,env=dev,kubernetes.io\/hostname=master3.metal,node-role.kubernetes.io\/master=>\nworker1.metal   Ready     &lt;none&gt;    4m        v1.12.3   <http:\/\/beta.kubernetes.io\/arch=amd64,beta.kubernetes.io\/os=linux,builder=krib,env=dev,kubernetes.io\/hostname=worker1.metal|beta.kubernetes.io\/arch=amd64,beta.kubernetes.io\/os=linux,builder=krib,env=dev,kubernetes.io\/hostname=worker1.metal>\nworker2.metal   Ready     &lt;none&gt;    4m        v1.12.3   <http:\/\/beta.kubernetes.io\/arch=amd64,beta.kubernetes.io\/os=linux,builder=krib,env=dev,kubernetes.io\/hostname=worker2.metal|beta.kubernetes.io\/arch=amd64,beta.kubernetes.io\/os=linux,builder=krib,env=dev,kubernetes.io\/hostname=worker2.metal>\nworker3.metal   Ready     &lt;none&gt;    4m        v1.12.3   <http:\/\/beta.kubernetes.io\/arch=amd64,beta.kubernetes.io\/os=linux,builder=krib,env=dev,kubernetes.io\/hostname=worker3.metal|beta.kubernetes.io\/arch=amd64,beta.kubernetes.io\/os=linux,builder=krib,env=dev,kubernetes.io\/hostname=worker3.metal>\nworker4.metal   Ready     &lt;none&gt;    4m        v1.12.3   <http:\/\/beta.kubernetes.io\/arch=amd64,beta.kubernetes.io\/os=linux,builder=krib,env=dev,kubernetes.io\/hostname=worker4.metal|beta.kubernetes.io\/arch=amd64,beta.kubernetes.io\/os=linux,builder=krib,env=dev,kubernetes.io\/hostname=worker4.metal>\nworker5.metal   Ready     &lt;none&gt;    4m        v1.12.3   <http:\/\/beta.kubernetes.io\/arch=amd64,beta.kubernetes.io\/os=linux,builder=krib,env=dev,kubernetes.io\/hostname=worker5.metal|beta.kubernetes.io\/arch=amd64,beta.kubernetes.io\/os=linux,builder=krib,env=dev,kubernetes.io\/hostname=worker5.metal>\nworker6.metal   Ready     &lt;none&gt;    4m        v1.12.3   <http:\/\/beta.kubernetes.io\/arch=amd64,beta.kubernetes.io\/os=linux,builder=krib,env=dev,kubernetes.io\/hostname=worker6.metal|beta.kubernetes.io\/arch=amd64,beta.kubernetes.io\/os=linux,builder=krib,env=dev,kubernetes.io\/hostname=worker6.metal>\n```",
+        "user": "UBU0BPRA9",
+        "ts": "1545294239.712100"
+    },
+    {
+        "client_msg_id": "c55461be-5252-479d-a3ac-35eb78d57c20",
+        "type": "message",
+        "text": "hmm seems I've got some calico issues now. most deployments fail with something like:\n```\n Failed create pod sandbox: rpc error: code = Unknown desc = failed to set up sandbox container \"da971c119ea96ff5899626ec968e84f5f9557083c0e0e26a927dcd94614f0c84\" network for pod \"rook-discover-spxb7\": NetworkPlugin cni failed to set up pod \"rook-discover-spxb7_rook-ceph-system\" network: error adding host side routes for interface: calicf4b87eac40, error: route (Ifindex: 8, Dst: 192.168.32.65\/32, Scope: 253) already exists for an interface other than 'calicf4b87eac40'\nBack-off restarting failed container \n```\ndashboard failed too but after deleting the failed pods it scaled up again and worked. for rook it does not work after deletion of the pods",
+        "user": "UBU0BPRA9",
+        "ts": "1545295531.713700"
+    },
+    {
+        "client_msg_id": "3e6759dd-c86f-4a6c-b2a2-c57c9cd3538c",
+        "type": "message",
+        "text": "<@UBU0BPRA9> - you appear to be trying everything at once.  I’m not sure we’ve look at Rook in a while.",
+        "user": "U02DGQYK1",
+        "ts": "1545316903.714300"
+    },
+    {
+        "client_msg_id": "774a5c65-53af-47c3-afe2-4ed1e327df32",
+        "type": "message",
+        "text": "Fresh TIP DRP server here on ubuntu 18.04. Followed guide up to the sledgehammer bootenv. On a baremetal PXE boot initial PXE boot works but then it's getting kicked to a shell before it can download root.squashfs . I can manually grab the file with wget after it bails , so communications are working fine. It just appears it's not waiting long enough for DHCP and then fails to get the file before it gets an IP. Any ideas on where i should poke around to get discovery working?",
+        "user": "UE5418916",
+        "ts": "1545343790.718100"
+    },
+    {
+        "client_msg_id": "b6f06ba3-9d1c-4543-9f40-65b287710490",
+        "type": "message",
+        "text": "do you have \"port fast\" on the switch ports for the machine failing ?   if not - the port may take 30 seconds or longer to enable due to Spanning Tree",
+        "user": "U6QFVRJNB",
+        "ts": "1545343908.718900"
+    },
+    {
+        "client_msg_id": "de4a1abb-9719-44b4-b42b-3852ac322443",
+        "type": "message",
+        "text": "Curse you STP,  Thanks for the idea. I'll go check the switch.",
+        "user": "UE5418916",
+        "ts": "1545343949.719500"
+    },
+    {
+        "client_msg_id": "d71b6527-9a74-4e67-bd04-b62b4a433ba1",
+        "type": "message",
+        "text": "there is also a new in v3.12.0 released earlier this week feature that may help",
+        "user": "U6QFVRJNB",
+        "ts": "1545343974.720100"
+    },
+    {
+        "type": "message",
+        "text": "fwiw :",
+        "files": [
+            {
+                "id": "FEYL68072",
+                "created": 1545343974,
+                "timestamp": 1545343974,
+                "name": "image.png",
+                "title": "Pasted image at 2018-12-20, 2:12 PM",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "UE5418916",
+                "editable": false,
+                "size": 122181,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FEYL68072\/image.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FEYL68072\/download\/image.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEYL68072-ec5f3a8f0f\/image_64.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEYL68072-ec5f3a8f0f\/image_80.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEYL68072-ec5f3a8f0f\/image_360.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360_w": 360,
+                "thumb_360_h": 270,
+                "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEYL68072-ec5f3a8f0f\/image_480.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_480_w": 480,
+                "thumb_480_h": 360,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEYL68072-ec5f3a8f0f\/image_160.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEYL68072-ec5f3a8f0f\/image_720.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_720_w": 720,
+                "thumb_720_h": 540,
+                "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEYL68072-ec5f3a8f0f\/image_800.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_800_w": 800,
+                "thumb_800_h": 600,
+                "image_exif_rotation": 1,
+                "original_w": 895,
+                "original_h": 671,
+                "permalink": "https:\/\/rackn.slack.com\/files\/UE5418916\/FEYL68072\/image.png",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FEYL68072-115d26f60a"
+            }
+        ],
+        "upload": true,
+        "user": "UE5418916",
+        "display_as_bot": false,
+        "ts": "1545343979.720200"
+    },
+    {
+        "client_msg_id": "0dc11429-1cfa-41fe-8946-5eab7188ef19",
+        "type": "message",
+        "text": "Pretty sure I'm running 3.12",
+        "user": "UE5418916",
+        "ts": "1545344005.721100"
+    },
+    {
+        "client_msg_id": "0dda9117-7834-49e6-a78c-69ae24b97552",
+        "type": "message",
+        "text": "see the `provision.*` kernel options in the v1.12.0 content pack that enables\/supports the feature:\n<https:\/\/github.com\/digitalrebar\/provision-content\/releases\/tag\/v1.12.0>",
+        "user": "U6QFVRJNB",
+        "ts": "1545344248.721700",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision-content",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision-content\/releases\/tag\/v1.12.0",
+                "text": "DigitalRebar Provision Content. Contribute to digitalrebar\/provision-content development by creating an account on GitHub.",
+                "fallback": "GitHub: digitalrebar\/provision-content",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision-content\/releases\/tag\/v1.12.0",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/digitalrebar\/provision-content\/releases\/tag\/v1.12.0"
+            }
+        ]
+    },
+    {
+        "client_msg_id": "86543593-1a39-4355-8325-e3e267b5a505",
+        "type": "message",
+        "text": "make sure you've updated content and sledgehammer along with v3.12.0 release version",
+        "user": "U6QFVRJNB",
+        "ts": "1545344283.722200"
+    },
+    {
+        "client_msg_id": "5237dbc5-2331-46f2-b481-17ed53c9ff15",
+        "type": "message",
+        "text": "<@UE5418916> - from a continuance of testing perspective, you can exit ash and it will attempt to re-wget.",
+        "user": "U02DGQYK1",
+        "ts": "1545344740.722700"
+    },
+    {
+        "client_msg_id": "aa04262d-eac8-4f03-a5c4-8e85aabaab02",
+        "type": "message",
+        "text": "Oh! thanks.",
+        "user": "UE5418916",
+        "ts": "1545344792.723100"
+    },
+    {
+        "client_msg_id": "88a2ee63-2c65-45fb-b93e-77f0a0435b7d",
+        "type": "message",
+        "text": "Sure enough the switch was slowing things down. Thanks again.",
+        "user": "UE5418916",
+        "ts": "1545345969.723700",
+        "reactions": [
+            {
+                "name": "scream_cat",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "client_msg_id": "e884828b-3f93-491c-a4b1-5371a4c33f71",
+        "type": "message",
+        "text": "awesome - that's an easy fix for us :slightly_smiling_face:",
+        "user": "U6QFVRJNB",
+        "ts": "1545345997.724000"
+    },
+    {
+        "client_msg_id": "822565c7-ff31-4b3d-86fb-3b4f15e8ef5f",
+        "type": "message",
+        "text": "<@U02DGQYK1> nope, not everything at once, one workflow step after another. I just try to to get the krib-install workflow running with my ha-krib profile. `rook` is just an example, like I mentioned I have the same issue with the krib-dashboard step before.",
+        "user": "UBU0BPRA9",
+        "ts": "1545352898.725900"
+    },
+    {
+        "client_msg_id": "8e42df49-bb1e-4a10-a9ba-0fc755e4d6b8",
+        "type": "message",
+        "text": "I've got the basic setup working (kubeadm etc) by allowing overwriting node labels and have now issues with creating container using calico with the above message",
+        "user": "UBU0BPRA9",
+        "ts": "1545352969.727100"
+    },
+    {
+        "client_msg_id": "a5376e33-e43e-488e-99be-03abe9ca6bba",
+        "type": "message",
+        "text": "I run the provisioning more than 20 times to discover issues and I try to fix them.",
+        "user": "UBU0BPRA9",
+        "ts": "1545353115.728000",
+        "reactions": [
+            {
+                "name": "100",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "client_msg_id": "4f67081d-daf7-4a18-a359-f533c1b33e50",
+        "type": "message",
+        "text": "new day, new krib provisioning :slightly_smiling_face: looks like the dashboard link was updated and I will try using calico 3.4. if successful you can expect a PR later",
+        "user": "UBU0BPRA9",
+        "ts": "1545359995.729400",
+        "reactions": [
+            {
+                "name": "hearts",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "user": "UEZECGN2F",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1545364556.000300",
+        "text": "<@UEZECGN2F> has joined the channel"
+    },
+    {
+        "client_msg_id": "968407fb-7acf-4bb9-9dfd-5dbddb6ab617",
+        "type": "message",
+        "text": "<@UEZECGN2F> $welcome",
+        "user": "U02DHRR2L",
+        "ts": "1545364565.000500"
+    },
+    {
+        "type": "message",
+        "subtype": "slackbot_response",
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "user": "USLACKBOT",
+        "ts": "1545364566.000600"
+    },
+    {
+        "client_msg_id": "75a66436-2f9a-402d-9141-dde235f116d6",
+        "type": "message",
+        "text": "<@UBU0BPRA9> - KRIB has special considerations if you are running it over and over, it's not very idempotent from that respect ",
+        "user": "U6QFVRJNB",
+        "ts": "1545364694.002500"
+    },
+    {
+        "client_msg_id": "954b0eff-5f76-4d55-bdd9-c733e8430005",
+        "type": "message",
+        "text": "Presumably you've found the clear profile routines for multiple runs ",
+        "user": "U6QFVRJNB",
+        "ts": "1545364740.003800"
+    },
+    {
+        "client_msg_id": "3c9d1ae5-6ca8-4b9e-b007-9bd0638984aa",
+        "type": "message",
+        "text": "noticed that already, always re-setting the hardware with an other workflow",
+        "user": "UBU0BPRA9",
+        "ts": "1545364781.005600"
+    },
+    {
+        "client_msg_id": "249aa738-d7ba-4bd6-bba5-bc63e9a6ca91",
+        "type": "message",
+        "text": "And we may have missed some of them for add-on pieces (like rook or calico bits) ",
+        "user": "U6QFVRJNB",
+        "ts": "1545364788.005700"
+    },
+    {
+        "client_msg_id": "6bc65fd2-0064-4226-abee-7cfb42f6a7f3",
+        "type": "message",
+        "text": "The profile used to store the cluster state and info specifically needs cleaned between consecutive runs ",
+        "user": "U6QFVRJNB",
+        "ts": "1545364835.007800"
+    },
+    {
+        "client_msg_id": "070d04a5-6244-4073-808f-2eb655efd8f4",
+        "type": "message",
+        "text": "christmas party starting soon so I guess PR will have to wait but so far I think I will contribute some minor calico improvements",
+        "user": "UBU0BPRA9",
+        "ts": "1545364843.008000"
+    },
+    {
+        "client_msg_id": "ff6439db-03ac-47d9-a4ee-a6e72acc81f7",
+        "type": "message",
+        "text": "Excellent! Happy Party time! ",
+        "user": "U6QFVRJNB",
+        "ts": "1545364866.008900"
+    },
+    {
+        "client_msg_id": "2b4b962f-f54b-4744-9f63-b13f57d7d6e7",
+        "type": "message",
+        "text": "yeah, created a template profile from which I always clone",
+        "user": "UBU0BPRA9",
+        "ts": "1545364867.009000"
+    },
+    {
+        "client_msg_id": "d2a99498-090e-49c9-906c-370f1c4abf40",
+        "type": "message",
+        "text": "Very good.....! ",
+        "user": "U6QFVRJNB",
+        "ts": "1545364898.009700"
+    },
+    {
+        "client_msg_id": "aeeadb88-0aba-4acb-aeb3-d35f1f5f218c",
+        "type": "message",
+        "text": "since I deal with real hardware all that stuff takes quite some time to test but I prefer testing on what will run later in production for now",
+        "user": "UBU0BPRA9",
+        "ts": "1545364920.010200",
+        "edited": {
+            "user": "UBU0BPRA9",
+            "ts": "1545365046.000000"
+        }
+    },
+    {
+        "client_msg_id": "20eb2d0b-e145-448a-bbe6-c16d7d181121",
+        "type": "message",
+        "text": "trying to add the possibility to set the cluster ip  for the calico etcd via `        curl -gfsSL {{ .Param \"provider\/calico-etcd-config\" }} | sed \"s\/clusterIP: 10.96.232.136\/clusterIP: ${{ .Param \"provider\/calico-etcd-clusterip\" }}\/g\" | kubectl apply -f -` but somehow it resulted in cutting of the first character\/digit of the address :confused: an idea why?",
+        "user": "UBU0BPRA9",
+        "ts": "1545367670.011600"
+    },
+    {
+        "client_msg_id": "968d9694-f95a-4ac0-b574-fad25165a878",
+        "type": "message",
+        "text": "while `provider\/calico-etcd-clusterip: \"172.16.160.100\"` &amp; `provider\/calico-etcd-config: <https:\/\/docs.projectcalico.org\/v3.4\/getting-started\/kubernetes\/installation\/hosted\/etcd.yaml>` are set",
+        "user": "UBU0BPRA9",
+        "ts": "1545367757.012300"
+    },
+    {
+        "client_msg_id": "25dcbcd0-de31-4043-a8c0-deef2d189905",
+        "type": "message",
+        "text": "```\nStarting calico networking...\ndaemonset.extensions\/calico-etcd created\nThe Service \"calico-etcd\" is invalid: spec.clusterIP: Invalid value: \"72.16.160.100\": provided IP is not in the valid range. The range of valid IPs is 172.16.160.0\/20\nCommand exited with status 1\nAction my-krib-config.sh.tmpl finished\nTask my-krib-config failed\n```",
+        "user": "UBU0BPRA9",
+        "ts": "1545367778.012500"
+    }
+]

@@ -1,0 +1,100 @@
+[
+    {
+        "user": "UCUFH954J",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1537091881.000200",
+        "text": "<@UCUFH954J> has joined the channel"
+    },
+    {
+        "client_msg_id": "f8713595-0b96-443b-b8d7-111941d244a0",
+        "type": "message",
+        "text": "<@UCUFH954J> $welcome ",
+        "user": "U02DHRR2L",
+        "ts": "1537099911.000100"
+    },
+    {
+        "type": "message",
+        "subtype": "slackbot_response",
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "user": "USLACKBOT",
+        "ts": "1537099911.000200"
+    },
+    {
+        "client_msg_id": "0d24702b-3ce5-413c-afbc-a07d1aced152",
+        "type": "message",
+        "text": "hi! :slightly_smiling_face:",
+        "user": "UCUFH954J",
+        "ts": "1537099922.000100"
+    },
+    {
+        "client_msg_id": "8806fa7b-2d32-4e76-abbb-a95b34cf16f7",
+        "type": "message",
+        "text": "I am looking more into optimizing the Dockerfile for `provision`. Are those packages needed in runtime or only for installation? :\n- iproute2\n- ipmitool\n- libarchive-tools\n- p7zip",
+        "user": "UCUFH954J",
+        "ts": "1537102846.000100"
+    },
+    {
+        "client_msg_id": "df3494e0-6f74-4e0f-8bfa-e54629dcc8bd",
+        "type": "message",
+        "text": "Also does running `dr-provision --version` do some sort of initial environment bootstrap?",
+        "user": "UCUFH954J",
+        "ts": "1537102898.000100"
+    },
+    {
+        "client_msg_id": "0ac4df05-53d7-4fea-b698-97e14c34cf63",
+        "type": "message",
+        "text": "Those tools are needed to explode iso, handle some routing lookups for dhcp, and IPMI actions.  So, they are needed.",
+        "user": "U02DGQYK1",
+        "ts": "1537105462.000100"
+    },
+    {
+        "client_msg_id": "21fb7108-ed53-4562-af8f-a45ce924dcec",
+        "type": "message",
+        "text": "The `dr-provision --version` was to test \/ define the version in the auto-build system in docker cloud.  docker cloud is annoying and doesn’t have enough triggers for how we build.  so, that just show what actual version ended up in the container.",
+        "user": "U02DGQYK1",
+        "ts": "1537105541.000100"
+    },
+    {
+        "client_msg_id": "f2f16edb-dbfd-4b15-abf4-4b775abca190",
+        "type": "message",
+        "text": "<@UCUFH954J>",
+        "user": "U02DGQYK1",
+        "ts": "1537105557.000100"
+    },
+    {
+        "client_msg_id": "6963ab23-bc8a-4920-bea2-b50dfa6eed5e",
+        "type": "message",
+        "text": "Thanks for clarification, so it seems that we could remove one layer from final image by moving `RUN dr-provision --version...` to builder stage.",
+        "user": "UCUFH954J",
+        "ts": "1537105649.000100"
+    },
+    {
+        "client_msg_id": "d4cafaf0-0d1f-45ce-82cf-fe1790f8f2a9",
+        "type": "message",
+        "text": "Yes",
+        "user": "U02DGQYK1",
+        "ts": "1537105691.000200"
+    },
+    {
+        "client_msg_id": "8dbe4224-b00a-45e9-84d5-ca557beda5b1",
+        "type": "message",
+        "text": "nice, <@UCUFH954J> - thanks for the PRs on the Dockerfile optimizations !!  :slightly_smiling_face:",
+        "user": "U6QFVRJNB",
+        "ts": "1537123307.000100"
+    },
+    {
+        "client_msg_id": "2b01ddf9-9088-4b56-a392-a907ff41a953",
+        "type": "message",
+        "text": "happy to help :slightly_smiling_face:",
+        "user": "UCUFH954J",
+        "ts": "1537123341.000100"
+    },
+    {
+        "user": "UCU2N26L9",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1537141987.000200",
+        "text": "<@UCU2N26L9> has joined the channel"
+    }
+]

@@ -1,0 +1,211 @@
+[
+    {
+        "client_msg_id": "e5edbcf6-40a5-4625-8517-b30fc3ee82e0",
+        "type": "message",
+        "text": "Related to content package, can you include workflows into a bundle?",
+        "user": "UCWNG6NTV",
+        "ts": "1538754381.000100"
+    },
+    {
+        "client_msg_id": "4803576f-2cdb-4bd3-89eb-a2a2c6591591",
+        "type": "message",
+        "text": "yes",
+        "user": "U02DGQYK1",
+        "ts": "1538754700.000200"
+    },
+    {
+        "client_msg_id": "b8e5c941-01ec-468b-bb60-166f26afb8e1",
+        "type": "message",
+        "text": "just another directory, `workflows`, with yaml files.  :slightly_smiling_face:",
+        "user": "U02DGQYK1",
+        "ts": "1538754717.000100"
+    },
+    {
+        "client_msg_id": "1cdc093f-8b96-4adb-8449-b270637077b1",
+        "type": "message",
+        "text": "cool",
+        "user": "UCWNG6NTV",
+        "ts": "1538755584.000100"
+    },
+    {
+        "client_msg_id": "e882099f-45d3-4917-80b2-2fe8840e7ed0",
+        "type": "message",
+        "text": "<@U02DGQYK1> I assume json files are ok too for workflows?",
+        "user": "UCWNG6NTV",
+        "ts": "1538756355.000100"
+    },
+    {
+        "client_msg_id": "bc5e1ce0-8b50-46b8-8a8f-a6d2ec1a2352",
+        "type": "message",
+        "text": "<@UCWNG6NTV> - yes you can use JSON, the `drpcli contents bundle ...` operation will convert it to YAML in the final artifact that it creates",
+        "user": "U6QFVRJNB",
+        "ts": "1538756780.000100"
+    },
+    {
+        "client_msg_id": "5e426684-f7b1-4688-bba4-08a1cc4c79c3",
+        "type": "message",
+        "text": "Thanks <@U6QFVRJNB> for confirming",
+        "user": "UCWNG6NTV",
+        "ts": "1538756814.000100",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U6QFVRJNB"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "client_msg_id": "0d0ff0d5-a263-47b7-9ba5-1086d4492361",
+        "type": "message",
+        "text": "So on subnet naming.  What are the rules?  I was trying a uuid and it yelled at me",
+        "user": "UBP7HL339",
+        "ts": "1538758219.000100"
+    },
+    {
+        "client_msg_id": "f7171933-cff3-42d5-95e9-e87bd12f1ae5",
+        "type": "message",
+        "text": "Error on 852b4776-6148-4eca-8b79-3fed1041ef86:  Invalid Name `852b4776-6148-4eca-8b79-3fed1041ef86`",
+        "user": "UBP7HL339",
+        "ts": "1538758239.000100"
+    },
+    {
+        "client_msg_id": "21c7568c-4135-4a45-a78b-65258e553981",
+        "type": "message",
+        "text": "<@U6QFVRJNB> When you upload a content package, what happens to the existing objects (templates, workflows, etc.) with the same name defined in the bundle?",
+        "user": "UCWNG6NTV",
+        "ts": "1538758432.000100",
+        "edited": {
+            "user": "UCWNG6NTV",
+            "ts": "1538759258.000000"
+        }
+    },
+    {
+        "client_msg_id": "3c01cd0b-b68e-481d-9fdc-7346a762a2c0",
+        "type": "message",
+        "text": "nevermind it didn’t like it starting with a number",
+        "user": "UBP7HL339",
+        "ts": "1538758683.000100"
+    },
+    {
+        "client_msg_id": "cc524792-c92d-40b3-bc17-81557c1523d2",
+        "type": "message",
+        "text": "<@UCWNG6NTV> - it won’t load because of conflict.",
+        "user": "U02DGQYK1",
+        "ts": "1538759935.000100"
+    },
+    {
+        "client_msg_id": "8e32e3ff-5696-40e5-8567-54e68a22b202",
+        "type": "message",
+        "text": "You may want to look at the new and poorly documented bundlizer",
+        "user": "U02DGQYK1",
+        "ts": "1538759950.000100"
+    },
+    {
+        "client_msg_id": "9f4a2dba-4423-4060-8f48-6e92acfe0e15",
+        "type": "message",
+        "text": "it will take a set of existing read\/write objects and build a content package.",
+        "user": "U02DGQYK1",
+        "ts": "1538759964.000100"
+    },
+    {
+        "client_msg_id": "e3e13153-b2cf-4757-9a58-de3897d9d153",
+        "type": "message",
+        "text": "you can optionally have it delete those read\/write objects and reload them as the content package.",
+        "user": "U02DGQYK1",
+        "ts": "1538759989.000100"
+    },
+    {
+        "client_msg_id": "7292af99-0ba6-4a0f-87a0-f1704ae2cfe1",
+        "type": "message",
+        "text": "drpcli contents bundlizer",
+        "user": "U02DGQYK1",
+        "ts": "1538759996.000100"
+    },
+    {
+        "client_msg_id": "8ccc675d-2bf3-45b7-b982-a48d7e0d77c3",
+        "type": "message",
+        "text": "<@U02DGQYK1> Are you sure? From my experience, the content package shows up in UI after I upload it with some minor metadata changes like name, description with existing objects. It did not complain.",
+        "user": "UCWNG6NTV",
+        "ts": "1538760195.000100"
+    },
+    {
+        "client_msg_id": "021b5b29-5c89-4c33-bfbb-9c0d4b1892e7",
+        "type": "message",
+        "text": "It would be nice that the upload process checks if the duplicate objects are exactly the same as existing ones, and only uploads new ones that did not exist.  Only throws out an error if true conflicts exist (i.e., defined ones in the bundle are different from existing ones with the same name)",
+        "user": "UCWNG6NTV",
+        "ts": "1538760376.000100"
+    },
+    {
+        "client_msg_id": "ed5503c6-f0c6-441f-992a-095c671ade8a",
+        "type": "message",
+        "text": "Yes if they are in content packs to begin with.",
+        "user": "U02DGQYK1",
+        "ts": "1538760530.000100"
+    },
+    {
+        "client_msg_id": "836903ed-651c-42c9-91cb-a8d56e09a3b7",
+        "type": "message",
+        "text": "As long as you are replacing them from within the same cnotent package.",
+        "user": "U02DGQYK1",
+        "ts": "1538760609.000100"
+    },
+    {
+        "client_msg_id": "2ec7f3fc-546a-4190-bbda-1e2f62df2dff",
+        "type": "message",
+        "text": "gotcha",
+        "user": "UCWNG6NTV",
+        "ts": "1538760656.000100"
+    },
+    {
+        "user": "UD9PQM5DL",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1538768884.000200",
+        "text": "<@UD9PQM5DL> has joined the channel"
+    },
+    {
+        "client_msg_id": "a4e198c5-5291-4cf1-a68e-07d34abbf727",
+        "type": "message",
+        "text": "<@UD9PQM5DL> $welcome",
+        "user": "U02DHRR2L",
+        "ts": "1538780911.000100"
+    },
+    {
+        "type": "message",
+        "subtype": "slackbot_response",
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "user": "USLACKBOT",
+        "ts": "1538780911.000200"
+    },
+    {
+        "client_msg_id": "71bd606f-2de2-40a6-99b1-c224a29877c5",
+        "type": "message",
+        "text": "KRIB NOTICE: if you are doing a fresh build, set the version to 1.12.1",
+        "user": "U02DHRR2L",
+        "ts": "1538786422.000100"
+    },
+    {
+        "client_msg_id": "06e4a1c1-2993-4649-8b63-a26c138da91f",
+        "type": "message",
+        "text": "I have a pull request out to update the version since the release",
+        "user": "U02DHRR2L",
+        "ts": "1538786440.000200"
+    },
+    {
+        "client_msg_id": "112ca063-a26a-4267-a8fe-062b64bab503",
+        "type": "message",
+        "text": "the version skew with kubeadm defaults breaks the install unless you update to latest",
+        "user": "U02DHRR2L",
+        "ts": "1538786462.000100"
+    },
+    {
+        "type": "message",
+        "subtype": "me_message",
+        "text": "congratulates Kubernetes on a new release",
+        "user": "U02DHRR2L",
+        "ts": "1538786498.000100"
+    }
+]

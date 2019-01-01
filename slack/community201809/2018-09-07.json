@@ -1,111 +1,111 @@
 [
     {
-        "type": "message",
-        "user": "UBXEU90UQ",
-        "text": "Can load data from netbox during discovery now :smile:",
         "client_msg_id": "959e3c8e-ce80-443e-9f4a-032597f3a741",
+        "type": "message",
+        "text": "Can load data from netbox during discovery now :smile:",
+        "user": "UBXEU90UQ",
         "ts": "1536334319.000100"
     },
     {
-        "type": "message",
-        "user": "U02DGQYK1",
-        "text": "what do you mean by that?  You have a task that queries netbox for network information to then deploy? <@UBXEU90UQ> We looked at plugin integration with netbox to update inventory information and eventually pull info back, but it was unclear what the general pattern of operation with netbox is.",
         "client_msg_id": "f817cfc2-131f-4d05-ac0d-7cb3c1a282c1",
+        "type": "message",
+        "text": "what do you mean by that?  You have a task that queries netbox for network information to then deploy? <@UBXEU90UQ> We looked at plugin integration with netbox to update inventory information and eventually pull info back, but it was unclear what the general pattern of operation with netbox is.",
+        "user": "U02DGQYK1",
         "ts": "1536334984.000100"
     },
     {
-        "type": "message",
-        "user": "UBXEU90UQ",
-        "text": "Yeah I’m not really sure if there is a well defined pattern of operation with Netbox itself - internally we use it as our ‘source of truth’ for certain things (IP allocations, rack locations, network connections etc) - a lot of it right now is ‘put device into netbox and then match that config manually in the various locations’",
         "client_msg_id": "1ae3a9c2-59b8-464c-ad6c-d81d4f41243d",
+        "type": "message",
+        "text": "Yeah I’m not really sure if there is a well defined pattern of operation with Netbox itself - internally we use it as our ‘source of truth’ for certain things (IP allocations, rack locations, network connections etc) - a lot of it right now is ‘put device into netbox and then match that config manually in the various locations’",
+        "user": "UBXEU90UQ",
         "ts": "1536336139.000200"
     },
     {
-        "type": "message",
-        "user": "UBXEU90UQ",
-        "text": "So I wrote a stage which uses curl and JQ to pull information from the Netbox API during discovery - it’s configurable but currently using the gohai SerialNumber value to look up the machine by asset tag, then return its’ device information and interfaces",
         "client_msg_id": "09772d8d-3f09-49e0-98fd-78644f489afd",
+        "type": "message",
+        "text": "So I wrote a stage which uses curl and JQ to pull information from the Netbox API during discovery - it’s configurable but currently using the gohai SerialNumber value to look up the machine by asset tag, then return its’ device information and interfaces",
+        "user": "UBXEU90UQ",
         "ts": "1536336220.000100"
     },
     {
-        "type": "message",
-        "user": "UBXEU90UQ",
-        "text": "would be easy to write data back as well, so could update the netbox device with provisioning status for example",
         "client_msg_id": "c0a6d989-89b4-4585-8fea-cbf607aa6282",
+        "type": "message",
+        "text": "would be easy to write data back as well, so could update the netbox device with provisioning status for example",
+        "user": "UBXEU90UQ",
         "ts": "1536336244.000100"
     },
     {
-        "type": "message",
-        "user": "U02DGQYK1",
-        "text": "Okay - I have a netbox plugin that will push machines and sync machines based upon events.",
         "client_msg_id": "0879b9d8-9209-4dcd-b749-cbcc7ba0d1ca",
+        "type": "message",
+        "text": "Okay - I have a netbox plugin that will push machines and sync machines based upon events.",
+        "user": "U02DGQYK1",
         "ts": "1536336263.000100"
     },
     {
-        "type": "message",
-        "user": "UBXEU90UQ",
-        "text": "ahh cool",
         "client_msg_id": "d33b0e9d-771a-4575-b3b6-888261eec4ca",
+        "type": "message",
+        "text": "ahh cool",
+        "user": "UBXEU90UQ",
         "ts": "1536336279.000100"
     },
     {
-        "type": "message",
-        "user": "U02DGQYK1",
-        "text": "yeah, but … I slow rolled it because there are mapping problems.",
         "client_msg_id": "a0a8186e-3627-4485-b363-7b0253f0ecf6",
+        "type": "message",
+        "text": "yeah, but … I slow rolled it because there are mapping problems.",
+        "user": "U02DGQYK1",
         "ts": "1536336299.000100"
     },
     {
-        "type": "message",
-        "user": "UBXEU90UQ",
-        "text": "My end goal is to get provisioning (particularly re-provisioning) to be completely automated… I have the classification stuff working but the one sticking point is IP allocation, as we only use DHCP on the boot network and all other vlans are statically assigned. Right now the machine gets classified and configured but as it has no IP assigned there’s manual process to set it on the machine in DRP. As it already exists in Netbox, I should just be able to pull that information in, generate the network config and then trigger the install workflow automatically",
         "client_msg_id": "ef69ee46-bba3-4d43-9a83-da05eca12463",
+        "type": "message",
+        "text": "My end goal is to get provisioning (particularly re-provisioning) to be completely automated… I have the classification stuff working but the one sticking point is IP allocation, as we only use DHCP on the boot network and all other vlans are statically assigned. Right now the machine gets classified and configured but as it has no IP assigned there’s manual process to set it on the machine in DRP. As it already exists in Netbox, I should just be able to pull that information in, generate the network config and then trigger the install workflow automatically",
+        "user": "UBXEU90UQ",
         "ts": "1536336634.000100"
     },
     {
-        "type": "message",
-        "user": "UBXEU90UQ",
-        "text": "and at that point we can start treating servers as immutable, which we don’t really do right now (and that sucks)",
         "client_msg_id": "f86df189-fee5-43d5-ab65-a7420c2aac4d",
+        "type": "message",
+        "text": "and at that point we can start treating servers as immutable, which we don’t really do right now (and that sucks)",
+        "user": "UBXEU90UQ",
+        "ts": "1536336647.000100",
         "edited": {
             "user": "UBXEU90UQ",
             "ts": "1536336659.000000"
-        },
-        "ts": "1536336647.000100"
+        }
     },
     {
-        "type": "message",
-        "user": "U02DGQYK1",
-        "text": "Yeah that makes sense.  We have some stuff coming that an integration with netbox would be interesting.",
         "client_msg_id": "2860d50e-b641-4cca-832b-409b44de9339",
+        "type": "message",
+        "text": "Yeah that makes sense.  We have some stuff coming that an integration with netbox would be interesting.",
+        "user": "U02DGQYK1",
         "ts": "1536336795.000100"
     },
     {
-        "type": "message",
-        "user": "UBXEU90UQ",
-        "text": "Cool… was interested by the NetWrangler stuff from the last ‘meet’ or whatever it is you guys do… at the moment I’m just creating interface files using a template but it’s not exactly ‘nice’, and one of my biggest annoyances is the format differences between the kickstart network config and the actual running network config post install..",
         "client_msg_id": "01f5459a-d673-43bd-a642-3b4a7bb37f81",
+        "type": "message",
+        "text": "Cool… was interested by the NetWrangler stuff from the last ‘meet’ or whatever it is you guys do… at the moment I’m just creating interface files using a template but it’s not exactly ‘nice’, and one of my biggest annoyances is the format differences between the kickstart network config and the actual running network config post install..",
+        "user": "UBXEU90UQ",
         "ts": "1536340562.000100"
     },
     {
-        "type": "message",
-        "user": "U6QFVRJNB",
-        "text": "Yep - NetWrangler is a nice piece to solve that problem and tie in nicely with the workflow",
         "client_msg_id": "f1f8275d-552a-43a7-a2fe-f087c575ed32",
+        "type": "message",
+        "text": "Yep - NetWrangler is a nice piece to solve that problem and tie in nicely with the workflow",
+        "user": "U6QFVRJNB",
         "ts": "1536341642.000100"
     },
     {
-        "type": "message",
-        "user": "UBXEU90UQ",
-        "text": "fwiw the ansible play \/ role I wrote is at a nice point to move out of our internal repo so I think I’ll do that on Monday in case it’s useful for anyone else, or at least to get some feedback on it :slightly_smiling_face:",
         "client_msg_id": "cd749c0d-f906-4d1c-bc38-3f162ea6bb4f",
+        "type": "message",
+        "text": "fwiw the ansible play \/ role I wrote is at a nice point to move out of our internal repo so I think I’ll do that on Monday in case it’s useful for anyone else, or at least to get some feedback on it :slightly_smiling_face:",
+        "user": "UBXEU90UQ",
         "ts": "1536342131.000100"
     },
     {
-        "type": "message",
-        "user": "UBXEU90UQ",
-        "text": "but now is beer time!",
         "client_msg_id": "dda3f1a3-0267-4c17-962d-f3eebea65841",
+        "type": "message",
+        "text": "but now is beer time!",
+        "user": "UBXEU90UQ",
         "ts": "1536342141.000100",
         "reactions": [
             {
@@ -118,31 +118,31 @@
         ]
     },
     {
-        "type": "message",
-        "user": "U6QFVRJNB",
-        "text": "cool - catch up with you on Monday ... have a cold one for me :slightly_smiling_face:",
         "client_msg_id": "98f02099-00be-44fd-8975-288648f3989e",
+        "type": "message",
+        "text": "cool - catch up with you on Monday ... have a cold one for me :slightly_smiling_face:",
+        "user": "U6QFVRJNB",
         "ts": "1536342656.000100"
     },
     {
-        "type": "message",
-        "user": "U02DHRR2L",
-        "text": "<@U63ACQT8A> also had done some playbook work I think",
         "client_msg_id": "e043e12f-cfa4-4bc3-a255-954280a98fb6",
+        "type": "message",
+        "text": "<@U63ACQT8A> also had done some playbook work I think",
+        "user": "U02DHRR2L",
         "ts": "1536353982.000100"
     },
     {
-        "text": "is installing centos 7 onto an arm64 vm.  Very slowly.",
         "type": "message",
         "subtype": "me_message",
+        "text": "is installing centos 7 onto an arm64 vm.  Very slowly.",
         "user": "U02DJQSG8",
         "ts": "1536354959.000100"
     },
     {
-        "type": "message",
-        "user": "U02DJQSG8",
-        "text": "But all through dr-provision.",
         "client_msg_id": "ba42be80-f852-44e9-94e6-76a8eb00016b",
+        "type": "message",
+        "text": "But all through dr-provision.",
+        "user": "U02DJQSG8",
         "ts": "1536354983.000100",
         "reactions": [
             {

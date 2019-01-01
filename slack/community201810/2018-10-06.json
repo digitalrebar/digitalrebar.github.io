@@ -1,0 +1,58 @@
+[
+    {
+        "client_msg_id": "1c432c02-98e6-4ac4-a34f-953c799164a6",
+        "type": "message",
+        "text": "noob question: Does DRP provide something like Apache Guacamole remote access? Console access to host &amp; VMs?",
+        "user": "UD6M748E5",
+        "ts": "1538832401.000100"
+    },
+    {
+        "client_msg_id": "71f2fc75-f4b6-47a3-98ce-86a977ea7334",
+        "type": "message",
+        "text": "Sorry,  no.  Would be an interesting integration, likely not a hard one",
+        "user": "U02DHRR2L",
+        "ts": "1538832831.000100"
+    },
+    {
+        "client_msg_id": "94465955-506b-4bcb-816a-536990ef7d29",
+        "type": "message",
+        "text": "RackN does have IPMI integration that enables remote access",
+        "user": "U02DHRR2L",
+        "ts": "1538832900.000100"
+    },
+    {
+        "client_msg_id": "64b5bdbd-5a7f-4305-9326-78cdbc5ade50",
+        "type": "message",
+        "text": "Typically, DRP operators use SSH or the BMC terminal,  so no other remote desktop is needed. ",
+        "user": "U02DHRR2L",
+        "ts": "1538833058.000100"
+    },
+    {
+        "client_msg_id": "a5b1ec97-5f5a-455c-ac30-a6ae5490e4b9",
+        "type": "message",
+        "text": "IPMI is not available in the free tier, correct?",
+        "user": "UD6M748E5",
+        "ts": "1538835922.000100"
+    },
+    {
+        "client_msg_id": "428ba4d8-900a-4e4f-8347-a0b181567d78",
+        "type": "message",
+        "text": "It is RackN licensed component.  You can get a trial license to play with it.",
+        "user": "U02DGQYK1",
+        "ts": "1538835963.000100"
+    },
+    {
+        "client_msg_id": "d3056258-c70e-4cc3-9ee3-cf3ec0bcde5a",
+        "type": "message",
+        "text": "The IPMI plugin provides both configuration of the BMC and common actions (though serial console is not one of those currently).",
+        "user": "U02DGQYK1",
+        "ts": "1538836009.000100"
+    },
+    {
+        "client_msg_id": "08db3f53-dd04-4d08-aae6-30c207d33ca1",
+        "type": "message",
+        "text": "<@UD6M748E5> - Hope that helps.",
+        "user": "U02DGQYK1",
+        "ts": "1538836038.000100"
+    }
+]

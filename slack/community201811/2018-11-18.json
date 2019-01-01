@@ -1,0 +1,30 @@
+[
+    {
+        "client_msg_id": "de66cae3-b073-4bb4-b1fe-5ad44b5e1098",
+        "type": "message",
+        "text": "KubeVirt + Kubernetes = VMs!  Here's a demo showing the addition of <http:\/\/Kubevirt.io|Kubevirt.io> to KRIB\n<https:\/\/youtu.be\/Qi4unF9Q8h0>",
+        "user": "U02DHRR2L",
+        "ts": "1542581198.547200",
+        "attachments": [
+            {
+                "service_name": "YouTube",
+                "service_url": "https:\/\/www.youtube.com\/",
+                "title": "KubeVirt Digital Rebar w KRIB",
+                "title_link": "https:\/\/youtu.be\/Qi4unF9Q8h0",
+                "author_name": "RackN & Digital Rebar",
+                "author_link": "https:\/\/www.youtube.com\/channel\/UCr3bBtP-pMsDQ5c0IDjt_LQ",
+                "thumb_url": "https:\/\/i.ytimg.com\/vi\/Qi4unF9Q8h0\/hqdefault.jpg",
+                "thumb_width": 480,
+                "thumb_height": 360,
+                "fallback": "YouTube Video: KubeVirt Digital Rebar w KRIB",
+                "video_html": "<iframe width=\"400\" height=\"225\" src=\"https:\/\/www.youtube.com\/embed\/Qi4unF9Q8h0?feature=oembed&autoplay=1&iv_load_policy=3\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen><\/iframe>",
+                "video_html_width": 400,
+                "video_html_height": 225,
+                "from_url": "https:\/\/youtu.be\/Qi4unF9Q8h0",
+                "service_icon": "https:\/\/a.slack-edge.com\/2089\/img\/unfurl_icons\/youtube.png",
+                "id": 1,
+                "original_url": "https:\/\/youtu.be\/Qi4unF9Q8h0"
+            }
+        ]
+    }
+]

@@ -1,0 +1,221 @@
+[
+    {
+        "client_msg_id": "27f91466-1efc-44b9-9c78-14abe74d7944",
+        "type": "message",
+        "text": "OK, <@U6QFVRJNB> &amp; <@U02DHRR2L> - I think I've gone as far as I can without being able to rebuild sledgehammer. Here's some data points:",
+        "user": "UF0RVSN9Z",
+        "ts": "1546218486.223700"
+    },
+    {
+        "client_msg_id": "43e49878-5d21-4616-8f43-95b669e0f598",
+        "type": "message",
+        "text": "When I boot with sledgehammer, `stage1.img` successfully gets an IP address on the interface via DHCP. Then it mounts `stage2.img` and runs `systemd`, etc. At some point after this, the interface config is lost (see below).",
+        "user": "UF0RVSN9Z",
+        "ts": "1546218683.226100",
+        "edited": {
+            "user": "UF0RVSN9Z",
+            "ts": "1546221827.000000"
+        }
+    },
+    {
+        "client_msg_id": "53c27b4f-3a81-460c-9eb9-1612663f225b",
+        "type": "message",
+        "text": "By default `systemd` attempts to rename the interfaces (in my case from `eth0` to `enp6s0`), however I can control that behaviour with kernel boot args. The interface renaming fails with the error `systemd-udevd[635]: Error changing net interface name 'eth0' to 'enp6s0': Device or resource busy`. Which means the interface is up when it's attempting to rename it. This might be normal behaviour (I'll try on a different host on which a previous version of sledgehammer has worked before), given the 2-stage boot approach.",
+        "user": "UF0RVSN9Z",
+        "ts": "1546219013.228900",
+        "edited": {
+            "user": "UF0RVSN9Z",
+            "ts": "1546219930.000000"
+        }
+    },
+    {
+        "client_msg_id": "94550e7f-24a8-4a4a-b601-0d6038b4b9b4",
+        "type": "message",
+        "text": "The issue is that the interface now is UP, but not configured with an IP address [I can manually apply an IP address at this point although not very helpful in an automated workflow :wink:]. If I don't manually configure the interface, it will sit at this point for about 30 minutes (attempting to pull `start-up.sh`) and then there will be a `NETDEV WATCHDOG: eth0 (r8169): transmit queue 0 timed out` in the journal and at this point it will send out a new DHCP request, get an IP address, download `start-up.sh` and complete the discovery.",
+        "user": "UF0RVSN9Z",
+        "ts": "1546219552.232500"
+    },
+    {
+        "client_msg_id": "3eb7db7a-8e2b-45b1-8353-5cba35742e3f",
+        "type": "message",
+        "text": "Changing the interface renaming (by using `biosdevname=1` to use the bios naming scheme or `net.ifnames=0` to turn off renaming entirely) changes the renaming error, but does not change the \"30 minute delay\" behaviour.",
+        "user": "UF0RVSN9Z",
+        "ts": "1546219666.234200"
+    },
+    {
+        "client_msg_id": "28d0b452-6bc1-4360-8ef3-3c4be3250b0b",
+        "type": "message",
+        "text": "As mentioned before, I get the error `systemd-networkd[2954]: [\/etc\/systemd\/network\/20-bootif.network:8] Unknown lvalue 'ClientIdentifier' in section 'DHCP'` in the journal, since `systemd` is version 219 in the current sledgehammer and the `ClientIdentifier` option was not added until `systemd` version 220. Again, I'm not convinced this is causing the issue, since DHCP does eventually give me an IP address.",
+        "user": "UF0RVSN9Z",
+        "ts": "1546219817.236200"
+    },
+    {
+        "client_msg_id": "505cce3f-33fe-4431-902c-480baa84ffa0",
+        "type": "message",
+        "text": "I was going to try forcing a different device driver (as per <@U6QFVRJNB>'s suggestion), but it looks like the only spare Ethernet card I had lying around can't do network boot. It's currently using `r8169`.",
+        "user": "UF0RVSN9Z",
+        "ts": "1546221199.237800"
+    },
+    {
+        "client_msg_id": "340ab322-94a4-46e1-9aa4-44353b25b555",
+        "type": "message",
+        "text": "Once I've been through the 30 minute wait for discovery, doing an _install_ works fine (other than my stupid typos in the `postinstall` script). Since install appears to be using a boot image with the same OS, the Ethernet card driver is the same (the `r8169` driver version is the same in `sledgehammer` and the `centos-7-install` environments). I haven't left a system installed for long before running another test, but networking seems to work fine on an installed system. So, if it is a driver problem, it's maybe something triggered by the `stage1.img` to `stage2.img` trick?",
+        "user": "UF0RVSN9Z",
+        "ts": "1546221789.241000",
+        "edited": {
+            "user": "UF0RVSN9Z",
+            "ts": "1546222130.000000"
+        }
+    },
+    {
+        "client_msg_id": "b4a6082b-e72f-4fb0-afdf-b3646fd04339",
+        "type": "message",
+        "text": "<@UF0RVSN9Z> - What DHCP options are you sending?",
+        "user": "U02DGQYK1",
+        "ts": "1546229979.241600"
+    },
+    {
+        "client_msg_id": "7066b696-bd99-4adf-95e7-9378bcf581b8",
+        "type": "message",
+        "text": "I’ve found that DNS can be a problem.",
+        "user": "U02DGQYK1",
+        "ts": "1546229994.242000"
+    },
+    {
+        "client_msg_id": "508c5443-3138-4a6f-bccc-5dfe61609aa7",
+        "type": "message",
+        "text": "Making sure that options 3, 6, and 15 are correct can adjust this.",
+        "user": "U02DGQYK1",
+        "ts": "1546230018.242700"
+    },
+    {
+        "client_msg_id": "68735fd8-9eab-4372-9c76-56948579a6d5",
+        "type": "message",
+        "text": "Also 30 minutes is a long time.  I’ve never seen that kinda of timeout.",
+        "user": "U02DGQYK1",
+        "ts": "1546230037.243200"
+    },
+    {
+        "client_msg_id": "84dd2918-e393-473c-a8e6-2068e6c10fb8",
+        "type": "message",
+        "text": "I'm using an external DHCP, sending options 3, 6 and 15.",
+        "user": "UF0RVSN9Z",
+        "ts": "1546230550.243600"
+    },
+    {
+        "client_msg_id": "5c6c85bb-5613-46d5-a707-6099e1fde807",
+        "type": "message",
+        "text": "re: 30 minutes - you're telling me! good thing I've got other things to do while waiting for that timeout...",
+        "user": "UF0RVSN9Z",
+        "ts": "1546230579.244400"
+    },
+    {
+        "client_msg_id": "28887869-78c3-4c3e-8960-621e21ba97f1",
+        "type": "message",
+        "text": "What DHCP server?  If ISC DHCP Server, you are setting the use mac address instead of client identifier flag?",
+        "user": "U02DGQYK1",
+        "ts": "1546230602.244900",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1546230618.000000"
+        }
+    },
+    {
+        "client_msg_id": "a42464a8-95fa-4912-b60b-57cde58cebfa",
+        "type": "message",
+        "text": "yes, ISC v4.4.1",
+        "user": "UF0RVSN9Z",
+        "ts": "1546231084.245300"
+    },
+    {
+        "client_msg_id": "de2613e6-6081-4ed7-aa25-50845ce31ae5",
+        "type": "message",
+        "text": "and yes, matching on mac address",
+        "user": "UF0RVSN9Z",
+        "ts": "1546231089.245500"
+    },
+    {
+        "client_msg_id": "82f10769-828c-4670-afce-9e662c58dbd7",
+        "type": "message",
+        "text": "Are you machines dual homed ?",
+        "user": "U02DGQYK1",
+        "ts": "1546231116.245800"
+    },
+    {
+        "client_msg_id": "d274b077-c7e8-4e15-9598-51411dd795f5",
+        "type": "message",
+        "text": "(I don't trust client-id)",
+        "user": "UF0RVSN9Z",
+        "ts": "1546231119.246000"
+    },
+    {
+        "client_msg_id": "7c675b54-b23b-48a8-9be0-5bb6a34048c2",
+        "type": "message",
+        "text": "The DHCP server is. I've tried the target server both with and without a second Ethernet - no change.",
+        "user": "UF0RVSN9Z",
+        "ts": "1546231159.246800"
+    },
+    {
+        "client_msg_id": "235a11c8-93c0-4fcb-aae9-a96fef2789ec",
+        "type": "message",
+        "text": "The DRP server is not dual-homed",
+        "user": "UF0RVSN9Z",
+        "ts": "1546231170.247100"
+    },
+    {
+        "client_msg_id": "6ce7495e-16ae-47f7-8183-86951c757eeb",
+        "type": "message",
+        "text": "The victims?",
+        "user": "U02DGQYK1",
+        "ts": "1546231181.247400"
+    },
+    {
+        "client_msg_id": "99a3d03e-6677-499d-b3e8-6e6e6a25b1a7",
+        "type": "message",
+        "text": "victim=target?",
+        "user": "UF0RVSN9Z",
+        "ts": "1546231201.247600"
+    },
+    {
+        "client_msg_id": "a6b76746-294a-41b2-8f26-9fd8fac04908",
+        "type": "message",
+        "text": "yes",
+        "user": "U02DGQYK1",
+        "ts": "1546231216.247800"
+    },
+    {
+        "client_msg_id": "f39998f6-9a81-4cc9-abf3-a54615e3bc4c",
+        "type": "message",
+        "text": "You have something like this in your ISC config\n```\n# Client control\ndeny duplicates;\none-lease-per-client on;\n```",
+        "user": "U02DGQYK1",
+        "ts": "1546231470.248200"
+    },
+    {
+        "client_msg_id": "ece2f2fc-9783-4e66-9b7a-89e14dc28455",
+        "type": "message",
+        "text": "Hmm - what kinda of machines are these?",
+        "user": "U02DGQYK1",
+        "ts": "1546231521.248600"
+    },
+    {
+        "client_msg_id": "68D630C7-D14A-4010-BE34-5F29C7B327C3",
+        "type": "message",
+        "text": "I don’t have those config options, but will try them when I’m back at the console. ",
+        "user": "UF0RVSN9Z",
+        "ts": "1546232760.249500"
+    },
+    {
+        "client_msg_id": "DAB655A2-1EEE-4982-AED9-CF0B1853AC3B",
+        "type": "message",
+        "text": "The machines are a hodgepodge of home lab equipment. The DCHP server is running on a VM. ",
+        "user": "UF0RVSN9Z",
+        "ts": "1546232804.250500"
+    },
+    {
+        "client_msg_id": "E83C11E6-1ADD-4833-956C-DE423461E080",
+        "type": "message",
+        "text": "None of it is enterprise-grade.",
+        "user": "UF0RVSN9Z",
+        "ts": "1546232838.250900"
+    }
+]

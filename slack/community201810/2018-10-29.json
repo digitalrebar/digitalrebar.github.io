@@ -1,0 +1,236 @@
+[
+    {
+        "client_msg_id": "b005e223-bd8e-4d9c-af70-2c5881be1f59",
+        "type": "message",
+        "text": "coreos",
+        "user": "U8A2N44HH",
+        "ts": "1540823283.031300"
+    },
+    {
+        "client_msg_id": "abec6784-041e-40f7-bcd7-2261f879c196",
+        "type": "message",
+        "text": "<@U02DGQYK1>, is that your ssh pubkey in <https:\/\/github.com\/digitalrebar\/provision-content\/releases\/download\/stable\/drp-community-content.yaml> ?",
+        "user": "UDPKKMNMQ",
+        "ts": "1540828510.031700"
+    },
+    {
+        "client_msg_id": "965b2985-e9ea-4358-b627-d7f310e08460",
+        "type": "message",
+        "text": "Ending in Rw54Bt9.",
+        "user": "UDPKKMNMQ",
+        "ts": "1540828533.031900"
+    },
+    {
+        "client_msg_id": "885c00b2-5074-4985-ab65-73312efcdb4e",
+        "type": "message",
+        "text": "Maybe- it is an example profile that is not applied to anything by default.",
+        "user": "U02DGQYK1",
+        "ts": "1540828635.032400"
+    },
+    {
+        "client_msg_id": "25873055-ade9-4a0b-8cf8-d1354b6ad70f",
+        "type": "message",
+        "text": "<@UDPKKMNMQ> - it is intended as a specific example that isn’t used.",
+        "user": "U02DGQYK1",
+        "ts": "1540828673.032800"
+    },
+    {
+        "client_msg_id": "01d1999b-bc78-4f84-8b9d-fc02b7694b44",
+        "type": "message",
+        "text": "No worries, as long as it wasn't a horrible surprise.",
+        "user": "UDPKKMNMQ",
+        "ts": "1540828703.033100"
+    },
+    {
+        "client_msg_id": "0ab052bc-30f3-4d76-84ce-51e70da7cc50",
+        "type": "message",
+        "text": "well - you know.  Probably not the best place for a public key, but once it was committed to github once.  I figured ,  meh.  At least it isn’t in the global profile by default for all of you to inherit.  :slightly_smiling_face:  I think that happened once.   A long time ago and why  I’m not to concerned about it now.  As long as I can’t log into your systems by default",
+        "user": "U02DGQYK1",
+        "ts": "1540828825.035200"
+    },
+    {
+        "client_msg_id": "587084f0-4960-4491-8cf7-cdd294f723af",
+        "type": "message",
+        "text": "If you find you can, say hi to our security team and cc me. :wink:",
+        "user": "UDPKKMNMQ",
+        "ts": "1540828873.035500"
+    },
+    {
+        "client_msg_id": "733b06b1-ebde-4b57-ad1e-6b34e06f3b20",
+        "type": "message",
+        "text": ":slightly_smiling_face:",
+        "user": "U02DGQYK1",
+        "ts": "1540828887.035700"
+    },
+    {
+        "client_msg_id": "e9ec81b7-c71a-4a2f-b1ac-ab161a790d5f",
+        "type": "message",
+        "text": "<@U8A2N44HH> playing Alex Trebek.... can you phrase that as a question?",
+        "user": "U02DHRR2L",
+        "ts": "1540829844.036200"
+    },
+    {
+        "type": "message",
+        "subtype": "me_message",
+        "text": "always assumed that it was Greg's attempt to take over the world",
+        "user": "U02DHRR2L",
+        "ts": "1540829904.036300"
+    },
+    {
+        "client_msg_id": "8f65b6fb-2190-46d6-959f-7ed7b7b8d46e",
+        "type": "message",
+        "text": "<@U02DHRR2L> good one",
+        "user": "U8A2N44HH",
+        "ts": "1540831309.036600"
+    },
+    {
+        "client_msg_id": "24c8041e-9bb5-4ef1-94af-0d668c72c756",
+        "type": "message",
+        "text": "<!channel> - Warning - tip has issues with plugins and events that can lock up the system.  This was injected two weeks ago.  This is mostly an issue with the Packet plugin, but others could be effected.",
+        "user": "U02DGQYK1",
+        "ts": "1540845183.037900"
+    },
+    {
+        "client_msg_id": "6ff2aa9c-de0c-43da-9308-61361e268064",
+        "type": "message",
+        "text": "I’m looking at fixing it now.",
+        "user": "U02DGQYK1",
+        "ts": "1540845193.038100",
+        "reactions": [
+            {
+                "name": "ghost",
+                "users": [
+                    "U02DHRR2L",
+                    "U8FAN7PLK"
+                ],
+                "count": 2
+            }
+        ]
+    },
+    {
+        "client_msg_id": "d2094d1d-54b4-40b2-a348-5b651ea6c14e",
+        "type": "message",
+        "text": "<@U02DHRR2L> question would have been … any new successful attempt at supporting  coreos  ?",
+        "user": "U8A2N44HH",
+        "ts": "1540870900.039500"
+    },
+    {
+        "client_msg_id": "c46d5a11-7f66-4179-9051-fc6cba3bffd1",
+        "type": "message",
+        "text": "<@U8A2N44HH> we (RackN) have not been focused on it but I'd suggest looking back to Sept 13 in this channel where Greg talks about it.\n<https:\/\/rackn.slack.com\/archives\/C02L9P26Q\/p1536875626000100>\n\nAlso, <@UCTE5HVRB>, do you have updates based on your work w\/ CoreOS?",
+        "user": "U02DHRR2L",
+        "ts": "1540872227.041300",
+        "attachments": [
+            {
+                "from_url": "https:\/\/rackn.slack.com\/archives\/C02L9P26Q\/p1536875626000100",
+                "fallback": "[September 13th, 2018 2:53 PM] greg: A different tact is to use the template system to “enhance” the starting container config inside of CoreOS on start-up, so that it runs a drpcli runner that completes the process.",
+                "ts": "1536875626.000100",
+                "author_id": "U02DGQYK1",
+                "author_subname": "Greg Althaus",
+                "channel_id": "C02L9P26Q",
+                "channel_name": "community",
+                "is_msg_unfurl": true,
+                "text": "A different tact is to use the template system to “enhance” the starting container config inside of CoreOS on start-up, so that it runs a drpcli runner that completes the process.",
+                "author_name": "Greg Althaus",
+                "author_link": "https:\/\/rackn.slack.com\/team\/U02DGQYK1",
+                "author_icon": "https:\/\/avatars.slack-edge.com\/2014-07-14\/2459866780_48.jpg",
+                "mrkdwn_in": [
+                    "text"
+                ],
+                "id": 1,
+                "original_url": "https:\/\/rackn.slack.com\/archives\/C02L9P26Q\/p1536875626000100",
+                "footer": "Posted in #community"
+            }
+        ],
+        "thread_ts": "1540872227.041300",
+        "reply_count": 5,
+        "reply_users_count": 2,
+        "latest_reply": "1540911415.067500",
+        "reply_users": [
+            "U9TPYH6JE",
+            "U02DHRR2L"
+        ],
+        "replies": [
+            {
+                "user": "U9TPYH6JE",
+                "ts": "1540907763.066500"
+            },
+            {
+                "user": "U02DHRR2L",
+                "ts": "1540908423.066700"
+            },
+            {
+                "user": "U9TPYH6JE",
+                "ts": "1540911275.067000"
+            },
+            {
+                "user": "U02DHRR2L",
+                "ts": "1540911342.067200"
+            },
+            {
+                "user": "U02DHRR2L",
+                "ts": "1540911415.067500"
+            }
+        ]
+    },
+    {
+        "client_msg_id": "8f826e1f-b7af-46fc-a420-5a5b5f61d59a",
+        "type": "message",
+        "text": "If I want to use a custom post-install template during deployment, is there an easy way to specify the template as a param (just like select-kickseed param) or do I have to define a custom bootenv in order to do that?",
+        "user": "UCWNG6NTV",
+        "ts": "1540874124.043400",
+        "edited": {
+            "user": "UCWNG6NTV",
+            "ts": "1540874215.000000"
+        }
+    },
+    {
+        "client_msg_id": "e6c29766-6a1d-468e-b9d1-71a034e6df24",
+        "type": "message",
+        "text": "<@UCWNG6NTV> - what are you trying to accomplish ?",
+        "user": "U6QFVRJNB",
+        "ts": "1540875198.043800"
+    },
+    {
+        "client_msg_id": "cbd84f52-568d-423d-b717-f5cbb194a480",
+        "type": "message",
+        "text": "any stage you place in a workflow, after the (for example) `ubuntu-18.04-install` stage will be executed as a post-install action",
+        "user": "U6QFVRJNB",
+        "ts": "1540875227.044500"
+    },
+    {
+        "client_msg_id": "4a36a9d9-6f07-44c5-a0e0-d2608774dff4",
+        "type": "message",
+        "text": "this is true of any of the DRP community content, contrib, and rackn bootenvs that utilize the stock templates",
+        "user": "U6QFVRJNB",
+        "ts": "1540875283.045500"
+    },
+    {
+        "client_msg_id": "9d4fca40-a9a9-4455-975b-bde1bd86b3e1",
+        "type": "message",
+        "text": "Here's an example of an Ubuntu install that executes 2 post-install stages - `packet-ssh-keys` (installs SSH keys from the Packet meta data service), and `runner-service` (makes the DRP agent resident after install for advanced lifecycle management), then marks the Machine as completed:\n`ubuntu-18.04-install --&gt; packet-ssh-keys --&gt; runner-service --&gt; complete-nowait`",
+        "user": "U6QFVRJNB",
+        "ts": "1540875521.047500"
+    },
+    {
+        "client_msg_id": "2905b621-8394-4c44-866b-54f67a82571c",
+        "type": "message",
+        "text": "<@U6QFVRJNB> It helps. Thanks for pointing me to the direction of using stages in workflow to perform different kinds of post-install actions!",
+        "user": "UCWNG6NTV",
+        "ts": "1540877066.049200"
+    },
+    {
+        "client_msg_id": "4a504dfa-e1ee-46d1-805b-087cde3b4891",
+        "type": "message",
+        "text": "You can see an example of custom content in the color demo repo on GitHub it shows you example content for creating stages tasks and templates",
+        "user": "U6QFVRJNB",
+        "ts": "1540877378.049700"
+    },
+    {
+        "client_msg_id": "475b1a2e-9ce9-4c41-a5fb-4022b4611bbd",
+        "type": "message",
+        "text": "cool, thanks <@U6QFVRJNB>",
+        "user": "UCWNG6NTV",
+        "ts": "1540880956.050100"
+    }
+]

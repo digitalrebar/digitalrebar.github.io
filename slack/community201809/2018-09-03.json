@@ -22,8 +22,8 @@
                 "public_url_shared": false,
                 "display_as_bot": false,
                 "username": "",
-                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FCL5L5PQS\/-.txt?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
-                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FCL5L5PQS\/download\/-.txt?t=xoxe-2458848645-432744317105-433486990661-648d122d7e37a3b00999281d87b4509a",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FCL5L5PQS\/-.txt?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FCL5L5PQS\/download\/-.txt?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
                 "permalink": "https:\/\/rackn.slack.com\/files\/UBXEU90UQ\/FCL5L5PQS\/-.txt",
                 "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FCL5L5PQS-c4bd134ace",
                 "edit_link": "https:\/\/rackn.slack.com\/files\/UBXEU90UQ\/FCL5L5PQS\/-.txt\/edit",
@@ -40,80 +40,80 @@
         "ts": "1535979769.000100"
     },
     {
-        "type": "message",
-        "user": "U02DHRR2L",
-        "text": "That can mean your password is not set <@UBXEU90UQ> ",
         "client_msg_id": "d10174dc-c2f7-45c4-8400-e04ad0762009",
+        "type": "message",
+        "text": "That can mean your password is not set <@UBXEU90UQ> ",
+        "user": "U02DHRR2L",
         "ts": "1535982709.000100"
     },
     {
-        "type": "message",
-        "user": "U02DHRR2L",
-        "text": "If that fixes it,  let's make sure it's in the faq",
         "client_msg_id": "e12fa30b-d4b7-4dd6-bce8-476d54623d5a",
+        "type": "message",
+        "text": "If that fixes it,  let's make sure it's in the faq",
+        "user": "U02DHRR2L",
         "ts": "1535982765.000100"
     },
     {
-        "type": "message",
-        "user": "UBXEU90UQ",
-        "text": "yeah, worked that out just now actually",
         "client_msg_id": "349dbab9-15ff-4e8f-ae9f-55dc044ab521",
+        "type": "message",
+        "text": "yeah, worked that out just now actually",
+        "user": "UBXEU90UQ",
         "ts": "1535982801.000100"
     },
     {
-        "type": "message",
-        "user": "UBXEU90UQ",
-        "text": "i think my add user command didn’t work properly",
         "client_msg_id": "be0d50b6-a3c2-4336-9888-5accc6a0f4a1",
+        "type": "message",
+        "text": "i think my add user command didn’t work properly",
+        "user": "UBXEU90UQ",
         "ts": "1535982813.000100"
     },
     {
-        "type": "message",
-        "user": "UBXEU90UQ",
-        "text": "there’s a user, but it has no roles … but it does have a secret set",
         "client_msg_id": "f6253ffc-7488-4e59-aa98-93f91ea1c52c",
+        "type": "message",
+        "text": "there’s a user, but it has no roles … but it does have a secret set",
+        "user": "UBXEU90UQ",
         "ts": "1535982827.000100"
     },
     {
-        "type": "message",
-        "user": "UBXEU90UQ",
-        "text": "ahh crap i know why, passing it a username AND a json blob which i think just creates a blank user and ignores the json",
         "client_msg_id": "659fd619-56e1-41cb-87ab-1a728e9c3d56",
+        "type": "message",
+        "text": "ahh crap i know why, passing it a username AND a json blob which i think just creates a blank user and ignores the json",
+        "user": "UBXEU90UQ",
         "ts": "1535982962.000100"
     },
     {
-        "type": "message",
-        "user": "UBXEU90UQ",
-        "text": ":smile:",
         "client_msg_id": "ce884cdb-99ac-473e-a3d5-e0e18bf0e46e",
+        "type": "message",
+        "text": ":smile:",
+        "user": "UBXEU90UQ",
         "ts": "1535982963.000100"
     },
     {
-        "type": "message",
-        "user": "UBXEU90UQ",
-        "text": "urgh",
         "client_msg_id": "76e02ea8-0817-48eb-ad96-4fe92e7d3401",
+        "type": "message",
+        "text": "urgh",
+        "user": "UBXEU90UQ",
         "ts": "1535983639.000300"
     },
     {
-        "type": "message",
-        "user": "UBXEU90UQ",
-        "text": "yeah it’s just a problem with how ansible escapes stuff in command line",
         "client_msg_id": "4da2e69f-0dd9-43e9-93cb-4130020cd600",
+        "type": "message",
+        "text": "yeah it’s just a problem with how ansible escapes stuff in command line",
+        "user": "UBXEU90UQ",
         "ts": "1535983648.000100"
     },
     {
-        "type": "message",
-        "user": "UBXEU90UQ",
-        "text": "also… i remember there being a kexec-ok param which i now can’t find which I thought was in community content… where does it come from? :slightly_smiling_face:",
         "client_msg_id": "c75489f5-8208-4c9e-81fe-6e31f73b8487",
+        "type": "message",
+        "text": "also… i remember there being a kexec-ok param which i now can’t find which I thought was in community content… where does it come from? :slightly_smiling_face:",
+        "user": "UBXEU90UQ",
         "ts": "1535992801.000100"
     },
     {
-        "type": "message",
-        "user": "U6QFVRJNB",
-        "text": "<@UBXEU90UQ> you need tip DRP version and top content ",
         "client_msg_id": "b3085383-959a-41a2-850b-3827d7e965fc",
+        "type": "message",
+        "text": "<@UBXEU90UQ> you need tip DRP version and top content ",
+        "user": "U6QFVRJNB",
         "ts": "1535995041.000100"
     }
 ]

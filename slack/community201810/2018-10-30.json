@@ -1,0 +1,1136 @@
+[
+    {
+        "client_msg_id": "944659d8-e0df-4c1c-adac-75ae2ba81c81",
+        "type": "message",
+        "text": "Im having problems with the krib demo in that the installed yum mirror is timing out when trying to access  <http:\/\/mirrors.edge.kernel.org> :           <http:\/\/mirrors.edge.kernel.org\/centos\/7\/extras\/x86_64\/Packages\/docker-1.13.1-75.git8633870.el7.centos.x86_64.rpm>: [Errno 12] Timeout on <http:\/\/mirrors.edge.kernel.org\/centos\/7\/extras\/x86_64\/Packages\/docker-1.13.1-75.git8633870.el7.centos.x86_64.rpm>: (28, ‘Operation too slow. Less than 1000 bytes\/sec transferred the last 30 seconds’)\nTrying other mirror.",
+        "user": "UDPV4CC67",
+        "ts": "1540894982.051300"
+    },
+    {
+        "client_msg_id": "9797cba5-ef13-4835-99a2-d06bec7027e7",
+        "type": "message",
+        "text": "can the image be updated to find closest mirror, similar to normal centos repo?",
+        "user": "UDPV4CC67",
+        "ts": "1540895112.052000"
+    },
+    {
+        "client_msg_id": "ca738d33-488b-4b06-9125-52590012b377",
+        "type": "message",
+        "text": "it only retries the same mirror until it fails and then task fails",
+        "user": "UDPV4CC67",
+        "ts": "1540896091.053600"
+    },
+    {
+        "client_msg_id": "ac26d606-9482-4256-aed3-a5e825dd2ae3",
+        "type": "message",
+        "text": "ok I think I have it solved, just retrying now, I created a new profile based on the repository template and updated the repositories so are pointing to local mirrors and assigned to the test cluster.  Will know if its worked shortly",
+        "user": "UDPV4CC67",
+        "ts": "1540897375.055100"
+    },
+    {
+        "client_msg_id": "a6c8ccf5-efea-4d36-bc8d-ccc351c6c3b1",
+        "type": "message",
+        "text": "nope didn’t work, still using <http:\/\/mirrors.edge.kernel.org> :disappointed:",
+        "user": "UDPV4CC67",
+        "ts": "1540898161.055600"
+    },
+    {
+        "client_msg_id": "9f41b77b-63f2-4fda-9c83-8165a151464e",
+        "type": "message",
+        "text": "Q: is there any good reason to not use the ‘files’ functionality to upload e.g. a switch image binary? It’s a lazy way of hosting cumulus images to install switches but wondering if there’s a downside (e.g. if all the support files are synced onto newly provisioned hosts when they boot then having a 200M switch image in there would probably be bad)",
+        "user": "UBXEU90UQ",
+        "ts": "1540899103.056800"
+    },
+    {
+        "client_msg_id": "3ab87025-4cce-4f58-bc53-0cbafb91e575",
+        "type": "message",
+        "text": "further to my krib mirror issues when installing docker, if I use krib-live workflow then the repos from sledgehammer are pointing to the fastest mirror and is local to my country.",
+        "user": "UDPV4CC67",
+        "ts": "1540901858.058300"
+    },
+    {
+        "client_msg_id": "a76c82ba-0ee8-40ad-a862-e93f529f3f64",
+        "type": "message",
+        "text": "<@UBXEU90UQ> it's fine to use.  If you are pushing lots of big images around in parallel,  then it could become a bottleneck",
+        "user": "U02DHRR2L",
+        "ts": "1540905043.058400"
+    },
+    {
+        "client_msg_id": "1fc709f6-f6ea-43e6-9c1e-828104124801",
+        "type": "message",
+        "text": "Cool :+1: It’s probably only going to be &lt;latest image&gt;, DRP is dhcp server on the management VLAN so when the switches do first-boot they get an IP &amp; reservation from DRP, seems to make sense to put the image there for initial deployment",
+        "user": "UBXEU90UQ",
+        "ts": "1540905115.060400"
+    },
+    {
+        "client_msg_id": "befff35f-3caf-420f-b307-cadfeea8a881",
+        "type": "message",
+        "text": "That feature is there for that purpose",
+        "user": "U02DHRR2L",
+        "ts": "1540905158.061100"
+    },
+    {
+        "client_msg_id": "334d1278-3aec-466f-9e2b-b1d40db9e2f4",
+        "type": "message",
+        "text": "do you have anyone running drpcli on cumulus switches yet? :smile:",
+        "user": "UBXEU90UQ",
+        "ts": "1540905193.061500"
+    },
+    {
+        "client_msg_id": "5af65d5a-44ce-4a69-a73f-b072a712d2bc",
+        "type": "message",
+        "text": "i have some x86 based 100G switches here :slightly_smiling_face: they obv dont pxe boot so can’t install the runner by default, but…",
+        "user": "UBXEU90UQ",
+        "ts": "1540905239.062400"
+    },
+    {
+        "client_msg_id": "f9c3f670-cb8a-413c-a022-5e0028dc3bd1",
+        "type": "message",
+        "text": "they do have ‘zero touch provisioning’ which can run a script through a DHCP option",
+        "user": "UBXEU90UQ",
+        "ts": "1540905275.063000"
+    },
+    {
+        "client_msg_id": "b546519e-5d7e-4226-beac-278a66e65ecd",
+        "type": "message",
+        "text": "Not yet. Excited to track your progress ",
+        "user": "U02DHRR2L",
+        "ts": "1540905311.063700"
+    },
+    {
+        "client_msg_id": "a97251ae-9fca-453c-b191-c80bd89799fa",
+        "type": "message",
+        "text": "ha. I’ll give it a shot :slightly_smiling_face: already blown these away and had to reimage a couple of times lol",
+        "user": "UBXEU90UQ",
+        "ts": "1540905340.064400"
+    },
+    {
+        "client_msg_id": "37634c1c-a375-492a-84c2-0f368d62598e",
+        "type": "message",
+        "text": "<@UDPV4CC67> so, it works from the live workflow?",
+        "user": "U02DHRR2L",
+        "ts": "1540906030.065200"
+    },
+    {
+        "client_msg_id": "b1c52ecc-9a65-4f1b-a24e-56b7acc0043c",
+        "type": "message",
+        "text": "Or, it does not work in either case?",
+        "user": "U02DHRR2L",
+        "ts": "1540906048.065800"
+    },
+    {
+        "client_msg_id": "c5c6bf2f-5a10-48d2-921a-b498cdabe7cb",
+        "type": "message",
+        "text": "<!channel> - tip should now have the deadlock fix.  Please move to the latest tip if you are tip.  :wink:",
+        "user": "U02DGQYK1",
+        "ts": "1540907063.066400"
+    },
+    {
+        "client_msg_id": "d8e212fb-8a70-43da-b5eb-b6209385ab21",
+        "type": "message",
+        "text": "Quite interested about this discussion. I'm working with <@U8A2N44HH>, trying to find a decent CoreOS deployer. So far, success has been limited with our \"current\" deployer (MaaS)",
+        "user": "U9TPYH6JE",
+        "ts": "1540907763.066500",
+        "thread_ts": "1540872227.041300",
+        "parent_user_id": "U02DHRR2L"
+    },
+    {
+        "type": "message",
+        "subtype": "thread_broadcast",
+        "text": "<@U9TPYH6JE> can you describe what you want it to do?  That would help me frame an helpful answer",
+        "user": "U02DHRR2L",
+        "ts": "1540908423.066700",
+        "thread_ts": "1540872227.041300",
+        "root": {
+            "client_msg_id": "c46d5a11-7f66-4179-9051-fc6cba3bffd1",
+            "type": "message",
+            "text": "<@U8A2N44HH> we (RackN) have not been focused on it but I'd suggest looking back to Sept 13 in this channel where Greg talks about it.\n<https:\/\/rackn.slack.com\/archives\/C02L9P26Q\/p1536875626000100>\n\nAlso, <@UCTE5HVRB>, do you have updates based on your work w\/ CoreOS?",
+            "user": "U02DHRR2L",
+            "ts": "1540872227.041300",
+            "attachments": [
+                {
+                    "from_url": "https:\/\/rackn.slack.com\/archives\/C02L9P26Q\/p1536875626000100",
+                    "fallback": "[September 13th, 2018 2:53 PM] greg: A different tact is to use the template system to “enhance” the starting container config inside of CoreOS on start-up, so that it runs a drpcli runner that completes the process.",
+                    "ts": "1536875626.000100",
+                    "author_id": "U02DGQYK1",
+                    "author_subname": "Greg Althaus",
+                    "channel_id": "C02L9P26Q",
+                    "channel_name": "community",
+                    "is_msg_unfurl": true,
+                    "text": "A different tact is to use the template system to “enhance” the starting container config inside of CoreOS on start-up, so that it runs a drpcli runner that completes the process.",
+                    "author_name": "Greg Althaus",
+                    "author_link": "https:\/\/rackn.slack.com\/team\/U02DGQYK1",
+                    "author_icon": "https:\/\/avatars.slack-edge.com\/2014-07-14\/2459866780_48.jpg",
+                    "mrkdwn_in": [
+                        "text"
+                    ],
+                    "id": 1,
+                    "original_url": "https:\/\/rackn.slack.com\/archives\/C02L9P26Q\/p1536875626000100",
+                    "footer": "Posted in #community"
+                }
+            ],
+            "thread_ts": "1540872227.041300",
+            "reply_count": 5,
+            "reply_users_count": 2,
+            "latest_reply": "1540911415.067500",
+            "reply_users": [
+                "U9TPYH6JE",
+                "U02DHRR2L"
+            ],
+            "replies": [
+                {
+                    "user": "U9TPYH6JE",
+                    "ts": "1540907763.066500"
+                },
+                {
+                    "user": "U02DHRR2L",
+                    "ts": "1540908423.066700"
+                },
+                {
+                    "user": "U9TPYH6JE",
+                    "ts": "1540911275.067000"
+                },
+                {
+                    "user": "U02DHRR2L",
+                    "ts": "1540911342.067200"
+                },
+                {
+                    "user": "U02DHRR2L",
+                    "ts": "1540911415.067500"
+                }
+            ]
+        },
+        "client_msg_id": "50b5f5af-3d85-4ec9-82bd-3e98bc5ce051"
+    },
+    {
+        "client_msg_id": "2a7eb1a8-aec0-4cfa-9a59-fc3ec85afbb5",
+        "type": "message",
+        "text": "Actually, the actual process of CoreOS installation isn't really difficult. What they provide, out-of-the-box, is an ISO from which you spin up an application that need to have very simple information: where to install, what image version (by default, latest stable), and an ignition file to customize the installation on first boot. This ISO has a big problem: it does not support UEFI (!!!!). So basically, the only viable solution is to replace the ISO installation by a custom deployer that would do the same: what, where, how. The \"hack\" we did in MaaS actually starts Ubuntu 18.04 (well, this is how MaaS works) then push the image that we provided to the server on the target drive, along with basic networking, partitionning, and few host parameters (like hostname). I don't think we should got further than that. From CoreOS point of view, I want to be able to get the most of the ignition file (most probably with your template stuff). For anything more fancy, that should be up to another tool (Ansible for example) to complete. That said, the idea with CoreOS is to avoid uneccessary over-configuration: we want to deploy, use, then replace.  CoreOS creates many partitions, one of them being the ROOT partition for persistence between OS upgrades.",
+        "user": "U9TPYH6JE",
+        "ts": "1540911275.067000",
+        "thread_ts": "1540872227.041300",
+        "parent_user_id": "U02DHRR2L"
+    },
+    {
+        "type": "message",
+        "subtype": "thread_broadcast",
+        "text": "Is it possible to boot CoreOS with kexec?  If so, you could boot into sledgehammer and then kexec into CoreOS.",
+        "user": "U02DHRR2L",
+        "ts": "1540911342.067200",
+        "thread_ts": "1540872227.041300",
+        "root": {
+            "client_msg_id": "c46d5a11-7f66-4179-9051-fc6cba3bffd1",
+            "type": "message",
+            "text": "<@U8A2N44HH> we (RackN) have not been focused on it but I'd suggest looking back to Sept 13 in this channel where Greg talks about it.\n<https:\/\/rackn.slack.com\/archives\/C02L9P26Q\/p1536875626000100>\n\nAlso, <@UCTE5HVRB>, do you have updates based on your work w\/ CoreOS?",
+            "user": "U02DHRR2L",
+            "ts": "1540872227.041300",
+            "attachments": [
+                {
+                    "from_url": "https:\/\/rackn.slack.com\/archives\/C02L9P26Q\/p1536875626000100",
+                    "fallback": "[September 13th, 2018 2:53 PM] greg: A different tact is to use the template system to “enhance” the starting container config inside of CoreOS on start-up, so that it runs a drpcli runner that completes the process.",
+                    "ts": "1536875626.000100",
+                    "author_id": "U02DGQYK1",
+                    "author_subname": "Greg Althaus",
+                    "channel_id": "C02L9P26Q",
+                    "channel_name": "community",
+                    "is_msg_unfurl": true,
+                    "text": "A different tact is to use the template system to “enhance” the starting container config inside of CoreOS on start-up, so that it runs a drpcli runner that completes the process.",
+                    "author_name": "Greg Althaus",
+                    "author_link": "https:\/\/rackn.slack.com\/team\/U02DGQYK1",
+                    "author_icon": "https:\/\/avatars.slack-edge.com\/2014-07-14\/2459866780_48.jpg",
+                    "mrkdwn_in": [
+                        "text"
+                    ],
+                    "id": 1,
+                    "original_url": "https:\/\/rackn.slack.com\/archives\/C02L9P26Q\/p1536875626000100",
+                    "footer": "Posted in #community"
+                }
+            ],
+            "thread_ts": "1540872227.041300",
+            "reply_count": 5,
+            "reply_users_count": 2,
+            "latest_reply": "1540911415.067500",
+            "reply_users": [
+                "U9TPYH6JE",
+                "U02DHRR2L"
+            ],
+            "replies": [
+                {
+                    "user": "U9TPYH6JE",
+                    "ts": "1540907763.066500"
+                },
+                {
+                    "user": "U02DHRR2L",
+                    "ts": "1540908423.066700"
+                },
+                {
+                    "user": "U9TPYH6JE",
+                    "ts": "1540911275.067000"
+                },
+                {
+                    "user": "U02DHRR2L",
+                    "ts": "1540911342.067200"
+                },
+                {
+                    "user": "U02DHRR2L",
+                    "ts": "1540911415.067500"
+                }
+            ]
+        },
+        "client_msg_id": "fb78c37b-8d87-46f7-b5ea-17b63fa0c91b"
+    },
+    {
+        "type": "message",
+        "subtype": "thread_broadcast",
+        "text": "FWIW - we do exactly the same pattern using Sledgehammer as the ephemeral OS but it's based on Cent7 and easier to extend\/manage using normal tools",
+        "user": "U02DHRR2L",
+        "ts": "1540911415.067500",
+        "thread_ts": "1540872227.041300",
+        "root": {
+            "client_msg_id": "c46d5a11-7f66-4179-9051-fc6cba3bffd1",
+            "type": "message",
+            "text": "<@U8A2N44HH> we (RackN) have not been focused on it but I'd suggest looking back to Sept 13 in this channel where Greg talks about it.\n<https:\/\/rackn.slack.com\/archives\/C02L9P26Q\/p1536875626000100>\n\nAlso, <@UCTE5HVRB>, do you have updates based on your work w\/ CoreOS?",
+            "user": "U02DHRR2L",
+            "ts": "1540872227.041300",
+            "attachments": [
+                {
+                    "from_url": "https:\/\/rackn.slack.com\/archives\/C02L9P26Q\/p1536875626000100",
+                    "fallback": "[September 13th, 2018 2:53 PM] greg: A different tact is to use the template system to “enhance” the starting container config inside of CoreOS on start-up, so that it runs a drpcli runner that completes the process.",
+                    "ts": "1536875626.000100",
+                    "author_id": "U02DGQYK1",
+                    "author_subname": "Greg Althaus",
+                    "channel_id": "C02L9P26Q",
+                    "channel_name": "community",
+                    "is_msg_unfurl": true,
+                    "text": "A different tact is to use the template system to “enhance” the starting container config inside of CoreOS on start-up, so that it runs a drpcli runner that completes the process.",
+                    "author_name": "Greg Althaus",
+                    "author_link": "https:\/\/rackn.slack.com\/team\/U02DGQYK1",
+                    "author_icon": "https:\/\/avatars.slack-edge.com\/2014-07-14\/2459866780_48.jpg",
+                    "mrkdwn_in": [
+                        "text"
+                    ],
+                    "id": 1,
+                    "original_url": "https:\/\/rackn.slack.com\/archives\/C02L9P26Q\/p1536875626000100",
+                    "footer": "Posted in #community"
+                }
+            ],
+            "thread_ts": "1540872227.041300",
+            "reply_count": 5,
+            "reply_users_count": 2,
+            "latest_reply": "1540911415.067500",
+            "reply_users": [
+                "U9TPYH6JE",
+                "U02DHRR2L"
+            ],
+            "replies": [
+                {
+                    "user": "U9TPYH6JE",
+                    "ts": "1540907763.066500"
+                },
+                {
+                    "user": "U02DHRR2L",
+                    "ts": "1540908423.066700"
+                },
+                {
+                    "user": "U9TPYH6JE",
+                    "ts": "1540911275.067000"
+                },
+                {
+                    "user": "U02DHRR2L",
+                    "ts": "1540911342.067200"
+                },
+                {
+                    "user": "U02DHRR2L",
+                    "ts": "1540911415.067500"
+                }
+            ]
+        },
+        "client_msg_id": "45e50a63-d8f7-4ae7-848d-e9d46c861392"
+    },
+    {
+        "type": "message",
+        "subtype": "me_message",
+        "text": "<@U9TPYH6JE|christian.tardif> we typically just have discussions like this in the primary channel and avoid threads",
+        "user": "U02DHRR2L",
+        "ts": "1540911448.067800"
+    },
+    {
+        "client_msg_id": "73dc55c1-6f82-4277-a50a-41ff89b85f06",
+        "type": "message",
+        "text": "<@U02DHRR2L> Understood :slightly_smiling_face:",
+        "user": "U9TPYH6JE",
+        "ts": "1540911491.068200"
+    },
+    {
+        "client_msg_id": "de4da6a5-c92a-4278-a574-3b92644ac30a",
+        "type": "message",
+        "text": "<@U02DHRR2L> As I understood, that's the custom images support in DRP, right?",
+        "user": "U9TPYH6JE",
+        "ts": "1540911647.069300"
+    },
+    {
+        "client_msg_id": "d75b2bdb-bec5-4cf4-9beb-37ddc86aa706",
+        "type": "message",
+        "text": "Sledgehammer is the base discovery OS for DRP, it's part of the core system",
+        "user": "U02DHRR2L",
+        "ts": "1540911691.070000",
+        "edited": {
+            "user": "U02DHRR2L",
+            "ts": "1540911693.000000"
+        }
+    },
+    {
+        "client_msg_id": "f270b951-4ccf-488f-a0d5-30727e21ac71",
+        "type": "message",
+        "text": "custom images is to take existing O\/S images (like from Packer) and write them to disk then boot",
+        "user": "U02DHRR2L",
+        "ts": "1540911749.071100"
+    },
+    {
+        "client_msg_id": "b59c45fb-e7f9-4d46-a092-e7df52e221ef",
+        "type": "message",
+        "text": "OK, so that's how CoreOS is installing (from images). AFAIK, there's no \"installation\" per say process for CoreOS. They're in the \"deployment\" process. SO then, that would be a matter of telling DRP where to deploy the image, building the ignition file to include, and making sure GRUB points to the right place so the machine can eventually reboot....  depending on what this means for DRP",
+        "user": "U9TPYH6JE",
+        "ts": "1540912071.074300"
+    },
+    {
+        "client_msg_id": "55433e51-6420-4f8d-94a7-a5785a85351f",
+        "type": "message",
+        "text": "if you are building a boot from disk CoreOS, yes.  That's what the RackN image builder workflows do.\nif you are net installing CoreOS then you could hand off the the net install via kexec as in this video: <https:\/\/www.youtube.com\/watch?v=Xm688Km3N4Y>",
+        "user": "U02DHRR2L",
+        "ts": "1540915958.075500",
+        "attachments": [
+            {
+                "service_name": "YouTube",
+                "service_url": "https:\/\/www.youtube.com\/",
+                "title": "No Reboot Provisioning for DRP",
+                "title_link": "https:\/\/www.youtube.com\/watch?v=Xm688Km3N4Y",
+                "author_name": "RackN & Digital Rebar",
+                "author_link": "https:\/\/www.youtube.com\/channel\/UCr3bBtP-pMsDQ5c0IDjt_LQ",
+                "thumb_url": "https:\/\/i.ytimg.com\/vi\/Xm688Km3N4Y\/hqdefault.jpg",
+                "thumb_width": 480,
+                "thumb_height": 360,
+                "fallback": "YouTube Video: No Reboot Provisioning for DRP",
+                "video_html": "<iframe width=\"400\" height=\"225\" src=\"https:\/\/www.youtube.com\/embed\/Xm688Km3N4Y?feature=oembed&autoplay=1&iv_load_policy=3\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen><\/iframe>",
+                "video_html_width": 400,
+                "video_html_height": 225,
+                "from_url": "https:\/\/www.youtube.com\/watch?v=Xm688Km3N4Y",
+                "service_icon": "https:\/\/a.slack-edge.com\/2089\/img\/unfurl_icons\/youtube.png",
+                "id": 1,
+                "original_url": "https:\/\/www.youtube.com\/watch?v=Xm688Km3N4Y"
+            }
+        ]
+    },
+    {
+        "client_msg_id": "a699ec3e-5c43-446b-b9e5-5e7f2785257f",
+        "type": "message",
+        "text": "We show it for Ubuntu &amp; Centos.  I have no idea if it would work for CoreOS the same way",
+        "user": "U02DHRR2L",
+        "ts": "1540915986.076200",
+        "reactions": [
+            {
+                "name": "open_mouth",
+                "users": [
+                    "U9TPYH6JE"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "client_msg_id": "8fe80c62-2542-421f-9533-5bbe38d23774",
+        "type": "message",
+        "text": "<@U9TPYH6JE> also, DRP can provide the cloud-init via a DRP dynamic template driven from params\/profiles",
+        "user": "U02DHRR2L",
+        "ts": "1540916083.077100"
+    },
+    {
+        "client_msg_id": "09e10fa4-5a66-4e40-9002-9214d3d61db6",
+        "type": "message",
+        "text": "Will check the video. Meanwhile, CoreOS (now RedHat) is dropping support for cloud-init soon. Only ignition will last. That said, it's more or less the same thing. The main difference between the two is how and when this happens in the boot process. ignition happens very early in the boot process, theorically being able to do much more, as it happens while the boot process is still in the ramfs space.",
+        "user": "U9TPYH6JE",
+        "ts": "1540918678.080600"
+    },
+    {
+        "user": "UDRCF03BK",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1540928530.081000",
+        "text": "<@UDRCF03BK> has joined the channel"
+    },
+    {
+        "client_msg_id": "bb0466a0-35f8-4455-acd8-cacb587244ff",
+        "type": "message",
+        "text": "<@UDRCF03BK> @welcome :slightly_smiling_face:",
+        "user": "U6QFVRJNB",
+        "ts": "1540929761.081400"
+    },
+    {
+        "client_msg_id": "625ccbcd-2f69-4704-99e6-4718fb09c14f",
+        "type": "message",
+        "text": "hello!",
+        "user": "UDRCF03BK",
+        "ts": "1540930007.081600"
+    },
+    {
+        "client_msg_id": "607441b9-b25a-44f5-9554-398153e4a740",
+        "type": "message",
+        "text": "that was supposed to be $welcome ...",
+        "user": "U6QFVRJNB",
+        "ts": "1540931231.081900"
+    },
+    {
+        "type": "message",
+        "subtype": "slackbot_response",
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "user": "USLACKBOT",
+        "ts": "1540931231.082000"
+    },
+    {
+        "client_msg_id": "79bab634-529b-4a74-848b-3fb7e60cfe76",
+        "type": "message",
+        "text": "no worries",
+        "user": "UDRCF03BK",
+        "ts": "1540931307.082400"
+    },
+    {
+        "client_msg_id": "f7102b4e-dbf8-46dd-bbf6-fa4ba21e94c4",
+        "type": "message",
+        "text": "<!here> we just merged some interesting prototype work about using DRP workflow &amp; runner in cloud instances WITHOUT provisioning the machine first.  This is a potentially handy way to build workflows without needing any metal at all AND saving the boot times.",
+        "user": "U02DHRR2L",
+        "ts": "1540931628.084200"
+    },
+    {
+        "client_msg_id": "7b56c330-1da4-48d0-83fd-75501f692beb",
+        "type": "message",
+        "text": "<https:\/\/youtu.be\/0eTUbV3RkwY>",
+        "user": "U02DHRR2L",
+        "ts": "1540931628.084400",
+        "attachments": [
+            {
+                "service_name": "YouTube",
+                "service_url": "https:\/\/www.youtube.com\/",
+                "title": "Digital Rebar Provision on AWS",
+                "title_link": "https:\/\/youtu.be\/0eTUbV3RkwY",
+                "author_name": "RackN & Digital Rebar",
+                "author_link": "https:\/\/www.youtube.com\/channel\/UCr3bBtP-pMsDQ5c0IDjt_LQ",
+                "thumb_url": "https:\/\/i.ytimg.com\/vi\/0eTUbV3RkwY\/hqdefault.jpg",
+                "thumb_width": 480,
+                "thumb_height": 360,
+                "fallback": "YouTube Video: Digital Rebar Provision on AWS",
+                "video_html": "<iframe width=\"400\" height=\"225\" src=\"https:\/\/www.youtube.com\/embed\/0eTUbV3RkwY?feature=oembed&autoplay=1&iv_load_policy=3\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen><\/iframe>",
+                "video_html_width": 400,
+                "video_html_height": 225,
+                "from_url": "https:\/\/youtu.be\/0eTUbV3RkwY",
+                "service_icon": "https:\/\/a.slack-edge.com\/2089\/img\/unfurl_icons\/youtube.png",
+                "id": 1,
+                "original_url": "https:\/\/youtu.be\/0eTUbV3RkwY"
+            }
+        ]
+    },
+    {
+        "client_msg_id": "80f1c5bd-0878-41c5-b885-595f16894087",
+        "type": "message",
+        "text": "I've verified that the same code works the same way on Google Cloud too",
+        "user": "U02DHRR2L",
+        "ts": "1540936776.084900"
+    },
+    {
+        "client_msg_id": "29c05fbc-544f-4634-8791-c5b250d0fb3e",
+        "type": "message",
+        "text": "which is super handy because you can just \"reset\" the machines and delete and they come right back",
+        "user": "U02DHRR2L",
+        "ts": "1540939574.085600"
+    },
+    {
+        "client_msg_id": "59d46504-d7af-4bf6-b676-3ded25ddb423",
+        "type": "message",
+        "text": "<@U02DHRR2L> krib live is using fastest mirrors and looking at the repos on the boot hammer image looks like  stock standard centos repos and this is getting me through the next steps but is now failing on etcd config task with some 403 errors so will do some more reading on the configs available to me first before coming back here.",
+        "user": "UDPV4CC67",
+        "ts": "1540954683.088100"
+    },
+    {
+        "client_msg_id": "e6647b85-a1fd-45b2-a841-df1d85078069",
+        "type": "message",
+        "text": "<@UDPV4CC67> - I believe I wired in the ability to change the repo locations for the Etcd\/Kubernetes pieces.  You should be able to specify a param if there is a a GEO located mirror that is better suited for your location",
+        "user": "U6QFVRJNB",
+        "ts": "1540954809.089300"
+    },
+    {
+        "client_msg_id": "d63b6b4b-7620-49a7-9dce-8e8e3387bc4d",
+        "type": "message",
+        "text": "hmm - def. did the Kubernetes container registry:\n<https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/krib\/params\/krib-cluster-image-repository.yaml>",
+        "user": "U6QFVRJNB",
+        "ts": "1540954875.089800",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision-content",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/krib\/params\/krib-cluster-image-repository.yaml",
+                "text": "DigitalRebar Provision Content. Contribute to digitalrebar\/provision-content development by creating an account on GitHub.",
+                "fallback": "GitHub: digitalrebar\/provision-content",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/krib\/params\/krib-cluster-image-repository.yaml",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/krib\/params\/krib-cluster-image-repository.yaml"
+            }
+        ]
+    },
+    {
+        "client_msg_id": "95d46206-1af2-4ee8-b331-59965f849700",
+        "type": "message",
+        "text": "thanks <@U6QFVRJNB> still getting my head around how it all works, I did try but it didn’t work, still playing so will work it out :slightly_smiling_face:",
+        "user": "UDPV4CC67",
+        "ts": "1540955020.091200"
+    },
+    {
+        "client_msg_id": "503a9834-d191-4921-b6ba-ef4dc9010656",
+        "type": "message",
+        "text": "looks like we still hard code the Kubernetes repo - still digging for the Etcd pieces...\n<https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/krib\/templates\/kubernetes-install.sh.tmpl>",
+        "user": "U6QFVRJNB",
+        "ts": "1540955060.091900",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision-content",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/krib\/templates\/kubernetes-install.sh.tmpl",
+                "text": "DigitalRebar Provision Content. Contribute to digitalrebar\/provision-content development by creating an account on GitHub.",
+                "fallback": "GitHub: digitalrebar\/provision-content",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/krib\/templates\/kubernetes-install.sh.tmpl",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/krib\/templates\/kubernetes-install.sh.tmpl"
+            }
+        ]
+    },
+    {
+        "client_msg_id": "5f834a40-7990-4503-815d-b81d31a9dfc6",
+        "type": "message",
+        "text": "i think its around the centos repos that get injected in on the centos install of crib.   they are hardcoded in",
+        "user": "UDPV4CC67",
+        "ts": "1540955105.092700"
+    },
+    {
+        "client_msg_id": "acdc30ff-15e6-4298-aa13-69b5d8f7a15b",
+        "type": "message",
+        "text": "so docker install task times out and fails",
+        "user": "UDPV4CC67",
+        "ts": "1540955186.093300"
+    },
+    {
+        "client_msg_id": "d596c8e6-db8f-4abe-a594-267f092f9a46",
+        "type": "message",
+        "text": "`package-repositories` param is defined to allow you to override the package repository mirror locations\n<https:\/\/provision.readthedocs.io\/en\/tip\/doc\/arch\/data.html?highlight=package-repositories#the-package-repositories-param>",
+        "user": "U6QFVRJNB",
+        "ts": "1540955213.094300"
+    },
+    {
+        "client_msg_id": "3a2eb65c-b81a-4433-8a1f-efbc4169aa6c",
+        "type": "message",
+        "text": "my etcd-config task failing I think may be down to my config I’m using (or not using)",
+        "user": "UDPV4CC67",
+        "ts": "1540955234.094600"
+    },
+    {
+        "client_msg_id": "592f979a-5ffe-4bdd-9369-120d5abc90c8",
+        "type": "message",
+        "text": "the docker piece is installed from standard repos - by default it is US centric repos - but the `package-repositories` allow you to override the repo mirror - which also should make docker\/etcd install use those local mirrors you define",
+        "user": "U6QFVRJNB",
+        "ts": "1540955303.096500"
+    },
+    {
+        "client_msg_id": "aa4159db-90b2-472c-97a1-c25a3c8127a4",
+        "type": "message",
+        "text": "Thanks <@U6QFVRJNB> I had found that and I thought I had overridden it with more local repos, so I’m just working out what I’ve done wrong there, This si the new profile I created call OzMirrors that contains the property ‘mirror-package-repositories’  in this I have defined the following array\n    “installSource”: true,\n    “os”: [\n      “centos-7”\n    ],\n    “tag”: “centos-7”,\n    “url”: “<http:\/\/mirror.optus.net\/centos\/7\/os\/x86_64\/>”\n  },\n  {\n    “installSource”: true,\n    “os”: [\n      “centos-7.5.1804\"\n    ],\n    “tag”: “centos-7.5.1804\",\n    “url”: “<http:\/\/mirror.optus.net\/centos\/7.5.1804\/os\/x86_64\/>”\n  },\n  {\n    “components”: [\n      “atomic”,\n      “centosplus”,\n      “cr”,\n      “dotnet”,\n      “extras”,\n      “fasttrack”,\n      “os”,\n      “rt”,\n      “updates”\n    ],\n    “distribution”: “7\",\n    “os”: [\n      “centos-7\",\n      “centos-7.3.1611”,\n      “centos-7.4.1708\",\n      “centos-7.5.1804”\n    ],\n    “tag”: “centos-7-everything”,\n    “url”: “<http:\/\/mirror.optus.net\/centos>”\n  },\n  {\n    “distribution”: “7”,\n    “os”: [\n      “centos-7”,\n      “centos-7.3.1611\",\n      “centos-7.4.1708”,\n      “centos-7.5.1804\"\n    ],\n    “tag”: “epel-7\",\n    “url”: “<http:\/\/mirror.optus.net\/fedora-epel>”\n  }\n]",
+        "user": "UDPV4CC67",
+        "ts": "1540955471.098300"
+    },
+    {
+        "client_msg_id": "2f807d3d-438f-4887-b08a-eb2178eabd41",
+        "type": "message",
+        "text": "This profile has then been applied to the machines in question using bulk actions.  Is this correct way of doing it?",
+        "user": "UDPV4CC67",
+        "ts": "1540955522.099500"
+    },
+    {
+        "client_msg_id": "fd26b08d-43d9-4a37-b93f-1ec71e9b5987",
+        "type": "message",
+        "text": "(please drop code like that in to a \"snippet\" - use the Plus \"+\" button to snippet-ize it :slightly_smiling_face: )",
+        "user": "U6QFVRJNB",
+        "ts": "1540955530.099700"
+    },
+    {
+        "client_msg_id": "969bfd5b-2465-43ba-bc67-b418775678ad",
+        "type": "message",
+        "text": "ahh sorry",
+        "user": "UDPV4CC67",
+        "ts": "1540955541.100000",
+        "reactions": [
+            {
+                "name": "slightly_smiling_face",
+                "users": [
+                    "U6QFVRJNB"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "text": "",
+        "files": [
+            {
+                "id": "FDSECA25B",
+                "created": 1540955558,
+                "timestamp": 1540955558,
+                "name": "-.txt",
+                "title": "Untitled",
+                "mimetype": "text\/plain",
+                "filetype": "text",
+                "pretty_type": "Plain Text",
+                "user": "UDPV4CC67",
+                "editable": true,
+                "size": 976,
+                "mode": "snippet",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FDSECA25B\/-.txt?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FDSECA25B\/download\/-.txt?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "permalink": "https:\/\/rackn.slack.com\/files\/UDPV4CC67\/FDSECA25B\/-.txt",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FDSECA25B-b174f5bf53",
+                "edit_link": "https:\/\/rackn.slack.com\/files\/UDPV4CC67\/FDSECA25B\/-.txt\/edit",
+                "preview": "\r\n    \"installSource\": true,\r\n    \"os\": [\r\n      \"centos-7\"\r\n    ],\r",
+                "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre><\/pre><\/div>\n<div><pre>    &quot;installSource&quot;: true,<\/pre><\/div>\n<div><pre>    &quot;os&quot;: [<\/pre><\/div>\n<div><pre>      &quot;centos-7&quot;<\/pre><\/div>\n<div><pre>    ],<\/pre><\/div>\n<div><pre><\/pre><\/div>\n<\/div>\n<\/div>\n",
+                "lines": 50,
+                "lines_more": 45,
+                "preview_is_truncated": false
+            }
+        ],
+        "upload": true,
+        "user": "UDPV4CC67",
+        "display_as_bot": false,
+        "ts": "1540955559.100500"
+    },
+    {
+        "client_msg_id": "c1aa7b1f-b44b-4454-8b0c-cd67a50f4c49",
+        "type": "message",
+        "text": "yes - that's the correct procedure in general - the content of your Param may \/ may not be correct",
+        "user": "U6QFVRJNB",
+        "ts": "1540955581.101500"
+    },
+    {
+        "client_msg_id": "e7831165-86d0-40ca-a4cb-ae760790132a",
+        "type": "message",
+        "text": "much better my slack fu is not strong",
+        "user": "UDPV4CC67",
+        "ts": "1540955581.101600"
+    },
+    {
+        "client_msg_id": "5dc2ce3a-426e-4c7e-9772-7adbce1a2631",
+        "type": "message",
+        "text": "thank you :slightly_smiling_face: much better",
+        "user": "U6QFVRJNB",
+        "ts": "1540955590.102000"
+    },
+    {
+        "client_msg_id": "f71a0f7b-3b22-4498-a36e-c4c51f56c87e",
+        "type": "message",
+        "text": "cheers that’s enough to point me.",
+        "user": "UDPV4CC67",
+        "ts": "1540955617.102600"
+    },
+    {
+        "client_msg_id": "259f69b0-82d0-4902-aa21-d952110e1d0d",
+        "type": "message",
+        "text": "It looks right on first blush - but I haven't played w\/ the package-repo param much so not 100% sure on that",
+        "user": "U6QFVRJNB",
+        "ts": "1540955653.103800"
+    },
+    {
+        "client_msg_id": "fa207292-57a9-4236-892a-a14ea05c31cb",
+        "type": "message",
+        "text": "In the snippet you can also set the content type - eg JSON - and we get prettyprint colorized output",
+        "user": "U6QFVRJNB",
+        "ts": "1540955726.104900"
+    },
+    {
+        "client_msg_id": "4e11773c-5e7f-4363-a0b6-44a9fdcb456f",
+        "type": "message",
+        "text": "so from reading the docs around krib, for the demo really all I should do is clone the example-krib parameter to a new name and fill in the two parameters to the same as the profile name?  or do I need some addition config?",
+        "user": "UDPV4CC67",
+        "ts": "1540955773.106100"
+    },
+    {
+        "client_msg_id": "bb9db987-66b3-4744-adc1-75f2b9a36c88",
+        "type": "message",
+        "text": "Obviously - but just in case, I'll say it - setting the param needs completed prior to doing the OS install to set the Repos at install time correctly",
+        "user": "U6QFVRJNB",
+        "ts": "1540955781.106200"
+    },
+    {
+        "client_msg_id": "5a8f3a68-55cb-47e8-a671-9f8f37583f73",
+        "type": "message",
+        "text": "yes understood",
+        "user": "UDPV4CC67",
+        "ts": "1540955796.106400",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U6QFVRJNB"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "client_msg_id": "ef67cf00-cad3-43ee-9c94-77d87626d696",
+        "type": "message",
+        "text": "Yes - basically for a simplified demo install that's all that's needed - should just be the Etcd and KRIB cluster profile name params",
+        "user": "U6QFVRJNB",
+        "ts": "1540955830.107200"
+    },
+    {
+        "client_msg_id": "5319861f-840e-4a0a-bcc7-fc185f1d716f",
+        "type": "message",
+        "text": "cool <@U6QFVRJNB> ok just want to check I’m heading in the right direction.",
+        "user": "UDPV4CC67",
+        "ts": "1540956030.107900"
+    },
+    {
+        "client_msg_id": "2b4c106c-dc1e-4328-9f8a-9e8cd833bc63",
+        "type": "message",
+        "text": "just testing the `package-repositories` param now as I had `mirror-package-repositories` set",
+        "user": "UDPV4CC67",
+        "ts": "1540956257.109700"
+    },
+    {
+        "type": "message",
+        "text": "Any insight in the following error that I'm running into (the IP address in the URL is the DRP server IP)?",
+        "files": [
+            {
+                "id": "FDS8RJG4A",
+                "created": 1540957103,
+                "timestamp": 1540957103,
+                "name": "Screen Shot 2018-10-30 at 7.35.02 PM.png",
+                "title": "Screen Shot 2018-10-30 at 7.35.02 PM.png",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "UCWNG6NTV",
+                "editable": false,
+                "size": 61409,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FDS8RJG4A\/screen_shot_2018-10-30_at_7.35.02_pm.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FDS8RJG4A\/download\/screen_shot_2018-10-30_at_7.35.02_pm.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDS8RJG4A-8a3c67a2f2\/screen_shot_2018-10-30_at_7.35.02_pm_64.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDS8RJG4A-8a3c67a2f2\/screen_shot_2018-10-30_at_7.35.02_pm_80.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDS8RJG4A-8a3c67a2f2\/screen_shot_2018-10-30_at_7.35.02_pm_360.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360_w": 360,
+                "thumb_360_h": 220,
+                "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDS8RJG4A-8a3c67a2f2\/screen_shot_2018-10-30_at_7.35.02_pm_480.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_480_w": 480,
+                "thumb_480_h": 293,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDS8RJG4A-8a3c67a2f2\/screen_shot_2018-10-30_at_7.35.02_pm_160.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDS8RJG4A-8a3c67a2f2\/screen_shot_2018-10-30_at_7.35.02_pm_720.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_720_w": 720,
+                "thumb_720_h": 440,
+                "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDS8RJG4A-8a3c67a2f2\/screen_shot_2018-10-30_at_7.35.02_pm_800.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_800_w": 800,
+                "thumb_800_h": 489,
+                "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDS8RJG4A-8a3c67a2f2\/screen_shot_2018-10-30_at_7.35.02_pm_960.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_960_w": 960,
+                "thumb_960_h": 586,
+                "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDS8RJG4A-8a3c67a2f2\/screen_shot_2018-10-30_at_7.35.02_pm_1024.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_1024_w": 1024,
+                "thumb_1024_h": 625,
+                "image_exif_rotation": 1,
+                "original_w": 1310,
+                "original_h": 800,
+                "permalink": "https:\/\/rackn.slack.com\/files\/UCWNG6NTV\/FDS8RJG4A\/screen_shot_2018-10-30_at_7.35.02_pm.png",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FDS8RJG4A-4b1e712877"
+            }
+        ],
+        "upload": true,
+        "user": "UCWNG6NTV",
+        "display_as_bot": false,
+        "ts": "1540957107.111500"
+    },
+    {
+        "client_msg_id": "89f1a2c4-b17b-4cd8-9b17-b1b207c58928",
+        "type": "message",
+        "text": "<@UCWNG6NTV> what bootenv are you using?",
+        "user": "U02DHRR2L",
+        "ts": "1540957174.112300"
+    },
+    {
+        "client_msg_id": "066422c5-d146-466e-8a44-9f708f294507",
+        "type": "message",
+        "text": "<@U02DHRR2L> ubuntu-16.04-install stock bootenv",
+        "user": "UCWNG6NTV",
+        "ts": "1540957243.112700"
+    },
+    {
+        "client_msg_id": "760de6b3-8933-4a3e-8025-d99230e0a4e7",
+        "type": "message",
+        "text": "<@U6QFVRJNB> mirror override is working using `package-repositories` param thanks",
+        "user": "UDPV4CC67",
+        "ts": "1540957419.113600",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U6QFVRJNB",
+                    "U02DHRR2L"
+                ],
+                "count": 2
+            }
+        ]
+    },
+    {
+        "client_msg_id": "fcbac4f6-71ce-4a85-b1ff-b07cbe9d6322",
+        "type": "message",
+        "text": "<@UCWNG6NTV> - is the ip address right?  for your networking?",
+        "user": "U02DGQYK1",
+        "ts": "1540957578.113900"
+    },
+    {
+        "client_msg_id": "0037ca78-1643-457e-aafb-e6a92d4c2cda",
+        "type": "message",
+        "text": "yes",
+        "user": "UCWNG6NTV",
+        "ts": "1540957612.114400"
+    },
+    {
+        "client_msg_id": "2e1d1224-d308-4b2c-8995-157a5d6275e2",
+        "type": "message",
+        "text": "Can you curl the file?  Is the machine still in the bootenv for ubuntu? Is that the UUID for that machine?",
+        "user": "U02DGQYK1",
+        "ts": "1540957653.115200"
+    },
+    {
+        "client_msg_id": "191e9014-65cc-4782-ba6b-48f26cacee02",
+        "type": "message",
+        "text": "curl does not err out, but returns nothing",
+        "user": "UCWNG6NTV",
+        "ts": "1540958040.115800"
+    },
+    {
+        "client_msg_id": "886f2536-1bc6-4d56-9136-f3af65cc8083",
+        "type": "message",
+        "text": "ubuntu@build-vm:~$ curl <http:\/\/10.1.0.10:8091\/machines\/884a7803-ee39-42bd-8fed-95002fb52656\/seed>\nubuntu@build-vm:~$",
+        "user": "UCWNG6NTV",
+        "ts": "1540958057.116000"
+    },
+    {
+        "client_msg_id": "21eca835-f9a1-4bdf-ac44-6a03deb43212",
+        "type": "message",
+        "text": "is the bootevn avaliable?",
+        "user": "U02DGQYK1",
+        "ts": "1540958131.116200"
+    },
+    {
+        "client_msg_id": "8f01e47c-a0ac-4f45-a2ae-132368eca972",
+        "type": "message",
+        "text": "and valid?",
+        "user": "U02DGQYK1",
+        "ts": "1540958134.116400"
+    },
+    {
+        "client_msg_id": "c1b41ba8-f1fa-4319-aa0b-de16ab2c7f0f",
+        "type": "message",
+        "text": "Yes, both available and validated. It's the stock bootenv one for ubuntu-16.04",
+        "user": "UCWNG6NTV",
+        "ts": "1540958399.117100"
+    },
+    {
+        "client_msg_id": "ce6832f7-db87-4e83-a540-4cebaa34014e",
+        "type": "message",
+        "text": "Does this apply here? <https:\/\/bugs.launchpad.net\/ubuntu\/+source\/debian-installer\/+bug\/1396506>",
+        "user": "U02DHRR2L",
+        "ts": "1540958622.117400",
+        "attachments": [
+            {
+                "title": "Bug #1396506 “Ubuntu Server installer does not mount \/cdrom for ...” : Bugs : debian-installer package : Ubuntu",
+                "title_link": "https:\/\/bugs.launchpad.net\/ubuntu\/+source\/debian-installer\/+bug\/1396506",
+                "text": "When trying to use preseeding, the loading of preseeding file fails due to the \/cdrom directory not being mounted. First when I try to install, no error message is shown and installation progresses as normal. However, if I explicitly select the menu option \"Load debconf preconfiguration file\", I am shown the error message \"Failed to retrieve the preconfiguration file: The file needed for preconfiguration could not be retrieved from file:\/\/\/cdrom\/preseed\/ubuntu-server.seed. The installation w...",
+                "fallback": "Bug #1396506 “Ubuntu Server installer does not mount \/cdrom for ...” : Bugs : debian-installer package : Ubuntu",
+                "from_url": "https:\/\/bugs.launchpad.net\/ubuntu\/+source\/debian-installer\/+bug\/1396506",
+                "service_icon": "https:\/\/bugs.launchpad.net\/@@\/launchpad.png",
+                "service_name": "bugs.launchpad.net",
+                "id": 1,
+                "original_url": "https:\/\/bugs.launchpad.net\/ubuntu\/+source\/debian-installer\/+bug\/1396506"
+            }
+        ]
+    },
+    {
+        "client_msg_id": "bb59d91c-1099-4b39-b008-8e9f96c8885a",
+        "type": "message",
+        "text": "sort of old...",
+        "user": "U02DHRR2L",
+        "ts": "1540958639.117700"
+    },
+    {
+        "client_msg_id": "fda4df89-a266-4f70-a853-74aa65d2eeca",
+        "type": "message",
+        "text": "This is suggesting that the md5sum could be out of date for the ISO:",
+        "user": "U02DHRR2L",
+        "ts": "1540958722.118200"
+    },
+    {
+        "client_msg_id": "dd8f5f0d-1963-479e-93c2-8bf90f2bfba2",
+        "type": "message",
+        "text": "<https:\/\/askubuntu.com\/questions\/865263\/ubuntu-server-installation-via-usb-drive-failed-to-load-preconfiguration-file>",
+        "user": "U02DHRR2L",
+        "ts": "1540958723.118400",
+        "attachments": [
+            {
+                "service_name": "Ask Ubuntu",
+                "title": "Ubuntu server installation via USB drive - Failed to load preconfiguration file, after manually mounting cdrom\/USB",
+                "title_link": "https:\/\/askubuntu.com\/questions\/865263\/ubuntu-server-installation-via-usb-drive-failed-to-load-preconfiguration-file",
+                "text": "I've been searching on google for a while. I haven't found anything useful. I'm trying to install Ubuntu server with the image ubuntu-16.04.1-server-amd64.iso via a USB hard drive. Mount the drive...",
+                "fallback": "Ask Ubuntu: Ubuntu server installation via USB drive - Failed to load preconfiguration file, after manually mounting cdrom\/USB",
+                "thumb_url": "https:\/\/cdn.sstatic.net\/Sites\/askubuntu\/img\/apple-touch-icon@2.png?v=c492c9229955",
+                "from_url": "https:\/\/askubuntu.com\/questions\/865263\/ubuntu-server-installation-via-usb-drive-failed-to-load-preconfiguration-file",
+                "thumb_width": 316,
+                "thumb_height": 316,
+                "service_icon": "https:\/\/cdn.sstatic.net\/Sites\/askubuntu\/img\/favicon.ico?v=eff8fd315b9e",
+                "id": 1,
+                "original_url": "https:\/\/askubuntu.com\/questions\/865263\/ubuntu-server-installation-via-usb-drive-failed-to-load-preconfiguration-file"
+            }
+        ]
+    },
+    {
+        "client_msg_id": "f732d650-6e25-4645-bbc0-bb4b63f64d6a",
+        "type": "message",
+        "text": "<@UCWNG6NTV> please check the md5sums... it's possible that the community bootenv checksum is out of date compared to the latest ISOs",
+        "user": "U02DHRR2L",
+        "ts": "1540958755.119200"
+    },
+    {
+        "client_msg_id": "15e38509-6845-4055-bb3b-feb680ae53f7",
+        "type": "message",
+        "text": "<@U02DHRR2L> I did not see checksum stored as a bootenv attribute, how do I get the community bootenv checksum for comparison?",
+        "user": "UCWNG6NTV",
+        "ts": "1540959229.120400"
+    },
+    {
+        "client_msg_id": "a544e887-7081-4a20-86e4-3d928f3dca51",
+        "type": "message",
+        "text": "It's in  .IsoSha256 : c94de1cc2e10160f325eb54638a5b5aa38f181d60ee33dae9578d96d932ee5f8",
+        "user": "U02DHRR2L",
+        "ts": "1540959367.120800"
+    },
+    {
+        "client_msg_id": "188518c6-fd20-4cc9-8976-6468da724382",
+        "type": "message",
+        "text": "it looks OK if you are using 16.04.5",
+        "user": "U02DHRR2L",
+        "ts": "1540959407.121000"
+    },
+    {
+        "client_msg_id": "12653906-f017-4df3-837d-f53d0bf7cc59",
+        "type": "message",
+        "text": "based on <http:\/\/mirror.math.princeton.edu\/pub\/ubuntu-iso\/16.04\/>",
+        "user": "U02DHRR2L",
+        "ts": "1540959416.121200"
+    },
+    {
+        "client_msg_id": "2589d0c9-fd67-40c6-a635-4699fc029d04",
+        "type": "message",
+        "text": "Here it is:\n    \"IsoFile\": \"ubuntu-16.04.5-server-amd64.iso\",\n    \"IsoSha256\": \"c94de1cc2e10160f325eb54638a5b5aa38f181d60ee33dae9578d96d932ee5f8\",\n    \"IsoUrl\": \"<http:\/\/mirror.math.princeton.edu\/pub\/ubuntu-iso\/16.04\/ubuntu-16.04.5-server-amd64.iso>\",",
+        "user": "UCWNG6NTV",
+        "ts": "1540959609.121700"
+    },
+    {
+        "client_msg_id": "01b5a9b6-61e2-42d3-9d85-d86f35718204",
+        "type": "message",
+        "text": "<@UCWNG6NTV> - `drpcli machines show 884a7803-ee39-42bd-8fed-95002fb52656`",
+        "user": "U02DGQYK1",
+        "ts": "1540960660.122400"
+    },
+    {
+        "client_msg_id": "2c2fb6e8-cba1-4ff3-b38b-e5483e1b8eaf",
+        "type": "message",
+        "text": "What are the workflow, stage, and bootenv for that machine?",
+        "user": "U02DGQYK1",
+        "ts": "1540960669.122700"
+    },
+    {
+        "client_msg_id": "31423263-99ca-492d-ae61-84f116a88d62",
+        "type": "message",
+        "text": "<@U02DGQYK1> thanks. I'll get the info to you tomorrow.",
+        "user": "UCWNG6NTV",
+        "ts": "1540960783.123600"
+    },
+    {
+        "client_msg_id": "cc17da11-b415-4c33-820a-aa7a5edb70b7",
+        "type": "message",
+        "text": "still working my way through the krib demo and finding things are borking at the etc-config stage. docker is now installing form local mirror like a trooper, however etc-config always fails at the same point so I feel its something I’m doing (or not doing)",
+        "user": "UDPV4CC67",
+        "ts": "1540961362.125800"
+    },
+    {
+        "type": "message",
+        "text": "same message on all hosts",
+        "files": [
+            {
+                "id": "FDS6LBGTV",
+                "created": 1540961411,
+                "timestamp": 1540961411,
+                "name": "task_log_output.txt",
+                "title": "task log output",
+                "mimetype": "text\/plain",
+                "filetype": "text",
+                "pretty_type": "Plain Text",
+                "user": "UDPV4CC67",
+                "editable": true,
+                "size": 1185,
+                "mode": "snippet",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FDS6LBGTV\/task_log_output.txt?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FDS6LBGTV\/download\/task_log_output.txt?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "permalink": "https:\/\/rackn.slack.com\/files\/UDPV4CC67\/FDS6LBGTV\/task_log_output.txt",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FDS6LBGTV-cea1c85f6c",
+                "edit_link": "https:\/\/rackn.slack.com\/files\/UDPV4CC67\/FDS6LBGTV\/task_log_output.txt\/edit",
+                "preview": "Log for Job: 033fd3c3-8549-4671-9dc9-a2e20464d9e4\r\nStarting task krib-install-cluster:etcd-config:etcd-config on 26Y9NW1.local\r\nStarting command .\/etcd-config-etcd-config.sh.tmpl\r\n\r\n\r",
+                "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>Log for Job: 033fd3c3-8549-4671-9dc9-a2e20464d9e4<\/pre><\/div>\n<div><pre>Starting task krib-install-cluster:etcd-config:etcd-config on 26Y9NW1.local<\/pre><\/div>\n<div><pre>Starting command .\/etcd-config-etcd-config.sh.tmpl<\/pre><\/div>\n<div><pre><\/pre><\/div>\n<div><pre><\/pre><\/div>\n<div><pre><\/pre><\/div>\n<\/div>\n<\/div>\n",
+                "lines": 37,
+                "lines_more": 32,
+                "preview_is_truncated": true
+            }
+        ],
+        "upload": true,
+        "user": "UDPV4CC67",
+        "display_as_bot": false,
+        "ts": "1540961412.125900"
+    },
+    {
+        "client_msg_id": "4994a077-cf2e-40da-9cca-76fd590f91dd",
+        "type": "message",
+        "text": "My guess is that you don’t have the krib profile setup correctly.",
+        "user": "U02DGQYK1",
+        "ts": "1540962086.126400"
+    }
+]

@@ -1,0 +1,128 @@
+[
+    {
+        "client_msg_id": "4d0a929e-2e94-4ca7-a31b-3418357b4609",
+        "type": "message",
+        "text": "<@UE1R5397G>... $welcome ...",
+        "user": "U6QFVRJNB",
+        "ts": "1541863719.465000"
+    },
+    {
+        "type": "message",
+        "subtype": "slackbot_response",
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "user": "USLACKBOT",
+        "ts": "1541863719.465100"
+    },
+    {
+        "client_msg_id": "a7a1f2aa-f0d2-4c36-9656-415ce275b986",
+        "type": "message",
+        "text": "morning",
+        "user": "UE1R5397G",
+        "ts": "1541863743.465300"
+    },
+    {
+        "client_msg_id": "33bb3876-c40c-4d01-9a40-c32d023e574f",
+        "type": "message",
+        "text": "Hey guys, something up with the rackn site?",
+        "user": "UCRE3L46P",
+        "ts": "1541887339.465800",
+        "edited": {
+            "user": "UCRE3L46P",
+            "ts": "1541887353.000000"
+        }
+    },
+    {
+        "type": "message",
+        "text": "",
+        "files": [
+            {
+                "id": "FE0FVJLSG",
+                "created": 1541887361,
+                "timestamp": 1541887361,
+                "name": "curl_output.txt",
+                "title": "curl output",
+                "mimetype": "text\/plain",
+                "filetype": "text",
+                "pretty_type": "Plain Text",
+                "user": "UCRE3L46P",
+                "editable": true,
+                "size": 2757,
+                "mode": "snippet",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FE0FVJLSG\/curl_output.txt?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FE0FVJLSG\/download\/curl_output.txt?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "permalink": "https:\/\/rackn.slack.com\/files\/UCRE3L46P\/FE0FVJLSG\/curl_output.txt",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FE0FVJLSG-3ad877675c",
+                "edit_link": "https:\/\/rackn.slack.com\/files\/UCRE3L46P\/FE0FVJLSG\/curl_output.txt\/edit",
+                "preview": "```\r\n stobias@toby-imac  ~\/repos\/misc_projects  curl -v -L rackn.com\r\n* Rebuilt URL to: rackn.com\/\r\n*   Trying 192.0.78.25...\r\n* TCP_NODELAY set\r",
+                "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>```<\/pre><\/div>\n<div><pre> stobias@toby-imac  ~\/repos\/misc_projects  curl -v -L rackn.com<\/pre><\/div>\n<div><pre>* Rebuilt URL to: rackn.com\/<\/pre><\/div>\n<div><pre>*   Trying 192.0.78.25...<\/pre><\/div>\n<div><pre>* TCP_NODELAY set<\/pre><\/div>\n<div><pre><\/pre><\/div>\n<\/div>\n<\/div>\n",
+                "lines": 78,
+                "lines_more": 73,
+                "preview_is_truncated": true
+            }
+        ],
+        "upload": true,
+        "user": "UCRE3L46P",
+        "display_as_bot": false,
+        "ts": "1541887362.466000"
+    },
+    {
+        "client_msg_id": "546de3c0-c8f4-4abc-a30b-64c443c5fa13",
+        "type": "message",
+        "text": "<http:\/\/l8istsh9y.com|l8istsh9y.com> looks like it's still owned by rob but times out",
+        "user": "UCRE3L46P",
+        "ts": "1541887383.466600"
+    },
+    {
+        "client_msg_id": "95859de4-8e06-4432-ba6d-f6eecf6acd1a",
+        "type": "message",
+        "text": "Yes.  Working on that. ",
+        "user": "U02DHRR2L",
+        "ts": "1541888283.467100"
+    },
+    {
+        "client_msg_id": "a7aa4d11-2b1d-4298-8612-978b01dff4fe",
+        "type": "message",
+        "text": "Changing hosts and dns",
+        "user": "U02DHRR2L",
+        "ts": "1541888291.467400"
+    },
+    {
+        "client_msg_id": "6d5eed46-780a-4674-b22c-927f1fc9a2c3",
+        "type": "message",
+        "text": "<@UCRE3L46P> thanks for alerting us",
+        "user": "U02DHRR2L",
+        "ts": "1541891367.467900",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "UCRE3L46P"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "subtype": "me_message",
+        "text": "notes that we quietly passed the 250 member mark last week!  Welcome to all the new people!",
+        "user": "U02DHRR2L",
+        "ts": "1541906258.468100",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "UDZ4B9R6Z",
+                    "U9TPYH6JE"
+                ],
+                "count": 2
+            }
+        ]
+    }
+]

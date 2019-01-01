@@ -1,0 +1,441 @@
+[
+    {
+        "client_msg_id": "6e98b4b1-ec6f-472b-b326-31ad6c51424b",
+        "type": "message",
+        "text": "drp subnet is the same 10.0.0.0\/24 as my router but in proxy mode.  It works for the first boot fine and if I delete the machine so it must be something with the url that the pxe is trying to pull but I don't see anything more when I turn on --dhcp-debug=2",
+        "user": "UF1LXSN15",
+        "ts": "1545561337.033100"
+    },
+    {
+        "client_msg_id": "356a5ef7-a6b2-47bf-8710-8b1742e686a5",
+        "type": "message",
+        "text": "I'll dig through the code and see where I need to turn on debug or add debug to see the http and tftp requests",
+        "user": "UF1LXSN15",
+        "ts": "1545561611.033800"
+    },
+    {
+        "client_msg_id": "54a744e8-211a-4aa6-992a-469653a8df44",
+        "type": "message",
+        "text": "ahh prefs, still learning the product...",
+        "user": "UF1LXSN15",
+        "ts": "1545561864.034100"
+    },
+    {
+        "client_msg_id": "29331e8a-d073-4d42-bdbf-144226c1657c",
+        "type": "message",
+        "text": "that's more insightful. with the machine already discovered and I just manually reboot it I get this:",
+        "user": "UF1LXSN15",
+        "ts": "1545562297.035200",
+        "edited": {
+            "user": "UF1LXSN15",
+            "ts": "1545569873.000000"
+        }
+    },
+    {
+        "client_msg_id": "6355c4f3-56be-415b-880c-d94cd14bdc2a",
+        "type": "message",
+        "text": "5 times then the pxe client times out",
+        "user": "UF1LXSN15",
+        "ts": "1545562318.035600"
+    },
+    {
+        "client_msg_id": "762a9624-7f75-4ba7-b0c7-97f759318296",
+        "type": "message",
+        "text": "then I delete the machine in DRP and reboot it and I get the same thing once and then it I see this and it boots:",
+        "user": "UF1LXSN15",
+        "ts": "1545562556.036800",
+        "edited": {
+            "user": "UF1LXSN15",
+            "ts": "1545569834.000000"
+        }
+    },
+    {
+        "client_msg_id": "eb52ea15-8235-4e57-8d3f-6b06c3ed9d35",
+        "type": "message",
+        "text": "I'm going to try disabling my router dhcp and turn on full dhcp in DRP and see if I get different results",
+        "user": "UF1LXSN15",
+        "ts": "1545562802.037600"
+    },
+    {
+        "client_msg_id": "6f695288-1ffd-445d-8b51-ed51efee28e1",
+        "type": "message",
+        "text": "okay, so second boot works when I switch to centos-install with DRP in full dhcp instead of proxy so something not going right in proxy mode",
+        "user": "UF1LXSN15",
+        "ts": "1545563212.038800"
+    },
+    {
+        "client_msg_id": "f1e7afd8-2536-44b4-8d55-52f95aff78c4",
+        "type": "message",
+        "text": "router is asuswrt-merlin using dnsmasq",
+        "user": "UF1LXSN15",
+        "ts": "1545563239.039400"
+    },
+    {
+        "client_msg_id": "91eeba77-4125-4c32-bbe2-7f097ea0b218",
+        "type": "message",
+        "text": "this is cool <https:\/\/github.com\/solarkennedy\/diyipmi>.  would be easy to modify to run on really cheap esp8266 wifi module to add serial-tty ipmi to any physical machine",
+        "user": "UF1LXSN15",
+        "ts": "1545565691.040900",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "solarkennedy\/diyipmi",
+                "title_link": "https:\/\/github.com\/solarkennedy\/diyipmi",
+                "text": "A DIY Implementation of a IPMI-enabled BMC for Arduino - solarkennedy\/diyipmi",
+                "fallback": "GitHub: solarkennedy\/diyipmi",
+                "from_url": "https:\/\/github.com\/solarkennedy\/diyipmi",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/370205?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/solarkennedy\/diyipmi"
+            }
+        ]
+    },
+    {
+        "client_msg_id": "e99ca483-7c66-455a-81e1-23f6c1f68300",
+        "type": "message",
+        "text": "<@UF1LXSN15> proxy mode is not as widely used,  so you may have found a bug.  For those traces,  please use the snippet feature in slack to improve readability ",
+        "user": "U02DHRR2L",
+        "ts": "1545568228.042800"
+    },
+    {
+        "client_msg_id": "99917ca6-de83-4c43-bcd4-d41be5e91520",
+        "type": "message",
+        "text": "hmmm, of if you are, they are coming in  full for me instead of slack hiding them",
+        "user": "U02DHRR2L",
+        "ts": "1545568327.043300"
+    },
+    {
+        "client_msg_id": "67f6201f-c02e-4337-9567-f7d2777cd36e",
+        "type": "message",
+        "text": "I removed them for now so it doesn't ugly things up",
+        "user": "UF1LXSN15",
+        "ts": "1545569901.043900"
+    },
+    {
+        "client_msg_id": "245b8b21-5d38-42f8-b943-31faa28d6d77",
+        "type": "message",
+        "text": "new to slack but I'll figure out snippet mode and add them",
+        "user": "UF1LXSN15",
+        "ts": "1545569923.044400"
+    },
+    {
+        "client_msg_id": "6a37f9dc-fa65-4661-b33e-461df8a2fd48",
+        "type": "message",
+        "text": "so I did a ubuntu install and after it's done it reboots and then hits pxe again and times out like it was doing before with proxy dhcp",
+        "user": "UF1LXSN15",
+        "ts": "1545570031.046100"
+    },
+    {
+        "client_msg_id": "4c586af2-4c27-4e5b-a2c2-349a1825ea80",
+        "type": "message",
+        "text": "if I go into the bios and set hdd as second boot option then it boots up after pxe times out and I can see in the DRP machine page as complete",
+        "user": "UF1LXSN15",
+        "ts": "1545570084.047200"
+    },
+    {
+        "client_msg_id": "c56e09e9-0314-4f45-9d6a-75a49f525f99",
+        "type": "message",
+        "text": "but I thought that pxe should still be working but tell the machine to local boot instead of timing out?",
+        "user": "UF1LXSN15",
+        "ts": "1545570125.048000"
+    },
+    {
+        "client_msg_id": "f1c16002-1de3-41bd-a130-a48ee066a1b6",
+        "type": "message",
+        "text": "maybe I'll wipe my data directory for drp and start over.  I'm running similar to <https:\/\/provision.readthedocs.io\/en\/latest\/doc\/faq-troubleshooting.html#example-docker-volume-usage> except I have a br0 network with IP rather than host networking so I don't get any port clashes",
+        "user": "UF1LXSN15",
+        "ts": "1545570363.049800",
+        "edited": {
+            "user": "UF1LXSN15",
+            "ts": "1545570404.000000"
+        }
+    },
+    {
+        "client_msg_id": "2b5ce7b0-f34d-4843-8648-d01c7bdbd451",
+        "type": "message",
+        "text": "I did have a problem with that docker container because it didn't have the drp-community-content package added when it came up.  I uploaded via drpcli and then went from there.",
+        "user": "UF1LXSN15",
+        "ts": "1545570511.051200"
+    },
+    {
+        "client_msg_id": "b449e4dd-b7c8-4a62-9791-b9f1c3bdad34",
+        "type": "message",
+        "text": "nevermind there, I started with fresh volume and I didn't need to download drp-community-content.yaml this time",
+        "user": "UF1LXSN15",
+        "ts": "1545573055.052000"
+    },
+    {
+        "client_msg_id": "c41d5f82-6961-4e30-8c41-906389220f25",
+        "type": "message",
+        "text": "still same proxy bug but I'm able to get it to never pxe boot now by starting with empty machine list and then adding a reservation for the machine mac address.  once I remove the reservation it will boot.",
+        "user": "UF1LXSN15",
+        "ts": "1545573230.053500"
+    },
+    {
+        "client_msg_id": "f6069b62-2181-4091-8089-9d95d3ae667e",
+        "type": "message",
+        "text": "so I'm guessing when the machine gets discovered it's adding a reservation for that mac automatically",
+        "user": "UF1LXSN15",
+        "ts": "1545573320.055000"
+    },
+    {
+        "client_msg_id": "e45680eb-a3a7-401f-8988-c72648b1596d",
+        "type": "message",
+        "text": "I think the bug is here <https:\/\/github.com\/digitalrebar\/provision\/blob\/c6584088422fc065fc135c6f65ddc733a92c9a9f\/midlayer\/dhcp.go#L670-L672>",
+        "user": "UF1LXSN15",
+        "ts": "1545574796.055400",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/blob\/c6584088422fc065fc135c6f65ddc733a92c9a9f\/midlayer\/dhcp.go#L670-L672",
+                "text": "Digital Rebar Provision is a simple and powerful Golang executable that provides a complete API-driven DHCP\/PXE\/TFTP provisioning system. - digitalrebar\/provision",
+                "fallback": "GitHub: digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/blob\/c6584088422fc065fc135c6f65ddc733a92c9a9f\/midlayer\/dhcp.go#L670-L672",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/digitalrebar\/provision\/blob\/c6584088422fc065fc135c6f65ddc733a92c9a9f\/midlayer\/dhcp.go#L670-L672"
+            }
+        ]
+    },
+    {
+        "client_msg_id": "93824616-54b7-4041-b572-ce9430c578e6",
+        "type": "message",
+        "text": "is there a Dockerfile to build the dr-provision.zip?",
+        "user": "UF1LXSN15",
+        "ts": "1545574920.056300"
+    },
+    {
+        "client_msg_id": "26638858-6b5b-487f-bc9c-18c2b361726a",
+        "type": "message",
+        "text": "<@UF1LXSN15> - a Reservation is not automatically created by DRP for a machine - DRP doesn't know what you want to do for an IP management scheme - so re-assigning IPs after initial discovery, or creating\/injecting appropriate Reservations is left up to the operator",
+        "user": "U6QFVRJNB",
+        "ts": "1545575263.057800"
+    },
+    {
+        "client_msg_id": "27f889c2-ef18-490c-8266-8f7d99c8e0ae",
+        "type": "message",
+        "text": "the `tools\/` directory contains the build scripts - `build.sh` is the main build script",
+        "user": "U6QFVRJNB",
+        "ts": "1545575327.058300"
+    },
+    {
+        "client_msg_id": "1fc130e1-e623-418a-9528-de119c6c6e79",
+        "type": "message",
+        "text": "and of course - there's the `Dockerfile` for the docker",
+        "user": "U6QFVRJNB",
+        "ts": "1545575389.058700"
+    },
+    {
+        "client_msg_id": "3ce67252-8536-4a97-8a88-7e6572c9b464",
+        "type": "message",
+        "text": "okay, I can prob find a go base image that I can build with.  I don't normally install anything locally",
+        "user": "UF1LXSN15",
+        "ts": "1545576092.059600"
+    },
+    {
+        "client_msg_id": "bbb53d2e-730d-48b5-8490-853580270b4d",
+        "type": "message",
+        "text": "I was just guessing on the reservation since having the reservation and having the machine had the same result but thank you for clarifying",
+        "user": "UF1LXSN15",
+        "ts": "1545576149.060600",
+        "edited": {
+            "user": "UF1LXSN15",
+            "ts": "1545576170.000000"
+        }
+    },
+    {
+        "client_msg_id": "483da2dc-7feb-4603-9db8-2e71556b5ab5",
+        "type": "message",
+        "text": "<@U02DHRR2L> drpcli gohai from that one machine with a null one throws an index out of range error",
+        "user": "UF1LXSN15",
+        "ts": "1545576539.061400"
+    },
+    {
+        "client_msg_id": "4b515664-5b84-4dd9-8c14-52f28b7b89d8",
+        "type": "message",
+        "text": "That would explain the empty param.  ",
+        "user": "U02DHRR2L",
+        "ts": "1545576583.061900"
+    },
+    {
+        "type": "message",
+        "text": "",
+        "files": [
+            {
+                "id": "FF0KENWHJ",
+                "created": 1545576589,
+                "timestamp": 1545576589,
+                "name": "-.txt",
+                "title": "Untitled",
+                "mimetype": "text\/plain",
+                "filetype": "text",
+                "pretty_type": "Plain Text",
+                "user": "UF1LXSN15",
+                "editable": true,
+                "size": 7234,
+                "mode": "snippet",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FF0KENWHJ\/-.txt?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FF0KENWHJ\/download\/-.txt?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "permalink": "https:\/\/rackn.slack.com\/files\/UF1LXSN15\/FF0KENWHJ\/-.txt",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FF0KENWHJ-54a02783d3",
+                "edit_link": "https:\/\/rackn.slack.com\/files\/UF1LXSN15\/FF0KENWHJ\/-.txt\/edit",
+                "preview": "[root@node3 ~]# drpcli gohai\npanic: runtime error: index out of range [recovered]\n        panic: runtime error: index out of range\n\ngoroutine 1 [running]:",
+                "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>[root@node3 ~]# drpcli gohai<\/pre><\/div>\n<div><pre>panic: runtime error: index out of range [recovered]<\/pre><\/div>\n<div><pre>        panic: runtime error: index out of range<\/pre><\/div>\n<div><pre><\/pre><\/div>\n<div><pre>goroutine 1 [running]:<\/pre><\/div>\n<\/div>\n<\/div>\n",
+                "lines": 74,
+                "lines_more": 69,
+                "preview_is_truncated": true
+            }
+        ],
+        "upload": true,
+        "user": "UF1LXSN15",
+        "display_as_bot": false,
+        "ts": "1545576591.062000"
+    },
+    {
+        "client_msg_id": "9f1f77e6-84a0-416c-a470-e8e2b2d227f5",
+        "type": "message",
+        "text": "strange because it's exact same hardware\/bios\/etc... as another machine that is fine",
+        "user": "UF1LXSN15",
+        "ts": "1545576656.063200"
+    },
+    {
+        "client_msg_id": "0b587c14-ca20-4445-8322-e7923bbb83a5",
+        "type": "message",
+        "text": "Looks like something unexpected in DMI",
+        "user": "U02DHRR2L",
+        "ts": "1545576663.063500"
+    },
+    {
+        "client_msg_id": "018cb6f2-396e-4ea0-af7c-0ad71b37767d",
+        "type": "message",
+        "text": "OptiPlex 9010",
+        "user": "UF1LXSN15",
+        "ts": "1545576703.064300"
+    },
+    {
+        "client_msg_id": "227520a8-6926-40ef-9cc1-8da4a916ba38",
+        "type": "message",
+        "text": "Every machine is a snowflake",
+        "user": "U02DHRR2L",
+        "ts": "1545576703.064400"
+    },
+    {
+        "client_msg_id": "5d17dbfb-b4ff-4210-ac35-61a213c9b673",
+        "type": "message",
+        "text": "yeah",
+        "user": "UF1LXSN15",
+        "ts": "1545576707.064600"
+    },
+    {
+        "client_msg_id": "a3ad1fd8-2333-441a-a19f-37cabd9b0bb4",
+        "type": "message",
+        "text": "office was going to send a bunch to be destroyed when they refreshed so they gave me a few.  easier and more powerful for a test cluster than raspberry pi's",
+        "user": "UF1LXSN15",
+        "ts": "1545576823.065800"
+    },
+    {
+        "client_msg_id": "ff478ca3-de8b-4926-b83e-8503052ab21d",
+        "type": "message",
+        "text": "end goal is k8s cluster with openebs or rancher longhorn persistent storage.  also want to use metallb in arp mode for load balancer in front of the ingress",
+        "user": "UF1LXSN15",
+        "ts": "1545577221.067600"
+    },
+    {
+        "client_msg_id": "a6baeb2f-6481-4a8c-a77b-937d104f049d",
+        "type": "message",
+        "text": "I'm assuming you've see the KRIB stuff",
+        "user": "U02DHRR2L",
+        "ts": "1545578111.073700"
+    },
+    {
+        "client_msg_id": "555eb357-4738-4b35-809f-ce77f2266b66",
+        "type": "message",
+        "text": "so for dhcp proxy issue looks like what is happening is when the machine is not in the list offerNetBoot get set to true on line 232 of dhcp.go\nthe machine boots and gets added to the machine list\nthen reboot and it tries pxe again\nit doesn't match line 223 because machine is not null any more but has no address because it's a fake lease so it matches line 254 and offerNetBoot gets set to false\nthen when it gets to line 670 it returns NoPXE because offerNetBoot is false",
+        "user": "UF1LXSN15",
+        "ts": "1545578186.074500"
+    },
+    {
+        "client_msg_id": "b3ff7b1f-1015-4322-96db-0008bcaa8877",
+        "type": "message",
+        "text": "<@U02DHRR2L> yeah, that's what lead me to the project in the first place.  was trying to find a better way to bring up the cluster than matchbox\/terraform\/bootkube",
+        "user": "UF1LXSN15",
+        "ts": "1545578271.075600",
+        "edited": {
+            "user": "UF1LXSN15",
+            "ts": "1545578428.000000"
+        },
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "client_msg_id": "95bbafdd-c6ff-4f2d-a8c5-f92ba9da2dee",
+        "type": "message",
+        "text": "We made of improvements and integrations to dhcp lately.  Proxy may not have enjoyed att the benefits ",
+        "user": "U02DHRR2L",
+        "ts": "1545579654.079400"
+    },
+    {
+        "client_msg_id": "e2d7bc9d-61ad-44ca-b536-52ca1027799b",
+        "type": "message",
+        "text": "I like the kexec quick bounce from discovery to coreos-live and back",
+        "user": "UF1LXSN15",
+        "ts": "1545580571.080100",
+        "reactions": [
+            {
+                "name": "cake",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "client_msg_id": "a67869a6-5c6b-4226-9ec3-28f5bba86adb",
+        "type": "message",
+        "text": "<@UF1LXSN15> - Can you open an issue in github for the DHCP Proxy issue, please?  Most of us are out and about the next few days with Christmas\/Holiday stuff.  Don’t want to forget this .",
+        "user": "U02DGQYK1",
+        "ts": "1545580860.081800"
+    },
+    {
+        "client_msg_id": "471d308a-bee0-49b4-9d7d-0ef86314cccc",
+        "type": "message",
+        "text": "sure, just making sure I wasn't doing it wrong :slightly_smiling_face:",
+        "user": "UF1LXSN15",
+        "ts": "1545580946.082600"
+    },
+    {
+        "client_msg_id": "753b6586-5d10-4dfc-9503-15ec7d2df9b9",
+        "type": "message",
+        "text": "Still not sure, but sounds like we have bug.  Need the notes and config.  Thanks for playing with it.",
+        "user": "U02DGQYK1",
+        "ts": "1545581005.083300"
+    },
+    {
+        "user": "UF0RVSN9Z",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1545626779.084600",
+        "text": "<@UF0RVSN9Z> has joined the channel"
+    }
+]

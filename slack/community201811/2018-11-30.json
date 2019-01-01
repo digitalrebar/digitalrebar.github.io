@@ -1,0 +1,588 @@
+[
+    {
+        "client_msg_id": "bd0fb869-d2f8-4373-bc19-a6c84f5aaf60",
+        "type": "message",
+        "text": "so using that horrendous :slightly_smiling_face: `od` hack from above I got cumulus to at least attempt to boot from url",
+        "user": "UBXEU90UQ",
+        "ts": "1543577208.001300"
+    },
+    {
+        "client_msg_id": "beaa03d4-3f09-49e1-958f-af392d964a2d",
+        "type": "message",
+        "text": "it fails however, because of `ZTP DHCP: URL Error &lt;urlopen error [Errno 101] Network is unreachable` which is weird because… how can it have gotten option 239 from dhcp with an IP and then not have network access? :thinking_face: Not an issue with DRP tho so further debugging required my side",
+        "user": "UBXEU90UQ",
+        "ts": "1543577319.002500"
+    },
+    {
+        "client_msg_id": "3b7955f2-36d1-476b-8db9-b055771beb12",
+        "type": "message",
+        "text": "okay - so if you update to tip drp <@UBXEU90UQ> - you can do this instead, `string:<http:\/\/192.168.100.10:8091\/machines\/join-up.sh>`",
+        "user": "U02DGQYK1",
+        "ts": "1543587572.003300"
+    },
+    {
+        "client_msg_id": "7eae5d8c-a0d0-4399-a20d-0139c9c3a84b",
+        "type": "message",
+        "text": "Also update tip content I add more fixes to the join-up.sh script.",
+        "user": "U02DGQYK1",
+        "ts": "1543587583.003600"
+    },
+    {
+        "client_msg_id": "10806a2a-abed-4386-8bb0-dd59d5cf33e0",
+        "type": "message",
+        "text": "Make sure you used the proper ip in the od command.",
+        "user": "U02DGQYK1",
+        "ts": "1543587641.004000"
+    },
+    {
+        "client_msg_id": "59ea1cfe-25fe-4f59-af65-e2c8c6aac48c",
+        "type": "message",
+        "text": "evening.. doing our first test with live systems on a real network. DRP is running inside docker so it sees itself with a 172 ip. Our dhcp is forwarded using dhcp helper. I was able to add the next server option so it does the tftp correctly.  But then it goes and tries to pull the ipxe template from the 172 ip.  Hoping this is a simple setting to tell the server ip.",
+        "user": "UE4C36RV4",
+        "ts": "1543628258.006400"
+    },
+    {
+        "type": "message",
+        "text": "",
+        "files": [
+            {
+                "id": "FEG7PQVFT",
+                "created": 1543628262,
+                "timestamp": 1543628262,
+                "name": "image.png",
+                "title": "Pasted image at 2018-11-30, 8:37 PM",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "UE4C36RV4",
+                "editable": false,
+                "size": 269303,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FEG7PQVFT\/image.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FEG7PQVFT\/download\/image.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEG7PQVFT-544ad12eaf\/image_64.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEG7PQVFT-544ad12eaf\/image_80.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEG7PQVFT-544ad12eaf\/image_360.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360_w": 360,
+                "thumb_360_h": 267,
+                "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEG7PQVFT-544ad12eaf\/image_480.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_480_w": 480,
+                "thumb_480_h": 356,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEG7PQVFT-544ad12eaf\/image_160.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEG7PQVFT-544ad12eaf\/image_720.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_720_w": 720,
+                "thumb_720_h": 534,
+                "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEG7PQVFT-544ad12eaf\/image_800.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_800_w": 800,
+                "thumb_800_h": 594,
+                "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEG7PQVFT-544ad12eaf\/image_960.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_960_w": 960,
+                "thumb_960_h": 712,
+                "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEG7PQVFT-544ad12eaf\/image_1024.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_1024_w": 1024,
+                "thumb_1024_h": 760,
+                "image_exif_rotation": 1,
+                "original_w": 1542,
+                "original_h": 1144,
+                "permalink": "https:\/\/rackn.slack.com\/files\/UE4C36RV4\/FEG7PQVFT\/image.png",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FEG7PQVFT-ae79fd4ed1"
+            }
+        ],
+        "upload": true,
+        "user": "UE4C36RV4",
+        "display_as_bot": false,
+        "ts": "1543628266.006500"
+    },
+    {
+        "client_msg_id": "1793806b-1fbc-435b-be49-4f84186ca6eb",
+        "type": "message",
+        "text": "going to guess it's this `--static-ip=             IP address to advertise for the static HTTP file server (default: 192.168.124.11)`",
+        "user": "UE4C36RV4",
+        "ts": "1543629654.006900"
+    },
+    {
+        "client_msg_id": "F07DE907-E4D9-47DC-BF82-92D2782DC6E9",
+        "type": "message",
+        "text": "Yes and ‘—force-static-ip’",
+        "user": "U02DGQYK1",
+        "ts": "1543630536.007700"
+    },
+    {
+        "client_msg_id": "24e08774-d223-4bfa-bcf8-ad6bd6c4710f",
+        "type": "message",
+        "text": "does that work if dr-provision doesn't see the ip as one of the interfaces?  This container is essentially nat'd with all the ports exposed. Or is it expected to be bridged?",
+        "user": "UE4C36RV4",
+        "ts": "1543633142.009000"
+    },
+    {
+        "client_msg_id": "2bb26c30-e0f4-4fbf-b057-3713b16c83da",
+        "type": "message",
+        "text": "yes - it is only for outbound messages",
+        "user": "U02DGQYK1",
+        "ts": "1543633164.009300"
+    },
+    {
+        "client_msg_id": "247cd368-dbe6-46d0-abc9-c74ec103a5bf",
+        "type": "message",
+        "text": "ok, then it should work. i'll do some digging on my side.. most likely an issue in how i'm kicking off the docker container",
+        "user": "UE4C36RV4",
+        "ts": "1543633275.010300"
+    },
+    {
+        "client_msg_id": "0e81ba1d-0d32-492b-b4c5-4b8949d25ba0",
+        "type": "message",
+        "text": "running dr-provision on the host works just fine, just the ip address of the static ip server being advertised (when in docker)",
+        "user": "UE4C36RV4",
+        "ts": "1543633325.011500",
+        "edited": {
+            "user": "UE4C36RV4",
+            "ts": "1543633334.000000"
+        }
+    },
+    {
+        "client_msg_id": "b9ade9f1-31b7-47bb-afc8-859288a5fb19",
+        "type": "message",
+        "text": "You may have to expose ports or something like that",
+        "user": "U02DGQYK1",
+        "ts": "1543633343.012000"
+    },
+    {
+        "client_msg_id": "dae6c415-59cb-4193-8d5f-3e160e928270",
+        "type": "message",
+        "text": "Did you check the faq?",
+        "user": "U02DGQYK1",
+        "ts": "1543633364.012200"
+    },
+    {
+        "client_msg_id": "30ef2b18-4c46-4568-9efb-449f5c58ed11",
+        "type": "message",
+        "text": "I think we usually recommend a `--net host` container",
+        "user": "U02DGQYK1",
+        "ts": "1543633415.012600",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1543633422.000000"
+        }
+    },
+    {
+        "client_msg_id": "2a6aa4dd-af2f-40d2-bf3f-6204519db119",
+        "type": "message",
+        "text": "Others may run it differently.  I know I could of others around here run as containers as well.",
+        "user": "U02DGQYK1",
+        "ts": "1543633496.013500"
+    },
+    {
+        "client_msg_id": "b20df201-0cd2-4e3b-976c-0b533762878d",
+        "type": "message",
+        "text": "I’m not sure what they are doing.",
+        "user": "U02DGQYK1",
+        "ts": "1543633503.013700"
+    },
+    {
+        "client_msg_id": "efed6cc5-af51-410a-b337-19e7d8d2b21f",
+        "type": "message",
+        "text": "i'm seeing that here.  Mine is not running with host networking (just exposed ports), so I will try that.",
+        "user": "UE4C36RV4",
+        "ts": "1543633529.014600"
+    },
+    {
+        "client_msg_id": "9f1cdd1d-4b92-43ea-aa74-23f46b83f5d7",
+        "type": "message",
+        "text": "`tftp` has always been a challenge because if its ancient back port scheme",
+        "user": "U02DGQYK1",
+        "ts": "1543633543.014800",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1543633551.000000"
+        }
+    },
+    {
+        "client_msg_id": "71551a48-9968-4ed8-a1a5-650647b74669",
+        "type": "message",
+        "text": "sorry I may have lied to you;",
+        "user": "U02DGQYK1",
+        "ts": "1543633675.015200"
+    },
+    {
+        "client_msg_id": "d3b6919a-9d07-4363-98a1-a643b84bfcc6",
+        "type": "message",
+        "text": "here are the options",
+        "user": "U02DGQYK1",
+        "ts": "1543633680.015500"
+    },
+    {
+        "client_msg_id": "62414bdc-ee08-4d3d-b906-20aa4d634643",
+        "type": "message",
+        "text": "```\n      --static-ip=              IP address to advertise for the static HTTP file server\n      --force-static            Force the system to always use the static IP.\n```",
+        "user": "U02DGQYK1",
+        "ts": "1543633691.015800"
+    },
+    {
+        "client_msg_id": "67db9813-29bb-4958-b8bc-a55ae927c5f5",
+        "type": "message",
+        "text": "That is all you should need.",
+        "user": "U02DGQYK1",
+        "ts": "1543633701.016000"
+    },
+    {
+        "client_msg_id": "3af9e7d6-9233-410f-bdfc-17bebd9dd179",
+        "type": "message",
+        "text": "If it was already working to the point in your screen shot, this should be all you need.",
+        "user": "U02DGQYK1",
+        "ts": "1543633721.016500"
+    },
+    {
+        "client_msg_id": "2c63701f-1d92-4ecf-b79a-487cceee1610",
+        "type": "message",
+        "text": "cool.  right, it seems like essentially  ProvisionerUrl just needs to match",
+        "user": "UE4C36RV4",
+        "ts": "1543633875.017300"
+    },
+    {
+        "client_msg_id": "74f7bd09-5eff-4683-9f56-6e03fe1a5c38",
+        "type": "message",
+        "text": "chain {{.ProvisionerURL}}\/${netX\/mac}.ipxe &amp;&amp; exit || goto chainip\n:chainip\nchain {{.ProvisionerURL}}\/${netX\/ip}.ipxe &amp;&amp; exit || goto sledgehammer",
+        "user": "UE4C36RV4",
+        "ts": "1543633877.017500"
+    },
+    {
+        "client_msg_id": "531812c2-6d4c-483d-821e-2bca4f2d3ef1",
+        "type": "message",
+        "text": "yes - provisioner url is populated automagically based upon incoming interface.",
+        "user": "U02DGQYK1",
+        "ts": "1543633903.018000"
+    },
+    {
+        "client_msg_id": "c5ebb520-a481-4c94-8b5b-24f1cb32a5e4",
+        "type": "message",
+        "text": "`--static-ip=x.y.z.a` is used as the fall through if DRP can’t figure out the interface the packet came in from.",
+        "user": "U02DGQYK1",
+        "ts": "1543633937.018800"
+    },
+    {
+        "client_msg_id": "66f3ec45-2d16-4f83-87ea-21d011b7aebb",
+        "type": "message",
+        "text": "This is really raw or timing in our cache system.",
+        "user": "U02DGQYK1",
+        "ts": "1543633948.019100"
+    },
+    {
+        "client_msg_id": "584fd8a0-2c98-4fff-a1eb-2875846e83e8",
+        "type": "message",
+        "text": "but it will be 100% wrong in a NATed docker container.",
+        "user": "U02DGQYK1",
+        "ts": "1543633961.019400"
+    },
+    {
+        "client_msg_id": "48c773a0-6a9d-4feb-801d-28c4be6168ac",
+        "type": "message",
+        "text": "the cache that is.",
+        "user": "U02DGQYK1",
+        "ts": "1543633967.019700"
+    },
+    {
+        "client_msg_id": "fe8fed01-9850-4481-952a-2e7c5fc2f5f5",
+        "type": "message",
+        "text": "so the `--force-static` says always use the `--static-ip=x.y.z.a` because you can’t tell.",
+        "user": "U02DGQYK1",
+        "ts": "1543633995.020300"
+    },
+    {
+        "client_msg_id": "7c4fd5c0-132b-48be-a055-e2fdda3e9f6c",
+        "type": "message",
+        "text": "giving it a shot, waiting on reboot",
+        "user": "UE4C36RV4",
+        "ts": "1543634358.020500"
+    },
+    {
+        "client_msg_id": "286d354d-ca71-4a95-b0f6-9a45d0d2cbea",
+        "type": "message",
+        "text": "hmm.. i saw a way to test render templates somewhere in the docs",
+        "user": "UE4C36RV4",
+        "ts": "1543634462.021000"
+    },
+    {
+        "client_msg_id": "3835f308-06f6-4ce1-b401-6ab72d40770c",
+        "type": "message",
+        "text": "It's a command line option on the cli",
+        "user": "U02DHRR2L",
+        "ts": "1543634496.021800"
+    },
+    {
+        "client_msg_id": "423315c9-c977-43ed-9a93-e902126f8160",
+        "type": "message",
+        "text": "You have to be in the right bootenv",
+        "user": "U02DHRR2L",
+        "ts": "1543634505.022200"
+    },
+    {
+        "client_msg_id": "d09b2f1b-73cb-4403-b70c-c0911ac3da38",
+        "type": "message",
+        "text": "for the default.ipxe, you can do: `curl http:\/\/&lt;drp ip&gt;:8091\/default.ipxe`",
+        "user": "U02DGQYK1",
+        "ts": "1543634539.022600",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1543634573.000000"
+        }
+    },
+    {
+        "client_msg_id": "f1c7911a-4166-411a-bef5-1e012f5799f9",
+        "type": "message",
+        "text": "$faq",
+        "user": "U6QFVRJNB",
+        "ts": "1543635484.024000"
+    },
+    {
+        "type": "message",
+        "subtype": "slackbot_response",
+        "text": "FAQs are here &gt; <http:\/\/provision.readthedocs.io\/en\/tip\/doc\/faq-troubleshooting.html>",
+        "user": "USLACKBOT",
+        "ts": "1543635485.024100"
+    },
+    {
+        "client_msg_id": "5c90ad5a-6c18-484f-8a4d-9877a894d148",
+        "type": "message",
+        "text": "It's in there, look for \"render\" templates ",
+        "user": "U6QFVRJNB",
+        "ts": "1543635511.024900"
+    },
+    {
+        "client_msg_id": "355c4941-117d-444e-bad7-3bd8b3589177",
+        "type": "message",
+        "text": "without --net host, i get the docker ip.  but it does seem to work with --net host\n\n```\nlocalhogenj@metal35-r01:\/tmp\/drp$ sudo docker run -d --volume=drprovison_data:\/provision\/drp-data:rw -p 8091:8091 digitalrebar\/provision --static-ip=10.130.194.5 --force-static\nbe3fe3f7b501b96734b19755ab8ba4728430ce0acdca6ea9f39e053f2afdc769\nlocalhogenj@metal35-r01:\/tmp\/drp$ curl <http:\/\/localhost:8091\/default.ipxe>\n#!ipxe\nchain <http:\/\/172.17.0.7:8091\/${netX\/mac}.ipxe> &amp;&amp; exit || goto chainip\n:chainip\nchain <http:\/\/172.17.0.7:8091\/${netX\/ip}.ipxe> &amp;&amp; exit || goto sledgehammer\n:sledgehammer\nchain <http:\/\/172.17.0.7:8091\/${builtin\/buildarch}.ipxe>\n```\n\nI get some interesting dynamics with `--net host`\n\n```\nlocalhogenj@metal35-r01:\/tmp\/drp$ sudo docker run -d --volume=drprovison_data:\/provision\/drp-data:rw --net host  digitalrebar\/provision --static-ip=10.30.194.5 --force-static\n35c4c2915e932d205cf447af704d628452f169ff846b25321ab33524aa6f11b3\nlocalhogenj@metal35-r01:\/tmp\/drp$ curl <http:\/\/10.30.194.5:8091\/default.ipxe>\n#!ipxe\nchain <http:\/\/10.30.194.5:8091\/${netX\/mac}.ipxe> &amp;&amp; exit || goto chainip\n:chainip\nchain <http:\/\/10.30.194.5:8091\/${netX\/ip}.ipxe> &amp;&amp; exit || goto sledgehammer\n:sledgehammer\nchain <http:\/\/10.30.194.5:8091\/${builtin\/buildarch}.ipxe>\nlocalhogenj@metal35-r01:\/tmp\/drp$ curl <http:\/\/localhost:8091\/default.ipxe>\n#!ipxe\nchain http:\/\/[::1]:8091\/${netX\/mac}.ipxe &amp;&amp; exit || goto chainip\n:chainip\nchain http:\/\/[::1]:8091\/${netX\/ip}.ipxe &amp;&amp; exit || goto sledgehammer\n:sledgehammer\nchain http:\/\/[::1]:8091\/${builtin\/buildarch}.ipxe\nlocalhogenj@metal35-r01:\/tmp\/drp$ curl <http:\/\/10.25.196.69:8091\/default.ipxe>\n#!ipxe\nchain <http:\/\/10.25.196.69:8091\/${netX\/mac}.ipxe> &amp;&amp; exit || goto chainip\n:chainip\nchain <http:\/\/10.25.196.69:8091\/${netX\/ip}.ipxe> &amp;&amp; exit || goto sledgehammer\n:sledgehammer\nchain <http:\/\/10.25.196.69:8091\/${builtin\/buildarch}.ipxe>\n```",
+        "user": "UE4C36RV4",
+        "ts": "1543635737.025900"
+    },
+    {
+        "client_msg_id": "a605be1e-c7a7-4a5b-9e9e-53f6fdda63e4",
+        "type": "message",
+        "text": "do `ps auxwww | grep dr-provision`",
+        "user": "U02DGQYK1",
+        "ts": "1543635865.026300"
+    },
+    {
+        "client_msg_id": "ca2571ea-05a9-45ea-8829-9dcea3ec3cd3",
+        "type": "message",
+        "text": "are the options actually making it?",
+        "user": "U02DGQYK1",
+        "ts": "1543635874.026600"
+    },
+    {
+        "client_msg_id": "7baba5c0-8d6b-4b09-9e6f-2cac448bd0e9",
+        "type": "message",
+        "text": "What is the version of that container?",
+        "user": "U02DGQYK1",
+        "ts": "1543635879.026800"
+    },
+    {
+        "client_msg_id": "72ed5da0-e6f5-46a0-9df2-5296e7a35cf6",
+        "type": "message",
+        "text": "doesn't look like it\n```\nlocalhogenj@metal35-r01:\/tmp\/drp$ ps auxwww | grep dr-provision\nroot     17280  0.3  0.0   4292   756 ?        Ss   03:44   0:00 \/bin\/sh -c dr-provision --base-root=\/provision\/drp-data --local-content= --default-content= --static-ip=10.30.194.5 --force-static\nroot     17314 19.7  0.0 122948 103612 ?       Sl   03:44   0:01 dr-provision --base-root=\/provision\/drp-data --local-content= --default-content=\n```",
+        "user": "UE4C36RV4",
+        "ts": "1543635923.027100"
+    },
+    {
+        "client_msg_id": "9bf5c03d-140f-461a-864a-0038279460ab",
+        "type": "message",
+        "text": "hmmm",
+        "user": "U02DGQYK1",
+        "ts": "1543636066.027500"
+    },
+    {
+        "client_msg_id": "f083d19e-0886-4027-9c1c-cca2e4990e14",
+        "type": "message",
+        "text": "try this ,please: `sudo docker run --entrypoint=dr-provision digitalrebar\/provision --version`",
+        "user": "U02DGQYK1",
+        "ts": "1543636172.028400",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1543636173.000000"
+        }
+    },
+    {
+        "client_msg_id": "6b7d3c51-451f-4b18-9ead-e8921325ca75",
+        "type": "message",
+        "text": "I think",
+        "user": "U02DGQYK1",
+        "ts": "1543636175.028700"
+    },
+    {
+        "client_msg_id": "d382699e-3efe-4fbf-bddd-e2c8f49b2a78",
+        "type": "message",
+        "text": "that works.\n```\n$ sudo docker run --entrypoint=dr-provision digitalrebar\/provision --version\ndr-provision2018\/12\/01 03:50:50.701841 Version: v3.11.0-tip-78-641cca862b5711f61009e77a40d586d67233bb30\n```",
+        "user": "UE4C36RV4",
+        "ts": "1543636269.028900"
+    },
+    {
+        "client_msg_id": "a1f31387-5331-4ca8-b69e-d62ce953ad8e",
+        "type": "message",
+        "text": "hmm",
+        "user": "U02DGQYK1",
+        "ts": "1543636295.029100"
+    },
+    {
+        "client_msg_id": "51e6fc6a-f341-4591-a2e6-7e23775158ef",
+        "type": "message",
+        "text": "without the `--entrypoint`",
+        "user": "U02DGQYK1",
+        "ts": "1543636306.029400"
+    },
+    {
+        "client_msg_id": "bb6482e6-6aab-4fd3-a3d1-85ef20f24ee7",
+        "type": "message",
+        "text": "hmm",
+        "user": "U02DGQYK1",
+        "ts": "1543636329.029600"
+    },
+    {
+        "client_msg_id": "1ade4bba-bc56-4715-82a2-f393b94e9e35",
+        "type": "message",
+        "text": "nvm",
+        "user": "U02DGQYK1",
+        "ts": "1543636330.029800"
+    },
+    {
+        "client_msg_id": "2b002e8e-e968-4d53-b1a5-f6cb070dcb43",
+        "type": "message",
+        "text": "something is busted.",
+        "user": "U02DGQYK1",
+        "ts": "1543636335.030000"
+    },
+    {
+        "client_msg_id": "6b4a6586-de64-4d2a-8cb7-c3d31a446c3b",
+        "type": "message",
+        "text": "in the container startup.",
+        "user": "U02DGQYK1",
+        "ts": "1543636340.030200"
+    },
+    {
+        "client_msg_id": "3293fc83-9088-4dc9-8fdf-af4f57da44e8",
+        "type": "message",
+        "text": "not completely sure.",
+        "user": "U02DGQYK1",
+        "ts": "1543636343.030400"
+    },
+    {
+        "client_msg_id": "d92030d2-ea42-4822-9da3-cd907713ef97",
+        "type": "message",
+        "text": "anyway, you can do this:",
+        "user": "U02DGQYK1",
+        "ts": "1543636349.030600"
+    },
+    {
+        "client_msg_id": "0052de89-c892-4270-99d8-9f5ae1d585f4",
+        "type": "message",
+        "text": "`sudo docker run --entrypoint=dr-provision digitalrebar\/provision --base-root=\/provision\/drp-data --local-content= --default-content= --static-ip=10.30.194.5 --force-static`",
+        "user": "U02DGQYK1",
+        "ts": "1543636374.031000",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1543636378.000000"
+        }
+    },
+    {
+        "client_msg_id": "bea47de8-9e1a-493c-b471-2f5a1fce2810",
+        "type": "message",
+        "text": ":+1:   that works",
+        "user": "UE4C36RV4",
+        "ts": "1543636473.031400"
+    },
+    {
+        "client_msg_id": "5dd33141-2ece-4cf4-ba89-12b23ebeb3e2",
+        "type": "message",
+        "text": "```\n$ curl <http:\/\/localhost:8091\/default.ipxe>\n#!ipxe\nchain <http:\/\/10.30.194.5:8091\/${netX\/mac}.ipxe> &amp;&amp; exit || goto chainip\n:chainip\nchain <tftp:\/\/10.30.194.5\/${netX\/ip}.ipxe> || exit\n```",
+        "user": "UE4C36RV4",
+        "ts": "1543636484.031600"
+    },
+    {
+        "client_msg_id": "2280055c-fd5d-43ad-b68f-7fc305afac6b",
+        "type": "message",
+        "text": "(well i have a shortened form without the base-root, but the static-ip bit works)",
+        "user": "UE4C36RV4",
+        "ts": "1543636528.032300"
+    },
+    {
+        "client_msg_id": "420fd238-55de-478c-ac7a-a5ece70de2e6",
+        "type": "message",
+        "text": "Dockerfile ENTRYPOINT is doing something strange…",
+        "user": "U02DGQYK1",
+        "ts": "1543636632.032800"
+    },
+    {
+        "client_msg_id": "9b7bc429-6c10-418b-8e71-3e38bd6c64b3",
+        "type": "message",
+        "text": "to me",
+        "user": "U02DGQYK1",
+        "ts": "1543636648.033000"
+    },
+    {
+        "client_msg_id": "38a73338-5be4-400a-8368-a79a78e89f33",
+        "type": "message",
+        "text": "I think I see what I need to do to “fix” it.",
+        "user": "U02DGQYK1",
+        "ts": "1543636975.034000"
+    },
+    {
+        "client_msg_id": "28a2408a-1af2-4423-8d42-a7039bbb5b06",
+        "type": "message",
+        "text": "thanks for the help. The option was correct, just getting it through docker was the problem.",
+        "user": "UE4C36RV4",
+        "ts": "1543636997.034400"
+    },
+    {
+        "client_msg_id": "03f8d9e8-cd4a-45ab-b084-e7a6b75f77d7",
+        "type": "message",
+        "text": "Yeah - the Dockerfile we use to build the container needs another element to let additional options in without the entrypoint part.",
+        "user": "U02DGQYK1",
+        "ts": "1543637059.035200"
+    },
+    {
+        "client_msg_id": "2fef3e00-9ce5-43b9-a955-42d1d4a1a456",
+        "type": "message",
+        "text": "You should be able to do:\n`sudo docker run digitalrebar\/provision --version`",
+        "user": "U02DGQYK1",
+        "ts": "1543637088.035700"
+    },
+    {
+        "client_msg_id": "8a2791bf-c098-4023-a27e-52fee149fe6a",
+        "type": "message",
+        "text": "and get the version.",
+        "user": "U02DGQYK1",
+        "ts": "1543637091.035900"
+    },
+    {
+        "client_msg_id": "90c2f1a5-200f-4146-8b6d-f7808accb5ca",
+        "type": "message",
+        "text": "okay - much better - new container coming with fixes eventually - probably by mrning.",
+        "user": "U02DGQYK1",
+        "ts": "1543637814.036300"
+    },
+    {
+        "client_msg_id": "4205300e-cbe5-4038-b492-2ac6876ea042",
+        "type": "message",
+        "text": "<@UE4C36RV4> - `docker pull digitalrebar\/provision`",
+        "user": "U02DGQYK1",
+        "ts": "1543639215.036700"
+    },
+    {
+        "client_msg_id": "09d5cbbe-bb50-4b57-95a9-0d6444862559",
+        "type": "message",
+        "text": "the options will now pass in correctly.",
+        "user": "U02DGQYK1",
+        "ts": "1543639297.037000"
+    },
+    {
+        "client_msg_id": "aa3da29e-2be7-4881-b3ff-8605a74587b5",
+        "type": "message",
+        "text": "Thanks Greg. I will check it out.",
+        "user": "UE4C36RV4",
+        "ts": "1543639477.037400"
+    }
+]

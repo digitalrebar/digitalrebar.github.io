@@ -1,0 +1,119 @@
+[
+    {
+        "client_msg_id": "B5534DC4-8AC3-4AEB-9EB9-E68F55244563",
+        "type": "message",
+        "text": "The current issue I’m having is with sledgehammer (I think). One of my (home lab) servers is not bringing networking up properly. \n\nIn attempting to troubleshoot this, some things I noticed:\n\n* the slack archive stops at September 2018\n* I had trouble finding the sledgehammer root password (eventually found it in the `<http:\/\/github.com\/digitalrebar\/sledgehammer|github.com\/digitalrebar\/sledgehammer>` repo)\n* the sledgehammer build doesn’t seem to match what’s in the github repo\n* there’s a comment in the github repo that says it’s unused, but I can’t find the real location. The `sledgehammer-builder` page in the docs says “unspecified” and nothing else. \n* I couldn’t find a way to boot sledgehammer with extra kernel args (I wanted to try `net.ifnames=0` since there was an error in the journal that pointed to an interface naming issue). I ended up hacking it into `kernel-console` in the `global` Profile. \n* the current (1.12.0 &amp; tip) sledgehammer uses version 219 of systemd but `\/etc\/systemd\/network\/20-bootif.network` uses `ClientIdentifier` which was introduced in version 220. \n\nSo far, I’m not sure if any of this has a bearing on why it’s not bringing up networking...\n\nHappy to contribute to the docs, but at the moment I’m feeling a bit green.",
+        "user": "UF0RVSN9Z",
+        "ts": "1545734399.108200",
+        "edited": {
+            "user": "UF0RVSN9Z",
+            "ts": "1545734486.000000"
+        }
+    },
+    {
+        "client_msg_id": "718ac843-a289-46e1-b87a-d1d0fb804412",
+        "type": "message",
+        "text": "hmmm, I had no idea that guest accounts had search history limited.   We post the slack archive here <http:\/\/rebar.digital\/slack\/html\/index.html>",
+        "user": "U02DHRR2L",
+        "ts": "1545742984.109300"
+    },
+    {
+        "client_msg_id": "5b43eec3-71b6-4e9b-b165-61cad75cadbe",
+        "type": "message",
+        "text": "also, sledgehammer build process changed in the last release when we added IPv6 and ARM.  I'll let Greg talk to that.  You are right that it's different.",
+        "user": "U02DHRR2L",
+        "ts": "1545743163.110200"
+    },
+    {
+        "user": "UF0P7EFHN",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1545745184.110400",
+        "text": "<@UF0P7EFHN> has joined the channel"
+    },
+    {
+        "client_msg_id": "77e71b76-ea0c-4718-b04e-e4be5fb414a2",
+        "type": "message",
+        "text": "is there a source repo for virtualbox-ipmi plugin?",
+        "user": "UF1LXSN15",
+        "ts": "1545749757.110700"
+    },
+    {
+        "client_msg_id": "05bb2cfe-6c25-42c7-bb89-52d9a91525c9",
+        "type": "message",
+        "text": "or packet-ipmi?",
+        "user": "UF1LXSN15",
+        "ts": "1545750117.111000"
+    },
+    {
+        "client_msg_id": "a3db0cf0-521c-4fd9-8315-cdfa3668788f",
+        "type": "message",
+        "text": "<@UF1LXSN15> those are RackN components that we offer free.  we don't publish the source code at this time",
+        "user": "U02DHRR2L",
+        "ts": "1545752032.112100"
+    },
+    {
+        "client_msg_id": "684c74d1-0e6a-4115-b34e-315d644fb720",
+        "type": "message",
+        "text": "for customers and partners, we do offer co-dev for plugins that includes source access",
+        "user": "U02DHRR2L",
+        "ts": "1545752109.112900"
+    },
+    {
+        "client_msg_id": "ef3e0737-11f1-4069-b036-8ec227b8c24f",
+        "type": "message",
+        "text": "<@UF0P7EFHN> $welcome ...",
+        "user": "U6QFVRJNB",
+        "ts": "1545752611.113200"
+    },
+    {
+        "type": "message",
+        "subtype": "slackbot_response",
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "user": "USLACKBOT",
+        "ts": "1545752612.113300"
+    },
+    {
+        "client_msg_id": "ffef1e0c-5830-48e9-bbfb-fdd75d56625b",
+        "type": "message",
+        "text": "<@UF0RVSN9Z> some answers:\n• I think we just haven't gotten around to posting the Slack archives since September - we tend to do it \"quarterly-ish\" (it's not automated)\n• root\/rebar1 is the PW for Sledgehammer - but by default only on the Console (see $faq for adding SSH keys, or changing `access-ssh-root-mode`)\n• as Rob mentioned - we just switched to a new build tool for Sledgehammer (`sledgehammer-builder` workflow content)\n• `sledgehammer-builder` repo hasn't been put in the open community yet - it will be soon\n• for the moment - use `kernel-console` and overload it with whatever you want to pass to the Kernel - <https:\/\/github.com\/digitalrebar\/provision-content\/blob\/master\/content\/params\/kernel-console.yaml>\n• not sure on the `ClientIdentifier` mismatch - but \"it's working\" for us at the moment :slightly_smiling_face:",
+        "user": "U6QFVRJNB",
+        "ts": "1545755167.116900",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1545755178.000000"
+        }
+    },
+    {
+        "type": "message",
+        "subtype": "slackbot_response",
+        "text": "FAQs are here &gt; <http:\/\/provision.readthedocs.io\/en\/tip\/doc\/faq-troubleshooting.html>",
+        "user": "USLACKBOT",
+        "ts": "1545755167.117000"
+    },
+    {
+        "client_msg_id": "606FCFAF-2BFC-43A7-ACBF-2C6D75D83721",
+        "type": "message",
+        "text": "Thanks <@U6QFVRJNB> and <@U02DHRR2L>. If I figure out that the networking issue is something sledgehammer- or DRP-related, I’ll post back here. ",
+        "user": "UF0RVSN9Z",
+        "ts": "1545796915.118700"
+    },
+    {
+        "client_msg_id": "e8f7edbf-9da8-4d15-b09e-d6750a96bfe8",
+        "type": "message",
+        "text": "Cool.  We'd like to know either way.   If you do a regular centos install, it may show you the issue. ",
+        "user": "U02DHRR2L",
+        "ts": "1545797127.119900"
+    },
+    {
+        "client_msg_id": "766d9835-950c-4138-90fc-99e64033df91",
+        "type": "message",
+        "text": "Might be a NIC driver issue?  Sledgehammer is based on stock centos 7.6",
+        "user": "U6QFVRJNB",
+        "ts": "1545797746.121200",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1545798620.000000"
+        }
+    }
+]

@@ -1,0 +1,451 @@
+[
+    {
+        "client_msg_id": "d88fe5c2-e8ed-4d4b-b641-f1aee3a7b922",
+        "type": "message",
+        "text": "Good Morning! I'm currently having an issue with CentOS 7.5 provisioning: Installation gets stuck at \"Running post-installation scripts\".\nAnyone has ever been through this before? Thanks!",
+        "user": "UE9QG16SC",
+        "ts": "1545035572.601700"
+    },
+    {
+        "client_msg_id": "061de845-7a2d-42bf-98fa-176c5a1e0a1c",
+        "type": "message",
+        "text": "Another question: what about LDAP integration with DRP for users?",
+        "user": "UE9QG16SC",
+        "ts": "1545036470.602600"
+    },
+    {
+        "client_msg_id": "8159d32e-318b-4b99-ba11-1f672ab4131e",
+        "type": "message",
+        "text": "you need to find the job log, should at least give you a hint as to why it’s getting stuck or hanging. If it shows nothing, then I assume the script is failing before DRP takes back over, if it’s the text based installer you can switch to a new tmux (i think?) pane and look at anaconda.log which should be in the root dir",
+        "user": "UBXEU90UQ",
+        "ts": "1545038311.604000"
+    },
+    {
+        "client_msg_id": "cf999cce-2675-4a71-aca9-051d1d49f8bd",
+        "type": "message",
+        "text": "Anyone <!here> have experience using krib? I’m trying to do a ‘demo’ install of k8s using the krib content, but when executing the ‘krib-live-cluster’ workflow it fails on the docker-install stage:\n```\nError: Error writing to file \/var\/cache\/yum\/x86_64\/7\/base\/gen\/filelists_db.sqlite: [Errno 28] No space left on device\nCommand exited with status 1\nAction docker-install.sh.tmpl finished\n```",
+        "user": "UEU1YT30X",
+        "ts": "1545049467.605700"
+    },
+    {
+        "client_msg_id": "53a9651f-468c-498c-bb94-8559433c976c",
+        "type": "message",
+        "text": "I’m on DR 3.11.0, content all on tip.",
+        "user": "UEU1YT30X",
+        "ts": "1545049502.606400"
+    },
+    {
+        "client_msg_id": "95bb729b-9d7a-43f3-a405-cf88bc32f065",
+        "type": "message",
+        "text": "I have 3 Virtualbox VMs each with 20GB disk (SATA)..",
+        "user": "UEU1YT30X",
+        "ts": "1545049557.607000",
+        "edited": {
+            "user": "UEU1YT30X",
+            "ts": "1545049692.000000"
+        }
+    },
+    {
+        "client_msg_id": "8ad72c09-f0a1-4796-8454-9b9b62d38a81",
+        "type": "message",
+        "text": "Check your drive sizes again.  20 GB may be too small or not set as you think",
+        "user": "U02DHRR2L",
+        "ts": "1545050483.608800"
+    },
+    {
+        "client_msg_id": "18c7d1d7-96e3-47b4-b95a-828983199f86",
+        "type": "message",
+        "text": "Thnx Rob! It look right now that it mounts the entire first disk as `\/docker`. Then it fails on the next stage when it tries to create something in `\/var`. So that makes me wonder: if the entire harddisk is used for Docker, then where does the root-filesystem live?",
+        "user": "UEU1YT30X",
+        "ts": "1545050627.610800"
+    },
+    {
+        "client_msg_id": "e8905ccf-8ff4-4f7f-9ad6-422aa5b61aac",
+        "type": "message",
+        "text": "If it’s purely in RAM, than I guess maybe they don’t have enough memory….",
+        "user": "UEU1YT30X",
+        "ts": "1545050658.611400"
+    },
+    {
+        "client_msg_id": "74E63480-1762-46DE-A997-35D6A281ADF5",
+        "type": "message",
+        "text": "Yes, how much memory and what type of install are you doing, live or install?  <@UEU1YT30X> ",
+        "user": "U02DGQYK1",
+        "ts": "1545053243.612500"
+    },
+    {
+        "client_msg_id": "65f31946-ff71-41c0-9ea3-d05ae9fbb209",
+        "type": "message",
+        "text": "<@U02DGQYK1> I tried doing the live with 3x 1GB",
+        "user": "UEU1YT30X",
+        "ts": "1545053387.613100"
+    },
+    {
+        "client_msg_id": "ba058ba0-ee55-4a0f-b276-69f8159f845d",
+        "type": "message",
+        "text": "now it’s succeeding while trying install with a single 4GB box",
+        "user": "UEU1YT30X",
+        "ts": "1545053416.613700"
+    },
+    {
+        "client_msg_id": "db8e3f20-1242-4550-be89-cce68d1557ac",
+        "type": "message",
+        "text": "so I guess it’s indeed a memory thing",
+        "user": "UEU1YT30X",
+        "ts": "1545053441.614200"
+    },
+    {
+        "client_msg_id": "113637fe-b91a-4d08-a404-730c24fee1cb",
+        "type": "message",
+        "text": "Yes - if you are doing sledgehammer, 1.5G is close, but 2GB is better.  With Krib, you need more still because you are running a full system.  I usually do 3-4GB for those.",
+        "user": "U02DGQYK1",
+        "ts": "1545053593.615100"
+    },
+    {
+        "client_msg_id": "ea2d2d87-eaa7-4888-9323-12271670c642",
+        "type": "message",
+        "text": "Ah, I see. Thanks!!!",
+        "user": "UEU1YT30X",
+        "ts": "1545053722.615300"
+    },
+    {
+        "client_msg_id": "d4e38a00-b4af-49e0-bbb5-6f9e7caddf07",
+        "type": "message",
+        "text": "All that is assuming you are doing “live” systems.  Which the demos do.",
+        "user": "U02DGQYK1",
+        "ts": "1545053761.616200"
+    },
+    {
+        "client_msg_id": "347a4235-313f-4176-a6f7-9ef7ab76e98b",
+        "type": "message",
+        "text": "I still didn’t buy a new macbook, so I’m stuck with just 16GB… I guess that’s why you guys prefer to use Packet :wink:",
+        "user": "UEU1YT30X",
+        "ts": "1545053795.616900"
+    },
+    {
+        "client_msg_id": "ac0a3712-adf5-4ce1-b24a-7685cd1e79dd",
+        "type": "message",
+        "text": "Yeah - on my 16GB mac, I run DRP in the Host OS (darwin) as an isolated install (yes, I homebrew the heck out of my system).  Then I can usually run 3 or 4 3GB 20GB images.",
+        "user": "U02DGQYK1",
+        "ts": "1545053923.618000"
+    },
+    {
+        "client_msg_id": "32d819dc-cd3f-495b-b101-30f19201f07d",
+        "type": "message",
+        "text": "Check… I’m running DRP as a VM as well… so that’s pretty tight.. Thnx for the tip!",
+        "user": "UEU1YT30X",
+        "ts": "1545054471.618600"
+    },
+    {
+        "client_msg_id": "c5d9cf55-b717-47d4-b91b-04d101b2aa46",
+        "type": "message",
+        "text": "What's the advantage of standalone as opposed to containerized?",
+        "user": "UCU824PB2",
+        "ts": "1545057191.619300"
+    },
+    {
+        "client_msg_id": "dd85e2ea-b055-4691-8aa8-68de1990cf4f",
+        "type": "message",
+        "text": "running it however you want to ...",
+        "user": "U6QFVRJNB",
+        "ts": "1545057210.619600"
+    },
+    {
+        "client_msg_id": "c58b3ec1-2121-4d7a-a055-3f6ca715eff2",
+        "type": "message",
+        "text": "if you have container deployment solution in your environment - then obviously the container version makes it easy to deploy as a single artifact",
+        "user": "U6QFVRJNB",
+        "ts": "1545057476.620200"
+    },
+    {
+        "client_msg_id": "858208cc-64f8-4a29-9a40-b15be9ca2a03",
+        "type": "message",
+        "text": "<@UCU824PB2> - we have some people doing CICD pipeline testing already.  They are using that pipeline to build a container for running DRP.  Fits their model.",
+        "user": "U02DGQYK1",
+        "ts": "1545059775.621300"
+    },
+    {
+        "type": "message",
+        "text": "Janky, but this gets the runner working on CL after VRF enablement :slightly_smiling_face:",
+        "files": [
+            {
+                "id": "FEWTMK7NK",
+                "created": 1545063008,
+                "timestamp": 1545063008,
+                "name": "-.sh",
+                "title": "Untitled",
+                "mimetype": "text\/plain",
+                "filetype": "shell",
+                "pretty_type": "Shell",
+                "user": "UBXEU90UQ",
+                "editable": true,
+                "size": 238,
+                "mode": "snippet",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FEWTMK7NK\/-.sh?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FEWTMK7NK\/download\/-.sh?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "permalink": "https:\/\/rackn.slack.com\/files\/UBXEU90UQ\/FEWTMK7NK\/-.sh",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FEWTMK7NK-0f510c4cae",
+                "edit_link": "https:\/\/rackn.slack.com\/files\/UBXEU90UQ\/FEWTMK7NK\/-.sh\/edit",
+                "preview": "#!\/usr\/bin\/env bash\r\n\r\ncd \/etc\/systemd\/system\r\nsed -i'' \"s\/ExecStart=\/ExecStart=\\\/usr\\\/bin\\\/vrf task exec %I \/\" drpcli*.service\r\nrename 's\/.service\/@.service\/' drpcli*.service\r",
+                "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre><span class=\"cm-meta\">#!\/usr\/bin\/env bash<\/span><\/pre><\/div>\n<div><pre>&#8203;<\/pre><\/div>\n<div><pre><span class=\"cm-builtin\">cd<\/span> \/etc\/systemd\/system<\/pre><\/div>\n<div><pre><span class=\"cm-builtin\">sed<\/span> <span class=\"cm-attribute\">-i<\/span><span class=\"cm-string\">''<\/span> <span class=\"cm-string\">&quot;s\/ExecStart=\/ExecStart=\\\/usr\\\/bin\\\/vrf task exec %I \/&quot;<\/span> drpcli*.service<\/pre><\/div>\n<div><pre>rename <span class=\"cm-string\">'s\/.service\/@.service\/'<\/span> drpcli*.service<\/pre><\/div>\n<\/div>\n<\/div>\n",
+                "lines": 8,
+                "lines_more": 3,
+                "preview_is_truncated": false
+            }
+        ],
+        "upload": true,
+        "user": "UBXEU90UQ",
+        "display_as_bot": false,
+        "ts": "1545063010.622000"
+    },
+    {
+        "client_msg_id": "9a4ef0a9-a4a6-424e-92f2-fea3d877fc30",
+        "type": "message",
+        "text": "CL itself uses a different trick to put services into a vrf, by using a systemd generator - but it only uses unit files from `\/lib\/systemd\/system` (<https:\/\/github.com\/CumulusNetworks\/vrf\/blob\/a0dbc346abb043b8a3b2bea24df4aa64c9c6acd1\/systemd\/systemd-vrf-generator#L14>)  so doesn’t affect the installed drpcli services :disappointed:",
+        "user": "UBXEU90UQ",
+        "ts": "1545063090.623300",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "CumulusNetworks\/vrf",
+                "title_link": "https:\/\/github.com\/CumulusNetworks\/vrf\/blob\/a0dbc346abb043b8a3b2bea24df4aa64c9c6acd1\/systemd\/systemd-vrf-generator#L14",
+                "text": "Contribute to CumulusNetworks\/vrf development by creating an account on GitHub.",
+                "fallback": "GitHub: CumulusNetworks\/vrf",
+                "from_url": "https:\/\/github.com\/CumulusNetworks\/vrf\/blob\/a0dbc346abb043b8a3b2bea24df4aa64c9c6acd1\/systemd\/systemd-vrf-generator#L14",
+                "thumb_url": "https:\/\/avatars3.githubusercontent.com\/u\/4306877?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/CumulusNetworks\/vrf\/blob\/a0dbc346abb043b8a3b2bea24df4aa64c9c6acd1\/systemd\/systemd-vrf-generator#L14"
+            }
+        ]
+    },
+    {
+        "client_msg_id": "4971f4ff-349c-4817-8071-e094a52a026e",
+        "type": "message",
+        "text": "ahh, so close",
+        "user": "UBXEU90UQ",
+        "ts": "1545065791.623600"
+    },
+    {
+        "client_msg_id": "72f466b4-a77c-4a7c-82c2-d664ec5dccc0",
+        "type": "message",
+        "text": "it starts, but the machine is set to `Runnable: false`, I assume because it did an exit_reboot",
+        "user": "UBXEU90UQ",
+        "ts": "1545065810.624100"
+    },
+    {
+        "client_msg_id": "229285cd-10c5-46aa-9015-24885032933d",
+        "type": "message",
+        "text": "should drpcli-init.service run after every boot or only once? :thinking_face:",
+        "user": "UBXEU90UQ",
+        "ts": "1545065828.624600"
+    },
+    {
+        "client_msg_id": "53cd76fd-e398-42c3-85a1-604454cee994",
+        "type": "message",
+        "text": "On boot",
+        "user": "U02DGQYK1",
+        "ts": "1545066253.624800"
+    },
+    {
+        "client_msg_id": "98a4c407-a5c5-4ad1-9b28-783e612003f1",
+        "type": "message",
+        "text": "<@UBXEU90UQ>",
+        "user": "U02DGQYK1",
+        "ts": "1545066333.625000"
+    },
+    {
+        "client_msg_id": "e703a31a-9dc6-43e2-87fc-3921682a26e1",
+        "type": "message",
+        "text": "gotcha, that’ll be the bit i’m missing",
+        "user": "UBXEU90UQ",
+        "ts": "1545066462.625200"
+    },
+    {
+        "client_msg_id": "dc596f69-9a9f-4a52-b917-f176542b289b",
+        "type": "message",
+        "text": "so the usual systemctl enable then?",
+        "user": "UBXEU90UQ",
+        "ts": "1545066471.625500"
+    },
+    {
+        "client_msg_id": "b74b5383-b214-41bf-b4d8-45f134c8efed",
+        "type": "message",
+        "text": "yes - that should do it",
+        "user": "U02DGQYK1",
+        "ts": "1545066489.625700"
+    },
+    {
+        "client_msg_id": "7ea5dabc-cc99-4614-b8b7-fbdd9934d302",
+        "type": "message",
+        "text": "ahh need to modify all the Exec lines to make sure it uses the VRF to download the files",
+        "user": "UBXEU90UQ",
+        "ts": "1545066534.626900"
+    },
+    {
+        "client_msg_id": "38c9312b-dea7-475d-9bd0-f8d2d1ecbf94",
+        "type": "message",
+        "text": "It is one of the things I’ve been thinking about doing to the join-up.sh script.  Have it install the two services (for systemd) and then exit.  Letting the services do their magic.",
+        "user": "U02DGQYK1",
+        "ts": "1545066539.627000"
+    },
+    {
+        "client_msg_id": "b0c53e7d-bb69-4f15-9fc3-fcf06718aa34",
+        "type": "message",
+        "text": "yeah its annoying that the CL stuff only works on services in `\/lib\/systemd`, otherwise it’d be much easier to convert the services",
+        "user": "UBXEU90UQ",
+        "ts": "1545067148.627800"
+    },
+    {
+        "client_msg_id": "c7cc7796-7965-4f49-bdc2-2741fa3569a4",
+        "type": "message",
+        "text": "dont really wanna put custom service files in \/lib\/ cos they’ll probably get destroyed on upgrade",
+        "user": "UBXEU90UQ",
+        "ts": "1545067167.628300"
+    },
+    {
+        "client_msg_id": "7cfa2890-20a2-4d46-9be1-ce5fbed4aba2",
+        "type": "message",
+        "text": "hmmm... cumulus ignores \/etc\/systemd\/system ?",
+        "user": "U02DJQSG8",
+        "ts": "1545067561.629200"
+    },
+    {
+        "client_msg_id": "0b0da9ab-90d2-41d4-996e-bfab8f6e1913",
+        "type": "message",
+        "text": "it doesn’t ignore it, but it has a custom systemd generator (linked above) that modifies any service files listed in `\/etc\/vrf\/systemd.conf` so that they automatically run inside the management vrf when it’s enabled",
+        "user": "UBXEU90UQ",
+        "ts": "1545068258.630100"
+    },
+    {
+        "client_msg_id": "1ed98763-c0f0-4dc9-bfdd-743e70b1a997",
+        "type": "message",
+        "text": "but it only works on the service files in \/lib, not the ones in \/etc, which I assume is because it uses the \/etc directory to output the modified ones",
+        "user": "UBXEU90UQ",
+        "ts": "1545068282.630600"
+    },
+    {
+        "client_msg_id": "41ba244c-b12d-43ff-bb67-fecc31f03ece",
+        "type": "message",
+        "text": "urgh, prepending the vrf command (e.g. `\/usr\/bin\/vrf task exec %I \/usr\/local\/bin\/drpcli machines update \"$RS_UUID\" '{ \"Runnable\": true }'`) causes the drpcli command to fail parsing arguments :confused:",
+        "user": "UBXEU90UQ",
+        "ts": "1545068547.631200"
+    },
+    {
+        "client_msg_id": "c0926375-04aa-4564-ba07-889e89f0c5f8",
+        "type": "message",
+        "text": "(`Error: drpcli machines update [id] [json] [flags] requires 2 arguments`)",
+        "user": "UBXEU90UQ",
+        "ts": "1545068557.631400"
+    },
+    {
+        "client_msg_id": "09f06d46-1df7-4476-82ab-2f6515d75599",
+        "type": "message",
+        "text": "<!channel> - We’ve cut a release for v3.12.0 - here are the release notes - <https:\/\/github.com\/digitalrebar\/provision\/releases\/tag\/v3.12.0>",
+        "user": "U02DGQYK1",
+        "ts": "1545080177.632100",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/releases\/tag\/v3.12.0",
+                "text": "Digital Rebar Provision is a simple and powerful Golang executable that provides a complete API-driven DHCP\/PXE\/TFTP provisioning system. - digitalrebar\/provision",
+                "fallback": "GitHub: digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/releases\/tag\/v3.12.0",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/digitalrebar\/provision\/releases\/tag\/v3.12.0"
+            }
+        ]
+    },
+    {
+        "client_msg_id": "3b89e115-43e4-4c83-9102-9320356735d9",
+        "type": "message",
+        "text": "Here are the content release notes - <https:\/\/github.com\/digitalrebar\/provision-content\/releases\/tag\/v1.12.0>",
+        "user": "U02DGQYK1",
+        "ts": "1545080202.632600",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision-content",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision-content\/releases\/tag\/v1.12.0",
+                "text": "DigitalRebar Provision Content. Contribute to digitalrebar\/provision-content development by creating an account on GitHub.",
+                "fallback": "GitHub: digitalrebar\/provision-content",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision-content\/releases\/tag\/v1.12.0",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/digitalrebar\/provision-content\/releases\/tag\/v1.12.0"
+            }
+        ]
+    },
+    {
+        "client_msg_id": "b7084008-991b-4108-af69-e758349e01cc",
+        "type": "message",
+        "text": "If you update to v3.12.0 DRP, please update to v1.12.0 contents and v2.6.0 plugins.  Thanks.",
+        "user": "U02DGQYK1",
+        "ts": "1545080248.633600"
+    },
+    {
+        "client_msg_id": "e247e6bc-2c77-48d8-85c0-67c01872472a",
+        "type": "message",
+        "text": "Also - there is a sledgehammer update.",
+        "user": "U02DGQYK1",
+        "ts": "1545080255.633900",
+        "reactions": [
+            {
+                "name": "sunglasses",
+                "users": [
+                    "U6QFVRJNB",
+                    "UEU1YT30X",
+                    "UE4C36RV4"
+                ],
+                "count": 3
+            }
+        ]
+    },
+    {
+        "client_msg_id": "efe7cff8-abf1-4577-bd28-2cd6a585f58c",
+        "type": "message",
+        "text": "<!channel> last 2018 meetup tomorrow!  <https:\/\/www.meetup.com\/digitalrebar\/>\n\nI was thinking we'd talk 2019 roadmap items - both RackN and open Digital Rebar.",
+        "user": "U02DHRR2L",
+        "ts": "1545083232.635000",
+        "attachments": [
+            {
+                "service_name": "Meetup",
+                "title": "Digital Rebar (Mountain View, CA)",
+                "title_link": "https:\/\/www.meetup.com\/digitalrebar\/",
+                "text": "Digital Rebar Provision (DRP) is the open source (APLv2) , fast and simple data center provisioning and control scaffolding designed with a cloud native architecture. This Online Meetup group will dis",
+                "fallback": "Meetup: Digital Rebar (Mountain View, CA)",
+                "image_url": "https:\/\/secure.meetupstatic.com\/photos\/event\/d\/1\/b\/1\/600_467453681.jpeg",
+                "from_url": "https:\/\/www.meetup.com\/digitalrebar\/",
+                "image_width": 472,
+                "image_height": 250,
+                "image_bytes": 69998,
+                "service_icon": "https:\/\/www.meetup.com\/mu_static\/en-US\/m_swarm_120x120.4f86abc9.png",
+                "id": 1,
+                "original_url": "https:\/\/www.meetup.com\/digitalrebar\/"
+            }
+        ]
+    },
+    {
+        "client_msg_id": "585d1c7f-4e34-4275-9d97-14b149e1dc03",
+        "type": "message",
+        "text": "we'd also love some feedback about making trial \/ limited use licenses easier to get and potentially working with the Linux Foundation",
+        "user": "U02DHRR2L",
+        "ts": "1545083283.635900"
+    }
+]

@@ -1,0 +1,47 @@
+[
+    {
+        "client_msg_id": "af22070e-2d61-479a-bdf1-8f34ab2d5fba",
+        "type": "message",
+        "text": "Past community minutes: <https:\/\/drive.google.com\/drive\/folders\/1e5Sn6AGhkn1Fsd3HpMzYKET1fj6rDAHb?usp=sharing>",
+        "user": "U02DHRR2L",
+        "ts": "1540334296.000100"
+    },
+    {
+        "client_msg_id": "e0b53912-fc59-4a7e-b899-fdb15791f297",
+        "type": "message",
+        "text": "Video from Today: <https:\/\/youtu.be\/L6GbWSoC7h8>",
+        "user": "U02DHRR2L",
+        "ts": "1540334927.000200",
+        "attachments": [
+            {
+                "service_name": "YouTube",
+                "service_url": "https:\/\/www.youtube.com\/",
+                "title": "v028: Pooling, Bundlize and Convert, Ansible Tower, Community Feedback",
+                "title_link": "https:\/\/youtu.be\/L6GbWSoC7h8",
+                "author_name": "RackN & Digital Rebar",
+                "author_link": "https:\/\/www.youtube.com\/channel\/UCr3bBtP-pMsDQ5c0IDjt_LQ",
+                "fallback": "YouTube Video: v028: Pooling, Bundlize and Convert, Ansible Tower, Community Feedback",
+                "video_html": "<iframe width=\"400\" height=\"225\" src=\"https:\/\/www.youtube.com\/embed\/L6GbWSoC7h8?feature=oembed&autoplay=1&iv_load_policy=3\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen><\/iframe>",
+                "video_html_width": 400,
+                "video_html_height": 225,
+                "from_url": "https:\/\/youtu.be\/L6GbWSoC7h8",
+                "service_icon": "https:\/\/a.slack-edge.com\/2089\/img\/unfurl_icons\/youtube.png",
+                "id": 1,
+                "original_url": "https:\/\/youtu.be\/L6GbWSoC7h8"
+            }
+        ]
+    },
+    {
+        "client_msg_id": "927e963c-8844-482d-8bfb-95e6f4d4a9bb",
+        "type": "message",
+        "text": "Rob, not sure what you meant by \"have the right slidgehammer exploded\".  The bootenv I created from default ubuntu-16.04 points to the hwe kernel, with the only difference from the default one is:\n ...\n   \"Initrds\": [\n      \"install\/hwe-netboot\/ubuntu-installer\/amd64\/initrd.gz\"\n    ],\n    \"Kernel\": \"install\/hwe-netboot\/ubuntu-installer\/amd64\/linux\",\n...\nThe bootenv I created shows it as both available and validated.\n\nWhy is it trying to connect to 10.11.148.4 but fails to connect?",
+        "user": "UCWNG6NTV",
+        "ts": "1540356212.000100",
+        "edited": {
+            "user": "UCWNG6NTV",
+            "ts": "1540356357.000000"
+        },
+        "thread_ts": "1540183763.000100",
+        "parent_user_id": "U02DHRR2L"
+    }
+]

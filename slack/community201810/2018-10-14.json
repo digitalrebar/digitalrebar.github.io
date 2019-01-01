@@ -1,0 +1,145 @@
+[
+    {
+        "client_msg_id": "ab140c82-b3b7-4ffe-b44f-a8f7246b9fa5",
+        "type": "message",
+        "text": "Just put it in the tftpboot\/isos directory.",
+        "user": "U02DGQYK1",
+        "ts": "1539518133.000100"
+    },
+    {
+        "client_msg_id": "435b4b6b-55cc-4a57-867f-67a5d36656ec",
+        "type": "message",
+        "text": "so we don't need to change the IsoUrl for the ubuntu-16.04-install bootenv setting? The default is:\n\"IsoUrl\": \"<http:\/\/mirror.math.princeton.edu\/pub\/ubuntu-iso\/16.04\/ubuntu-16.04.5-server-amd64.iso>\",",
+        "user": "UCWNG6NTV",
+        "ts": "1539522552.000100"
+    },
+    {
+        "client_msg_id": "C0248BD5-D0BB-43C1-A7BF-355A1F5200B9",
+        "type": "message",
+        "text": " That is a hint on where to get it if you don’t have it in your tftpboot\/isos directory.   The uploadiso command uses it",
+        "user": "U02DGQYK1",
+        "ts": "1539522997.000100"
+    },
+    {
+        "client_msg_id": "8afc936d-7386-4e03-8c16-a3878f45c041",
+        "type": "message",
+        "text": "cool. Thanks Greg! One more question: does drp support cisco servers, like C240?",
+        "user": "UCWNG6NTV",
+        "ts": "1539526105.000100"
+    },
+    {
+        "client_msg_id": "e4957b38-2ce0-46ab-be6a-b98529d187cb",
+        "type": "message",
+        "text": "<@UCWNG6NTV> what do you mean by \"supported\"?  We do have customers that successfully use DRP with Cisco servers.  The base IPMI plugin supports next-boot and power on functions ...",
+        "user": "U6QFVRJNB",
+        "ts": "1539529886.000100",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1539529904.000000"
+        }
+    },
+    {
+        "client_msg_id": "ffb3eec3-3d84-41fe-bf51-68964e9181bc",
+        "type": "message",
+        "text": "<@U6QFVRJNB> exact info that I need. I just wanted to know that if anyone has success using DRP with Cisco servers, as we have members with Cisco servers.",
+        "user": "UCWNG6NTV",
+        "ts": "1539530989.000100"
+    },
+    {
+        "type": "message",
+        "text": "Hmm… getting this ever since upgrading to tip drp + contents when trying to boot a host. No TFTP requests from the host give any return traffic and that’s the only error message given with all logging set to trace. DRP is not installed in container. This host booted fine off DRP with the old version and no config has changed so should work…",
+        "files": [
+            {
+                "id": "FDFA8LQLW",
+                "created": 1539558692,
+                "timestamp": 1539558692,
+                "name": "Untitled.txt",
+                "title": "Untitled",
+                "mimetype": "text\/plain",
+                "filetype": "text",
+                "pretty_type": "Plain Text",
+                "user": "UBXEU90UQ",
+                "editable": true,
+                "size": 364,
+                "mode": "snippet",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FDFA8LQLW\/Untitled.txt?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FDFA8LQLW\/download\/Untitled.txt?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "permalink": "https:\/\/rackn.slack.com\/files\/UBXEU90UQ\/FDFA8LQLW\/Untitled.txt",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FDFA8LQLW-c42d0eea09",
+                "edit_link": "https:\/\/rackn.slack.com\/files\/UBXEU90UQ\/FDFA8LQLW\/Untitled.txt\/edit",
+                "preview": "Oct 15 00:16:21 dcmgr01.new2 dr-provision[21276]: dr-provision2018\/10\/14 23:16:21.434782 [5:277]tftp:static [ info]: \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/backend\/conncache.go:56\r\nOct 15 00:16:21 dcmgr01.new2 dr-provision[21276]: [5:277]addrCache: Adding local 10.10.16.1 ->  remote 10.10.16.10\r\nOct 15 00:16:21 dcmgr01.new2 dr-provision[21276]: dr-provision2018\/10\/14 23:16:21.434822 [5:278]tftp:static [debug]: \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/midlayer\/tftp.go:69\r\nOct 15 00:16:21 dcmgr01.new2 dr-provision[21276]: [5:278]TFTP: attempting to send lpxelinux.0\r\nOct 15 00:16:21 dcmgr01.new2 dr-provision[21276]: dr-provision2018\/10\/14 23:16:21.434880 [5:279]tftp:static [debug]: \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/midlayer\/tftp.go:100\r",
+                "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>Oct 15 00:16:21 dcmgr01.new2 dr-provision[21276]: dr-provision2018\/10\/14 23:16:21.434782 [5:277]tftp:static [ info]: \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/backend\/conncache.go:56<\/pre><\/div>\n<div><pre>Oct 15 00:16:21 dcmgr01.new2 dr-provision[21276]: [5:277]addrCache: Adding local 10.10.16.1 -&gt;  remote 10.10.16.10<\/pre><\/div>\n<div><pre>Oct 15 00:16:21 dcmgr01.new2 dr-provision[21276]: dr-provision2018\/10\/14 23:16:21.434822 [5:278]tftp:static [debug]: \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/midlayer\/tftp.go:69<\/pre><\/div>\n<div><pre>Oct 15 00:16:21 dcmgr01.new2 dr-provision[21276]: [5:278]TFTP: attempting to send lpxelinux.0<\/pre><\/div>\n<div><pre>Oct 15 00:16:21 dcmgr01.new2 dr-provision[21276]: dr-provision2018\/10\/14 23:16:21.434880 [5:279]tftp:static [debug]: \/home\/travis\/gopath\/src\/github.com\/digitalrebar\/provision\/midlayer\/tftp.go:100<\/pre><\/div>\n<div><pre><\/pre><\/div>\n<\/div>\n<\/div>\n",
+                "lines": 67,
+                "lines_more": 62,
+                "preview_is_truncated": true
+            }
+        ],
+        "upload": true,
+        "user": "UBXEU90UQ",
+        "display_as_bot": false,
+        "ts": "1539558693.000100",
+        "edited": {
+            "user": "UBXEU90UQ",
+            "ts": "1539560256.000000"
+        }
+    },
+    {
+        "client_msg_id": "c0b48965-fdbf-4701-aa21-aca592c9434d",
+        "type": "message",
+        "text": "<@UBXEU90UQ> which tip version?",
+        "user": "U02DHRR2L",
+        "ts": "1539561008.000100"
+    },
+    {
+        "client_msg_id": "ff8d53f4-e06f-4439-a539-2257e5d3bc3d",
+        "type": "message",
+        "text": "we just dropped a new tip that requires new contents \/ sledgehammer",
+        "user": "U02DHRR2L",
+        "ts": "1539561034.000100"
+    },
+    {
+        "client_msg_id": "66787404-888d-4418-9919-314dafcde2f3",
+        "type": "message",
+        "text": "you may want to check your tip content",
+        "user": "U02DHRR2L",
+        "ts": "1539561054.000100"
+    },
+    {
+        "client_msg_id": "b776c459-cb68-4cab-bb7e-bc70f18ac95d",
+        "type": "message",
+        "text": "and if you have new tip content, then make sure you have latest tip DRP too.   there are architecture awareness changes in tip",
+        "user": "U02DHRR2L",
+        "ts": "1539561166.000100"
+    },
+    {
+        "client_msg_id": "e03f3719-1af8-4e01-813d-ac1ad3d00e40",
+        "type": "message",
+        "text": "yeah, aware of that. Deployed `v3.11.0-tip-39-253af96fff2ba4069249d8e98d53bee7be65207d` from the github release (dr-provision) and also tip for all the content files about 15 mins before I posted to error above, so pretty sure it’s the absolute latest code. Shows the multiarch flag, and this was a completely new install (I deleted \/var\/lib\/dr-provision and all settings, iso uploads, content packs etc were autoinstalled via ansible)",
+        "user": "UBXEU90UQ",
+        "ts": "1539561588.000100",
+        "edited": {
+            "user": "UBXEU90UQ",
+            "ts": "1539561754.000000"
+        }
+    },
+    {
+        "client_msg_id": "ada25888-1974-4180-8e6e-99b0b2c7e098",
+        "type": "message",
+        "text": "1am though so I need to go to bed, but I’ll poke further tomorrow to try and track down what’s going on",
+        "user": "UBXEU90UQ",
+        "ts": "1539561604.000100"
+    },
+    {
+        "client_msg_id": "a7e2ca2f-ce83-4886-906f-3e66f3c36739",
+        "type": "message",
+        "text": "it could be something related to the new changes",
+        "user": "U02DHRR2L",
+        "ts": "1539563892.000100"
+    }
+]

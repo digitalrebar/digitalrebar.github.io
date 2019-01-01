@@ -1,59 +1,60 @@
 [
     {
-        "type": "message",
-        "user": "UBXEU90UQ",
-        "text": "Trying to track down that auth issue from yesterday - it looks like the user `Secret` changes between the first `drpcli contents create` and the subsequent ones",
         "client_msg_id": "36575f17-a204-47ed-91c6-69d50a344bde",
+        "type": "message",
+        "text": "Trying to track down that auth issue from yesterday - it looks like the user `Secret` changes between the first `drpcli contents create` and the subsequent ones",
+        "user": "UBXEU90UQ",
+        "ts": "1536145278.000100",
         "edited": {
             "user": "UBXEU90UQ",
             "ts": "1536145547.000000"
-        },
-        "ts": "1536145278.000100"
+        }
     },
     {
-        "type": "message",
-        "user": "UBXEU90UQ",
-        "text": "the token being sent by drpcli is identical, but the User’s `Secret` field has changed so I assume it invalidates the token",
         "client_msg_id": "7ee0e115-7d48-435d-8b83-01b1fbc94be7",
+        "type": "message",
+        "text": "the token being sent by drpcli is identical, but the User’s `Secret` field has changed so I assume it invalidates the token",
+        "user": "UBXEU90UQ",
         "ts": "1536145299.000100"
     },
     {
-        "type": "message",
-        "user": "UBXEU90UQ",
-        "text": "`grantorSecret` and `userSecret` both change, as does the return from `drpcli users list`",
         "client_msg_id": "8c0ce911-4189-437e-9baf-8b49745b2b04",
+        "type": "message",
+        "text": "`grantorSecret` and `userSecret` both change, as does the return from `drpcli users list`",
+        "user": "UBXEU90UQ",
         "ts": "1536145346.000100"
     },
     {
-        "type": "message",
-        "user": "UBXEU90UQ",
-        "text": "so on a hunch, I commented out the line which changes the `user.Secret` when `user.ChangePassword` is run… and validation passes.",
         "client_msg_id": "6304fc98-dca5-44ad-afd6-a377dbfc01c5",
+        "type": "message",
+        "text": "so on a hunch, I commented out the line which changes the `user.Secret` when `user.ChangePassword` is run… and validation passes.",
+        "user": "UBXEU90UQ",
+        "ts": "1536146527.000100",
         "edited": {
             "user": "UBXEU90UQ",
             "ts": "1536146799.000000"
-        },
-        "ts": "1536146527.000100"
+        }
     },
     {
-        "type": "message",
-        "user": "UBXEU90UQ",
-        "text": "I then put the line which regenerates the `Secret` *before* the line that saves the user on password change, and it seems to work like that as well… I reckon the Secret is regenerated but not saved into the user store, so when I generate the token it’s somehow done using the ephemeral user token and doesn’t match when retrieved from store. Or something like that…",
         "client_msg_id": "32a69664-6aef-4fa4-b7c7-c6139ad4df33",
+        "type": "message",
+        "text": "I then put the line which regenerates the `Secret` *before* the line that saves the user on password change, and it seems to work like that as well… I reckon the Secret is regenerated but not saved into the user store, so when I generate the token it’s somehow done using the ephemeral user token and doesn’t match when retrieved from store. Or something like that…",
+        "user": "UBXEU90UQ",
         "ts": "1536146645.000100"
     },
     {
-        "type": "message",
-        "user": "UBXEU90UQ",
-        "text": "Or maybe the modified User object is being saved into the store at some point in the future with the new `Secret` after the token has been generated, invalidating it…",
         "client_msg_id": "971774ae-a0f9-456a-8be6-9b197cdbc27f",
+        "type": "message",
+        "text": "Or maybe the modified User object is being saved into the store at some point in the future with the new `Secret` after the token has been generated, invalidating it…",
+        "user": "UBXEU90UQ",
         "ts": "1536149262.000100"
     },
     {
-        "type": "message",
-        "user": "UBXEU90UQ",
-        "text": "Github issue about the above blurb <https:\/\/github.com\/digitalrebar\/provision-content\/issues\/135>",
         "client_msg_id": "2485c354-aa69-4c8b-ae91-235cdc4a23a5",
+        "type": "message",
+        "text": "Github issue about the above blurb <https:\/\/github.com\/digitalrebar\/provision-content\/issues\/135>",
+        "user": "UBXEU90UQ",
+        "ts": "1536151757.000100",
         "attachments": [
             {
                 "service_name": "GitHub",
@@ -69,46 +70,45 @@
                 "id": 1,
                 "original_url": "https:\/\/github.com\/digitalrebar\/provision-content\/issues\/135"
             }
-        ],
-        "ts": "1536151757.000100"
+        ]
     },
     {
-        "type": "message",
-        "user": "U02DGQYK1",
-        "text": "Thanks, <@UBXEU90UQ>",
         "client_msg_id": "37597a4b-df93-4e95-95f5-5b20b5eacbe0",
+        "type": "message",
+        "text": "Thanks, <@UBXEU90UQ>",
+        "user": "U02DGQYK1",
         "ts": "1536153415.000100"
     },
     {
-        "type": "message",
-        "user": "UAQU29EJW",
-        "text": "This might sound weird, but is there a way to name hosts' MAC addresses or IPs and just stream disk content and reboot (without any smarts or tricks)? I'm asking because I figure at this stage that would probably work fine (if it could be done) for my repeated provisioning task where everything is always identical (so I could provision manually once and save each server's disk image). Otherwise with custom ISOs that we use in these systems (different non-standard distro and app combos packaged as ISOs, each is custom made, used for different types of hosts) it's going to take me months to figure out how to explode them and so on...",
         "client_msg_id": "efbc57a0-1663-4ae5-9a04-0aa64e8867c6",
+        "type": "message",
+        "text": "This might sound weird, but is there a way to name hosts' MAC addresses or IPs and just stream disk content and reboot (without any smarts or tricks)? I'm asking because I figure at this stage that would probably work fine (if it could be done) for my repeated provisioning task where everything is always identical (so I could provision manually once and save each server's disk image). Otherwise with custom ISOs that we use in these systems (different non-standard distro and app combos packaged as ISOs, each is custom made, used for different types of hosts) it's going to take me months to figure out how to explode them and so on...",
+        "user": "UAQU29EJW",
+        "ts": "1536166334.000100",
         "edited": {
             "user": "UAQU29EJW",
             "ts": "1536166418.000000"
-        },
-        "ts": "1536166334.000100"
+        }
     },
     {
-        "type": "message",
-        "user": "U02DGQYK1",
-        "text": "<@UAQU29EJW> - That is basically a two part thing.  first part - can you capture a system.  Second part, can you image an system from a capture.",
         "client_msg_id": "f3987092-1af5-4886-b3a2-0e8b9021bbdb",
+        "type": "message",
+        "text": "<@UAQU29EJW> - That is basically a two part thing.  first part - can you capture a system.  Second part, can you image an system from a capture.",
+        "user": "U02DGQYK1",
         "ts": "1536169482.000100"
     },
     {
-        "type": "message",
-        "user": "U02DGQYK1",
-        "text": "The image-deploy plugin can be used to do the second.  <@U6QFVRJNB> has been working on parts to do the first.",
         "client_msg_id": "f6902047-c1c0-4fe6-a401-bd137ed3c03d",
+        "type": "message",
+        "text": "The image-deploy plugin can be used to do the second.  <@U6QFVRJNB> has been working on parts to do the first.",
+        "user": "U02DGQYK1",
         "ts": "1536169515.000100"
     },
     {
-        "type": "message",
-        "user": "U02DGQYK1",
-        "text": "Between <@U02DJQSG8> and <@U6QFVRJNB>, they have content packs (internal to RackN right now) that build sledgehammer and capture it for use as a bootenv.",
         "client_msg_id": "cc9539cd-cf0e-4e4f-82cb-f932358aa94b",
+        "type": "message",
+        "text": "Between <@U02DJQSG8> and <@U6QFVRJNB>, they have content packs (internal to RackN right now) that build sledgehammer and capture it for use as a bootenv.",
+        "user": "U02DGQYK1",
         "ts": "1536169568.000100",
         "reactions": [
             {
@@ -122,10 +122,10 @@
         ]
     },
     {
-        "type": "message",
-        "user": "U02DGQYK1",
-        "text": "These are RackN licensed items.  For full disclosure.",
         "client_msg_id": "5174476e-3503-41df-9e89-9a8a1a1fa3e3",
+        "type": "message",
+        "text": "These are RackN licensed items.  For full disclosure.",
+        "user": "U02DGQYK1",
         "ts": "1536169581.000100"
     }
 ]

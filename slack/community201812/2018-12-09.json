@@ -1,0 +1,533 @@
+[
+    {
+        "user": "UEQLNHELE",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1544375811.266800",
+        "text": "<@UEQLNHELE> has joined the channel"
+    },
+    {
+        "client_msg_id": "8dce7ef3-ffc2-47ed-b8e1-183aba55bb20",
+        "type": "message",
+        "text": "Hi there!",
+        "user": "UEQLNHELE",
+        "ts": "1544375842.267000"
+    },
+    {
+        "client_msg_id": "ad501b1b-e3ad-40d5-b554-cd47d4308fb1",
+        "type": "message",
+        "text": "im using DR-Provison for 2 days now and i think im in love...",
+        "user": "UEQLNHELE",
+        "ts": "1544375884.267500",
+        "reactions": [
+            {
+                "name": "heart",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "client_msg_id": "8d9f161d-6ec4-4cde-85a0-edc8f2cce892",
+        "type": "message",
+        "text": "great tool!",
+        "user": "UEQLNHELE",
+        "ts": "1544375892.267700"
+    },
+    {
+        "client_msg_id": "42ac4d97-56b4-4ec5-adea-7e0d7d96204e",
+        "type": "message",
+        "text": "im using it to deploy OOK with KRIB+Openstack-HELM",
+        "user": "UEQLNHELE",
+        "ts": "1544375914.268300"
+    },
+    {
+        "client_msg_id": "8bdbcc5a-ec24-47af-ab2a-716fed9819c6",
+        "type": "message",
+        "text": "so far im able to deploy everything without problem :smile:",
+        "user": "UEQLNHELE",
+        "ts": "1544375963.269300"
+    },
+    {
+        "client_msg_id": "fd3aaffd-d952-49c0-bdef-94cbfa156c1d",
+        "type": "message",
+        "text": "but i have a stupid problem i can manage to solve...",
+        "user": "UEQLNHELE",
+        "ts": "1544375982.269700"
+    },
+    {
+        "client_msg_id": "38cc8a48-de1e-4964-8628-99f23719172a",
+        "type": "message",
+        "text": "i need to limit drp to listen for DHCP on only one interface",
+        "user": "UEQLNHELE",
+        "ts": "1544376031.270500"
+    },
+    {
+        "client_msg_id": "d54487c2-19d9-4f0f-a2d6-3b631d1ee49a",
+        "type": "message",
+        "text": "but if i use --dhcp-ifs he still listen on 0.0.0.0:67",
+        "user": "UEQLNHELE",
+        "ts": "1544376052.271000"
+    },
+    {
+        "client_msg_id": "95aca345-3dba-460a-8253-c8f01da70bcf",
+        "type": "message",
+        "text": "not only on the interface i specified on the parameter (dhcp requests from other interfaces are rejected)",
+        "user": "UEQLNHELE",
+        "ts": "1544376110.271900"
+    },
+    {
+        "client_msg_id": "2d972eb7-c4f7-4097-a744-16a5bf71159d",
+        "type": "message",
+        "text": "and also, i have another question...",
+        "user": "UEQLNHELE",
+        "ts": "1544376669.272200"
+    },
+    {
+        "client_msg_id": "ad1753ac-aa83-4729-a082-894600958324",
+        "type": "message",
+        "text": "when sledgehammer gets the gohai information for each host, how i can use that information on templates?",
+        "user": "UEQLNHELE",
+        "ts": "1544376735.273100"
+    },
+    {
+        "client_msg_id": "7e9143ec-c314-4b06-814a-1ac98ebe0911",
+        "type": "message",
+        "text": "like any other parameter?",
+        "user": "UEQLNHELE",
+        "ts": "1544376748.273400"
+    },
+    {
+        "client_msg_id": "6d959bda-c443-45f0-a256-677f31bc24ca",
+        "type": "message",
+        "text": "For gohai, you can use {{.ParamAsJson to expand the gohai data then use jq to select.   As an alternate,  use the inventory stage in the task library to do that for you and read from inventory\/ values.  ",
+        "user": "U02DHRR2L",
+        "ts": "1544379207.278000"
+    },
+    {
+        "client_msg_id": "b0e93c2d-7a00-43df-b425-4747271f6aa3",
+        "type": "message",
+        "text": "cool so it aggregates profile params + machine params",
+        "user": "UEQLNHELE",
+        "ts": "1544379332.279300"
+    },
+    {
+        "client_msg_id": "a779a947-14e5-49f1-bca1-7e7c5f333bca",
+        "type": "message",
+        "text": "with any precedence?",
+        "user": "UEQLNHELE",
+        "ts": "1544379380.279800"
+    },
+    {
+        "client_msg_id": "09d1fbac-f3a0-4b1c-8cba-151f33e59f2f",
+        "type": "message",
+        "text": "profile params overwrite host params?",
+        "user": "UEQLNHELE",
+        "ts": "1544379400.280300"
+    },
+    {
+        "client_msg_id": "b944ef95-3fc5-4eae-bc4d-a5a2792a62e7",
+        "type": "message",
+        "text": "Order of precedence from least to most:\n• global profile (and accompanying Params defined in it)\n• Machine specific Profile (and accompanying Params)\n• Params directly added on Machine",
+        "user": "U6QFVRJNB",
+        "ts": "1544380309.281500"
+    },
+    {
+        "client_msg_id": "9b660663-4864-4f76-add1-e425e43f93b4",
+        "type": "message",
+        "text": "btw <@UEQLNHELE> - $welcome :slightly_smiling_face:",
+        "user": "U6QFVRJNB",
+        "ts": "1544380330.282200"
+    },
+    {
+        "type": "message",
+        "subtype": "slackbot_response",
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "user": "USLACKBOT",
+        "ts": "1544380331.282300"
+    },
+    {
+        "client_msg_id": "ac333cb9-9c91-435f-9ea9-eda9a5ea76f8",
+        "type": "message",
+        "text": "Check out the colordemo repo",
+        "user": "U02DHRR2L",
+        "ts": "1544380332.282400"
+    },
+    {
+        "client_msg_id": "b60db878-9842-42b0-ba7b-1aabc019b62e",
+        "type": "message",
+        "text": "Also - for your DHCP qeury - DRP will not generate or answer any DHCP packets on interfaces\/subnets that it doesn't have a `Subnet` definition for - so ultimately - DRP only answers if an incoming DHCP packet matches a configured `Subnet` on the host - plus you can \"enable\/disable\" subnets on the fly as needed",
+        "user": "U6QFVRJNB",
+        "ts": "1544380444.283900"
+    },
+    {
+        "client_msg_id": "0554c8c6-bc55-49be-9991-1402ff0da7a5",
+        "type": "message",
+        "text": "yep but my problem is dr-provision binds to wildcard 0.0.0.0:67",
+        "user": "UEQLNHELE",
+        "ts": "1544380596.284500"
+    },
+    {
+        "client_msg_id": "2e767950-961b-4076-b1af-6c48b0321cd8",
+        "type": "message",
+        "text": "its ignores requests from other interfaces but the problem is the bind",
+        "user": "UEQLNHELE",
+        "ts": "1544380629.285100"
+    },
+    {
+        "client_msg_id": "36d85d02-f529-409e-8c27-24fe98d52d72",
+        "type": "message",
+        "text": "i cant use dnsmasq on the same server",
+        "user": "UEQLNHELE",
+        "ts": "1544380638.285400"
+    },
+    {
+        "client_msg_id": "1f2d2490-2173-414b-905a-cf2a45893b91",
+        "type": "message",
+        "text": "for now i can use dr-provision to serve all requests because my environment is small",
+        "user": "UEQLNHELE",
+        "ts": "1544380770.287600"
+    },
+    {
+        "client_msg_id": "f4b73e02-2519-468b-808d-e6a3c39aff62",
+        "type": "message",
+        "text": "are there features in DNSMasq that are missing in DRP that you would use ?",
+        "user": "U6QFVRJNB",
+        "ts": "1544382094.289000"
+    },
+    {
+        "client_msg_id": "958ed62c-304c-43d6-b91f-747c0b590172",
+        "type": "message",
+        "text": "nop, i will try to explain my problem",
+        "user": "UEQLNHELE",
+        "ts": "1544382287.289400"
+    },
+    {
+        "client_msg_id": "553a5bc9-faeb-4faf-ba38-5496280652e1",
+        "type": "message",
+        "text": "i have 6 servers with 2 1gbps ethernet (one of those is used to dr-provision communications) and 2 10gbps ethernet.",
+        "user": "UEQLNHELE",
+        "ts": "1544382367.290900"
+    },
+    {
+        "client_msg_id": "6e963ab7-9793-4fd4-b2e2-8db400c72530",
+        "type": "message",
+        "text": "also there is a small server with dr-provision",
+        "user": "UEQLNHELE",
+        "ts": "1544382393.291200"
+    },
+    {
+        "client_msg_id": "ed164d20-52b4-4cbd-9c35-443e0c338c7f",
+        "type": "message",
+        "text": "i have 3 separated vlans (mgmt 1gbps, k8s 10g, ceph 10g)",
+        "user": "UEQLNHELE",
+        "ts": "1544382439.292100"
+    },
+    {
+        "client_msg_id": "c99efffa-ea6a-4ee1-ab34-e9b20661c875",
+        "type": "message",
+        "text": "as i want to use calico and ceph on designated vlans i need someone to give them ip addresses, as i dont have more servers available my idea was to trunk all vlans to actual dr-provision server and use dr-provision on only mgmt vlan and dnsmasq on the other two",
+        "user": "UEQLNHELE",
+        "ts": "1544382602.294900"
+    },
+    {
+        "client_msg_id": "2b367e68-97aa-4f87-a518-36b786983320",
+        "type": "message",
+        "text": "with this configuration i dont need to worry about the NIC order on bios because dnsmasq served DHCP will not have BOOTP",
+        "user": "UEQLNHELE",
+        "ts": "1544382701.296000"
+    },
+    {
+        "client_msg_id": "521faeff-260f-48a0-ad81-c9353c4ff931",
+        "type": "message",
+        "text": "(im so bad writing english...)",
+        "user": "UEQLNHELE",
+        "ts": "1544382801.297200"
+    },
+    {
+        "client_msg_id": "32a916e7-aa65-412c-94d7-750d5c8cdc99",
+        "type": "message",
+        "text": "xD",
+        "user": "UEQLNHELE",
+        "ts": "1544382802.297400"
+    },
+    {
+        "client_msg_id": "2C35F892-11EA-4845-9675-09733FC0C449",
+        "type": "message",
+        "text": "<@UEQLNHELE> we don’t have a specific bind address option.  I’ll make sure but I’m pretty sure.  ",
+        "user": "U02DGQYK1",
+        "ts": "1544390456.299000"
+    },
+    {
+        "client_msg_id": "92485952-3DB3-4EAB-B251-0165DA8931A2",
+        "type": "message",
+        "text": "I’m with <@U6QFVRJNB> I’d love to know what dnsmasq is providing that DRP and I’ll fix that",
+        "user": "U02DGQYK1",
+        "ts": "1544390507.300200"
+    },
+    {
+        "client_msg_id": "20394383-b0a9-4719-820e-f810fcf9ae8b",
+        "type": "message",
+        "text": "<@U02DGQYK1> to \"bind\" dr-provision to an interface im using --dhcp-ifs, with this parameter any dhcp request coming from that inerface will be ignored but i expected dr-provision binds to the ip of that interface, not 0.0.0.0:67",
+        "user": "UEQLNHELE",
+        "ts": "1544397067.302500"
+    },
+    {
+        "client_msg_id": "7004e79d-4617-4ebf-9574-eeb6907a84ba",
+        "type": "message",
+        "text": "there is no especial option dnsmasq have and dr-provision not, i want to split the dhcp requests to avoid if one machine have ipxe configured for two interfaces dr-provision provides booting information to the \"wrong\" one",
+        "user": "UEQLNHELE",
+        "ts": "1544397212.304500",
+        "edited": {
+            "user": "UEQLNHELE",
+            "ts": "1544397225.000000"
+        }
+    },
+    {
+        "client_msg_id": "fdc4a2f0-16e9-408d-8e03-697033d2e297",
+        "type": "message",
+        "text": "(i have 3 vlans trunked to the machine where dr-provision lives)",
+        "user": "UEQLNHELE",
+        "ts": "1544397290.305200"
+    },
+    {
+        "client_msg_id": "03ff0b69-8db2-4efe-a2ca-f28a975a26cb",
+        "type": "message",
+        "text": "I understand what you have.  I don’t understand why you want two tools to manage it.  :slightly_smiling_face:",
+        "user": "U02DGQYK1",
+        "ts": "1544397362.305900"
+    },
+    {
+        "client_msg_id": "23d6efec-5432-4879-8d58-2c87ee51a03c",
+        "type": "message",
+        "text": "can i setup dr-provision to ignore ipxe requests from one subnet?",
+        "user": "UEQLNHELE",
+        "ts": "1544397395.307000"
+    },
+    {
+        "client_msg_id": "0229785a-af0e-4b9f-85b1-72fb7a12cde6",
+        "type": "message",
+        "text": "(or interface)",
+        "user": "UEQLNHELE",
+        "ts": "1544397439.307900"
+    },
+    {
+        "client_msg_id": "9e641dea-7ea2-47cd-acd2-a125b00430d4",
+        "type": "message",
+        "text": "The `dhcp-ifs` only limits packets not the interfaces.  This is partially to make it easier to work with DHCP relay agents.",
+        "user": "U02DGQYK1",
+        "ts": "1544397439.308000"
+    },
+    {
+        "client_msg_id": "c7ba87bd-ab73-42a9-be2e-c27ecba00f7e",
+        "type": "message",
+        "text": "i need dhcp on 2 vlans and dhcp+ipxe on the other",
+        "user": "UEQLNHELE",
+        "ts": "1544397482.309000",
+        "edited": {
+            "user": "UEQLNHELE",
+            "ts": "1544397486.000000"
+        }
+    },
+    {
+        "client_msg_id": "82746cd3-b6c9-4c95-b7f9-d1ebd53ba7c1",
+        "type": "message",
+        "text": "Well - DHCP will hand out addresses to all of those.  Whether the system boots from DHCP response is up to the machine.",
+        "user": "U02DGQYK1",
+        "ts": "1544397626.310900"
+    },
+    {
+        "client_msg_id": "7d723dae-e9aa-4263-8260-2e3a51a167c7",
+        "type": "message",
+        "text": "Are you moving the machines post or do all the booting machines start from mgmt ip?",
+        "user": "U02DGQYK1",
+        "ts": "1544397650.311500"
+    },
+    {
+        "client_msg_id": "60ce34bb-a567-4e01-b9e5-73aa7f29645f",
+        "type": "message",
+        "text": "no, the machines will stay on mgmt forever in case i need to recicle some nodes",
+        "user": "UEQLNHELE",
+        "ts": "1544397697.312600"
+    },
+    {
+        "client_msg_id": "3a324d58-f076-438f-b98f-512be7d89f7a",
+        "type": "message",
+        "text": "this problem only occurs on the lab environment",
+        "user": "UEQLNHELE",
+        "ts": "1544397735.313400"
+    },
+    {
+        "client_msg_id": "8a897e1a-f96e-484c-99e6-4f1127cab5da",
+        "type": "message",
+        "text": "DRP DHCP doesn’t have a non-bootfile option currently.",
+        "user": "U02DGQYK1",
+        "ts": "1544397744.313700"
+    },
+    {
+        "client_msg_id": "511797fe-f271-4203-b4d5-f527f63e581c",
+        "type": "message",
+        "text": "I guess I trying to understand your problem.",
+        "user": "U02DGQYK1",
+        "ts": "1544397749.314000"
+    },
+    {
+        "client_msg_id": "d17ccaa0-8930-429e-8348-6c65ecd44296",
+        "type": "message",
+        "text": "on production i will have a router with dhcp :smile:",
+        "user": "UEQLNHELE",
+        "ts": "1544397753.314100"
+    },
+    {
+        "client_msg_id": "c5ed55b9-20a3-4318-8daf-b1d006f382bc",
+        "type": "message",
+        "text": "dont worry so much, for this 6 servers i disabled ipxe on bios",
+        "user": "UEQLNHELE",
+        "ts": "1544397852.315400",
+        "edited": {
+            "user": "UEQLNHELE",
+            "ts": "1544397859.000000"
+        }
+    },
+    {
+        "client_msg_id": "0d0012ab-dde2-40b1-be7d-95260a865468",
+        "type": "message",
+        "text": "I don’t understand you problem.  Is this real or assumed problem?",
+        "user": "U02DGQYK1",
+        "ts": "1544397894.316500"
+    },
+    {
+        "client_msg_id": "4b867b35-a365-487c-85f0-4f33e9c27902",
+        "type": "message",
+        "text": "We haven’t really had this problem before.",
+        "user": "U02DGQYK1",
+        "ts": "1544397902.316700"
+    },
+    {
+        "client_msg_id": "ef4565f8-4930-4b96-a30d-9c4a71213374",
+        "type": "message",
+        "text": "is a real problem",
+        "user": "UEQLNHELE",
+        "ts": "1544397918.317500"
+    },
+    {
+        "client_msg_id": "38cb3c93-7add-4c77-abc2-86959b8ce31c",
+        "type": "message",
+        "text": "The machine will attempt to pxe from the mgmt interface, once installed, the DHCP server will tell it to boot the local disk.",
+        "user": "U02DGQYK1",
+        "ts": "1544397920.317600"
+    },
+    {
+        "client_msg_id": "3ce1c1ef-8e2f-421e-b6d9-963512a7ceb8",
+        "type": "message",
+        "text": "The local disk will boot the os and the other interfaces will then DHCP cleanly.",
+        "user": "U02DGQYK1",
+        "ts": "1544397937.318000"
+    },
+    {
+        "client_msg_id": "4f5e54a4-cd17-4de6-ba8b-81a31b34f591",
+        "type": "message",
+        "text": "if i put 100 new servers on this network (3 vlans trunked to server with dr-provision) and some nics attached to a non mgmt vlan have ipxe configured",
+        "user": "UEQLNHELE",
+        "ts": "1544398008.319300"
+    },
+    {
+        "client_msg_id": "9683e968-ce5c-4774-b687-8297d7a9f691",
+        "type": "message",
+        "text": "dr-provision will boot that machines from the first NIC that request ipxe",
+        "user": "UEQLNHELE",
+        "ts": "1544398048.319900"
+    },
+    {
+        "client_msg_id": "3e5c3e3e-513e-40a0-9c46-e3183751461a",
+        "type": "message",
+        "text": "dr-provision doesnt allow to not boot a machine if dr-provision  is providing dhcp",
+        "user": "UEQLNHELE",
+        "ts": "1544398157.321600",
+        "edited": {
+            "user": "UEQLNHELE",
+            "ts": "1544398189.000000"
+        }
+    },
+    {
+        "client_msg_id": "fb5c3910-3088-4359-bbdf-2e4bb0d5c74e",
+        "type": "message",
+        "text": "xD",
+        "user": "UEQLNHELE",
+        "ts": "1544398200.322200"
+    },
+    {
+        "client_msg_id": "df4b544a-a25e-4607-9ffc-19c404cea5eb",
+        "type": "message",
+        "text": "pocahontas style",
+        "user": "UEQLNHELE",
+        "ts": "1544398212.322700"
+    },
+    {
+        "client_msg_id": "117d43aa-df32-45c5-91f5-2daf4d274876",
+        "type": "message",
+        "text": "xD",
+        "user": "UEQLNHELE",
+        "ts": "1544398213.322900"
+    },
+    {
+        "client_msg_id": "ce9fffef-4b9f-4bfb-bf75-c4ebf712a75d",
+        "type": "message",
+        "text": "well - the point is the DRP DHCP server tracks the macs of the system and a single machine entry will be created across the nics.",
+        "user": "U02DGQYK1",
+        "ts": "1544398243.323500"
+    },
+    {
+        "client_msg_id": "b784c5f3-74ca-444b-a9eb-087de5cc7a6e",
+        "type": "message",
+        "text": "To handle this case.",
+        "user": "U02DGQYK1",
+        "ts": "1544398271.323800"
+    },
+    {
+        "client_msg_id": "0aa1cff5-9161-4c09-b224-08e6118b7496",
+        "type": "message",
+        "text": "but regardless. DRP doesn’t do what you want to do.",
+        "user": "U02DGQYK1",
+        "ts": "1544398484.324800"
+    },
+    {
+        "client_msg_id": "a0b3e3f4-2047-43b5-bb28-f6de79d26897",
+        "type": "message",
+        "text": "it could.  binding is a little tough because we don’t have a separate handler system currently.  It operates on a single socket model.  It isn’t hard to change, but not something I want to just throw together.",
+        "user": "U02DGQYK1",
+        "ts": "1544398547.325900"
+    },
+    {
+        "client_msg_id": "e17f5f78-5cda-443f-a1c3-0b466272b9d8",
+        "type": "message",
+        "text": "Changing a subnet to not send a bootfile is easy to add a flag for.  Would put it on subnet and reservations probably.  That way a bootfile\/nextserver is not sent for that subnet or reservation.",
+        "user": "U02DGQYK1",
+        "ts": "1544398602.326900"
+    },
+    {
+        "client_msg_id": "8a3ecf05-4750-4ac5-999b-f6dafcd38bda",
+        "type": "message",
+        "text": "i think is a good option, specially on lab environments where you put many pieces on few servers",
+        "user": "UEQLNHELE",
+        "ts": "1544398804.328900"
+    },
+    {
+        "client_msg_id": "dc6601fd-253b-4fbd-80dc-957fa9f86084",
+        "type": "message",
+        "text": "<@U02DGQYK1> I'm happy to report that `provisioner.postportdelay` &amp; `provisioner.wgetretrycount` helped me to get in the sledehammer\/discovery stage. Thanks a lot. I'm still a bit curious why there is some timeout but a simple `provisioner.postportdelay=60` works and a `provisioner.postportdelay=30,provisioner.wgetretrycount=30` works too.",
+        "user": "UBU0BPRA9",
+        "ts": "1544422859.330700",
+        "reactions": [
+            {
+                "name": "muscle",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    }
+]

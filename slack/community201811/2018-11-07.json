@@ -1,0 +1,1448 @@
+[
+    {
+        "user": "UDXUYAD1B",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1541591356.287000",
+        "text": "<@UDXUYAD1B> has joined the channel"
+    },
+    {
+        "client_msg_id": "b7c0eeb9-ffa7-413d-bb39-e8adefb8e4d3",
+        "type": "message",
+        "text": "should `\/usr\/local\/bin\/incrementer` and `\/usr\/local\/bin\/drbundler` be removed when running `tools\/install.sh remove` ??",
+        "user": "UCU824PB2",
+        "ts": "1541602782.288000"
+    },
+    {
+        "client_msg_id": "1d132247-3e97-4997-ac84-002149ba4f10",
+        "type": "message",
+        "text": "oh - probably.  :neutral_face:",
+        "user": "U02DGQYK1",
+        "ts": "1541602847.288200"
+    },
+    {
+        "user": "UDXNBSWUC",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1541602937.288400",
+        "text": "<@UDXNBSWUC> has joined the channel"
+    },
+    {
+        "client_msg_id": "a204f417-cbe6-4e00-84bf-efd1e20b12bf",
+        "type": "message",
+        "text": "<@UDXNBSWUC> $welcome",
+        "user": "U02DHRR2L",
+        "ts": "1541603427.288800"
+    },
+    {
+        "type": "message",
+        "subtype": "slackbot_response",
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "user": "USLACKBOT",
+        "ts": "1541603428.288900"
+    },
+    {
+        "client_msg_id": "48d3fbd2-d806-4ca3-9d61-88cccb1e524b",
+        "type": "message",
+        "text": "<@UDXUYAD1B> ^^ for you too!",
+        "user": "U02DHRR2L",
+        "ts": "1541603446.289200"
+    },
+    {
+        "client_msg_id": "5b39603d-5f1d-4c5e-aaf3-0b8f1576a470",
+        "type": "message",
+        "text": "Thanks Rob.",
+        "user": "UDXNBSWUC",
+        "ts": "1541603569.289400"
+    },
+    {
+        "user": "UDXUALGQJ",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1541604720.289600",
+        "text": "<@UDXUALGQJ> has joined the channel"
+    },
+    {
+        "client_msg_id": "1e99bd1d-e68f-4a7e-93e9-2f8658a9d2b1",
+        "type": "message",
+        "text": "i am installing DRP for the first time, and trying to set up a small POC for a larger upcoming project. If i have questions is this the right space to just post, or should i DM someone?",
+        "user": "UDXNBSWUC",
+        "ts": "1541605997.290700"
+    },
+    {
+        "client_msg_id": "edee70cf-8adf-4171-822e-a8bc3fe58d3e",
+        "type": "message",
+        "text": "Start here, <@UDXNBSWUC>",
+        "user": "U02DGQYK1",
+        "ts": "1541606285.291100"
+    },
+    {
+        "client_msg_id": "5421d6e6-fcd7-4821-94d9-5c6c66d044bd",
+        "type": "message",
+        "text": "sounds good",
+        "user": "UDXNBSWUC",
+        "ts": "1541606468.291300"
+    },
+    {
+        "client_msg_id": "b069756b-d4b4-47d5-9ec4-bbed970a1367",
+        "type": "message",
+        "text": "$welcome - <@UDXUALGQJ>",
+        "user": "U02DGQYK1",
+        "ts": "1541609633.291800"
+    },
+    {
+        "type": "message",
+        "subtype": "slackbot_response",
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "user": "USLACKBOT",
+        "ts": "1541609633.291900"
+    },
+    {
+        "client_msg_id": "3e629f2c-3c1c-4ba9-8960-0864fba97ed0",
+        "type": "message",
+        "text": "howdy!  glad to be here :laughing:",
+        "user": "UDXUALGQJ",
+        "ts": "1541610112.292100"
+    },
+    {
+        "client_msg_id": "63d977eb-b527-4368-8b10-26b53e8e6b66",
+        "type": "message",
+        "text": "Is the best place to ask questions about krib here?",
+        "user": "UDRCF03BK",
+        "ts": "1541612101.292500"
+    },
+    {
+        "client_msg_id": "c5a471dd-6bb7-473e-b992-6525db8b1324",
+        "type": "message",
+        "text": "well - sure.  :slightly_smiling_face:",
+        "user": "U02DGQYK1",
+        "ts": "1541612119.292700"
+    },
+    {
+        "client_msg_id": "f7a1520f-460a-41a1-8d4c-a21d75249035",
+        "type": "message",
+        "text": "lol",
+        "user": "UDRCF03BK",
+        "ts": "1541612171.292900"
+    },
+    {
+        "client_msg_id": "fe5e9cc6-4a35-4c76-aec7-d3583bacd25f",
+        "type": "message",
+        "text": "Just wondering how best to debug a \"failure\"",
+        "user": "UDRCF03BK",
+        "ts": "1541612177.293200"
+    },
+    {
+        "client_msg_id": "d416d8d2-de68-49b0-9096-951ef6a4d1ae",
+        "type": "message",
+        "text": "I am following the examples in <https:\/\/provision.readthedocs.io\/en\/tip\/doc\/content-packages\/krib.html#component-krib>",
+        "user": "UDRCF03BK",
+        "ts": "1541612192.293700"
+    },
+    {
+        "type": "message",
+        "text": "",
+        "files": [
+            {
+                "id": "FDY8Q340M",
+                "created": 1541612204,
+                "timestamp": 1541612204,
+                "name": "Got_to_here___.txt",
+                "title": "Got to here...",
+                "mimetype": "text\/plain",
+                "filetype": "text",
+                "pretty_type": "Plain Text",
+                "user": "UDRCF03BK",
+                "editable": true,
+                "size": 582,
+                "mode": "snippet",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FDY8Q340M\/got_to_here___.txt?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FDY8Q340M\/download\/got_to_here___.txt?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "permalink": "https:\/\/rackn.slack.com\/files\/UDRCF03BK\/FDY8Q340M\/got_to_here___.txt",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FDY8Q340M-cbcfceb90d",
+                "edit_link": "https:\/\/rackn.slack.com\/files\/UDRCF03BK\/FDY8Q340M\/got_to_here___.txt\/edit",
+                "preview": "Command running\r\nConfigure kubeadm master and minions...\r\nMAKE SURE SWAP IS OFF!- kubeadm requirement\r\nMAKE SURE bridge-nf-call-iptables CONTAINS 1 - kubeadm requirement\r\nnet.bridge.bridge-nf-call-iptables = 1\r",
+                "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>Command running<\/pre><\/div>\n<div><pre>Configure kubeadm master and minions...<\/pre><\/div>\n<div><pre>MAKE SURE SWAP IS OFF!- kubeadm requirement<\/pre><\/div>\n<div><pre>MAKE SURE bridge-nf-call-iptables CONTAINS 1 - kubeadm requirement<\/pre><\/div>\n<div><pre>net.bridge.bridge-nf-call-iptables = 1<\/pre><\/div>\n<div><pre><\/pre><\/div>\n<\/div>\n<\/div>\n",
+                "lines": 14,
+                "lines_more": 9,
+                "preview_is_truncated": false
+            }
+        ],
+        "upload": true,
+        "user": "UDRCF03BK",
+        "display_as_bot": false,
+        "ts": "1541612206.294000"
+    },
+    {
+        "client_msg_id": "097c0fdc-f8e4-4694-87a5-960eb6252571",
+        "type": "message",
+        "text": "there is a Param you can set which enables better debugging",
+        "user": "U6QFVRJNB",
+        "ts": "1541612208.294400"
+    },
+    {
+        "client_msg_id": "f622e8aa-15e9-468e-8261-3dca07b4ea1b",
+        "type": "message",
+        "text": "--tell-me-whats-going-on-brah ?",
+        "user": "UDRCF03BK",
+        "ts": "1541612221.294900"
+    },
+    {
+        "client_msg_id": "0bc995f0-e6d4-414c-85e4-8b88bbfad346",
+        "type": "message",
+        "text": "it essentially enables `set -x` for all of the scripts - which will output a lot more about what is actually run",
+        "user": "U6QFVRJNB",
+        "ts": "1541612231.295200"
+    },
+    {
+        "client_msg_id": "a83f4bf8-3554-44e1-83b4-c5e74710efd7",
+        "type": "message",
+        "text": "k",
+        "user": "UDRCF03BK",
+        "ts": "1541612249.295400"
+    },
+    {
+        "client_msg_id": "7c4c1398-fe80-41a6-8ddb-be3ca87e5882",
+        "type": "message",
+        "text": "hold on - finding it",
+        "user": "U6QFVRJNB",
+        "ts": "1541612275.295600"
+    },
+    {
+        "client_msg_id": "93c6255b-79ad-4e6b-b471-4b5423488505",
+        "type": "message",
+        "text": "`rs-debug-enable` - set that to True - either in the Global profile, or via a Profile \/ Param added to the Machine object of the Machine(s) you want to debug",
+        "user": "U6QFVRJNB",
+        "ts": "1541612373.296900"
+    },
+    {
+        "client_msg_id": "aafe54b0-3873-442d-8634-39c13804c6fa",
+        "type": "message",
+        "text": "for example - you could just set it in the `krib` profile you are using to hold your cluster information - since that should already be applied to all of the machines in question",
+        "user": "U6QFVRJNB",
+        "ts": "1541612403.297600"
+    },
+    {
+        "client_msg_id": "02ff61ac-9f60-409f-9e4c-a7dbc45bf9ae",
+        "type": "message",
+        "text": "if you include `{{ template \"setup.tmpl\" }}` in any custom content - you can have this mechanism at your disposal for BASH scripts you develop for content",
+        "user": "U6QFVRJNB",
+        "ts": "1541612450.298400"
+    },
+    {
+        "client_msg_id": "a41ec5d4-827f-432b-9e4f-c3218aa06ddc",
+        "type": "message",
+        "text": "cool trying that now",
+        "user": "UDRCF03BK",
+        "ts": "1541612570.298600"
+    },
+    {
+        "client_msg_id": "f4876e49-f8bd-442b-8cc6-41932131e479",
+        "type": "message",
+        "text": "alright!  that got me: `Error: Key, krib\/cluster-bootstrap-token, already present on profile test-krib-ha`",
+        "user": "UDRCF03BK",
+        "ts": "1541612940.299000"
+    },
+    {
+        "client_msg_id": "f5c82098-1cf9-475e-97ef-b5af010bfee6",
+        "type": "message",
+        "text": "do I need to remove keys between runs?",
+        "user": "UDRCF03BK",
+        "ts": "1541612960.299300"
+    },
+    {
+        "client_msg_id": "38bea3d1-c33c-4b0f-8869-04e0cd258ff3",
+        "type": "message",
+        "text": "yes - there's a whole \"reset procedure\" you need to run to clean things up ...",
+        "user": "U6QFVRJNB",
+        "ts": "1541613003.299800"
+    },
+    {
+        "client_msg_id": "4df68483-71a9-4705-a28f-3cf819b2b6b0",
+        "type": "message",
+        "text": "if you are doing multiple runs of the tool",
+        "user": "U6QFVRJNB",
+        "ts": "1541613016.300100"
+    },
+    {
+        "client_msg_id": "66a80ffa-3716-4f98-9a5c-16d1bbe27252",
+        "type": "message",
+        "text": "ahh ok",
+        "user": "UDRCF03BK",
+        "ts": "1541613036.300300"
+    },
+    {
+        "client_msg_id": "5943da08-b3e0-46b4-821c-7bf0511634d3",
+        "type": "message",
+        "text": "giving that a shot",
+        "user": "UDRCF03BK",
+        "ts": "1541613105.300700"
+    },
+    {
+        "client_msg_id": "cbf30508-6287-41cf-aef8-b4d1a8216b29",
+        "type": "message",
+        "text": "it's the cluster-reset workflow",
+        "user": "U02DHRR2L",
+        "ts": "1541613108.300800"
+    },
+    {
+        "client_msg_id": "0da29055-90f2-4247-a119-dad4a22e51fb",
+        "type": "message",
+        "text": "pick a machine in the cluster and run that workflow",
+        "user": "U02DHRR2L",
+        "ts": "1541613116.301200"
+    },
+    {
+        "client_msg_id": "70541aea-603e-458b-baf3-4a20c004003e",
+        "type": "message",
+        "text": "(only needs to be run on ONE machine)",
+        "user": "U6QFVRJNB",
+        "ts": "1541613130.301700"
+    },
+    {
+        "type": "message",
+        "subtype": "me_message",
+        "text": "IT WILL REMOVE YOUR CLUSTER CREDENTIALS",
+        "user": "U02DHRR2L",
+        "ts": "1541613132.301900"
+    },
+    {
+        "client_msg_id": "23552fcd-af35-4f57-b04e-b42937c01ae9",
+        "type": "message",
+        "text": "I totally forgot -- was there an pre built ISO to deploy for a DRP if you wanted to dedicate a machine to it?  I think maybe I had heard it was a centos image?",
+        "user": "UDXUALGQJ",
+        "ts": "1541613211.302700"
+    },
+    {
+        "client_msg_id": "e4062b2c-c1cb-4ae2-abf3-e5490495b5a0",
+        "type": "message",
+        "text": "<@U02DHRR2L> I think that's the issue I am running into now :slightly_smiling_face:",
+        "user": "UDRCF03BK",
+        "ts": "1541613247.303200"
+    },
+    {
+        "client_msg_id": "0ca5997b-9117-4ba0-a316-8ac94bed0bc8",
+        "type": "message",
+        "text": "it's just a test to play around",
+        "user": "UDRCF03BK",
+        "ts": "1541613251.303500"
+    },
+    {
+        "client_msg_id": "82e9c357-2136-47c8-9c91-8dc50768ac1e",
+        "type": "message",
+        "text": "<@UDXUALGQJ> - you need an existing machine running linux (centos7)",
+        "user": "U02DGQYK1",
+        "ts": "1541613253.303600"
+    },
+    {
+        "client_msg_id": "0af9ba18-d74a-4606-87a1-1df4e4d9f40b",
+        "type": "message",
+        "text": "gotcha ok thnx",
+        "user": "UDXUALGQJ",
+        "ts": "1541613263.304100"
+    },
+    {
+        "client_msg_id": "c4893edc-3048-4f14-842e-2fd28328bd5f",
+        "type": "message",
+        "text": "Then you run the install.sh from the curl bash command.",
+        "user": "U02DGQYK1",
+        "ts": "1541613269.304300"
+    },
+    {
+        "client_msg_id": "83844914-bc25-43d3-8fb6-d86ac8b49d68",
+        "type": "message",
+        "text": "are there any documents around for BIOS Configuration?",
+        "user": "UDXNBSWUC",
+        "ts": "1541614224.304700"
+    },
+    {
+        "client_msg_id": "9e8ad7fb-0420-44ec-b32b-2ec79f86fd34",
+        "type": "message",
+        "text": "ok - so next stupid krib config question: ```.\/krib-get-masters-krib-get-masters.sh.tmpl@275(): echo 'Missing krib\/cluster-master-vip on the machine!'\n```",
+        "user": "UDRCF03BK",
+        "ts": "1541614338.305200"
+    },
+    {
+        "client_msg_id": "63cc7e2a-6061-4d17-a6d5-d109f05912b7",
+        "type": "message",
+        "text": "I think I just need to configure this into a range that it is in?",
+        "user": "UDRCF03BK",
+        "ts": "1541614386.306300"
+    },
+    {
+        "client_msg_id": "b6e1bf5e-1e01-4171-a4b9-eab395ebb211",
+        "type": "message",
+        "text": "e.g. the current nodes are all in 10.1.0.0\/24 and the default master vip is 10.10.10.10 or something similiar",
+        "user": "UDRCF03BK",
+        "ts": "1541614416.307100"
+    },
+    {
+        "client_msg_id": "c480c2bc-a81d-43c0-a1e6-edc46f686d9e",
+        "type": "message",
+        "text": "<@UDRCF03BK> - for \"playing around\" - I'd suggest starting with a non-HA cluster build - which will use one controller - the VIP is only needed for an HA config",
+        "user": "U6QFVRJNB",
+        "ts": "1541614519.307800"
+    },
+    {
+        "client_msg_id": "24dd757a-a555-4943-a87a-42611dc44468",
+        "type": "message",
+        "text": "it's a more \"advanced\" usage pattern",
+        "user": "U6QFVRJNB",
+        "ts": "1541614526.308100"
+    },
+    {
+        "client_msg_id": "5fa9f495-7d9f-47b7-934a-0cf8f891ba0e",
+        "type": "message",
+        "text": "well we are never going to run a non-HA env",
+        "user": "UDRCF03BK",
+        "ts": "1541614557.308700"
+    },
+    {
+        "client_msg_id": "b675abd0-5cd6-410f-becf-bf003fcbef5d",
+        "type": "message",
+        "text": "so IDK if that makes much sense to do that",
+        "user": "UDRCF03BK",
+        "ts": "1541614570.309200"
+    },
+    {
+        "client_msg_id": "b0d63f56-87b1-4811-abb0-bc23d1daa38e",
+        "type": "message",
+        "text": "however - that Param defines an IP address that will be used by nginx as the VIP for the control plane - so it needs to be routable to all of your masters",
+        "user": "U6QFVRJNB",
+        "ts": "1541614578.309400"
+    },
+    {
+        "client_msg_id": "aeb10373-7169-4be3-a228-52bdd4e117fd",
+        "type": "message",
+        "text": "typically an IP on the \"public\" side of the cluster, in the same Layer2 environment",
+        "user": "U6QFVRJNB",
+        "ts": "1541614640.310400"
+    },
+    {
+        "client_msg_id": "46cfe950-981a-4916-8772-9800feb7d344",
+        "type": "message",
+        "text": "that all of your masters sit in",
+        "user": "U6QFVRJNB",
+        "ts": "1541614646.310600"
+    },
+    {
+        "client_msg_id": "33aefbf3-d136-422f-8a01-5cdef0449fce",
+        "type": "message",
+        "text": "gotcha",
+        "user": "UDRCF03BK",
+        "ts": "1541615121.310800"
+    },
+    {
+        "client_msg_id": "d829644d-536b-4576-936a-6d972f6f9889",
+        "type": "message",
+        "text": "if you are using a Layer3 topology - it's left up to the operator to insure that IP (VIP) is able to float between machines via your infrastructure",
+        "user": "U6QFVRJNB",
+        "ts": "1541615153.311400"
+    },
+    {
+        "client_msg_id": "699c354e-7e78-4012-af9f-d23cd797799c",
+        "type": "message",
+        "text": "If you start at ha, you may slow learning the pattern.  ",
+        "user": "U02DHRR2L",
+        "ts": "1541615199.312100"
+    },
+    {
+        "client_msg_id": "805556ad-16dd-451a-9512-f0e60d811f32",
+        "type": "message",
+        "text": "I am slow learner",
+        "user": "UDRCF03BK",
+        "ts": "1541615284.312300"
+    },
+    {
+        "client_msg_id": "7ab9d24b-9c50-464f-8dfd-f1750a0f54e0",
+        "type": "message",
+        "text": "it's okay",
+        "user": "UDRCF03BK",
+        "ts": "1541615287.312500"
+    },
+    {
+        "client_msg_id": "bd20e090-bf25-491b-9b55-83968f2b92ce",
+        "type": "message",
+        "text": "it's exposing me to more features as well",
+        "user": "UDRCF03BK",
+        "ts": "1541615296.312800"
+    },
+    {
+        "client_msg_id": "1ac78fff-a0e4-4329-bd57-68295f196b0b",
+        "type": "message",
+        "text": "just waiting on the worlds worse DNS now to resolve out my server names (didn't know that when i started)",
+        "user": "UDRCF03BK",
+        "ts": "1541615387.313300"
+    },
+    {
+        "client_msg_id": "fab6db62-b177-4555-bf34-3ffb7be6dce7",
+        "type": "message",
+        "text": "NS1  !!",
+        "user": "U6QFVRJNB",
+        "ts": "1541615461.313500"
+    },
+    {
+        "client_msg_id": "079bf523-731a-46a6-99c5-198d2004213b",
+        "type": "message",
+        "text": "lol",
+        "user": "UDRCF03BK",
+        "ts": "1541617265.313700"
+    },
+    {
+        "client_msg_id": "938a230e-0b22-4c56-9869-e1611dadb797",
+        "type": "message",
+        "text": "we are on aws",
+        "user": "UDRCF03BK",
+        "ts": "1541617272.314000"
+    },
+    {
+        "client_msg_id": "447ae618-e786-4c18-8e3d-9b4a25eaba12",
+        "type": "message",
+        "text": "resolution of new dns entries takes forever",
+        "user": "UDRCF03BK",
+        "ts": "1541617281.314300"
+    },
+    {
+        "client_msg_id": "8d9b17b5-fe83-47e2-a67e-b919ad74bb2f",
+        "type": "message",
+        "text": "I wish we had NS1 money",
+        "user": "UCXU3160M",
+        "ts": "1541617292.314500"
+    },
+    {
+        "client_msg_id": "968848ed-4c8c-44de-930b-17c8034558de",
+        "type": "message",
+        "text": "now onto ```\t[ERROR KubeletVersion]: the kubelet version is higher than the control plane version. This is not a supported version skew and may lead to a malfunctional cluster. Kubelet version: \"1.12.2\" Control plane version: \"1.11.1\"\n```",
+        "user": "UDRCF03BK",
+        "ts": "1541617699.317000"
+    },
+    {
+        "client_msg_id": "fb1447f0-b576-4fdf-87b6-898c1e4bf970",
+        "type": "message",
+        "text": "Yes - this is a bug(kinda).  set the k8s version parameter globally to `1.12.2`",
+        "user": "U02DGQYK1",
+        "ts": "1541617782.317600"
+    },
+    {
+        "client_msg_id": "49ab0546-2b2f-4b46-9c42-ea9cc35d26ac",
+        "type": "message",
+        "text": "I think the kubelet installer isn’t pay attention to that var and getting the latest.  Where the control plane is using the var.",
+        "user": "U02DGQYK1",
+        "ts": "1541617815.318400"
+    },
+    {
+        "client_msg_id": "004b039a-0d3a-4ccf-a925-eead1672ab7a",
+        "type": "message",
+        "text": "```krib\/cluster-kubernetes-version (string):```",
+        "user": "UDRCF03BK",
+        "ts": "1541618052.318800"
+    },
+    {
+        "client_msg_id": "1c92d35e-fa20-4f3d-ba4c-aff6747619cc",
+        "type": "message",
+        "text": "?",
+        "user": "UDRCF03BK",
+        "ts": "1541618053.319000"
+    },
+    {
+        "type": "message",
+        "text": "<@UDRCF03BK> - here's the original response that worked for <@UDPV4CC67>",
+        "user": "U6QFVRJNB",
+        "ts": "1541618829.319200",
+        "attachments": [
+            {
+                "fallback": "[October 31st, 2018 6:45 AM] shane: you could attempt to fix it by setting `krib\/cluster-kubernetes-version` to the value `v1.12.2` to force it pull in the newer version",
+                "ts": "1540993547.135500",
+                "author_id": "U6QFVRJNB",
+                "author_subname": "Shane Gibson",
+                "channel_id": "C02L9P26Q",
+                "channel_name": "community",
+                "is_msg_unfurl": true,
+                "text": "you could attempt to fix it by setting `krib\/cluster-kubernetes-version` to the value `v1.12.2` to force it pull in the newer version",
+                "author_name": "Shane Gibson",
+                "author_link": "https:\/\/rackn.slack.com\/team\/U6QFVRJNB",
+                "author_icon": "https:\/\/avatars.slack-edge.com\/2017-09-18\/243018470675_611b6896ed20358ab1aa_48.jpg",
+                "mrkdwn_in": [
+                    "text"
+                ],
+                "color": "D0D0D0",
+                "from_url": "https:\/\/rackn.slack.com\/archives\/C02L9P26Q\/p1540993547135500",
+                "is_share": true,
+                "footer": "Posted in #community"
+            }
+        ]
+    },
+    {
+        "client_msg_id": "bfd8e4e2-17f0-44bf-9410-ad8193bc279d",
+        "type": "message",
+        "text": "nice",
+        "user": "UDRCF03BK",
+        "ts": "1541618842.319500"
+    },
+    {
+        "client_msg_id": "f93db85f-e2ee-4514-84a2-10bcc012afcd",
+        "type": "message",
+        "text": "(note the \"v\" in there)",
+        "user": "U6QFVRJNB",
+        "ts": "1541618846.319600"
+    },
+    {
+        "client_msg_id": "2fbe12ac-dfe1-4724-990e-667aaa34b4c7",
+        "type": "message",
+        "text": "huh different errors",
+        "user": "UDRCF03BK",
+        "ts": "1541620120.319800"
+    },
+    {
+        "client_msg_id": "9282908a-f6fb-4c46-8750-1078540db9b0",
+        "type": "message",
+        "text": "```Tiller NOT running - something went wrong with helm init\n```",
+        "user": "UDRCF03BK",
+        "ts": "1541620124.320000"
+    },
+    {
+        "type": "message",
+        "text": "",
+        "files": [
+            {
+                "id": "FDYDMUJ8M",
+                "created": 1541622746,
+                "timestamp": 1541622746,
+                "name": "not-master_nodes_are_coming_up_like.txt",
+                "title": "not-master nodes are coming up like",
+                "mimetype": "text\/plain",
+                "filetype": "text",
+                "pretty_type": "Plain Text",
+                "user": "UDRCF03BK",
+                "editable": true,
+                "size": 847,
+                "mode": "snippet",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FDYDMUJ8M\/not-master_nodes_are_coming_up_like.txt?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FDYDMUJ8M\/download\/not-master_nodes_are_coming_up_like.txt?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "permalink": "https:\/\/rackn.slack.com\/files\/UDRCF03BK\/FDYDMUJ8M\/not-master_nodes_are_coming_up_like.txt",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FDYDMUJ8M-e2bc42b560",
+                "edit_link": "https:\/\/rackn.slack.com\/files\/UDRCF03BK\/FDYDMUJ8M\/not-master_nodes_are_coming_up_like.txt\/edit",
+                "preview": ".\/krib-config-krib-config.sh.tmpl@286(): kubeadm init --config=\/tmp\/kubeadm.cfg\r\n[preflight] Some fatal errors occurred:\r\n\t[ERROR Port-6443]: Port 6443 is in use\r\n\t[ERROR Port-10251]: Port 10251 is in use\r\n\t[ERROR Port-10252]: Port 10252 is in use\r",
+                "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>.\/krib-config-krib-config.sh.tmpl@286(): kubeadm init --config=\/tmp\/kubeadm.cfg<\/pre><\/div>\n<div><pre>[preflight] Some fatal errors occurred:<\/pre><\/div>\n<div><pre>    [ERROR Port-6443]: Port 6443 is in use<\/pre><\/div>\n<div><pre>    [ERROR Port-10251]: Port 10251 is in use<\/pre><\/div>\n<div><pre>    [ERROR Port-10252]: Port 10252 is in use<\/pre><\/div>\n<div><pre><\/pre><\/div>\n<\/div>\n<\/div>\n",
+                "lines": 11,
+                "lines_more": 6,
+                "preview_is_truncated": false
+            }
+        ],
+        "upload": true,
+        "user": "UDRCF03BK",
+        "display_as_bot": false,
+        "ts": "1541622747.320200"
+    },
+    {
+        "client_msg_id": "cc881c74-98ab-4a9b-a0c7-faa3ddb2ded6",
+        "type": "message",
+        "text": "so things are somehow already running there...",
+        "user": "UDRCF03BK",
+        "ts": "1541622759.320700"
+    },
+    {
+        "client_msg_id": "1c303497-f0ba-4d42-a0f6-93a8e6053a0e",
+        "type": "message",
+        "text": "yeah it does seem to install but then not register where it has installed things?",
+        "user": "UDRCF03BK",
+        "ts": "1541626080.321200"
+    },
+    {
+        "type": "message",
+        "text": "",
+        "files": [
+            {
+                "id": "FDY67U8BD",
+                "created": 1541626085,
+                "timestamp": 1541626085,
+                "name": "-.txt",
+                "title": "Untitled",
+                "mimetype": "text\/plain",
+                "filetype": "text",
+                "pretty_type": "Plain Text",
+                "user": "UDRCF03BK",
+                "editable": true,
+                "size": 548,
+                "mode": "snippet",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FDY67U8BD\/-.txt?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FDY67U8BD\/download\/-.txt?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "permalink": "https:\/\/rackn.slack.com\/files\/UDRCF03BK\/FDY67U8BD\/-.txt",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FDY67U8BD-f192a40f69",
+                "edit_link": "https:\/\/rackn.slack.com\/files\/UDRCF03BK\/FDY67U8BD\/-.txt\/edit",
+                "preview": "Adding env=dev label to machine halfling-fidel.us-east.optoro.io\r\n.\/krib-config-krib-config.sh.tmpl@365(): kubectl --kubeconfig=label.conf label nodes halfling-fidel.us-east.optoro.io env=dev\r\nThe connection to the server localhost:8080 was refused - did you specify the right host or port?\r\nCommand exited with status 1\r\nAction krib-config.sh.tmpl finished\r",
+                "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>Adding env=dev label to machine halfling-fidel.us-east.optoro.io<\/pre><\/div>\n<div><pre>.\/krib-config-krib-config.sh.tmpl@365(): kubectl --kubeconfig=label.conf label nodes halfling-fidel.us-east.optoro.io env=dev<\/pre><\/div>\n<div><pre>The connection to the server localhost:8080 was refused - did you specify the right host or port?<\/pre><\/div>\n<div><pre>Command exited with status 1<\/pre><\/div>\n<div><pre>Action krib-config.sh.tmpl finished<\/pre><\/div>\n<div><pre><\/pre><\/div>\n<\/div>\n<\/div>\n",
+                "lines": 9,
+                "lines_more": 4,
+                "preview_is_truncated": false
+            }
+        ],
+        "upload": true,
+        "user": "UDRCF03BK",
+        "display_as_bot": false,
+        "ts": "1541626086.321300"
+    },
+    {
+        "client_msg_id": "02f02d91-ae9f-4cd4-a8b4-8395041344dc",
+        "type": "message",
+        "text": "<@UDRCF03BK> - are you rerunning the stages without resetting them?",
+        "user": "U02DGQYK1",
+        "ts": "1541628124.321900"
+    },
+    {
+        "client_msg_id": "bedd7c5b-7b95-4898-bbca-20edd133bba3",
+        "type": "message",
+        "text": "These aren’t necessarily idempotent.",
+        "user": "U02DGQYK1",
+        "ts": "1541628156.322300"
+    },
+    {
+        "client_msg_id": "1009015f-4588-41ca-b20e-c06453fb463b",
+        "type": "message",
+        "text": "Nah",
+        "user": "UDRCF03BK",
+        "ts": "1541628157.322400"
+    },
+    {
+        "client_msg_id": "360624d8-98c1-4753-9bdb-1e8e2c8cc952",
+        "type": "message",
+        "text": "I've reset a couple times",
+        "user": "UDRCF03BK",
+        "ts": "1541628167.322800"
+    },
+    {
+        "client_msg_id": "01498a87-e414-4d90-8d05-bcd47c1e3a52",
+        "type": "message",
+        "text": "It blew away the custom attributes",
+        "user": "UDRCF03BK",
+        "ts": "1541628187.323400"
+    },
+    {
+        "client_msg_id": "2c6bb2bd-c231-4a9c-8768-1e6f057c418b",
+        "type": "message",
+        "text": "Are the machines persistent?",
+        "user": "U02DGQYK1",
+        "ts": "1541628188.323500"
+    },
+    {
+        "client_msg_id": "7f7f8203-93ec-4c80-8dfd-5922229dfc2e",
+        "type": "message",
+        "text": "No",
+        "user": "UDRCF03BK",
+        "ts": "1541628192.323700"
+    },
+    {
+        "client_msg_id": "f24a937b-0c0c-4fcc-b0db-4e5e1e16b715",
+        "type": "message",
+        "text": "Live",
+        "user": "UDRCF03BK",
+        "ts": "1541628195.323900"
+    },
+    {
+        "client_msg_id": "71584895-fe17-4408-9bd8-a4382413b1e1",
+        "type": "message",
+        "text": "Hmm - actually, I guess your last error is the one to look at.",
+        "user": "U02DGQYK1",
+        "ts": "1541628673.324400"
+    },
+    {
+        "client_msg_id": "d0cdc32d-6ea0-44d1-8043-c2ea2c11df92",
+        "type": "message",
+        "text": "From that machine, you should be able to do `drpcli profiles get &lt;krib profile&gt; param \"krib\/cluster-admin-conf\"`",
+        "user": "U02DGQYK1",
+        "ts": "1541628736.325200"
+    },
+    {
+        "client_msg_id": "3c02fcfc-64e4-4ca2-94a0-cb6d6a618cea",
+        "type": "message",
+        "text": "Redirect that to a file: `label.conf`",
+        "user": "U02DGQYK1",
+        "ts": "1541628749.325500"
+    },
+    {
+        "client_msg_id": "14e64262-ecc1-4c35-886e-176a1802659a",
+        "type": "message",
+        "text": "Then do `kubectl --kubeconfig=label.conf get nodes`",
+        "user": "U02DGQYK1",
+        "ts": "1541628764.325900"
+    },
+    {
+        "client_msg_id": "97009460-d31a-4e80-bca3-db65e1706805",
+        "type": "message",
+        "text": "You should then be able to look into the label.conf and see what is in it if the command fails.",
+        "user": "U02DGQYK1",
+        "ts": "1541628789.326400"
+    },
+    {
+        "client_msg_id": "cf1c3a75-ff30-4b5d-b45c-22931878714e",
+        "type": "message",
+        "text": "I've got a bootenv I made to handle unknown systems and it's telling me it can't add a system node because the bootenv is flagged as \"UnknownOnly\".  But it doesn't work as an Unknown bootenv if it's not flagged that, plus the default discovery bootenv is flagged UnknownOnly but can still create machine nodes.  What gives?",
+        "user": "U9BU09D51",
+        "ts": "1541629754.328000"
+    },
+    {
+        "client_msg_id": "bc4012ef-b0bc-4f8d-b69f-0f7a5d01df2b",
+        "type": "message",
+        "text": "Ummm <@U9BU09D51>, I’m not sure what you are doing when you get that message.  The `UnknownOnly` bootenvs can only be used in the Unknown Bootenv Preference.  They can not be assigned to a machine.",
+        "user": "U02DGQYK1",
+        "ts": "1541629867.329100"
+    },
+    {
+        "client_msg_id": "e3d0bcdf-8c2c-484c-b9fb-ed29a68d069c",
+        "type": "message",
+        "text": "Could one put preferences as part of a content bundle?",
+        "user": "UCU824PB2",
+        "ts": "1541629906.329700"
+    },
+    {
+        "client_msg_id": "973ebd2f-5042-475b-8e7c-7dd05dcbec53",
+        "type": "message",
+        "text": "<@UCU824PB2> - sadly no.  That is an architectural oversight in the content system.",
+        "user": "U02DGQYK1",
+        "ts": "1541629960.330600"
+    },
+    {
+        "client_msg_id": "0c2e7b0b-4477-4ed7-8db6-f38761e16d52",
+        "type": "message",
+        "text": "You can kinda do it, but they don’t take effect like you think they should.",
+        "user": "U02DGQYK1",
+        "ts": "1541629979.331400"
+    },
+    {
+        "client_msg_id": "a34ffb8c-82a2-48c5-b621-1b1fe7ef36fe",
+        "type": "message",
+        "text": "I ask, because the implication is that contents are RO, and preferences seem to want to be modified.",
+        "user": "UCU824PB2",
+        "ts": "1541629990.331800"
+    },
+    {
+        "client_msg_id": "0c01dc87-9c9d-4db9-9859-5181a6c22907",
+        "type": "message",
+        "text": "That is correct.  From a history perspective, prefs were created before the object system solidified and then didn’t get truly converted over to objects.  Prefs are also the only “objects” that can be specified on the command line that are set if not set.",
+        "user": "U02DGQYK1",
+        "ts": "1541630073.334500"
+    },
+    {
+        "client_msg_id": "54197c56-f293-4d08-9768-4a73cebdb81f",
+        "type": "message",
+        "text": "I'm booting a new machine.  I have the Unknown Bootenv preference set to my bootenv, which boots an image that then tries to do discovery much like sledgehammer does.  But I get the error that says it can't do that because the bootenv is set to UnknownOnly.",
+        "user": "U9BU09D51",
+        "ts": "1541630091.334900"
+    },
+    {
+        "client_msg_id": "cdd33f25-ee00-4ed0-beea-d52f5f2ac6ef",
+        "type": "message",
+        "text": "okay - so - are you trying to create a machine and getting this error?",
+        "user": "U02DGQYK1",
+        "ts": "1541630151.335600"
+    },
+    {
+        "client_msg_id": "db3afa17-9b92-4118-bd80-5b4e72364b7b",
+        "type": "message",
+        "text": "Yup",
+        "user": "U9BU09D51",
+        "ts": "1541630159.335800"
+    },
+    {
+        "client_msg_id": "ef629aaf-7b5e-4a54-b67f-eb5cf8d4ae67",
+        "type": "message",
+        "text": "okay are you explicitly setting the machine’s bootenv in the create object?",
+        "user": "U02DGQYK1",
+        "ts": "1541630180.336300",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1541630189.000000"
+        }
+    },
+    {
+        "client_msg_id": "e216b0f3-a163-4581-83c8-4ab4a66af88e",
+        "type": "message",
+        "text": "Hrm.  Good question.",
+        "user": "U9BU09D51",
+        "ts": "1541630197.336700"
+    },
+    {
+        "client_msg_id": "cc8f4490-f8eb-4192-abff-252f0f80664e",
+        "type": "message",
+        "text": "The thing to realize is that `discover` and `sledgehammer` are bootenv pairs that subtly tied together to do the creation dance.",
+        "user": "U02DGQYK1",
+        "ts": "1541630256.337400"
+    },
+    {
+        "client_msg_id": "f2dda6cd-da9a-4048-87c2-943e8842a4af",
+        "type": "message",
+        "text": "Why are you creating your own unkonwn bootenv?",
+        "user": "U02DGQYK1",
+        "ts": "1541630273.337700"
+    },
+    {
+        "client_msg_id": "61277f12-61d2-4792-8d90-4027af123fe5",
+        "type": "message",
+        "text": "Nope, it's just setting hostname and IP and MAC.",
+        "user": "U9BU09D51",
+        "ts": "1541630349.338400"
+    },
+    {
+        "client_msg_id": "c52e44c4-fb68-4fb9-a0e7-173ee6a3a520",
+        "type": "message",
+        "text": "I'm trying to decouple DHCP from the discovery process so I can do discovery in environments where I don't have DHCP and cant install a local rebar server.",
+        "user": "U9BU09D51",
+        "ts": "1541630389.339100"
+    },
+    {
+        "client_msg_id": "1030b90f-14ee-4044-8487-56f56fd90301",
+        "type": "message",
+        "text": "okay - so what are you booting?",
+        "user": "U02DGQYK1",
+        "ts": "1541630454.339400"
+    },
+    {
+        "client_msg_id": "ac9d0502-cb22-48d6-a377-beaa996a43fe",
+        "type": "message",
+        "text": "or how really?",
+        "user": "U02DGQYK1",
+        "ts": "1541630461.339600"
+    },
+    {
+        "client_msg_id": "5b89fbfc-22bc-4e47-94fe-4699b4e1fe6c",
+        "type": "message",
+        "text": "Because there are a couple of things now in tip the could be used instead.",
+        "user": "U02DGQYK1",
+        "ts": "1541630486.340400"
+    },
+    {
+        "client_msg_id": "b6371f4b-cb68-46a3-9d9f-57c338e557c6",
+        "type": "message",
+        "text": "Oh really?",
+        "user": "U9BU09D51",
+        "ts": "1541630493.340600"
+    },
+    {
+        "client_msg_id": "5e421d58-c361-4957-a7e0-1b22c6f66e71",
+        "type": "message",
+        "text": "It's a modified sledgehammer image.",
+        "user": "U9BU09D51",
+        "ts": "1541630502.341000"
+    },
+    {
+        "client_msg_id": "a8cf2647-ce0a-4ecd-8b3a-f3c68f2f8660",
+        "type": "message",
+        "text": "potentially.",
+        "user": "U02DGQYK1",
+        "ts": "1541630504.341100"
+    },
+    {
+        "client_msg_id": "9ac55cb6-6278-4cd3-8197-6699ed2dbc31",
+        "type": "message",
+        "text": "There is a new command: `drpjoin`",
+        "user": "U02DGQYK1",
+        "ts": "1541630569.342300"
+    },
+    {
+        "client_msg_id": "599be027-93f1-47b6-a10d-987566abb7a4",
+        "type": "message",
+        "text": "Basically I unpacked the stage1.img and stage2.img images, made all the necessary changes for it to take a static IP argument from the bootenv and use that instead of dhcp, and it... works?  Except the very end where it goes to create the node and fails.",
+        "user": "U9BU09D51",
+        "ts": "1541630593.343100"
+    },
+    {
+        "client_msg_id": "997b6e47-d0cc-432d-9a1d-57375c33a0fe",
+        "type": "message",
+        "text": "This takes the file URL of the DRP endpoint as its argument: `https:&lt;drpip&gt;:8091`",
+        "user": "U02DGQYK1",
+        "ts": "1541630605.343400"
+    },
+    {
+        "client_msg_id": "0de82ff9-fcde-4ea6-aa5d-cfd72ba96659",
+        "type": "message",
+        "text": "okay - one thing at a time.  Your sledgehammer image - how does the machine boot it?",
+        "user": "U02DGQYK1",
+        "ts": "1541630675.343900"
+    },
+    {
+        "client_msg_id": "831c1a64-c9a4-4a2c-8506-a6dceb53c118",
+        "type": "message",
+        "text": "I cloned the discovery bootenv and set it to load my image instead of regular sledgehammer, then set that bootenv to the Unknown Bootenv.",
+        "user": "U9BU09D51",
+        "ts": "1541630729.345000"
+    },
+    {
+        "client_msg_id": "923d4b28-4696-4618-a30c-0ee4bfac926f",
+        "type": "message",
+        "text": "Right, but where does the IP parameter come from?  Or is static in the image?",
+        "user": "U02DGQYK1",
+        "ts": "1541630761.345500"
+    },
+    {
+        "client_msg_id": "7bf726cb-43f7-4eb6-8a68-8f1d3bc29ae3",
+        "type": "message",
+        "text": "Ah, that's set in the boot parameters.   I modified the init (stage 1) and sledgehammer-start.sh (stage 2) scripts to grab those (the same way it grabs stuff like provisioner.web) and use the IP and gateway I set in the bootenv.",
+        "user": "U9BU09D51",
+        "ts": "1541630825.346700"
+    },
+    {
+        "client_msg_id": "4aa31e18-e624-4146-8852-d152b8379909",
+        "type": "message",
+        "text": "so you are only going to ever manage one machine?",
+        "user": "U02DGQYK1",
+        "ts": "1541630909.347100"
+    },
+    {
+        "client_msg_id": "c760beb1-5402-45cd-b144-267248058e84",
+        "type": "message",
+        "text": "Per site, yes.  I'm doing this so I can build an initial machine in a new site from a remote drp server without DHCP.  Basically that first machine will be the site's drp server.  After that it's DHCP and sledgehammer as usual.",
+        "user": "U9BU09D51",
+        "ts": "1541631000.348600"
+    },
+    {
+        "client_msg_id": "658666b0-1286-42a5-b834-0f7df6b66108",
+        "type": "message",
+        "text": "ok",
+        "user": "U02DGQYK1",
+        "ts": "1541631052.348800"
+    },
+    {
+        "client_msg_id": "f97b34fe-381c-4e10-9a03-a859281f5bfc",
+        "type": "message",
+        "text": "thinking",
+        "user": "U02DGQYK1",
+        "ts": "1541631147.349000"
+    },
+    {
+        "client_msg_id": "5b79f7c9-ce3e-498e-ba32-0511b739f429",
+        "type": "message",
+        "text": "Ok.  Well take your time.  I'm taking off for the night.  If you think of something let me know.  :smile:",
+        "user": "U9BU09D51",
+        "ts": "1541631424.349400"
+    },
+    {
+        "client_msg_id": "39f2aa5d-a6bb-4ab6-8d41-d89498e41b1b",
+        "type": "message",
+        "text": "Can you send me you bootenv?  DM is fine",
+        "user": "U02DGQYK1",
+        "ts": "1541631449.350100"
+    },
+    {
+        "client_msg_id": "e73a918b-b1e3-485b-8c8b-f28f04fe58ef",
+        "type": "message",
+        "text": "I'm just confused why the regular discovery\/sledgehammer process works but my slightly modified version doesn't.",
+        "user": "U9BU09D51",
+        "ts": "1541631458.350300"
+    },
+    {
+        "client_msg_id": "ae9ae8d9-61d1-4ee1-8a87-05b11396d921",
+        "type": "message",
+        "text": "You want the JSON?",
+        "user": "U9BU09D51",
+        "ts": "1541631466.350500"
+    },
+    {
+        "client_msg_id": "1915e048-9cbd-4a5b-b0ac-61ae5bcb3156",
+        "type": "message",
+        "text": "sure",
+        "user": "U02DGQYK1",
+        "ts": "1541631489.350700"
+    },
+    {
+        "client_msg_id": "1fbf940a-adc8-4a0a-bba8-5e5ba3d1170c",
+        "type": "message",
+        "text": "or yaml would be better (--format yaml) is your friend (well mine)",
+        "user": "U02DGQYK1",
+        "ts": "1541631509.351200"
+    },
+    {
+        "client_msg_id": "1ba9f45f-93d0-451e-af43-3c417f2f2cf1",
+        "type": "message",
+        "text": "k",
+        "user": "U9BU09D51",
+        "ts": "1541631516.351400"
+    },
+    {
+        "client_msg_id": "1b39d6ab-0c6b-409a-90a4-95663876df77",
+        "type": "message",
+        "text": "so, `drpcli bootenvs uploadiso &lt;ISO&gt;` documentation suggests that I can specify a URL such as `<https:\/\/my.image.site\/isos\/my_image.iso>` -- Is this a true statement?",
+        "user": "UCU824PB2",
+        "ts": "1541637980.353000"
+    },
+    {
+        "client_msg_id": "32a4997e-f371-4e1a-b717-3b7cbed58837",
+        "type": "message",
+        "text": "<@UCU824PB2> - no, the bootenvs uploadiso command reads the BootEnv `OS.IsoUrl`  location",
+        "user": "U6QFVRJNB",
+        "ts": "1541638040.354000",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1541638047.000000"
+        }
+    },
+    {
+        "client_msg_id": "76223319-6b49-4d11-a4bc-974e2bea5729",
+        "type": "message",
+        "text": "I was about to say: I do know that it can figure it out from the bootenv URL.",
+        "user": "U02DHRR2L",
+        "ts": "1541638054.354400"
+    },
+    {
+        "client_msg_id": "ffd254bf-f428-4ae5-ae38-572705b21637",
+        "type": "message",
+        "text": "it's better to do it from the bootenv so that you can manage\/version the source location",
+        "user": "U02DHRR2L",
+        "ts": "1541638082.355200"
+    },
+    {
+        "client_msg_id": "6a1b46cd-2c1a-4e7b-a31c-8cc60e4b0e18",
+        "type": "message",
+        "text": "there is an alternative that \"works\" - but it is not guaranteed to be safe ...\nyou can download \/ copy via standard shell commands on the DRP Enpoint, and copy the ISO\/TAR file referred to in the BootEnv\nplace it in the `drp-data\/tftpboot\/isos\/` directory\nthen `pkill -HUP dr-provision`",
+        "user": "U6QFVRJNB",
+        "ts": "1541638191.356900"
+    },
+    {
+        "client_msg_id": "9370b0d5-88e8-4938-8283-44f6bc13ce39",
+        "type": "message",
+        "text": "note if someone else starts an API call that does the same thing - bad things may happen",
+        "user": "U6QFVRJNB",
+        "ts": "1541638206.357300"
+    },
+    {
+        "client_msg_id": "229f2345-4395-4df0-aec5-58cda38abefc",
+        "type": "message",
+        "text": "good enough.",
+        "user": "UCU824PB2",
+        "ts": "1541638220.357700"
+    },
+    {
+        "client_msg_id": "cb3ae101-f2ae-446b-8313-96c8fb91ef62",
+        "type": "message",
+        "text": "(`drp-data` is in isolated mode - or in `\/var\/lib\/dr-provision` in \"production\" install mode)",
+        "user": "U6QFVRJNB",
+        "ts": "1541638228.357900"
+    },
+    {
+        "client_msg_id": "0b65f6b3-23bb-4d6c-994f-89bd829b998e",
+        "type": "message",
+        "text": "the SHA256 hash and the filename must match what the BootEnv states, otherwise it'll fail validation and not be \"exploded\" out correctly",
+        "user": "U6QFVRJNB",
+        "ts": "1541638259.358500"
+    },
+    {
+        "client_msg_id": "72769db7-e499-4b7a-b293-51f725c30373",
+        "type": "message",
+        "text": "you can also pre-stage ISOs this way, prior to starting the DRP Endpoint up on first run - and it'll do the right things with (assuming SHA\/name are right)",
+        "user": "U6QFVRJNB",
+        "ts": "1541638291.359100"
+    },
+    {
+        "client_msg_id": "a793bede-1ca7-4d74-ba40-0309690c8cab",
+        "type": "message",
+        "text": "ok, last question for the evening. If I want to get content packs, must I use the UI, or is there a way to get them via the cli?",
+        "user": "UCU824PB2",
+        "ts": "1541639168.360000"
+    },
+    {
+        "client_msg_id": "46bcaab4-349c-4ca6-873d-828508c85908",
+        "type": "message",
+        "text": "Which ones? ",
+        "user": "U6QFVRJNB",
+        "ts": "1541639205.360300"
+    },
+    {
+        "client_msg_id": "a5c775cd-39e9-4b03-b9b5-2587d97cfbf1",
+        "type": "message",
+        "text": "like, classify, os-other, drp-community-contrib",
+        "user": "UCU824PB2",
+        "ts": "1541639237.360800"
+    },
+    {
+        "client_msg_id": "c3e52e40-d74b-4146-a8ce-2c68b4053b9f",
+        "type": "message",
+        "text": "I'm away from computer - but I think you can search this channel, I posted before here",
+        "user": "U6QFVRJNB",
+        "ts": "1541639310.362000"
+    },
+    {
+        "client_msg_id": "971f37c1-12d9-4b74-b02d-ff8521ebf640",
+        "type": "message",
+        "text": "+1 for remembering a conversation from a year ago",
+        "user": "UCU824PB2",
+        "ts": "1541639826.362400"
+    },
+    {
+        "client_msg_id": "d5d9c46c-791f-4cd0-ac8a-10cdeca03683",
+        "type": "message",
+        "text": "no offense, but that's ridiculously complicated and doesn't lend itself well to automation.",
+        "user": "UCU824PB2",
+        "ts": "1541640060.363000"
+    },
+    {
+        "client_msg_id": "1f39f2cd-4598-4564-ab34-783bb2a9919d",
+        "type": "message",
+        "text": "which answer did you find ?   it might have gotten a bit better, but probably not",
+        "user": "U6QFVRJNB",
+        "ts": "1541640126.363400"
+    },
+    {
+        "client_msg_id": "4699a225-905f-4e94-9209-e679ed2b2bab",
+        "type": "message",
+        "text": "I searched on \"content pack cli\" and found something from Nov 1, 2017",
+        "user": "UCU824PB2",
+        "ts": "1541640152.364500"
+    },
+    {
+        "client_msg_id": "a5478b79-de51-421c-98ce-d2f2cf57c6b2",
+        "type": "message",
+        "text": "we know the artifact download process could be a bit better via API call ... but ... other things ...",
+        "user": "U6QFVRJNB",
+        "ts": "1541640156.364700"
+    },
+    {
+        "client_msg_id": "52117d00-dee9-48c4-9124-59886b5d0aed",
+        "type": "message",
+        "text": "curious what you would suggest ?   it's a single CURL call with an auth string ... not really that much too it",
+        "user": "U6QFVRJNB",
+        "ts": "1541640254.365600"
+    },
+    {
+        "client_msg_id": "722d11b7-ad4c-4f09-8f1e-9b213334f961",
+        "type": "message",
+        "text": "that's the current method",
+        "user": "U6QFVRJNB",
+        "ts": "1541640262.365900"
+    },
+    {
+        "client_msg_id": "166c7794-4953-495f-be69-e6f245daa6b1",
+        "type": "message",
+        "text": "what would be nice would be something like `drpcli contents create &lt;URL&gt;` where URL points to the content pack you want. At that point, getting the list is the problem.",
+        "user": "UCU824PB2",
+        "ts": "1541640312.367400"
+    },
+    {
+        "client_msg_id": "8735dbf2-7ee3-4eb0-bef7-1d466182a085",
+        "type": "message",
+        "text": "ah - yes, we've added in helpers to point to external resources in some places - but the `contents create` hasn't been updated with that",
+        "user": "U6QFVRJNB",
+        "ts": "1541640391.368200"
+    },
+    {
+        "client_msg_id": "a5bdf7f7-3136-4b84-85f3-0b150805b14c",
+        "type": "message",
+        "text": "Pull Requests\/Patches are gladly welcome !! :slightly_smiling_face:",
+        "user": "U6QFVRJNB",
+        "ts": "1541640404.368600"
+    },
+    {
+        "client_msg_id": "2bf433ab-9abc-46e9-b78f-3250b71bf974",
+        "type": "message",
+        "text": "Then all I have to do is define ```\nmy_extra_contents:\n  - pack1\n  - pack2\n  - pack3``` and feed to an ansible role and go.",
+        "user": "UCU824PB2",
+        "ts": "1541640466.369700"
+    },
+    {
+        "client_msg_id": "f0756d18-0dda-4919-988b-94458bdd7248",
+        "type": "message",
+        "text": "yep - totally \"get\" the utility \/ use cases for it :slightly_smiling_face:",
+        "user": "U6QFVRJNB",
+        "ts": "1541640485.370000"
+    },
+    {
+        "client_msg_id": "b0af27ba-ed0e-41f9-9300-09957c8fa6dc",
+        "type": "message",
+        "text": "you'd also need an AUTH string - so there's a little more to it than that, but could be a bit easier",
+        "user": "U6QFVRJNB",
+        "ts": "1541640508.370600"
+    },
+    {
+        "client_msg_id": "017788b6-ed98-4204-a2a5-0198b55f47c5",
+        "type": "message",
+        "text": "would you please file a feature enhancement - that helps us to prioritize added enhancements, etc",
+        "user": "U6QFVRJNB",
+        "ts": "1541640785.371100"
+    },
+    {
+        "client_msg_id": "217348d8-a9bf-4a45-8a11-64e6b895d704",
+        "type": "message",
+        "text": "Sure",
+        "user": "UCU824PB2",
+        "ts": "1541640797.371300"
+    },
+    {
+        "client_msg_id": "08a99d51-629e-416d-bc70-07e24b3bbfa4",
+        "type": "message",
+        "text": "<https:\/\/github.com\/digitalrebar\/provision\/issues\/new>",
+        "user": "U6QFVRJNB",
+        "ts": "1541640801.371500",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "Build software better, together",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/issues\/new",
+                "text": "GitHub is where people build software. More than 28 million people use GitHub to discover, fork, and contribute to over 85 million projects.",
+                "fallback": "GitHub: Build software better, together",
+                "image_width": 1200,
+                "image_height": 620,
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/issues\/new",
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/digitalrebar\/provision\/issues\/new"
+            }
+        ]
+    },
+    {
+        "client_msg_id": "13a206ac-f72f-45af-bde0-7c3f6a4b3272",
+        "type": "message",
+        "text": "WAIT A MINUTE! <@UCU824PB2> and <@U6QFVRJNB>",
+        "user": "U02DGQYK1",
+        "ts": "1541648114.372000"
+    },
+    {
+        "client_msg_id": "e76b2d77-5e6a-461c-b8a0-a873a1905049",
+        "type": "message",
+        "text": "this works: `drpcli contents create <http:\/\/hostname\/path\/to\/my\/favorite-cp.yaml>`",
+        "user": "U02DGQYK1",
+        "ts": "1541648143.372700"
+    },
+    {
+        "client_msg_id": "64874716-e967-4c8a-bf09-5e1425f3a559",
+        "type": "message",
+        "text": "now auth strings are tougher, but I think https works and it might work with username\/password auth.",
+        "user": "U02DGQYK1",
+        "ts": "1541648177.373200",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1541648197.000000"
+        }
+    },
+    {
+        "client_msg_id": "64bf88ef-80a0-4979-8ac6-001904cbc027",
+        "type": "message",
+        "text": "Second (or first from previosu conv), you can do `drpcli isos upload &lt;file or url&gt;` as well.",
+        "user": "U02DGQYK1",
+        "ts": "1541648225.374000"
+    },
+    {
+        "client_msg_id": "9ac8cb14-6df7-42c9-ba30-c247497cdc0a",
+        "type": "message",
+        "text": "that puts a file into the isos directory by api.",
+        "user": "U02DGQYK1",
+        "ts": "1541648235.374400"
+    },
+    {
+        "client_msg_id": "0b400a5b-338f-4c36-a243-41e10c9bfb8c",
+        "type": "message",
+        "text": "and triggers a bootenv reload if it matches a name and checksum.",
+        "user": "U02DGQYK1",
+        "ts": "1541648250.374800"
+    },
+    {
+        "client_msg_id": "d6f2103f-972c-4839-9014-4e39afb57fff",
+        "type": "message",
+        "text": "now if only there were some way to easily determine content pack names. :wink:",
+        "user": "UCU824PB2",
+        "ts": "1541648280.375300"
+    },
+    {
+        "client_msg_id": "4b4e5ecf-3936-4710-b373-50efa4099b31",
+        "type": "message",
+        "text": "What do you mean?",
+        "user": "U02DGQYK1",
+        "ts": "1541648323.375500"
+    },
+    {
+        "client_msg_id": "6c5bd0ea-9611-4305-bcfc-d56dfcb256a8",
+        "type": "message",
+        "text": "file name will be whatever and the name of the cp will come from within the yaml.",
+        "user": "U02DGQYK1",
+        "ts": "1541648347.376000"
+    },
+    {
+        "client_msg_id": "e0ed07ce-c3ce-4155-9a7d-42052a8fcd92",
+        "type": "message",
+        "text": "You can also do `upload` instead of `create`",
+        "user": "U02DGQYK1",
+        "ts": "1541648372.376400"
+    },
+    {
+        "client_msg_id": "411bdc69-ca88-483d-833b-c6947c883c86",
+        "type": "message",
+        "text": "That will create or update if already created.",
+        "user": "U02DGQYK1",
+        "ts": "1541648380.376700"
+    },
+    {
+        "client_msg_id": "1383ba1b-b333-4adb-844d-b779b051dea9",
+        "type": "message",
+        "text": "Thinking towards the automation aspect. The idea is ```1. install DRP\n2. Load content packs\n3. upload ISOs``` and then off to the races",
+        "user": "UCU824PB2",
+        "ts": "1541648531.379000"
+    },
+    {
+        "client_msg_id": "42c91696-0381-4d6d-9d97-beacfba1376e",
+        "type": "message",
+        "text": "Imho, the issue is having a registry built into the cli.  ",
+        "user": "U02DHRR2L",
+        "ts": "1541648542.379400"
+    },
+    {
+        "client_msg_id": "d14d9e1c-c2be-4d43-8301-06fa942f9c29",
+        "type": "message",
+        "text": "That's all the ux really does.  ",
+        "user": "U02DHRR2L",
+        "ts": "1541648585.380900"
+    },
+    {
+        "client_msg_id": "8cf63d58-665a-42ee-afc1-202a14f536e5",
+        "type": "message",
+        "text": "I've got 1 and 3 pretty well hands free. I'm looking making #2 as stupid simple as possible",
+        "user": "UCU824PB2",
+        "ts": "1541648591.381200"
+    },
+    {
+        "client_msg_id": "7874f0e8-52d7-4319-aa45-9a66461f6f41",
+        "type": "message",
+        "text": "There's a url for the rackn registry",
+        "user": "U02DHRR2L",
+        "ts": "1541648647.381700"
+    },
+    {
+        "client_msg_id": "eeb41cde-a7d3-4718-a004-56e8df9cdaf2",
+        "type": "message",
+        "text": "Already has it :slightly_smiling_face:",
+        "user": "U6QFVRJNB",
+        "ts": "1541648669.382200"
+    },
+    {
+        "client_msg_id": "03b19345-ab74-48d5-907b-b550d3aa896b",
+        "type": "message",
+        "text": "Then it's just two calls",
+        "user": "U02DHRR2L",
+        "ts": "1541648708.383000"
+    },
+    {
+        "client_msg_id": "f2ff255b-f89c-4b12-b9c1-d187532bb9ad",
+        "type": "message",
+        "text": "No contract on that api but it's been stable",
+        "user": "U02DHRR2L",
+        "ts": "1541648973.383700",
+        "edited": {
+            "user": "U02DHRR2L",
+            "ts": "1541648988.000000"
+        }
+    }
+]

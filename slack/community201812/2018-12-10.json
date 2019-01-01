@@ -1,0 +1,1284 @@
+[
+    {
+        "user": "UEPL0D31R",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1544446734.331200",
+        "text": "<@UEPL0D31R> has joined the channel"
+    },
+    {
+        "client_msg_id": "f1561ad1-0312-4bdd-b107-bcc736cca679",
+        "type": "message",
+        "text": "My guess is that your switches have portdelay turned on.  So, the link comes active and needs some settle time.",
+        "user": "U02DGQYK1",
+        "ts": "1544447738.332000"
+    },
+    {
+        "client_msg_id": "fb82bebb-dc03-4d78-92af-8bea8aca8a89",
+        "type": "message",
+        "text": "Depending upon the switch\/security gateway, you need more or less time and the switch may stay in discovering state different times.",
+        "user": "U02DGQYK1",
+        "ts": "1544447784.332900"
+    },
+    {
+        "client_msg_id": "c326939c-f10f-440d-b604-390ae80df730",
+        "type": "message",
+        "text": "We had one user how needed the pre-`portdelay`, but you need the `postportdelay` .  Now we have both.",
+        "user": "U02DGQYK1",
+        "ts": "1544447813.333600"
+    },
+    {
+        "client_msg_id": "3ec83fb2-3fdb-4530-ab60-c8429c1456df",
+        "type": "message",
+        "text": "The switch is probably doing spanning tree discovery and has the port up, but not switching.  The `postportdelay` or `wgetretrycount` causes the system to wait for the link to stabilize before continuing.  <@UBU0BPRA9>",
+        "user": "U02DGQYK1",
+        "ts": "1544447901.335200",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "UBU0BPRA9"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "client_msg_id": "17c813f2-16d2-435f-b7b9-6814bb715390",
+        "type": "message",
+        "text": "<@UEPL0D31R> $welcome",
+        "user": "U02DHRR2L",
+        "ts": "1544449012.335700"
+    },
+    {
+        "type": "message",
+        "subtype": "slackbot_response",
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "user": "USLACKBOT",
+        "ts": "1544449013.335800"
+    },
+    {
+        "client_msg_id": "f239d4fa-354e-4975-9c75-75a3e309dc4a",
+        "type": "message",
+        "text": "hmm, so I have successfully installed a CL image onto a switch using the cumulus ZTP functionality with DRP",
+        "user": "UBXEU90UQ",
+        "ts": "1544452254.336500",
+        "reactions": [
+            {
+                "name": "sunglasses",
+                "users": [
+                    "U6QFVRJNB"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "client_msg_id": "2ac2e45f-7d1f-46f0-962d-ea6cab3c0b3a",
+        "type": "message",
+        "text": "however, when the switch reboots after installing, the ZTP script runs but… the machine still shows as ‘down’ in the DRP ui, I suspect the join-up.sh script does not end up running drpcli processjobs if the machine already exists",
+        "user": "UBXEU90UQ",
+        "ts": "1544452317.337700"
+    },
+    {
+        "client_msg_id": "ab8cb4d5-4642-4f48-a609-89c940f5f836",
+        "type": "message",
+        "text": "yep confirmed, stuck in this loop:\n\n```\n  while ! JSON=\"$(drpcli machines create \"{\\\"Name\\\": \\\"$HOSTNAME\\\",\n                                       \\\"Address\\\": \\\"$IP\\\",\n                                       \\\"Arch\\\": \\\"$ARCH\\\",\n                                       \\\"Meta\\\": {\\\"icon\\\":\\\"cloud\\\"},\n                                       \\\"HardwareAddrs\\\": $(get_macs)}\")\"; do\n      echo \"We could not create a node for ourself, trying again.\"\n      sleep 5\n  done\n```",
+        "user": "UBXEU90UQ",
+        "ts": "1544452896.338100"
+    },
+    {
+        "client_msg_id": "094465eb-6b5d-442c-ae8e-255a6fec3614",
+        "type": "message",
+        "text": "<@UBXEU90UQ> what does your ZTP install workflow look like?  do you have a \"complete\" stage at the end?   if the Workflow doesn't mark the machine (switch) complete, then the workflow will never be \"finished\"",
+        "user": "U6QFVRJNB",
+        "ts": "1544454487.340100"
+    },
+    {
+        "client_msg_id": "dc8568ca-d482-494a-9e27-bb42cbf84449",
+        "type": "message",
+        "text": "also - you might see about adding a Stage in the workflow to install the `drpcli` as a resident Agent in the switch during install - so you can continue to feed new Workflow post-install to the Switch - eg configurations, management, power cycle events, etc...",
+        "user": "U6QFVRJNB",
+        "ts": "1544454533.341100"
+    },
+    {
+        "client_msg_id": "f14f1ae3-05db-4b42-9c95-9e87d30b4ea6",
+        "type": "message",
+        "text": "yeah it’s a bit weird because it doesn’t really follow how e.g. a centos install or similar works",
+        "user": "UBXEU90UQ",
+        "ts": "1544454584.342000"
+    },
+    {
+        "client_msg_id": "83f614ad-cdad-46a1-8176-c95c07190f11",
+        "type": "message",
+        "text": "theres no concept of a post-install script which you’d usually use to start drpcli",
+        "user": "UBXEU90UQ",
+        "ts": "1544454594.342500"
+    },
+    {
+        "client_msg_id": "22e0f7bd-69d4-44a0-b987-2d293dc4f33c",
+        "type": "message",
+        "text": "the `join-up.sh` script is only for initial Machine object creation and registration - running it again is expected to fail - since it already exists",
+        "user": "U6QFVRJNB",
+        "ts": "1544454609.342900"
+    },
+    {
+        "client_msg_id": "e54871b7-1326-4ed9-9e74-3eb0a0d665a3",
+        "type": "message",
+        "text": "I suppose we could make it smarter so if you re-ran it - it didn't try and create, but just run a dissolvable agent",
+        "user": "U6QFVRJNB",
+        "ts": "1544454632.343800"
+    },
+    {
+        "client_msg_id": "b296e780-6924-471f-ad57-b0240779fa53",
+        "type": "message",
+        "text": "there is a complete stage, but it’s never executed as the stage never progresses past ‘install’",
+        "user": "UBXEU90UQ",
+        "ts": "1544454653.344200"
+    },
+    {
+        "client_msg_id": "5fdd4c81-ce79-4dfd-8ca8-82beb685b7d7",
+        "type": "message",
+        "text": "so the install stage basically runs some commands to setup the image to install, then triggers a reboot (that completes the install stage), at which point the switch does its thing. When it reboots after install, it makes a DHCP request and uses the value of a DHCP option to run a script, which is the same thing it does during initial discovery",
+        "user": "UBXEU90UQ",
+        "ts": "1544454713.345500"
+    },
+    {
+        "client_msg_id": "e30c6140-769d-4b15-83c8-4a885230dd0d",
+        "type": "message",
+        "text": "and yeah I thought that’d be the case about `join-up.sh`",
+        "user": "UBXEU90UQ",
+        "ts": "1544454764.346300"
+    },
+    {
+        "client_msg_id": "00fc3ca6-a31a-4e33-a513-34af862ece8f",
+        "type": "message",
+        "text": "we have some new hooks to deal with a reboot in the middle of the workflow - but I think we'd still need an Agent post-install to deal with that and clean up",
+        "user": "U6QFVRJNB",
+        "ts": "1544454782.346900"
+    },
+    {
+        "client_msg_id": "de63117d-4bc0-4e62-a866-1815f96e54e9",
+        "type": "message",
+        "text": "<@U02DGQYK1> has some more info related to the reboot in the middle",
+        "user": "U6QFVRJNB",
+        "ts": "1544454798.347300"
+    },
+    {
+        "client_msg_id": "cad401a8-6c24-4ae6-ba45-209bf38e2ff5",
+        "type": "message",
+        "text": "<@UBXEU90UQ> would like to get all of the pieces you've pulled together and add to ours so we can add Cumulus switch support to the content packs :slightly_smiling_face:",
+        "user": "U6QFVRJNB",
+        "ts": "1544454843.348500"
+    },
+    {
+        "client_msg_id": "3407be21-c566-4d69-bc6f-7767c27a4d98",
+        "type": "message",
+        "text": "so the limitation i have (i guess) is that without modifying the script itself, i’d have to serve a different script post-install to the pre-install \/ discovery one via dhcp (at the moment I just have a static setting on the subnet to serve `join-up.sh`)",
+        "user": "UBXEU90UQ",
+        "ts": "1544455058.349100"
+    },
+    {
+        "client_msg_id": "f8bcb564-2d17-4606-b8a7-dc6a309b5dfb",
+        "type": "message",
+        "text": "oh hmm… HMM maybe not",
+        "user": "UBXEU90UQ",
+        "ts": "1544455185.349300"
+    },
+    {
+        "client_msg_id": "42682208-dfc7-415d-aabe-d3f122e02ca7",
+        "type": "message",
+        "text": "```\n-z\n        Zero Touch Provisioning: Stage a Cumulus ZTP script specified\n        by the ztp path.  This option can only be used in conjunction\n        with the -i option.  See the example below.\n```",
+        "user": "UBXEU90UQ",
+        "ts": "1544455189.349500"
+    },
+    {
+        "client_msg_id": "a72b080d-0868-4c1a-9cff-1b6bdf0f93e0",
+        "type": "message",
+        "text": "might be possible to stage a custom ZTP script which just runs drpcli processjobs using the existing token",
+        "user": "UBXEU90UQ",
+        "ts": "1544455205.349900"
+    },
+    {
+        "client_msg_id": "b34c5c6e-0771-4244-89e4-6b9390686944",
+        "type": "message",
+        "text": "if that’s the case, then I should be able to set control.sh as the ZTP script",
+        "user": "UBXEU90UQ",
+        "ts": "1544455502.350900"
+    },
+    {
+        "client_msg_id": "1654044e-c598-4cc4-82ca-966efc06e42b",
+        "type": "message",
+        "text": "and if that executes post-install, it should start a throwaway runner that can continue!",
+        "user": "UBXEU90UQ",
+        "ts": "1544455518.351300"
+    },
+    {
+        "client_msg_id": "c4af70a1-6954-4e94-9a09-e668818cc49d",
+        "type": "message",
+        "text": "(might need the #CUMULUS-AUTOPROVISIONING comment added to control.sh)",
+        "user": "UBXEU90UQ",
+        "ts": "1544455541.351700"
+    },
+    {
+        "client_msg_id": "BBBA8C65-386D-48EB-A607-31EDDF9EC6B5",
+        "type": "message",
+        "text": "<@UBXEU90UQ> and <@U6QFVRJNB> give me a minute.  There is magic here    We don’t follow a normal stage install process.   How did you trigger the onie-install, <@UBXEU90UQ> ?",
+        "user": "U02DGQYK1",
+        "ts": "1544456277.353600"
+    },
+    {
+        "client_msg_id": "8a1ca438-0218-4763-bc6f-0f3c2718bf2b",
+        "type": "message",
+        "text": "`join-up.sh` on initial boot (from dhcp), runs ephemeral drpcli processjobs. Runs discovery without changing the bootenv, then triggering install manually is a new stage (and task) that runs onie-install from drpcli",
+        "user": "UBXEU90UQ",
+        "ts": "1544456357.355100"
+    },
+    {
+        "client_msg_id": "05c10578-a006-4806-a5a4-7e84a915cfd7",
+        "type": "message",
+        "text": "(it actually runs automatically after discovery using classification but that doesnt matter)",
+        "user": "UBXEU90UQ",
+        "ts": "1544456515.355600"
+    },
+    {
+        "client_msg_id": "604dda9c-5a67-4b4c-8377-3bc4919a3e43",
+        "type": "message",
+        "text": "ok - cool - that is what I was doing.  What does the stage\/task do?",
+        "user": "U02DGQYK1",
+        "ts": "1544456583.356300"
+    },
+    {
+        "client_msg_id": "1c543496-18fc-4a25-aadd-d2e7568d6ba6",
+        "type": "message",
+        "text": "just runs onie-install twice, and then calls exit_reboot",
+        "user": "UBXEU90UQ",
+        "ts": "1544456662.357200"
+    },
+    {
+        "client_msg_id": "810d5498-32d3-4ed8-9dac-0e047876083e",
+        "type": "message",
+        "text": "i’ll find the code a sec",
+        "user": "UBXEU90UQ",
+        "ts": "1544456679.357600"
+    },
+    {
+        "client_msg_id": "13c26272-5687-48b4-9898-8095cd824624",
+        "type": "message",
+        "text": "```\nCUMULUS_IMAGE=\"{{ .ProvisionerURL }}\/files\/{{ .Param \"cumulus\/image\" }}\"\n\necho \"Staging CL Image ${CUMULUS_IMAGE} for installation with postinstall control...\"\nonie-install -fi ${CUMULUS_IMAGE} -z {{ .ProvisionerURL }}\/machines\/$RS_UUID\/control.sh\n\necho \"Activating staged CL image and ZTP script...\"\nonie-install -fa\n\necho \"Starting install by reboot\"\nexit_reboot\n```",
+        "user": "UBXEU90UQ",
+        "ts": "1544456707.358300",
+        "edited": {
+            "user": "UBXEU90UQ",
+            "ts": "1544456726.000000"
+        }
+    },
+    {
+        "client_msg_id": "c2e1a0fb-d491-42a6-9a0b-a60248f5d62f",
+        "type": "message",
+        "text": "basically this",
+        "user": "UBXEU90UQ",
+        "ts": "1544456709.358500"
+    },
+    {
+        "client_msg_id": "05002df2-6548-4cd2-b3db-0208da4de4d4",
+        "type": "message",
+        "text": "Because, in my head, it would do this:\n```\nCUMULUS_TARGET_RELEASE=\"{{.Param \"cumulus\/release\"}}\"\nCUMULUS_CURRENT_RELEASE=$(cat \/etc\/lsb-release  | grep RELEASE | cut -d \"=\" -f2)\nIMAGE_SERVER_HOSTNAME={{.ProvisionerAddress}}\nIMAGE_SERVER=\"http:\/\/\"$IMAGE_SERVER_HOSTNAME\"\/files\/\"$CUMULUS_TARGET_RELEASE\".bin\"\n \nif [ \"$CUMULUS_TARGET_RELEASE\" != \"$CUMULUS_CURRENT_RELEASE\" ]; then\n    ping_until_reachable $IMAGE_SERVER_HOSTNAME\n    \/usr\/cumulus\/bin\/onie-install -fa -i $IMAGE_SERVER\n    drpcli machines workflow {{.Machine.UUID}} discovery\n    exit_reboot\nfi\n\nexit 0\n```\nor some thing like this",
+        "user": "U02DGQYK1",
+        "ts": "1544456714.358700",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1544456906.000000"
+        }
+    },
+    {
+        "client_msg_id": "fe06a9e3-ff09-42fe-82a7-86eb35993754",
+        "type": "message",
+        "text": "more that …",
+        "user": "U02DGQYK1",
+        "ts": "1544456911.359800"
+    },
+    {
+        "client_msg_id": "b920b531-dcc5-49b4-988c-22850bda7432",
+        "type": "message",
+        "text": "But still. similar.",
+        "user": "U02DGQYK1",
+        "ts": "1544456917.360100"
+    },
+    {
+        "client_msg_id": "cdb2a33f-c321-466f-9d6d-02d45ac9bb47",
+        "type": "message",
+        "text": "Shouldn’t it ztp on DHCP start-up of the second image?",
+        "user": "U02DGQYK1",
+        "ts": "1544456938.360600"
+    },
+    {
+        "client_msg_id": "25ed8892-ada7-4cd9-8ef6-ec432799c500",
+        "type": "message",
+        "text": "it does, and grabs `join-up.sh` again",
+        "user": "UBXEU90UQ",
+        "ts": "1544456976.361400"
+    },
+    {
+        "client_msg_id": "83d6c121-6381-4cc8-95d4-7d3a3d55bfa5",
+        "type": "message",
+        "text": "okay - it fails?",
+        "user": "U02DGQYK1",
+        "ts": "1544456983.361900"
+    },
+    {
+        "client_msg_id": "9247ae6e-7c01-436e-8741-e605ced40bf1",
+        "type": "message",
+        "text": "but that doens’t complete because the machine already exists in drp at that point",
+        "user": "UBXEU90UQ",
+        "ts": "1544456997.362200"
+    },
+    {
+        "client_msg_id": "035425b8-bfc6-4205-a525-ec6a46589a65",
+        "type": "message",
+        "text": "okay - so - what version of content are you using?",
+        "user": "U02DGQYK1",
+        "ts": "1544457022.362600"
+    },
+    {
+        "client_msg_id": "207a33aa-0c6b-4bc1-ba1a-f345e6ba81be",
+        "type": "message",
+        "text": "Because I changed it to do better.",
+        "user": "U02DGQYK1",
+        "ts": "1544457036.363000"
+    },
+    {
+        "client_msg_id": "f4bbb161-e44e-4365-bec6-f6d280346a62",
+        "type": "message",
+        "text": "For this purpose.",
+        "user": "U02DGQYK1",
+        "ts": "1544457052.363200"
+    },
+    {
+        "client_msg_id": "3b2604d7-e4b3-4861-bda6-5c14f3ed2f1d",
+        "type": "message",
+        "text": "tip as of about half an hour ago",
+        "user": "UBXEU90UQ",
+        "ts": "1544457062.363300"
+    },
+    {
+        "client_msg_id": "23a6d08b-0833-4282-8780-649b6b4210d9",
+        "type": "message",
+        "text": "I don’t believe you.   :slightly_smiling_face:",
+        "user": "U02DGQYK1",
+        "ts": "1544457071.363500"
+    },
+    {
+        "client_msg_id": "15b9ea42-d828-4a3b-939e-85982018aed2",
+        "type": "message",
+        "text": "okay",
+        "user": "U02DGQYK1",
+        "ts": "1544457074.363700"
+    },
+    {
+        "client_msg_id": "75b97fe6-43ba-4de1-9b4e-a8dd6171fded",
+        "type": "message",
+        "text": "Are you setting hostname in DHCP?",
+        "user": "U02DGQYK1",
+        "ts": "1544457098.364000"
+    },
+    {
+        "client_msg_id": "467ca2d8-e1ef-4a92-86d6-6fa892f7a1d5",
+        "type": "message",
+        "text": "nope, switch doesn’t exist in DRP prior to booting, it’s discovered during the discovery process from netbox and renamed",
+        "user": "UBXEU90UQ",
+        "ts": "1544457164.364800"
+    },
+    {
+        "client_msg_id": "d922acc9-72ae-4d22-9de5-9fe77c435aed",
+        "type": "message",
+        "text": "okay - that would do it",
+        "user": "U02DGQYK1",
+        "ts": "1544457183.365000"
+    },
+    {
+        "client_msg_id": "988b6d33-698b-49a5-8732-c6805d4cbc2b",
+        "type": "message",
+        "text": "and it fails to create the node the second time.",
+        "user": "U02DGQYK1",
+        "ts": "1544457211.365300"
+    },
+    {
+        "client_msg_id": "79219afc-0f64-449e-87e5-255346ceb74f",
+        "type": "message",
+        "text": "yep, cos it already exists",
+        "user": "UBXEU90UQ",
+        "ts": "1544457219.365500"
+    },
+    {
+        "client_msg_id": "dcd4b367-7e3c-412d-b444-ad52816b467c",
+        "type": "message",
+        "text": "not really, but really.",
+        "user": "U02DGQYK1",
+        "ts": "1544457244.365800"
+    },
+    {
+        "client_msg_id": "9aaf8ed7-0314-443d-8490-822145996691",
+        "type": "message",
+        "text": "yeah :smile:",
+        "user": "UBXEU90UQ",
+        "ts": "1544457250.366000"
+    },
+    {
+        "client_msg_id": "9c76ed94-603d-4360-b564-6d4d26acaf55",
+        "type": "message",
+        "text": "okay - I have a fix for you to try.",
+        "user": "U02DGQYK1",
+        "ts": "1544457350.366200"
+    },
+    {
+        "client_msg_id": "2e2ff28e-b835-4119-86cf-5da4bc8cf3d3",
+        "type": "message",
+        "text": "how are you at editing the community content.",
+        "user": "U02DGQYK1",
+        "ts": "1544457381.366800"
+    },
+    {
+        "client_msg_id": "070b75ab-b8a7-488c-9a72-e1296f8f95ee",
+        "type": "message",
+        "text": "hah, i can probably work it out",
+        "user": "UBXEU90UQ",
+        "ts": "1544457400.367100"
+    },
+    {
+        "client_msg_id": "f3252ede-b887-4a7d-87d6-6644897e86b5",
+        "type": "message",
+        "text": "the ansible script i use to deploy everything pulls the latest content down as a yaml file and directly uploads it",
+        "user": "UBXEU90UQ",
+        "ts": "1544457421.367800"
+    },
+    {
+        "client_msg_id": "55f019a3-1d03-4d75-af66-bdc70acd64d3",
+        "type": "message",
+        "text": "so i’ll just do the same manually",
+        "user": "UBXEU90UQ",
+        "ts": "1544457432.368400"
+    },
+    {
+        "client_msg_id": "4ffcf214-f017-4b47-82c3-11896b5de1dd",
+        "type": "message",
+        "text": "`drpcli contents show drp-community-content --format=yaml`",
+        "user": "U02DGQYK1",
+        "ts": "1544457433.368500"
+    },
+    {
+        "client_msg_id": "a3177668-9637-4240-9bbc-74436dd80d72",
+        "type": "message",
+        "text": "okay",
+        "user": "U02DGQYK1",
+        "ts": "1544457439.368700"
+    },
+    {
+        "client_msg_id": "a0348e42-e598-458a-8abe-b1cb4e52e2f5",
+        "type": "message",
+        "text": "`Version: v1.11.1-tip-75-86d3f86a17f6007a7801eee5f3211344d14a5880` version I just pulled using that cmd",
+        "user": "UBXEU90UQ",
+        "ts": "1544457499.369000"
+    },
+    {
+        "client_msg_id": "ba12d565-fb36-4b49-a35f-68d114c9b8ae",
+        "type": "message",
+        "text": "that is what I have.",
+        "user": "U02DGQYK1",
+        "ts": "1544457513.369200"
+    },
+    {
+        "client_msg_id": "6245bfe2-5e8d-4d3a-be18-9648c0e9d9da",
+        "type": "message",
+        "text": "Here is the diff of what needs to happen.",
+        "user": "U02DGQYK1",
+        "ts": "1544457667.369400"
+    },
+    {
+        "client_msg_id": "a25e15b4-ed0f-4253-a898-e919af715bf5",
+        "type": "message",
+        "text": "basically, since DHCP isn’t sending hostname - it can’t find itself on the next startup.  This moves the IP check and attempts to find self by Address.  This is a little dangerous because we don’t require that IP be unique in Machines.",
+        "user": "U02DGQYK1",
+        "ts": "1544457749.370900"
+    },
+    {
+        "client_msg_id": "ead0a750-8925-49b3-a2a6-3803d2bb1f74",
+        "type": "message",
+        "text": "sigh - need to edit it - just a minute",
+        "user": "U02DGQYK1",
+        "ts": "1544457768.371200"
+    },
+    {
+        "type": "message",
+        "text": "",
+        "files": [
+            {
+                "id": "FEPAVMQ7K",
+                "created": 1544457835,
+                "timestamp": 1544457835,
+                "name": "-.diff",
+                "title": "Untitled",
+                "mimetype": "text\/plain",
+                "filetype": "diff",
+                "pretty_type": "Diff",
+                "user": "U02DGQYK1",
+                "editable": true,
+                "size": 1709,
+                "mode": "snippet",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FEPAVMQ7K\/-.diff?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FEPAVMQ7K\/download\/-.diff?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "permalink": "https:\/\/rackn.slack.com\/files\/U02DGQYK1\/FEPAVMQ7K\/-.diff",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FEPAVMQ7K-634deb43eb",
+                "edit_link": "https:\/\/rackn.slack.com\/files\/U02DGQYK1\/FEPAVMQ7K\/-.diff\/edit",
+                "preview": "diff --git a\/content\/bootenvs\/discovery.yml b\/content\/bootenvs\/discovery.yml\r\nindex e55effb..ec2b7cb 100644\r\n--- a\/content\/bootenvs\/discovery.yml\r\n+++ b\/content\/bootenvs\/discovery.yml\r\n@@ -226,20 +226,26 @@ Templates:\r",
+                "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>diff --git a\/content\/bootenvs\/discovery.yml b\/content\/bootenvs\/discovery.yml<\/pre><\/div>\n<div><pre>index e55effb..ec2b7cb 100644<\/pre><\/div>\n<div><pre><span class=\"cm-negative\">--- a\/content\/bootenvs\/discovery.yml<\/span><\/pre><\/div>\n<div><pre><span class=\"cm-positive\">+++ b\/content\/bootenvs\/discovery.yml<\/span><\/pre><\/div>\n<div><pre><span class=\"cm-meta\">@@ -226,20 +226,26 @@ Templates:<\/span><\/pre><\/div>\n<\/div>\n<\/div>\n",
+                "lines": 43,
+                "lines_more": 38,
+                "preview_is_truncated": true
+            }
+        ],
+        "upload": true,
+        "user": "U02DGQYK1",
+        "display_as_bot": false,
+        "ts": "1544457836.371600"
+    },
+    {
+        "client_msg_id": "b02c5883-787a-48b2-a528-b3890b6788b9",
+        "type": "message",
+        "text": "okay, giving it a shot (I assumed you’d already edited it by the time i got back)",
+        "user": "UBXEU90UQ",
+        "ts": "1544458305.372200"
+    },
+    {
+        "client_msg_id": "6323c9e4-5906-40f6-ba04-c0c551827534",
+        "type": "message",
+        "text": "It is fixed above.",
+        "user": "U02DGQYK1",
+        "ts": "1544459657.372400",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1544459706.000000"
+        }
+    },
+    {
+        "client_msg_id": "8c40b1fe-83ec-4038-8a1e-df0f9749ea96",
+        "type": "message",
+        "text": "I suspect you have the right one.",
+        "user": "U02DGQYK1",
+        "ts": "1544459713.372700"
+    },
+    {
+        "client_msg_id": "a36de794-5954-48e6-9cea-728a475d1a53",
+        "type": "message",
+        "text": "i have a question about .InstallRepos  - I did some ubuntu installs and noticed there were no apt repos in any of the sources.list.  This led me to the `range .InstallRepos` in the preseed, which led me to here: <https:\/\/github.com\/digitalrebar\/provision-content\/commit\/03318234b5e17c99862e9f50e19e6834b026ecaf>",
+        "user": "UE4C36RV4",
+        "ts": "1544459823.374000",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "Zap manual repo handling in the preseed and kickstart. · digitalrebar\/provision-content@0331823",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision-content\/commit\/03318234b5e17c99862e9f50e19e6834b026ecaf",
+                "text": "This gets rid of all manual repo handling in the preseed (for Debian and Ubuntu) and the kickstart (for Centos, RHEL, etc). It replaces it with the repo-handling helpers that dr-provision has prov...",
+                "fallback": "GitHub: Zap manual repo handling in the preseed and kickstart. · digitalrebar\/provision-content@0331823",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision-content\/commit\/03318234b5e17c99862e9f50e19e6834b026ecaf",
+                "thumb_url": "https:\/\/avatars0.githubusercontent.com\/u\/770578?s=200&v=4",
+                "thumb_width": 200,
+                "thumb_height": 200,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/digitalrebar\/provision-content\/commit\/03318234b5e17c99862e9f50e19e6834b026ecaf"
+            }
+        ]
+    },
+    {
+        "client_msg_id": "2b8f1afa-3181-4eba-8c25-6ec7df6abfca",
+        "type": "message",
+        "text": "&gt; his gets rid of all manual repo handling in the preseed (for Debian\nand Ubuntu) and the kickstart (for Centos, RHEL, etc).  It replaces it\nwith the repo-handling helpers that dr-provision has provided based on\nthe package-repositories parameter.\n\n&gt; In particular, this PR removes the meaning the \"local-repo\" param used\nto have for Debian\/Ubuntu installs, since what it was trying to do can\neasily be accomplished by setting up package-repositories to point to\nthe mirror of your choice for any OS install repos.",
+        "user": "UE4C36RV4",
+        "ts": "1544459837.374400"
+    },
+    {
+        "client_msg_id": "36dcf4b9-da67-4a7e-be48-d42e136fad58",
+        "type": "message",
+        "text": "from that, I gather I have to define a \"package-repositories\" parameter with a list of repositories.   In doing so, do those repositories need to be available during the install?",
+        "user": "UE4C36RV4",
+        "ts": "1544459957.376100"
+    },
+    {
+        "client_msg_id": "e62e4048-097e-48a6-816b-c85fb70d7993",
+        "type": "message",
+        "text": "Yes if they are used with InstallSource true",
+        "user": "U02DGQYK1",
+        "ts": "1544460113.376400"
+    },
+    {
+        "client_msg_id": "383a9c3e-919f-41aa-8d86-6e8477ea2932",
+        "type": "message",
+        "text": "<@U02DGQYK1> works with those patched changes :+1:",
+        "user": "UBXEU90UQ",
+        "ts": "1544462652.376800"
+    },
+    {
+        "client_msg_id": "556d1e6c-7608-46a8-bcc4-8bb128653533",
+        "type": "message",
+        "text": "alrighty then!",
+        "user": "U02DGQYK1",
+        "ts": "1544463276.377000"
+    },
+    {
+        "client_msg_id": "08fad97a-fd4b-442b-af38-9419d2902f45",
+        "type": "message",
+        "text": "I plan on building some stages\/tasks for these actions.",
+        "user": "U02DGQYK1",
+        "ts": "1544463288.377300"
+    },
+    {
+        "client_msg_id": "bbdb412f-1ba3-4b95-9ac7-0415a6b50f20",
+        "type": "message",
+        "text": "Do you have switch actions you are taking that you wish to tell me about.  :slightly_smiling_face:",
+        "user": "U02DGQYK1",
+        "ts": "1544463309.377800"
+    },
+    {
+        "client_msg_id": "e75fa350-4bfd-4a5e-a4d7-026fc38d87ab",
+        "type": "message",
+        "text": "Like add vlan to port or enable port or lacp bond ports ,…",
+        "user": "U02DGQYK1",
+        "ts": "1544463325.378200"
+    },
+    {
+        "client_msg_id": "696d82a5-ba33-4e9c-ba0c-a95833da38a1",
+        "type": "message",
+        "text": "I think you said you were doing ansible for this is there a link to that stuff you could share?",
+        "user": "U02DGQYK1",
+        "ts": "1544463344.378600"
+    },
+    {
+        "client_msg_id": "429a7e02-f1ae-4923-9da7-2998ecd300a8",
+        "type": "message",
+        "text": "<@UBXEU90UQ> - I’ll push that in.",
+        "user": "U02DGQYK1",
+        "ts": "1544463349.378800"
+    },
+    {
+        "client_msg_id": "8e7608be-b221-4e6d-ba55-2ef2fca0f31a",
+        "type": "message",
+        "text": "at some point here.",
+        "user": "U02DGQYK1",
+        "ts": "1544463353.379000"
+    },
+    {
+        "client_msg_id": "143673fd-bd79-477c-8a14-976c044dc4b5",
+        "type": "message",
+        "text": "cool :slightly_smiling_face: yeah the actual switch config is all done in ansible, using callbacks (initial configuration + ongoing)",
+        "user": "UBXEU90UQ",
+        "ts": "1544464138.379800"
+    },
+    {
+        "client_msg_id": "42fbc3ee-4ab2-4239-866f-f7d2e9c5b02e",
+        "type": "message",
+        "text": "i have an ansible role that uses the inbuilt ansible `nclu` module to do various things, but I’m not sure how much of it is portable as it basically uses my equivalent of netwrangler to do port configs",
+        "user": "UBXEU90UQ",
+        "ts": "1544464210.380800"
+    },
+    {
+        "client_msg_id": "247b012a-84b8-410d-89c3-eb36bc6d0de3",
+        "type": "message",
+        "text": "but it manages SSH keys and blocks of ‘configuration’ commands (that could do static port config for example)",
+        "user": "UBXEU90UQ",
+        "ts": "1544464266.381800"
+    },
+    {
+        "client_msg_id": "495429ba-9175-40b5-95e8-3ccc5d75ba44",
+        "type": "message",
+        "text": "I suspect the standard drp tasks for managing SSH and keys and such will work just fine in CL",
+        "user": "UBXEU90UQ",
+        "ts": "1544464451.383200",
+        "edited": {
+            "user": "UBXEU90UQ",
+            "ts": "1544464463.000000"
+        },
+        "reactions": [
+            {
+                "name": "cake",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "client_msg_id": "c31797be-db19-462c-bb11-2dfb9cd457a9",
+        "type": "message",
+        "text": "I’m thinking a level higher about tasks\/actions to build these are the fly based upon parameters (or external systems).",
+        "user": "U02DGQYK1",
+        "ts": "1544464599.384000"
+    },
+    {
+        "client_msg_id": "5a9b9075-77b5-4a14-9127-30e185ca4222",
+        "type": "message",
+        "text": "but yes - for the ansible case, the ssh-access task is probably all you need.",
+        "user": "U02DGQYK1",
+        "ts": "1544464618.384500"
+    },
+    {
+        "client_msg_id": "fa7bc020-3034-4938-9d4c-774053c7aac8",
+        "type": "message",
+        "text": "it would be nice to autoconfigure switches purely in DRP :slightly_smiling_face:",
+        "user": "UBXEU90UQ",
+        "ts": "1544464709.384900",
+        "reactions": [
+            {
+                "name": "grin",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "client_msg_id": "bdfcd864-bc00-4420-9364-65f75fa7828a",
+        "type": "message",
+        "text": "That is what I’m thinking through…..",
+        "user": "U02DGQYK1",
+        "ts": "1544464866.385300"
+    },
+    {
+        "client_msg_id": "afc7f464-b8b5-444c-807b-5e3d7404bc70",
+        "type": "message",
+        "text": "or trying to",
+        "user": "U02DGQYK1",
+        "ts": "1544464870.385500",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1544464873.000000"
+        }
+    },
+    {
+        "client_msg_id": "91562f89-a734-4cc0-a658-5f335f907c49",
+        "type": "message",
+        "text": "yeah",
+        "user": "UBXEU90UQ",
+        "ts": "1544465052.385800"
+    },
+    {
+        "client_msg_id": "be81c17e-80b6-45a4-a9c5-3874da655ffd",
+        "type": "message",
+        "text": "its pretty cool that i’m basically there with being able to config these things automatically and it only took a bit of editing to the community config files… which is stuff I could’ve worked around had that not been an option",
+        "user": "UBXEU90UQ",
+        "ts": "1544465105.386700"
+    },
+    {
+        "client_msg_id": "af7879ff-c243-4fdc-9c47-d1a5ed4e344a",
+        "type": "message",
+        "text": "drp is awesome",
+        "user": "UBXEU90UQ",
+        "ts": "1544465108.386900",
+        "reactions": [
+            {
+                "name": "heart",
+                "users": [
+                    "U6QFVRJNB",
+                    "U02DHRR2L"
+                ],
+                "count": 2
+            }
+        ]
+    },
+    {
+        "client_msg_id": "cd14362e-5ffc-43d5-ba67-8e0b4e55fded",
+        "type": "message",
+        "text": "<@U02DGQYK1> Did you make any progress on duplicating the issue I was having on Friday?",
+        "user": "U9BU09D51",
+        "ts": "1544468834.387400"
+    },
+    {
+        "client_msg_id": "f64fff20-f8b8-4a89-9aa2-e044d241befb",
+        "type": "message",
+        "text": "Sorry - I haven’t <@U9BU09D51>",
+        "user": "U02DGQYK1",
+        "ts": "1544471504.387900"
+    },
+    {
+        "client_msg_id": "6ef72138-2909-4e90-941e-a02ac22901a3",
+        "type": "message",
+        "text": "<@U9BU09D51> - I have replicated it.",
+        "user": "U02DGQYK1",
+        "ts": "1544473556.388300"
+    },
+    {
+        "client_msg_id": "d40da308-3601-4d2c-99ee-553d760cecfa",
+        "type": "message",
+        "text": "Ok!",
+        "user": "U9BU09D51",
+        "ts": "1544473607.388500"
+    },
+    {
+        "client_msg_id": "d3439236-a807-47d1-8d9d-8aef5deace89",
+        "type": "message",
+        "text": "Glad it's not just me.",
+        "user": "U9BU09D51",
+        "ts": "1544473610.388700"
+    },
+    {
+        "client_msg_id": "4864b127-c932-4712-9b7b-c1e1482379b7",
+        "type": "message",
+        "text": "I tried restarting drp after changing the IP of the old server and still wasn't able to clear out that issue.",
+        "user": "U9BU09D51",
+        "ts": "1544473631.389200"
+    },
+    {
+        "client_msg_id": "9598b32a-fef4-447c-8844-e6dd16a404ba",
+        "type": "message",
+        "text": "hmmm - let me try",
+        "user": "U02DGQYK1",
+        "ts": "1544473657.389600"
+    },
+    {
+        "client_msg_id": "f3947a58-5b9b-496a-ae3a-637cf053b4b6",
+        "type": "message",
+        "text": "Restarting after changing the IP address of the static machine, did fix it for me.",
+        "user": "U02DGQYK1",
+        "ts": "1544473701.390100"
+    },
+    {
+        "client_msg_id": "d344abfb-09e3-465a-8293-43b2ae7f5934",
+        "type": "message",
+        "text": "Oh yeah?",
+        "user": "U9BU09D51",
+        "ts": "1544473709.390300"
+    },
+    {
+        "client_msg_id": "9cb8ed6c-0198-4278-aa03-64dc33c9f6e3",
+        "type": "message",
+        "text": "I'm on 3.1.1.0 and 1.5.0 if that makes any difference.",
+        "user": "U9BU09D51",
+        "ts": "1544473749.390700"
+    },
+    {
+        "client_msg_id": "f0529094-05c5-4e57-a31f-53d535b0f00b",
+        "type": "message",
+        "text": "Let me try the restart again and make sure it actually restarts.",
+        "user": "U9BU09D51",
+        "ts": "1544473794.391200"
+    },
+    {
+        "client_msg_id": "9a8cdd09-0a68-4bf4-a18b-613e879914d1",
+        "type": "message",
+        "text": "so, changing the address on the machine that is now static, restarting drp, and then rebooting the new machine- works for me.",
+        "user": "U02DGQYK1",
+        "ts": "1544473814.391700"
+    },
+    {
+        "client_msg_id": "36f3bd69-e4d0-4c67-944b-9417a82c6ee3",
+        "type": "message",
+        "text": "Hrm.",
+        "user": "U9BU09D51",
+        "ts": "1544473879.391900"
+    },
+    {
+        "client_msg_id": "e0921b41-5dd6-428f-b444-54c9779dff7d",
+        "type": "message",
+        "text": "Ok, let me try again. I just did a stop\/start on drp and verified it did indeed stop\/start",
+        "user": "U9BU09D51",
+        "ts": "1544473897.392300"
+    },
+    {
+        "client_msg_id": "9a3a75ba-29ea-44f2-ae62-315196e37fa8",
+        "type": "message",
+        "text": "So let's see.",
+        "user": "U9BU09D51",
+        "ts": "1544473900.392500",
+        "edited": {
+            "user": "U9BU09D51",
+            "ts": "1544473904.000000"
+        }
+    },
+    {
+        "client_msg_id": "29407d57-61cd-4a79-a859-26158d1cfcb7",
+        "type": "message",
+        "text": "Nope, same thing.",
+        "user": "U9BU09D51",
+        "ts": "1544474180.392800"
+    },
+    {
+        "client_msg_id": "59653cc9-50a2-41cc-a881-1cc1275ae75e",
+        "type": "message",
+        "text": "`drpcli machines list Address=&lt;ip in question&gt;`",
+        "user": "U02DGQYK1",
+        "ts": "1544474196.393100"
+    },
+    {
+        "client_msg_id": "5811fcf1-7bcf-4216-a9e8-d5b42987b5c6",
+        "type": "message",
+        "text": "I get \"unknown command \"list\"\"",
+        "user": "U9BU09D51",
+        "ts": "1544474273.393300"
+    },
+    {
+        "client_msg_id": "3b43a013-1241-47b2-a7a1-f7a47d14291c",
+        "type": "message",
+        "text": "Ok, never mind.",
+        "user": "U9BU09D51",
+        "ts": "1544474296.393700"
+    },
+    {
+        "client_msg_id": "584940c2-3896-40d0-9b55-3fc45dea470f",
+        "type": "message",
+        "text": "I had some other crap going on with my terminal.",
+        "user": "U9BU09D51",
+        "ts": "1544474302.394000"
+    },
+    {
+        "client_msg_id": "5a99af6b-5e36-4baa-8048-2969b3834e32",
+        "type": "message",
+        "text": "```$ drpcli machines list Address=162.88.194.246\n[]```",
+        "user": "U9BU09D51",
+        "ts": "1544474319.394300",
+        "edited": {
+            "user": "U9BU09D51",
+            "ts": "1544474328.000000"
+        }
+    },
+    {
+        "client_msg_id": "11411ccb-6222-4d97-a4de-a8817c0665cc",
+        "type": "message",
+        "text": "`curl http:\/\/&lt;drpip&gt;:8091\/162.88.194.246.ipxe`",
+        "user": "U02DGQYK1",
+        "ts": "1544474346.394900"
+    },
+    {
+        "client_msg_id": "619fefe7-e8ba-4921-8123-cd381f5c35f9",
+        "type": "message",
+        "text": "404 page not found",
+        "user": "U9BU09D51",
+        "ts": "1544474404.395100"
+    },
+    {
+        "client_msg_id": "ec95c39b-b127-4338-9a5f-903bf033aa28",
+        "type": "message",
+        "text": "So why is this not working?",
+        "user": "U9BU09D51",
+        "ts": "1544474420.395600"
+    },
+    {
+        "client_msg_id": "e55e43ed-397f-40be-999e-820cd41ebaa3",
+        "type": "message",
+        "text": "I don't get it.",
+        "user": "U9BU09D51",
+        "ts": "1544474422.395800"
+    },
+    {
+        "client_msg_id": "168289a5-16ef-4d76-a736-7f7632d038f8",
+        "type": "message",
+        "text": "Yeah - I don’t know.",
+        "user": "U02DGQYK1",
+        "ts": "1544474426.396100"
+    },
+    {
+        "client_msg_id": "49f6613f-62eb-4d09-ad94-fa0dc64e120e",
+        "type": "message",
+        "text": "What happens if I delete that lease?",
+        "user": "U9BU09D51",
+        "ts": "1544474440.396400"
+    },
+    {
+        "client_msg_id": "e81971c5-54fe-4974-b661-c433112a66fa",
+        "type": "message",
+        "text": "The file is served from a machine and bootenv.  Shouldn’t matter about lease.",
+        "user": "U02DGQYK1",
+        "ts": "1544474467.396900",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1544474472.000000"
+        }
+    },
+    {
+        "client_msg_id": "aeae74e1-0f51-4fcf-83b5-06ccf10b60e2",
+        "type": "message",
+        "text": "Ok.",
+        "user": "U9BU09D51",
+        "ts": "1544474486.397200"
+    },
+    {
+        "client_msg_id": "f2843b26-5a90-4638-a1d5-4a65f9809f1d",
+        "type": "message",
+        "text": "Well, let me triple check the settings.  Maybe I randomly don't have unknownbootenv set right...",
+        "user": "U9BU09D51",
+        "ts": "1544474504.397900"
+    },
+    {
+        "client_msg_id": "b986ee27-e9ff-425e-8323-4cf29a8135dc",
+        "type": "message",
+        "text": "The bug I’m seeing is that we aren’t cleaning up the filespace when a machine’s address changes.",
+        "user": "U02DGQYK1",
+        "ts": "1544474504.398000"
+    },
+    {
+        "client_msg_id": "aa61bae1-cb3a-4d51-a0b1-8767cf0576d6",
+        "type": "message",
+        "text": "That would suck.",
+        "user": "U9BU09D51",
+        "ts": "1544474513.398200"
+    },
+    {
+        "client_msg_id": "7444b0d1-cbc9-4a73-8671-ca3252425793",
+        "type": "message",
+        "text": "Restarting rebuilds all from scratch.",
+        "user": "U02DGQYK1",
+        "ts": "1544474526.398500"
+    },
+    {
+        "client_msg_id": "7ff4e60c-6c1b-4e29-b122-52bdf692e001",
+        "type": "message",
+        "text": "Hrm.",
+        "user": "U9BU09D51",
+        "ts": "1544474563.398700"
+    },
+    {
+        "client_msg_id": "db790697-0399-421d-b116-40ae8aadc83b",
+        "type": "message",
+        "text": "That all looks fine.",
+        "user": "U9BU09D51",
+        "ts": "1544474568.398900"
+    },
+    {
+        "client_msg_id": "e350662d-989c-4b40-8a2f-97b421c04c0e",
+        "type": "message",
+        "text": "Let me... I dunno.  Try powering the machine off and back on.  That's what support usually tells me to do...",
+        "user": "U9BU09D51",
+        "ts": "1544474587.399400"
+    },
+    {
+        "client_msg_id": "efa3dfe1-ef9c-4cd1-84dd-157323de91a4",
+        "type": "message",
+        "text": "Not drp - make sure you don’t have reservations that would get in the way.",
+        "user": "U02DGQYK1",
+        "ts": "1544474622.400000"
+    },
+    {
+        "client_msg_id": "c36ca4eb-7307-4c1a-b75f-403bdccd603d",
+        "type": "message",
+        "text": "Ok.",
+        "user": "U9BU09D51",
+        "ts": "1544474635.400200"
+    },
+    {
+        "client_msg_id": "4625e7af-0e8d-4cda-82af-e503ef93d826",
+        "type": "message",
+        "text": "I'll check reservations.  I don't think we have any.",
+        "user": "U9BU09D51",
+        "ts": "1544474641.400400"
+    },
+    {
+        "client_msg_id": "805c0ef0-582d-407e-a57a-316520e403ea",
+        "type": "message",
+        "text": "No reservations.",
+        "user": "U9BU09D51",
+        "ts": "1544474667.400600"
+    },
+    {
+        "client_msg_id": "bc44a7f4-8450-466e-ad52-19d1132a7da5",
+        "type": "message",
+        "text": "If the magic 30 second poweroff doesn't fix it (it won't, it never does) I guess I'll try deleting the lease just because?",
+        "user": "U9BU09D51",
+        "ts": "1544474723.401400"
+    },
+    {
+        "client_msg_id": "68eea86a-3008-4df0-bb2c-92583f8b2b45",
+        "type": "message",
+        "text": "Oh I forgot to update all firmware to the latest, that's the other thing support always tells me to do that never works.  :smile:",
+        "user": "U9BU09D51",
+        "ts": "1544474766.401800"
+    },
+    {
+        "client_msg_id": "bd67a78e-7699-4f91-aed2-8307c8f5cda8",
+        "type": "message",
+        "text": "Actually if I'm being honest I have had the firmware update actually fix problems.  But never the 30 second poweroff.",
+        "user": "U9BU09D51",
+        "ts": "1544474803.402300"
+    },
+    {
+        "client_msg_id": "09e34559-8c73-41a8-a017-0c2e78b3c111",
+        "type": "message",
+        "text": "Ok, none of that worked.  I deleted the expired lease and the good lease.  It got a new IP and did the same thing.  So something is borked here.",
+        "user": "U9BU09D51",
+        "ts": "1544475377.403000"
+    },
+    {
+        "client_msg_id": "60e7bfcd-e0f9-4616-b39a-d2ac1f656a8f",
+        "type": "message",
+        "text": "yes - something is strange",
+        "user": "U02DGQYK1",
+        "ts": "1544475667.403300"
+    },
+    {
+        "client_msg_id": "7897e8b8-a1d8-4f29-8da7-85d39fae1492",
+        "type": "message",
+        "text": "Are you sure you don't have another DHCP service on that network - or DHCP Relay \/ IP Helpers forwarding to a different DHCP instance ?",
+        "user": "U6QFVRJNB",
+        "ts": "1544475730.403900"
+    },
+    {
+        "client_msg_id": "7bce46a4-afc1-4fb4-9b6a-80bfd41b9b8b",
+        "type": "message",
+        "text": "...pretty sure?  But I could be wrong.",
+        "user": "U9BU09D51",
+        "ts": "1544475870.404200"
+    },
+    {
+        "client_msg_id": "7ef87f2a-4ce1-41e7-98f1-88649ecbae8f",
+        "type": "message",
+        "text": "Although I do see someone built a machine named dhcp0...  That sounds ominous.",
+        "user": "U9BU09D51",
+        "ts": "1544475918.404500"
+    },
+    {
+        "client_msg_id": "2b236fb0-f926-416e-b50b-b62bc00dd191",
+        "type": "message",
+        "text": "Let me try a machine that worked once before and see if it works now.",
+        "user": "U9BU09D51",
+        "ts": "1544475937.404800"
+    },
+    {
+        "client_msg_id": "6d0cefa7-eb43-49b4-8d07-a1cd8f49f649",
+        "type": "message",
+        "text": "I believe the dhcp0 server serves the management subnet.  So it shouldn't be a problem.  \"shouldn't\"",
+        "user": "U9BU09D51",
+        "ts": "1544475990.405500"
+    },
+    {
+        "client_msg_id": "882ea5ad-d04b-4b5d-91e2-d09a867122b9",
+        "type": "message",
+        "text": "Ok.  The machine I just tried that worked before worked again.  But I just noticed this is the first system I'm building in this rack, which is a different subnet from the others.  So it could be something borked with that subnet.",
+        "user": "U9BU09D51",
+        "ts": "1544476527.406400"
+    },
+    {
+        "client_msg_id": "ac0e572c-be0f-4d78-bddb-abcf5fb3b807",
+        "type": "message",
+        "text": "I'm going to try another system in that rack and see what happens.",
+        "user": "U9BU09D51",
+        "ts": "1544476534.406700"
+    },
+    {
+        "client_msg_id": "63be29f2-4881-4fb1-bbf5-1d8a213a6a3a",
+        "type": "message",
+        "text": "okay - I’m working on a renderer fix.",
+        "user": "U02DGQYK1",
+        "ts": "1544476549.407300"
+    },
+    {
+        "client_msg_id": "3bbfe0ed-e8c4-4e14-8264-f51af5ef3f4c",
+        "type": "message",
+        "text": "That'll tell me something.  If it works, it tells me something is wonky with this system.  If it doesn't work, I probably need to chat with network engineering about this subnet...",
+        "user": "U9BU09D51",
+        "ts": "1544476567.407700"
+    },
+    {
+        "client_msg_id": "0ace71aa-94bb-451e-b4c1-a37b0a9423f9",
+        "type": "message",
+        "text": "<@U9BU09D51> - I’m pushing a fix through the system on tip that will fix the deregistration problem.  Thanks for finding that.",
+        "user": "U02DGQYK1",
+        "ts": "1544478198.408300"
+    },
+    {
+        "client_msg_id": "c5368e15-e15d-418b-9c8a-6da5a2de93f5",
+        "type": "message",
+        "text": "It will allow you to change the machine address and let other machines continue reusing the files without restarting the server.",
+        "user": "U02DGQYK1",
+        "ts": "1544478220.408900"
+    },
+    {
+        "client_msg_id": "886b0bfa-7f1c-436d-988a-fc84eb7d715a",
+        "type": "message",
+        "text": "You will need to make sure that as you assign static IPs, you update the Machine.Address field appropriately.",
+        "user": "U02DGQYK1",
+        "ts": "1544478237.409300"
+    },
+    {
+        "client_msg_id": "9243d9e2-3b98-411b-9ddc-8e906e785c7c",
+        "type": "message",
+        "text": "If you update to tip drp, you should also update to tip content packs and plugins.",
+        "user": "U02DGQYK1",
+        "ts": "1544478254.409700"
+    },
+    {
+        "client_msg_id": "013c7901-b251-4087-91f3-7425d071ab46",
+        "type": "message",
+        "text": "I’ll let you know when it has made it through the build\/test system.",
+        "user": "U02DGQYK1",
+        "ts": "1544478267.410000"
+    },
+    {
+        "client_msg_id": "bf016d2e-ff4d-4f46-a505-497ff38449c7",
+        "type": "message",
+        "text": "Ok, cool!",
+        "user": "U9BU09D51",
+        "ts": "1544478315.410200"
+    },
+    {
+        "client_msg_id": "aa73bb60-e93a-4598-9d1b-a9320870ac6d",
+        "type": "message",
+        "text": "Ok.  Second machine in the same rack is doing the same thing.",
+        "user": "U9BU09D51",
+        "ts": "1544479636.410600"
+    },
+    {
+        "client_msg_id": "b5736ad4-ab0e-4a5d-9d38-4e417d958b48",
+        "type": "message",
+        "text": "Sooo I suspect this is an issue I need to chat with our neteng team about.",
+        "user": "U9BU09D51",
+        "ts": "1544479651.411000"
+    },
+    {
+        "client_msg_id": "f874728e-99b3-44e0-9823-22635086270d",
+        "type": "message",
+        "text": "Thanks for your help guys.",
+        "user": "U9BU09D51",
+        "ts": "1544479656.411200"
+    },
+    {
+        "client_msg_id": "ea1df615-247b-4de8-a312-56fd0b817d11",
+        "type": "message",
+        "text": "At least I uncovered a legit bug.  :smile:",
+        "user": "U9BU09D51",
+        "ts": "1544479669.411500"
+    },
+    {
+        "client_msg_id": "7579c06e-45f3-4292-9924-094a4bac0953",
+        "type": "message",
+        "text": "Anyone going to KubeCon ?",
+        "user": "U62R1805P",
+        "ts": "1544482532.411800"
+    },
+    {
+        "client_msg_id": "38979b15-5776-4a77-9760-785c7b0185ee",
+        "type": "message",
+        "text": "<https:\/\/events.linuxfoundation.org\/events\/kubecon-cloudnativecon-north-america-2018\/>",
+        "user": "U62R1805P",
+        "ts": "1544482538.412000"
+    },
+    {
+        "client_msg_id": "1fdf7436-f596-4dd1-9777-2e1ebf481f90",
+        "type": "message",
+        "text": "sorry, missing it.  we do have some very cool new K8s function",
+        "user": "U02DHRR2L",
+        "ts": "1544482920.412400"
+    },
+    {
+        "client_msg_id": "0b128361-1c79-4628-9e19-1677f4a3ae45",
+        "type": "message",
+        "text": "<@U9BU09D51> - tip now has your fix in it.",
+        "user": "U02DGQYK1",
+        "ts": "1544496911.412700"
+    }
+]

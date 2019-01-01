@@ -1,0 +1,142 @@
+[
+    {
+        "client_msg_id": "9417184b-669a-4b26-854a-e5bf8f5c1a56",
+        "type": "message",
+        "text": "are there any docs for creating a plugin provider?",
+        "user": "UF1LXSN15",
+        "ts": "1545830023.122300",
+        "edited": {
+            "user": "UF1LXSN15",
+            "ts": "1545830386.000000"
+        }
+    },
+    {
+        "client_msg_id": "cc60e3e7-a483-4029-90de-c85243c70e8d",
+        "type": "message",
+        "text": "I was going to try to use ipmi and VirtualBMC with my libvirt vm's but I just realized it was licensed only when I tried to install it.",
+        "user": "UF1LXSN15",
+        "ts": "1545830135.123700"
+    },
+    {
+        "client_msg_id": "a1a19477-a0a4-415f-98b3-7e9d8d8b59ff",
+        "type": "message",
+        "text": "So I was thinking maybe a simple plugin provider that would enable running commands on the machines via ssh",
+        "user": "UF1LXSN15",
+        "ts": "1545830352.125600"
+    },
+    {
+        "client_msg_id": "bda4a1c8-3d96-4941-a67f-fde4e5df60c5",
+        "type": "message",
+        "text": "<@UF1LXSN15> - we have one.  kvm-test.  We haven’t productized it but <@U02DJQSG8> uses it for testing with KVM\/libvirt on his setup.",
+        "user": "U02DGQYK1",
+        "ts": "1545835883.126600"
+    },
+    {
+        "client_msg_id": "4da5d65e-088b-41e7-92d4-c8a359317c43",
+        "type": "message",
+        "text": "so for internal use only then?",
+        "user": "UF1LXSN15",
+        "ts": "1545841474.127100"
+    },
+    {
+        "client_msg_id": "936a01e3-4985-4d8a-a53e-48236c64f39e",
+        "type": "message",
+        "text": "Eh, more like \"you need to be me to use it anyways\".",
+        "user": "U02DJQSG8",
+        "ts": "1545843234.127600"
+    },
+    {
+        "client_msg_id": "d801db01-4638-4613-b9a4-b7fd63c89c0c",
+        "type": "message",
+        "text": "well I code so if there were an example or docs on how to create a plugin provider I should be able to hack something together to do what I'm wanting",
+        "user": "UF1LXSN15",
+        "ts": "1545844713.129400",
+        "edited": {
+            "user": "UF1LXSN15",
+            "ts": "1545844742.000000"
+        }
+    },
+    {
+        "client_msg_id": "fdfdc32c-4cf7-4064-9185-b30dc148bf6f",
+        "type": "message",
+        "text": "there's an example under \/cmd for the incrementer plugin in the provision repo",
+        "user": "U02DHRR2L",
+        "ts": "1545847000.130200"
+    },
+    {
+        "client_msg_id": "6b96f23e-f7b0-4cd9-ac91-755c4ad7bf11",
+        "type": "message",
+        "text": "<https:\/\/github.com\/digitalrebar\/provision\/tree\/master\/cmds\/incrementer>",
+        "user": "U02DHRR2L",
+        "ts": "1545847033.130400",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/tree\/master\/cmds\/incrementer",
+                "text": "Digital Rebar Provision is a simple and powerful Golang executable that provides a complete API-driven DHCP\/PXE\/TFTP provisioning system. - digitalrebar\/provision",
+                "fallback": "GitHub: digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/tree\/master\/cmds\/incrementer",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/digitalrebar\/provision\/tree\/master\/cmds\/incrementer"
+            }
+        ]
+    },
+    {
+        "client_msg_id": "4727259e-01ce-4735-be6c-3a7e3d709857",
+        "type": "message",
+        "text": "I'm about (next few days) to update the license flow to so any registered user can use plugins - it will not require creating an org.  Makes it even more self service. ",
+        "user": "U02DHRR2L",
+        "ts": "1545851078.132700"
+    },
+    {
+        "client_msg_id": "6d0d8174-0641-4666-b524-4d612e12f3db",
+        "type": "message",
+        "text": "thanks <@U02DHRR2L>.  That's what I needed!  I'll see what I can get going.",
+        "user": "UF1LXSN15",
+        "ts": "1545865504.134400"
+    },
+    {
+        "client_msg_id": "4c30889d-6b68-4890-9ca2-b893d1d1bfd9",
+        "type": "message",
+        "text": "<@UF1LXSN15> in the mean time, I can create an org for you so that you can get started now... I'll send you info via DM",
+        "user": "U02DHRR2L",
+        "ts": "1545865564.135000"
+    },
+    {
+        "client_msg_id": "953e5766-29c9-4bfb-bd77-fdf50d8841e2",
+        "type": "message",
+        "text": "just created <https:\/\/github.com\/digitalrebar\/provision-content\/pull\/181> , hope it helps to make krib ha more usable :slightly_smiling_face: works for me",
+        "user": "UBU0BPRA9",
+        "ts": "1545881747.135800",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "latest calico, cni, dashboard by dano0b · Pull Request #181 · digitalrebar\/provision-content",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision-content\/pull\/181",
+                "text": "calico 3.4 (using kubernetes as datastore instead of an own etcd) latest stable cni plugin kubernetes dashboard link update improved reliability for kirb config stage (waiting for usable admin.conf...",
+                "fallback": "GitHub: latest calico, cni, dashboard by dano0b · Pull Request #181 · digitalrebar\/provision-content",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision-content\/pull\/181",
+                "thumb_url": "https:\/\/avatars2.githubusercontent.com\/u\/19503579?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/digitalrebar\/provision-content\/pull\/181"
+            }
+        ],
+        "reactions": [
+            {
+                "name": "confetti_ball",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    }
+]

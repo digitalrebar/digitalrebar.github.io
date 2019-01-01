@@ -1,0 +1,923 @@
+[
+    {
+        "user": "UCXAXRNV8",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1537430218.000200",
+        "text": "<@UCXAXRNV8> has joined the channel"
+    },
+    {
+        "user": "UCXE7ER1S",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1537455898.000200",
+        "text": "<@UCXE7ER1S> has joined the channel"
+    },
+    {
+        "user": "UCXU3160M",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1537462314.000200",
+        "text": "<@UCXU3160M> has joined the channel"
+    },
+    {
+        "client_msg_id": "1c154759-cd6d-4fe0-aa10-21f130d8621f",
+        "type": "message",
+        "text": "Is there an existing Python library for interacting with the DRB API service?",
+        "user": "UBJ22A0N5",
+        "ts": "1537464837.000100"
+    },
+    {
+        "client_msg_id": "2ae7d8f2-bd70-480d-a1fa-a69be6f4e16e",
+        "type": "message",
+        "text": "<@UCXAXRNV8> $welcome ...",
+        "user": "U6QFVRJNB",
+        "ts": "1537465437.000100"
+    },
+    {
+        "type": "message",
+        "subtype": "slackbot_response",
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "user": "USLACKBOT",
+        "ts": "1537465437.000200"
+    },
+    {
+        "client_msg_id": "e0fd8485-f092-4482-936a-2d7326ad21c4",
+        "type": "message",
+        "text": "<@UBJ22A0N5> - sorry, no Python library ... however, integrating with Python to DRP should be pretty easy - the APIs are very straightforward and well documented.  You can view the API documentation by pointing your web browser to any DRP Endpoint at the Swagger interface - for example \"<http:\/\/rebar.example.com|rebar.example.com>\", assuming default API port - go to:   <https:\/\/rebar.example.com:8092\/swagger-ui>",
+        "user": "U6QFVRJNB",
+        "ts": "1537465590.000100"
+    },
+    {
+        "type": "message",
+        "subtype": "me_message",
+        "text": "was going to say EXACTLY that",
+        "user": "U02DHRR2L",
+        "ts": "1537465607.000100"
+    },
+    {
+        "type": "message",
+        "subtype": "me_message",
+        "text": "Sometimes ... I'm a well trained monkey ...",
+        "user": "U6QFVRJNB",
+        "ts": "1537465644.000100"
+    },
+    {
+        "client_msg_id": "bbf07f01-43c5-4a02-9f47-08a69dad0351",
+        "type": "message",
+        "text": "while Swagger does accurately reflect the API, there are behaviors that we've added that Swagger cannot fully capture",
+        "user": "U02DHRR2L",
+        "ts": "1537465690.000100"
+    },
+    {
+        "client_msg_id": "0a5470da-7fe2-4338-a2a3-4ee77848cb63",
+        "type": "message",
+        "text": "Sounds good.  We are working down that path and appreciate the swagger-ui.  I figured that I'd ask before we reproduced something that already existed.",
+        "user": "UBJ22A0N5",
+        "ts": "1537465692.000100"
+    },
+    {
+        "client_msg_id": "cb917379-cd19-4545-a094-d850c0510ca5",
+        "type": "message",
+        "text": "The API docs are built from the same source and may be easier to read",
+        "user": "U02DHRR2L",
+        "ts": "1537465725.000100",
+        "reactions": [
+            {
+                "name": "+1::skin-tone-2",
+                "users": [
+                    "UBJ22A0N5"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "client_msg_id": "d72219ef-6752-4fe8-80ac-3d52406ec110",
+        "type": "message",
+        "text": "<https:\/\/provision.readthedocs.io\/en\/tip\/doc\/api.html>",
+        "user": "U6QFVRJNB",
+        "ts": "1537465808.000100"
+    },
+    {
+        "client_msg_id": "34e24a76-cef4-498f-a4aa-1961ccc84c71",
+        "type": "message",
+        "text": "Also, pull requests welcome!!",
+        "user": "U02DHRR2L",
+        "ts": "1537466118.000100",
+        "reactions": [
+            {
+                "name": "ear::skin-tone-2",
+                "users": [
+                    "UBJ22A0N5"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "user": "UCX6859BJ",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1537473531.000200",
+        "text": "<@UCX6859BJ> has joined the channel"
+    },
+    {
+        "client_msg_id": "41200fca-6fac-40e9-a7a3-a4e4f80afd71",
+        "type": "message",
+        "text": "<@UCX6859BJ> $welcome",
+        "user": "U02DHRR2L",
+        "ts": "1537476339.000100"
+    },
+    {
+        "type": "message",
+        "subtype": "slackbot_response",
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "user": "USLACKBOT",
+        "ts": "1537476340.000100"
+    },
+    {
+        "client_msg_id": "e9e8d2fd-d6d4-4520-b4b6-a5eb4fa07019",
+        "type": "message",
+        "text": "Regarding the APIs  how do the action cmds work.  For example\n```Post \/subnets\/:name\/actions\/:cmd Takes body {}```\nwhich implies that the commands already exist somewhere?  But can’t find an api reference for them .",
+        "user": "UBP7HL339",
+        "ts": "1537480258.000100"
+    },
+    {
+        "client_msg_id": "ba1479e6-e554-4f38-b757-244d30c044a7",
+        "type": "message",
+        "text": "Or it is completely open?",
+        "user": "UBP7HL339",
+        "ts": "1537480272.000100"
+    },
+    {
+        "client_msg_id": "b560bfbe-ea59-44cc-9db5-2fc26e77c3ae",
+        "type": "message",
+        "text": "I say that because I tried to post an action ‘test’ and got a 400 with `Action test on subnets Not Found`",
+        "user": "UBP7HL339",
+        "ts": "1537480535.000100"
+    },
+    {
+        "client_msg_id": "70cfe3ec-5ee1-4f5b-9ee2-60cbc5081310",
+        "type": "message",
+        "text": "Those are plugins.  You need to install a plugin provider and then create a plugin model for it. ",
+        "user": "U02DHRR2L",
+        "ts": "1537481901.000200"
+    },
+    {
+        "client_msg_id": "8721417f-7d92-471c-98a6-e61bbfe29f99",
+        "type": "message",
+        "text": "<@UBP7HL339> - actions on objects are provided by plugins (like <@U02DHRR2L> said).  Most of the plugins add actions to either the machine objects or the system object.",
+        "user": "U02DGQYK1",
+        "ts": "1537482149.000100"
+    },
+    {
+        "client_msg_id": "78c74709-fa5d-44c2-9424-1d3a5837056b",
+        "type": "message",
+        "text": "For example, `packet-ipmi` will add ipmi-like actions to packet machines represented in DRP.  It will also add some actions to the system object.",
+        "user": "U02DGQYK1",
+        "ts": "1537482185.000100"
+    },
+    {
+        "client_msg_id": "e8d2ee1d-7f2f-4f74-a8c0-814440b42f6c",
+        "type": "message",
+        "text": "Get \/&lt;prefix&gt;\/&lt;key&gt;\/actions - returns a list of actions their required\/optional parameters for that action.",
+        "user": "U02DGQYK1",
+        "ts": "1537482234.000100"
+    },
+    {
+        "client_msg_id": "be3b87c8-f9f4-4978-9374-cd194f5d1e8b",
+        "type": "message",
+        "text": "Get \/machines\/&lt;uuid&gt;\/actions would return something like this:\n```\n  {\n    \"Command\": \"powercycle\",\n    \"Model\": \"machines\",\n    \"OptionalParams\": [],\n    \"Provider\": \"packet-ipmi\",\n    \"RequiredParams\": [\n      \"packet\/uuid\"\n    ]\n  },\n  {\n    \"Command\": \"poweroff\",\n    \"Model\": \"machines\",\n    \"OptionalParams\": [],\n    \"Provider\": \"packet-ipmi\",\n    \"RequiredParams\": [\n      \"packet\/uuid\"\n    ]\n  },\n  {\n    \"Command\": \"poweron\",\n    \"Model\": \"machines\",\n    \"OptionalParams\": [],\n    \"Provider\": \"packet-ipmi\",\n    \"RequiredParams\": [\n      \"packet\/uuid\"\n    ]\n  },\n  {\n    \"Command\": \"updatepxe\",\n    \"Model\": \"machines\",\n    \"OptionalParams\": [\n      \"packet\/ipxe-script-url\",\n      \"packet\/always-pxe\"\n    ],\n    \"Provider\": \"packet-ipmi\",\n    \"RequiredParams\": [\n      \"packet\/uuid\"\n    ]\n  }\n```",
+        "user": "U02DGQYK1",
+        "ts": "1537482365.000100"
+    },
+    {
+        "client_msg_id": "88bd33d8-532a-4f8e-bb7a-968f770112a3",
+        "type": "message",
+        "text": "Okay so when you post a cmd you aren’t actaully posting an action you are ionvoking an existing action",
+        "user": "UBP7HL339",
+        "ts": "1537482377.000100"
+    },
+    {
+        "client_msg_id": "ad49dd5a-73f4-4583-8d96-da42bf0a53a9",
+        "type": "message",
+        "text": "yes",
+        "user": "U02DGQYK1",
+        "ts": "1537482385.000100"
+    },
+    {
+        "client_msg_id": "cde791f2-0725-46ca-9d55-f0662c0c3977",
+        "type": "message",
+        "text": "ok",
+        "user": "UBP7HL339",
+        "ts": "1537482392.000100"
+    },
+    {
+        "client_msg_id": "9cfcb5a8-b7ee-4275-a46f-b20e0570511c",
+        "type": "message",
+        "text": "An action only exists if something can do it.",
+        "user": "U02DGQYK1",
+        "ts": "1537482402.000100"
+    },
+    {
+        "client_msg_id": "a7056a2d-e40f-42e6-ae07-820a20bf6e7e",
+        "type": "message",
+        "text": "What would that mean the other way?",
+        "user": "U02DGQYK1",
+        "ts": "1537482417.000200"
+    },
+    {
+        "client_msg_id": "6fa37be7-0a00-4042-8b99-8110d4521edf",
+        "type": "message",
+        "text": "now, you can post raw events through the system.",
+        "user": "U02DGQYK1",
+        "ts": "1537482455.000100"
+    },
+    {
+        "client_msg_id": "0de50d3d-0f25-44b0-bd8f-6b20a6b9bec4",
+        "type": "message",
+        "text": "POST \/events — an event object.  It will get propagate through the system.",
+        "user": "U02DGQYK1",
+        "ts": "1537482497.000100"
+    },
+    {
+        "client_msg_id": "598acf95-fa04-4398-a0d0-29a85fd3591c",
+        "type": "message",
+        "text": "No it makes sense with plugins.  I didn’t realize that was related.",
+        "user": "UBP7HL339",
+        "ts": "1537482511.000100"
+    },
+    {
+        "client_msg_id": "56c47ef8-29b1-4d2e-a304-ca40354daf5f",
+        "type": "message",
+        "text": "ah - okay.",
+        "user": "U02DGQYK1",
+        "ts": "1537482521.000100"
+    },
+    {
+        "client_msg_id": "8ef27359-b92c-4855-93fb-2fb58bab02bd",
+        "type": "message",
+        "text": "Is there an easy way to see if a particular resource (subnet or machine) has a plugin installed, and therefore what actions are avalible?",
+        "user": "UBP7HL339",
+        "ts": "1537482585.000100"
+    },
+    {
+        "client_msg_id": "9bc15397-9ae6-4c9b-b18a-9d1396fdfc6e",
+        "type": "message",
+        "text": "just Get the actions on it?",
+        "user": "UBP7HL339",
+        "ts": "1537482592.000100"
+    },
+    {
+        "client_msg_id": "005da549-a65a-4fe4-ad5a-fbd38fa75f61",
+        "type": "message",
+        "text": "the plugins say there actions.",
+        "user": "U02DGQYK1",
+        "ts": "1537482603.000100"
+    },
+    {
+        "client_msg_id": "c9830ee5-ab66-4b6a-8680-4a62045afeac",
+        "type": "message",
+        "text": "But they don’t say which resource they plugin to",
+        "user": "UBP7HL339",
+        "ts": "1537482625.000100"
+    },
+    {
+        "client_msg_id": "fbacf4fb-4df5-4a6c-b53d-73c7fdf34b66",
+        "type": "message",
+        "text": "GET \/plugins\/&lt;name&gt;",
+        "user": "U02DGQYK1",
+        "ts": "1537482626.000100"
+    },
+    {
+        "client_msg_id": "ee06f567-4915-4fc6-916e-18b148c7fe44",
+        "type": "message",
+        "text": "I dont’ think",
+        "user": "UBP7HL339",
+        "ts": "1537482628.000100"
+    },
+    {
+        "client_msg_id": "f7d82ecf-2c05-47b2-8cb0-58dfe20f3ae6",
+        "type": "message",
+        "text": "Yes",
+        "user": "U02DGQYK1",
+        "ts": "1537482631.000200"
+    },
+    {
+        "client_msg_id": "8f891758-1850-47fa-a3f8-75ec94169e0a",
+        "type": "message",
+        "text": "Is that model?",
+        "user": "UBP7HL339",
+        "ts": "1537482640.000100"
+    },
+    {
+        "client_msg_id": "9fee7682-991c-433c-8f25-96f855af1063",
+        "type": "message",
+        "text": "Actualyl plugins can create actions for any or all objects.",
+        "user": "U02DGQYK1",
+        "ts": "1537482653.000100"
+    },
+    {
+        "client_msg_id": "8edcf4bd-5161-47f4-b0aa-97769a7c9fba",
+        "type": "message",
+        "text": "Yes.",
+        "user": "U02DGQYK1",
+        "ts": "1537482654.000100"
+    },
+    {
+        "client_msg_id": "2bed9fa8-6a46-447e-8063-376e92fae9a4",
+        "type": "message",
+        "text": "I realize they can but they don’t necessarily.",
+        "user": "UBP7HL339",
+        "ts": "1537482666.000100"
+    },
+    {
+        "client_msg_id": "a4c52bfd-3db6-406c-b145-bbe36ddaad40",
+        "type": "message",
+        "text": "poweron doesn’t make sense on a subnet for instance",
+        "user": "UBP7HL339",
+        "ts": "1537482684.000100"
+    },
+    {
+        "client_msg_id": "e5d67818-8630-4e47-b554-58c735e49a88",
+        "type": "message",
+        "text": "I think I get it now.  Thanks",
+        "user": "UBP7HL339",
+        "ts": "1537482698.000100"
+    },
+    {
+        "client_msg_id": "c23b0e58-45b0-46b3-9115-9f09d8229028",
+        "type": "message",
+        "text": "that is correct.",
+        "user": "U02DGQYK1",
+        "ts": "1537482761.000100"
+    },
+    {
+        "client_msg_id": "ce04d4d2-d7c2-447e-bd77-e20a9b231e82",
+        "type": "message",
+        "text": "You can also run the plugin as a command line and it will tell you.",
+        "user": "U02DGQYK1",
+        "ts": "1537482773.000100"
+    },
+    {
+        "client_msg_id": "421dd2ec-7ac9-4410-835b-00e09a4585ac",
+        "type": "message",
+        "text": "like this:",
+        "user": "U02DGQYK1",
+        "ts": "1537482775.000100"
+    },
+    {
+        "client_msg_id": "e752d7da-1fef-40c6-8fdd-64a0a39b22ec",
+        "type": "message",
+        "text": "So if a plugin applies to a subnet lets say.  Does it apply to all subnets or can it apply to just some subnets",
+        "user": "UBP7HL339",
+        "ts": "1537482784.000100"
+    },
+    {
+        "type": "message",
+        "text": "",
+        "files": [
+            {
+                "id": "FCXDF809F",
+                "created": 1537482850,
+                "timestamp": 1537482850,
+                "name": "-.txt",
+                "title": "Untitled",
+                "mimetype": "text\/plain",
+                "filetype": "text",
+                "pretty_type": "Plain Text",
+                "user": "U02DGQYK1",
+                "editable": true,
+                "size": 2000,
+                "mode": "snippet",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FCXDF809F\/-.txt?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FCXDF809F\/download\/-.txt?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "permalink": "https:\/\/rackn.slack.com\/files\/U02DGQYK1\/FCXDF809F\/-.txt",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FCXDF809F-47be299635",
+                "edit_link": "https:\/\/rackn.slack.com\/files\/U02DGQYK1\/FCXDF809F\/-.txt\/edit",
+                "preview": "drp-data\/plugins\/packet-ipmi define | jq .AvailableActions\r\n[\r\n  {\r\n    \"Provider\": \"\",\r\n    \"Model\": \"plugins\",\r",
+                "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>drp-data\/plugins\/packet-ipmi define | jq .AvailableActions<\/pre><\/div>\n<div><pre>[<\/pre><\/div>\n<div><pre>  {<\/pre><\/div>\n<div><pre>    &quot;Provider&quot;: &quot;&quot;,<\/pre><\/div>\n<div><pre>    &quot;Model&quot;: &quot;plugins&quot;,<\/pre><\/div>\n<div><pre><\/pre><\/div>\n<\/div>\n<\/div>\n",
+                "lines": 108,
+                "lines_more": 103,
+                "preview_is_truncated": true
+            }
+        ],
+        "upload": true,
+        "user": "U02DGQYK1",
+        "display_as_bot": false,
+        "ts": "1537482850.000100"
+    },
+    {
+        "client_msg_id": "b01d835c-c35a-48d9-8260-ff967a078bd2",
+        "type": "message",
+        "text": "So in the blob, I just presented.",
+        "user": "U02DGQYK1",
+        "ts": "1537482880.000200"
+    },
+    {
+        "client_msg_id": "25e840a4-d50d-47e2-832e-f0ac92b01b05",
+        "type": "message",
+        "text": "You will notice that the plugin actions apply to machines, plugins, and system.",
+        "user": "U02DGQYK1",
+        "ts": "1537482899.000100"
+    },
+    {
+        "client_msg_id": "53aceeed-f60a-4f42-983a-840b07ff7fc3",
+        "type": "message",
+        "text": "sorry - not system.  I only put it on plugin, I guess.",
+        "user": "U02DGQYK1",
+        "ts": "1537482923.000100"
+    },
+    {
+        "client_msg_id": "f0d7ed12-883d-4f2d-930f-ab21f88b7691",
+        "type": "message",
+        "text": "Right but is it possible to have a machine instance that doesn’t support the plugin",
+        "user": "UBP7HL339",
+        "ts": "1537482952.000100"
+    },
+    {
+        "client_msg_id": "72053d0f-a78b-4ed1-b9fb-4ddf800e4879",
+        "type": "message",
+        "text": "So machine m1 m2 and m3 support it but m4 doesn’t",
+        "user": "UBP7HL339",
+        "ts": "1537482972.000100"
+    },
+    {
+        "client_msg_id": "897be352-6e80-4f3a-bfd4-a4a59d57c8e7",
+        "type": "message",
+        "text": "The action `updatepxe` applies to machines and only applies to machines that have the `packet\/uuid`  defined",
+        "user": "U02DGQYK1",
+        "ts": "1537482974.000100"
+    },
+    {
+        "client_msg_id": "ed1e3b76-bda9-44db-bfa5-653f45fbc235",
+        "type": "message",
+        "text": "ok",
+        "user": "UBP7HL339",
+        "ts": "1537482982.000100"
+    },
+    {
+        "client_msg_id": "0d5a8bfe-538b-4888-9e81-291a75cba1c8",
+        "type": "message",
+        "text": "`packet\/uuid` is defined by the `packet-discover` stage in a workflow that pulls in the packet uuid from the system.  This way it gets associated and API actions can be driven through the plugin.",
+        "user": "U02DGQYK1",
+        "ts": "1537483023.000100"
+    },
+    {
+        "client_msg_id": "d2ab5efc-24ef-4e60-b739-bcdcbe328fa0",
+        "type": "message",
+        "text": "the `updatepxe` action provided by the `ipmi` plugin requires `ipmi\/address`, `ipmi\/username`, `ipmi\/password` as parameters on the machine.",
+        "user": "U02DGQYK1",
+        "ts": "1537483068.000100"
+    },
+    {
+        "client_msg_id": "dc59c38c-d568-43e4-a6f7-71a3f75a6008",
+        "type": "message",
+        "text": "I have both plugins loaded.",
+        "user": "U02DGQYK1",
+        "ts": "1537483076.000100"
+    },
+    {
+        "client_msg_id": "06e75e69-d6a5-411b-b568-b6ec27d173bf",
+        "type": "message",
+        "text": "And if m1 and m2 are in packet as defined by their `packet\/uuid` and m3 and m4 are “real” machines with ipmi configured with the three parameters, then all machines will have a valid `updatepxe` action handled by different plugins.",
+        "user": "U02DGQYK1",
+        "ts": "1537483149.000200",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1537483160.000000"
+        }
+    },
+    {
+        "client_msg_id": "0f5fb2c5-56bf-463f-94ca-d55b75c1ae86",
+        "type": "message",
+        "text": "This is how I can managed packet, virtualbox, and real machines in my one DRP instance at the same time.",
+        "user": "U02DGQYK1",
+        "ts": "1537483255.000100"
+    },
+    {
+        "client_msg_id": "08411c18-dc3c-4787-9410-a9a63cecb2b4",
+        "type": "message",
+        "text": "I can issue powercycle on all of them and the “right” actions are taken based upon the matched plugin.",
+        "user": "U02DGQYK1",
+        "ts": "1537483276.000100"
+    },
+    {
+        "client_msg_id": "d608ac96-9652-45f4-9241-a44777194983",
+        "type": "message",
+        "text": "Parameters can also be met by the POST data (normally {}) , but it could be `{ \"importantParam\": \"11235813\" }`",
+        "user": "U02DGQYK1",
+        "ts": "1537483350.000100"
+    },
+    {
+        "client_msg_id": "b917459d-4d16-4a4e-b490-f24a2e2aa611",
+        "type": "message",
+        "text": "But the way it is written int he API I can only execute actions on a single machine at a time",
+        "user": "UBP7HL339",
+        "ts": "1537483355.000100"
+    },
+    {
+        "client_msg_id": "3df0a65d-92bc-4353-8c73-2c0dab2778a7",
+        "type": "message",
+        "text": "That is true.",
+        "user": "U02DGQYK1",
+        "ts": "1537483362.000100"
+    },
+    {
+        "client_msg_id": "e8c93a5f-5b25-44f8-891d-17b7b90d0c05",
+        "type": "message",
+        "text": "The API is not intended for bulk actions.",
+        "user": "U02DGQYK1",
+        "ts": "1537483378.000100"
+    },
+    {
+        "client_msg_id": "46e3945b-62c5-4c29-b412-1ba079bb05a6",
+        "type": "message",
+        "text": "currently.",
+        "user": "U02DGQYK1",
+        "ts": "1537483382.000100"
+    },
+    {
+        "client_msg_id": "d2facf8f-bf03-4d78-9008-6fe5c6f44c82",
+        "type": "message",
+        "text": "The use case would be good to understand.",
+        "user": "U02DGQYK1",
+        "ts": "1537483389.000100"
+    },
+    {
+        "client_msg_id": "2b6d7524-7720-41b6-8f48-5051b65dfe3e",
+        "type": "message",
+        "text": "\"drpsh\" :sunglasses:",
+        "user": "U6QFVRJNB",
+        "ts": "1537483411.000100"
+    },
+    {
+        "client_msg_id": "6b18dde8-8a1e-4bd2-9014-dca9ce7dd320",
+        "type": "message",
+        "text": "I don’t have a use case I am writing a python wrapper for it and I need to understand how it all releates",
+        "user": "UBP7HL339",
+        "ts": "1537483425.000100"
+    },
+    {
+        "client_msg_id": "ab71970a-cf73-47dc-ad54-753b652e3ec0",
+        "type": "message",
+        "text": "Ignore the <@U6QFVRJNB>.  :slightly_smiling_face:  I usually do this quick and crappy bash:\n```\ndrpcli machines list importantParam=11235813 | jq .[].Uuid | while read uuid\ndo\n    drpcli machines runactions $uuid powercycle\ndone\n```",
+        "user": "U02DGQYK1",
+        "ts": "1537483495.000100"
+    },
+    {
+        "client_msg_id": "8371e10c-e5d9-4022-adf6-6fa44e56a120",
+        "type": "message",
+        "text": "Which in API speak would be",
+        "user": "U02DGQYK1",
+        "ts": "1537483529.000100"
+    },
+    {
+        "client_msg_id": "73ac36a3-da9d-4c3e-beba-e309bb17d12d",
+        "type": "message",
+        "text": "GET \/machines?importantParam=11235813",
+        "user": "U02DGQYK1",
+        "ts": "1537483544.000100"
+    },
+    {
+        "client_msg_id": "739ef98d-03d2-49d8-affd-44e2b03ec492",
+        "type": "message",
+        "text": "and",
+        "user": "U02DGQYK1",
+        "ts": "1537483547.000100"
+    },
+    {
+        "client_msg_id": "21fc6b1c-1e68-4cc7-911a-57874573da09",
+        "type": "message",
+        "text": "POST \/machines\/uuid\/actions\/powercycle Data: {}",
+        "user": "U02DGQYK1",
+        "ts": "1537483556.000100"
+    },
+    {
+        "client_msg_id": "836de118-00b9-44df-be9e-7e24ac6425a4",
+        "type": "message",
+        "text": "all of those preceded by \/api\/v3\/….",
+        "user": "U02DGQYK1",
+        "ts": "1537483590.000100"
+    },
+    {
+        "client_msg_id": "a118597e-1577-4349-82d7-6064949e3421",
+        "type": "message",
+        "text": "yeah.",
+        "user": "UBP7HL339",
+        "ts": "1537483659.000100"
+    },
+    {
+        "client_msg_id": "dd2b4389-0301-4c86-be33-39666934aad9",
+        "type": "message",
+        "text": "I’ve found Batch apis are doable, but add complexity on dealing with failures and usually the caller needs to decide on what to do.",
+        "user": "U02DGQYK1",
+        "ts": "1537483659.000200"
+    },
+    {
+        "client_msg_id": "d64180b1-601b-4fee-aba0-7fbde4eab133",
+        "type": "message",
+        "text": "I am kinda trying to remvoe he complexity as much as possible.   Sorry I am being called by my home boss :slightly_smiling_face:",
+        "user": "UBP7HL339",
+        "ts": "1537483690.000100"
+    },
+    {
+        "client_msg_id": "259ed8ee-495e-459a-9c1c-7fd603e275a9",
+        "type": "message",
+        "text": "np - we try and remove it as well, but often find that cutting to far makes some challenges.  Hence no bulk actions yet.",
+        "user": "U02DGQYK1",
+        "ts": "1537483788.000100"
+    },
+    {
+        "client_msg_id": "c68f5296-fb03-44e6-9a88-53a4ab191738",
+        "type": "message",
+        "text": "It is also why drpcli exists.  It has helpers and converts that handle alot of the nits.",
+        "user": "U02DGQYK1",
+        "ts": "1537483821.000100"
+    },
+    {
+        "client_msg_id": "5d6feeaa-4858-415b-ad78-da3ed64e9336",
+        "type": "message",
+        "text": "Like maintained sessions.  Stored tokens, and the like.",
+        "user": "U02DGQYK1",
+        "ts": "1537483840.000200"
+    },
+    {
+        "client_msg_id": "f766fe79-5f9f-41dd-a23d-ce3f08305845",
+        "type": "message",
+        "text": "Howdy. I was wondering if there was any support or planned support for making subnets compatible with vlans or bonded interface situations?",
+        "user": "UCXE7ER1S",
+        "ts": "1537492660.000100"
+    },
+    {
+        "client_msg_id": "7f1eb5f1-5dd2-45fd-a8bf-c9cdd0d157a5",
+        "type": "message",
+        "text": "<@UCXE7ER1S> - what do you mean more specifically and I’ll ask questions?",
+        "user": "U02DGQYK1",
+        "ts": "1537492714.000100"
+    },
+    {
+        "client_msg_id": "e13ba96e-3f42-4eff-834e-f8146f6f6d67",
+        "type": "message",
+        "text": "Do you mean during the DHCP server part?",
+        "user": "U02DGQYK1",
+        "ts": "1537492741.000100"
+    },
+    {
+        "client_msg_id": "e215b895-5582-4a97-987b-0a616af8249b",
+        "type": "message",
+        "text": "In general, that doesn’t do vlan (forwards are intended for that purpose).",
+        "user": "U02DGQYK1",
+        "ts": "1537492762.000100"
+    },
+    {
+        "client_msg_id": "47b1bf56-d869-4a2e-a052-cb2a39ca89ff",
+        "type": "message",
+        "text": "Or do you mean post install part?",
+        "user": "U02DGQYK1",
+        "ts": "1537492769.000100"
+    },
+    {
+        "client_msg_id": "4ed5c5ab-011a-4b8a-b95a-decfff8e66f7",
+        "type": "message",
+        "text": "With network configuration in installed OS or images.",
+        "user": "U02DGQYK1",
+        "ts": "1537492783.000100"
+    },
+    {
+        "client_msg_id": "d3c3d2cd-b095-4f4c-9963-6f244f6e63d3",
+        "type": "message",
+        "text": "So not necessarily DHCP but at least IP assignment. This is a part of MaaS that is nice. You can have it do static assignments (automatic or not) for standard DHCP, vlans and bonded interfaces.",
+        "user": "UCXE7ER1S",
+        "ts": "1537492846.000100"
+    },
+    {
+        "client_msg_id": "179f5347-51e8-43e2-b7e1-d36cc5f9a100",
+        "type": "message",
+        "text": "Yeah, but that is for post install, right?",
+        "user": "U02DGQYK1",
+        "ts": "1537492867.000100"
+    },
+    {
+        "client_msg_id": "aaab41ee-9a95-44de-93bf-9327833cbb09",
+        "type": "message",
+        "text": "Was hoping to be able to do something similar in DRP",
+        "user": "UCXE7ER1S",
+        "ts": "1537492874.000100"
+    },
+    {
+        "client_msg_id": "410589d9-4b0a-4cef-bfd5-e917e1469210",
+        "type": "message",
+        "text": "No, it does it during the initial curtin install",
+        "user": "UCXE7ER1S",
+        "ts": "1537492891.000100"
+    },
+    {
+        "client_msg_id": "e47cc43a-7e46-40f7-a349-786db72e1c71",
+        "type": "message",
+        "text": "I don't know if it supports it on redhat.",
+        "user": "UCXE7ER1S",
+        "ts": "1537492905.000100"
+    },
+    {
+        "client_msg_id": "a6944e2f-9b1a-4a5d-8a35-8f7fe6d4c9e5",
+        "type": "message",
+        "text": "So MaaS does this in two step process with curtin.",
+        "user": "U02DGQYK1",
+        "ts": "1537492925.000100"
+    },
+    {
+        "client_msg_id": "d6f748c1-6bb8-431b-9a22-72dc621d51d3",
+        "type": "message",
+        "text": "I know, we use curtin for now under the covers.",
+        "user": "U02DGQYK1",
+        "ts": "1537492952.000100",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1537492957.000000"
+        }
+    },
+    {
+        "client_msg_id": "3ff18d7b-ea13-4915-bf56-3c99c8f63cb2",
+        "type": "message",
+        "text": "in our image deploy plugin.",
+        "user": "U02DGQYK1",
+        "ts": "1537492967.000100"
+    },
+    {
+        "client_msg_id": "98242d1d-c625-4e9b-b5c8-a1c77b8767df",
+        "type": "message",
+        "text": "More or less, two step but it is still managing the IPAM bits and handing the assignments to the cloud config for curtin",
+        "user": "UCXE7ER1S",
+        "ts": "1537492994.000100"
+    },
+    {
+        "client_msg_id": "7e1674c2-3188-46a0-8ccb-7b53a97ca184",
+        "type": "message",
+        "text": "okay - yeah - that is what I’m getting at.  So, the boot installer image (similar to our sledgehammer) is running on a networked interface that comes up with DHCP.  That interface is usually not bonded or vlanned.  It is “native” to perform the install.  Then curtin does its thing and for Ubuntu OS it can inject additional networking information for post-reboot configuration.  This is injected into the curtin config as one path.  Additionally, curtin will look for a cloud-init config file from MaaS and then can also alter networking at that point as well.",
+        "user": "U02DGQYK1",
+        "ts": "1537493128.000100"
+    },
+    {
+        "client_msg_id": "0cc2c76a-64bb-4e03-a43b-6b74dcfe1b60",
+        "type": "message",
+        "text": "Yep, that all sounds correct.",
+        "user": "UCXE7ER1S",
+        "ts": "1537493171.000200"
+    },
+    {
+        "client_msg_id": "434bfc2f-03f3-428a-990b-f6c677898e35",
+        "type": "message",
+        "text": "Okay - so we do that as well for image deploy or preseed\/kickstart files.",
+        "user": "U02DGQYK1",
+        "ts": "1537493187.000100"
+    },
+    {
+        "client_msg_id": "0c03aeed-3bc8-4850-975b-f50ddee5bfb8",
+        "type": "message",
+        "text": "We aren’t necessarily an IPAM, but have looked at integrating with some.  Additionally, we can create tasks\/stages that act like IPAMs to do this as well.",
+        "user": "U02DGQYK1",
+        "ts": "1537493230.000100"
+    },
+    {
+        "client_msg_id": "894bfea2-bb3a-4136-9f24-b4111e2ec298",
+        "type": "message",
+        "text": "Since stages and tasks can run post install before a reboot, we can inject all sorts of things.",
+        "user": "U02DGQYK1",
+        "ts": "1537493246.000100"
+    },
+    {
+        "client_msg_id": "30490049-61de-4551-aeda-fb56a8e67e2f",
+        "type": "message",
+        "text": "Also, we are currently using curtin in our image-deploy system and allow for customer injected per machine network sections for curtin.  This will end up doing the right thing.  I think we have some people doing that.  Additionally, the image deploy system has a stage that serves the cloud-init file for configuration after boot-up.  This is templated and can be overridden by the admin to get similar configuration effects as MaaS.",
+        "user": "U02DGQYK1",
+        "ts": "1537493368.000100"
+    },
+    {
+        "client_msg_id": "f9a953cb-d813-4763-aaf5-f48e58a33e8e",
+        "type": "message",
+        "text": "Okay, but basically not built-in support for IPAM right now for this use.",
+        "user": "UCXE7ER1S",
+        "ts": "1537493421.000100"
+    },
+    {
+        "client_msg_id": "7aeb52de-7155-40d6-bf3b-6cc7e6f64150",
+        "type": "message",
+        "text": "And finally, we are in the process of getting rid of curtin for a huge host of reasons.  This will be replaced by two new components dr-imager and netwrangler.",
+        "user": "U02DGQYK1",
+        "ts": "1537493435.000100"
+    },
+    {
+        "client_msg_id": "9518b0a3-73f4-40e3-8e6e-9bbe0d4a79bb",
+        "type": "message",
+        "text": "that do this.",
+        "user": "U02DGQYK1",
+        "ts": "1537493441.000100"
+    },
+    {
+        "client_msg_id": "5a6158c5-f735-4af4-af40-6b41fc49eeb8",
+        "type": "message",
+        "text": "Well - what are you looking for?  Single nic assignment?",
+        "user": "U02DGQYK1",
+        "ts": "1537493453.000100"
+    },
+    {
+        "client_msg_id": "b8fce248-e140-47d1-8539-68b537956358",
+        "type": "message",
+        "text": "That will work today.  DRP will use DHCP to assign an Address, that can be converted to a static DHCP reservation.  That Address is “assigned” to the node for the rest of its presence in DRP.  The template that drive curtin networking can be configured with vlan\/bonding info from machine parameters.",
+        "user": "U02DGQYK1",
+        "ts": "1537493532.000100"
+    },
+    {
+        "client_msg_id": "e131b3f0-6db4-43d0-9cc2-33a619d2d59c",
+        "type": "message",
+        "text": "So - it is there, but in some ways more elegant and less than MaaS.",
+        "user": "U02DGQYK1",
+        "ts": "1537493553.000100"
+    },
+    {
+        "client_msg_id": "16cd6368-6bcb-4d2f-b492-bcb59d664e9a",
+        "type": "message",
+        "text": "NIC bonding and assignment of DHCP subnet for mgmt, vlan for storage and public network",
+        "user": "UCXE7ER1S",
+        "ts": "1537493557.000100"
+    },
+    {
+        "client_msg_id": "9dbf4509-e593-42e6-80ea-7caa9098a789",
+        "type": "message",
+        "text": "So - a concept of multi-nic assignment with addressing from named pools with DHCP\/Static, Vlan, and Bonding information.",
+        "user": "U02DGQYK1",
+        "ts": "1537493617.000100",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1537493641.000000"
+        }
+    },
+    {
+        "client_msg_id": "82aa0f10-aac7-44b1-9d65-7963ac538cbc",
+        "type": "message",
+        "text": "I know that some people have done stuff with that.  They have some integrations and drive post install this way.  They may be willing to talk about it.",
+        "user": "U02DGQYK1",
+        "ts": "1537493707.000100"
+    },
+    {
+        "client_msg_id": "5cb63023-599d-448b-988d-42464d684a4b",
+        "type": "message",
+        "text": "That level of IPAM is pretty simple and straightforward.  We haven’t spent the time to do it.",
+        "user": "U02DGQYK1",
+        "ts": "1537493742.000100"
+    },
+    {
+        "client_msg_id": "fe2a5260-9b87-4183-b79c-932a227cd282",
+        "type": "message",
+        "text": "Got it. Well will check in the morning and see if anyone whom has tried something like that before is around.",
+        "user": "UCXE7ER1S",
+        "ts": "1537493770.000100"
+    },
+    {
+        "client_msg_id": "251054dd-9207-45e7-8e73-ace88a585204",
+        "type": "message",
+        "text": "sorry - if you don’t mind, one more question - how does MaaS determine nics and stuff.  Is hard-coded on the machine by name?  Like eth0 and eth1 are bonded LACP with 3 vlans (300, 400, 500 from pools public, private, storage respectively).",
+        "user": "U02DGQYK1",
+        "ts": "1537493868.000100"
+    },
+    {
+        "client_msg_id": "c7c7d906-816a-4733-8914-af18ef52a567",
+        "type": "message",
+        "text": "By MAC assignment when the bootstrap instance gets system facts the first time.",
+        "user": "UCXE7ER1S",
+        "ts": "1537493973.000100"
+    },
+    {
+        "client_msg_id": "5b98b2a8-9ada-4bbd-9abd-7bc09707672c",
+        "type": "message",
+        "text": "ok  - sounds like it is very manual, but I haven’t used it.",
+        "user": "U02DGQYK1",
+        "ts": "1537494052.000100"
+    },
+    {
+        "client_msg_id": "b0b27593-936c-4e16-844b-d5d640abe300",
+        "type": "message",
+        "text": "It's mostly pretty non manual but it has no orchestration as compared to DRP. Installing a system and network all works great.",
+        "user": "UCXE7ER1S",
+        "ts": "1537494108.000100"
+    },
+    {
+        "client_msg_id": "34189c52-7408-4a86-9183-c2719f26e967",
+        "type": "message",
+        "text": "okay - we may want to explore this some more.",
+        "user": "U02DGQYK1",
+        "ts": "1537494148.000100",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1537494163.000000"
+        }
+    }
+]

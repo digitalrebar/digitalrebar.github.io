@@ -1,0 +1,135 @@
+[
+    {
+        "client_msg_id": "23a6d4f6-5df2-40c0-a75e-fc65c41475a6",
+        "type": "message",
+        "text": "<@U02DGQYK1> Regarding CoreOS thing....  I'll try to have a chat on it with RedHat folks. As they told me, couple of weeks ago, that CoreOS will be behind their OpenShift \/ OKD solutions, that would mean an increased support for newer hardware, including UEFI.",
+        "user": "U9TPYH6JE",
+        "ts": "1542029431.471100"
+    },
+    {
+        "client_msg_id": "60a88614-0b97-429b-9835-ea411a0bb3f8",
+        "type": "message",
+        "text": "Up to you. We still think sledgehammer is a simple alternative with more support via centos ",
+        "user": "U02DHRR2L",
+        "ts": "1542032075.472800"
+    },
+    {
+        "client_msg_id": "b7dab995-8614-4b4d-87aa-b38af0cd22ac",
+        "type": "message",
+        "text": "Coreos was a community request",
+        "user": "U02DHRR2L",
+        "ts": "1542032125.474000"
+    },
+    {
+        "client_msg_id": "4fd75bb1-882e-40f1-807d-8f21aef4d3ae",
+        "type": "message",
+        "text": "are people generally using rebar to get servers to a good spot before running something like chef\/ansible (perhaps as a stage)?",
+        "user": "UDRCF03BK",
+        "ts": "1542034291.474800"
+    },
+    {
+        "client_msg_id": "043c60ee-a9af-4f3f-8b3a-7f08297145d4",
+        "type": "message",
+        "text": "I guess I am trying to decide where I want configuration logic to live",
+        "user": "UDRCF03BK",
+        "ts": "1542034309.475300"
+    },
+    {
+        "client_msg_id": "ab8e7d25-7489-4056-a80b-a27dd63e00d0",
+        "type": "message",
+        "text": "bonds, drive layout, ntp, etc",
+        "user": "UDRCF03BK",
+        "ts": "1542034321.475700"
+    },
+    {
+        "client_msg_id": "415fcf9f-47bd-4055-9e9c-0d11c49cc230",
+        "type": "message",
+        "text": "some I could see being in an image (ntp, security updates, etc)",
+        "user": "UDRCF03BK",
+        "ts": "1542034342.476100"
+    },
+    {
+        "client_msg_id": "8866cfe6-1d1d-4dec-ab3e-e4c345649435",
+        "type": "message",
+        "text": "If you have working script,  use them.   We're finding that the stage\/task model and content packs are easier to maintain than playbooks and cookbooks",
+        "user": "U02DHRR2L",
+        "ts": "1542034733.477900"
+    },
+    {
+        "client_msg_id": "5bbbb7a9-9e05-4f09-9d0c-51fb048b3abd",
+        "type": "message",
+        "text": "Esp for physical data where it's baked into drp",
+        "user": "U02DHRR2L",
+        "ts": "1542034756.478400"
+    },
+    {
+        "client_msg_id": "5a26a7c9-1a02-4222-92bc-ffef61b2e715",
+        "type": "message",
+        "text": "We've been handling all of those configurations via Triton and it's tools",
+        "user": "UDRCF03BK",
+        "ts": "1542035457.479600"
+    },
+    {
+        "client_msg_id": "d1278cce-4a61-4fd5-b319-0dc0679d5759",
+        "type": "message",
+        "text": "So this would probably be new work",
+        "user": "UDRCF03BK",
+        "ts": "1542035466.479900"
+    },
+    {
+        "client_msg_id": "2a3d21de-66c0-4539-aeba-8825fbbff072",
+        "type": "message",
+        "text": "<@UDRCF03BK> - we see adopters of DRP take both paths.  Generally speaking, you gain the most from the product with deeper integration by use of Workflows to allow you to orchestrate and manage large fleets of systems.  In particular - managing the hardware config - BIOS, Firmware, RAID, setting things like network config \/ bonds, etc ... are all good use cases.  How much you choose to hand off to an external config mgmt tooling varies depending on how much you've invested in that already, versus the desire to use a single tool.",
+        "user": "U6QFVRJNB",
+        "ts": "1542036544.482700"
+    },
+    {
+        "client_msg_id": "e3d39028-2534-49cd-a240-5962337bf9d0",
+        "type": "message",
+        "text": "Generally, I am trying to figure a path to best treat our hardware more like cattle",
+        "user": "UDRCF03BK",
+        "ts": "1542037469.483800"
+    },
+    {
+        "client_msg_id": "b1e64a73-6f26-467b-b966-57c323c11482",
+        "type": "message",
+        "text": "right now what hurts us the most is the lack of a good scheduler* and a lot of gotchas with running very linuxy flavored applications in LX Zones\n* = right now our schedule won't restart containers onto new nodes.  So we are exploring k8s a bit there",
+        "user": "UDRCF03BK",
+        "ts": "1542037560.485500"
+    },
+    {
+        "client_msg_id": "975b1067-e4b0-497c-a27e-3d2d96a3f1dc",
+        "type": "message",
+        "text": "All of the hardware management has been handled via Triton up to this point so we are used to one tool to handle just about everything at that level",
+        "user": "UDRCF03BK",
+        "ts": "1542037632.486400"
+    },
+    {
+        "type": "message",
+        "subtype": "me_message",
+        "text": "interesting note that proto-genesis of this work was Greg and Rob trying to get early Triton (aka Joyant Data Center) to install",
+        "user": "U02DHRR2L",
+        "ts": "1542041844.486500"
+    },
+    {
+        "user": "UE111HAUR",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1542042826.486700",
+        "text": "<@UE111HAUR> has joined the channel"
+    },
+    {
+        "client_msg_id": "3fe2aa5b-3d67-4c71-9c46-7730d134cf27",
+        "type": "message",
+        "text": "<@UE111HAUR>... $welcome ...",
+        "user": "U6QFVRJNB",
+        "ts": "1542043542.487000"
+    },
+    {
+        "type": "message",
+        "subtype": "slackbot_response",
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "user": "USLACKBOT",
+        "ts": "1542043542.487100"
+    }
+]

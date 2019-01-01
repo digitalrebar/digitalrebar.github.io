@@ -1,0 +1,30 @@
+[
+    {
+        "client_msg_id": "7f58c981-3fa8-470c-99e5-a122e07775c7",
+        "type": "message",
+        "text": "had to make sure the reservation didn't already exist",
+        "user": "UE4C36RV4",
+        "ts": "1544921953.598700"
+    },
+    {
+        "client_msg_id": "7dbb2866-6594-48a7-b708-a2e75e29ca21",
+        "type": "message",
+        "text": "```\necho \"updating machine name to ${FQDN}\"\ndrpcli machines update $RS_UUID \"{\\\"Name\\\": \\\"${FQDN}\\\", \\\"Address\\\": \\\"${PRIMARY_IP}\\\"}\" | jq '.Name + \" \" + .Address'\n\n# see if ip reservation exists\ndrpcli reservations exists ${PRIMARY_IP}\nresult=$?\nif [ \"$result\" == 0 ]; then\n  echo \"reservation for ${PRIMARY_IP} already exists\"\nelse\n  echo \"creating reservation for$ ${PRIMARY_IP}\"\n  drpcli reservations create \"{\\\"Addr\\\": \\\"${PRIMARY_IP}\\\", \\\"Options\\\": [{\\\"Code\\\": 12, \\\"Value\\\": \\\"${FQDN}\\\"}], \\\"Token\\\": \\\"${MAC}\\\", \\\"Strategy\\\": \\\"MAC\\\"}\"\nfi\n```",
+        "user": "UE4C36RV4",
+        "ts": "1544921955.599000"
+    },
+    {
+        "client_msg_id": "42a84e24-f5f7-4cba-baff-b1dcbf8da267",
+        "type": "message",
+        "text": "in my stackstorm code, i actually delete any instance of the reservation already existing and then create a new one.",
+        "user": "UE4C36RV4",
+        "ts": "1544922056.599800"
+    },
+    {
+        "type": "message",
+        "subtype": "me_message",
+        "text": "did not realize that the CLI had exists!",
+        "user": "U02DHRR2L",
+        "ts": "1544922762.599900"
+    }
+]

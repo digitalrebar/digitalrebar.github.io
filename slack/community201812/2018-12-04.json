@@ -1,0 +1,1535 @@
+[
+    {
+        "client_msg_id": "45a00925-ac11-473a-b219-7e963239c404",
+        "type": "message",
+        "text": "<!here> Video from today's Meetup!\nWe talked about API extensions and Cumulus ZTP\n<https:\/\/youtu.be\/QWV10HPOX_M>",
+        "user": "U02DHRR2L",
+        "ts": "1543962351.043500",
+        "attachments": [
+            {
+                "service_name": "YouTube",
+                "service_url": "https:\/\/www.youtube.com\/",
+                "title": "v030: Adhoc Objects &amp; Cumulus Switches",
+                "title_link": "https:\/\/youtu.be\/QWV10HPOX_M",
+                "author_name": "RackN & Digital Rebar",
+                "author_link": "https:\/\/www.youtube.com\/channel\/UCr3bBtP-pMsDQ5c0IDjt_LQ",
+                "thumb_url": "https:\/\/i.ytimg.com\/vi\/QWV10HPOX_M\/hqdefault.jpg",
+                "thumb_width": 480,
+                "thumb_height": 360,
+                "fallback": "YouTube Video: v030: Adhoc Objects & Cumulus Switches",
+                "video_html": "<iframe width=\"400\" height=\"300\" src=\"https:\/\/www.youtube.com\/embed\/QWV10HPOX_M?feature=oembed&autoplay=1&iv_load_policy=3\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen><\/iframe>",
+                "video_html_width": 400,
+                "video_html_height": 300,
+                "from_url": "https:\/\/youtu.be\/QWV10HPOX_M",
+                "service_icon": "https:\/\/a.slack-edge.com\/2089\/img\/unfurl_icons\/youtube.png",
+                "id": 1,
+                "original_url": "https:\/\/youtu.be\/QWV10HPOX_M"
+            }
+        ]
+    },
+    {
+        "client_msg_id": "2ad576f6-2332-4f34-9f1f-4fbaf111efdf",
+        "type": "message",
+        "text": "^^^^ and Adhoc Object creation\/usage and scenarios for storing information in objects on DRP",
+        "user": "U6QFVRJNB",
+        "ts": "1543962387.044100"
+    },
+    {
+        "client_msg_id": "1b55d4b1-97ec-42a4-a26f-60607d5575ae",
+        "type": "message",
+        "text": "I forgot I was subscribed to this slack. Anyone have any interest in kubernetes? I kinda want to make a project to extend the clusterAutoScaler to be able to speak DRP",
+        "user": "UE1R5397G",
+        "ts": "1543962418.044700"
+    },
+    {
+        "client_msg_id": "45d3c9b0-82a8-4090-8e6b-4d9a4fa2c93f",
+        "type": "message",
+        "text": "we're doing a fair bit w\/ it",
+        "user": "U02DHRR2L",
+        "ts": "1543962453.045000"
+    },
+    {
+        "client_msg_id": "43eb01db-988e-4cea-a49e-f483d7ee613f",
+        "type": "message",
+        "text": "you'll want to play w\/ the RackN pooling plugin for that - it will allow single command create destroy.",
+        "user": "U02DHRR2L",
+        "ts": "1543962477.045400",
+        "edited": {
+            "user": "U02DHRR2L",
+            "ts": "1543962606.000000"
+        }
+    },
+    {
+        "client_msg_id": "1ae985f4-b71d-42fc-ad1b-75945d4bd726",
+        "type": "message",
+        "text": "doc on KRIB (Kubernetes Rebar Integrated Bootstrap) solution:\n<https:\/\/provision.readthedocs.io\/en\/tip\/doc\/content-packages\/krib.html>",
+        "user": "U6QFVRJNB",
+        "ts": "1543962531.045900"
+    },
+    {
+        "client_msg_id": "9970a074-9354-432a-863a-43087b853905",
+        "type": "message",
+        "text": "<@UE1R5397G> <https:\/\/provision.readthedocs.io\/en\/tip\/doc\/content-packages\/pool.html>",
+        "user": "U02DHRR2L",
+        "ts": "1543962540.046200"
+    },
+    {
+        "client_msg_id": "b42205d3-7f87-4c19-8146-6de3672b1de6",
+        "type": "message",
+        "text": "OK so it doesn't integrate with the clusterAutoscaler :confused:",
+        "user": "UE1R5397G",
+        "ts": "1543962920.046700"
+    },
+    {
+        "client_msg_id": "4433f376-6747-4f2f-8a38-f44510b5b468",
+        "type": "message",
+        "text": "but krib looks neat",
+        "user": "UE1R5397G",
+        "ts": "1543962927.047000"
+    },
+    {
+        "client_msg_id": "738b23c1-96b5-4d84-9bad-201e3ff48371",
+        "type": "message",
+        "text": "having clusterAutoscaler integrated would be super cool - it shouldn't be too hard - to at least scale a KRIB built cluster - since all of the tooling and workflow would be in place to make the API calls to do it",
+        "user": "U6QFVRJNB",
+        "ts": "1543962986.047800"
+    },
+    {
+        "client_msg_id": "43b44139-88c7-49e5-b6a2-908781a83a22",
+        "type": "message",
+        "text": "since DRP is 100% API driven and it's a clean API - it should theoretically be \"easy\" :slightly_smiling_face:   (but I'm not a software engineer so ... )",
+        "user": "U6QFVRJNB",
+        "ts": "1543963027.048600"
+    },
+    {
+        "client_msg_id": "addcc6ba-101c-4b5b-b7a2-d9a72e8de52f",
+        "type": "message",
+        "text": "Ha",
+        "user": "UE1R5397G",
+        "ts": "1543963032.048800"
+    },
+    {
+        "client_msg_id": "ab25b3bd-9f63-433c-84e2-2275415427df",
+        "type": "message",
+        "text": "Yeah I took a quick look at it and it doesn't quite line up 1:1 but it should be pretty easy. I also am not a software guy.",
+        "user": "UE1R5397G",
+        "ts": "1543963055.049300"
+    },
+    {
+        "client_msg_id": "b706806a-efaa-4197-afa2-bf744fdae053",
+        "type": "message",
+        "text": "Well, I'm reluctant devops I suppose. :wink:",
+        "user": "UE1R5397G",
+        "ts": "1543963062.049600",
+        "reactions": [
+            {
+                "name": "heavy_check_mark",
+                "users": [
+                    "U6QFVRJNB"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "client_msg_id": "6ddb7dbd-c001-4e15-8077-a96439073013",
+        "type": "message",
+        "text": "the pooling plugin provides the 1 API call operation for that",
+        "user": "U02DHRR2L",
+        "ts": "1543963124.050100"
+    },
+    {
+        "client_msg_id": "d22dc200-9469-4ce8-98b1-55b5753a8e0e",
+        "type": "message",
+        "text": "we were looking at Loodse's machine controller:  <https:\/\/github.com\/kubermatic\/machine-controller\/>",
+        "user": "U02DHRR2L",
+        "ts": "1543963140.050500",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "kubermatic\/machine-controller",
+                "title_link": "https:\/\/github.com\/kubermatic\/machine-controller\/",
+                "text": "Contribute to kubermatic\/machine-controller development by creating an account on GitHub.",
+                "fallback": "GitHub: kubermatic\/machine-controller",
+                "from_url": "https:\/\/github.com\/kubermatic\/machine-controller\/",
+                "thumb_url": "https:\/\/avatars3.githubusercontent.com\/u\/17001193?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/kubermatic\/machine-controller\/"
+            }
+        ]
+    },
+    {
+        "client_msg_id": "5cc0f9c3-cdd9-4e30-b727-1085c9b90374",
+        "type": "message",
+        "text": "which requires \"create\" \"status\" and \"destroy\" ops.  Which map cleanly to the pooling plugin",
+        "user": "U02DHRR2L",
+        "ts": "1543963162.051200"
+    },
+    {
+        "client_msg_id": "f96ca2bc-93e8-4049-835b-17e9d55e28fd",
+        "type": "message",
+        "text": "Hmmmm ..... :slightly_smiling_face:",
+        "user": "U6QFVRJNB",
+        "ts": "1543963169.051600"
+    },
+    {
+        "client_msg_id": "facf4372-9212-49bf-b9d3-23b949ca9345",
+        "type": "message",
+        "text": "the difference &amp; advantage w\/ the pooling api is that you are basically starting workflows to create\/destroy so they are easily extensible by the operator",
+        "user": "U02DHRR2L",
+        "ts": "1543963226.052600"
+    },
+    {
+        "client_msg_id": "310c48fb-78dd-4a7a-948b-4333582d994a",
+        "type": "message",
+        "text": "otherwise, you have to code all that stuff into the caller like we did w\/ the terraform provider (which we are eventually going to rewrite to use the pool API)",
+        "user": "U02DHRR2L",
+        "ts": "1543963263.053400"
+    },
+    {
+        "client_msg_id": "8ac0e33d-d2d8-42f1-9cfe-ea74493626ec",
+        "type": "message",
+        "text": "TF = ugh",
+        "user": "UE1R5397G",
+        "ts": "1543963279.053600",
+        "thread_ts": "1543963279.053600",
+        "reply_count": 3,
+        "reply_users_count": 2,
+        "latest_reply": "1543965172.056700",
+        "reply_users": [
+            "U6QFVRJNB",
+            "UE1R5397G"
+        ],
+        "replies": [
+            {
+                "user": "U6QFVRJNB",
+                "ts": "1543963417.056100"
+            },
+            {
+                "user": "UE1R5397G",
+                "ts": "1543964045.056400"
+            },
+            {
+                "user": "U6QFVRJNB",
+                "ts": "1543965172.056700"
+            }
+        ],
+        "reactions": [
+            {
+                "name": "hear_no_evil",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "client_msg_id": "d335437a-6ae5-4b04-8721-ae8120865b63",
+        "type": "message",
+        "text": "yeah, that's why we moved the logic into the API",
+        "user": "U02DHRR2L",
+        "ts": "1543963303.054400"
+    },
+    {
+        "client_msg_id": "ce7a23fe-c3fd-4c3c-91c2-a93587bbcfd1",
+        "type": "message",
+        "text": "My use case is we're a rancher shop for on-prem for \"data that can't leave the house\" and aside of the total lack of documentation around the API it's pretty darn slick",
+        "user": "UE1R5397G",
+        "ts": "1543963314.054700"
+    },
+    {
+        "client_msg_id": "dd37fa84-10e8-4ef4-b741-65103fd751b3",
+        "type": "message",
+        "text": "which also improves visibility",
+        "user": "U02DHRR2L",
+        "ts": "1543963319.055100"
+    },
+    {
+        "client_msg_id": "10b99774-a4bb-4f86-be0b-81024a5bf970",
+        "type": "message",
+        "text": "so now we have to figure out how to make the on-prem stuff work like the cloud",
+        "user": "UE1R5397G",
+        "ts": "1543963327.055300"
+    },
+    {
+        "client_msg_id": "00afb3d1-c8b5-4597-a16c-a51a7f51bfdc",
+        "type": "message",
+        "text": "that's pretty much the definition of rebar",
+        "user": "U02DHRR2L",
+        "ts": "1543963348.055600"
+    },
+    {
+        "client_msg_id": "4355b512-3170-48eb-983f-281852882b50",
+        "type": "message",
+        "text": "yup",
+        "user": "UE1R5397G",
+        "ts": "1543963400.055800"
+    },
+    {
+        "client_msg_id": "7ab9fa6e-9b2a-4dac-8f30-4ee07aa58bf9",
+        "type": "message",
+        "text": "I'm dipping my toe in",
+        "user": "UE1R5397G",
+        "ts": "1543963412.056000",
+        "reactions": [
+            {
+                "name": "beer",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "client_msg_id": "d7c4cbe3-c7e9-4844-973c-d90692f99575",
+        "type": "message",
+        "text": "^^^ thinks I just fell in love with <@UE1R5397G>",
+        "user": "U6QFVRJNB",
+        "ts": "1543963417.056100",
+        "thread_ts": "1543963279.053600",
+        "parent_user_id": "UE1R5397G",
+        "reactions": [
+            {
+                "name": "rolling_on_the_floor_laughing",
+                "users": [
+                    "UE1R5397G"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "client_msg_id": "c2931bc9-b023-4816-bd6f-1976be226b6f",
+        "type": "message",
+        "text": "I used to like TF but they totally screwed the pooch on the provisioner thing. I like how sparkleformation does it a lot better. It's not perfect, but it gets closer to the \"load balancers should behave the same way across clouds\" abstraction that was originally sold in terraform. :confused:",
+        "user": "UE1R5397G",
+        "ts": "1543964045.056400",
+        "thread_ts": "1543963279.053600",
+        "parent_user_id": "UE1R5397G"
+    },
+    {
+        "client_msg_id": "553f3c71-55a8-46ac-a211-63b319517608",
+        "type": "message",
+        "text": "There is so much wrong w\/ TF ... it's \"ok\" for a \"fire and forget\" for basic provisioning ... but lord help you if you actually want to use it in a production environment for ongoing operational control....",
+        "user": "U6QFVRJNB",
+        "ts": "1543965172.056700",
+        "thread_ts": "1543963279.053600",
+        "parent_user_id": "UE1R5397G"
+    },
+    {
+        "client_msg_id": "03b75484-a5a0-444e-9897-6a1942619504",
+        "type": "message",
+        "text": "hi, finally I've got the chance to start with drp for our future kubernetes cluster. I've got 10 dell servers, one is taking care of the provisioning of the other 9(3 master; 6 worker planned). I'm facing some issues with a simple discovery flow. dhcp is configured with reservations by MAC which for the initial ipxe boot works fine but it seems somehow sledgehammer has some connection issues. The most weird thing for me is that if I use the debug shell to execute the wget to the provisioning host, it works :confused: any ideas? btw, how to properly register an organisation? for now I just see `This Organization cannot manage licenses.`",
+        "user": "UBU0BPRA9",
+        "ts": "1543980034.060900"
+    },
+    {
+        "type": "message",
+        "subtype": "slackbot_response",
+        "text": "Time to feed the :bear:!",
+        "user": "USLACKBOT",
+        "ts": "1543980034.061000"
+    },
+    {
+        "type": "message",
+        "text": "",
+        "files": [
+            {
+                "id": "FEKLLNSKU",
+                "created": 1543980126,
+                "timestamp": 1543980126,
+                "name": "Screenshot from 2018-12-05 10-14-59.png",
+                "title": "Screenshot from 2018-12-05 10-14-59.png",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "UBU0BPRA9",
+                "editable": false,
+                "size": 85299,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FEKLLNSKU\/screenshot_from_2018-12-05_10-14-59.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FEKLLNSKU\/download\/screenshot_from_2018-12-05_10-14-59.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEKLLNSKU-feb7a162d2\/screenshot_from_2018-12-05_10-14-59_64.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEKLLNSKU-feb7a162d2\/screenshot_from_2018-12-05_10-14-59_80.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEKLLNSKU-feb7a162d2\/screenshot_from_2018-12-05_10-14-59_360.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360_w": 360,
+                "thumb_360_h": 107,
+                "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEKLLNSKU-feb7a162d2\/screenshot_from_2018-12-05_10-14-59_480.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_480_w": 480,
+                "thumb_480_h": 143,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEKLLNSKU-feb7a162d2\/screenshot_from_2018-12-05_10-14-59_160.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEKLLNSKU-feb7a162d2\/screenshot_from_2018-12-05_10-14-59_720.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_720_w": 720,
+                "thumb_720_h": 214,
+                "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEKLLNSKU-feb7a162d2\/screenshot_from_2018-12-05_10-14-59_800.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_800_w": 800,
+                "thumb_800_h": 238,
+                "image_exif_rotation": 1,
+                "original_w": 930,
+                "original_h": 277,
+                "permalink": "https:\/\/rackn.slack.com\/files\/UBU0BPRA9\/FEKLLNSKU\/screenshot_from_2018-12-05_10-14-59.png",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FEKLLNSKU-88c151648f"
+            }
+        ],
+        "upload": true,
+        "user": "UBU0BPRA9",
+        "display_as_bot": false,
+        "ts": "1543980130.061100"
+    },
+    {
+        "type": "message",
+        "text": "",
+        "files": [
+            {
+                "id": "FEKSGFEDB",
+                "created": 1543980133,
+                "timestamp": 1543980133,
+                "name": "Screenshot from 2018-12-05 10-14-10.png",
+                "title": "Screenshot from 2018-12-05 10-14-10.png",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "UBU0BPRA9",
+                "editable": false,
+                "size": 236991,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FEKSGFEDB\/screenshot_from_2018-12-05_10-14-10.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FEKSGFEDB\/download\/screenshot_from_2018-12-05_10-14-10.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEKSGFEDB-fd1d3967b8\/screenshot_from_2018-12-05_10-14-10_64.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEKSGFEDB-fd1d3967b8\/screenshot_from_2018-12-05_10-14-10_80.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEKSGFEDB-fd1d3967b8\/screenshot_from_2018-12-05_10-14-10_360.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360_w": 336,
+                "thumb_360_h": 360,
+                "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEKSGFEDB-fd1d3967b8\/screenshot_from_2018-12-05_10-14-10_480.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_480_w": 449,
+                "thumb_480_h": 480,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEKSGFEDB-fd1d3967b8\/screenshot_from_2018-12-05_10-14-10_160.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEKSGFEDB-fd1d3967b8\/screenshot_from_2018-12-05_10-14-10_720.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_720_w": 673,
+                "thumb_720_h": 720,
+                "image_exif_rotation": 1,
+                "original_w": 686,
+                "original_h": 734,
+                "permalink": "https:\/\/rackn.slack.com\/files\/UBU0BPRA9\/FEKSGFEDB\/screenshot_from_2018-12-05_10-14-10.png",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FEKSGFEDB-6c39c85d5f"
+            }
+        ],
+        "upload": true,
+        "user": "UBU0BPRA9",
+        "display_as_bot": false,
+        "ts": "1543980136.061400"
+    },
+    {
+        "client_msg_id": "7550f707-b7ae-400c-b742-eecb856a3306",
+        "type": "message",
+        "text": "I guess it has something to do with the `udhcp: no lease, forking to background`, race condition?",
+        "user": "UBU0BPRA9",
+        "ts": "1543980381.062500"
+    },
+    {
+        "client_msg_id": "3d68e5a0-348e-4efa-adbe-5460d3e81d66",
+        "type": "message",
+        "text": "<@UBU0BPRA9> - do you have port-delay turned on for your switch ports?",
+        "user": "U02DGQYK1",
+        "ts": "1543980407.062900"
+    },
+    {
+        "client_msg_id": "0d9e7469-78d7-410a-b262-fd4d0fbefcbe",
+        "type": "message",
+        "text": "&lt;--- not a network guru, but checking",
+        "user": "UBU0BPRA9",
+        "ts": "1543980442.063400"
+    },
+    {
+        "client_msg_id": "a154dc6d-b37c-4ba9-8b5e-12763623958e",
+        "type": "message",
+        "text": "Well if it is faster to test, then you can try this.",
+        "user": "U02DGQYK1",
+        "ts": "1543980497.063700"
+    },
+    {
+        "client_msg_id": "028965b6-33ce-43f6-86b7-c246eca262ba",
+        "type": "message",
+        "text": "in the global profile, add a parameter - `kernel-console`",
+        "user": "U02DGQYK1",
+        "ts": "1543980514.064200"
+    },
+    {
+        "client_msg_id": "50ccdf90-3c5b-4a4e-a273-d7951e84974a",
+        "type": "message",
+        "text": "set it’s value to `provisioner.portdelay=30`",
+        "user": "U02DGQYK1",
+        "ts": "1543980528.064600"
+    },
+    {
+        "client_msg_id": "1755293f-4d1a-426a-a042-b59998720fde",
+        "type": "message",
+        "text": "If you have cli access, you can do it like this: `drpcli profiles set global param kernel-console to provisioner.portdelay=30`",
+        "user": "U02DGQYK1",
+        "ts": "1543980570.065400"
+    },
+    {
+        "client_msg_id": "f4c0f5a7-aaf4-482d-8c83-35beb3dd94ee",
+        "type": "message",
+        "text": "Then try and boot your server.",
+        "user": "U02DGQYK1",
+        "ts": "1543980583.065700"
+    },
+    {
+        "client_msg_id": "da5cae76-82ec-4ca6-beb5-80cab826a0e0",
+        "type": "message",
+        "text": "added via cli, rebooting",
+        "user": "UBU0BPRA9",
+        "ts": "1543980613.065900"
+    },
+    {
+        "client_msg_id": "3846b4c0-fa17-48e0-bcc5-a9326892257b",
+        "type": "message",
+        "text": "This assumes that you aren’t setting `kernel-console` somewhere else :slightly_smiling_face:",
+        "user": "U02DGQYK1",
+        "ts": "1543980638.066400"
+    },
+    {
+        "client_msg_id": "d9109625-bdec-4fc3-ab2d-2a9c62015197",
+        "type": "message",
+        "text": "fresh drp setup",
+        "user": "UBU0BPRA9",
+        "ts": "1543980648.066600"
+    },
+    {
+        "client_msg_id": "994832d4-d4fc-480e-85cd-97ce462a14ca",
+        "type": "message",
+        "text": "nothing custom so far",
+        "user": "UBU0BPRA9",
+        "ts": "1543980653.066900"
+    },
+    {
+        "client_msg_id": "cf129ba6-7c1e-455b-9ab5-4ee19cce6c80",
+        "type": "message",
+        "text": "hoping to use krib here :slightly_smiling_face:",
+        "user": "UBU0BPRA9",
+        "ts": "1543980677.067700"
+    },
+    {
+        "client_msg_id": "e59daa6e-65f1-4985-92b4-a2a3cd9e1b3a",
+        "type": "message",
+        "text": "<@UBU0BPRA9> don't worry about your organization just yet.  You'll need it when you want a trial license for advanced features",
+        "user": "U02DHRR2L",
+        "ts": "1543980680.067800"
+    },
+    {
+        "client_msg_id": "a8886324-1e7d-4a0c-b9e3-37e5ab18826b",
+        "type": "message",
+        "text": "I would be happy to support this product by buying the dell support content pack etc",
+        "user": "UBU0BPRA9",
+        "ts": "1543980758.069300",
+        "reactions": [
+            {
+                "name": "slightly_smiling_face",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "subtype": "slackbot_response",
+        "text": "Time to feed the :bear:!",
+        "user": "USLACKBOT",
+        "ts": "1543980759.069400"
+    },
+    {
+        "client_msg_id": "f7ecfe6f-ae71-4ff5-8f66-65834f6d59c3",
+        "type": "message",
+        "text": "<@UBU0BPRA9> - let’s get you working first.  We can talk about that off-line later.  :slightly_smiling_face:",
+        "user": "U02DGQYK1",
+        "ts": "1543980811.070000"
+    },
+    {
+        "type": "message",
+        "text": "",
+        "files": [
+            {
+                "id": "FEKFTN8JY",
+                "created": 1543980860,
+                "timestamp": 1543980860,
+                "name": "Screenshot from 2018-12-05 10-33-59.png",
+                "title": "Screenshot from 2018-12-05 10-33-59.png",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "UBU0BPRA9",
+                "editable": false,
+                "size": 87422,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FEKFTN8JY\/screenshot_from_2018-12-05_10-33-59.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FEKFTN8JY\/download\/screenshot_from_2018-12-05_10-33-59.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEKFTN8JY-db6dc9d3a5\/screenshot_from_2018-12-05_10-33-59_64.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEKFTN8JY-db6dc9d3a5\/screenshot_from_2018-12-05_10-33-59_80.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEKFTN8JY-db6dc9d3a5\/screenshot_from_2018-12-05_10-33-59_360.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360_w": 360,
+                "thumb_360_h": 153,
+                "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEKFTN8JY-db6dc9d3a5\/screenshot_from_2018-12-05_10-33-59_480.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_480_w": 480,
+                "thumb_480_h": 204,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEKFTN8JY-db6dc9d3a5\/screenshot_from_2018-12-05_10-33-59_160.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEKFTN8JY-db6dc9d3a5\/screenshot_from_2018-12-05_10-33-59_720.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_720_w": 720,
+                "thumb_720_h": 306,
+                "image_exif_rotation": 1,
+                "original_w": 795,
+                "original_h": 338,
+                "permalink": "https:\/\/rackn.slack.com\/files\/UBU0BPRA9\/FEKFTN8JY\/screenshot_from_2018-12-05_10-33-59.png",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FEKFTN8JY-baeef268ca"
+            }
+        ],
+        "upload": true,
+        "user": "UBU0BPRA9",
+        "display_as_bot": false,
+        "ts": "1543980862.070200"
+    },
+    {
+        "client_msg_id": "4772d75c-d4d9-47c3-adc8-4b98cb5e967b",
+        "type": "message",
+        "text": "looks like 30sec are not enough?",
+        "user": "UBU0BPRA9",
+        "ts": "1543980866.070600"
+    },
+    {
+        "type": "message",
+        "text": "",
+        "files": [
+            {
+                "id": "FEKLRSDKL",
+                "created": 1543980865,
+                "timestamp": 1543980865,
+                "name": "Screenshot from 2018-12-05 10-33-35.png",
+                "title": "Screenshot from 2018-12-05 10-33-35.png",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "UBU0BPRA9",
+                "editable": false,
+                "size": 187007,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FEKLRSDKL\/screenshot_from_2018-12-05_10-33-35.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FEKLRSDKL\/download\/screenshot_from_2018-12-05_10-33-35.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEKLRSDKL-e9f9af9dd4\/screenshot_from_2018-12-05_10-33-35_64.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEKLRSDKL-e9f9af9dd4\/screenshot_from_2018-12-05_10-33-35_80.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEKLRSDKL-e9f9af9dd4\/screenshot_from_2018-12-05_10-33-35_360.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360_w": 360,
+                "thumb_360_h": 341,
+                "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEKLRSDKL-e9f9af9dd4\/screenshot_from_2018-12-05_10-33-35_480.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_480_w": 480,
+                "thumb_480_h": 454,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEKLRSDKL-e9f9af9dd4\/screenshot_from_2018-12-05_10-33-35_160.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "image_exif_rotation": 1,
+                "original_w": 599,
+                "original_h": 567,
+                "permalink": "https:\/\/rackn.slack.com\/files\/UBU0BPRA9\/FEKLRSDKL\/screenshot_from_2018-12-05_10-33-35.png",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FEKLRSDKL-98f92755e9"
+            }
+        ],
+        "upload": true,
+        "user": "UBU0BPRA9",
+        "display_as_bot": false,
+        "ts": "1543980868.070700"
+    },
+    {
+        "client_msg_id": "99a54d4a-d2e7-4dbc-b5de-b2c7f6f67f07",
+        "type": "message",
+        "text": "usually that should be fine.",
+        "user": "U02DGQYK1",
+        "ts": "1543980921.071100"
+    },
+    {
+        "client_msg_id": "62b0176d-5b1f-406c-8219-81b8c1fce660",
+        "type": "message",
+        "text": "hmm - thought maybe not.",
+        "user": "U02DGQYK1",
+        "ts": "1543980931.071400"
+    },
+    {
+        "client_msg_id": "cc4048ce-0445-4f3f-b487-a4ef7e0114dd",
+        "type": "message",
+        "text": "You can changed it to `120` and see.  That should definitely do it.",
+        "user": "U02DGQYK1",
+        "ts": "1543980948.071800"
+    },
+    {
+        "client_msg_id": "bcaa3d6f-fd4b-43cf-814a-8552fb2d9312",
+        "type": "message",
+        "text": "oh - you can also just exit.",
+        "user": "U02DGQYK1",
+        "ts": "1543980953.072000"
+    },
+    {
+        "client_msg_id": "aef3bb02-8cce-4032-b4c4-830a4935ffc8",
+        "type": "message",
+        "text": "It should loop and try again.",
+        "user": "U02DGQYK1",
+        "ts": "1543980960.072300"
+    },
+    {
+        "client_msg_id": "fe6f9b06-85d8-4a29-98d7-ad231f3627b9",
+        "type": "message",
+        "text": "testing with 120sec now",
+        "user": "UBU0BPRA9",
+        "ts": "1543980986.072500"
+    },
+    {
+        "client_msg_id": "6b27e0ee-ce88-4fb2-bc18-15fd95a6cc5d",
+        "type": "message",
+        "text": "sorry, got distracted by a colleague. still same issue",
+        "user": "UBU0BPRA9",
+        "ts": "1543981617.072900"
+    },
+    {
+        "client_msg_id": "21484bf4-65cf-46dd-9a4f-69fb7751b987",
+        "type": "message",
+        "text": "which is very weird",
+        "user": "UBU0BPRA9",
+        "ts": "1543981624.073200"
+    },
+    {
+        "client_msg_id": "de2827b6-b71c-4b47-b223-d6160f9eaf37",
+        "type": "message",
+        "text": "Try to exit the ash shell",
+        "user": "U02DGQYK1",
+        "ts": "1543981631.073400"
+    },
+    {
+        "client_msg_id": "bb27f09f-ef1c-4733-a092-3eec00a524ab",
+        "type": "message",
+        "text": "exiting let it continue",
+        "user": "UBU0BPRA9",
+        "ts": "1543981664.073600"
+    },
+    {
+        "client_msg_id": "c8d009ef-4ac2-48c6-9517-816b72a2a19e",
+        "type": "message",
+        "text": "got the login prompt",
+        "user": "UBU0BPRA9",
+        "ts": "1543981669.073900"
+    },
+    {
+        "client_msg_id": "1cdfcc66-1157-4562-bdf8-71d74b17012e",
+        "type": "message",
+        "text": "and the machine is available in the portal",
+        "user": "UBU0BPRA9",
+        "ts": "1543981686.074200"
+    },
+    {
+        "client_msg_id": "fd38c860-bf2f-4232-aeb1-82a01cf9e772",
+        "type": "message",
+        "text": "okay hmmm — Do you have ipv6 SLAAC enabled?",
+        "user": "U02DGQYK1",
+        "ts": "1543981774.074700"
+    },
+    {
+        "client_msg_id": "f90200d0-aa02-476f-833f-5d52bd2a8aae",
+        "type": "message",
+        "text": "autoconf",
+        "user": "U02DGQYK1",
+        "ts": "1543981780.074900"
+    },
+    {
+        "client_msg_id": "b8765942-ba87-41f5-afd2-7bb6d65e696a",
+        "type": "message",
+        "text": "all my network devices use ipv4 only, no active ipv6 config at all",
+        "user": "UBU0BPRA9",
+        "ts": "1543981883.075500"
+    },
+    {
+        "client_msg_id": "210c4852-67f6-4bff-8f68-13921708a884",
+        "type": "message",
+        "text": "ok",
+        "user": "U02DGQYK1",
+        "ts": "1543981922.075700"
+    },
+    {
+        "client_msg_id": "4321fc75-9e1b-4fb0-82d9-bf334c935c37",
+        "type": "message",
+        "text": "thinking",
+        "user": "U02DGQYK1",
+        "ts": "1543981952.075900"
+    },
+    {
+        "client_msg_id": "5f2cc359-46cf-48df-b545-e4617f902463",
+        "type": "message",
+        "text": "if it helps. I use\n• UniFi Switch 24 POE-250W\n• UniFi Security Gateway 4P\n• UniFi Cloud Key (Controller Software)",
+        "user": "UBU0BPRA9",
+        "ts": "1543982075.076800"
+    },
+    {
+        "client_msg_id": "228e2fac-8a70-4749-95ee-fc105f3d5331",
+        "type": "message",
+        "text": "on the gateway dhcp is off for this network that the server are part of, ports are restricted to use the networks that have no dhcp",
+        "user": "UBU0BPRA9",
+        "ts": "1543982141.077900"
+    },
+    {
+        "client_msg_id": "23c8bee5-9774-4ad2-aab6-ea7dc7eb741e",
+        "type": "message",
+        "text": "What DHCP server are you using?",
+        "user": "U02DGQYK1",
+        "ts": "1543982143.078000"
+    },
+    {
+        "client_msg_id": "624656ae-a0f2-4243-961d-8c0492d02f6d",
+        "type": "message",
+        "text": "drp",
+        "user": "UBU0BPRA9",
+        "ts": "1543982148.078200"
+    },
+    {
+        "client_msg_id": "1726f00a-ed8f-4d09-8a9f-9b97f8515a44",
+        "type": "message",
+        "text": "drp is started as docker container with host network using a host path to store its data (your docker image)",
+        "user": "UBU0BPRA9",
+        "ts": "1543982209.079300"
+    },
+    {
+        "client_msg_id": "a1028db3-e8b5-430e-8c9a-b83256d97d15",
+        "type": "message",
+        "text": "I don’t know that tool set.",
+        "user": "U02DGQYK1",
+        "ts": "1543982209.079400"
+    },
+    {
+        "client_msg_id": "ca7bdf70-978c-4b5e-b25d-f8a077dabdc0",
+        "type": "message",
+        "text": "oh",
+        "user": "U02DGQYK1",
+        "ts": "1543982214.079600"
+    },
+    {
+        "client_msg_id": "fc6de3a7-8994-4787-ad80-77fb2c19990a",
+        "type": "message",
+        "text": "drp = digital rebar provision",
+        "user": "UBU0BPRA9",
+        "ts": "1543982239.080300",
+        "reactions": [
+            {
+                "name": "face_with_rolling_eyes",
+                "users": [
+                    "U6QFVRJNB"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "client_msg_id": "b8eb255a-faa7-41be-9f96-8b47ebcc3271",
+        "type": "message",
+        "text": "did you start it with `--force-static` and `--static-ip=&lt;ip on machine&gt;`",
+        "user": "U02DGQYK1",
+        "ts": "1543982265.080800"
+    },
+    {
+        "client_msg_id": "e7d3aa09-393b-4cf4-993e-5d8428cdbb45",
+        "type": "message",
+        "text": "umm - that one I know about :wink:",
+        "user": "U02DGQYK1",
+        "ts": "1543982279.081200"
+    },
+    {
+        "client_msg_id": "1dc3e86c-dfe4-42ed-ac22-e0a1f73a78db",
+        "type": "message",
+        "text": "I mean the UniFi stuff",
+        "user": "U02DGQYK1",
+        "ts": "1543982286.081400",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1543982291.000000"
+        }
+    },
+    {
+        "client_msg_id": "11a2b799-cf3c-4d37-a324-28441e0aabed",
+        "type": "message",
+        "text": "oh - host networking should make that fine, I guess.",
+        "user": "U02DGQYK1",
+        "ts": "1543982315.081900"
+    },
+    {
+        "client_msg_id": "3dc4aaa6-4b77-4dc9-8e6d-f1a8e868535d",
+        "type": "message",
+        "text": "no static parameter added to start drp",
+        "user": "UBU0BPRA9",
+        "ts": "1543982332.082200"
+    },
+    {
+        "client_msg_id": "57a751d0-0485-40a8-b780-ce469fe630c9",
+        "type": "message",
+        "text": "well if you are using a `--net host` container then you don’t need them",
+        "user": "U02DGQYK1",
+        "ts": "1543982391.082900"
+    },
+    {
+        "client_msg_id": "6c2cff05-87ad-40cd-9a55-b6857696cc3d",
+        "type": "message",
+        "text": "starting drp via ansible:\n```\n- name: start dr-provision container\n  docker_container:\n    name: dr-provision\n    image: digitalrebar\/provision\n    network_mode: host\n    volumes:\n      - \/data\/dr-provision\/drp-data:\/provision\/drp-data\n```",
+        "user": "UBU0BPRA9",
+        "ts": "1543982394.083000"
+    },
+    {
+        "client_msg_id": "8d1d4a8d-60d9-4d1b-8546-dfd5106e11a3",
+        "type": "message",
+        "text": "ports are wonderful reachable, host networking works fine",
+        "user": "UBU0BPRA9",
+        "ts": "1543982431.083300"
+    },
+    {
+        "client_msg_id": "3a30e76f-1235-41d5-aaef-11dcd939e556",
+        "type": "message",
+        "text": "Is DRP local to the machine or are the packets traversing the gateway?",
+        "user": "U02DGQYK1",
+        "ts": "1543982577.083800"
+    },
+    {
+        "client_msg_id": "ef201df5-d438-40e3-99b5-a133f87c9301",
+        "type": "message",
+        "text": "should be local from the IPs I saw.",
+        "user": "U02DGQYK1",
+        "ts": "1543982604.084200"
+    },
+    {
+        "client_msg_id": "fe8e5802-de75-4731-be33-b99ebe4e615d",
+        "type": "message",
+        "text": "direct",
+        "user": "UBU0BPRA9",
+        "ts": "1543982608.084400"
+    },
+    {
+        "client_msg_id": "9a5773e7-4d12-4051-b079-3dfe7e0db600",
+        "type": "message",
+        "text": "pet1 = 172.16.80.91\nmaster1 = 172.16.80.92\nboth on the same switch",
+        "user": "UBU0BPRA9",
+        "ts": "1543982647.085000"
+    },
+    {
+        "client_msg_id": "d992d99f-0551-488a-b732-0d1a66fb33ca",
+        "type": "message",
+        "text": "in a bigger network 172.16.80.0\/20",
+        "user": "UBU0BPRA9",
+        "ts": "1543982663.085300"
+    },
+    {
+        "client_msg_id": "da584deb-6973-4af5-8ece-cfeeb113d08f",
+        "type": "message",
+        "text": "(but mostly empty)",
+        "user": "UBU0BPRA9",
+        "ts": "1543982697.085500"
+    },
+    {
+        "client_msg_id": "165b2bfe-be0c-4a1c-a075-5e5087106678",
+        "type": "message",
+        "text": "Is the machine dual homed or bonded nics?",
+        "user": "U02DGQYK1",
+        "ts": "1543982712.085900"
+    },
+    {
+        "client_msg_id": "fec7842b-e045-4043-960a-abbf8c824c99",
+        "type": "message",
+        "text": "nope",
+        "user": "UBU0BPRA9",
+        "ts": "1543982738.086100"
+    },
+    {
+        "client_msg_id": "f3383d78-568a-4f48-966e-e3abd9e80ddb",
+        "type": "message",
+        "text": "single nic",
+        "user": "UBU0BPRA9",
+        "ts": "1543982745.086300"
+    },
+    {
+        "client_msg_id": "f20baf51-3218-434f-b97d-30ed38583e53",
+        "type": "message",
+        "text": "firewall rules on the docker host?",
+        "user": "U02DGQYK1",
+        "ts": "1543982815.086700"
+    },
+    {
+        "client_msg_id": "2001dfe1-f200-4f91-af6d-a7b6d5d53743",
+        "type": "message",
+        "text": "not now, any to any is allowed",
+        "user": "UBU0BPRA9",
+        "ts": "1543982849.087000"
+    },
+    {
+        "client_msg_id": "01c8e181-3e28-451e-a37a-f3e2dd01e439",
+        "type": "message",
+        "text": "minimal ubuntu 18.04.1 installation",
+        "user": "UBU0BPRA9",
+        "ts": "1543982875.087500"
+    },
+    {
+        "client_msg_id": "1b6214b3-d41f-4847-94c1-0f0eb8650f91",
+        "type": "message",
+        "text": "shouldn’t matter, but haven’t tried that one recently.",
+        "user": "U02DGQYK1",
+        "ts": "1543982923.087800"
+    },
+    {
+        "client_msg_id": "7d23481f-b391-4efe-aacb-64a60505f854",
+        "type": "message",
+        "text": "mostly been using my mac and centos7 .",
+        "user": "U02DGQYK1",
+        "ts": "1543982934.088100"
+    },
+    {
+        "client_msg_id": "246aa798-668a-4650-bd25-bd61dca0f00d",
+        "type": "message",
+        "text": "without docker.",
+        "user": "U02DGQYK1",
+        "ts": "1543982944.088300"
+    },
+    {
+        "client_msg_id": "009a08ce-db76-4cdd-a5c3-a9d2d8afbc14",
+        "type": "message",
+        "text": "hmm - check apparmor log??",
+        "user": "U02DGQYK1",
+        "ts": "1543982954.088700"
+    },
+    {
+        "client_msg_id": "c7d78a02-74eb-4856-9e0d-526f2d08faaf",
+        "type": "message",
+        "text": "another thing would be to check the DRP log, but I don’t expect much there",
+        "user": "U02DGQYK1",
+        "ts": "1543983035.089200"
+    },
+    {
+        "client_msg_id": "4935ef10-f330-4ba0-b4a8-e70852d527eb",
+        "type": "message",
+        "text": "tailing via docker logs the whole time :confused: 0 related, but all log levels are set to `warn`",
+        "user": "UBU0BPRA9",
+        "ts": "1543983099.089900"
+    },
+    {
+        "client_msg_id": "65f0be6d-e789-40ec-b329-ec05c410a646",
+        "type": "message",
+        "text": "apparmor has nothing since the last reboot",
+        "user": "UBU0BPRA9",
+        "ts": "1543983132.090300"
+    },
+    {
+        "client_msg_id": "dd1af3f9-fe8f-49a8-934c-252ea8465b89",
+        "type": "message",
+        "text": "my pet1 itself has ipv6 enabled",
+        "user": "UBU0BPRA9",
+        "ts": "1543983151.091000"
+    },
+    {
+        "client_msg_id": "43b0d3a3-44f8-43b1-b265-93e09d3507d9",
+        "type": "message",
+        "text": "okay - something is fishy.  Not sure what though.  Shouldn’t matter.  It should only try ipv4 or ipv6.  It appears to be doing IPv4.",
+        "user": "U02DGQYK1",
+        "ts": "1543983178.091600"
+    },
+    {
+        "client_msg_id": "253dd60b-63c7-4ad3-b4ad-7c7707b550fd",
+        "type": "message",
+        "text": "possible that I messed up something via the drp-community-content pack? I changed to tip since centos was outdated",
+        "user": "UBU0BPRA9",
+        "ts": "1543983305.092300"
+    },
+    {
+        "client_msg_id": "dc8757a5-96af-4aaa-a008-ed60b04976a5",
+        "type": "message",
+        "text": "thinking of wiping the whole config of drp",
+        "user": "UBU0BPRA9",
+        "ts": "1543983351.092900"
+    },
+    {
+        "client_msg_id": "4947b70a-9423-4c63-b7e3-16371d3bfb93",
+        "type": "message",
+        "text": "yesterday when I started I just tried the krib live cluster and it seem to work, now I just want them to wait in discovery...",
+        "user": "UBU0BPRA9",
+        "ts": "1543983389.093700"
+    },
+    {
+        "client_msg_id": "0218332e-ac56-4477-92be-901266efb2c1",
+        "type": "message",
+        "text": "hmm - do you have drp tip?",
+        "user": "U02DGQYK1",
+        "ts": "1543983425.094000"
+    },
+    {
+        "client_msg_id": "3118c14f-e886-4f60-b93d-eb85486cbaa0",
+        "type": "message",
+        "text": "Well - you need tip drp if you have tip content.",
+        "user": "U02DGQYK1",
+        "ts": "1543983454.094300"
+    },
+    {
+        "client_msg_id": "0975b205-3aa1-4cf4-a100-d19da85687a0",
+        "type": "message",
+        "text": "latest docker image",
+        "user": "UBU0BPRA9",
+        "ts": "1543983464.094600"
+    },
+    {
+        "client_msg_id": "963fa591-7916-4bc3-8a3b-88d7f494fbfb",
+        "type": "message",
+        "text": "okay - all good",
+        "user": "U02DGQYK1",
+        "ts": "1543983469.094800"
+    },
+    {
+        "client_msg_id": "c8cd87f6-ce43-4efe-b9e0-3c1793119fab",
+        "type": "message",
+        "text": "Did this work before?",
+        "user": "U02DGQYK1",
+        "ts": "1543983483.095000"
+    },
+    {
+        "client_msg_id": "6712dc37-d485-42d5-a796-52ee7a637aba",
+        "type": "message",
+        "text": "krib live cluster worked (without dhcp reservations)",
+        "user": "UBU0BPRA9",
+        "ts": "1543983537.096000"
+    },
+    {
+        "client_msg_id": "2067f621-3ce1-4cb9-ae16-9f788cfa71f7",
+        "type": "message",
+        "text": "`drpcli bootenvs show discovery`  see if it is available and validated.",
+        "user": "U02DGQYK1",
+        "ts": "1543983541.096100"
+    },
+    {
+        "client_msg_id": "53cd3065-7d53-4833-84a2-aff5c88a4096",
+        "type": "message",
+        "text": "hmmmmmmmmm.",
+        "user": "U02DGQYK1",
+        "ts": "1543983564.096400"
+    },
+    {
+        "client_msg_id": "a28c9705-d88f-454b-b068-081d5821c4a9",
+        "type": "message",
+        "text": "` \"Validated\": true`",
+        "user": "UBU0BPRA9",
+        "ts": "1543983568.096600"
+    },
+    {
+        "client_msg_id": "372d00f5-2e00-41c7-ba01-434b359294e1",
+        "type": "message",
+        "text": "I think something is broken...if I click on any bootenv via the ui, it doesn't show any information about it",
+        "user": "UBU0BPRA9",
+        "ts": "1543983617.097300"
+    },
+    {
+        "client_msg_id": "5f866bb4-cea3-42e4-99d8-21fe8d9433f9",
+        "type": "message",
+        "text": "`drpcli profiles remove global param kernel-console`",
+        "user": "U02DGQYK1",
+        "ts": "1543983636.097700"
+    },
+    {
+        "type": "message",
+        "text": "",
+        "files": [
+            {
+                "id": "FEKT5RDV3",
+                "created": 1543983657,
+                "timestamp": 1543983657,
+                "name": "Screenshot from 2018-12-05 11-20-42.png",
+                "title": "Screenshot from 2018-12-05 11-20-42.png",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "UBU0BPRA9",
+                "editable": false,
+                "size": 79191,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FEKT5RDV3\/screenshot_from_2018-12-05_11-20-42.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FEKT5RDV3\/download\/screenshot_from_2018-12-05_11-20-42.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEKT5RDV3-84b12d3d76\/screenshot_from_2018-12-05_11-20-42_64.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEKT5RDV3-84b12d3d76\/screenshot_from_2018-12-05_11-20-42_80.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEKT5RDV3-84b12d3d76\/screenshot_from_2018-12-05_11-20-42_360.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360_w": 360,
+                "thumb_360_h": 149,
+                "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEKT5RDV3-84b12d3d76\/screenshot_from_2018-12-05_11-20-42_480.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_480_w": 480,
+                "thumb_480_h": 198,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEKT5RDV3-84b12d3d76\/screenshot_from_2018-12-05_11-20-42_160.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEKT5RDV3-84b12d3d76\/screenshot_from_2018-12-05_11-20-42_720.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_720_w": 720,
+                "thumb_720_h": 298,
+                "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEKT5RDV3-84b12d3d76\/screenshot_from_2018-12-05_11-20-42_800.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_800_w": 800,
+                "thumb_800_h": 331,
+                "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEKT5RDV3-84b12d3d76\/screenshot_from_2018-12-05_11-20-42_960.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_960_w": 960,
+                "thumb_960_h": 397,
+                "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEKT5RDV3-84b12d3d76\/screenshot_from_2018-12-05_11-20-42_1024.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_1024_w": 1024,
+                "thumb_1024_h": 423,
+                "image_exif_rotation": 1,
+                "original_w": 1522,
+                "original_h": 629,
+                "permalink": "https:\/\/rackn.slack.com\/files\/UBU0BPRA9\/FEKT5RDV3\/screenshot_from_2018-12-05_11-20-42.png",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FEKT5RDV3-fda3aebf1c"
+            }
+        ],
+        "upload": true,
+        "user": "UBU0BPRA9",
+        "display_as_bot": false,
+        "ts": "1543983660.098300"
+    },
+    {
+        "client_msg_id": "21f3407a-aa19-4047-a782-0844fd022e1b",
+        "type": "message",
+        "text": "switch your url from `<http:\/\/portal.rackn.io|portal.rackn.io>` to `<http:\/\/tip.rackn.io|tip.rackn.io>`",
+        "user": "U02DGQYK1",
+        "ts": "1543983661.098400"
+    },
+    {
+        "client_msg_id": "6c2de1e2-fb3d-42e6-8a68-657effb0cbf1",
+        "type": "message",
+        "text": "you may have to revalidate certs.",
+        "user": "U02DGQYK1",
+        "ts": "1543983668.098900"
+    },
+    {
+        "client_msg_id": "6aa33dde-9576-4fc1-a959-76583b01a60b",
+        "type": "message",
+        "text": "I’m pretty sure it isn’t the portdelay now.",
+        "user": "U02DGQYK1",
+        "ts": "1543983697.099400"
+    },
+    {
+        "client_msg_id": "9ace2390-d68e-4b06-8fa0-004d740e913f",
+        "type": "message",
+        "text": "Can you show me your reservations?",
+        "user": "U02DGQYK1",
+        "ts": "1543983709.099700"
+    },
+    {
+        "client_msg_id": "d54722a5-26d8-46c6-99bb-448d8a7b3ffa",
+        "type": "message",
+        "text": "via tip I see the details",
+        "user": "UBU0BPRA9",
+        "ts": "1543983728.100000"
+    },
+    {
+        "type": "message",
+        "text": "",
+        "files": [
+            {
+                "id": "FELNU8YEB",
+                "created": 1543983748,
+                "timestamp": 1543983748,
+                "name": "Screenshot from 2018-12-05 11-22-16.png",
+                "title": "Screenshot from 2018-12-05 11-22-16.png",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "UBU0BPRA9",
+                "editable": false,
+                "size": 22640,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FELNU8YEB\/screenshot_from_2018-12-05_11-22-16.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FELNU8YEB\/download\/screenshot_from_2018-12-05_11-22-16.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FELNU8YEB-b4848766c8\/screenshot_from_2018-12-05_11-22-16_64.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FELNU8YEB-b4848766c8\/screenshot_from_2018-12-05_11-22-16_80.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FELNU8YEB-b4848766c8\/screenshot_from_2018-12-05_11-22-16_360.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360_w": 360,
+                "thumb_360_h": 43,
+                "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FELNU8YEB-b4848766c8\/screenshot_from_2018-12-05_11-22-16_480.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_480_w": 480,
+                "thumb_480_h": 57,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FELNU8YEB-b4848766c8\/screenshot_from_2018-12-05_11-22-16_160.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FELNU8YEB-b4848766c8\/screenshot_from_2018-12-05_11-22-16_720.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_720_w": 720,
+                "thumb_720_h": 85,
+                "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FELNU8YEB-b4848766c8\/screenshot_from_2018-12-05_11-22-16_800.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_800_w": 800,
+                "thumb_800_h": 95,
+                "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FELNU8YEB-b4848766c8\/screenshot_from_2018-12-05_11-22-16_960.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_960_w": 960,
+                "thumb_960_h": 114,
+                "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FELNU8YEB-b4848766c8\/screenshot_from_2018-12-05_11-22-16_1024.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_1024_w": 1024,
+                "thumb_1024_h": 121,
+                "image_exif_rotation": 1,
+                "original_w": 1469,
+                "original_h": 174,
+                "permalink": "https:\/\/rackn.slack.com\/files\/UBU0BPRA9\/FELNU8YEB\/screenshot_from_2018-12-05_11-22-16.png",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FELNU8YEB-abe0a7a4af"
+            }
+        ],
+        "upload": true,
+        "user": "UBU0BPRA9",
+        "display_as_bot": false,
+        "ts": "1543983752.100300"
+    },
+    {
+        "client_msg_id": "a02f107c-491f-49a6-af65-86f3514078e7",
+        "type": "message",
+        "text": "The ux needs to be updated to support the new arch support.",
+        "user": "U02DGQYK1",
+        "ts": "1543983753.100600"
+    },
+    {
+        "client_msg_id": "016ba6f9-0273-4737-bc24-01be7ec2759f",
+        "type": "message",
+        "text": "okay I feel like you are going to ask me some annoying questions in the future.  But those can wait.",
+        "user": "U02DGQYK1",
+        "ts": "1543983819.101100"
+    },
+    {
+        "client_msg_id": "962801ec-a6be-4e34-a9e8-6782e413e73d",
+        "type": "message",
+        "text": "haha",
+        "user": "UBU0BPRA9",
+        "ts": "1543983830.101300"
+    },
+    {
+        "client_msg_id": "3a4bd93b-250d-48bc-815c-eaaf7f4f20df",
+        "type": "message",
+        "text": "Did you clear the kernel-console variable?",
+        "user": "U02DGQYK1",
+        "ts": "1543983851.101700"
+    },
+    {
+        "client_msg_id": "7e62110c-967b-450b-b6f9-c739c36ea27a",
+        "type": "message",
+        "text": "yes",
+        "user": "UBU0BPRA9",
+        "ts": "1543983860.101900"
+    },
+    {
+        "client_msg_id": "d9313fbf-0d59-4b38-8f51-d1fc366e176a",
+        "type": "message",
+        "text": "remove the reservation for the machine you are booting and reboot it.",
+        "user": "U02DGQYK1",
+        "ts": "1543983885.102300"
+    },
+    {
+        "client_msg_id": "85a6fde7-c4ea-4154-98b9-dca6e34e4d0e",
+        "type": "message",
+        "text": "if that is safe to do",
+        "user": "U02DGQYK1",
+        "ts": "1543983894.102500"
+    },
+    {
+        "client_msg_id": "4393f4bd-b0b7-47bd-a5cc-a1eca06856e1",
+        "type": "message",
+        "text": "you can also check the leases and see that it matches",
+        "user": "U02DGQYK1",
+        "ts": "1543983915.103000"
+    },
+    {
+        "client_msg_id": "937e4bac-ff6d-446f-a010-5e9f8c3386db",
+        "type": "message",
+        "text": "removed reservation and lease",
+        "user": "UBU0BPRA9",
+        "ts": "1543983920.103100"
+    },
+    {
+        "client_msg_id": "4b65cc51-ba9a-4e65-b4bb-7e50846551d1",
+        "type": "message",
+        "text": "I meant for you to keep the lease, but that is okay.",
+        "user": "U02DGQYK1",
+        "ts": "1543983931.103400"
+    },
+    {
+        "client_msg_id": "8f5bbff4-0e83-4a82-b98c-f6ce1da1ccdf",
+        "type": "message",
+        "text": "no one else in that network :slightly_smiling_face:",
+        "user": "UBU0BPRA9",
+        "ts": "1543983950.103900"
+    },
+    {
+        "client_msg_id": "f1a6f70c-0463-4ca0-b9f0-2b19ebaaab9b",
+        "type": "message",
+        "text": "The lease would have made sure it gets the same address.",
+        "user": "U02DGQYK1",
+        "ts": "1543983952.104000"
+    },
+    {
+        "client_msg_id": "af66971d-3faa-4761-8bd9-e585fa8f121b",
+        "type": "message",
+        "text": "okay",
+        "user": "U02DGQYK1",
+        "ts": "1543983953.104200"
+    },
+    {
+        "client_msg_id": "6f3fee77-66ec-4e6d-98d2-6fd6dc0a37b9",
+        "type": "message",
+        "text": "same issue",
+        "user": "UBU0BPRA9",
+        "ts": "1543984059.104800"
+    },
+    {
+        "client_msg_id": "156fef3e-95be-4b22-adcf-66250f900e4d",
+        "type": "message",
+        "text": "hmm - okay -",
+        "user": "U02DGQYK1",
+        "ts": "1543984067.105000"
+    },
+    {
+        "client_msg_id": "9c0d0345-3ce4-4a7a-9e1c-19c19d344b97",
+        "type": "message",
+        "text": "in the ux, goto the `info &amp; preferences`",
+        "user": "U02DGQYK1",
+        "ts": "1543984091.105500"
+    },
+    {
+        "client_msg_id": "279d41e1-52ab-441b-b4cb-5e6986972e47",
+        "type": "message",
+        "text": "got the same ip",
+        "user": "UBU0BPRA9",
+        "ts": "1543984095.105800"
+    },
+    {
+        "client_msg_id": "e19c9bf7-d9db-4155-a87a-d1b0d2c3b8e2",
+        "type": "message",
+        "text": "set the DHCP log to `debug` and `save`",
+        "user": "U02DGQYK1",
+        "ts": "1543984112.106200"
+    },
+    {
+        "client_msg_id": "7eefdfa1-4630-426c-b637-a0f925cf9805",
+        "type": "message",
+        "text": "then reboot the system and let see what the timing of the messages are",
+        "user": "U02DGQYK1",
+        "ts": "1543984147.106600"
+    },
+    {
+        "client_msg_id": "f57a2365-2470-4f7e-8db2-1a429a663295",
+        "type": "message",
+        "text": "rebooting",
+        "user": "UBU0BPRA9",
+        "ts": "1543984167.106800"
+    },
+    {
+        "client_msg_id": "ae6b9d91-fa64-4cac-99af-84ed1c1a7cfa",
+        "type": "message",
+        "text": "<https:\/\/pastebin.com\/dfr62yPy>",
+        "user": "UBU0BPRA9",
+        "ts": "1543984473.107000",
+        "attachments": [
+            {
+                "service_name": "Pastebin",
+                "title": "dr-provision2018\/12\/05 04:30:50.934033 [1374:98]dhcp:dhcp [debug]: \/home\/travis\/ - Pastebin.com",
+                "title_link": "https:\/\/pastebin.com\/dfr62yPy",
+                "fallback": "Pastebin: dr-provision2018\/12\/05 04:30:50.934033 [1374:98]dhcp:dhcp [debug]: \/home\/travis\/ - Pastebin.com",
+                "image_url": "https:\/\/pastebin.com\/i\/facebook.png",
+                "from_url": "https:\/\/pastebin.com\/dfr62yPy",
+                "image_width": 250,
+                "image_height": 250,
+                "image_bytes": 19206,
+                "service_icon": "https:\/\/pastebin.com\/favicon.ico",
+                "id": 1,
+                "original_url": "https:\/\/pastebin.com\/dfr62yPy"
+            }
+        ]
+    },
+    {
+        "client_msg_id": "7ebddf1f-0fb1-41cc-8795-b037b608314f",
+        "type": "message",
+        "text": "I made to empty lines after the pxe boot before sledgehammer start",
+        "user": "UBU0BPRA9",
+        "ts": "1543984512.107500"
+    },
+    {
+        "client_msg_id": "10f9be3a-ebf3-4317-95b4-d4c5e3695567",
+        "type": "message",
+        "text": "looks like a 60sec timeout",
+        "user": "UBU0BPRA9",
+        "ts": "1543984568.107800"
+    },
+    {
+        "client_msg_id": "c51f2b4e-a302-4f30-8cff-018490c4bbd5",
+        "type": "message",
+        "text": "64 seconds feels magical.",
+        "user": "U02DGQYK1",
+        "ts": "1543985814.108100"
+    },
+    {
+        "client_msg_id": "5816c62a-da2b-44b6-b896-24fd47bc15b0",
+        "type": "message",
+        "text": "It is almost like something is holding off the packets.",
+        "user": "U02DGQYK1",
+        "ts": "1543985823.108400"
+    },
+    {
+        "client_msg_id": "619e659c-6bf0-4b71-8a4e-b5c8baf2c19a",
+        "type": "message",
+        "text": "I’m not sure.  I’m off to bed.",
+        "user": "U02DGQYK1",
+        "ts": "1543985845.108600"
+    },
+    {
+        "client_msg_id": "13e8edbc-495c-490f-afd1-22e9b541de7c",
+        "type": "message",
+        "text": "OK, I will play around more. Seems the bangkok timezone is not helping xD",
+        "user": "UBU0BPRA9",
+        "ts": "1543987355.109600"
+    },
+    {
+        "client_msg_id": "7f23891c-ab7f-4dc7-89fa-b588e603983b",
+        "type": "message",
+        "text": "Any chance you can run DRP in isolated mode on the host to eliminate the container piece?  ",
+        "user": "U6QFVRJNB",
+        "ts": "1543987739.110900"
+    },
+    {
+        "client_msg_id": "54b6ba6b-386b-4ce4-a7de-4a484d610e18",
+        "type": "message",
+        "text": "will try after I tried to wipe and start over",
+        "user": "UBU0BPRA9",
+        "ts": "1543988044.111200"
+    },
+    {
+        "client_msg_id": "6380e9ca-dd72-4f79-8363-752fd4ac88b2",
+        "type": "message",
+        "text": "tested using the binary directly without container, same issue",
+        "user": "UBU0BPRA9",
+        "ts": "1543995697.111600"
+    }
+]

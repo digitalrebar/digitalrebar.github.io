@@ -1,0 +1,84 @@
+[
+    {
+        "client_msg_id": "47d0966b-18dd-4fb6-8060-bebfa642a0a3",
+        "type": "message",
+        "text": "<@UDH9AK8NS> $welcome ",
+        "user": "U02DHRR2L",
+        "ts": "1539775306.000100"
+    },
+    {
+        "type": "message",
+        "subtype": "slackbot_response",
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "user": "USLACKBOT",
+        "ts": "1539775306.000200"
+    },
+    {
+        "client_msg_id": "1f3911ad-7f6c-4df2-99e8-35eab928c62d",
+        "type": "message",
+        "text": "<@U02DGQYK1> new sledgehammer in tip works great, cheers :slightly_smiling_face:",
+        "user": "UBXEU90UQ",
+        "ts": "1539785085.000100",
+        "reactions": [
+            {
+                "name": "sunglasses",
+                "users": [
+                    "U02DHRR2L",
+                    "U6QFVRJNB"
+                ],
+                "count": 2
+            }
+        ]
+    },
+    {
+        "client_msg_id": "08728c84-d887-43f8-bf2e-bc231dced376",
+        "type": "message",
+        "text": "nice!",
+        "user": "U02DGQYK1",
+        "ts": "1539788123.000100"
+    },
+    {
+        "client_msg_id": "8d0bacd8-63b5-4015-8c7d-47822acf46ec",
+        "type": "message",
+        "text": "i noticed something while changing some custom stages earlier - I had a stage with a required param that didn’t exist (I deleted the param and forgot to delete the required entry from the stage). When I ran the workflow containing the stage, it would basically get stuck on the stage with the missing param, but didn’t seem to log anything and just seemed stuck. Took me an age to track that down… is there any logging I’m missing there, or does it wait silently for a particular reason?",
+        "user": "UBXEU90UQ",
+        "ts": "1539816282.000100"
+    },
+    {
+        "client_msg_id": "b3ac4f69-381a-4b39-88fd-618b0128e111",
+        "type": "message",
+        "text": "<@UBXEU90UQ> - validation for Params happens when an object (the Stage) is created - so the initial validation had passed, but we don't re-validate on run - which is why the \"silent error\" occurred.  We'll need to take a look at this scenario and see how we can do better.   I submitted a new issue to track this:\n<https:\/\/github.com\/digitalrebar\/provision\/issues\/1008>",
+        "user": "U6QFVRJNB",
+        "ts": "1539817211.000100",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "Required Param on Stage causes silent failure on Stage run if Param removed · Issue #1008 · digitalrebar\/provision",
+                "title_link": "https:\/\/github.com\/digitalrebar\/provision\/issues\/1008",
+                "text": "Reporting from #community by maz ... i noticed something while changing some custom stages earlier - I had a stage with a required param that didn’t exist (I deleted the param and forgot to delete ...",
+                "fallback": "GitHub: Required Param on Stage causes silent failure on Stage run if Param removed · Issue #1008 · digitalrebar\/provision",
+                "from_url": "https:\/\/github.com\/digitalrebar\/provision\/issues\/1008",
+                "thumb_url": "https:\/\/avatars2.githubusercontent.com\/u\/5308433?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/digitalrebar\/provision\/issues\/1008"
+            }
+        ]
+    },
+    {
+        "client_msg_id": "4f7304f6-ea6e-4c55-a5d9-9a5e53b7fe30",
+        "type": "message",
+        "text": "<@UBXEU90UQ> - parameter or profile?",
+        "user": "U02DGQYK1",
+        "ts": "1539818464.000100"
+    },
+    {
+        "client_msg_id": "4edd82c4-1dc9-4ee1-9505-3d2713cf981d",
+        "type": "message",
+        "text": "Thanks for writing that up, <@U6QFVRJNB>",
+        "user": "U02DGQYK1",
+        "ts": "1539818495.000100"
+    }
+]

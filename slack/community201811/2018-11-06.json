@@ -1,0 +1,518 @@
+[
+    {
+        "client_msg_id": "7cc5bee5-cba1-49ae-b7c3-cfdf47150438",
+        "type": "message",
+        "text": "Has anyone tried krib in memory with a ZFS root pool?",
+        "user": "UDRCF03BK",
+        "ts": "1541514364.257600"
+    },
+    {
+        "client_msg_id": "6becc801-9e68-4a87-9f5c-13903e8c5a70",
+        "type": "message",
+        "text": "<@UDRCF03BK> not that I've heard of.",
+        "user": "U02DHRR2L",
+        "ts": "1541515159.257900"
+    },
+    {
+        "client_msg_id": "52bbf5ac-a77a-4170-ad71-921a2027cf15",
+        "type": "message",
+        "text": "<@UDRCF03BK> - I believe <@U8BTZ6HPT> was doing some things with ZFS - but he was using Ansible IIRC to provision the ZFS volumes",
+        "user": "U6QFVRJNB",
+        "ts": "1541515432.258500"
+    },
+    {
+        "client_msg_id": "0bba3e42-6ab7-436c-bf08-6e10be61c2a9",
+        "type": "message",
+        "text": "don't think anything w\/ the root pool, though",
+        "user": "U6QFVRJNB",
+        "ts": "1541515444.258800"
+    },
+    {
+        "client_msg_id": "2261bf96-d690-496c-9560-f61993c40ac1",
+        "type": "message",
+        "text": "k",
+        "user": "UDRCF03BK",
+        "ts": "1541516849.259000"
+    },
+    {
+        "client_msg_id": "f93303a6-6d59-4a02-a6ed-7d691826532d",
+        "type": "message",
+        "text": "I was thinking in memory OS with ZFS libs in place, pulling in the zpool on boot (obviously we would need to have a configure step if it didn't exist)",
+        "user": "UDRCF03BK",
+        "ts": "1541516885.259800"
+    },
+    {
+        "client_msg_id": "7d97dccd-022d-4ebf-b8e8-57cc6c819483",
+        "type": "message",
+        "text": "Sledgehammer (the DRP discovery image) is in-memory, but it probably doesn't have the ZFS libs by default - though you could build a workflow task that adds the pkgs and then does what you want ... i you work towards this - we'd love to add it in to community",
+        "user": "U6QFVRJNB",
+        "ts": "1541518517.261000"
+    },
+    {
+        "client_msg_id": "d6f3bb3c-e71a-457d-9fc0-d687b536d1a5",
+        "type": "message",
+        "text": "we are looking for sure",
+        "user": "UDRCF03BK",
+        "ts": "1541518609.261200"
+    },
+    {
+        "client_msg_id": "194a2f2a-8459-4f65-a17a-e93d7f7f05c5",
+        "type": "message",
+        "text": "we are also looking at rancherOS",
+        "user": "UDRCF03BK",
+        "ts": "1541518615.261500"
+    },
+    {
+        "client_msg_id": "7eb61474-ccd8-4af2-bc26-86839cf9f24c",
+        "type": "message",
+        "text": "it's sort of already doing this*",
+        "user": "UDRCF03BK",
+        "ts": "1541518623.261800"
+    },
+    {
+        "client_msg_id": "eca9980c-130c-43c1-ab27-07acf8735710",
+        "type": "message",
+        "text": "aside from ZFS",
+        "user": "UDRCF03BK",
+        "ts": "1541518626.262000"
+    },
+    {
+        "client_msg_id": "67a675b8-8395-46e7-978f-577c80a4323f",
+        "type": "message",
+        "text": "but they support ZFS in their ondisk install",
+        "user": "UDRCF03BK",
+        "ts": "1541518636.262300"
+    },
+    {
+        "client_msg_id": "3fe35db3-c8fd-44bb-ac37-c45e76733d04",
+        "type": "message",
+        "text": "If we wanted to add in the zfs tools and libs is there some good docs on building custom sledgehammers?",
+        "user": "UDRCF03BK",
+        "ts": "1541518827.264600"
+    },
+    {
+        "client_msg_id": "39e30651-339c-48c4-a70a-ab25319d6900",
+        "type": "message",
+        "text": "using the data in inventory\/gohai, it would be pretty easy to build a stage that does the right install steps.  Sledgehammer is Centos7 so a yum install would work.  The biggest unknown is logic to pick the right volumes automatically.  For starters, you could provide via a param instead",
+        "user": "U02DHRR2L",
+        "ts": "1541518828.264700"
+    },
+    {
+        "client_msg_id": "520074ac-432a-4998-82b0-0a70e369fe11",
+        "type": "message",
+        "text": "that would be good for an ondisk install",
+        "user": "UDRCF03BK",
+        "ts": "1541518841.264900"
+    },
+    {
+        "client_msg_id": "a7f4b6aa-cfeb-4d3c-b3ad-eca0bb51543f",
+        "type": "message",
+        "text": "but for PXE'ing an in memory image",
+        "user": "UDRCF03BK",
+        "ts": "1541518847.265200"
+    },
+    {
+        "client_msg_id": "4cf5a345-0615-4d58-bcb4-5712524b0d7f",
+        "type": "message",
+        "text": "we don't want 20 mins of compiling",
+        "user": "UDRCF03BK",
+        "ts": "1541518853.265500"
+    },
+    {
+        "client_msg_id": "b7cda459-b8e0-4596-a4ce-bf3f95b92d5d",
+        "type": "message",
+        "text": "the stages include \"attach disk\"",
+        "user": "U02DHRR2L",
+        "ts": "1541518864.265800"
+    },
+    {
+        "client_msg_id": "509b02b2-067a-4fbb-ad99-eeadf389bd34",
+        "type": "message",
+        "text": "if you want all in RAM, then just extend the system that's there",
+        "user": "U02DHRR2L",
+        "ts": "1541518898.266300",
+        "edited": {
+            "user": "U02DHRR2L",
+            "ts": "1541518901.000000"
+        }
+    },
+    {
+        "client_msg_id": "9237bcd8-2780-46f3-b6e0-d7da8aac6b7a",
+        "type": "message",
+        "text": "sure - that would be good after we have the image!",
+        "user": "UDRCF03BK",
+        "ts": "1541518908.266800"
+    },
+    {
+        "client_msg_id": "571a04ff-d6b4-442d-bd72-105b5b01f85e",
+        "type": "message",
+        "text": "the steps with rebar make this all easier in someways",
+        "user": "UDRCF03BK",
+        "ts": "1541518922.267100"
+    },
+    {
+        "client_msg_id": "80d0bbf9-cd47-4d2b-845b-4d8c4b259003",
+        "type": "message",
+        "text": "sledgehammer repo is <https:\/\/github.com\/digitalrebar\/sledgehammer>",
+        "user": "U02DHRR2L",
+        "ts": "1541518935.267800",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "digitalrebar\/sledgehammer",
+                "title_link": "https:\/\/github.com\/digitalrebar\/sledgehammer",
+                "text": "Contains the code and publish tools for sledgehammer (DRP and DR use it) - digitalrebar\/sledgehammer",
+                "fallback": "GitHub: digitalrebar\/sledgehammer",
+                "from_url": "https:\/\/github.com\/digitalrebar\/sledgehammer",
+                "thumb_url": "https:\/\/avatars1.githubusercontent.com\/u\/13814120?s=400&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/digitalrebar\/sledgehammer"
+            }
+        ]
+    },
+    {
+        "client_msg_id": "2D457085-A617-4A80-B06C-EE64BD9288AA",
+        "type": "message",
+        "text": "We don’t use that anymore",
+        "user": "U02DGQYK1",
+        "ts": "1541518956.268600"
+    },
+    {
+        "client_msg_id": "1df9eb2c-0b53-4c69-bb27-a77f846ec778",
+        "type": "message",
+        "text": "BUT... typically, it's easier to add items into the image using stages postinstall than building a new sledgehammer",
+        "user": "U02DHRR2L",
+        "ts": "1541518962.268800"
+    },
+    {
+        "client_msg_id": "241ab54d-5274-4096-ae3c-c9a59d1584e1",
+        "type": "message",
+        "text": "that makes it more durrable",
+        "user": "U02DHRR2L",
+        "ts": "1541518965.269100"
+    },
+    {
+        "client_msg_id": "23bcfc8d-6052-47fd-a061-3d5a54e8c979",
+        "type": "message",
+        "text": "oh! right.  sorry",
+        "user": "U02DHRR2L",
+        "ts": "1541518980.269500"
+    },
+    {
+        "client_msg_id": "6d15dc3d-2add-454e-ac94-0619a107b723",
+        "type": "message",
+        "text": "<@U02DHRR2L> wouldn't that make it harder to do an in memory install?",
+        "user": "UDRCF03BK",
+        "ts": "1541518993.270000"
+    },
+    {
+        "type": "message",
+        "subtype": "me_message",
+        "text": "I think this is a specific topic for the meetup today",
+        "user": "U02DHRR2L",
+        "ts": "1541518997.270200"
+    },
+    {
+        "client_msg_id": "0127f0a7-b93c-40cd-88b5-18d13dad2616",
+        "type": "message",
+        "text": "stages that is",
+        "user": "UDRCF03BK",
+        "ts": "1541519000.270300"
+    },
+    {
+        "client_msg_id": "b39f65d6-9d09-4c35-951a-c324b1ff3d1a",
+        "type": "message",
+        "text": "vs launching a prebuilt artifcat",
+        "user": "UDRCF03BK",
+        "ts": "1541519012.270900"
+    },
+    {
+        "client_msg_id": "70af4c6e-f087-4256-b7df-984800c499a8",
+        "type": "message",
+        "text": "I would rather lean into the baremetal as cattle analogy for kubernetes",
+        "user": "UDRCF03BK",
+        "ts": "1541519038.271900"
+    },
+    {
+        "client_msg_id": "15dd42a0-07c2-4c63-8de0-cd61c8f5848e",
+        "type": "message",
+        "text": "no, you'd just do the install",
+        "user": "U02DHRR2L",
+        "ts": "1541519042.272100"
+    },
+    {
+        "client_msg_id": "8472cc0b-29f1-40a2-87f7-0f31bc8b37f0",
+        "type": "message",
+        "text": "we've been doing something similar with Joyent's Triton and it's worked well",
+        "user": "UDRCF03BK",
+        "ts": "1541519055.272500"
+    },
+    {
+        "client_msg_id": "2f0f8bcf-4d28-44a9-a9d9-a8bfe40043ae",
+        "type": "message",
+        "text": "I don't grok\n&gt; `no, you'd just do the install`",
+        "user": "UDRCF03BK",
+        "ts": "1541519083.273100"
+    },
+    {
+        "client_msg_id": "5ab79d32-1e2b-4133-b708-ef81c7962123",
+        "type": "message",
+        "text": "if I am loading the sledgehammer image - they including a step for ZFS",
+        "user": "UDRCF03BK",
+        "ts": "1541519100.273800"
+    },
+    {
+        "client_msg_id": "d0106090-bc96-4f09-9b3c-99bf7e2b08ea",
+        "type": "message",
+        "text": "I would need to do that every time I reboot",
+        "user": "UDRCF03BK",
+        "ts": "1541519107.274100"
+    },
+    {
+        "client_msg_id": "0607905c-abb8-46b2-9660-5f234a44d097",
+        "type": "message",
+        "text": "there's a balance between doing a stage to install something and having to maintain your own image.",
+        "user": "U02DHRR2L",
+        "ts": "1541519111.274300"
+    },
+    {
+        "client_msg_id": "3982c3b5-2c89-49e4-ab7a-9ab93e5584c3",
+        "type": "message",
+        "text": "sure",
+        "user": "UDRCF03BK",
+        "ts": "1541519119.274600"
+    },
+    {
+        "client_msg_id": "6babdba0-a808-4d4d-a86f-3929b13fe3f0",
+        "type": "message",
+        "text": "but I don't want 30 min reboot times either",
+        "user": "UDRCF03BK",
+        "ts": "1541519125.274900"
+    },
+    {
+        "client_msg_id": "df6b0700-49e8-428d-8561-954212724a2a",
+        "type": "message",
+        "text": "MTR for a rack failure would be awful",
+        "user": "UDRCF03BK",
+        "ts": "1541519140.275500"
+    },
+    {
+        "client_msg_id": "38fc8d80-c0ad-4913-8a68-9b312ac56009",
+        "type": "message",
+        "text": "check out the kexec flag.  from sledge to sledge, you don't need to reboot",
+        "user": "U02DHRR2L",
+        "ts": "1541519149.275800",
+        "edited": {
+            "user": "U02DHRR2L",
+            "ts": "1541519161.000000"
+        }
+    },
+    {
+        "client_msg_id": "c0f8989f-767b-40d0-b1db-dd937f60928f",
+        "type": "message",
+        "text": "interesting",
+        "user": "UDRCF03BK",
+        "ts": "1541519172.276100"
+    },
+    {
+        "client_msg_id": "c2683b5f-b7b1-4e75-b409-452b7263852e",
+        "type": "message",
+        "text": "but a power failure \/ hardware replacement \/ panic would mean a reboot and so a recompile?",
+        "user": "UDRCF03BK",
+        "ts": "1541519204.276900"
+    },
+    {
+        "client_msg_id": "9b989970-f1bc-41ef-b551-f5e38c573d40",
+        "type": "message",
+        "text": "recompile?",
+        "user": "U02DHRR2L",
+        "ts": "1541519216.277300"
+    },
+    {
+        "client_msg_id": "31fe663b-7f22-45b4-8abc-a90953ab177a",
+        "type": "message",
+        "text": "of ZFS",
+        "user": "UDRCF03BK",
+        "ts": "1541519220.277500"
+    },
+    {
+        "client_msg_id": "8b8c804a-cf2c-4bda-8583-a65463b2e2c0",
+        "type": "message",
+        "text": "if it's a stage",
+        "user": "UDRCF03BK",
+        "ts": "1541519235.277800"
+    },
+    {
+        "client_msg_id": "fad3d062-5823-4745-a8a0-9b3626ced94f",
+        "type": "message",
+        "text": "in the pxe boot",
+        "user": "UDRCF03BK",
+        "ts": "1541519239.278000"
+    },
+    {
+        "client_msg_id": "d7e25d01-5811-4a4f-85a3-f716dc9e598c",
+        "type": "message",
+        "text": "so we would pxe into sledgehammer",
+        "user": "UDRCF03BK",
+        "ts": "1541519248.278500"
+    },
+    {
+        "client_msg_id": "5976f677-4bdf-4d16-95a4-8d7721328190",
+        "type": "message",
+        "text": "then install zfs (yum whatever we find works best)",
+        "user": "UDRCF03BK",
+        "ts": "1541519273.278900"
+    },
+    {
+        "client_msg_id": "d69f950c-b5a1-417c-818f-21b8d0ee554a",
+        "type": "message",
+        "text": "that would compile ZFS",
+        "user": "UDRCF03BK",
+        "ts": "1541519284.279200"
+    },
+    {
+        "client_msg_id": "d3f3c58c-3433-4215-b908-5c79f8396b19",
+        "type": "message",
+        "text": "and the ZFS tools",
+        "user": "UDRCF03BK",
+        "ts": "1541519292.279400"
+    },
+    {
+        "client_msg_id": "ad784c57-3a47-4a11-ae3c-3f6801d194ba",
+        "type": "message",
+        "text": "then attach disks",
+        "user": "UDRCF03BK",
+        "ts": "1541519297.279600"
+    },
+    {
+        "client_msg_id": "589a0441-fe0c-4518-8469-9e5715c89bb0",
+        "type": "message",
+        "text": "(i am sure I am skipping a lot of other bits)",
+        "user": "UDRCF03BK",
+        "ts": "1541519305.279900"
+    },
+    {
+        "client_msg_id": "6876194b-c41e-4b78-84c4-2ad21c932a79",
+        "type": "message",
+        "text": "I don't have enough experience to know why you need to recompile ZFS each time.",
+        "user": "U02DHRR2L",
+        "ts": "1541519428.280400"
+    },
+    {
+        "client_msg_id": "3c0b2cf6-af54-467e-93e9-d74a5390f26f",
+        "type": "message",
+        "text": "ZFS has to be specifically compiled for each kernel version. We could probably lock sledgehammer to a version and create a package off of that.",
+        "user": "UCXU3160M",
+        "ts": "1541519562.281600"
+    },
+    {
+        "client_msg_id": "7f4ab61c-7d8d-4c82-b072-f3d2fb7ca54b",
+        "type": "message",
+        "text": "Basically ZFS can be a pain in the ass",
+        "user": "UCXU3160M",
+        "ts": "1541519570.282100"
+    },
+    {
+        "client_msg_id": "77e93264-d34d-45bb-ac78-3fcb15944804",
+        "type": "message",
+        "text": "well with rancherOS it's a PITA because they do build a custom kernel etc <https:\/\/github.com\/rancher\/os-kernel\/commit\/93b71d24fb6368d38f562184d6fb5a97926265df>",
+        "user": "UDRCF03BK",
+        "ts": "1541519584.282400",
+        "attachments": [
+            {
+                "service_name": "GitHub",
+                "title": "Build zfs into linux kernel · rancher\/os-kernel@93b71d2",
+                "title_link": "https:\/\/github.com\/rancher\/os-kernel\/commit\/93b71d24fb6368d38f562184d6fb5a97926265df",
+                "text": "This is not supposed to use in production since it violate GPL and CDDL license. Just for fun!",
+                "fallback": "GitHub: Build zfs into linux kernel · rancher\/os-kernel@93b71d2",
+                "from_url": "https:\/\/github.com\/rancher\/os-kernel\/commit\/93b71d24fb6368d38f562184d6fb5a97926265df",
+                "thumb_url": "https:\/\/avatars2.githubusercontent.com\/u\/3155688?s=200&v=4",
+                "thumb_width": 250,
+                "thumb_height": 250,
+                "service_icon": "https:\/\/a.slack-edge.com\/bfaba\/img\/unfurl_icons\/github.png",
+                "id": 1,
+                "original_url": "https:\/\/github.com\/rancher\/os-kernel\/commit\/93b71d24fb6368d38f562184d6fb5a97926265df"
+            }
+        ]
+    },
+    {
+        "client_msg_id": "6545e72b-a668-45a0-981d-ea2e39320a3e",
+        "type": "message",
+        "text": "we could do something with the yum packages for ZFS",
+        "user": "UDRCF03BK",
+        "ts": "1541519592.282800"
+    },
+    {
+        "client_msg_id": "e8e681e0-bf94-4271-8c99-fa136235ca0a",
+        "type": "message",
+        "text": "but that I believe really just does a bunch of the compiling for you in the backgroudn",
+        "user": "UDRCF03BK",
+        "ts": "1541519608.283200"
+    },
+    {
+        "client_msg_id": "cf8c0bba-842d-42c7-a68a-05ec9fb72149",
+        "type": "message",
+        "text": "since the don't want to run afoul of the licensing (?)",
+        "user": "UDRCF03BK",
+        "ts": "1541519623.283700"
+    },
+    {
+        "client_msg_id": "a9babeb8-635d-4d94-a72d-9da14b3c6169",
+        "type": "message",
+        "text": "you could do the compile once then then push it to the endpoint\/files.",
+        "user": "U02DHRR2L",
+        "ts": "1541519656.284300"
+    },
+    {
+        "client_msg_id": "2fc3447e-59ba-4c68-9f16-331467b7ca27",
+        "type": "message",
+        "text": "we will try doing the stages and see how long it takes",
+        "user": "UDRCF03BK",
+        "ts": "1541519667.284700"
+    },
+    {
+        "client_msg_id": "cfd66cd6-ec35-4fcd-a1e2-78cd8a3f78ce",
+        "type": "message",
+        "text": "if the bits are there, then use before compile",
+        "user": "U02DHRR2L",
+        "ts": "1541519669.285000"
+    },
+    {
+        "client_msg_id": "338beb00-edb5-4c7a-84a1-1b16f05fc669",
+        "type": "message",
+        "text": "we do have 48 cores to throw at this",
+        "user": "UDRCF03BK",
+        "ts": "1541519681.285400"
+    },
+    {
+        "client_msg_id": "aa0bb6d3-7ea9-46fc-86e2-10132bf1b627",
+        "type": "message",
+        "text": "and kexec may save us enough inbetween",
+        "user": "UDRCF03BK",
+        "ts": "1541519688.285800"
+    },
+    {
+        "client_msg_id": "24f2fae9-3adc-4a85-b630-fbfb6455cb9d",
+        "type": "message",
+        "text": "<@UDRCF03BK> this is the type of work that RackN can help with building and designing as a services engagement",
+        "user": "U02DHRR2L",
+        "ts": "1541519707.286300"
+    },
+    {
+        "client_msg_id": "79fbc8f1-4263-44ad-8811-66ddcd9e40d3",
+        "type": "message",
+        "text": "Way to close the deal <@U02DHRR2L>",
+        "user": "UDRCF03BK",
+        "ts": "1541519726.286600"
+    },
+    {
+        "client_msg_id": "16b44054-a254-4ebd-969f-7788c6c6525f",
+        "type": "message",
+        "text": ":smile:",
+        "user": "UDRCF03BK",
+        "ts": "1541519728.286800"
+    }
+]

@@ -1,0 +1,69 @@
+[
+    {
+        "client_msg_id": "3006646f-8d44-482d-a961-7a8b786018a6",
+        "type": "message",
+        "text": "i've pinned my setup on v3.12.0 and i picked the community content of v1.12.0  as latest.  But the web ui is telling me that v1.11.0 is the newer content pack",
+        "user": "UE4C36RV4",
+        "ts": "1545412392.016800"
+    },
+    {
+        "client_msg_id": "d6dad510-b970-4c2f-b7a0-97e410e83bbe",
+        "type": "message",
+        "text": "drp-community-content : Digital Rebar Provision Community Content\nVersion (Current): v1.12.0-0-07692141149597ca0535204c851e4ff964fc91ce\nVersion (New): v1.11.1-0-11b8fd04814bb8425d8eabce59c113e4e2c12c75",
+        "user": "UE4C36RV4",
+        "ts": "1545412393.017000"
+    },
+    {
+        "client_msg_id": "6e9280b2-70fc-4a20-a231-efb107b5d934",
+        "type": "message",
+        "text": "is this a UI glitch or is there newer bits in v1.11.0 ?",
+        "user": "UE4C36RV4",
+        "ts": "1545412444.017500"
+    },
+    {
+        "client_msg_id": "0335ea0a-46f5-4f95-90d8-2fbce811f6d4",
+        "type": "message",
+        "text": "SaaS needs updating.  I forgot to change the recommended.",
+        "user": "U02DGQYK1",
+        "ts": "1545412723.017900"
+    },
+    {
+        "client_msg_id": "ff30d790-24a8-4d3f-8e3e-28b603debb59",
+        "type": "message",
+        "text": "in the SaaS DB.  I’ll do that shortly.",
+        "user": "U02DGQYK1",
+        "ts": "1545412734.018200"
+    },
+    {
+        "client_msg_id": "a09aedda-4e1a-4f15-8697-199cfcbe84fd",
+        "type": "message",
+        "text": "not anything urgent, just saw that and found it interesting",
+        "user": "UE4C36RV4",
+        "ts": "1545413468.018700"
+    },
+    {
+        "client_msg_id": "08908f8b-9426-48c7-89cb-2da5a24f6c06",
+        "type": "message",
+        "text": "i've now ansible installing the docker image, content pack, initial setup, and isos, pinned on those versions.   the newest dockerfile and --net is working for me",
+        "user": "UE4C36RV4",
+        "ts": "1545413590.019800",
+        "reactions": [
+            {
+                "name": "tada",
+                "users": [
+                    "U6QFVRJNB",
+                    "U02DHRR2L",
+                    "U8FAN7PLK"
+                ],
+                "count": 3
+            }
+        ]
+    },
+    {
+        "client_msg_id": "25ff24e0-a1fc-4cd0-9a6a-3986a48567ee",
+        "type": "message",
+        "text": "should be updated now.",
+        "user": "U02DGQYK1",
+        "ts": "1545419112.020200"
+    }
+]

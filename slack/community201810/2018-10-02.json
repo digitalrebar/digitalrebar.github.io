@@ -1,0 +1,100 @@
+[
+    {
+        "client_msg_id": "424b39e8-a49e-43d4-aa4d-9c6e06387141",
+        "type": "message",
+        "text": "Hey there, do you guys have a solution to install HP firmware updates (SPP) with DRP ?",
+        "user": "U8FAN7PLK",
+        "ts": "1538493336.000100"
+    },
+    {
+        "client_msg_id": "59b53453-64ec-40f5-bdcf-6d07b68dc41d",
+        "type": "message",
+        "text": "Plans and thoughts, but nothing yet.  It would work like dell support.  Native tools pulling in.",
+        "user": "U02DGQYK1",
+        "ts": "1538493419.000100"
+    },
+    {
+        "type": "message",
+        "subtype": "slackbot_response",
+        "text": "Time to feed the :bear:!",
+        "user": "USLACKBOT",
+        "ts": "1538493419.000200"
+    },
+    {
+        "client_msg_id": "f9cad1b4-8723-4830-9145-4d881c9cffb2",
+        "type": "message",
+        "text": ":disappointed:",
+        "user": "U8FAN7PLK",
+        "ts": "1538493552.000100"
+    },
+    {
+        "client_msg_id": "6f89c211-ea9f-4a12-818a-7233cfefa304",
+        "type": "message",
+        "text": "Question, got DHCP finally working, but hung on the tftp prompt.\n\nEnvironment: Linux Mint VM in VirtualBox.",
+        "user": "UCYEQE1CK",
+        "ts": "1538507586.000100"
+    },
+    {
+        "client_msg_id": "2ed8b8e4-9ea8-4ad7-9805-dd635e4ca7ca",
+        "type": "message",
+        "text": "<@UCYEQE1CK> that's not enough information.   Can you provide some more details?",
+        "user": "U02DHRR2L",
+        "ts": "1538507725.000100"
+    },
+    {
+        "client_msg_id": "ef20deac-6c60-4bfc-b11e-26565c913c00",
+        "type": "message",
+        "text": "<@U02DHRR2L> thanks, what else do you need, sorry, just back to trying to get my local rackn working :slightly_smiling_face:.  i'll reopen this chat in vm too",
+        "user": "UCYEQE1CK",
+        "ts": "1538507963.000100"
+    },
+    {
+        "client_msg_id": "d4c73833-ea17-4da0-ab9d-979a994afb7e",
+        "type": "message",
+        "text": "```proto:dhcp4 iface:enp0s8 ifaddr:255.255.255.255:68 lport:67\nop:0x02 htype:0x01 hlen:0x06 hops:0x00 xid:0x28745398 secs:0x0000 flags:0x8000\nci:0.0.0.0 yi:192.168.56.10 si:192.168.56.1 gi:0.0.0.0 ch:08:00:27:74:53:98\nsname:\"192.168.56.1\"\nfile:\"lpxelinux.0\"\noption:code:053 val:\"ack\"\noption:code:054 val:\"192.168.56.1\"\noption:code:051 val:\"60\"\noption:code:001 val:\"255.255.255.0\"\noption:code:003 val:\"192.168.56.1\"\noption:code:006 val:\"192.168.56.1\"\noption:code:015 val:\"<http:\/\/insightinvestments.com|insightinvestments.com>\"\noption:code:028 val:\"192.168.56.255\"\noption:code:058 val:\"30\"\noption:code:059 val:\"45\"\n```",
+        "user": "UCYEQE1CK",
+        "ts": "1538508031.000100"
+    },
+    {
+        "client_msg_id": "c4487b58-4d96-41e6-b2f8-5196614660be",
+        "type": "message",
+        "text": "```[\n  {\n    \"ActiveEnd\": \"192.168.56.254\",\n    \"ActiveLeaseTime\": 60,\n    \"ActiveStart\": \"192.168.56.10\",\n    \"Available\": true,\n    \"Description\": \"\",\n    \"Documentation\": \"\",\n    \"Enabled\": true,\n    \"Errors\": [],\n    \"Meta\": {},\n    \"Name\": \"enp0s8\",\n    \"NextServer\": \"192.168.56.1\",\n    \"OnlyReservations\": false,\n    \"Options\": [\n      {\n        \"Code\": 1,\n        \"Value\": \"255.255.255.0\"\n      },\n      {\n        \"Code\": 3,\n        \"Value\": \"192.168.56.1\"\n      },\n      {\n        \"Code\": 6,\n        \"Value\": \"192.168.56.1\"\n      },\n      {\n        \"Code\": 15,\n        \"Value\": \"<http:\/\/insightinvestments.com|insightinvestments.com>\"\n      },\n      {\n        \"Code\": 28,\n        \"Value\": \"192.168.56.255\"\n      },\n      {\n        \"Code\": 67,\n        \"Value\": \"lpxelinux.0\"\n      }\n    ],\n    \"Pickers\": [\n      \"hint\",\n      \"nextFree\",\n      \"mostExpired\"\n    ],\n    \"Proxy\": false,\n    \"ReadOnly\": false,\n    \"ReservedLeaseTime\": 7200,\n    \"Strategy\": \"MAC\",\n    \"Subnet\": \"192.168.56.1\/24\",\n    \"Unmanaged\": false,\n    \"Validated\": true\n  }\n]",
+        "user": "UCYEQE1CK",
+        "ts": "1538508092.000100"
+    },
+    {
+        "client_msg_id": "b07bb37e-5001-4cb8-b152-e88e9945a324",
+        "type": "message",
+        "text": "```[\n  {\n    \"ActiveEnd\": \"192.168.56.254\",\n    \"ActiveLeaseTime\": 60,\n    \"ActiveStart\": \"192.168.56.10\",\n    \"Available\": true,\n    \"Description\": \"\",\n    \"Documentation\": \"\",\n    \"Enabled\": true,\n    \"Errors\": [],\n    \"Meta\": {},\n    \"Name\": \"enp0s8\",\n    \"NextServer\": \"192.168.56.1\",\n    \"OnlyReservations\": false,\n    \"Options\": [\n      {\n        \"Code\": 1,\n        \"Value\": \"255.255.255.0\"\n      },\n      {\n        \"Code\": 3,\n        \"Value\": \"192.168.56.1\"\n      },\n      {\n        \"Code\": 6,\n        \"Value\": \"192.168.56.1\"\n      },\n      {\n        \"Code\": 15,\n        \"Value\": \"<http:\/\/insightinvestments.com|insightinvestments.com>\"\n      },\n      {\n        \"Code\": 28,\n        \"Value\": \"192.168.56.255\"\n      },\n      {\n        \"Code\": 67,\n        \"Value\": \"lpxelinux.0\"\n      }\n    ],\n    \"Pickers\": [\n      \"hint\",\n      \"nextFree\",\n      \"mostExpired\"\n    ],\n    \"Proxy\": false,\n    \"ReadOnly\": false,\n    \"ReservedLeaseTime\": 7200,\n    \"Strategy\": \"MAC\",\n    \"Subnet\": \"192.168.56.1\/24\",\n    \"Unmanaged\": false,\n    \"Validated\": true\n  }\n]\n```",
+        "user": "UCYEQE1CK",
+        "ts": "1538508097.000100"
+    },
+    {
+        "client_msg_id": "e229e6c8-fa9f-40ba-adcf-7cb22ebcfd88",
+        "type": "message",
+        "text": "OMG, never mind, PEBKAK",
+        "user": "UCYEQE1CK",
+        "ts": "1538508382.000100"
+    },
+    {
+        "client_msg_id": "9137ae51-424c-4814-b7a3-1e51d631a274",
+        "type": "message",
+        "text": "a default workflow helps :slightly_smiling_face:",
+        "user": "UCYEQE1CK",
+        "ts": "1538508396.000200"
+    },
+    {
+        "client_msg_id": "dabde5a6-109d-4723-87b1-db619c911a26",
+        "type": "message",
+        "text": "cool - glad you found it",
+        "user": "U02DGQYK1",
+        "ts": "1538508415.000100"
+    },
+    {
+        "client_msg_id": "8753085a-ec49-4ef2-9c5f-755d794f1b59",
+        "type": "message",
+        "text": "now i can move forward with install :slightly_smiling_face:",
+        "user": "UCYEQE1CK",
+        "ts": "1538508499.000100"
+    }
+]

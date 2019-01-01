@@ -1,0 +1,1530 @@
+[
+    {
+        "client_msg_id": "02867abf-3b61-4eb8-9d01-f8148352dab8",
+        "type": "message",
+        "text": "woo, ztp script execution works as well",
+        "user": "UBXEU90UQ",
+        "ts": "1544112518.138700",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U6QFVRJNB",
+                    "U02DHRR2L"
+                ],
+                "count": 2
+            }
+        ]
+    },
+    {
+        "client_msg_id": "b70c7228-d940-455f-91b8-9ab5755e1227",
+        "type": "message",
+        "text": "Hello, doing well with this so far but can't figure out where the .Env things are created\/stored. {{.Env.BootParams}}, {{.Env.Name}}, {{.Env.InstallUrl}}. For that last one I'm seeing...\nDynamic file error for \/pxelinux.cfg\/01-00-50-56-b9-07-db: template: :191:11: executing \"default-pxelinux.tmpl\" at &lt;.BootParams&gt;: error calling BootParams: template: machine:1:60: executing \"machine\" at &lt;.Env.InstallUrl&gt;: error calling InstallUrl: No install repository available\n...so obviously not getting something right.",
+        "user": "UDPKKMNMQ",
+        "ts": "1544112718.139800"
+    },
+    {
+        "client_msg_id": "e67b8bfa-c856-47a7-bdc0-6838ee7859f1",
+        "type": "message",
+        "text": "<@UEN8H5VB8> $welcome",
+        "user": "U6QFVRJNB",
+        "ts": "1544112763.140000"
+    },
+    {
+        "type": "message",
+        "subtype": "slackbot_response",
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "user": "USLACKBOT",
+        "ts": "1544112763.140200"
+    },
+    {
+        "client_msg_id": "5fdf78f2-44eb-49c4-b01a-80cbcf824965",
+        "type": "message",
+        "text": "<@UDPKKMNMQ> those template expansion pieces are \"magic\" - they are documented in the \"Architecture Reference\" pages, under \"Provisioning Models\":\n<https:\/\/provision.readthedocs.io\/en\/tip\/doc\/arch\/provision.html>",
+        "user": "U6QFVRJNB",
+        "ts": "1544112895.141500"
+    },
+    {
+        "client_msg_id": "bf17fbf4-e322-4724-8bfe-1af310d8d908",
+        "type": "message",
+        "text": "The .Env are bootenv parts",
+        "user": "U02DGQYK1",
+        "ts": "1544112907.142000"
+    },
+    {
+        "client_msg_id": "e10af27d-682c-47ae-af82-9c38eef9a87e",
+        "type": "message",
+        "text": "Aha, reading.",
+        "user": "UDPKKMNMQ",
+        "ts": "1544112914.142200"
+    },
+    {
+        "client_msg_id": "95c6ed12-7d51-4a56-9201-b2b67f089bf1",
+        "type": "message",
+        "text": "is this for CentOS 7 you see the error",
+        "user": "U6QFVRJNB",
+        "ts": "1544112931.142500"
+    },
+    {
+        "client_msg_id": "21ee6da8-7d07-4b1d-9f08-490b5b814ea1",
+        "type": "message",
+        "text": "BTW - I don't think that doc will answer your question - but just give you some background on the pieces",
+        "user": "U6QFVRJNB",
+        "ts": "1544112970.143400"
+    },
+    {
+        "client_msg_id": "75db25c4-7ca6-4ffe-a848-33eec804472b",
+        "type": "message",
+        "text": "Yes. It all worked out of the box with the provision-content repo, now I'm trying to do a custom build. I'm going to read the background first, that will likely illuminate this.",
+        "user": "UDPKKMNMQ",
+        "ts": "1544113000.143700",
+        "reactions": [
+            {
+                "name": "tada",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "client_msg_id": "57c44b37-d871-4288-a3c5-d34db7c62186",
+        "type": "message",
+        "text": "Do you mean use custom repos when you say a \"custom build\" ?",
+        "user": "U6QFVRJNB",
+        "ts": "1544113463.144200"
+    },
+    {
+        "client_msg_id": "07bd4ab0-a8f7-4e88-83b2-f48a6ae6d588",
+        "type": "message",
+        "text": "I branched provision-content and am trying to use a custom centos 7 kickstart because we're \"special\".",
+        "user": "UDPKKMNMQ",
+        "ts": "1544113613.144900"
+    },
+    {
+        "client_msg_id": "03be0539-f2ac-4dee-ab9d-e188e81efb6a",
+        "type": "message",
+        "text": "what are you trying to do in the Kickstart ?   We generally recommend to use Workflow (Stages\/Tasks\/Templates) to accomplish customization - since the actions are a lot more transparent (fully logged) on the DRP endpoint side",
+        "user": "U6QFVRJNB",
+        "ts": "1544113673.145700"
+    },
+    {
+        "client_msg_id": "e440c599-6df3-4363-b71b-674cf4ef3567",
+        "type": "message",
+        "text": "anything that goes in to a kickstart\/preseed will be hard to debug\/troubleshoot when they break",
+        "user": "U6QFVRJNB",
+        "ts": "1544113687.146100"
+    },
+    {
+        "client_msg_id": "a3109f28-58cb-48e3-80b8-27500f4b4ddc",
+        "type": "message",
+        "text": "also - you don't need to branch all of the drp-community-content - you should be able to accomplish surgical changes by cloning the appropriate parts",
+        "user": "U6QFVRJNB",
+        "ts": "1544113741.147100"
+    },
+    {
+        "client_msg_id": "fe357a63-67b7-4d06-8212-287ea16ad466",
+        "type": "message",
+        "text": "and we also specifically have a `select-kickseed` mechanism to inject a completely unique Kickstart in to community content with out having to clone",
+        "user": "U6QFVRJNB",
+        "ts": "1544113768.148200"
+    },
+    {
+        "client_msg_id": "4f9f2be1-4a0a-403e-8ee4-c33d00afbaf7",
+        "type": "message",
+        "text": "Custom yum repos and network installation, new root password, templated partitions, optional network interfaces, packages excluded, whole list of things.",
+        "user": "UDPKKMNMQ",
+        "ts": "1544113778.148400"
+    },
+    {
+        "client_msg_id": "4bfbadac-380c-430b-9073-4b9463e0bc5c",
+        "type": "message",
+        "text": "Hm, such a newb. Going to read more about select-kickseed too.",
+        "user": "UDPKKMNMQ",
+        "ts": "1544113800.148800"
+    },
+    {
+        "client_msg_id": "893a43de-3b69-45b5-889e-8079843b0e72",
+        "type": "message",
+        "text": "all of those things can be accomplished via modifying Params which you put in a Profile (group of Params) and attach to a machine (or you can put params directly on Machine - but usually best to group things together in a profile)",
+        "user": "U6QFVRJNB",
+        "ts": "1544113870.149800"
+    },
+    {
+        "client_msg_id": "52b4d3e5-6869-42e3-9445-a39ec01004db",
+        "type": "message",
+        "text": "That does sound more productive than where I'm currently going, yes.",
+        "user": "UDPKKMNMQ",
+        "ts": "1544113890.150500",
+        "reactions": [
+            {
+                "name": "clap",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "client_msg_id": "37ea0562-bb61-4224-a3a5-27499c886dbf",
+        "type": "message",
+        "text": "`select-kickseed`: <https:\/\/provision.readthedocs.io\/en\/tip\/doc\/faq-troubleshooting.html?highlight=select-kickseed#custom-kickstart-and-preseeds>\n`package-repositories`: <https:\/\/provision.readthedocs.io\/en\/tip\/doc\/arch\/data.html?highlight=package-repositories#the-package-repositories-param>\n`provisioner-default-password-hash`: <https:\/\/provision.readthedocs.io\/en\/tip\/doc\/content-packages\/drp-community-content.html#provisioner-default-password-hash>",
+        "user": "U6QFVRJNB",
+        "ts": "1544114043.151300"
+    },
+    {
+        "client_msg_id": "213ea8d5-93ae-4f3a-9bc4-1172dd1562d3",
+        "type": "message",
+        "text": "etc...",
+        "user": "U6QFVRJNB",
+        "ts": "1544114047.151500"
+    },
+    {
+        "client_msg_id": "4f751429-ccb9-4a18-95b7-d80a6a39f6f4",
+        "type": "message",
+        "text": "Not meaning to sound snarky except in a self-directed fashion. I could swear I've read over this stuff and it obviously hasn't sunk right in yet.",
+        "user": "UDPKKMNMQ",
+        "ts": "1544114071.152200"
+    },
+    {
+        "client_msg_id": "728d7b26-0f54-4b18-9f02-095381e32115",
+        "type": "message",
+        "text": "the last link has (minimal - could be LOTS better) doc on the pieces and parts of drp-community-content content pack",
+        "user": "U6QFVRJNB",
+        "ts": "1544114076.152400"
+    },
+    {
+        "client_msg_id": "9b0e7b48-6fc8-4bbd-93d7-8bce72fe201e",
+        "type": "message",
+        "text": "yeah - we know - we need to do some clean up and re-org on the Doc - there's a lot there, it just isn't quite as newbie friendly as it could be",
+        "user": "U6QFVRJNB",
+        "ts": "1544114102.152900"
+    },
+    {
+        "client_msg_id": "24ed91f1-7298-4d16-b7c8-1a19cae8cfe9",
+        "type": "message",
+        "text": "generally speaking - check the \"Content  Packages &amp; Plugins\" from the table of contents for clues (eg the \"drp-community-content\" pack)",
+        "user": "U6QFVRJNB",
+        "ts": "1544114142.153800"
+    },
+    {
+        "client_msg_id": "d88afafb-e7dc-429c-adf0-a069d2b4bda5",
+        "type": "message",
+        "text": "and the Architecture Reference for more advanced stuff",
+        "user": "U6QFVRJNB",
+        "ts": "1544114156.154400"
+    },
+    {
+        "client_msg_id": "8c652a4a-90a7-42c4-a50f-032e26a282bb",
+        "type": "message",
+        "text": "It all makes sense once I understand it, and it's all quite well built. Need to bend my brain around it all.",
+        "user": "UDPKKMNMQ",
+        "ts": "1544114164.154600"
+    },
+    {
+        "client_msg_id": "aee880d3-07f8-43d5-8aca-515b25d006ad",
+        "type": "message",
+        "text": "*around it is all",
+        "user": "UDPKKMNMQ",
+        "ts": "1544114258.154800"
+    },
+    {
+        "client_msg_id": "4ce30664-30cd-4b2a-9270-34a142754eaa",
+        "type": "message",
+        "text": "when attempting to install debian 9; it displays “No kernel modules were found”.",
+        "user": "UANLCF8QP",
+        "ts": "1544115511.156100"
+    },
+    {
+        "client_msg_id": "4d45f981-555e-48be-9518-579037056694",
+        "type": "message",
+        "text": "It also displays “This probably is due to a mismatch between the kernel used by this version of the …?",
+        "user": "UANLCF8QP",
+        "ts": "1544115609.157800"
+    },
+    {
+        "client_msg_id": "6730b10f-4275-4399-9cbc-14f3be35e1d3",
+        "type": "message",
+        "text": "Make sure you have the latest iso uploaded.  It may be trying to talk to the internet to get the kernel.",
+        "user": "U02DGQYK1",
+        "ts": "1544115615.158000"
+    },
+    {
+        "client_msg_id": "a205d0b2-81fd-4a10-90ea-efdc3c0c94c6",
+        "type": "message",
+        "text": "I got the latest iso 9.6 version and the one matching with bootenv “version 9.5”, the issue still exists on both of versions",
+        "user": "UANLCF8QP",
+        "ts": "1544115766.160300"
+    },
+    {
+        "client_msg_id": "3ad712c6-6e57-4868-95c1-e972f358099b",
+        "type": "message",
+        "text": "did you change anything?  Update content package?  Update the iso?",
+        "user": "U02DGQYK1",
+        "ts": "1544115888.161000"
+    },
+    {
+        "client_msg_id": "71a3d8a2-e972-48fb-bde4-a3b51e37c84b",
+        "type": "message",
+        "text": "I just updated the iso only",
+        "user": "UANLCF8QP",
+        "ts": "1544115928.161700"
+    },
+    {
+        "client_msg_id": "00fa9b8c-e068-4341-9555-ebd13d482f4c",
+        "type": "message",
+        "text": "So, you have to update the bootenv or it won’t be available.",
+        "user": "U02DGQYK1",
+        "ts": "1544115946.162000"
+    },
+    {
+        "client_msg_id": "fa0f68c2-e9e1-4a51-8d35-a6bf235d6818",
+        "type": "message",
+        "text": "Check the bootenv in the ux and see if it is available.",
+        "user": "U02DGQYK1",
+        "ts": "1544115965.162400"
+    },
+    {
+        "client_msg_id": "d9b51d1a-ded9-49bc-abd9-4a3765623e4a",
+        "type": "message",
+        "text": "the new iso “9.5” version is matching with the bootenv",
+        "user": "UANLCF8QP",
+        "ts": "1544116001.163000"
+    },
+    {
+        "client_msg_id": "ad22e06a-4ef2-4ece-9eed-767476f2d2fd",
+        "type": "message",
+        "text": "So, does the bootenv report as valid and available?",
+        "user": "U02DGQYK1",
+        "ts": "1544116026.163300"
+    },
+    {
+        "client_msg_id": "54f5f9ff-1938-4c56-a16c-b63d2058f1d2",
+        "type": "message",
+        "text": "drpcli bootenvs show debian-9-install\n{\n  “Available”: true,\n  “BootParams”: “priority=critical console-tools\/archs=at console-setup\/charmap=UTF-8 console-keymaps-at\/keymap=us popularity-contest\/participate=false passwd\/root-login=false keyboard-configuration\/xkb-keymap=us netcfg\/get_domain=unassigned-domain console-setup\/ask_detect=false debian-installer\/locale=en_US.utf8 console-setup\/layoutcode=us keyboard-configuration\/layoutcode=us netcfg\/dhcp_timeout=120 netcfg\/choose_interface=auto url={{.Machine.Url}}\/seed netcfg\/get_hostname={{.Machine.Name}} root=\/dev\/ram rw quiet {{if .ParamExists \\“kernel-console\\“}}{{.Param \\“kernel-console\\“}}{{end}}“,\n  “Description”: “Debian 9 install BootEnv”,\n  “Errors”: [],\n  “Initrds”: [\n    “initrd.gz”\n  ],\n  “Kernel”: “linux”,\n  “Meta”: {\n    “color”: “black”,\n    “feature-flags”: “change-stage-v2\",\n    “icon”: “linux”,\n    “title”: “Digital Rebar Community Content”\n  },\n  “Name”: “debian-9-install”,\n  “OS”: {\n    “Codename”: “”,\n    “Family”: “debian”,\n    “IsoFile”: “debian-9-amd64-mini.iso”,\n    “IsoSha256\": “cb0e8a529e2c04b06c5d108f72b22281153df15e26b2b900202ef30ac949e5dd”,\n    “IsoUrl”: “<http:\/\/mirrors.kernel.org\/debian\/dists\/stretch\/main\/installer-amd64\/current\/images\/netboot\/mini.iso>“,\n    “Name”: “debian-9\",\n    “Version”: “9.5\"\n  },\n  “OnlyUnknown”: false,\n  “OptionalParams”: [\n    “part-scheme”,\n    “operating-system-disk”,\n    “provisioner-default-user”,\n    “provisioner-default-fullname”,\n    “provisioner-default-uid”,\n    “provisioner-default-password-hash”,\n    “kernel-console”,\n    “proxy-servers”,\n    “dns-domain”,\n    “local-repo”,\n    “proxy-servers”,\n    “ntp-servers”,\n    “select-kickseed”\n  ],\n  “ReadOnly”: true,\n  “RequiredParams”: [],\n  “Templates”: [\n    {\n      “Contents”: “”,\n      “ID”: “default-pxelinux.tmpl”,\n      “Name”: “pxelinux”,\n      “Path”: “pxelinux.cfg\/{{.Machine.HexAddress}}”\n    },\n    {\n      “Contents”: “”,\n      “ID”: “default-ipxe.tmpl”,\n      “Name”: “ipxe”,\n      “Path”: “{{.Machine.Address}}.ipxe”\n    },\n    {\n      “Contents”: “”,\n      “ID”: “default-pxelinux.tmpl”,\n      “Name”: “pxelinux-mac”,\n      “Path”: “pxelinux.cfg\/{{.Machine.MacAddr \\“pxelinux\\“}}”\n    },\n    {\n      “Contents”: “”,\n      “ID”: “default-ipxe.tmpl”,\n      “Name”: “ipxe-mac”,\n      “Path”: “{{.Machine.MacAddr \\“ipxe\\“}}.ipxe”\n    },\n    {\n      “Contents”: “”,\n      “ID”: “select-kickseed.tmpl”,\n      “Name”: “seed”,\n      “Path”: “{{.Machine.Path}}\/seed”\n    },\n    {\n      “Contents”: “”,\n      “ID”: “net-post-install.sh.tmpl”,\n      “Name”: “net-post-install.sh”,\n      “Path”: “{{.Machine.Path}}\/post-install.sh”\n    }\n  ],\n  “Validated”: true\n}",
+        "user": "UANLCF8QP",
+        "ts": "1544116045.163500"
+    },
+    {
+        "client_msg_id": "0051b130-a125-48d8-acd2-728c3b4400ad",
+        "type": "message",
+        "text": "isos\/debian-9.5.0-amd64-netinst.iso",
+        "user": "UANLCF8QP",
+        "ts": "1544116153.163800"
+    },
+    {
+        "client_msg_id": "78bd0fa5-f205-4832-acdb-b721dae2d0b6",
+        "type": "message",
+        "text": "It needs to be named: debian-9-amd64-mini.iso",
+        "user": "U02DGQYK1",
+        "ts": "1544116190.164000"
+    },
+    {
+        "client_msg_id": "cc2e426e-64b9-47ab-9957-3ea826b082bc",
+        "type": "message",
+        "text": "i just re-name the iso file and restart the installing but the error still the same",
+        "user": "UANLCF8QP",
+        "ts": "1544116581.165600"
+    },
+    {
+        "client_msg_id": "9e320ab8-4468-4b4c-9d9e-976da0b0ce26",
+        "type": "message",
+        "text": "debian-9-amd64-mini.iso",
+        "user": "UANLCF8QP",
+        "ts": "1544116628.165800"
+    },
+    {
+        "client_msg_id": "e9dd16fb-43f6-4e67-9d1c-bfd0fad1179c",
+        "type": "message",
+        "text": "The ISO must also have the same exact SHA sum hash - along with the name being the same - i.e. it must be what the BootEnv is looking for",
+        "user": "U6QFVRJNB",
+        "ts": "1544116695.166500"
+    },
+    {
+        "client_msg_id": "ea7241a9-d397-4e9b-8e7f-80e784c493c1",
+        "type": "message",
+        "text": "i have to run drpcli isodownload, right?",
+        "user": "UANLCF8QP",
+        "ts": "1544116811.167300"
+    },
+    {
+        "client_msg_id": "79c715f0-22cc-4067-9e51-b3b1099cd23a",
+        "type": "message",
+        "text": "$ drpcli bootenvs uploadiso debian-9-install\nBootEnv debian-9-install is already available, skipping download of iso ...",
+        "user": "UANLCF8QP",
+        "ts": "1544117143.167500"
+    },
+    {
+        "client_msg_id": "29f99dcf-9c4f-487e-bd4b-768713637174",
+        "type": "message",
+        "text": "I just run the uploadiso, but it’s skipping download of iso.",
+        "user": "UANLCF8QP",
+        "ts": "1544117277.169500"
+    },
+    {
+        "client_msg_id": "c3fd01e2-55ae-4bab-b2bb-3d08934c255e",
+        "type": "message",
+        "text": "<@U6QFVRJNB>, thank you for the pointers! I got into anaconda after reading those, with the default centos-7 bootenv and my custom quickstart.",
+        "user": "UDPKKMNMQ",
+        "ts": "1544118926.170400",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U6QFVRJNB"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "client_msg_id": "0f54b81d-f4e5-4614-bb15-8d8f55b082ac",
+        "type": "message",
+        "text": "<@UANLCF8QP> - you may need to remove the debian-9 directory and reupload the iso to make sure it is correct.  This would be from the tftpboot directory",
+        "user": "U02DGQYK1",
+        "ts": "1544120177.171000"
+    },
+    {
+        "client_msg_id": "d0aefaee-d690-436b-b45f-95f60a155c1b",
+        "type": "message",
+        "text": "after removed debian-9 directory and restarted dr-provision server and then i run the drpcli bootenvs uploadiso debian-9-install\nBootEnv debian-9-install is already available, skipping download of iso ...",
+        "user": "UANLCF8QP",
+        "ts": "1544120675.172100"
+    },
+    {
+        "client_msg_id": "19dbee24-1389-47b0-a37d-487b7ed91f2f",
+        "type": "message",
+        "text": "yeah - but it should have reexploded the iso",
+        "user": "U02DGQYK1",
+        "ts": "1544120925.172400"
+    },
+    {
+        "client_msg_id": "7e7a2888-64dc-4919-8010-a61c0a805e65",
+        "type": "message",
+        "text": "that what i thought",
+        "user": "UANLCF8QP",
+        "ts": "1544121035.172700"
+    },
+    {
+        "client_msg_id": "b5d7fa1f-e9d8-4600-8df3-b6dc05fac1f2",
+        "type": "message",
+        "text": "I tired to download the iso directly from this link <http:\/\/mirrors.kernel.org\/debian\/dists\/stretch\/main\/installer-amd64\/current\/images\/netboot\/mini.iso>, but it seems like the file Sha256 does match with the one in bootenv json",
+        "user": "UANLCF8QP",
+        "ts": "1544121699.176700"
+    },
+    {
+        "client_msg_id": "3b5405f8-e1a0-49c0-b187-420fbc1a4e74",
+        "type": "message",
+        "text": "Does it match with the SHA256 that Debian provides?",
+        "user": "UDPKKMNMQ",
+        "ts": "1544121919.177000"
+    },
+    {
+        "client_msg_id": "d89b9b45-8557-4cfe-9408-50759e258c98",
+        "type": "message",
+        "text": "not at all",
+        "user": "UANLCF8QP",
+        "ts": "1544121957.177300"
+    },
+    {
+        "client_msg_id": "0d23fcc0-ff1e-4365-81b0-bf83c7fdb3f7",
+        "type": "message",
+        "text": "SHA256 from the one download sha256sum debian-9-amd64-mini.iso\n53fbdc4469216d7cf80023d58925d37add5a81817b43b7a36cd53dd7f606816d  debian-9-amd64-mini.iso",
+        "user": "UANLCF8QP",
+        "ts": "1544122079.178000"
+    },
+    {
+        "client_msg_id": "b2e683e0-bc99-4b73-aeaa-8e6cc103be09",
+        "type": "message",
+        "text": "SHA256 from bootenv json cb0e8a529e2c04b06c5d108f72b22281153df15e26b2b900202ef30ac949e5dd",
+        "user": "UANLCF8QP",
+        "ts": "1544122109.178600"
+    },
+    {
+        "client_msg_id": "35a27892-efcd-4b04-ab80-d7948ddc6d73",
+        "type": "message",
+        "text": "how to download the iso with the existing SHA256 in the bootenv json file?",
+        "user": "UANLCF8QP",
+        "ts": "1544122173.179900"
+    },
+    {
+        "client_msg_id": "3d0d9a27-9735-4d2b-aed3-d6d254071ea7",
+        "type": "message",
+        "text": "Yes - because they updated to 9.6. Tip content has updated bootenvs.",
+        "user": "U02DGQYK1",
+        "ts": "1544122393.180400"
+    },
+    {
+        "client_msg_id": "2864df58-2a67-449a-b229-b76441aa61cf",
+        "type": "message",
+        "text": "You will need tip drp to get hte tip content.",
+        "user": "U02DGQYK1",
+        "ts": "1544122403.180700"
+    },
+    {
+        "client_msg_id": "f3f060c5-f69f-465d-b577-58238031e1ea",
+        "type": "message",
+        "text": "sorry, i’m not familiar with tip drp, what’s the different?",
+        "user": "UANLCF8QP",
+        "ts": "1544122676.182000"
+    },
+    {
+        "client_msg_id": "8512848f-244d-46a0-93e8-682a8c4dc9f5",
+        "type": "message",
+        "text": "To get the most recent drp content which has the sha fixes, you will need the latest DRP endpoint software.  We call the latest unreleased version, `tip`",
+        "user": "U02DGQYK1",
+        "ts": "1544122731.182900"
+    },
+    {
+        "client_msg_id": "25a41aa2-eb16-422d-abb7-b808b63a4889",
+        "type": "message",
+        "text": "thanks",
+        "user": "UANLCF8QP",
+        "ts": "1544122775.183400"
+    },
+    {
+        "client_msg_id": "b4c7922b-55e9-43d4-8183-234561e2ac15",
+        "type": "message",
+        "text": "Could anyone point me toward some docs on how the custom-ipxe boot env works?\nI just get \"booting kernel failed: Invalid argument\" with or without params.",
+        "user": "UE5418916",
+        "ts": "1544129312.185300"
+    },
+    {
+        "client_msg_id": "a541fee6-2920-41f1-9041-07a735805a16",
+        "type": "message",
+        "text": "<@UE5418916> - What are you trying to do?",
+        "user": "U02DGQYK1",
+        "ts": "1544130333.185600"
+    },
+    {
+        "type": "message",
+        "text": "",
+        "files": [
+            {
+                "id": "FEMDR5ZM2",
+                "created": 1544130479,
+                "timestamp": 1544130479,
+                "name": "-.txt",
+                "title": "Untitled",
+                "mimetype": "text\/plain",
+                "filetype": "text",
+                "pretty_type": "Plain Text",
+                "user": "UE5418916",
+                "editable": true,
+                "size": 270,
+                "mode": "snippet",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FEMDR5ZM2\/-.txt?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FEMDR5ZM2\/download\/-.txt?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "permalink": "https:\/\/rackn.slack.com\/files\/UE5418916\/FEMDR5ZM2\/-.txt",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FEMDR5ZM2-396f2c7982",
+                "edit_link": "https:\/\/rackn.slack.com\/files\/UE5418916\/FEMDR5ZM2\/-.txt\/edit",
+                "preview": " #!ipxe\n  \n  set base http:\/\/mirror.centos.org\/altarch\/7\/os\/i386\/images\/pxeboot\/\n  \n  prompt -k 0x197e -t 2000 Press F12 to install CentOS... || exit",
+                "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre> #!ipxe<\/pre><\/div>\n<div><pre>  <\/pre><\/div>\n<div><pre>  set base http:\/\/mirror.centos.org\/altarch\/7\/os\/i386\/images\/pxeboot\/<\/pre><\/div>\n<div><pre>  <\/pre><\/div>\n<div><pre>  prompt -k 0x197e -t 2000 Press F12 to install CentOS... || exit<\/pre><\/div>\n<\/div>\n<\/div>\n",
+                "lines": 8,
+                "lines_more": 3,
+                "preview_is_truncated": false
+            }
+        ],
+        "upload": true,
+        "user": "UE5418916",
+        "display_as_bot": false,
+        "ts": "1544130480.186000"
+    },
+    {
+        "client_msg_id": "0e36addd-6d6c-492f-996a-8f0079054dc1",
+        "type": "message",
+        "text": "pxe boot a 32bit machine",
+        "user": "UE5418916",
+        "ts": "1544130489.186500"
+    },
+    {
+        "client_msg_id": "887e9102-006e-42b8-b270-48881e01139c",
+        "type": "message",
+        "text": "okay",
+        "user": "U02DGQYK1",
+        "ts": "1544130572.188300"
+    },
+    {
+        "client_msg_id": "f39cdc17-c0db-4645-993d-779d3373e5fe",
+        "type": "message",
+        "text": "so take that content minus the #!pxe line",
+        "user": "U02DGQYK1",
+        "ts": "1544130587.188900"
+    },
+    {
+        "client_msg_id": "b612918b-68a2-4ac8-a39e-db29003c8dd4",
+        "type": "message",
+        "text": "honestly I should probably throw this hardware in the garbage, I'm just playing. So no worries if what I'm trying to do is beyond the scope of what drp does.",
+        "user": "UE5418916",
+        "ts": "1544130591.189200"
+    },
+    {
+        "client_msg_id": "5ee3abbc-e508-48ab-82ce-72fb51a86894",
+        "type": "message",
+        "text": "put in the `custom-ipxe` parameter global or on the machien.",
+        "user": "U02DGQYK1",
+        "ts": "1544130609.189600"
+    },
+    {
+        "type": "message",
+        "text": "",
+        "files": [
+            {
+                "id": "FEM11D96D",
+                "created": 1544130650,
+                "timestamp": 1544130650,
+                "name": "image.png",
+                "title": "Pasted image at 2018-12-06, 1:10 PM",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "UE5418916",
+                "editable": false,
+                "size": 43702,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FEM11D96D\/image.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FEM11D96D\/download\/image.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEM11D96D-e2d8bf8cd1\/image_64.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEM11D96D-e2d8bf8cd1\/image_80.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEM11D96D-e2d8bf8cd1\/image_360.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360_w": 360,
+                "thumb_360_h": 138,
+                "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEM11D96D-e2d8bf8cd1\/image_480.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_480_w": 480,
+                "thumb_480_h": 184,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEM11D96D-e2d8bf8cd1\/image_160.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEM11D96D-e2d8bf8cd1\/image_720.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_720_w": 720,
+                "thumb_720_h": 277,
+                "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEM11D96D-e2d8bf8cd1\/image_800.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_800_w": 800,
+                "thumb_800_h": 307,
+                "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEM11D96D-e2d8bf8cd1\/image_960.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_960_w": 960,
+                "thumb_960_h": 369,
+                "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEM11D96D-e2d8bf8cd1\/image_1024.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_1024_w": 1024,
+                "thumb_1024_h": 393,
+                "image_exif_rotation": 1,
+                "original_w": 1281,
+                "original_h": 492,
+                "permalink": "https:\/\/rackn.slack.com\/files\/UE5418916\/FEM11D96D\/image.png",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FEM11D96D-d05560a18d"
+            }
+        ],
+        "upload": true,
+        "user": "UE5418916",
+        "display_as_bot": false,
+        "ts": "1544130655.190000"
+    },
+    {
+        "client_msg_id": "4633cad2-dffe-4dc9-8330-28cb4e768bc5",
+        "type": "message",
+        "text": "use the cli.  The UX can get confused with the multi-line strings.  You need to have added it with the string editor icon thingee.",
+        "user": "U02DGQYK1",
+        "ts": "1544130703.191500"
+    },
+    {
+        "client_msg_id": "3539f677-2305-454b-b7e6-5b4e82642030",
+        "type": "message",
+        "text": "`drpcli profiles show adk-ipxe`",
+        "user": "U02DGQYK1",
+        "ts": "1544130720.192200"
+    },
+    {
+        "client_msg_id": "920a5c4d-1e3f-4063-ae1b-0f135cebe9a2",
+        "type": "message",
+        "text": "Gotcha! When I use the string editor and do multi line the param gets deleted. I'll go into cli.",
+        "user": "UE5418916",
+        "ts": "1544130726.192400"
+    },
+    {
+        "type": "message",
+        "text": "",
+        "files": [
+            {
+                "id": "FEMQQ3RKP",
+                "created": 1544130769,
+                "timestamp": 1544130769,
+                "name": "-.txt",
+                "title": "Untitled",
+                "mimetype": "text\/plain",
+                "filetype": "text",
+                "pretty_type": "Plain Text",
+                "user": "UE5418916",
+                "editable": true,
+                "size": 542,
+                "mode": "snippet",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FEMQQ3RKP\/-.txt?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FEMQQ3RKP\/download\/-.txt?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "permalink": "https:\/\/rackn.slack.com\/files\/UE5418916\/FEMQQ3RKP\/-.txt",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FEMQQ3RKP-7810900dd8",
+                "edit_link": "https:\/\/rackn.slack.com\/files\/UE5418916\/FEMQQ3RKP\/-.txt\/edit",
+                "preview": "{\n  \"Available\": true,\n  \"Description\": \"\",\n  \"Documentation\": \"\",\n  \"Errors\": [],",
+                "preview_highlight": "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>{<\/pre><\/div>\n<div><pre>  &quot;Available&quot;: true,<\/pre><\/div>\n<div><pre>  &quot;Description&quot;: &quot;&quot;,<\/pre><\/div>\n<div><pre>  &quot;Documentation&quot;: &quot;&quot;,<\/pre><\/div>\n<div><pre>  &quot;Errors&quot;: [],<\/pre><\/div>\n<\/div>\n<\/div>\n",
+                "lines": 18,
+                "lines_more": 13,
+                "preview_is_truncated": false
+            }
+        ],
+        "upload": true,
+        "user": "UE5418916",
+        "display_as_bot": false,
+        "ts": "1544130770.192600"
+    },
+    {
+        "client_msg_id": "3e20083d-6cb4-4b1d-9617-81f3fc65c877",
+        "type": "message",
+        "text": "There should be a little icon that switches to a multi-line editor in the ux.",
+        "user": "U02DGQYK1",
+        "ts": "1544130782.193300"
+    },
+    {
+        "type": "message",
+        "text": "This little guy?&gt;",
+        "files": [
+            {
+                "id": "FEMJV7QKU",
+                "created": 1544130802,
+                "timestamp": 1544130802,
+                "name": "image.png",
+                "title": "Pasted image at 2018-12-06, 1:13 PM",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "UE5418916",
+                "editable": false,
+                "size": 2045,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FEMJV7QKU\/image.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FEMJV7QKU\/download\/image.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEMJV7QKU-4ccd1f1850\/image_64.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEMJV7QKU-4ccd1f1850\/image_80.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEMJV7QKU-4ccd1f1850\/image_360.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360_w": 114,
+                "thumb_360_h": 59,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEMJV7QKU-4ccd1f1850\/image_160.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "image_exif_rotation": 1,
+                "original_w": 114,
+                "original_h": 59,
+                "permalink": "https:\/\/rackn.slack.com\/files\/UE5418916\/FEMJV7QKU\/image.png",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FEMJV7QKU-a699867d63"
+            }
+        ],
+        "upload": true,
+        "user": "UE5418916",
+        "display_as_bot": false,
+        "ts": "1544130804.193500"
+    },
+    {
+        "client_msg_id": "b9090987-18f4-416c-b31e-eaa522b38302",
+        "type": "message",
+        "text": "yes.",
+        "user": "U02DGQYK1",
+        "ts": "1544130812.193900"
+    },
+    {
+        "client_msg_id": "76c83682-396f-4d6e-ad47-3846e8426328",
+        "type": "message",
+        "text": "Do i have to wrap the whole thing in quotes?",
+        "user": "UE5418916",
+        "ts": "1544130824.194200"
+    },
+    {
+        "client_msg_id": "191697a5-dd7e-40f6-8e3e-d3dbdc7ffafc",
+        "type": "message",
+        "text": "no",
+        "user": "U02DGQYK1",
+        "ts": "1544130828.194400"
+    },
+    {
+        "client_msg_id": "0dcc91b7-d1a8-4b20-afd3-713d7586a42b",
+        "type": "message",
+        "text": "just put the contents in there.",
+        "user": "U02DGQYK1",
+        "ts": "1544130839.194600"
+    },
+    {
+        "client_msg_id": "2245379f-d00d-45bc-a5b0-82d89433a69f",
+        "type": "message",
+        "text": "then save and don’t trust the ux.  Check the cli for if it changed.",
+        "user": "U02DGQYK1",
+        "ts": "1544130877.195000"
+    },
+    {
+        "client_msg_id": "412e91b1-4924-4239-b9a3-606841eaed8b",
+        "type": "message",
+        "text": "you should have `\\n` in the text, I think.",
+        "user": "U02DGQYK1",
+        "ts": "1544130893.195300"
+    },
+    {
+        "client_msg_id": "9847a182-4952-4b40-bf31-041f77f6ee43",
+        "type": "message",
+        "text": "Checking cli",
+        "user": "UE5418916",
+        "ts": "1544130894.195500"
+    },
+    {
+        "type": "message",
+        "text": "When I save after using multi line the param disappears.",
+        "files": [
+            {
+                "id": "FEM155HT3",
+                "created": 1544130892,
+                "timestamp": 1544130892,
+                "name": "image.png",
+                "title": "Pasted image at 2018-12-06, 1:14 PM",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "UE5418916",
+                "editable": false,
+                "size": 14699,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FEM155HT3\/image.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FEM155HT3\/download\/image.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEM155HT3-a1dae66687\/image_64.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEM155HT3-a1dae66687\/image_80.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEM155HT3-a1dae66687\/image_360.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360_w": 264,
+                "thumb_360_h": 360,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEM155HT3-a1dae66687\/image_160.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "image_exif_rotation": 1,
+                "original_w": 265,
+                "original_h": 361,
+                "permalink": "https:\/\/rackn.slack.com\/files\/UE5418916\/FEM155HT3\/image.png",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FEM155HT3-3af3024e35"
+            }
+        ],
+        "upload": true,
+        "user": "UE5418916",
+        "display_as_bot": false,
+        "ts": "1544130894.195600"
+    },
+    {
+        "client_msg_id": "21c1c4d4-5e90-48ae-be27-b589ddfa7ae8",
+        "type": "message",
+        "text": "Oh define each line with \\n?",
+        "user": "UE5418916",
+        "ts": "1544130907.196200"
+    },
+    {
+        "client_msg_id": "f86b4e9c-dc0b-4832-839a-d28f55b9f87b",
+        "type": "message",
+        "text": "no",
+        "user": "U02DGQYK1",
+        "ts": "1544130913.196500",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1544130916.000000"
+        }
+    },
+    {
+        "client_msg_id": "db4a84f3-5df1-441f-a32d-2975dcbb7e6b",
+        "type": "message",
+        "text": "do this.  Just a second need to move a cat",
+        "user": "U02DGQYK1",
+        "ts": "1544130925.197000"
+    },
+    {
+        "client_msg_id": "99b1acfd-47d6-4f4b-b7e4-cd0cb9a7190d",
+        "type": "message",
+        "text": "Create a tmp file with the ipxe script in it",
+        "user": "U02DGQYK1",
+        "ts": "1544130999.197700"
+    },
+    {
+        "client_msg_id": "96257865-eedf-4bd4-89fa-98645204dd59",
+        "type": "message",
+        "text": "do this: `drpcli profiles set global param custom-ipxe to tmp`",
+        "user": "U02DGQYK1",
+        "ts": "1544131009.198100"
+    },
+    {
+        "client_msg_id": "fc59343c-cc96-4104-9943-aedf818de837",
+        "type": "message",
+        "text": "where `tmp` is your file name.",
+        "user": "U02DGQYK1",
+        "ts": "1544131016.198400"
+    },
+    {
+        "client_msg_id": "1e7a1c8e-d5b7-406c-8fc0-a0d382f013ed",
+        "type": "message",
+        "text": "then do: `drpcli profiles show global`",
+        "user": "U02DGQYK1",
+        "ts": "1544131042.198700"
+    },
+    {
+        "client_msg_id": "6a08a8c2-16fd-4377-ac8b-822d040ada02",
+        "type": "message",
+        "text": "That should show this:",
+        "user": "U02DGQYK1",
+        "ts": "1544131047.198900"
+    },
+    {
+        "client_msg_id": "66e5b495-21ba-4bcd-91a5-7c6a07297f00",
+        "type": "message",
+        "text": "```\n \"custom-ipxe\": \"set base <http:\/\/mirror.centos.org\/altarch\/7\/os\/i386\/images\/pxeboot\/\\nprompt> -k 0x197e -t 2000 Press F12 to install CentOS... || exit kernel ${base}\/images\/pxeboot\/vmlinuz initrd=initrd.img repo=${base} initrd ${base}\/images\/pxeboot\/initrd.img boot\",\n```",
+        "user": "U02DGQYK1",
+        "ts": "1544131065.199300"
+    },
+    {
+        "client_msg_id": "7f4df4c6-e25d-4f1f-be1c-937ee1c5836f",
+        "type": "message",
+        "text": "yup!",
+        "user": "UE5418916",
+        "ts": "1544131074.199500"
+    },
+    {
+        "client_msg_id": "64e5ac72-e9f9-4182-a803-73c86ebc5ec1",
+        "type": "message",
+        "text": "so now - how are trying to boot with that.",
+        "user": "U02DGQYK1",
+        "ts": "1544131091.199800"
+    },
+    {
+        "client_msg_id": "dae5750f-a7c2-4a54-9794-7970feedf091",
+        "type": "message",
+        "text": "So i'll go over to machines. apply global profile to it. and set boot env to custom-ipxe. Lets see what happens?",
+        "user": "UE5418916",
+        "ts": "1544131166.200600"
+    },
+    {
+        "client_msg_id": "d39d350c-7a0f-49ca-b14c-1e17dcfc9500",
+        "type": "message",
+        "text": "global is applied to all automatically.",
+        "user": "U02DGQYK1",
+        "ts": "1544131187.200900"
+    },
+    {
+        "client_msg_id": "e4184b3a-fdda-4745-a8f2-d6559d010b4c",
+        "type": "message",
+        "text": "good to know",
+        "user": "UE5418916",
+        "ts": "1544131195.201200"
+    },
+    {
+        "client_msg_id": "7abaa43f-a622-414f-851a-152be502a1ac",
+        "type": "message",
+        "text": "oh - you didn’t put it in global. you put it in adk-ipxe",
+        "user": "U02DGQYK1",
+        "ts": "1544131208.201500"
+    },
+    {
+        "client_msg_id": "583e93bd-ea48-4647-bb82-b5df87b31f2a",
+        "type": "message",
+        "text": "so put that on the machine",
+        "user": "U02DGQYK1",
+        "ts": "1544131217.201900"
+    },
+    {
+        "client_msg_id": "751ec286-ae16-4b7e-9c9c-3a56f1a5aa0f",
+        "type": "message",
+        "text": "Actually I followed your instructions litterally. so now i have a custom-ipxe param in global.",
+        "user": "UE5418916",
+        "ts": "1544131235.202300"
+    },
+    {
+        "client_msg_id": "bbcb6a1d-b47c-4e2e-a76d-0bd1e3d54976",
+        "type": "message",
+        "text": "ok then all machines have it for now.",
+        "user": "U02DGQYK1",
+        "ts": "1544131245.202500"
+    },
+    {
+        "client_msg_id": "0051afd7-f5bf-455b-9cb0-817dddadfe52",
+        "type": "message",
+        "text": "then yeah force the machines bootenv to that.",
+        "user": "U02DGQYK1",
+        "ts": "1544131277.203200"
+    },
+    {
+        "client_msg_id": "087ae5be-635f-4c9f-9203-71f5344fd9f4",
+        "type": "message",
+        "text": "You may have to unset the machine’s stage and workflow.",
+        "user": "U02DGQYK1",
+        "ts": "1544131297.203700"
+    },
+    {
+        "client_msg_id": "81a9b73a-6525-4bc0-b3c1-c45b5599a6eb",
+        "type": "message",
+        "text": "or create a stage with that bootenv and a workflow with that stage.",
+        "user": "U02DGQYK1",
+        "ts": "1544131310.204100"
+    },
+    {
+        "client_msg_id": "8c15ab8c-70a3-47cd-8e6e-e67173823b68",
+        "type": "message",
+        "text": "Gotcha, yeah. Clearing that up now. One thing i wasn't sure on. Do i need to flag it as runnable for the settings in \"bulk actions\" to take effect?",
+        "user": "UE5418916",
+        "ts": "1544131365.205100"
+    },
+    {
+        "client_msg_id": "e745b01f-0801-44ca-ae38-8b16e7450575",
+        "type": "message",
+        "text": "no.  The bulk actions page is just doing things in bulk to the machine.  The settings are all driven independently because they are independent.  :slightly_smiling_face:",
+        "user": "U02DGQYK1",
+        "ts": "1544131427.205900"
+    },
+    {
+        "client_msg_id": "06d9ea6b-eda0-43bb-891b-c55c78970423",
+        "type": "message",
+        "text": "Sounds good.",
+        "user": "UE5418916",
+        "ts": "1544131441.206600"
+    },
+    {
+        "client_msg_id": "ec01f9ac-d9e0-423c-8c5d-81ed09c1e7e1",
+        "type": "message",
+        "text": "Runnable applies to stopping a runner in a running system.",
+        "user": "U02DGQYK1",
+        "ts": "1544131443.206700"
+    },
+    {
+        "client_msg_id": "6e078b0a-ce2d-4942-a673-e60bc9729950",
+        "type": "message",
+        "text": "No - sounds rambly.  :slightly_smiling_face: But I’m trying.",
+        "user": "U02DGQYK1",
+        "ts": "1544131453.207300",
+        "edited": {
+            "user": "U02DGQYK1",
+            "ts": "1544131462.000000"
+        }
+    },
+    {
+        "client_msg_id": "5748e620-1abe-4782-8b5d-fdc7650dfef9",
+        "type": "message",
+        "text": "I'm following and appreciate the help. I've been dabbling with this platform in my free time and loving it so far.",
+        "user": "UE5418916",
+        "ts": "1544131479.208000"
+    },
+    {
+        "client_msg_id": "2afeafdc-a1cb-4c1c-aa80-2bdb2cbbf960",
+        "type": "message",
+        "text": "Soon I'll need to provision over 90 raspberry pis and i'm hoping that I can utilize this in someway.",
+        "user": "UE5418916",
+        "ts": "1544131552.209500"
+    },
+    {
+        "client_msg_id": "4d12b658-5cbe-4b1a-a095-ce27d9bfaa16",
+        "type": "message",
+        "text": "umm - okay.  Raspberry Pis can be troubling, because they don’t have a real network bootloader.",
+        "user": "U02DGQYK1",
+        "ts": "1544131583.210100"
+    },
+    {
+        "client_msg_id": "5bf38ca8-36a5-4a83-bce2-bfdea79660f5",
+        "type": "message",
+        "text": "even the newest model? pi 3 b+",
+        "user": "UE5418916",
+        "ts": "1544131606.211300"
+    },
+    {
+        "client_msg_id": "98fe6e71-da99-426f-86d9-143db91c82b2",
+        "type": "message",
+        "text": "well - until pi3 or whatever.  Then maybe….. a big if on the maybe",
+        "user": "U02DGQYK1",
+        "ts": "1544131607.211400"
+    },
+    {
+        "client_msg_id": "c10e562c-3091-4a7b-98c2-dac4007a83ce",
+        "type": "message",
+        "text": "Yeah, i was going for proof of concept on the 32bit machine. I figured if i could make THAT work i could pivot onto net booting the pis",
+        "user": "UE5418916",
+        "ts": "1544131629.212000"
+    },
+    {
+        "client_msg_id": "c55e684e-9d4a-4f1c-bc5d-2eb3b058d219",
+        "type": "message",
+        "text": "you will be closer.  You will need `tip` and the arch support in it.",
+        "user": "U02DGQYK1",
+        "ts": "1544131653.212400"
+    },
+    {
+        "client_msg_id": "c8cdc97a-0476-47a2-a1ca-f94e43ded0b2",
+        "type": "message",
+        "text": "I'm running tip but didn't pull in the arch support.",
+        "user": "UE5418916",
+        "ts": "1544131673.212800"
+    },
+    {
+        "client_msg_id": "48502350-0aca-4192-95f4-83791b385824",
+        "type": "message",
+        "text": "I might have missed that step.",
+        "user": "UE5418916",
+        "ts": "1544131677.213100"
+    },
+    {
+        "client_msg_id": "f8f4760b-83db-49af-a053-49e74094952a",
+        "type": "message",
+        "text": "If you have tip components,  then you have arch aware pieces.",
+        "user": "U02DGQYK1",
+        "ts": "1544131735.213500"
+    },
+    {
+        "type": "message",
+        "text": "No dice on that custom-ipxe btw. Same issue.",
+        "files": [
+            {
+                "id": "FEMEC0HUL",
+                "created": 1544131813,
+                "timestamp": 1544131813,
+                "name": "image.png",
+                "title": "Pasted image at 2018-12-06, 1:30 PM",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "UE5418916",
+                "editable": false,
+                "size": 64949,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FEMEC0HUL\/image.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FEMEC0HUL\/download\/image.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEMEC0HUL-a1291d0bd9\/image_64.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEMEC0HUL-a1291d0bd9\/image_80.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEMEC0HUL-a1291d0bd9\/image_360.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360_w": 307,
+                "thumb_360_h": 360,
+                "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEMEC0HUL-a1291d0bd9\/image_480.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_480_w": 410,
+                "thumb_480_h": 480,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEMEC0HUL-a1291d0bd9\/image_160.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "image_exif_rotation": 1,
+                "original_w": 527,
+                "original_h": 617,
+                "permalink": "https:\/\/rackn.slack.com\/files\/UE5418916\/FEMEC0HUL\/image.png",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FEMEC0HUL-3c577e7f48"
+            }
+        ],
+        "upload": true,
+        "user": "UE5418916",
+        "display_as_bot": false,
+        "ts": "1544131816.214000"
+    },
+    {
+        "client_msg_id": "bc8d7d4b-a336-436e-824d-8c2ab456a1d4",
+        "type": "message",
+        "text": "No worries. I might be better off abandoning this hardware and just working toward the end game.",
+        "user": "UE5418916",
+        "ts": "1544131842.214800"
+    },
+    {
+        "type": "message",
+        "text": "fwiw, I know pxe works on those machines.",
+        "files": [
+            {
+                "id": "FEP1RCR7Y",
+                "created": 1544131886,
+                "timestamp": 1544131886,
+                "name": "image.png",
+                "title": "Pasted image at 2018-12-06, 1:31 PM",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "UE5418916",
+                "editable": false,
+                "size": 32059,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FEP1RCR7Y\/image.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FEP1RCR7Y\/download\/image.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEP1RCR7Y-ab3c928768\/image_64.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEP1RCR7Y-ab3c928768\/image_80.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEP1RCR7Y-ab3c928768\/image_360.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360_w": 360,
+                "thumb_360_h": 64,
+                "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEP1RCR7Y-ab3c928768\/image_480.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_480_w": 480,
+                "thumb_480_h": 85,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEP1RCR7Y-ab3c928768\/image_160.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEP1RCR7Y-ab3c928768\/image_720.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_720_w": 720,
+                "thumb_720_h": 128,
+                "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEP1RCR7Y-ab3c928768\/image_800.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_800_w": 800,
+                "thumb_800_h": 142,
+                "image_exif_rotation": 1,
+                "original_w": 873,
+                "original_h": 155,
+                "permalink": "https:\/\/rackn.slack.com\/files\/UE5418916\/FEP1RCR7Y\/image.png",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FEP1RCR7Y-afd9c16373"
+            }
+        ],
+        "upload": true,
+        "user": "UE5418916",
+        "display_as_bot": false,
+        "ts": "1544131889.215600"
+    },
+    {
+        "client_msg_id": "6ab3f3a9-0a41-434f-9e84-4d82dc39331d",
+        "type": "message",
+        "text": "Maybe I just need to make a 32bit boot env ? It seemed a little overwhelming due to my lack of understanding how kernels and boot parameters work.",
+        "user": "UE5418916",
+        "ts": "1544131961.217800"
+    },
+    {
+        "client_msg_id": "ee55e4ac-23f5-43f8-9cbf-fe64845ad78b",
+        "type": "message",
+        "text": "I did manage to clone the Centos-7 install and replace the iso with a 32bit one. That kind of worked.\nnow i'm just rambling...\n\nThanks for the help again. I'll keep playing.",
+        "user": "UE5418916",
+        "ts": "1544132036.219700"
+    },
+    {
+        "client_msg_id": "d49e4eb3-3022-4003-b544-5ca4f7ac93a1",
+        "type": "message",
+        "text": "i run into this error when deleting the stage content $ drpcli stages destroy debian-9-install\nError: DELETE: readonly: debian-9-install",
+        "user": "UANLCF8QP",
+        "ts": "1544132077.219900"
+    },
+    {
+        "client_msg_id": "103926c4-79de-4673-bfd1-f3644c558796",
+        "type": "message",
+        "text": "<@UANLCF8QP> - it is in the read-only content and can’t be deleted.",
+        "user": "U02DGQYK1",
+        "ts": "1544132578.220300"
+    },
+    {
+        "client_msg_id": "f9cce745-0065-4a4e-a582-f6881dab7a45",
+        "type": "message",
+        "text": "got it",
+        "user": "UANLCF8QP",
+        "ts": "1544132653.221000"
+    },
+    {
+        "client_msg_id": "24b2e019-4ef1-41df-ab2e-3987a60e84b6",
+        "type": "message",
+        "text": "thanks <@U02DGQYK1>",
+        "user": "UANLCF8QP",
+        "ts": "1544132663.221300"
+    },
+    {
+        "client_msg_id": "e4bc7abd-1d53-42d5-ad2d-d05fb859df1a",
+        "type": "message",
+        "text": "<@UE5418916> - I have something for you.",
+        "user": "U02DGQYK1",
+        "ts": "1544133239.221600"
+    },
+    {
+        "client_msg_id": "f51b4bba-ca9d-443a-a67b-0e6cfcfe24ee",
+        "type": "message",
+        "text": "I looked closer and it didn’t work for me either.",
+        "user": "U02DGQYK1",
+        "ts": "1544133270.221900"
+    },
+    {
+        "client_msg_id": "3d5dec1c-a4fd-4378-ab09-27222bfaa58a",
+        "type": "message",
+        "text": "Sooo I had to do it this ways.",
+        "user": "U02DGQYK1",
+        "ts": "1544133276.222200"
+    },
+    {
+        "client_msg_id": "d385e535-5288-4ba4-ad42-2e4a0fdc8646",
+        "type": "message",
+        "text": "`drpcli profiles show global --format=yaml &gt; global.yaml`",
+        "user": "U02DGQYK1",
+        "ts": "1544133295.222600"
+    },
+    {
+        "client_msg_id": "d3f44edb-dd11-4505-876c-82ea70f18ca4",
+        "type": "message",
+        "text": "then edit `global.yaml`",
+        "user": "U02DGQYK1",
+        "ts": "1544133302.222900"
+    },
+    {
+        "client_msg_id": "899e43f7-c91d-49ad-a389-bd5a811b1f5e",
+        "type": "message",
+        "text": "Add this in the parameters section",
+        "user": "U02DGQYK1",
+        "ts": "1544133311.223200"
+    },
+    {
+        "client_msg_id": "759a3db3-c66d-4577-a2a6-2eed2b5072e9",
+        "type": "message",
+        "text": "```\nParams:\n  custom-ipxe: |\n    set base <http:\/\/mirror.centos.org\/altarch\/7\/os\/i386\/images\/pxeboot\/>\n    prompt -k 0x197e -t 2000 Press F12 to install CentOS... || exit\n    kernel ${base}\/images\/pxeboot\/vmlinuz initrd=initrd.img repo=${base}\n    initrd ${base}\/images\/pxeboot\/initrd.img\n    boot\n```",
+        "user": "U02DGQYK1",
+        "ts": "1544133351.223600"
+    },
+    {
+        "client_msg_id": "d986c3f7-f492-46b2-afde-f3efa3884a0e",
+        "type": "message",
+        "text": "Then do: `drpcli profiles update global global.yaml`",
+        "user": "U02DGQYK1",
+        "ts": "1544133367.223900"
+    },
+    {
+        "client_msg_id": "c957ac88-6ae4-41a9-bc7e-d06146455347",
+        "type": "message",
+        "text": "multi-line strings are hard and shouldn’t really be, but there we are.",
+        "user": "U02DGQYK1",
+        "ts": "1544133381.224200"
+    },
+    {
+        "client_msg_id": "b22474b9-ee2b-4b04-9c72-26b154afa63b",
+        "type": "message",
+        "text": "Alrighty, I'm on it.  I also started thinking that this NIC might not support ipxe. Then i was trying to learn how undionly.kpxe functions.",
+        "user": "UE5418916",
+        "ts": "1544133454.225400"
+    },
+    {
+        "client_msg_id": "0bc53d2f-6e8e-4e55-8eb7-f1dd44ab521f",
+        "type": "message",
+        "text": "<@UE5418916> Sorry, we only support 64 bit systems for x86 compatible systems.",
+        "user": "U02DJQSG8",
+        "ts": "1544133859.226200"
+    },
+    {
+        "client_msg_id": "fa34d663-09d6-4ae7-8445-2b5885fc6237",
+        "type": "message",
+        "text": "No worries",
+        "user": "UE5418916",
+        "ts": "1544133898.226500"
+    },
+    {
+        "client_msg_id": "03c33895-4198-4427-90a0-814f53fb3c34",
+        "type": "message",
+        "text": "Just getting a kick out of seeing what drp is capable of :smile:",
+        "user": "UE5418916",
+        "ts": "1544133931.227500"
+    },
+    {
+        "client_msg_id": "8f8592c3-0629-41eb-8ae4-c2410e81c18b",
+        "type": "message",
+        "text": "umm - in this case, <@U02DJQSG8> why?  Yeah - discovery won’t work, but he’s going direct to the 386 repo",
+        "user": "U02DGQYK1",
+        "ts": "1544133935.227600"
+    },
+    {
+        "client_msg_id": "df4eb227-8c80-4399-8c97-884c15c096b0",
+        "type": "message",
+        "text": "well, the error message was from Sledgehammer. :slightly_smiling_face:",
+        "user": "U02DJQSG8",
+        "ts": "1544133967.228100"
+    },
+    {
+        "client_msg_id": "d1753f6d-240f-4c88-9b94-508f96fca55c",
+        "type": "message",
+        "text": "and we don't have an i686 compatible Sledgehammer.",
+        "user": "U02DJQSG8",
+        "ts": "1544133993.229400"
+    },
+    {
+        "client_msg_id": "e946a50a-9488-4abd-a608-5cad3da530b2",
+        "type": "message",
+        "text": "I understand from a fundamentals standpoint. I was just using that as a proof that pxe was working. Fully understandable that sledgehammer isn't going to have a 32bit",
+        "user": "UE5418916",
+        "ts": "1544134002.229800"
+    },
+    {
+        "client_msg_id": "4e5d2bcd-aec0-476e-84bf-95ec1d7a12db",
+        "type": "message",
+        "text": "yeah- that was his boot proof test.  He’s manually created the node and forced its bootenv to the custom-ipxe that points out into the iverse.",
+        "user": "U02DGQYK1",
+        "ts": "1544134023.230400"
+    },
+    {
+        "client_msg_id": "345a548e-50b8-41ca-9a4b-ae4b293d17a6",
+        "type": "message",
+        "text": "Though, I’m with you <@U02DJQSG8> that this is a long challenging road to hoe.",
+        "user": "U02DGQYK1",
+        "ts": "1544134066.231200"
+    },
+    {
+        "client_msg_id": "363dbddf-4061-4596-b25a-ff59dd7a8096",
+        "type": "message",
+        "text": "Yeah, I didn't want to be a bother at all.",
+        "user": "UE5418916",
+        "ts": "1544134081.231500"
+    },
+    {
+        "client_msg_id": "188cc9e1-2280-4ece-b23a-1c803e064715",
+        "type": "message",
+        "text": "<@UE5418916> - I’d give it another shot with the right file in place.  In the end, <@U02DJQSG8> is right.  This machine won’t follow any of the reasonable DRP control patterns.",
+        "user": "U02DGQYK1",
+        "ts": "1544134287.233000"
+    },
+    {
+        "client_msg_id": "4d8bf922-2bd8-4c49-8ab8-56c8a40e0488",
+        "type": "message",
+        "text": "Heck, I bet we don’t even build a drpcli that would work on it.",
+        "user": "U02DGQYK1",
+        "ts": "1544134324.233400"
+    },
+    {
+        "client_msg_id": "a9a8f2a5-b976-4ab7-98e8-f3c9c794b843",
+        "type": "message",
+        "text": "much less make one available to download.",
+        "user": "U02DGQYK1",
+        "ts": "1544134333.233700"
+    },
+    {
+        "client_msg_id": "48c94637-9e92-4928-81b1-e41fe6a7e9d5",
+        "type": "message",
+        "text": "yep - we stopped compiling 386 versions earlier in the year ... for all of the binaries",
+        "user": "U6QFVRJNB",
+        "ts": "1544135157.234800"
+    },
+    {
+        "client_msg_id": "c2b0e289-1ef4-4ac3-a110-a01309e0beb6",
+        "type": "message",
+        "text": "arm64 is in the mix though , right?",
+        "user": "UE5418916",
+        "ts": "1544135312.235600"
+    },
+    {
+        "client_msg_id": "ca9ca7b1-2f40-4d77-9784-0ca29acff0b5",
+        "type": "message",
+        "text": "That's probably going to be more exciting for me anyhow :slightly_smiling_face:",
+        "user": "UE5418916",
+        "ts": "1544135325.236000"
+    },
+    {
+        "client_msg_id": "5144c762-2db4-487b-99a3-9e3f9ebff048",
+        "type": "message",
+        "text": "yes though you may have to move some things around and find them, but yeah.",
+        "user": "U02DGQYK1",
+        "ts": "1544135375.236400"
+    },
+    {
+        "client_msg_id": "8fe7ac4c-7c81-4738-9deb-6d6f6fb0d409",
+        "type": "message",
+        "text": "we do a couple of ARM arch builds - and ARM is constantly shuffling arch stuff around - so we (probably) may run in to issues w\/ newer versions and need to compile something new (eg v5, v6, v7, v8 ... blah blah blah)",
+        "user": "U6QFVRJNB",
+        "ts": "1544136206.237400"
+    },
+    {
+        "client_msg_id": "878c0db5-24f6-4746-82aa-d16d75724426",
+        "type": "message",
+        "text": "but we do have a couple of current ARM 32 and 64bit builds",
+        "user": "U6QFVRJNB",
+        "ts": "1544136218.237800"
+    },
+    {
+        "client_msg_id": "483318db-cb91-4dc0-8d53-44a3353c2ee2",
+        "type": "message",
+        "text": "sledgehammer is a different story ... that's a bit more limited right now",
+        "user": "U6QFVRJNB",
+        "ts": "1544136232.238200"
+    },
+    {
+        "type": "message",
+        "text": "Ayy, <@U02DGQYK1> I did it! with a custom bootenv.  :smile:",
+        "files": [
+            {
+                "id": "FEMK1DQP5",
+                "created": 1544138663,
+                "timestamp": 1544138663,
+                "name": "image.png",
+                "title": "Pasted image at 2018-12-06, 3:24 PM",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "UE5418916",
+                "editable": false,
+                "size": 17139,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FEMK1DQP5\/image.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FEMK1DQP5\/download\/image.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEMK1DQP5-456be0ab1b\/image_64.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEMK1DQP5-456be0ab1b\/image_80.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEMK1DQP5-456be0ab1b\/image_360.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360_w": 360,
+                "thumb_360_h": 88,
+                "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEMK1DQP5-456be0ab1b\/image_480.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_480_w": 480,
+                "thumb_480_h": 117,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEMK1DQP5-456be0ab1b\/image_160.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEMK1DQP5-456be0ab1b\/image_720.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_720_w": 720,
+                "thumb_720_h": 176,
+                "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FEMK1DQP5-456be0ab1b\/image_800.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_800_w": 800,
+                "thumb_800_h": 195,
+                "image_exif_rotation": 1,
+                "original_w": 845,
+                "original_h": 206,
+                "permalink": "https:\/\/rackn.slack.com\/files\/UE5418916\/FEMK1DQP5\/image.png",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FEMK1DQP5-81c49cee5f"
+            }
+        ],
+        "upload": true,
+        "user": "UE5418916",
+        "display_as_bot": false,
+        "ts": "1544138666.238700",
+        "reactions": [
+            {
+                "name": "confetti_ball",
+                "users": [
+                    "U6QFVRJNB",
+                    "U02DHRR2L"
+                ],
+                "count": 2
+            }
+        ]
+    },
+    {
+        "client_msg_id": "EFD19A0C-262B-43EC-9759-92CFF92C88FD",
+        "type": "message",
+        "text": "Cool ",
+        "user": "U02DGQYK1",
+        "ts": "1544140588.239900"
+    },
+    {
+        "client_msg_id": "3f2c430c-cfd7-43fc-94be-5c9970a2a7fa",
+        "type": "message",
+        "text": "Is there somewhere a full list what kind of `provisioner.*` options are available like `provisioner.portdelay`? I would like disable the debug shell in case 10 failed downloads of the 2nd image or at least change the number of retries.",
+        "user": "UBU0BPRA9",
+        "ts": "1544163377.241700"
+    }
+]

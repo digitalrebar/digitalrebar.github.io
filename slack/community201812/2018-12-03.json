@@ -1,0 +1,94 @@
+[
+    {
+        "client_msg_id": "5aec5655-31d1-443f-a8ef-6350305ce75a",
+        "type": "message",
+        "text": "<@U02DGQYK1> `string:` changes to subnet options works btw, I just updated a CL switch serving a file over DHCP :tada:",
+        "user": "UBXEU90UQ",
+        "ts": "1543849320.038100",
+        "reactions": [
+            {
+                "name": "tada",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "client_msg_id": "85314a4c-66c4-442f-ac0d-08412d771554",
+        "type": "message",
+        "text": "i uploaded a new boot iso via web page, where would this file be saved to once the upload is done?",
+        "user": "UDXNBSWUC",
+        "ts": "1543857341.039000"
+    },
+    {
+        "client_msg_id": "52f4596b-d008-4e0f-a624-0f12476717e5",
+        "type": "message",
+        "text": "in the `tftpboot\/isos\/` directory - if in `isolated` mode, this will be in `~\/drp-data` base from where you did the install, or in `production` mode will be (by default) in `\/var\/lib\/dr-provision` base directory",
+        "user": "U6QFVRJNB",
+        "ts": "1543857405.040000",
+        "edited": {
+            "user": "U6QFVRJNB",
+            "ts": "1543857421.000000"
+        }
+    },
+    {
+        "client_msg_id": "932e6674-295b-473b-9b09-e86e5025671f",
+        "type": "message",
+        "text": "ok, thanks",
+        "user": "UDXNBSWUC",
+        "ts": "1543857642.040300"
+    },
+    {
+        "client_msg_id": "0f265079-2d57-422a-8425-6fb1559fa0c1",
+        "type": "message",
+        "text": "found it :smile:",
+        "user": "UDXNBSWUC",
+        "ts": "1543857784.040500",
+        "reactions": [
+            {
+                "name": "+1",
+                "users": [
+                    "U6QFVRJNB"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "client_msg_id": "c9e643e3-63c8-42e8-8d7c-33895a5386db",
+        "type": "message",
+        "text": "it should also be \"exploded out\" in to the `tftpboot\/&lt;BOOTENV_NAME&gt;` directory too (eg `tftpboot\/ubuntu-18.04\/`)",
+        "user": "U6QFVRJNB",
+        "ts": "1543857875.041400"
+    },
+    {
+        "user": "UEJ4T4VAN",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1543859648.041600",
+        "text": "<@UEJ4T4VAN> has joined the channel"
+    },
+    {
+        "client_msg_id": "0fcbcf1a-6ecb-4189-be48-43591d4491d4",
+        "type": "message",
+        "text": "<@UEJ4T4VAN> $welcome ...",
+        "user": "U6QFVRJNB",
+        "ts": "1543859658.041900"
+    },
+    {
+        "type": "message",
+        "subtype": "slackbot_response",
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "user": "USLACKBOT",
+        "ts": "1543859659.042000"
+    },
+    {
+        "client_msg_id": "75E12CCE-096A-4CD5-B736-35FD79ABCEDC",
+        "type": "message",
+        "text": "@shane Thanks!",
+        "user": "UEJ4T4VAN",
+        "ts": "1543859726.042900"
+    }
+]

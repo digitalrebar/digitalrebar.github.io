@@ -1,0 +1,140 @@
+[
+    {
+        "user": "UDL5H09AT",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1540182610.000200",
+        "text": "<@UDL5H09AT> has joined the channel"
+    },
+    {
+        "type": "message",
+        "text": "We ran into the following error after connected to drp dhcp service, any idea what could be causing this issue?",
+        "files": [
+            {
+                "id": "FDL5N4BDM",
+                "created": 1540183640,
+                "timestamp": 1540183640,
+                "name": "Screen Shot 2018-10-21 at 10.45.33 PM.png",
+                "title": "Screen Shot 2018-10-21 at 10.45.33 PM.png",
+                "mimetype": "image\/png",
+                "filetype": "png",
+                "pretty_type": "PNG",
+                "user": "UCWNG6NTV",
+                "editable": false,
+                "size": 2500234,
+                "mode": "hosted",
+                "is_external": false,
+                "external_type": "",
+                "is_public": true,
+                "public_url_shared": false,
+                "display_as_bot": false,
+                "username": "",
+                "url_private": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FDL5N4BDM\/screen_shot_2018-10-21_at_10.45.33_pm.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "url_private_download": "https:\/\/files.slack.com\/files-pri\/T02DGQYJZ-FDL5N4BDM\/download\/screen_shot_2018-10-21_at_10.45.33_pm.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_64": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDL5N4BDM-0982fc9398\/screen_shot_2018-10-21_at_10.45.33_pm_64.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_80": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDL5N4BDM-0982fc9398\/screen_shot_2018-10-21_at_10.45.33_pm_80.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDL5N4BDM-0982fc9398\/screen_shot_2018-10-21_at_10.45.33_pm_360.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_360_w": 360,
+                "thumb_360_h": 118,
+                "thumb_480": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDL5N4BDM-0982fc9398\/screen_shot_2018-10-21_at_10.45.33_pm_480.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_480_w": 480,
+                "thumb_480_h": 158,
+                "thumb_160": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDL5N4BDM-0982fc9398\/screen_shot_2018-10-21_at_10.45.33_pm_160.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_720": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDL5N4BDM-0982fc9398\/screen_shot_2018-10-21_at_10.45.33_pm_720.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_720_w": 720,
+                "thumb_720_h": 237,
+                "thumb_800": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDL5N4BDM-0982fc9398\/screen_shot_2018-10-21_at_10.45.33_pm_800.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_800_w": 800,
+                "thumb_800_h": 263,
+                "thumb_960": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDL5N4BDM-0982fc9398\/screen_shot_2018-10-21_at_10.45.33_pm_960.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_960_w": 960,
+                "thumb_960_h": 316,
+                "thumb_1024": "https:\/\/files.slack.com\/files-tmb\/T02DGQYJZ-FDL5N4BDM-0982fc9398\/screen_shot_2018-10-21_at_10.45.33_pm_1024.png?t=xoxe-2458848645-514023324868-513587761153-b5d59617abb26f254de45b5edf5cc500",
+                "thumb_1024_w": 1024,
+                "thumb_1024_h": 337,
+                "image_exif_rotation": 1,
+                "original_w": 2170,
+                "original_h": 714,
+                "permalink": "https:\/\/rackn.slack.com\/files\/UCWNG6NTV\/FDL5N4BDM\/screen_shot_2018-10-21_at_10.45.33_pm.png",
+                "permalink_public": "https:\/\/slack-files.com\/T02DGQYJZ-FDL5N4BDM-e800ad432d"
+            }
+        ],
+        "upload": true,
+        "user": "UCWNG6NTV",
+        "display_as_bot": false,
+        "ts": "1540183644.000100"
+    },
+    {
+        "client_msg_id": "c69b453d-1744-47f0-92b7-4c9f0166e9fb",
+        "type": "message",
+        "text": "Make sure that you have the right slidgehammer exploded",
+        "user": "U02DHRR2L",
+        "ts": "1540183715.000100"
+    },
+    {
+        "client_msg_id": "0eacf69f-3ad4-4008-9773-0ee678f4084b",
+        "type": "message",
+        "text": "it's possible that the bootenv for your discovery image points to a different set of files",
+        "user": "U02DHRR2L",
+        "ts": "1540183741.000100"
+    },
+    {
+        "client_msg_id": "9890b403-aaac-4b1a-a850-6ea09493235b",
+        "type": "message",
+        "text": "check the bootenvs to make sure they are validated \/ available",
+        "user": "U02DHRR2L",
+        "ts": "1540183763.000100",
+        "thread_ts": "1540183763.000100",
+        "reply_count": 5,
+        "reply_users_count": 3,
+        "latest_reply": "1540398354.000100",
+        "reply_users": [
+            "UCWNG6NTV",
+            "U02DHRR2L",
+            "UBJ22A0N5"
+        ],
+        "replies": [
+            {
+                "user": "UCWNG6NTV",
+                "ts": "1540356212.000100"
+            },
+            {
+                "user": "UCWNG6NTV",
+                "ts": "1540396637.000100"
+            },
+            {
+                "user": "U02DHRR2L",
+                "ts": "1540398180.000100"
+            },
+            {
+                "user": "U02DHRR2L",
+                "ts": "1540398224.000100"
+            },
+            {
+                "user": "UBJ22A0N5",
+                "ts": "1540398354.000100"
+            }
+        ]
+    },
+    {
+        "client_msg_id": "6056c3d6-91c7-4c50-86dd-a1b87e0cc9ac",
+        "type": "message",
+        "text": "<@UDL5H09AT> $welcome",
+        "user": "U02DHRR2L",
+        "ts": "1540183959.000100"
+    },
+    {
+        "type": "message",
+        "subtype": "slackbot_response",
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "user": "USLACKBOT",
+        "ts": "1540183959.000200"
+    },
+    {
+        "client_msg_id": "4822aa9c-0242-4af8-9b10-b1862db4d0de",
+        "type": "message",
+        "text": "Thanks rob",
+        "user": "UDL5H09AT",
+        "ts": "1540184232.000100"
+    }
+]

@@ -1,0 +1,374 @@
+[
+    {
+        "client_msg_id": "18eac17d-3c20-493c-ae8e-dbcfdea2e42c",
+        "type": "message",
+        "text": "I’ve been playing around with loading addressing data from netbox during DRP post-install stage… my biggest annoyance is converting it from netbox format to the various interface formats",
+        "user": "UBXEU90UQ",
+        "ts": "1537520913.000100"
+    },
+    {
+        "client_msg_id": "8df9aad3-1296-430f-b385-b4ee984d755f",
+        "type": "message",
+        "text": "I’m trying to use the same method for switches and servers so at least the base config (ports, mlags, vlans, ip addresses) comes from netbox",
+        "user": "UBXEU90UQ",
+        "ts": "1537521649.000100"
+    },
+    {
+        "client_msg_id": "79A764AC-9A50-4520-B3B2-B1DB14463540",
+        "type": "message",
+        "text": "<@UBXEU90UQ> are you pulling from a task to then config the static files?",
+        "user": "U02DGQYK1",
+        "ts": "1537528265.000200"
+    },
+    {
+        "client_msg_id": "f1653c57-b09a-4785-8c01-01d9cda4e0c6",
+        "type": "message",
+        "text": "basically, yeah - task pulls a python script which grabs and parses data from netbox. Right now it saves it back to an inventory variable which is then used by subsequent stages for actual config actions",
+        "user": "UBXEU90UQ",
+        "ts": "1537528384.000100"
+    },
+    {
+        "client_msg_id": "6905B261-9564-4EB8-8EEC-6846C27E9460",
+        "type": "message",
+        "text": "Okay. I have prototype netbox plugin that pushed machines into netbox. And would do something similar for pulling info.  It would be done on the drp endpoint side.  Then flow into the templates.  This way keeps the machine from having netbox credentials. ",
+        "user": "U02DGQYK1",
+        "ts": "1537528528.000100"
+    },
+    {
+        "client_msg_id": "28a14555-89c0-4d2b-a346-2ad3b7a4d658",
+        "type": "message",
+        "text": "yeah, that’s a point",
+        "user": "UBXEU90UQ",
+        "ts": "1537528584.000200"
+    },
+    {
+        "client_msg_id": "ac35991c-0336-4ced-8f24-890e62f8138f",
+        "type": "message",
+        "text": "right now i’m just using a read-only token as writing data back isn’t necessary",
+        "user": "UBXEU90UQ",
+        "ts": "1537528594.000100"
+    },
+    {
+        "client_msg_id": "990850B5-1C1D-4D3A-A3CA-C46AF23794D8",
+        "type": "message",
+        "text": "Yeah",
+        "user": "U02DGQYK1",
+        "ts": "1537528604.000100"
+    },
+    {
+        "client_msg_id": "9fe1f712-af2f-40d6-835f-1c053caae23f",
+        "type": "message",
+        "text": "reason for using a python script right now is i’m actually trying to solve 2 problems at once",
+        "user": "UBXEU90UQ",
+        "ts": "1537528646.000100"
+    },
+    {
+        "client_msg_id": "7a78682e-2a2a-4adc-827f-5ae0372f24d3",
+        "type": "message",
+        "text": "making netbox the source of truth for interface data means we can use it for servers *and* switches, so that script can output data in formats usable by DRP stages and also turns it into cumulus linux config commands",
+        "user": "UBXEU90UQ",
+        "ts": "1537528688.000100"
+    },
+    {
+        "client_msg_id": "495F78A2-3CBA-4182-AB60-196CB52E4F07",
+        "type": "message",
+        "text": "Nice",
+        "user": "U02DGQYK1",
+        "ts": "1537528713.000100"
+    },
+    {
+        "client_msg_id": "3424278B-D44D-4E54-8607-37DCDAC224AC",
+        "type": "message",
+        "text": "We want to manage switches like too",
+        "user": "U02DGQYK1",
+        "ts": "1537528774.000100"
+    },
+    {
+        "client_msg_id": "46bf7241-faae-4bd4-9fdb-a22884c5adcd",
+        "type": "message",
+        "text": "Ignoring the whole pxe boot thing, I think the runner would probably ‘just work’",
+        "user": "UBXEU90UQ",
+        "ts": "1537528823.000100"
+    },
+    {
+        "client_msg_id": "887fead3-eeb9-498f-b6a0-03b2612815dc",
+        "type": "message",
+        "text": "it’s debian after all",
+        "user": "UBXEU90UQ",
+        "ts": "1537528827.000100"
+    },
+    {
+        "client_msg_id": "E5DDC097-BFF8-4D64-A567-E902CD50608B",
+        "type": "message",
+        "text": "Yeah. In fact.  We think drp could run in the switch",
+        "user": "U02DGQYK1",
+        "ts": "1537528852.000100"
+    },
+    {
+        "client_msg_id": "eb9ffe9d-307c-4879-a212-c256bed9c4b7",
+        "type": "message",
+        "text": "yep",
+        "user": "UBXEU90UQ",
+        "ts": "1537528867.000100"
+    },
+    {
+        "client_msg_id": "77f89244-e321-46cd-8471-53985e036ed6",
+        "type": "message",
+        "text": "would be nice to deploy a DC directly from 2 switches :smile:",
+        "user": "UBXEU90UQ",
+        "ts": "1537528887.000100",
+        "reactions": [
+            {
+                "name": "wink",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "client_msg_id": "a54adf4c-ba8e-46a3-b72b-b2779f615d4f",
+        "type": "message",
+        "text": "or 1 or whatever",
+        "user": "UBXEU90UQ",
+        "ts": "1537528896.000100"
+    },
+    {
+        "client_msg_id": "3992D97A-1DD4-4F59-98C8-CDAC24498647",
+        "type": "message",
+        "text": "Yeah. That is our dream ",
+        "user": "U02DGQYK1",
+        "ts": "1537528913.000100"
+    },
+    {
+        "client_msg_id": "8dcf1f16-f0a8-40d6-a95a-c70155cc306c",
+        "type": "message",
+        "text": "also realised that AWX has been opensourced for a while now and i somehow missed it",
+        "user": "UBXEU90UQ",
+        "ts": "1537528956.000100"
+    },
+    {
+        "client_msg_id": "8e8f1355-005b-4af4-acc7-12c35aa23c73",
+        "type": "message",
+        "text": "i want to get to the point where DRP installs stuff then hands off an API call to AWX to do whatever else…",
+        "user": "UBXEU90UQ",
+        "ts": "1537528979.000100"
+    },
+    {
+        "client_msg_id": "1EC45D12-04B6-4AFF-B2B2-7AB58B422A8F",
+        "type": "message",
+        "text": "Yeah. I have tower plugin as well",
+        "user": "U02DGQYK1",
+        "ts": "1537529204.000100"
+    },
+    {
+        "client_msg_id": "E20C92AA-86E2-40D5-B635-C096A78AC739",
+        "type": "message",
+        "text": "Assuming I’m remembering the alphabet soup this early in the morning",
+        "user": "U02DGQYK1",
+        "ts": "1537529285.000200"
+    },
+    {
+        "client_msg_id": "b6aac717-40a1-4069-9996-07541687ec02",
+        "type": "message",
+        "text": "hah, yep",
+        "user": "UBXEU90UQ",
+        "ts": "1537529921.000100"
+    },
+    {
+        "client_msg_id": "25b125b8-5432-4ed5-8f11-7ce349be70a7",
+        "type": "message",
+        "text": "<@UBXEU90UQ> ^^ the Tower Plugin works on AWX too (it's how we test).  Starts\/monitors jobs.",
+        "user": "U02DHRR2L",
+        "ts": "1537539259.000100"
+    },
+    {
+        "client_msg_id": "c0cd0b11-417d-4f07-bae4-63f11d0c712a",
+        "type": "message",
+        "text": "cool",
+        "user": "UBXEU90UQ",
+        "ts": "1537539285.000200"
+    },
+    {
+        "client_msg_id": "4d1d4d97-92d6-48a0-9f0d-a538dbc1499c",
+        "type": "message",
+        "text": "really like the idea of getting all 3 of these integrated - aside from actually having to *model* stuff in Netbox, all other provisioning should be completely automated",
+        "user": "UBXEU90UQ",
+        "ts": "1537539326.000100"
+    },
+    {
+        "type": "message",
+        "subtype": "me_message",
+        "text": "promotes myself to chief redundancy officer :)",
+        "user": "U02DHRR2L",
+        "ts": "1537539336.000100"
+    },
+    {
+        "client_msg_id": "89d01190-5136-47a8-95a3-5675fdc5ca50",
+        "type": "message",
+        "text": "our designs support that approach - I don't know enough about Netbox to state if it has concepts that would map into DRP Workflows.  That seems like the critical component to making it a smooth integration.  Pushing data from DRP into Netbox mappings are well understood",
+        "user": "U02DHRR2L",
+        "ts": "1537539480.000100"
+    },
+    {
+        "client_msg_id": "d48e4795-2b79-4271-bb02-584bf59189ec",
+        "type": "message",
+        "text": "seems to map relatively well so far, at least for my use case - netbox stores a serial number for each physical device. When DRP discovers a machine, it looks up the device in netbox using the serial from gohai, and grabs various metadata about the machine (platform, role, interface and IP config) into a param",
+        "user": "UBXEU90UQ",
+        "ts": "1537539727.000100"
+    },
+    {
+        "client_msg_id": "43c153aa-7239-477d-a9c1-d61efac19902",
+        "type": "message",
+        "text": "part of that data is used with the classifier to add the right profile, and then run the right install workflow",
+        "user": "UBXEU90UQ",
+        "ts": "1537539769.000100"
+    },
+    {
+        "client_msg_id": "19c46b14-b070-4066-94be-987d09fdea16",
+        "type": "message",
+        "text": "and then there’s a post install step that uses the interface \/ IP config to generate the interface files",
+        "user": "UBXEU90UQ",
+        "ts": "1537539797.000100"
+    },
+    {
+        "client_msg_id": "32a930f1-ea5e-48a2-96a8-6f0e8babbd15",
+        "type": "message",
+        "text": "(that’s the janky bit right now :D)",
+        "user": "UBXEU90UQ",
+        "ts": "1537539804.000100"
+    },
+    {
+        "client_msg_id": "6f3ee5a7-189e-40bd-ae5d-36b3c4827196",
+        "type": "message",
+        "text": "I think that's where it started to get site specific for our work too",
+        "user": "U02DHRR2L",
+        "ts": "1537539868.000100"
+    },
+    {
+        "user": "UCY9559JQ",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1537540420.000200",
+        "text": "<@UCY9559JQ> has joined the channel"
+    },
+    {
+        "client_msg_id": "f87bc3eb-5a6c-48c7-9a72-e25540799433",
+        "type": "message",
+        "text": "Hello <@UCY9559JQ> $welcome",
+        "user": "U02DHRR2L",
+        "ts": "1537540437.000200",
+        "reactions": [
+            {
+                "name": "wave",
+                "users": [
+                    "UCY9559JQ"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "type": "message",
+        "subtype": "slackbot_response",
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "user": "USLACKBOT",
+        "ts": "1537540437.000300"
+    },
+    {
+        "user": "UCYC9QJ3V",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1537541758.000200",
+        "text": "<@UCYC9QJ3V> has joined the channel"
+    },
+    {
+        "client_msg_id": "2c59b41e-5406-461b-96ec-440a966bbfc4",
+        "type": "message",
+        "text": "Hello <@UCYC9QJ3V> ^^ welcome link above",
+        "user": "U02DHRR2L",
+        "ts": "1537544777.000100"
+    },
+    {
+        "client_msg_id": "9794f5b5-eb10-4987-bb08-1f4c82b55e30",
+        "type": "message",
+        "text": "<@U02DHRR2L> heya, good to see ya online :slightly_smiling_face:",
+        "user": "UCYC9QJ3V",
+        "ts": "1537545439.000100",
+        "reactions": [
+            {
+                "name": "sunglasses",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "user": "UCYEQE1CK",
+        "type": "message",
+        "subtype": "channel_join",
+        "ts": "1537547311.000200",
+        "text": "<@UCYEQE1CK> has joined the channel"
+    },
+    {
+        "client_msg_id": "4349f0ae-b9ab-4b14-bea0-38a21c6584fe",
+        "type": "message",
+        "text": "<@UCYEQE1CK> $welcome",
+        "user": "U02DHRR2L",
+        "ts": "1537548613.000100"
+    },
+    {
+        "type": "message",
+        "subtype": "slackbot_response",
+        "text": "Digital Rebar welcome information is here &gt; <http:\/\/rebar.digital\/community\/welcome.html>",
+        "user": "USLACKBOT",
+        "ts": "1537548613.000200"
+    },
+    {
+        "client_msg_id": "7344979f-ba39-407a-a23b-90cca13620aa",
+        "type": "message",
+        "text": "hi Rob",
+        "user": "UCYEQE1CK",
+        "ts": "1537548623.000100",
+        "reactions": [
+            {
+                "name": "wave",
+                "users": [
+                    "U02DHRR2L"
+                ],
+                "count": 1
+            }
+        ]
+    },
+    {
+        "client_msg_id": "87fcc4d2-d903-4ef7-a483-af5250140713",
+        "type": "message",
+        "text": "<!here> hey guys, quick question. When I run a template on a server in the sledgehammer environment from DRP, is it root ?",
+        "user": "U8FAN7PLK",
+        "ts": "1537557319.000100"
+    },
+    {
+        "client_msg_id": "6ca943ce-16d8-4ca4-93f9-4ad9efe8a23f",
+        "type": "message",
+        "text": "it is run under the context of the `drpcli` agent - which by default is run as `root`",
+        "user": "U6QFVRJNB",
+        "ts": "1537557440.000100"
+    },
+    {
+        "client_msg_id": "969f005a-b334-45da-8135-486f3ba4f338",
+        "type": "message",
+        "text": "no sudo messiness needed",
+        "user": "U6QFVRJNB",
+        "ts": "1537557468.000100"
+    },
+    {
+        "client_msg_id": "04379cd4-ec5f-4e16-ab4f-eb9d71235be2",
+        "type": "message",
+        "text": "perfect that's what I wanted to hear.",
+        "user": "U8FAN7PLK",
+        "ts": "1537559405.000100"
+    }
+]
