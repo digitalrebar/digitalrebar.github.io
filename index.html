@@ -1,135 +1,143 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="reset.css" rel="stylesheet" type="text/css" />
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <link href="https://www.google.com/fonts#UsePlace:use/Collection:Roboto" rel="stylesheet" type="text/css" />
-    <link href="https://www.google.com/fonts#UsePlace:use/Collection:Roboto+Mono" rel="stylesheet" type="text/css" />
-    <link href="https://www.google.com/fonts#UsePlace:use/Collection:Allerta+Stencil" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css" />
-    <!-- material-icons reference: https://material.io/icons/ -->
-    <link href="digitalrebar.ico" rel="SHORTCUT ICON" />
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"><link href="digitalrebar.ico" rel="SHORTCUT ICON" />
     <meta name="google-site-verification" content="zCf79OnCmnSaInCAHjC8bfWcYvMXXzTfjx_fG_k-6AM" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link href="reset.css" rel="stylesheet" type="text/css" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
     <title>Digital Rebar</title>
   </head>
   <body>
-    <nav id="toolbar" class="overlay">
-      <img src="logo.png" style="cursor: pointer;" onclick="window.open('http://provision.readthedocs.io/en/latest/');"/>
-      <div class="menu-button" onclick="$('.nav-bar').className='nav-bar'+($('.nav-bar').className=='nav-bar hover'?'':' hover');">
-        <i class="material-icons">menu</i>
-      </div>
-      <div class="nav-bar" onclick="$('.nav-bar').className='nav-bar';">
-        <div class="link-container" onclick="scrollToElem('intro')">
-          <div class="link">
-            <span>Intro</span>
-          </div>
-        </div>
-        <div class="link-container" onclick="scrollToElem('resources')">
-          <div class="link">
+    <div class="navigation">
+      <div class="navigation-bar container">
+        <a class="logo" href="https://rebar.digital" target="_blank">
+          <img src="images/logo.png"/>
+          <span class="digital">Digital</span><span class="rebar">Rebar</span>
+        </a>
+        <div class="links">
+          <a class="link" target="_blank" href="https://provision.readthedocs.io/en/latest/">
+            <span>Docs</span>
+          </a>
+          <a class="link" href="#resources">
             <span>Resources</span>
-          </div>
-        </div>
-        <div class="link-container" onclick="scrollToElem('glance')">
-          <div class="link">
-            <span>Glance</span>
-          </div>
-        </div>
-        <div class="link-container" onclick="javascript:location.href='community/welcome.html'">
-          <div class="link">
+          </a>
+          <a class="link" href="community/welcome.html">
             <span>Community</span>
+          </a>
+          <a class="link" href="https://rackn.com">
+            <span>Sponsor</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="try-out">
+      <div class="container">
+        <div>
+          <div class="welcome">
+            <span class="logo">
+                <span class="digital">Digital</span>
+                <span class="rebar">Rebar</span>
+            </span>
+            <span>
+              is the data center provisioning and content scaffolding designed with a cloud native architecture replacing Cobbler, Foreman, MaaS or similar technologies.
+            </span>
           </div>
         </div>
-        <div class="link-container" onclick="scrollToElem('sponsor')">
-          <div class="link">
-            <span>Sponsor</span>
+        <div>
+          <div class="install-options">
+            <div class="welcome">
+              Check out the Quick Start guide for a basic installation and starting point!
+            </div>
+            <a class="ui button primary" href="https://provision.readthedocs.io/en/latest/doc/quickstart.html">
+              Quick Start
+            </a>
+            <a class="ui button primary" href="https://github.com/digitalrebar/provision/releases">
+              Latest Release
+            </a>
           </div>
         </div>
       </div>
-    </nav>
+    </div>
 
-    <img src="rebar.jpg" id="top-img" />
-
-    <br><br><br>
-
-    <section class="content card" id="_intro" onclick="">
-      <a class="anchor" name="intro"></a>
-      <h2>Digital Rebar Provision</h2>
+    <section class="container">
+      <h1 class="ui header">Key Features</h1>
       <p>
-        Welcome to the Digital Rebar Community, home of the open source <a href="https://github.com/digitalrebar/provision">Digital Rebar Provision</a> (DRP) project. DRP is the data center provisioning and content scaffolding designed with a cloud native architecture replacing Cobbler, Foreman, MaaS or similar technologies. It offers a single golang binary (less than 30MB) with no dependencies capable of installation on a laptop, RPi or switch supporting both bare metal and virtualized infrastructure.
+        <div class="feature"><i class="fa fa-check-circle"></i>API-driven infrastructure-as-code automation</div>
+        <div class="feature"><i class="fa fa-check-circle"></i>Event driven actions via Websockets API</div>
+        <div class="feature"><i class="fa fa-check-circle"></i>Extensible Plug-in Model for enhancements</div>
+        <div class="feature"><i class="fa fa-check-circle"></i>Supports ALL orchestration tools including Chef, Puppet, Ansible, SaltStack, Bosh, Teraform, etc</div>
+        <div class="feature"><i class="fa fa-check-circle"></i>RAID, IPMI, and BIOS Configuration (via commercial plugins)</div>
+        <div class="feature"><i class="fa fa-check-circle"></i>Single sub-30MB binary</div>
+        <div class="feature"><i class="fa fa-check-circle"></i>Capable of being installed on a laptop, RPi, switch, or virtualized infrastructure</div>
       </p>
-      <img src="dr_provision.png" align="right" class="bear-image" style="max-width: 200px;">
-      <p>
-        Get started by reading the <a href="https://rackn.com/wp-content/uploads/2018/06/6-18-digital-rebar-community-welcome-guide_web_links2.pdf">Digital Rebar Community Welcome Guide</a> to quickly learn the basics of working with other Digital Rebar developers.
-      </p>
-      <p>
-      <b>Key DRP Features</b>
-      <ul>
-      <li>API-driven infrastructure-as-code automation</li>
-      <li>Event driven actions via Websockets API</li>
-      <li>Extensible Plug-in Model for enhancements</li>
-      <li>Supports ALL orchestration tools including Chef, Puppet, Ansible, SaltStack, Bosh, Teraform, etc</li>
-      <li>RAID, IPMI, and BIOS Configuration (via commercial plugins)</li>
-      </ul>
-      </p>
-      <p>
-      The latest release of DRP v3 is available: <a href="https://github.com/digitalrebar/provision/releases">Release Notes & Code on GitHub</a>
-      </p>
-      <center><table bgcolor="#efefef"><tr><td><center>
-      <h3>Continuous Integration - Status</h3>
-      <div class="ci-cd">
-        &nbsp;&nbsp;<a class="reference external image-reference" href="https://travis-ci.org/digitalrebar/provision" tooltip="Travis"><img alt="Build Status" src="https://travis-ci.org/digitalrebar/provision.svg?branch=master" /></a>
-        <a class="reference external image-reference" href="https://codecov.io/gh/digitalrebar/provision" tooltip="codecov"><img alt="codecov" src="https://codecov.io/gh/digitalrebar/provision/branch/master/graph/badge.svg" /></a>
-        <a class="reference external image-reference" href="https://goreportcard.com/report/github.com/digitalrebar/provision" tooltip="Go Report Card"><img alt="Go Report Card" src="https://goreportcard.com/badge/github.com/digitalrebar/provision" /></a>
-        <a class="reference external image-reference" href="https://godoc.org/github.com/digitalrebar/provision" tooltip="GoDoc"><img alt="GoDoc" src="https://godoc.org/github.com/digitalrebar/provision?status.svg" /></a>
-        <a class="reference external image-reference" href="http://provision.readthedocs.io/en/stable/?badge=stable" tooltip="Documentation Stable Status"><img alt="Documentation Stable Status" src="https://readthedocs.org/projects/provision/badge/?version=stable" /></a>
-        <a class="reference external image-reference" href="http://provision.readthedocs.io/en/latest/?badge=latest" tooltip="Documentation Latest Status"><img alt="Documentation Latest Status" src="https://readthedocs.org/projects/provision/badge/?version=latest" /></a>
-      &nbsp;&nbsp;</div>
-              </center></td></tr></table></center>
     </section>
+    <div class="inverted">
+      <section class="container">
+        <h1 class="ui header">Community</h1>
+        <div class="ci-cd">
+          &nbsp;&nbsp;<a class="reference external image-reference" href="https://travis-ci.org/digitalrebar/provision" tooltip="Travis"><img alt="Build Status" src="https://travis-ci.org/digitalrebar/provision.svg?branch=master" /></a>
+          <a class="reference external image-reference" href="https://codecov.io/gh/digitalrebar/provision" tooltip="codecov"><img alt="codecov" src="https://codecov.io/gh/digitalrebar/provision/branch/master/graph/badge.svg" /></a>
+          <a class="reference external image-reference" href="https://goreportcard.com/report/github.com/digitalrebar/provision" tooltip="Go Report Card"><img alt="Go Report Card" src="https://goreportcard.com/badge/github.com/digitalrebar/provision" /></a>
+          <a class="reference external image-reference" href="https://godoc.org/github.com/digitalrebar/provision" tooltip="GoDoc"><img alt="GoDoc" src="https://godoc.org/github.com/digitalrebar/provision?status.svg" /></a>
+          <a class="reference external image-reference" href="http://provision.readthedocs.io/en/stable/?badge=stable" tooltip="Documentation Stable Status"><img alt="Documentation Stable Status" src="https://readthedocs.org/projects/provision/badge/?version=stable" /></a>
+          <a class="reference external image-reference" href="http://provision.readthedocs.io/en/latest/?badge=latest" tooltip="Documentation Latest Status"><img alt="Documentation Latest Status" src="https://readthedocs.org/projects/provision/badge/?version=latest" /></a>
+        &nbsp;&nbsp;</div>
+        <p>
+          Welcome to the Digital Rebar Community, home of the <a href="https://github.com/digitalrebar/provision">Digital Rebar Provision</a> (DRP) project. DRP is the data center provisioning and content scaffolding designed with a cloud native architecture replacing Cobbler, Foreman, MaaS or similar technologies. It offers 
+           with no dependencies .
+        </p>
+        <!-- <img src="dr_provision.png" align="right" class="bear-image" style="max-width: 200px;"> -->
+        <p>
+          Get started by reading the <a href="https://rackn.com/wp-content/uploads/2018/06/6-18-digital-rebar-community-welcome-guide_web_links2.pdf">Digital Rebar Community Welcome Guide</a> to quickly learn the basics of working with other Digital Rebar developers.
+        </p>
+      </section>
+    </div>
 <!--    <div style="background: #eee; padding: 2px;" onclick=""> -->
       <section class="content card" id="_resources">
         <a class="anchor" name="resources"></a>
         <h2>Resources</h2>
         <div class="getting-started-container">
-          <div class="getting-started" alt="DRP Demos" onclick="displayClick(event, this)" url="https://www.youtube.com/playlist?list=PLXPBeIrpXjfilUi7Qj1Sl0UhjxNRSC7nx">
-            <i class="material-icons">video_library</i>
-          </div>
+          <a class="getting-started" alt="DRP Demos" target="_blank" href="https://www.youtube.com/playlist?list=PLXPBeIrpXjfilUi7Qj1Sl0UhjxNRSC7nx">
+            <i class="fa fa-video"></i>
+          </a>
           <div class="getting-started noclick" alt="Documentation" onclick="">
-            <i class="material-icons">book</i>
+            <i class="fa fa-book"></i>
             <div class="dropdown">
-              <div class="dropdown-link" onclick="displayClick(event, this)" url="http://provision.readthedocs.org/en/latest/">
+              <a class="dropdown-link" target="_blank" href="http://provision.readthedocs.org/en/latest/">
                 Full Docs
-              </div>
-              <div class="dropdown-link" onclick="displayClick(event, this)" url="http://provision.readthedocs.io/en/latest/doc/install.html">
+              </a>
+              <a class="dropdown-link" target="_blank" href="http://provision.readthedocs.io/en/latest/doc/install.html">
                 Install Guide
-              </div>
-              <div class="dropdown-link" onclick="displayClick(event, this)" url="http://provision.readthedocs.io/en/latest/doc/quickstart.html">
-                QuickStart
-              </div>
-              <div class="dopdown-link" onclick="displayClick(event, this)" url="https://rackn.com/wp-content/uploads/2018/06/6-18-digital-rebar-community-welcome-guide_web_links2.pdf">
+              </a>
+              <a class="dropdown-link" target="_blank" href="http://provision.readthedocs.io/en/latest/doc/quickstart.html">
+                Quick Start
+              </a>
+              <a class="dopdown-link" target="_blank" href="https://rackn.com/wp-content/uploads/2018/06/6-18-digital-rebar-community-welcome-guide_web_links2.pdf">
                 Welcome Guide
-              </div>
+              </a>
             </div>
           </div>
-          <div class="getting-started" alt="Slack Community" onclick="displayClick(event, this)" url="https://rackn.com/support/slack">
-            <i class="material-icons">forum</i>
-          </div>
-          <div class="getting-started" alt="Public Archive" onclick="displayClick(event, this)" url="slack/html/index.html">
-            <i class="material-icons">library_books</i>
-          </div>
-          <div class="getting-started" alt="Online Meetups" onclick="displayClick(event, this)" url="https://www.youtube.com/playlist?list=PLXPBeIrpXjfjsiMkDn2SJuTPYTotESpL2">
-            <i class="material-icons">supervisor_account</i>
-          </div>
-          <div class="getting-started" alt="GitHub Repo" onclick="displayClick(event, this)" url="https://github.com/digitalrebar/provision">
-            <i class="material-icons">code</i>
-          </div>
-          <div class="getting-started" alt="Issues &amp; Roadmap" onclick="displayClick(event, this)" url="https://github.com/digitalrebar/provision/issues">
-            <i class="material-icons">directions</i>
-          </div>
-          <div class="getting-started" alt="RackN Portal" onclick="displayClick(event, this)" url="https://portal.rackn.io/#/">
-            <i class="material-icons">web</i>
-          </div>
+          <a class="getting-started" alt="Slack Community" target="_blank" href="https://rackn.com/support/slack">
+            <i class="fab fa-slack"></i>
+          </a>
+          <a class="getting-started" alt="Public Archive" target="_blank" href="slack/html/index.html">
+            <i class="fa fa-archive"></i>
+          </a>
+          <a class="getting-started" alt="Online Meetups" target="_blank" href="https://www.youtube.com/playlist?list=PLXPBeIrpXjfjsiMkDn2SJuTPYTotESpL2">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a class="getting-started" alt="Source" target="_blank" href="https://github.com/digitalrebar/provision">
+            <i class="fab fa-github"></i>
+          </a>
+          <a class="getting-started" alt="Issues &amp; Roadmap" target="_blank" href="https://github.com/digitalrebar/provision/issues">
+            <i class="fa fa-map-signs"></i>
+          </a>
+          <a class="getting-started" alt="RackN Portal" target="_blank" href="https://portal.rackn.io/#/">
+            <i class="fa fa-tools"></i>
+          </a>
           </div>
         </div>
       </section>
@@ -170,172 +178,15 @@
         <a href="mailto:sales@rackn.com">Contact RackN</a> if you have any questions about building custom plugins that may already be available from RackN.
         </p>
       </section>
-<!--    </div> -->
 
     <section class="footer">
       <footer>
-        &copy; 2018 RackN, Inc.<br/>
-        <a href="http://provision.readthedocs.org/en/latest/">Documentation</a> | <a href="http://github.com/digitalrebar/provision">Source</a> | <a href="http://rackn.com">Sponsor</a> | <a href="http://github.com/meshiest">Site Designer</a>
+        &copy; 2019 RackN, Inc.<br/>
+        <a href="http://provision.readthedocs.org/en/latest/">Documentation</a> | <a href="http://github.com/digitalrebar/provision">Source</a> | <a href="http://rackn.com">Sponsor</a> | <a href="http://portal.rackn.io">Portal</a>
       </footer>
     </section>
 
     <script>
-
-var backgroundImage = document.getElementById('top-img');
-var toolbar = document.getElementById('toolbar');
-var typing = document.getElementById('typing');
-var cursor = document.getElementById('cursor');
-
-var phrases = [
-  'digital_rebar',
-  'sre_automation',
-  'composable_ops',
-  'bare_metal_api',
-  'devops_control',
-  'pxe_provision',
-  'immutable_infrastucture',
-];
-
-var extensions = [
-  'tar.gz',
-  'sh',
-  'yml',
-  'rb',
-  'go',
-  'js',
-];
-
-var phraseIndex = -1;
-var waitTime = 3000;
-var letterTime = 50;
-
-window.$ = document.querySelector.bind(document);
-
-// Starts the typing animation at the top of the page
-function typeWord (word) {
-  if(Math.random() < 0.1) {
-    word += '.' + extensions[Math.floor(Math.random() * extensions.length)];
-  }
-
-  var duration = word.length * letterTime * 2 + waitTime;
-
-  setTimeout(function () {
-    cursor.className = 'blink terminal-green';
-  }, word.length * letterTime);
-
-  setTimeout(function () {
-    cursor.className = 'terminal-green';
-  }, word.length * letterTime + waitTime);
-
-  for(var i = 0; i < word.length; i++) {
-    (function(text){ // type word
-      setTimeout(function () {
-        typing.innerHTML = text;
-      }, letterTime * i);
-
-      setTimeout(function () { // remove word
-        typing.innerHTML = text;
-      }, duration - letterTime * i);
-    })(word.substr(0, i+1));
-  }
-  setTimeout(nextPhrase, duration) // queue next word
-}
-
-// Randomly creates the next phrase at the top of the page
-function nextPhrase () {
-  typeWord (phrases[phraseIndex = (phraseIndex + 1) % phrases.length])
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  setTimeout(nextPhrase, 1000);
-  toolbar.className = (window.scrollY > backgroundImage.height - 400 ? 'card' : 'overlay');
-});
-
-// Called when a getting started card is clicked
-function displayClick(e, elem) {
-  if(!e)
-    e = window.event;
-
-  if (e.stopPropagation)
-    e.stopPropagation();
-  else
-    e.cancelBubble = true;
-
-  window.open(elem.attributes.url.value);
-}
-
-var clouds = [
-  'cloud',
-  'cloud_done',
-  'cloud_download',
-  'cloud_upload'
-];
-
-window.addEventListener('scroll', function() {
-  toolbar.className = (window.scrollY > backgroundImage.height - 400 ? 'card' : 'overlay');
-});
-
-// easing functions http://goo.gl/5HLl8
-function lerpEase (t, b, c, d) {
-  t /= d/2;
-  if (t < 1) {
-    return c/2*t*t + b
-  }
-  t--;
-  return -c/2 * (t*(t-2) - 1) + b;
-};
-
-// requestAnimationFrame for Smart Animating http://goo.gl/sx5sts
-var requestAnimFrame = (function(){
-  return  window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function( callback ){ setTimeout(callback, 1000 / 60); };
-})();
-
-var scrollTimeout = 0;
-function scrollToElem(elem) {
-  clearTimeout(scrollTimeout);
-  var e = document.getElementById('_'+elem);
-  scrollTo(e.offsetTop-40, 0, 500);
-  scrollTimeout = setTimeout(function(){
-    window.location.href = "#"+elem;
-  }, 500);
-}
-
-function scrollTo(to, callback, duration) {
-  function move(amount) {
-    document.documentElement.scrollTop = amount;
-    document.body.parentNode.scrollTop = amount;
-    document.body.scrollTop = amount;
-  }
-
-  function position() {
-    return document.documentElement.scrollTop || document.body.parentNode.scrollTop || document.body.scrollTop;
-  }
-
-  var start = position(),
-    change = to - start,
-    currentTime = 0,
-    increment = 20;
-
-  duration = (typeof(duration) === 'undefined') ? 500 : duration;
-  var animateScroll = function() {
-    // increment the time
-    currentTime += increment;
-    // find the value with the quadratic in-out easing function
-    var val = lerpEase(currentTime, start, change, duration);
-    // move the document.body
-    move(val);
-    // do the animation unless its over
-    if (currentTime < duration) {
-      requestAnimFrame(animateScroll);
-    } else {
-      if (callback && typeof(callback) === 'function') {
-        // the animation is done so lets callback
-        callback();
-      }
-    }
-  };
-  animateScroll();
-}
 
  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

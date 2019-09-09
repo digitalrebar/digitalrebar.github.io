@@ -8,12 +8,156 @@
   qualified-headings: false
 */
 
+/*
+#6f7e9f - mid
+#596580 - dark
+#24344f - darker
+#cfd6e6 - light
+#f5f7fa - lighter
+#607dbf - saturated
+ */
+
 body, html {
-  font-family: 'Roboto', Helvetica, Arial;
-  min-height: 100vh;
+  font-family: 'Lato', Helvetica, Arial;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   overflow-x: hidden;
-  width: 100vw;
+  background-color: #f5f7fa;
 }
+
+.container {
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 976px;
+}
+
+.navigation {
+  background-color: #24344f;
+  padding: 8px 0;
+}
+
+.navigation .navigation-bar {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation .logo {
+  color: #f5f7fa;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  font-size: 21px;
+  text-decoration: none;
+}
+
+.navigation .digital {
+  margin-left: 14px;
+}
+
+.navigation .rebar {
+  font-weight: bold;
+}
+
+.navigation .links {
+  display: flex;
+  text-transform: uppercase;
+}
+
+.navigation .link {
+  text-decoration: none;
+  margin: 0 8px;
+  padding: 8px 0;
+}
+
+.navigation .link:not(:first-child) {
+  border-left: 1px solid #6f7e9f;
+  padding-left: 16px;
+}
+
+.navigation .link, .navigation .visited {
+  color: #f5f7fa;
+}
+
+.navigation .link:hover {
+  text-decoration: underline;
+}
+
+.try-out {
+  background-color: #24344f;
+  color: #f5f7fa;
+  padding: 80px;
+}
+
+.welcome {
+  font-size: 20px;
+  line-height: 1.5;
+  color: #cfd6e6;
+}
+
+.welcome .logo {
+  color: #f5f7fa;
+  font-weight: bold;
+}
+
+.try-out .container {
+  display: flex;
+}
+
+.try-out .container > div {
+  flex: 0.5;
+  padding: 14px;
+}
+
+.install-options {
+  text-align: center;
+}
+
+.install-options .welcome {
+  margin-bottom: 14px;
+}
+
+section.container {
+  padding: 80px 24px;
+  line-height: 1.5;
+  font-size: 20px;
+}
+
+.inverted {
+  background-color: #596580;
+  color: #f5f7fa;
+}
+
+.inverted .header {
+  color: #f5f7fa;
+}
+
+.inverted a {
+  color: #f5f7fa;
+  text-decoration: underline;
+}
+
+.ci-cd {
+  display: none;
+  /*display: flex;*/
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.ci-cd a {
+  margin: 4px;
+  line-height: 1;
+}
+
+p, ul {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+/* end of new css */
 
 ul {
   padding-left: 20px;
@@ -43,27 +187,6 @@ sup {
   z-index: -1;
 }
 
-h2 {
-  color: #666;
-  font-size: 2em;
-  text-align: center;
-}
-
-h3 {
-  color: #666;
-  font-size: 20px;
-  text-align: center;
-  padding: 4px 0;
-  line-height: 1;
-}
-
-p, ul {
-  font-size: 1rem;
-  line-height: 1.8rem;
-  margin-bottom: 1em;
-  margin-top: 1em;
-}
-
 strong {
   font-weight: bold;
 }
@@ -78,7 +201,6 @@ strong {
 .card {
   background: #fff;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  margin: 8px;
 }
 
 .getting-started-container {
@@ -107,30 +229,41 @@ strong {
   position: relative;
   text-align: center;
   transform: translateZ(0);
-  transition: all 0.5s;
+  text-decoration: none;
+  transition: all 0.2s;
   width: 150px;
+}
+
+.getting-started:hover, .getting-started:focus {
+  text-decoration: none;
 }
 
 .getting-started:not(.noclick) {
   cursor: pointer;
 }
 
-.getting-started i.material-icons {
-  color: #0af;
-  font-size: 80px;
+.getting-started i.fa, .getting-started i.fab {
+  color: #58e;
+  font-size: 60px;
 }
-
-.getting-started:hover {
-  border: 1px solid #0af;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  color: #0af;
-  transform: translateY(-4px);
-}
-
 
 .getting-started::after {
   content: attr(alt);
+  margin-top: 14px;
+  color: #666;
 }
+
+.getting-started:hover {
+  border: 1px solid #58e;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #58e;
+  transform: translateY(-4px);
+}
+
+.getting-started:hover::after {
+  color: #58e;
+}
+
 
 .getting-started:hover .dropdown {
   opacity: 1;
@@ -146,7 +279,7 @@ strong {
   position: absolute;
   top: 0;
   transform: translateY(-100%);
-  transition: all 0.5s;
+  transition: all 0.2s;
   width: 100%;
 }
 
@@ -167,55 +300,6 @@ strong {
   transition: all 0.2s;
 }
 
-.typing-container {
-  display: flex;
-  flex-direction: column;
-  font-family: 'Roboto Mono', monospace;
-  height: 100vh;
-  justify-content: center;
-  text-align: center;
-}
-
-.typing-font {
-  color: #eee;
-  font-size: 48px;
-  text-shadow: 0 0 12px rgba(238, 238, 238, 0.5);
-}
-
-.terminal-green {
-  color: #4e4;
-  text-shadow: 0 0 12px rgba(64, 238, 64, 0.5);
-}
-
-.blink {
-  animation: blinker 1.5s linear infinite;
-}
-
-@keyframes blinker {  
-    0% { opacity: 1.0; }
-    50% { opacity: 0.0; }
-    100% { opacity: 1.0; }
-}
-
-section a:link {
-  color: #66c;
-  text-decoration: none;
-  transition: all 0.2s;
-}
-
-section a:hover {
-  color: #99d;
-  text-decoration: underline;
-}
-
-section a:visited {
-  color: #449;
-}
-
-section a:active {
-  color: #eef;
-}
-
 #layer {
   z-index: 1;
 }
@@ -226,27 +310,19 @@ section a:active {
   padding: 0 8px;
   position: fixed;
   top: 0;
-  transition: all 0.5s;
+  transition: all 0.2s;
   width: 100vw;
   z-index: 3;
 }
 
 #toolbar:not(.overlay) {
   background: #000;
-  color: #0af;
+  color: #58e;
 }
 
 .overlay {
   background: rgba(0, 0, 0, 0.56);
   color: rgba(255, 255, 255, 0.8);
-}
-
-.nav-bar {
-  height: 48px;
-  position: fixed;
-  right: 0;
-  top: 0;
-  z-index: 4;
 }
 
 .link-container {
@@ -281,13 +357,12 @@ section a:active {
 .link-container:hover .link span::before {
   background: rgba(39, 177, 251, 0.2);
   top: 0;
-  transition: all 0.5s;
+  transition: all 0.2s;
 }
 
 .footer {
   background: #222;
   color: #777;
-  min-height: 50px;
 }
 
 .footer footer {
@@ -348,16 +423,9 @@ section a:active {
   margin: auto;
 }
 
-nav {
-  position: relative;
-}
 
-nav img {
-  height: 100%;
-}
-
-.menu-button {
-  display: none;
+.logo img {
+  height: 48px;
 }
 
 @media screen and (max-width: 800px) {
@@ -414,11 +482,11 @@ nav img {
     font-size: 15px;
     height: 100px;
     margin: 8px;
-    transition: background-color 0.5s;
+    transition: background-color 0.2s;
     width: 100px;
   }
 
-  .getting-started i.material-icons {
+  .getting-started i.fa, .getting-started i.fab {
     font-size: 50px;
   }
 
@@ -442,7 +510,7 @@ nav img {
 
   #toolbar:not(.overlay) .nav-bar {
     background: #000;
-    color: #0af;
+    color: #58e;
   }
 
   .overlay .nav-bar {
@@ -458,7 +526,7 @@ nav img {
     position: absolute;
     right: -200px;
     top: 48px;
-    transition: all 0.5s;
+    transition: all 0.2s;
   }
 
   .nav-bar.hover {
@@ -498,13 +566,15 @@ nav img {
 
 }
 
-.ci-cd {
+.feature {
+  line-height: 1.5;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
+  align-items: center;
+  margin: 8px 0;
 }
 
-.ci-cd a {
-  margin: 4px;
-  line-height: 1;
+.feature i {
+  margin-right: 14px;
+  font-size: 25px;
+  color: #58e;
 }
