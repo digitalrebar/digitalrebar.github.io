@@ -87,7 +87,7 @@ body, html {
 .try-out {
   background-color: #24344f;
   color: #f5f7fa;
-  padding: 80px;
+  padding: 60px 0;
 }
 
 .welcome {
@@ -124,18 +124,21 @@ section.container {
   font-size: 20px;
 }
 
+section .header {
+  color: #24344f !important;
+}
+
 .inverted {
-  background-color: #596580;
-  color: #f5f7fa;
+  background-color: #24344f;
+  color: #cfd6e6;
 }
 
 .inverted .header {
-  color: #f5f7fa;
+  color: #f5f7fa !important;
 }
 
 .inverted a {
-  color: #f5f7fa;
-  text-decoration: underline;
+  color: #58e;
 }
 
 .ci-cd {
@@ -155,6 +158,44 @@ p, ul {
   line-height: 1.8rem;
   margin-bottom: 1em;
   margin-top: 1em;
+}
+
+.key-features {
+  align-items: center;
+  column-count: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+}
+
+.feature {
+  align-items: center;
+  color: #596580;
+  display: flex;
+  line-height: 1.5;
+  margin: 14px;
+  width: 40%;
+}
+
+.feature i {
+  color: #58e;
+  font-size: 40px;
+  margin-right: 21px;
+}
+
+.container a, a.ui.button:hover {
+  text-decoration: none;
+}
+
+.container a:hover {
+  text-decoration: underline;
+}
+
+.resource-grid {
+  /*display: flex;*/
+  flex-flow: row wrap;
+  column-count: 3;
 }
 
 /* end of new css */
@@ -564,17 +605,4 @@ strong {
     transition: all 0.3s;
   }
 
-}
-
-.feature {
-  line-height: 1.5;
-  display: flex;
-  align-items: center;
-  margin: 8px 0;
-}
-
-.feature i {
-  margin-right: 14px;
-  font-size: 25px;
-  color: #58e;
 }
