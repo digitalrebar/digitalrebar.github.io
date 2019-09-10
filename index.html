@@ -6,7 +6,6 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"><link href="digitalrebar.ico" rel="SHORTCUT ICON" />
     <meta name="google-site-verification" content="zCf79OnCmnSaInCAHjC8bfWcYvMXXzTfjx_fG_k-6AM" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <link href="reset.css" rel="stylesheet" type="text/css" />
     <link href="style.css" rel="stylesheet" type="text/css" />
     <title>Digital Rebar</title>
   </head>
@@ -29,6 +28,9 @@
           </a>
           <a class="link" href="https://rackn.com">
             <span>Sponsor</span>
+          </a>
+          <a class="link" href="https://github.com/digitalrebar">
+            <i class="fab fa-github"></i>
           </a>
         </div>
       </div>
@@ -54,8 +56,8 @@
             <a class="ui button primary" href="https://provision.readthedocs.io/en/latest/doc/quickstart.html">
               Quick Start
             </a>
-            <a class="ui button primary" href="https://github.com/digitalrebar/provision/releases">
-              Latest Release
+            <a class="ui button primary" href="https://provision.readthedocs.io/en/latest/doc/install.html">
+              Install Guide
             </a>
           </div>
         </div>
@@ -105,19 +107,13 @@
     </section>
 
     <div class="inverted">
-      <section class="container">
+      <section class="container paragraph-section">
         <h1 class="ui header">Community</h1>
-        <div class="ci-cd">
-          &nbsp;&nbsp;<a class="reference external image-reference" href="https://travis-ci.org/digitalrebar/provision" tooltip="Travis"><img alt="Build Status" src="https://travis-ci.org/digitalrebar/provision.svg?branch=master" /></a>
-          <a class="reference external image-reference" href="https://codecov.io/gh/digitalrebar/provision" tooltip="codecov"><img alt="codecov" src="https://codecov.io/gh/digitalrebar/provision/branch/master/graph/badge.svg" /></a>
-          <a class="reference external image-reference" href="https://goreportcard.com/report/github.com/digitalrebar/provision" tooltip="Go Report Card"><img alt="Go Report Card" src="https://goreportcard.com/badge/github.com/digitalrebar/provision" /></a>
-          <a class="reference external image-reference" href="https://godoc.org/github.com/digitalrebar/provision" tooltip="GoDoc"><img alt="GoDoc" src="https://godoc.org/github.com/digitalrebar/provision?status.svg" /></a>
-          <a class="reference external image-reference" href="http://provision.readthedocs.io/en/stable/?badge=stable" tooltip="Documentation Stable Status"><img alt="Documentation Stable Status" src="https://readthedocs.org/projects/provision/badge/?version=stable" /></a>
-          <a class="reference external image-reference" href="http://provision.readthedocs.io/en/latest/?badge=latest" tooltip="Documentation Latest Status"><img alt="Documentation Latest Status" src="https://readthedocs.org/projects/provision/badge/?version=latest" /></a>
-        </div>
-        <!-- <img src="dr_provision.png" align="right" class="bear-image" style="max-width: 200px;"> -->
         <p>
-          Get started by reading the <a href="https://rackn.com/wp-content/uploads/2018/06/6-18-digital-rebar-community-welcome-guide_web_links2.pdf">Digital Rebar Community Welcome Guide</a> to quickly learn the basics of working with other Digital Rebar developers.
+          The Digital Rebar Community embraces the heterogeneous nature of datacenter operations while eliminating the complexity and manual steps.
+        </p>
+        <p>
+          Get started by reading the <a href="https://rackn.com/wp-content/uploads/2018/06/6-18-digital-rebar-community-welcome-guide_web_links2.pdf">Community Welcome Guide</a> to learn the basics of working with other Digital Rebar developers.
         </p>
         <p>
           Join us along with other developers and ops enthusiasts in the <a href="https://rackn.com/support/slack">RackN Slack</a>!
@@ -126,94 +122,158 @@
     </div>
 
     <section class="container">
+      <a class="anchor" name="resources"></a>
       <h1 class="ui header">Resources</h1>
       <div class="resource-grid">
         <a class="resource" href="https://www.youtube.com/playlist?list=PLXPBeIrpXjfilUi7Qj1Sl0UhjxNRSC7nx">
           <i class="fa fa-video"></i>
-          <span class="subheader">Demo Videos</span>
+          <div class="text">
+            <span class="header">Demo Videos</span>
+            <span class="subheader">Browse dozens of in depth demonstrations</span>
+          </div>
         </a>
           <div class="ui dropdown resource simple">
             <i class="fa fa-book"></i>
-            <span class="subheader">Documentation</span>
+            <div class="text" onclick="">
+              <span class="header">Documentation</span>
+              <span class="subheader">Learn more about the API and product</span>
+            </div>
           <div class="menu">
             <a class="item" href="http://provision.readthedocs.org/en/latest/">
-              Full Docs
+              <i class="ui icon book"></i>
+              Full Documentation
             </a>
             <a class="item" href="http://provision.readthedocs.io/en/latest/doc/install.html">
+              <i class="ui icon download"></i>
               Install Guide
             </a>
             <a class="item" href="http://provision.readthedocs.io/en/latest/doc/quickstart.html">
+              <i class="ui icon paper plane"></i>
               Quick Start
             </a>
             <a class="item" href="https://rackn.com/wp-content/uploads/2018/06/6-18-digital-rebar-community-welcome-guide_web_links2.pdf">
+              <i class="ui icon group"></i>
               Welcome Guide
             </a>
           </div>
         </div>
         <a class="resource" href="https://rackn.com/support/slack">
           <i class="fab fa-slack"></i>
-          <span class="subheader">Slack Community</span>
+          <div class="text">
+            <span class="header">Slack Community</span>
+            <span class="subheader">Talk with other members of the Digital Rebar Community</span>
+          </div>
         </a>
         <a class="resource" href="slack/html/index.html">
           <i class="fa fa-archive"></i>
-          <span class="subheader">Public Archive</span>
+          <div class="text">
+            <span class="header">Public Archive</span>
+            <span class="subheader">Read the #community Slack channel history</span>
+          </div>
         </a>
         <a class="resource" href="https://www.youtube.com/playlist?list=PLXPBeIrpXjfjsiMkDn2SJuTPYTotESpL2">
           <i class="fab fa-youtube"></i>
-          <span class="subheader">Online Meetups</span>
+          <div class="text">
+            <span class="header">Online Meetups</span>
+            <span class="subheader">Watch our previous online meetup recordings</span>
+          </div>
         </a>
         <a class="resource" href="https://github.com/digitalrebar/provision">
           <i class="fab fa-github"></i>
-          <span class="subheader">Source</span>
+          <div class="text">
+            <span class="header">Source</span>
+            <span class="subheader">Read available open source material</span>
+          </div>
         </a>
         <a class="resource" href="https://github.com/digitalrebar/provision/issues">
           <i class="fa fa-map-signs"></i>
-          <span class="subheader">Issues &amp; Roadmap</span>
+          <div class="text">
+            <span class="header">Issues &amp; Roadmap</span>
+            <span class="subheader">Visit our issue tracker</span>
+          </div>
         </a>
         <a class="resource" href="https://portal.rackn.io/#/">
           <i class="fa fa-tools"></i>
-          <span class="subheader">RackN Portal</span>
+          <div class="text">
+            <span class="header">RackN Portal</span>
+            <span class="subheader">Connect to an existing DRP Endpoint</span>
+          </div>
         </a>
       </div>
-
     </section>
-      <section class="content card" id="_glance"  onclick="">
-        <a class="anchor" name="glance"></a>
-        <h2>At a Glance</h2>
+
+    <div class="inverted">
+      <section class="container paragraph-section">
+        <h1 class="ui header">Motivation</h1>
         <p>
-        <strong>Community Mission</strong>: Embrace the Heterogeneous Nature of Data Center Operations while Eliminating Complexity and Manual Steps.
+          Our mission is to collaborate on a technology that revolutionizes how traditional data center infrastructure operations can gracefully absorb next-generation workloads without churn and additional technological complexity. DRP enables upgrade and continuous deployment automation for production-scale deployments of technology such as Docker, Kubernetes, Cloud Foundry, etc.
         </p>
         <p>
-        <strong>Principal Motivation</strong>: Collaborate on a technology that revolutionizes how traditional data center infrastructure operations can gracefully absorb next-generation workloads without churn and additional technological complexity. DRP enables upgrade and continuous deployment automation for production-scale deployments of technology such as Docker, Kubernetes, Cloud Foundry, etc.
-        </p>
-        <p>
-        Digital Rebar Provision is a production-ready open implementation that can be designed to reliably deployed in large-scale, multi-site data centers as well as soon to be deployed edge sites. This effectively productizes best practices in a way that allows creation of consistent and discoverable operating environments. Users benefit with fast time-to-value and the community benefits by having consistent installations across the ecosystem.
+          Digital Rebar Provision is a production-ready open implementation that can be designed to reliably deployed in large-scale, multi-site data centers as well as soon to be deployed edge sites. This effectively productizes best practices in a way that allows creation of consistent and discoverable operating environments. Users benefit with fast time-to-value and the community benefits by having consistent installations across the ecosystem.
         </p>
       </section>
+    </div>
 
-
-      <section class="content card" id="_sponsor">
-        <a class="anchor" name="sponsor"></a>
-        <h2>Project Sponsored by <a href="http://rackn.com">RackN</a></h2>
-        <p>
-          Digital Rebar Provision is an <a href="https://github.com/digitalrebar/provision/blob/master/LICENSE">Apache2 licensed</a> Project. As the community sponsor, RackN provides day to day management of the community including the GitHub site, development activities and community promotion. Additionally, <a href="https://www.rackn.com/products/">RackN</a> offers commerical support, custom integrations, training, and advanced technology for Digital Rebar Provision users interested in extending the open source feature set.
-        </p>
-        <p>
-        <b>Additional RackN Features</b>
-        </p>
-        <p>
+    <section class="container paragraph-section">
+      <h1 class="ui header"><a href="https://rackn.com">RackN</a> Sponsorship</h1>
+      <div class="ui horizontal divider">About the Sponsor</div>
+      <p>
+        Digital Rebar Provision is an <a href="https://github.com/digitalrebar/provision/blob/master/LICENSE">APL2</a> Project. As the community sponsor, RackN provides day to day management of the community including the GitHub site, development activities and community promotion. Additionally, <a href="https://www.rackn.com/products/">RackN</a> offers commerical support, custom integrations, training, and advanced technology for Digital Rebar Provision users interested in extending the open source feature set.
+      </p>
+      <div class="ui horizontal divider">Additional RackN Features</div>
+      <p>
         RackN provides additional features for DRP that are either made available to the community or are available for a fee from RackN.
-        <ul>
-        <li><a href="https://www.rackn.com/products/rackn-portal/">RackN Portal</a> - A SaaS based UX is available for both the open source community and RackN customers. The UX can be run in air gap mode for users requiring additional security for their deployment. The UX is closed source however RackN does not charge for usage of this tool for community members.</li>
-        <li>Windows Provisioning - Users interested in provisioning any non-Linux OS such as Windows should contact <a href="mailto:sales@rackn.com">RackN</a></li>
-        <li>Image Deployment - Users interested in provisioning golden images instead of OS provisioning should contact <a href="mailto:sales@rackn.com">RackN</a></li>
-        <li>IPMI - Users interested in IPMI should contact <a href="mailto:sales@rackn.com">RackN</a></li>
-        </ul>
-        </p>
-        <p>
-        <a href="mailto:sales@rackn.com">Contact RackN</a> if you have any questions about building custom plugins that may already be available from RackN.
-        </p>
-      </section>
+        <div class="rackn-features">
+          <div class="rackn-feature">
+            <i class="fa fa-tools"></i>
+            <div class="text">
+              <div class="header">
+                RackN Portal
+              </div>
+              <div class="subheader">
+                The <a href="https://www.rackn.com/products/rackn-portal/">RackN Portal</a>, is available for both the community and RackN customers.
+              </div>
+            </div>
+          </div>
+          <div class="rackn-feature">
+            <i class="fab fa-windows"></i>
+            <div class="text">
+              <div class="header">
+                Windows Provisioning
+              </div>
+              <div class="subheader">
+                Users interested in provisioning any non-Linux OS such as Windows should contact <a href="mailto:sales@rackn.com">sales@rackn.com</a>
+              </div>
+            </div>
+          </div>
+          <div class="rackn-feature">
+            <i class="fa fa-hdd"></i>
+            <div class="text">
+              <div class="header">
+                Image Deployment
+              </div>
+              <div class="subheader">
+                Users interested in provisioning golden images instead of OS provisioning should contact <a href="mailto:sales@rackn.com">sales@rackn.com</a>
+              </div>
+            </div>
+          </div>
+          <div class="rackn-feature">
+            <i class="fa fa-network-wired"></i>
+            <div class="text">
+              <div class="header">
+                IPMI
+              </div>
+              <div class="subheader">
+                Users interested in IPMI should contact <a href="mailto:sales@rackn.com">sales@rackn.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </p>
+      <p>
+        Contact <a href="mailto:sales@rackn.com">sales@rackn.com</a> if you have any questions about building custom plugins that may already be available from RackN.
+      </p>
+    </section>
 
     <section class="footer">
       <footer>
@@ -221,6 +281,7 @@
         <a href="http://provision.readthedocs.org/en/latest/">Documentation</a> | <a href="http://github.com/digitalrebar/provision">Source</a> | <a href="http://rackn.com">Sponsor</a> | <a href="http://portal.rackn.io">Portal</a>
       </footer>
     </section>
+
 
     <script>
 
