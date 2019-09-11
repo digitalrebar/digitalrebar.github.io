@@ -23,7 +23,7 @@
           <a class="link" href="#resources">
             <span>Resources</span>
           </a>
-          <a class="link" href="community/welcome.html">
+          <a class="link" href="/welcome">
             <span>Community</span>
           </a>
           <a class="link" href="https://rackn.com">
@@ -32,6 +32,33 @@
           <a class="link" href="https://github.com/digitalrebar">
             <i class="fab fa-github"></i>
           </a>
+        </div>
+        <div class="ui dropdown simple">
+          <div class="nav-container" onclick="">
+            <i class="ui icon bars"></i>
+          </div>
+          <div class="menu">
+            <a class="item" target="_blank" href="https://provision.readthedocs.io/en/latest/">
+              <i class="ui icon book"></i>
+              <span>Docs</span>
+            </a>
+            <a class="item" href="#resources">
+              <i class="ui icon info"></i>
+              <span>Resources</span>
+            </a>
+            <a class="item" href="/welcome">
+              <i class="ui icon group"></i>
+              <span>Community</span>
+            </a>
+            <a class="item" href="https://rackn.com">
+              <i class="ui icon heart"></i>
+              <span>Sponsor</span>
+            </a>
+            <a class="item" href="https://github.com/digitalrebar">
+              <i class="ui icon github"></i>
+              Source
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -132,12 +159,12 @@
             <span class="subheader">Browse dozens of in depth demonstrations</span>
           </div>
         </a>
-          <div class="ui dropdown resource simple">
-            <i class="fa fa-book"></i>
-            <div class="text" onclick="">
-              <span class="header">Documentation</span>
-              <span class="subheader">Learn more about the API and product</span>
-            </div>
+        <div class="ui dropdown resource simple">
+          <i class="fa fa-book"></i>
+          <div class="text" onclick="">
+            <span class="header">Documentation</span>
+            <span class="subheader">Learn more about the API and product</span>
+          </div>
           <div class="menu">
             <a class="item" href="http://provision.readthedocs.org/en/latest/">
               <i class="ui icon book"></i>
@@ -150,6 +177,10 @@
             <a class="item" href="http://provision.readthedocs.io/en/latest/doc/quickstart.html">
               <i class="ui icon paper plane"></i>
               Quick Start
+            </a>
+            <a class="item" href="https://www.packet.net/developers/guides/ditch-cobbler-for-rackn/">
+              <i class="ui icon server"></i>
+              Packet.net Custom IPXE
             </a>
             <a class="item" href="https://rackn.com/wp-content/uploads/2018/06/6-18-digital-rebar-community-welcome-guide_web_links2.pdf">
               <i class="ui icon group"></i>
@@ -216,63 +247,60 @@
 
     <section class="container paragraph-section">
       <h1 class="ui header"><a href="https://rackn.com">RackN</a> Sponsorship</h1>
-      <div class="ui horizontal divider">About the Sponsor</div>
       <p>
+        <div class="ui horizontal divider">About the Sponsor</div>
         Digital Rebar Provision is an <a href="https://github.com/digitalrebar/provision/blob/master/LICENSE">APL2</a> Project. As the community sponsor, RackN provides day to day management of the community including the GitHub site, development activities and community promotion. Additionally, <a href="https://www.rackn.com/products/">RackN</a> offers commerical support, custom integrations, training, and advanced technology for Digital Rebar Provision users interested in extending the open source feature set.
       </p>
-      <div class="ui horizontal divider">Additional RackN Features</div>
       <p>
-        RackN provides additional features for DRP that are either made available to the community or are available for a fee from RackN.
-        <div class="rackn-features">
-          <div class="rackn-feature">
-            <i class="fa fa-tools"></i>
-            <div class="text">
-              <div class="header">
-                RackN Portal
-              </div>
-              <div class="subheader">
-                The <a href="https://www.rackn.com/products/rackn-portal/">RackN Portal</a>, is available for both the community and RackN customers.
-              </div>
+        Please contact <a href="mailto:sales@rackn.com">sales@rackn.com</a> if you have any questions about building custom plugins that may already be available from RackN.
+      </p>
+      <div class="ui horizontal divider">RackN Features</div>
+      <div class="rackn-features">
+        <div class="rackn-feature">
+          <i class="fa fa-tools"></i>
+          <div class="text">
+            <div class="header">
+              RackN Portal
             </div>
-          </div>
-          <div class="rackn-feature">
-            <i class="fab fa-windows"></i>
-            <div class="text">
-              <div class="header">
-                Windows Provisioning
-              </div>
-              <div class="subheader">
-                Users interested in provisioning any non-Linux OS such as Windows should contact <a href="mailto:sales@rackn.com">sales@rackn.com</a>
-              </div>
-            </div>
-          </div>
-          <div class="rackn-feature">
-            <i class="fa fa-hdd"></i>
-            <div class="text">
-              <div class="header">
-                Image Deployment
-              </div>
-              <div class="subheader">
-                Users interested in provisioning golden images instead of OS provisioning should contact <a href="mailto:sales@rackn.com">sales@rackn.com</a>
-              </div>
-            </div>
-          </div>
-          <div class="rackn-feature">
-            <i class="fa fa-network-wired"></i>
-            <div class="text">
-              <div class="header">
-                IPMI
-              </div>
-              <div class="subheader">
-                Users interested in IPMI should contact <a href="mailto:sales@rackn.com">sales@rackn.com</a>
-              </div>
+            <div class="subheader">
+              The <a href="https://www.rackn.com/products/rackn-portal/">RackN Portal</a>, is available for both the34rtfhm, community and RackN customers.
             </div>
           </div>
         </div>
-      </p>
-      <p>
-        Contact <a href="mailto:sales@rackn.com">sales@rackn.com</a> if you have any questions about building custom plugins that may already be available from RackN.
-      </p>
+        <div class="rackn-feature">
+          <i class="fab fa-windows"></i>
+          <div class="text">
+            <div class="header">
+              Windows Provisioning
+            </div>
+            <div class="subheader">
+              Users interested in provisioning any non-Linux OS such as Windows should contact <a href="mailto:sales@rackn.com">sales@rackn.com</a>
+            </div>
+          </div>
+        </div>
+        <div class="rackn-feature">
+          <i class="fa fa-hdd"></i>
+          <div class="text">
+            <div class="header">
+              Image Deployment
+            </div>
+            <div class="subheader">
+              Users interested in provisioning golden images instead of OS provisioning should contact <a href="mailto:sales@rackn.com">sales@rackn.com</a>
+            </div>
+          </div>
+        </div>
+        <div class="rackn-feature">
+          <i class="fa fa-network-wired"></i>
+          <div class="text">
+            <div class="header">
+              IPMI
+            </div>
+            <div class="subheader">
+              Users interested in IPMI should contact <a href="mailto:sales@rackn.com">sales@rackn.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="footer">
