@@ -1,341 +1,317 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="reset.css" rel="stylesheet" type="text/css" />
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <link href="https://www.google.com/fonts#UsePlace:use/Collection:Roboto" rel="stylesheet" type="text/css" />
-    <link href="https://www.google.com/fonts#UsePlace:use/Collection:Roboto+Mono" rel="stylesheet" type="text/css" />
-    <link href="https://www.google.com/fonts#UsePlace:use/Collection:Allerta+Stencil" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css" />
-    <!-- material-icons reference: https://material.io/icons/ -->
-    <link href="digitalrebar.ico" rel="SHORTCUT ICON" />
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"><link href="digitalrebar.ico" rel="SHORTCUT ICON" />
     <meta name="google-site-verification" content="zCf79OnCmnSaInCAHjC8bfWcYvMXXzTfjx_fG_k-6AM" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link href="style.css" rel="stylesheet" type="text/css" />
     <title>Digital Rebar</title>
   </head>
   <body>
-    <nav id="toolbar" class="overlay">
-      <img src="logo.png" style="cursor: pointer;" onclick="window.open('http://provision.readthedocs.io/en/latest/');"/>
-      <div class="menu-button" onclick="$('.nav-bar').className='nav-bar'+($('.nav-bar').className=='nav-bar hover'?'':' hover');">
-        <i class="material-icons">menu</i>
-      </div>
-      <div class="nav-bar" onclick="$('.nav-bar').className='nav-bar';">
-        <div class="link-container" onclick="scrollToElem('intro')">
-          <div class="link">
-            <span>Intro</span>
-          </div>
-        </div>
-        <div class="link-container" onclick="scrollToElem('resources')">
-          <div class="link">
+    <div class="navigation">
+      <div class="navigation-bar container">
+        <a class="logo" href="https://rebar.digital" target="_blank">
+          <img src="images/logo.png"/>
+          <span class="digital">Digital</span><span class="rebar">Rebar</span>
+        </a>
+        <div class="links">
+          <a class="link" target="_blank" href="https://provision.readthedocs.io/en/latest/">
+            <span>Docs</span>
+          </a>
+          <a class="link" href="#resources">
             <span>Resources</span>
-          </div>
-        </div>
-        <div class="link-container" onclick="scrollToElem('glance')">
-          <div class="link">
-            <span>Glance</span>
-          </div>
-        </div>
-        <div class="link-container" onclick="javascript:location.href='community/welcome.html'">
-          <div class="link">
+          </a>
+          <a class="link" href="/welcome">
             <span>Community</span>
-          </div>
-        </div>
-        <div class="link-container" onclick="scrollToElem('sponsor')">
-          <div class="link">
+          </a>
+          <a class="link" href="https://rackn.com">
             <span>Sponsor</span>
+          </a>
+          <a class="link" href="https://github.com/digitalrebar">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+        <div class="ui dropdown simple">
+          <div class="nav-container" onclick="">
+            <i class="ui icon bars"></i>
+          </div>
+          <div class="menu">
+            <a class="item" target="_blank" href="https://provision.readthedocs.io/en/latest/">
+              <i class="ui icon book"></i>
+              <span>Docs</span>
+            </a>
+            <a class="item" href="#resources">
+              <i class="ui icon info"></i>
+              <span>Resources</span>
+            </a>
+            <a class="item" href="/welcome">
+              <i class="ui icon group"></i>
+              <span>Community</span>
+            </a>
+            <a class="item" href="https://rackn.com">
+              <i class="ui icon heart"></i>
+              <span>Sponsor</span>
+            </a>
+            <a class="item" href="https://github.com/digitalrebar">
+              <i class="ui icon github"></i>
+              Source
+            </a>
           </div>
         </div>
       </div>
-    </nav>
-
-    <img src="rebar.jpg" id="top-img" />
-
-    <br><br><br>
-
-    <section class="content card" id="_intro" onclick="">
-      <a class="anchor" name="intro"></a>
-      <h2>Digital Rebar Provision</h2>
-      <p>
-        Welcome to the Digital Rebar Community, home of the open source <a href="https://github.com/digitalrebar/provision">Digital Rebar Provision</a> (DRP) project. DRP is the data center provisioning and content scaffolding designed with a cloud native architecture replacing Cobbler, Foreman, MaaS or similar technologies. It offers a single golang binary (less than 30MB) with no dependencies capable of installation on a laptop, RPi or switch supporting both bare metal and virtualized infrastructure.
-      </p>
-      <img src="dr_provision.png" align="right" class="bear-image" style="max-width: 200px;">
-      <p>
-        Get started by reading the <a href="https://rackn.com/wp-content/uploads/2018/06/6-18-digital-rebar-community-welcome-guide_web_links2.pdf">Digital Rebar Community Welcome Guide</a> to quickly learn the basics of working with other Digital Rebar developers.
-      </p>
-      <p>
-      <b>Key DRP Features</b>
-      <ul>
-      <li>API-driven infrastructure-as-code automation</li>
-      <li>Event driven actions via Websockets API</li>
-      <li>Extensible Plug-in Model for enhancements</li>
-      <li>Supports ALL orchestration tools including Chef, Puppet, Ansible, SaltStack, Bosh, Teraform, etc</li>
-      <li>RAID, IPMI, and BIOS Configuration (via commercial plugins)</li>
-      </ul>
-      </p>
-      <p>
-      The latest release of DRP v3 is available: <a href="https://github.com/digitalrebar/provision/releases">Release Notes & Code on GitHub</a>
-      </p>
-      <center><table bgcolor="#efefef"><tr><td><center>
-      <h3>Continuous Integration - Status</h3>
-      <div class="ci-cd">
-        &nbsp;&nbsp;<a class="reference external image-reference" href="https://travis-ci.org/digitalrebar/provision" tooltip="Travis"><img alt="Build Status" src="https://travis-ci.org/digitalrebar/provision.svg?branch=master" /></a>
-        <a class="reference external image-reference" href="https://codecov.io/gh/digitalrebar/provision" tooltip="codecov"><img alt="codecov" src="https://codecov.io/gh/digitalrebar/provision/branch/master/graph/badge.svg" /></a>
-        <a class="reference external image-reference" href="https://goreportcard.com/report/github.com/digitalrebar/provision" tooltip="Go Report Card"><img alt="Go Report Card" src="https://goreportcard.com/badge/github.com/digitalrebar/provision" /></a>
-        <a class="reference external image-reference" href="https://godoc.org/github.com/digitalrebar/provision" tooltip="GoDoc"><img alt="GoDoc" src="https://godoc.org/github.com/digitalrebar/provision?status.svg" /></a>
-        <a class="reference external image-reference" href="http://provision.readthedocs.io/en/stable/?badge=stable" tooltip="Documentation Stable Status"><img alt="Documentation Stable Status" src="https://readthedocs.org/projects/provision/badge/?version=stable" /></a>
-        <a class="reference external image-reference" href="http://provision.readthedocs.io/en/latest/?badge=latest" tooltip="Documentation Latest Status"><img alt="Documentation Latest Status" src="https://readthedocs.org/projects/provision/badge/?version=latest" /></a>
-      &nbsp;&nbsp;</div>
-              </center></td></tr></table></center>
-    </section>
-<!--    <div style="background: #eee; padding: 2px;" onclick=""> -->
-      <section class="content card" id="_resources">
-        <a class="anchor" name="resources"></a>
-        <h2>Resources</h2>
-        <div class="getting-started-container">
-          <div class="getting-started" alt="DRP Demos" onclick="displayClick(event, this)" url="https://www.youtube.com/playlist?list=PLXPBeIrpXjfilUi7Qj1Sl0UhjxNRSC7nx">
-            <i class="material-icons">video_library</i>
+    </div>
+    <div class="try-out">
+      <div class="container">
+        <div>
+          <div class="welcome">
+            <span class="logo">
+                <span class="digital">Digital</span>
+                <span class="rebar">Rebar</span>
+            </span>
+            <span>
+              is the data center provisioning and content scaffolding designed with a cloud native architecture replacing Cobbler, Foreman, MaaS or similar technologies.
+            </span>
           </div>
-          <div class="getting-started noclick" alt="Documentation" onclick="">
-            <i class="material-icons">book</i>
-            <div class="dropdown">
-              <div class="dropdown-link" onclick="displayClick(event, this)" url="http://provision.readthedocs.org/en/latest/">
-                Full Docs
-              </div>
-              <div class="dropdown-link" onclick="displayClick(event, this)" url="http://provision.readthedocs.io/en/latest/doc/install.html">
-                Install Guide
-              </div>
-              <div class="dropdown-link" onclick="displayClick(event, this)" url="http://provision.readthedocs.io/en/latest/doc/quickstart.html">
-                QuickStart
-              </div>
-              <div class="dopdown-link" onclick="displayClick(event, this)" url="https://rackn.com/wp-content/uploads/2018/06/6-18-digital-rebar-community-welcome-guide_web_links2.pdf">
-                Welcome Guide
-              </div>
+        </div>
+        <div>
+          <div class="install-options">
+            <div class="welcome">
+              Check out the Quick Start guide for a basic installation and starting point!
+            </div>
+            <a class="ui button primary" href="https://provision.readthedocs.io/en/latest/doc/quickstart.html">
+              Quick Start
+            </a>
+            <a class="ui button primary" href="https://provision.readthedocs.io/en/latest/doc/install.html">
+              Install Guide
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="container">
+      <h1 class="ui header">Key Features</h1>
+      <div class="key-features">
+        <div class="feature">
+          <i class="far fa-check-circle"></i>
+          <span>
+            API-driven infrastructure-as-code automation
+          </span>
+        </div>
+        <div class="feature">
+          <i class="far fa-check-circle"></i>
+          <span>
+            Event driven actions via Websockets API
+          </span>
+        </div>
+        <div class="feature">
+          <i class="far fa-check-circle"></i>
+          <span>
+            Extensible Plug-in Model for enhancements
+          </span>
+        </div>
+        <div class="feature">
+          <i class="far fa-check-circle"></i>
+          <span>
+            Supports all orchestration tools including Chef, Puppet, Ansible, SaltStack, Bosh, Teraform, etc
+          </span>
+        </div>
+        <div class="feature">
+          <i class="far fa-check-circle"></i>
+          <span>
+            RAID, IPMI, and BIOS Configuration (via commercial plugins)
+          </span>
+        </div>
+        <div class="feature">
+          <i class="far fa-check-circle"></i>
+          <span>
+            Capable of being installed on a laptop, RPi, switch, or virtualized infrastructure
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <div class="inverted">
+      <section class="container paragraph-section">
+        <h1 class="ui header">Community</h1>
+        <p>
+          The Digital Rebar Community embraces the heterogeneous nature of datacenter operations while eliminating the complexity and manual steps.
+        </p>
+        <p>
+          Get started by reading the <a href="https://rackn.com/wp-content/uploads/2018/06/6-18-digital-rebar-community-welcome-guide_web_links2.pdf">Community Welcome Guide</a> to learn the basics of working with other Digital Rebar developers.
+        </p>
+        <p>
+          Join us along with other developers and ops enthusiasts in the <a href="https://rackn.com/support/slack">RackN Slack</a>!
+        </p>
+      </section>
+    </div>
+
+    <section class="container">
+      <a class="anchor" name="resources"></a>
+      <h1 class="ui header">Resources</h1>
+      <div class="resource-grid">
+        <a class="resource" href="https://www.youtube.com/playlist?list=PLXPBeIrpXjfilUi7Qj1Sl0UhjxNRSC7nx">
+          <i class="fa fa-video"></i>
+          <div class="text">
+            <span class="header">Demo Videos</span>
+            <span class="subheader">Browse dozens of in depth demonstrations</span>
+          </div>
+        </a>
+        <div class="ui dropdown resource simple">
+          <i class="fa fa-book"></i>
+          <div class="text" onclick="">
+            <span class="header">Documentation</span>
+            <span class="subheader">Learn more about the API and product</span>
+          </div>
+          <div class="menu">
+            <a class="item" href="http://provision.readthedocs.org/en/latest/">
+              <i class="ui icon book"></i>
+              Full Documentation
+            </a>
+            <a class="item" href="http://provision.readthedocs.io/en/latest/doc/install.html">
+              <i class="ui icon download"></i>
+              Install Guide
+            </a>
+            <a class="item" href="http://provision.readthedocs.io/en/latest/doc/quickstart.html">
+              <i class="ui icon paper plane"></i>
+              Quick Start
+            </a>
+            <a class="item" href="https://www.packet.net/developers/guides/ditch-cobbler-for-rackn/">
+              <i class="ui icon server"></i>
+              Packet.net Custom IPXE
+            </a>
+            <a class="item" href="https://rackn.com/wp-content/uploads/2018/06/6-18-digital-rebar-community-welcome-guide_web_links2.pdf">
+              <i class="ui icon group"></i>
+              Welcome Guide
+            </a>
+          </div>
+        </div>
+        <a class="resource" href="https://rackn.com/support/slack">
+          <i class="fab fa-slack"></i>
+          <div class="text">
+            <span class="header">Slack Community</span>
+            <span class="subheader">Talk with other members of the Digital Rebar Community</span>
+          </div>
+        </a>
+        <a class="resource" href="slack/html/index.html">
+          <i class="fa fa-archive"></i>
+          <div class="text">
+            <span class="header">Public Archive</span>
+            <span class="subheader">Read the #community Slack channel history</span>
+          </div>
+        </a>
+        <a class="resource" href="https://www.youtube.com/playlist?list=PLXPBeIrpXjfjsiMkDn2SJuTPYTotESpL2">
+          <i class="fab fa-youtube"></i>
+          <div class="text">
+            <span class="header">Online Meetups</span>
+            <span class="subheader">Watch our previous online meetup recordings</span>
+          </div>
+        </a>
+        <a class="resource" href="https://github.com/digitalrebar/provision">
+          <i class="fab fa-github"></i>
+          <div class="text">
+            <span class="header">Source</span>
+            <span class="subheader">Read available open source material</span>
+          </div>
+        </a>
+        <a class="resource" href="https://github.com/digitalrebar/provision/issues">
+          <i class="fa fa-map-signs"></i>
+          <div class="text">
+            <span class="header">Issues &amp; Roadmap</span>
+            <span class="subheader">Visit our issue tracker</span>
+          </div>
+        </a>
+        <a class="resource" href="https://portal.rackn.io/#/">
+          <i class="fa fa-tools"></i>
+          <div class="text">
+            <span class="header">RackN Portal</span>
+            <span class="subheader">Connect to an existing DRP Endpoint</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <div class="inverted">
+      <section class="container paragraph-section">
+        <h1 class="ui header">Motivation</h1>
+        <p>
+          Our mission is to collaborate on a technology that revolutionizes how traditional data center infrastructure operations can gracefully absorb next-generation workloads without churn and additional technological complexity. DRP enables upgrade and continuous deployment automation for production-scale deployments of technology such as Docker, Kubernetes, Cloud Foundry, etc.
+        </p>
+        <p>
+          Digital Rebar Provision is a production-ready open implementation that can be designed to reliably deployed in large-scale, multi-site data centers as well as soon to be deployed edge sites. This effectively productizes best practices in a way that allows creation of consistent and discoverable operating environments. Users benefit with fast time-to-value and the community benefits by having consistent installations across the ecosystem.
+        </p>
+      </section>
+    </div>
+
+    <section class="container paragraph-section">
+      <h1 class="ui header"><a href="https://rackn.com">RackN</a> Sponsorship</h1>
+      <p>
+        <div class="ui horizontal divider">About the Sponsor</div>
+        Digital Rebar Provision is an <a href="https://github.com/digitalrebar/provision/blob/master/LICENSE">APL2</a> Project. As the community sponsor, RackN provides day to day management of the community including the GitHub site, development activities and community promotion. Additionally, <a href="https://www.rackn.com/products/">RackN</a> offers commerical support, custom integrations, training, and advanced technology for Digital Rebar Provision users interested in extending the open source feature set.
+      </p>
+      <p>
+        Please contact <a href="mailto:sales@rackn.com">sales@rackn.com</a> if you have any questions about building custom plugins that may already be available from RackN.
+      </p>
+      <div class="ui horizontal divider">RackN Features</div>
+      <div class="rackn-features">
+        <div class="rackn-feature">
+          <i class="fa fa-tools"></i>
+          <div class="text">
+            <div class="header">
+              RackN Portal
+            </div>
+            <div class="subheader">
+              The <a href="https://www.rackn.com/products/rackn-portal/">RackN Portal</a>, is available for both the34rtfhm, community and RackN customers.
             </div>
           </div>
-          <div class="getting-started" alt="Slack Community" onclick="displayClick(event, this)" url="https://rackn.com/support/slack">
-            <i class="material-icons">forum</i>
-          </div>
-          <div class="getting-started" alt="Public Archive" onclick="displayClick(event, this)" url="slack/html/index.html">
-            <i class="material-icons">library_books</i>
-          </div>
-          <div class="getting-started" alt="Online Meetups" onclick="displayClick(event, this)" url="https://www.youtube.com/playlist?list=PLXPBeIrpXjfjsiMkDn2SJuTPYTotESpL2">
-            <i class="material-icons">supervisor_account</i>
-          </div>
-          <div class="getting-started" alt="GitHub Repo" onclick="displayClick(event, this)" url="https://github.com/digitalrebar/provision">
-            <i class="material-icons">code</i>
-          </div>
-          <div class="getting-started" alt="Issues &amp; Roadmap" onclick="displayClick(event, this)" url="https://github.com/digitalrebar/provision/issues">
-            <i class="material-icons">directions</i>
-          </div>
-          <div class="getting-started" alt="RackN Portal" onclick="displayClick(event, this)" url="https://portal.rackn.io/#/">
-            <i class="material-icons">web</i>
-          </div>
+        </div>
+        <div class="rackn-feature">
+          <i class="fab fa-windows"></i>
+          <div class="text">
+            <div class="header">
+              Windows Provisioning
+            </div>
+            <div class="subheader">
+              Users interested in provisioning any non-Linux OS such as Windows should contact <a href="mailto:sales@rackn.com">sales@rackn.com</a>
+            </div>
           </div>
         </div>
-      </section>
-      <section class="content card" id="_glance"  onclick="">
-        <a class="anchor" name="glance"></a>
-        <h2>At a Glance</h2>
-        <p>
-        <strong>Community Mission</strong>: Embrace the Heterogeneous Nature of Data Center Operations while Eliminating Complexity and Manual Steps.
-        </p>
-        <p>
-        <strong>Principal Motivation</strong>: Collaborate on a technology that revolutionizes how traditional data center infrastructure operations can gracefully absorb next-generation workloads without churn and additional technological complexity. DRP enables upgrade and continuous deployment automation for production-scale deployments of technology such as Docker, Kubernetes, Cloud Foundry, etc.
-        </p>
-        <p>
-        Digital Rebar Provision is a production-ready open implementation that can be designed to reliably deployed in large-scale, multi-site data centers as well as soon to be deployed edge sites. This effectively productizes best practices in a way that allows creation of consistent and discoverable operating environments. Users benefit with fast time-to-value and the community benefits by having consistent installations across the ecosystem.
-        </p>
-      </section>
-
-
-      <section class="content card" id="_sponsor">
-        <a class="anchor" name="sponsor"></a>
-        <h2>Project Sponsored by <a href="http://rackn.com">RackN</a></h2>
-        <p>
-          Digital Rebar Provision is an <a href="https://github.com/digitalrebar/provision/blob/master/LICENSE">Apache2 licensed</a> Project. As the community sponsor, RackN provides day to day management of the community including the GitHub site, development activities and community promotion. Additionally, <a href="https://www.rackn.com/products/">RackN</a> offers commerical support, custom integrations, training, and advanced technology for Digital Rebar Provision users interested in extending the open source feature set.
-        </p>
-        <p>
-        <b>Additional RackN Features</b>
-        </p>
-        <p>
-        RackN provides additional features for DRP that are either made available to the community or are available for a fee from RackN.
-        <ul>
-        <li><a href="https://www.rackn.com/products/rackn-portal/">RackN Portal</a> - A SaaS based UX is available for both the open source community and RackN customers. The UX can be run in air gap mode for users requiring additional security for their deployment. The UX is closed source however RackN does not charge for usage of this tool for community members.</li>
-        <li>Windows Provisioning - Users interested in provisioning any non-Linux OS such as Windows should contact <a href="mailto:sales@rackn.com">RackN</a></li>
-        <li>Image Deployment - Users interested in provisioning golden images instead of OS provisioning should contact <a href="mailto:sales@rackn.com">RackN</a></li>
-        <li>IPMI - Users interested in IPMI should contact <a href="mailto:sales@rackn.com">RackN</a></li>
-        </ul>
-        </p>
-        <p>
-        <a href="mailto:sales@rackn.com">Contact RackN</a> if you have any questions about building custom plugins that may already be available from RackN.
-        </p>
-      </section>
-<!--    </div> -->
+        <div class="rackn-feature">
+          <i class="fa fa-hdd"></i>
+          <div class="text">
+            <div class="header">
+              Image Deployment
+            </div>
+            <div class="subheader">
+              Users interested in provisioning golden images instead of OS provisioning should contact <a href="mailto:sales@rackn.com">sales@rackn.com</a>
+            </div>
+          </div>
+        </div>
+        <div class="rackn-feature">
+          <i class="fa fa-network-wired"></i>
+          <div class="text">
+            <div class="header">
+              IPMI
+            </div>
+            <div class="subheader">
+              Users interested in IPMI should contact <a href="mailto:sales@rackn.com">sales@rackn.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section class="footer">
       <footer>
-        &copy; 2018 RackN, Inc.<br/>
-        <a href="http://provision.readthedocs.org/en/latest/">Documentation</a> | <a href="http://github.com/digitalrebar/provision">Source</a> | <a href="http://rackn.com">Sponsor</a> | <a href="http://github.com/meshiest">Site Designer</a>
+        &copy; 2019 RackN, Inc.<br/>
+        <a href="http://provision.readthedocs.org/en/latest/">Documentation</a> | <a href="http://github.com/digitalrebar/provision">Source</a> | <a href="http://rackn.com">Sponsor</a> | <a href="http://portal.rackn.io">Portal</a>
       </footer>
     </section>
 
+
     <script>
-
-var backgroundImage = document.getElementById('top-img');
-var toolbar = document.getElementById('toolbar');
-var typing = document.getElementById('typing');
-var cursor = document.getElementById('cursor');
-
-var phrases = [
-  'digital_rebar',
-  'sre_automation',
-  'composable_ops',
-  'bare_metal_api',
-  'devops_control',
-  'pxe_provision',
-  'immutable_infrastucture',
-];
-
-var extensions = [
-  'tar.gz',
-  'sh',
-  'yml',
-  'rb',
-  'go',
-  'js',
-];
-
-var phraseIndex = -1;
-var waitTime = 3000;
-var letterTime = 50;
-
-window.$ = document.querySelector.bind(document);
-
-// Starts the typing animation at the top of the page
-function typeWord (word) {
-  if(Math.random() < 0.1) {
-    word += '.' + extensions[Math.floor(Math.random() * extensions.length)];
-  }
-
-  var duration = word.length * letterTime * 2 + waitTime;
-
-  setTimeout(function () {
-    cursor.className = 'blink terminal-green';
-  }, word.length * letterTime);
-
-  setTimeout(function () {
-    cursor.className = 'terminal-green';
-  }, word.length * letterTime + waitTime);
-
-  for(var i = 0; i < word.length; i++) {
-    (function(text){ // type word
-      setTimeout(function () {
-        typing.innerHTML = text;
-      }, letterTime * i);
-
-      setTimeout(function () { // remove word
-        typing.innerHTML = text;
-      }, duration - letterTime * i);
-    })(word.substr(0, i+1));
-  }
-  setTimeout(nextPhrase, duration) // queue next word
-}
-
-// Randomly creates the next phrase at the top of the page
-function nextPhrase () {
-  typeWord (phrases[phraseIndex = (phraseIndex + 1) % phrases.length])
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  setTimeout(nextPhrase, 1000);
-  toolbar.className = (window.scrollY > backgroundImage.height - 400 ? 'card' : 'overlay');
-});
-
-// Called when a getting started card is clicked
-function displayClick(e, elem) {
-  if(!e)
-    e = window.event;
-
-  if (e.stopPropagation)
-    e.stopPropagation();
-  else
-    e.cancelBubble = true;
-
-  window.open(elem.attributes.url.value);
-}
-
-var clouds = [
-  'cloud',
-  'cloud_done',
-  'cloud_download',
-  'cloud_upload'
-];
-
-window.addEventListener('scroll', function() {
-  toolbar.className = (window.scrollY > backgroundImage.height - 400 ? 'card' : 'overlay');
-});
-
-// easing functions http://goo.gl/5HLl8
-function lerpEase (t, b, c, d) {
-  t /= d/2;
-  if (t < 1) {
-    return c/2*t*t + b
-  }
-  t--;
-  return -c/2 * (t*(t-2) - 1) + b;
-};
-
-// requestAnimationFrame for Smart Animating http://goo.gl/sx5sts
-var requestAnimFrame = (function(){
-  return  window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function( callback ){ setTimeout(callback, 1000 / 60); };
-})();
-
-var scrollTimeout = 0;
-function scrollToElem(elem) {
-  clearTimeout(scrollTimeout);
-  var e = document.getElementById('_'+elem);
-  scrollTo(e.offsetTop-40, 0, 500);
-  scrollTimeout = setTimeout(function(){
-    window.location.href = "#"+elem;
-  }, 500);
-}
-
-function scrollTo(to, callback, duration) {
-  function move(amount) {
-    document.documentElement.scrollTop = amount;
-    document.body.parentNode.scrollTop = amount;
-    document.body.scrollTop = amount;
-  }
-
-  function position() {
-    return document.documentElement.scrollTop || document.body.parentNode.scrollTop || document.body.scrollTop;
-  }
-
-  var start = position(),
-    change = to - start,
-    currentTime = 0,
-    increment = 20;
-
-  duration = (typeof(duration) === 'undefined') ? 500 : duration;
-  var animateScroll = function() {
-    // increment the time
-    currentTime += increment;
-    // find the value with the quadratic in-out easing function
-    var val = lerpEase(currentTime, start, change, duration);
-    // move the document.body
-    move(val);
-    // do the animation unless its over
-    if (currentTime < duration) {
-      requestAnimFrame(animateScroll);
-    } else {
-      if (callback && typeof(callback) === 'function') {
-        // the animation is done so lets callback
-        callback();
-      }
-    }
-  };
-  animateScroll();
-}
 
  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
