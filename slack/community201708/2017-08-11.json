@@ -1,8 +1,0 @@
-[
-    {
-        "type": "message",
-        "user": "U416T0AAX",
-        "text": "<@U02DHRR2L> -\n\nBasically it's:\niptables -F\niptables -X\niptables -t nat -F\niptables -t nat -X\niptables -t mangle -F\niptables -t mangle -X\n\n(-F flushes the chain rules, -X removes all but default chains)\n",
-        "ts": "1502458143.989053"
-    }
-]
